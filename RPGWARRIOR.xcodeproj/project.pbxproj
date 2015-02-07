@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC27111A1A85E11900986D2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2711191A85E11900986D2E /* AppDelegate.swift */; };
-		DC27111C1A85E11900986D2E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC27111B1A85E11900986D2E /* GameScene.sks */; };
-		DC27111E1A85E11900986D2E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27111D1A85E11900986D2E /* GameScene.swift */; };
-		DC2711201A85E11900986D2E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27111F1A85E11900986D2E /* GameViewController.swift */; };
 		DC2711231A85E11900986D2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC2711211A85E11900986D2E /* Main.storyboard */; };
 		DC2711251A85E11900986D2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC2711241A85E11900986D2E /* Images.xcassets */; };
 		DC2711281A85E11900986D2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC2711261A85E11900986D2E /* LaunchScreen.xib */; };
 		DC2711341A85E11900986D2E /* RPGWARRIORTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2711331A85E11900986D2E /* RPGWARRIORTests.swift */; };
+		DC27113E1A85E1AB00986D2E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27113D1A85E1AB00986D2E /* GameScene.swift */; };
+		DC2711421A85E1D300986D2E /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2711411A85E1D300986D2E /* Utility.swift */; };
+		DC2711441A85E1DE00986D2E /* WizardClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2711431A85E1DE00986D2E /* WizardClass.swift */; };
+		DC2711461A85E1F500986D2E /* HeroClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2711451A85E1F500986D2E /* HeroClass.swift */; };
+		DC2711481A85E26100986D2E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2711471A85E26100986D2E /* GameViewController.swift */; };
+		DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2711491A85E26C00986D2E /* Fireball.swift */; };
+		DC2711501A86A09D00986D2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27114F1A86A09D00986D2E /* AppDelegate.swift */; };
+		DC2711521A86A4E600986D2E /* rpg5.atlas in Resources */ = {isa = PBXBuildFile; fileRef = DC2711511A86A4E600986D2E /* rpg5.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +34,20 @@
 /* Begin PBXFileReference section */
 		DC2711141A85E11900986D2E /* RPGWARRIOR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPGWARRIOR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC2711181A85E11900986D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC2711191A85E11900986D2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC27111B1A85E11900986D2E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		DC27111D1A85E11900986D2E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		DC27111F1A85E11900986D2E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		DC2711221A85E11900986D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC2711241A85E11900986D2E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DC2711271A85E11900986D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DC27112D1A85E11900986D2E /* RPGWARRIORTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPGWARRIORTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC2711321A85E11900986D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC2711331A85E11900986D2E /* RPGWARRIORTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPGWARRIORTests.swift; sourceTree = "<group>"; };
+		DC27113D1A85E1AB00986D2E /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		DC2711411A85E1D300986D2E /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		DC2711431A85E1DE00986D2E /* WizardClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WizardClass.swift; sourceTree = "<group>"; };
+		DC2711451A85E1F500986D2E /* HeroClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroClass.swift; sourceTree = "<group>"; };
+		DC2711471A85E26100986D2E /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		DC2711491A85E26C00986D2E /* Fireball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fireball.swift; sourceTree = "<group>"; };
+		DC27114F1A86A09D00986D2E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC2711511A86A4E600986D2E /* rpg5.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = rpg5.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +89,14 @@
 		DC2711161A85E11900986D2E /* RPGWARRIOR */ = {
 			isa = PBXGroup;
 			children = (
-				DC2711191A85E11900986D2E /* AppDelegate.swift */,
-				DC27111B1A85E11900986D2E /* GameScene.sks */,
-				DC27111D1A85E11900986D2E /* GameScene.swift */,
-				DC27111F1A85E11900986D2E /* GameViewController.swift */,
+				DC2711511A86A4E600986D2E /* rpg5.atlas */,
+				DC2711491A85E26C00986D2E /* Fireball.swift */,
+				DC27114F1A86A09D00986D2E /* AppDelegate.swift */,
+				DC2711471A85E26100986D2E /* GameViewController.swift */,
+				DC2711451A85E1F500986D2E /* HeroClass.swift */,
+				DC2711411A85E1D300986D2E /* Utility.swift */,
+				DC2711431A85E1DE00986D2E /* WizardClass.swift */,
+				DC27113D1A85E1AB00986D2E /* GameScene.swift */,
 				DC2711211A85E11900986D2E /* Main.storyboard */,
 				DC2711241A85E11900986D2E /* Images.xcassets */,
 				DC2711261A85E11900986D2E /* LaunchScreen.xib */,
@@ -200,8 +212,8 @@
 			files = (
 				DC2711281A85E11900986D2E /* LaunchScreen.xib in Resources */,
 				DC2711251A85E11900986D2E /* Images.xcassets in Resources */,
-				DC27111C1A85E11900986D2E /* GameScene.sks in Resources */,
 				DC2711231A85E11900986D2E /* Main.storyboard in Resources */,
+				DC2711521A86A4E600986D2E /* rpg5.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +231,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC27111E1A85E11900986D2E /* GameScene.swift in Sources */,
-				DC2711201A85E11900986D2E /* GameViewController.swift in Sources */,
-				DC27111A1A85E11900986D2E /* AppDelegate.swift in Sources */,
+				DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */,
+				DC2711461A85E1F500986D2E /* HeroClass.swift in Sources */,
+				DC2711421A85E1D300986D2E /* Utility.swift in Sources */,
+				DC27113E1A85E1AB00986D2E /* GameScene.swift in Sources */,
+				DC2711501A86A09D00986D2E /* AppDelegate.swift in Sources */,
+				DC2711441A85E1DE00986D2E /* WizardClass.swift in Sources */,
+				DC2711481A85E26100986D2E /* GameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +431,7 @@
 				DC2711391A85E11900986D2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC27113A1A85E11900986D2E /* Build configuration list for PBXNativeTarget "RPGWARRIORTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +440,7 @@
 				DC27113C1A85E11900986D2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,8 +1,8 @@
 //
 //  GameViewController.swift
-//  RPGWARRIOR
+//  TestRpgGame
 //
-//  Created by Drew Zoellner on 2/6/15.
+//  Created by Drew Zoellner on 1/26/15.
 //  Copyright (c) 2015 Drew Zoellner. All rights reserved.
 //
 
@@ -30,7 +30,8 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+      //  if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+        let scene = GameScene(size: self.view.frame.size)
             // Configure the view.
             let skView = self.view as SKView
             skView.showsFPS = true
@@ -40,10 +41,11 @@ class GameViewController: UIViewController {
             skView.ignoresSiblingOrder = true
             
             /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
+            //scene.scaleMode = .AspectFill
+            scene.scaleMode = .ResizeFill
             
             skView.presentScene(scene)
-        }
+       // }
     }
 
     override func shouldAutorotate() -> Bool {
