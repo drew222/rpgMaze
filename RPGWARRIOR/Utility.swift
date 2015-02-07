@@ -208,8 +208,8 @@ func getStillTexture(myNode: SKSpriteNode)->SKTexture{
     }else{return SKTexture()}
 }
 
-func moveTo(nodeToMove: SKSpriteNode, position: CGPoint)-> SKAction{
-    let angle = angleFromPoints(nodeToMove.position, position)
+func moveTo(nodeToMove: SKSpriteNode, startPosition: CGPoint, position: CGPoint)-> SKAction{
+    let angle = angleFromPoints(startPosition, position)
     var amountToTurn = CGFloat(angle) - getNodeAngle(nodeToMove)
     if (amountToTurn > pi){
         amountToTurn = amountToTurn - (2 * pi)
@@ -226,8 +226,8 @@ func moveTo(nodeToMove: SKSpriteNode, position: CGPoint)-> SKAction{
         nodeToMove.runAction(rotateAction)
     }
     //do math for time
-    let xDistance = position.x - nodeToMove.position.x
-    let yDistance = position.y - nodeToMove.position.y
+    let xDistance = position.x - startPosition.x
+    let yDistance = position.y - startPosition.y
     var distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
     let time = NSTimeInterval(distance / getNodeSpeed(nodeToMove))
     return SKAction.moveTo(position, duration: time)
@@ -243,7 +243,7 @@ func getSimpleMove(nodeToMove: SKSpriteNode, position: CGPoint)->SKAction{
         {nodeToMove.removeActionForKey("repeatAction")
             nodeToMove.texture = getStillTexture(nodeToMove)
     })
-    let moveAction = moveTo(nodeToMove, position)
+    let moveAction = moveTo(nodeToMove, nodeToMove.position, position)
     let sequence = SKAction.sequence([moveAction, completionBlock])
     return sequence
 }
@@ -261,7 +261,7 @@ func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAtta
             }
     })
     var sequence: SKAction?
-    let moveAction = moveTo(nodeToMove, spotInfront)
+    let moveAction = moveTo(nodeToMove, nodeToMove.position, spotInfront)
     if (wasAttacking){
         sequence = SKAction.sequence([completionBlock])
     }else{
@@ -279,20 +279,22 @@ func getAroundMove(nodeToMove: SKSpriteNode, clickPoint: CGPoint, nodeToGoAround
     let cornerSide = getGoAroundCorner(nodeToGoAround, nodeToMove.position, clickPoint)
     let cornerPointPushed = pushPointOut(nodeToGoAround, cornerSide.0, nodeToMove)
     var sequence: SKAction?
+    
+    // sequence needs to be blocks of codes to 
     if (cornerSide.1){
         //need to move to another corner
-        let firstCornerMove = moveTo(nodeToMove, cornerPointPushed)
+        let firstCornerMove = moveTo(nodeToMove, nodeToMove.position, cornerPointPushed)
         let secondCornerPushed = pushPointOut(nodeToGoAround, cornerSide.2, nodeToMove)
-        let secondCornerMove = moveTo(nodeToMove, secondCornerPushed)
-        let moveToPoint = moveTo(nodeToMove, clickPoint)
+        let secondCornerMove = moveTo(nodeToMove, cornerSide.0, secondCornerPushed)
+        let moveToPoint = moveTo(nodeToMove,cornerSide.2, clickPoint)
         let completionBlock = SKAction.runBlock(
             {nodeToMove.removeActionForKey("repeatAction")
                 nodeToMove.texture = getStillTexture(nodeToMove)
         })
         sequence = SKAction.sequence([firstCornerMove, secondCornerMove, moveToPoint, completionBlock])
     }else{
-        let firstCornerMove = moveTo(nodeToMove, cornerPointPushed)
-        let moveToPoint = moveTo(nodeToMove, clickPoint)
+        let firstCornerMove = moveTo(nodeToMove, nodeToMove.position, cornerPointPushed)
+        let moveToPoint = moveTo(nodeToMove, cornerSide.0, clickPoint)
         let completionBlock = SKAction.runBlock(
             {nodeToMove.removeActionForKey("repeatAction")
                 nodeToMove.texture = getStillTexture(nodeToMove)
