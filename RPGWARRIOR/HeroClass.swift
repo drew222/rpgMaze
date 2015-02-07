@@ -44,7 +44,7 @@ class HeroClass: SKSpriteNode {
         //clicked on wizard node, move infront of instead of to the position
         if (aWizard.containsPoint(position)){
             self.moveTo(infrontOf(aWizard, self.position), clickedEnemy: true, goingAround: false)
-            self.runAction(getAttackMove(self, aWizard, self.isAttacking))
+            self.runAction(getAttackMove(self, aWizard, self.isAttacking), withKey: "runAction")
             return true
         }else{
             //check if any point generated is in the wizard
@@ -60,7 +60,7 @@ class HeroClass: SKSpriteNode {
                     //}else{
                     //    self.moveTo(cornerPointPushed, clickedEnemy: false, goingAround: false)
                     //}
-                    self.runAction(getAroundMove(self, position, aWizard))
+                    self.runAction(getAroundMove(self, position, aWizard), withKey: "runAction")
                     //if (cornerSide.1 == false){
                     //    self.moveTo(position)
                     //}else{
@@ -73,7 +73,7 @@ class HeroClass: SKSpriteNode {
             }
         }
         //self.moveTo(position, clickedEnemy: false, goingAround: false)
-        self.runAction(getSimpleMove(self, position))
+        self.runAction(getSimpleMove(self, position), withKey: "runAction")
         return true
     }
     
