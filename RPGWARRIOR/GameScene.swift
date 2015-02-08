@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-import AVFoundation
+//import AVFoundation
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -30,7 +30,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
         //ourHero.constraints = [distanceConstraint]
-        let background = SKSpriteNode(imageNamed: "valgrind_desert_forest.png")
+        let background = SKSpriteNode(imageNamed: "valgrind_desert_forest1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         background.zPosition = -1
