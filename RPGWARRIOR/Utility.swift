@@ -209,6 +209,9 @@ func getStillTexture(myNode: SKSpriteNode)->SKTexture{
 }
 
 func moveTo(nodeToMove: SKSpriteNode, startPosition: CGPoint, position: CGPoint)-> SKAction{
+    if distanceBetween(startPosition, position) < 5 {
+        return SKAction()
+    }
     let angle = angleFromPoints(startPosition, position)
     var amountToTurn = CGFloat(angle) - getNodeAngle(nodeToMove)
     if (amountToTurn > pi){
@@ -219,7 +222,7 @@ func moveTo(nodeToMove: SKSpriteNode, startPosition: CGPoint, position: CGPoint)
     setAngle(nodeToMove, angle)
     let rotateAction = SKAction.rotateByAngle(CGFloat(amountToTurn), duration: 0.2)
     //start new running animation if not already running
-    if (nodeToMove.hasActions() == false){
+    if (nodeToMove.actionForKey("repeatAction") == nil){
         nodeToMove.runAction(getMoveAnimations(nodeToMove), withKey: "repeatAction")
     }
     if (angle > -1){
@@ -287,19 +290,22 @@ func getAroundMove(nodeToMove: SKSpriteNode, clickPoint: CGPoint, nodeToGoAround
         let secondCornerPushed = pushPointOut(nodeToGoAround, cornerSide.2, nodeToMove)
         let secondCornerMove = moveTo(nodeToMove, cornerSide.0, secondCornerPushed)
         let moveToPoint = moveTo(nodeToMove,cornerSide.2, clickPoint)
-        let completionBlock = SKAction.runBlock(
-            {nodeToMove.removeActionForKey("repeatAction")
-                nodeToMove.texture = getStillTexture(nodeToMove)
+        let completionBlock2 = SKAction.runBlock(
+            {nodeToMove.runAction(moveTo(nodeToMove,cornerSide.2, clickPoint), completion:{nodeToMove.removeActionForKey("repeatAction")
+                nodeToMove.texture = getStillTexture(nodeToMove)})
         })
-        sequence = SKAction.sequence([firstCornerMove, secondCornerMove, moveToPoint, completionBlock])
+        let completionBlock1 = SKAction.runBlock(
+            {nodeToMove.runAction(moveTo(nodeToMove, cornerSide.0, secondCornerPushed), completion:{nodeToMove.runAction(completionBlock2)})
+        })
+        sequence = SKAction.sequence([firstCornerMove, completionBlock1])
     }else{
         let firstCornerMove = moveTo(nodeToMove, nodeToMove.position, cornerPointPushed)
-        let moveToPoint = moveTo(nodeToMove, cornerSide.0, clickPoint)
+        //let moveToPoint = moveTo(nodeToMove, cornerSide.0, clickPoint)
         let completionBlock = SKAction.runBlock(
-            {nodeToMove.removeActionForKey("repeatAction")
-                nodeToMove.texture = getStillTexture(nodeToMove)
+            {nodeToMove.runAction(moveTo(nodeToMove, cornerSide.0, clickPoint), completion: {nodeToMove.removeActionForKey("repeatAction")
+                nodeToMove.texture = getStillTexture(nodeToMove)})
         })
-        sequence = SKAction.sequence([firstCornerMove, moveToPoint, completionBlock])
+        sequence = SKAction.sequence([firstCornerMove, completionBlock])
     }
     return sequence!
 }
