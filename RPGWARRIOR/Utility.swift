@@ -291,11 +291,16 @@ func getAroundMove(nodeToMove: SKSpriteNode, clickPoint: CGPoint, nodeToGoAround
         let secondCornerMove = moveTo(nodeToMove, cornerSide.0, secondCornerPushed)
         let moveToPoint = moveTo(nodeToMove,cornerSide.2, clickPoint)
         let completionBlock2 = SKAction.runBlock(
-            {nodeToMove.runAction(moveTo(nodeToMove,cornerSide.2, clickPoint), completion:{nodeToMove.removeActionForKey("repeatAction")
+            {let runAction = moveTo(nodeToMove,cornerSide.2, clickPoint)
+                let innerComplete = SKAction.runBlock({nodeToMove.removeActionForKey("repeatAction")
                 nodeToMove.texture = getStillTexture(nodeToMove)})
+                nodeToMove.runAction(SKAction.sequence([runAction, innerComplete]), withKey: "runAction")
+
         })
         let completionBlock1 = SKAction.runBlock(
-            {nodeToMove.runAction(moveTo(nodeToMove, cornerSide.0, secondCornerPushed), completion:{nodeToMove.runAction(completionBlock2)})
+            {let runAction = moveTo(nodeToMove, cornerSide.0, secondCornerPushed)
+                let innerComplete = SKAction.runBlock({nodeToMove.runAction(completionBlock2)})
+                nodeToMove.runAction(SKAction.sequence([runAction, innerComplete]), withKey: "runAction")
         })
         sequence = SKAction.sequence([firstCornerMove, completionBlock1])
     }else{
