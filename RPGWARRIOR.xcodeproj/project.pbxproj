@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< Updated upstream
 		DC1F57C11A88087500B5027B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27114F1A86A09D00986D2E /* AppDelegate.swift */; };
 		DC1F57EA1A88169800B5027B /* projectile_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1F57C81A88169800B5027B /* projectile_1@2x.png */; };
 		DC1F57EB1A88169800B5027B /* projectile_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1F57C91A88169800B5027B /* projectile_2@2x.png */; };
@@ -51,7 +50,7 @@
 		DC1F581B1A88735300B5027B /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1F58191A88735300B5027B /* spark.png */; };
 =======
 		2F8682761A86D5AF00F72659 /* rpg5.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2F8682751A86D5AF00F72659 /* rpg5.atlas */; };
->>>>>>> Stashed changes
+
 		DC2711231A85E11900986D2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC2711211A85E11900986D2E /* Main.storyboard */; };
 		DC2711251A85E11900986D2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC2711241A85E11900986D2E /* Images.xcassets */; };
 		DC2711281A85E11900986D2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC2711261A85E11900986D2E /* LaunchScreen.xib */; };
