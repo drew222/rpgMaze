@@ -5,7 +5,11 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< Updated upstream
 	<string>3F9BB673-B3DA-4A92-8907-BA137FDC5092</string>
+=======
+	<string>9D04D0D3-A9C9-4107-84B5-BB4EA8EAD6EB</string>
+>>>>>>> Stashed changes
 	<key>IDESourceControlProjectName</key>
 	<string>RPGWARRIOR</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -34,7 +38,11 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>EFF80B3A31091BAB568D3E50AEDA8A01FEFE1149</string>
 			<key>IDESourceControlWCCName</key>
+<<<<<<< Updated upstream
 			<string>RPGWARRIOR</string>
+=======
+			<string>rpgMaze</string>
+>>>>>>> Stashed changes
 		</dict>
 	</array>
 </dict>
