@@ -91,11 +91,20 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate {
         self.lastUpdatesTime = currentTime
         
         //check for win condition
-        if (theBomber!.isDead == true || theHero!.life == 0) && levelOver == false{
+        if (theBomber!.isDead || theHero!.life == 0) && !levelOver{
             //parent of self is viewcontroller, has view, extends sknode
             let menuScene = MainMenuScene(size: self.frame.size)
-            let skTransition = SKTransition.fadeWithDuration(1.0)
+            let skTransition = SKTransition.fadeWithDuration(5.0)
             levelOver = true
+            if (theHero!.life == 0){
+                let deathNode = SKLabelNode.init(text: "You died, try again!")
+                deathNode.position = CGPointMake(self.frame.midX, self.frame.midY)
+                self.addChild(deathNode)
+            }else if (theBomber!.isDead){
+                let winNode = SKLabelNode.init(text: "You win, congratulations!")
+                winNode.position = CGPointMake(self.frame.midX, self.frame.midY)
+                self.addChild(winNode)
+            }
             self.view?.presentScene(menuScene, transition: skTransition)
         }
     }

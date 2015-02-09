@@ -13,7 +13,7 @@ import SpriteKit
 class BomberClass: SKSpriteNode {
     var currentAngle: CGFloat?
     var isDead = false
-    var attackSpeed = 1
+    var attackSpeed = 0.8
     
     class func makeBomber(position: CGPoint) -> BomberClass{
         let bomber = BomberClass(imageNamed: "wizard1.png")
@@ -46,21 +46,21 @@ class BomberClass: SKSpriteNode {
         //generate random x and y within a range of the hero
         let xRange = abs(self.position.x - heroPosition.x)
         let yRange = abs(self.position.y - heroPosition.y)
-        let lowerXDiff = round(xRange * 0.65)
-        let lowerYDiff = round(yRange * 0.65)
-        let upperXDiff = round(xRange * 1.1)
-        let upperYDiff = round(yRange * 1.1)
+        let lowerXDiff = round(xRange * 0.45)
+        let lowerYDiff = round(yRange * 0.45)
+        let upperXDiff = round(xRange * 1)
+        let upperYDiff = round(yRange * 1)
         let xDiff = CGFloat(randomWithMin(Int(lowerXDiff), Int(upperXDiff)))
         let yDiff = CGFloat(randomWithMin(Int(lowerYDiff), Int(upperYDiff)))
         var xPosition: CGFloat?
         var yPosition: CGFloat?
         if self.position.x > heroPosition.x{
-            xPosition = CGFloat(heroPosition.x + xDiff)
+            xPosition = CGFloat(self.position.x - xDiff)
         }else{
             xPosition = CGFloat(self.position.x + xDiff)
         }
         if self.position.y > heroPosition.y{
-            yPosition = CGFloat(heroPosition.y + yDiff)
+            yPosition = CGFloat(self.position.y - yDiff)
         }else{
             yPosition = CGFloat(self.position.y + yDiff)
         }
