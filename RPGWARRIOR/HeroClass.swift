@@ -39,41 +39,45 @@ class HeroClass: SKSpriteNode {
     }
     
     func moveHelper(position: CGPoint) -> Void{
-        let aWizard = self.parent!.childNodeWithName("wizard") as WizardClass
+        if let aWizard = self.parent!.childNodeWithName("wizard") as? WizardClass{
         var myPos = position
         //clicked on wizard node, move infront of instead of to the position
             //check if any point generated is in the wizard
             let manyPoints = generatePointsOnLine(self.position, position)
             for onePoint in manyPoints{
                 if (aWizard.containsPoint(onePoint) && !aWizard.containsPoint(position)){
-                    //println("**Running Thru Wiz**")
-                    //need to walk around
-                    //let cornerSide = getGoAroundCorner(aWizard, self.position, position)
-                    //let cornerPointPushed = pushPointOut(aWizard, corner: cornerSide.0)
-                    //if (cornerSide.1){
-                    //    self.moveTo(cornerPointPushed, clickedEnemy: false, goingAround: true)
-                    //}else{
-                    //    self.moveTo(cornerPointPushed, clickedEnemy: false, goingAround: false)
-                    //}
                     self.runAction(getAroundMove(self, position, aWizard), withKey: "runAction")
-                    //if (cornerSide.1 == false){
-                    //    self.moveTo(position)
-                    //}else{
-                    //    self.moveTo(cornerSide.2)
-                    //    self.moveTo(position)
-                    //}
-                    
                     return
                 }
             }
             if (aWizard.containsPoint(position)){
-                self.moveTo(infrontOf(aWizard, self.position), clickedEnemy: true, goingAround: false)
+                moveTo(self, self.position, infrontOf(aWizard, self.position))
                 self.runAction(getAttackMove(self, aWizard, self.isAttacking), withKey: "runAction")
                 return
             }
         //self.moveTo(position, clickedEnemy: false, goingAround: false)
         self.runAction(getSimpleMove(self, position), withKey: "runAction")
         return
+        }else if let aBomber = self.parent!.childNodeWithName("bomber") as? BomberClass{
+            var myPos = position
+            //clicked on wizard node, move infront of instead of to the position
+            //check if any point generated is in the wizard
+            let manyPoints = generatePointsOnLine(self.position, position)
+            for onePoint in manyPoints{
+                if (aBomber.containsPoint(onePoint) && !aBomber.containsPoint(position)){
+                    self.runAction(getAroundMove(self, position, aBomber), withKey: "runAction")
+                    return
+                }
+            }
+            if (aBomber.containsPoint(position)){
+                moveTo(self, self.position, infrontOf(aBomber, self.position))
+                self.runAction(getAttackMove(self, aBomber, self.isAttacking), withKey: "runAction")
+                return
+            }
+            //self.moveTo(position, clickedEnemy: false, goingAround: false)
+            self.runAction(getSimpleMove(self, position), withKey: "runAction")
+            return
+        }
     }
     
     
@@ -111,7 +115,7 @@ class HeroClass: SKSpriteNode {
             SKTexture(imageNamed: "walkman6.png"),
             SKTexture(imageNamed: "walkman1.png")]
     }
-    
+    /*
     func moveTo(position: CGPoint, clickedEnemy: Bool, goingAround: Bool) -> Bool{
         let aWizard = self.parent!.childNodeWithName("wizard") as WizardClass
         //if clicked on the wizard, change position to infront of him
@@ -187,6 +191,7 @@ class HeroClass: SKSpriteNode {
         self.runAction(sequence!, withKey: "runAction")
         return true
     }
+*/
     
     
     
@@ -202,8 +207,12 @@ class HeroClass: SKSpriteNode {
     
     func attack(){
         
-        let theWizard = self.parent!.childNodeWithName("wizard") as WizardClass
-        theWizard.isDead = true
-        println("THE WIZARD HAS DIED!")
+        if let theWizard = self.parent!.childNodeWithName("wizard") as? WizardClass{
+            theWizard.isDead = true
+            println("THE WIZARD HAS DIED!")
+        }else if let theBomber = self.parent!.childNodeWithName("bomber") as? BomberClass{
+            theBomber.isDead = true
+            println("THE BOMBER HAS DIED!")
+        }
     }
 }

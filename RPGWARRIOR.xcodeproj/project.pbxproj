@@ -43,6 +43,11 @@
 		DC1F580A1A88169800B5027B /* wizard8.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1F57E81A88169800B5027B /* wizard8.png */; };
 		DC1F580B1A88169800B5027B /* wizard9.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1F57E91A88169800B5027B /* wizard9.png */; };
 		DC1F580D1A882D3200B5027B /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F580C1A882D3200B5027B /* MainMenuScene.swift */; };
+		DC1F580F1A886BB100B5027B /* Level2Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F580E1A886BB100B5027B /* Level2Scene.swift */; };
+		DC1F58111A886EFC00B5027B /* BomberClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F58101A886EFC00B5027B /* BomberClass.swift */; };
+		DC1F58131A88703500B5027B /* Bomb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F58121A88703500B5027B /* Bomb.swift */; };
+		DC1F581A1A88735300B5027B /* LightParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC1F58181A88735300B5027B /* LightParticle.sks */; };
+		DC1F581B1A88735300B5027B /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1F58191A88735300B5027B /* spark.png */; };
 		DC2711231A85E11900986D2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC2711211A85E11900986D2E /* Main.storyboard */; };
 		DC2711251A85E11900986D2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC2711241A85E11900986D2E /* Images.xcassets */; };
 		DC2711281A85E11900986D2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC2711261A85E11900986D2E /* LaunchScreen.xib */; };
@@ -101,6 +106,11 @@
 		DC1F57E81A88169800B5027B /* wizard8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard8.png; sourceTree = "<group>"; };
 		DC1F57E91A88169800B5027B /* wizard9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard9.png; sourceTree = "<group>"; };
 		DC1F580C1A882D3200B5027B /* MainMenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
+		DC1F580E1A886BB100B5027B /* Level2Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level2Scene.swift; sourceTree = "<group>"; };
+		DC1F58101A886EFC00B5027B /* BomberClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BomberClass.swift; sourceTree = "<group>"; };
+		DC1F58121A88703500B5027B /* Bomb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bomb.swift; sourceTree = "<group>"; };
+		DC1F58181A88735300B5027B /* LightParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LightParticle.sks; sourceTree = "<group>"; };
+		DC1F58191A88735300B5027B /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		DC2711141A85E11900986D2E /* RPGWARRIOR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPGWARRIOR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC2711181A85E11900986D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC2711221A85E11900986D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -200,17 +210,22 @@
 			children = (
 				DC1F57C71A88169800B5027B /* Rpg7 */,
 				DC2711491A85E26C00986D2E /* Fireball.swift */,
+				DC1F58121A88703500B5027B /* Bomb.swift */,
 				DC1F580C1A882D3200B5027B /* MainMenuScene.swift */,
+				DC1F58101A886EFC00B5027B /* BomberClass.swift */,
 				DC27114F1A86A09D00986D2E /* AppDelegate.swift */,
 				DC2711471A85E26100986D2E /* GameViewController.swift */,
 				DC2711451A85E1F500986D2E /* HeroClass.swift */,
 				DC2711411A85E1D300986D2E /* Utility.swift */,
 				DC2711431A85E1DE00986D2E /* WizardClass.swift */,
 				DC27113D1A85E1AB00986D2E /* GameScene.swift */,
+				DC1F580E1A886BB100B5027B /* Level2Scene.swift */,
 				DC2711211A85E11900986D2E /* Main.storyboard */,
 				DC2711241A85E11900986D2E /* Images.xcassets */,
 				DC2711261A85E11900986D2E /* LaunchScreen.xib */,
 				DC2711171A85E11900986D2E /* Supporting Files */,
+				DC1F58181A88735300B5027B /* LightParticle.sks */,
+				DC1F58191A88735300B5027B /* spark.png */,
 			);
 			path = RPGWARRIOR;
 			sourceTree = "<group>";
@@ -342,6 +357,7 @@
 				DC1F57EE1A88169800B5027B /* walkman1.png in Resources */,
 				DC1F58001A88169800B5027B /* wizard20.png in Resources */,
 				DC1F57F81A88169800B5027B /* wizard13.png in Resources */,
+				DC1F581A1A88735300B5027B /* LightParticle.sks in Resources */,
 				DC1F57EF1A88169800B5027B /* walkman2.png in Resources */,
 				DC1F58011A88169800B5027B /* wizard21.png in Resources */,
 				DC2711251A85E11900986D2E /* Images.xcassets in Resources */,
@@ -350,6 +366,7 @@
 				DC1F57F21A88169800B5027B /* walkman5.png in Resources */,
 				DC1F57EB1A88169800B5027B /* projectile_2@2x.png in Resources */,
 				DC2711231A85E11900986D2E /* Main.storyboard in Resources */,
+				DC1F581B1A88735300B5027B /* spark.png in Resources */,
 				DC1F57FB1A88169800B5027B /* wizard16.png in Resources */,
 				DC1F58081A88169800B5027B /* wizard6.png in Resources */,
 				DC1F58091A88169800B5027B /* wizard7.png in Resources */,
@@ -377,9 +394,12 @@
 				DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */,
 				DC2711461A85E1F500986D2E /* HeroClass.swift in Sources */,
 				DC2711421A85E1D300986D2E /* Utility.swift in Sources */,
+				DC1F58111A886EFC00B5027B /* BomberClass.swift in Sources */,
+				DC1F580F1A886BB100B5027B /* Level2Scene.swift in Sources */,
 				DC27113E1A85E1AB00986D2E /* GameScene.swift in Sources */,
 				DC1F57C11A88087500B5027B /* AppDelegate.swift in Sources */,
 				DC2711441A85E1DE00986D2E /* WizardClass.swift in Sources */,
+				DC1F58131A88703500B5027B /* Bomb.swift in Sources */,
 				DC1F580D1A882D3200B5027B /* MainMenuScene.swift in Sources */,
 				DC2711481A85E26100986D2E /* GameViewController.swift in Sources */,
 			);

@@ -22,7 +22,12 @@ enum CollisionBitMasks: UInt32{
 }
 
 enum nodeSpeeds: Int{
-    case heroSpeed = 125
+    case heroSpeed = 160
+}
+
+func randomWithMin(min: Int, max: Int) -> NSInteger{
+    let myNum = random() % (max - min) + min as NSInteger
+    return myNum
 }
 
 func distanceBetween(point1: CGPoint, point2: CGPoint)-> CGFloat{
