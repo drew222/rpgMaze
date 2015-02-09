@@ -38,24 +38,31 @@ class Bomb: SKSpriteNode {
             SKTexture(imageNamed: "projectile_3")]
         let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
         let repeatAction = SKAction.repeatActionForever(animation)
-        self.runAction(repeatAction)
+        self.runAction(repeatAction, withKey: "fire")
     }
     
     func explode(position: CGPoint){
-        let waitAction = SKAction.waitForDuration(NSTimeInterval(3))
+        let waitAction = SKAction.waitForDuration(NSTimeInterval(1))
         var liteAttack: SKEmitterNode?
         let explodeCode = SKAction.runBlock({let litePath = NSBundle.mainBundle().pathForResource("LightParticle", ofType: "sks")
             liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as SKEmitterNode)
             liteAttack!.position = position
-            self.parent!.addChild(liteAttack!)})
+            liteAttack!.setScale(0.5)
+            self.parent!.addChild(liteAttack!)
+            self.removeActionForKey("fire")
+            self.texture = nil})
         
-        let removeBlock = SKAction.runBlock({liteAttack!.removeFromParent()})
-        let sequence = SKAction.sequence([waitAction, explodeCode, SKAction.waitForDuration(1), removeBlock])
-        self.runAction(sequence)
-        if distanceBetween(self.parent!.childNodeWithName("hero")!.position, self.position) < 20{
+        let removeBlock = SKAction.runBlock({liteAttack!.removeFromParent()
+                                             self.removeFromParent()})
+        let damageBlock = SKAction.runBlock({
+            let distanceFromBomb = distanceBetween(self.parent!.childNodeWithName("hero")!.position, self.position)
+            if distanceFromBomb < 60{
             let theHero = self.parent!.childNodeWithName("hero")! as HeroClass
-            theHero.takeDamage(1.0)
-        }
+                println("distance from bomb = \(distanceFromBomb)")
+                theHero.takeDamage(3.0)
+            }})
+        let sequence = SKAction.sequence([waitAction, damageBlock, explodeCode, SKAction.waitForDuration(0.5), removeBlock])
+        self.runAction(sequence)
         
     }
 }

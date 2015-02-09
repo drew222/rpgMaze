@@ -13,7 +13,7 @@ import SpriteKit
 class BomberClass: SKSpriteNode {
     var currentAngle: CGFloat?
     var isDead = false
-    var attackSpeed = 10
+    var attackSpeed = 1
     
     class func makeBomber(position: CGPoint) -> BomberClass{
         let bomber = BomberClass(imageNamed: "wizard1.png")
@@ -41,12 +41,13 @@ class BomberClass: SKSpriteNode {
         self.physicsBody?.contactTestBitMask = CollisionBitMasks.collisionCategoryHero.rawValue
     }
     
+    //fix this bad code
     func getBombLocation(heroPosition: CGPoint)->CGPoint{
         //generate random x and y within a range of the hero
         let xRange = abs(self.position.x - heroPosition.x)
         let yRange = abs(self.position.y - heroPosition.y)
-        let lowerXDiff = round(xRange * 0.35)
-        let lowerYDiff = round(yRange * 0.35)
+        let lowerXDiff = round(xRange * 0.65)
+        let lowerYDiff = round(yRange * 0.65)
         let upperXDiff = round(xRange * 1.1)
         let upperYDiff = round(yRange * 1.1)
         let xDiff = CGFloat(randomWithMin(Int(lowerXDiff), Int(upperXDiff)))
