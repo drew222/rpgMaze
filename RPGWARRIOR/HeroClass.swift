@@ -38,19 +38,14 @@ class HeroClass: SKSpriteNode {
         self.physicsBody?.contactTestBitMask = CollisionBitMasks.collisionCategoryProjectile.rawValue
     }
     
-    func moveHelper(position: CGPoint) -> Bool{
+    func moveHelper(position: CGPoint) -> Void{
         let aWizard = self.parent!.childNodeWithName("wizard") as WizardClass
         var myPos = position
         //clicked on wizard node, move infront of instead of to the position
-        if (aWizard.containsPoint(position)){
-            self.moveTo(infrontOf(aWizard, self.position), clickedEnemy: true, goingAround: false)
-            self.runAction(getAttackMove(self, aWizard, self.isAttacking), withKey: "runAction")
-            return true
-        }else{
             //check if any point generated is in the wizard
             let manyPoints = generatePointsOnLine(self.position, position)
             for onePoint in manyPoints{
-                if (aWizard.containsPoint(onePoint)){
+                if (aWizard.containsPoint(onePoint) && !aWizard.containsPoint(position)){
                     //println("**Running Thru Wiz**")
                     //need to walk around
                     //let cornerSide = getGoAroundCorner(aWizard, self.position, position)
@@ -68,13 +63,17 @@ class HeroClass: SKSpriteNode {
                     //    self.moveTo(position)
                     //}
                     
-                    return true
+                    return
                 }
             }
-        }
+            if (aWizard.containsPoint(position)){
+                self.moveTo(infrontOf(aWizard, self.position), clickedEnemy: true, goingAround: false)
+                self.runAction(getAttackMove(self, aWizard, self.isAttacking), withKey: "runAction")
+                return
+            }
         //self.moveTo(position, clickedEnemy: false, goingAround: false)
         self.runAction(getSimpleMove(self, position), withKey: "runAction")
-        return true
+        return
     }
     
     

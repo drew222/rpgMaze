@@ -57,7 +57,7 @@ func generatePointsOnLine(point1: CGPoint, point2: CGPoint) -> [CGPoint]{
     let myLine = getLine(point1, point2)
     let m = myLine.0
     let b = myLine.1
-    println("Line of generated Points: m = \(m), b = \(b)")
+    //println("Line of generated Points: m = \(m), b = \(b)")
     //loop through x values, appending final points
     var points: [CGPoint] = []
     //println("333")
@@ -288,13 +288,14 @@ func getAroundMove(nodeToMove: SKSpriteNode, clickPoint: CGPoint, nodeToGoAround
         //need to move to another corner
         let firstCornerMove = moveTo(nodeToMove, nodeToMove.position, cornerPointPushed)
         let secondCornerPushed = pushPointOut(nodeToGoAround, cornerSide.2, nodeToMove)
-        let secondCornerMove = moveTo(nodeToMove, cornerSide.0, secondCornerPushed)
-        let moveToPoint = moveTo(nodeToMove,cornerSide.2, clickPoint)
+        //let secondCornerMove = moveTo(nodeToMove, cornerSide.0, secondCornerPushed)
+        //let moveToPoint = moveTo(nodeToMove,cornerSide.2, clickPoint)
         let completionBlock2 = SKAction.runBlock(
-            {let runAction = moveTo(nodeToMove,cornerSide.2, clickPoint)
-                let innerComplete = SKAction.runBlock({nodeToMove.removeActionForKey("repeatAction")
-                nodeToMove.texture = getStillTexture(nodeToMove)})
-                nodeToMove.runAction(SKAction.sequence([runAction, innerComplete]), withKey: "runAction")
+            {(nodeToMove as HeroClass).moveHelper(clickPoint)
+                //let runAction = moveTo(nodeToMove,cornerSide.2, clickPoint)
+                //let innerComplete = SKAction.runBlock({nodeToMove.removeActionForKey("repeatAction")
+                //nodeToMove.texture = getStillTexture(nodeToMove)})
+                //nodeToMove.runAction(SKAction.sequence([runAction, innerComplete]), withKey: "runAction")
 
         })
         let completionBlock1 = SKAction.runBlock(
@@ -307,8 +308,9 @@ func getAroundMove(nodeToMove: SKSpriteNode, clickPoint: CGPoint, nodeToGoAround
         let firstCornerMove = moveTo(nodeToMove, nodeToMove.position, cornerPointPushed)
         //let moveToPoint = moveTo(nodeToMove, cornerSide.0, clickPoint)
         let completionBlock = SKAction.runBlock(
-            {nodeToMove.runAction(moveTo(nodeToMove, cornerSide.0, clickPoint), completion: {nodeToMove.removeActionForKey("repeatAction")
-                nodeToMove.texture = getStillTexture(nodeToMove)})
+            {(nodeToMove as HeroClass).moveHelper(clickPoint)
+                //nodeToMove.runAction(moveTo(nodeToMove, cornerSide.0, clickPoint), completion: {nodeToMove.removeActionForKey("repeatAction")
+                //nodeToMove.texture = getStillTexture(nodeToMove)})
         })
         sequence = SKAction.sequence([firstCornerMove, completionBlock])
     }

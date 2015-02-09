@@ -16,17 +16,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
     var lastFireball: Double = 0.0
+    var levelOver = false
     
     let wizardAttackSpeed = 1.0
     
+    var theWizard: WizardClass?
+    var theHero: HeroClass?
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        let ourHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.1))
-        ourHero.setScale(0.6)
-        self.addChild(ourHero)
-        let aWizard = WizardClass.makeWizard(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
-        aWizard.setScale(0.3)
-        self.addChild(aWizard)
+        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.1))
+        theHero!.setScale(0.6)
+        self.addChild(theHero!)
+        theWizard = WizardClass.makeWizard(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
+        theWizard!.setScale(0.3)
+        self.addChild(theWizard!)
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
         //ourHero.constraints = [distanceConstraint]
@@ -91,10 +95,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.totalGameTime += currentTime - self.lastUpdatesTime
         if currentTime - lastFireball  > wizardAttackSpeed{
             self.lastFireball = currentTime
-            let wizard  = childNodeWithName("wizard") as WizardClass
-            wizard.shootFireball()
+            if let wizard  = childNodeWithName("wizard") as? WizardClass{
+                wizard.shootFireball()
+            }
         }
         
         self.lastUpdatesTime = currentTime
+        
+        //check for win condition
+        if (theWizard!.isDead == true || theHero!.life == 0) && levelOver == false{
+            //parent of self is viewcontroller, has view, extends sknode
+            let menuScene = MainMenuScene(size: self.frame.size)
+            let skTransition = SKTransition.fadeWithDuration(1.0)
+            levelOver = true
+            self.view?.presentScene(menuScene, transition: skTransition)
+        }
     }
 }

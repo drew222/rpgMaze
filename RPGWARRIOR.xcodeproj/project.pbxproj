@@ -42,6 +42,7 @@
 		DC1F58091A88169800B5027B /* wizard7.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1F57E71A88169800B5027B /* wizard7.png */; };
 		DC1F580A1A88169800B5027B /* wizard8.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1F57E81A88169800B5027B /* wizard8.png */; };
 		DC1F580B1A88169800B5027B /* wizard9.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1F57E91A88169800B5027B /* wizard9.png */; };
+		DC1F580D1A882D3200B5027B /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F580C1A882D3200B5027B /* MainMenuScene.swift */; };
 		DC2711231A85E11900986D2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC2711211A85E11900986D2E /* Main.storyboard */; };
 		DC2711251A85E11900986D2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC2711241A85E11900986D2E /* Images.xcassets */; };
 		DC2711281A85E11900986D2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC2711261A85E11900986D2E /* LaunchScreen.xib */; };
@@ -99,6 +100,7 @@
 		DC1F57E71A88169800B5027B /* wizard7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard7.png; sourceTree = "<group>"; };
 		DC1F57E81A88169800B5027B /* wizard8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard8.png; sourceTree = "<group>"; };
 		DC1F57E91A88169800B5027B /* wizard9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard9.png; sourceTree = "<group>"; };
+		DC1F580C1A882D3200B5027B /* MainMenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
 		DC2711141A85E11900986D2E /* RPGWARRIOR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPGWARRIOR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC2711181A85E11900986D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC2711221A85E11900986D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				DC1F57C71A88169800B5027B /* Rpg7 */,
 				DC2711491A85E26C00986D2E /* Fireball.swift */,
+				DC1F580C1A882D3200B5027B /* MainMenuScene.swift */,
 				DC27114F1A86A09D00986D2E /* AppDelegate.swift */,
 				DC2711471A85E26100986D2E /* GameViewController.swift */,
 				DC2711451A85E1F500986D2E /* HeroClass.swift */,
@@ -377,6 +380,7 @@
 				DC27113E1A85E1AB00986D2E /* GameScene.swift in Sources */,
 				DC1F57C11A88087500B5027B /* AppDelegate.swift in Sources */,
 				DC2711441A85E1DE00986D2E /* WizardClass.swift in Sources */,
+				DC1F580D1A882D3200B5027B /* MainMenuScene.swift in Sources */,
 				DC2711481A85E26100986D2E /* GameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
