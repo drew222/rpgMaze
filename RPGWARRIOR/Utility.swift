@@ -21,6 +21,13 @@ enum CollisionBitMasks: UInt32{
     case collisionCategoryGround = 8
 }
 
+
+enum ItemType{
+    case body
+    case weapon
+    case feet
+}
+
 enum nodeSpeeds: Int{
     case heroSpeed = 160
 }

@@ -13,6 +13,7 @@ import SpriteKit
 class MainMenuScene: SKScene {
     var level1Node: SKLabelNode?
     var level2Node: SKLabelNode?
+    var inventory: SKLabelNode?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -26,6 +27,11 @@ class MainMenuScene: SKScene {
         level2Node!.position = CGPointMake(self.frame.midX, self.frame.midY - 60)
         level2Node!.name = "level2"
         self.addChild(level2Node!)
+        
+        inventory = SKLabelNode.init(text: "Inventory")
+        inventory!.position = CGPointMake(self.frame.maxX - 60, self.frame.minY + 40)
+        inventory!.name = "inventory"
+        self.addChild(inventory!)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -38,6 +44,10 @@ class MainMenuScene: SKScene {
                 let level2 = Level2Scene(size: self.frame.size)
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(level2, transition: skTransition)
+            }else if inventory!.containsPoint(touch.locationInNode(self)){
+                let inv = Inventory(size: self.frame.size)
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(inv, transition: skTransition)
             }
         }
     }

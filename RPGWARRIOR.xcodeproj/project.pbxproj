@@ -58,6 +58,9 @@
 		DC2711461A85E1F500986D2E /* HeroClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2711451A85E1F500986D2E /* HeroClass.swift */; };
 		DC2711481A85E26100986D2E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2711471A85E26100986D2E /* GameViewController.swift */; };
 		DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2711491A85E26C00986D2E /* Fireball.swift */; };
+		DCC4E2FC1A893356000E5E89 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E2FB1A893356000E5E89 /* Inventory.swift */; };
+		DCC4E2FE1A893880000E5E89 /* ItemSpaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E2FD1A893880000E5E89 /* ItemSpaceNode.swift */; };
+		DCC4E3001A89396C000E5E89 /* ItemClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E2FF1A89396C000E5E89 /* ItemClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +129,9 @@
 		DC2711471A85E26100986D2E /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		DC2711491A85E26C00986D2E /* Fireball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fireball.swift; sourceTree = "<group>"; };
 		DC27114F1A86A09D00986D2E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DCC4E2FB1A893356000E5E89 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
+		DCC4E2FD1A893880000E5E89 /* ItemSpaceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSpaceNode.swift; sourceTree = "<group>"; };
+		DCC4E2FF1A89396C000E5E89 /* ItemClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,9 @@
 				DC1F57C71A88169800B5027B /* Rpg7 */,
 				DC2711491A85E26C00986D2E /* Fireball.swift */,
 				DC1F58121A88703500B5027B /* Bomb.swift */,
+				DCC4E2FF1A89396C000E5E89 /* ItemClass.swift */,
+				DCC4E2FD1A893880000E5E89 /* ItemSpaceNode.swift */,
+				DCC4E2FB1A893356000E5E89 /* Inventory.swift */,
 				DC1F580C1A882D3200B5027B /* MainMenuScene.swift */,
 				DC1F58101A886EFC00B5027B /* BomberClass.swift */,
 				DC27114F1A86A09D00986D2E /* AppDelegate.swift */,
@@ -391,11 +400,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC4E2FC1A893356000E5E89 /* Inventory.swift in Sources */,
 				DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */,
 				DC2711461A85E1F500986D2E /* HeroClass.swift in Sources */,
 				DC2711421A85E1D300986D2E /* Utility.swift in Sources */,
 				DC1F58111A886EFC00B5027B /* BomberClass.swift in Sources */,
+				DCC4E2FE1A893880000E5E89 /* ItemSpaceNode.swift in Sources */,
 				DC1F580F1A886BB100B5027B /* Level2Scene.swift in Sources */,
+				DCC4E3001A89396C000E5E89 /* ItemClass.swift in Sources */,
 				DC27113E1A85E1AB00986D2E /* GameScene.swift in Sources */,
 				DC1F57C11A88087500B5027B /* AppDelegate.swift in Sources */,
 				DC2711441A85E1DE00986D2E /* WizardClass.swift in Sources */,

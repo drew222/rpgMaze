@@ -14,6 +14,7 @@ class HeroClass: SKSpriteNode {
     var currentAngle: CGFloat?
     var life: Double?
     var isAttacking = false
+    var damage: CGFloat?
     let nodeSpeed = 125
     
     class func makeHero(position: CGPoint) -> HeroClass{
