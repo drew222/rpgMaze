@@ -15,7 +15,7 @@ class Inventory: SKScene {
     var backPack: SKSpriteNode?
     var itemSpaces: [ItemSpaceNode] = []
     var itemIndex = 0
-
+    
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
