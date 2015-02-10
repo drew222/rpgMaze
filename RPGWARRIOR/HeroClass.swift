@@ -40,7 +40,26 @@ class HeroClass: SKSpriteNode {
     }
     
     func moveHelper(position: CGPoint) -> Void{
-        if let aWizard = self.parent!.childNodeWithName("wizard") as? WizardClass{
+        if let item = self.parent!.childNodeWithName("item") as? ItemClass{
+            var myPos = position
+            //clicked on wizard node, move infront of instead of to the position
+            //check if any point generated is in the wizard
+            let manyPoints = generatePointsOnLine(self.position, position)
+            for onePoint in manyPoints{
+                if (item.containsPoint(onePoint) && !item.containsPoint(position)){
+                    self.runAction(getAroundMove(self, position, item), withKey: "runAction")
+                    return
+                }
+            }
+            if (item.containsPoint(position)){
+                //moveTo(self, self.position, infrontOf(item, self.position))
+                self.runAction(getAttackMove(self, item, self.isAttacking), withKey: "runAction")
+                return
+            }
+            //self.moveTo(position, clickedEnemy: false, goingAround: false)
+            self.runAction(getSimpleMove(self, position), withKey: "runAction")
+            
+        }else if let aWizard = self.parent!.childNodeWithName("wizard") as? WizardClass{
         var myPos = position
         //clicked on wizard node, move infront of instead of to the position
             //check if any point generated is in the wizard
@@ -52,7 +71,7 @@ class HeroClass: SKSpriteNode {
                 }
             }
             if (aWizard.containsPoint(position)){
-                moveTo(self, self.position, infrontOf(aWizard, self.position))
+                //moveTo(self, self.position, infrontOf(aWizard, self.position))
                 self.runAction(getAttackMove(self, aWizard, self.isAttacking), withKey: "runAction")
                 return
             }
@@ -71,7 +90,7 @@ class HeroClass: SKSpriteNode {
                 }
             }
             if (aBomber.containsPoint(position)){
-                moveTo(self, self.position, infrontOf(aBomber, self.position))
+                //moveTo(self, self.position, infrontOf(aBomber, self.position))
                 self.runAction(getAttackMove(self, aBomber, self.isAttacking), withKey: "runAction")
                 return
             }
@@ -81,6 +100,11 @@ class HeroClass: SKSpriteNode {
         }
     }
     
+    func pickupItem(){
+        println("picking up item!")
+        let theItem = self.parent?.childNodeWithName("item") as ItemClass
+        theItem.removeFromParent()
+    }
     
     //push point out from a node, based on heros shoulder
     func pushPointOut(theNode: SKSpriteNode, corner: CGPoint) -> CGPoint{
@@ -209,11 +233,11 @@ class HeroClass: SKSpriteNode {
     func attack(){
         
         if let theWizard = self.parent!.childNodeWithName("wizard") as? WizardClass{
-            theWizard.isDead = true
-            println("THE WIZARD HAS DIED!")
+            theWizard.takeDamage(1)
+            //println("THE WIZARD HAS DIED!")
         }else if let theBomber = self.parent!.childNodeWithName("bomber") as? BomberClass{
-            theBomber.isDead = true
-            println("THE BOMBER HAS DIED!")
+            theBomber.takeDamage(1)
+            //println("THE BOMBER HAS DIED!")
         }
     }
 }

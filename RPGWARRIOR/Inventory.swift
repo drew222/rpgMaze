@@ -14,7 +14,6 @@ class Inventory: SKScene {
     var menu: SKLabelNode?
     var backPack: SKSpriteNode?
     var itemSpaces: [ItemSpaceNode] = []
-    var itemIndex = 0
     
     
     override func didMoveToView(view: SKView) {
@@ -113,6 +112,15 @@ class Inventory: SKScene {
         feetSpace.zPosition = 1
         self.addChild(feetSpace)
         
+    }
+    
+    func addItem(itemName: String){
+        //loop through itemSpaces
+        for item in itemSpaces{
+            if (item.item == nil){
+                item.item = ItemClass.itemInSpace(item.position, size: item.frame.size, nameOfTexture: itemName)
+            }
+        }
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

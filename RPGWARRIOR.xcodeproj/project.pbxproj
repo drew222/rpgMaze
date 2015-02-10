@@ -61,6 +61,7 @@
 		DCC4E3021A89760E000E5E89 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3011A89760E000E5E89 /* Inventory.swift */; };
 		DCC4E3041A897671000E5E89 /* ItemSpaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */; };
 		DCC4E3061A8976AB000E5E89 /* ItemClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3051A8976AB000E5E89 /* ItemClass.swift */; };
+		DCC4E3081A898927000E5E89 /* noobSword.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC4E3071A898927000E5E89 /* noobSword.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		DCC4E3011A89760E000E5E89 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSpaceNode.swift; sourceTree = "<group>"; };
 		DCC4E3051A8976AB000E5E89 /* ItemClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemClass.swift; sourceTree = "<group>"; };
+		DCC4E3071A898927000E5E89 /* noobSword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noobSword.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		DC1F57C71A88169800B5027B /* Rpg7 */ = {
 			isa = PBXGroup;
 			children = (
+				DCC4E3071A898927000E5E89 /* noobSword.png */,
 				DC1F57C81A88169800B5027B /* projectile_1@2x.png */,
 				DC1F57C91A88169800B5027B /* projectile_2@2x.png */,
 				DC1F57CA1A88169800B5027B /* projectile_3@2x.png */,
@@ -381,6 +384,7 @@
 				DC1F58091A88169800B5027B /* wizard7.png in Resources */,
 				DC1F57F01A88169800B5027B /* walkman3.png in Resources */,
 				DC1F58071A88169800B5027B /* wizard5.png in Resources */,
+				DCC4E3081A898927000E5E89 /* noobSword.png in Resources */,
 				DC1F57F41A88169800B5027B /* wizard1.png in Resources */,
 				DC1F57F11A88169800B5027B /* walkman4.png in Resources */,
 			);

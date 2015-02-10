@@ -12,6 +12,7 @@ import SpriteKit
 
 class WizardClass: SKSpriteNode {
     var currentAngle: CGFloat?
+    var life = 1
     var isDead = false
     
     class func makeWizard(position: CGPoint) -> WizardClass{
@@ -51,5 +52,14 @@ class WizardClass: SKSpriteNode {
         let fireball = Fireball.fireballAtPosition(CGPointMake(self.position.x + 10, self.position.y + 17))
         self.parent!.addChild(fireball)
         fireball.moveTowardsPosition(shootAtPoint)
+    }
+    
+    func takeDamage(howMuch: Int){
+        self.life -= howMuch
+        if (self.life <= 0){
+            self.isDead = true
+            self.removeAllActions()
+            self.texture = nil
+        }
     }
 }

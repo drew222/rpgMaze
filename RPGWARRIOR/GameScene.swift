@@ -17,6 +17,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var lastUpdatesTime = 0.0
     var lastFireball: Double = 0.0
     var levelOver = false
+    let levelName = "level1"
     
     let wizardAttackSpeed = 1.0
     
@@ -102,10 +103,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //check for win condition
         if (theWizard!.isDead == true || theHero!.life == 0) && levelOver == false{
+            if theWizard!.isDead{
+                dropLoot("level1", self, theWizard!.position, CGSizeMake(30, 30))
+            }
             //parent of self is viewcontroller, has view, extends sknode
             let menuScene = MainMenuScene(size: self.frame.size)
             let skTransition = SKTransition.fadeWithDuration(5.0)
-            levelOver = true
             if (theHero!.life == 0){
                 let deathNode = SKLabelNode.init(text: "You died, try again!")
                 deathNode.position = CGPointMake(self.frame.midX, self.frame.midY)
@@ -115,7 +118,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 winNode.position = CGPointMake(self.frame.midX, self.frame.midY)
                 self.addChild(winNode)
             }
-            self.view?.presentScene(menuScene, transition: skTransition)
+            if (self.childNodeWithName("item") == nil){
+                self.view?.presentScene(menuScene, transition: skTransition)
+                levelOver = true
+            }
         }
     }
 }

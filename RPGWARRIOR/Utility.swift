@@ -43,6 +43,19 @@ func distanceBetween(point1: CGPoint, point2: CGPoint)-> CGFloat{
     return sqrt(pow(xDist, 2) + pow(yDist ,2))
 }
 
+func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
+    if level == "level1"{
+        //drop loot for killing wizard
+        if randomWithMin(0, 100) > 50{
+            scene.addChild(ItemClass.itemInSpace(position, size: size, nameOfTexture: "noobSword"))
+        }
+    }else if level == "level2"{
+        if randomWithMin(0, 100) > 50{
+            scene.addChild(ItemClass.itemInSpace(position, size: size, nameOfTexture: "noobSword"))
+        }
+    }
+}
+
 
 //returns (m, b)
 func getLine(point1: CGPoint, point2: CGPoint)-> (CGFloat, CGFloat){
@@ -271,8 +284,12 @@ func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAtta
             nodeToMove.texture = getStillTexture(nodeToMove)
             if nodeToMove.name == "hero"{
                 let myNode = nodeToMove as HeroClass
-                myNode.attack()
-                myNode.isAttacking = true
+                if nodeToAttack.name == "item" {
+                    myNode.pickupItem()
+                }else{
+                    myNode.attack()
+                    myNode.isAttacking = true
+                }
             }
     })
     var sequence: SKAction?

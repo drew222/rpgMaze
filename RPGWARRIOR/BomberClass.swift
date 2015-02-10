@@ -14,6 +14,7 @@ class BomberClass: SKSpriteNode {
     var currentAngle: CGFloat?
     var isDead = false
     var attackSpeed = 0.8
+    var life = 1
     
     class func makeBomber(position: CGPoint) -> BomberClass{
         let bomber = BomberClass(imageNamed: "wizard1.png")
@@ -78,6 +79,15 @@ class BomberClass: SKSpriteNode {
         let bomb = Bomb.bombAtPosition(getBombLocation(hero.position))
         self.parent!.addChild(bomb)
         bomb.explode(bomb.position)
+    }
+    
+    func takeDamage(howMuch: Int){
+        self.life -= howMuch
+        if (self.life <= 0){
+            self.isDead = true
+            self.removeAllActions()
+            self.texture = nil
+        }
     }
     
 }
