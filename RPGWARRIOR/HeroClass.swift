@@ -119,7 +119,6 @@ class HeroClass: SKSpriteNode {
             return
         }
     }
-<<<<<<< Updated upstream
     
     func pickupItem(theItem: SKSpriteNode){
         if let theInventory = self.parent!.userData?.objectForKey("inventory") as? Inventory{
@@ -127,14 +126,13 @@ class HeroClass: SKSpriteNode {
             println("testCount = \(theInventory.testCount)")
         }
         theItem.removeFromParent()
-=======
+    }
 
 
     func pickupItem(){
         let theItem = self.parent?.childNodeWithName("item") as ItemClass
         println("picking up item!\(theItem.texture)")
->>>>>>> Stashed changes
-    }
+        }
     
     //push point out from a node, based on heros shoulder
     func pushPointOut(theNode: SKSpriteNode, corner: CGPoint) -> CGPoint{
@@ -261,7 +259,6 @@ class HeroClass: SKSpriteNode {
     }
     
     func attack(){
-        
         if let theWizard = self.parent!.childNodeWithName("wizard") as? WizardClass{
             theWizard.takeDamage(1)
             //println("THE WIZARD HAS DIED!")

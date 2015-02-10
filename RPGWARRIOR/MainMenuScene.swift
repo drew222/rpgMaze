@@ -70,7 +70,6 @@ class MainMenuScene: SKScene {
                 //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(level2, transition: skTransition)
-<<<<<<< Updated upstream
             }else if inventory!.containsPoint(touch.locationInNode(self)){
                 println("clicked inventory")
                 //let inventoryScene = Inventory(size: self.frame.size)
@@ -78,7 +77,6 @@ class MainMenuScene: SKScene {
                 (self.userData?.objectForKey("inventory") as Inventory).userData?.setObject(self, forKey: "menu")
                 println("got here111")
                 self.view?.presentScene(self.userData?.objectForKey("inventory") as Inventory, transition: skTransition)
-=======
             }else if level3Node!.containsPoint(touch.locationInNode(self)){
                 let level3 = Level3Scene(size: self.frame.size)
                 let skTransition = SKTransition.fadeWithDuration(1.0)
@@ -87,7 +85,6 @@ class MainMenuScene: SKScene {
             let inv = Inventory(size: self.frame.size)
             let skTransition = SKTransition.fadeWithDuration(1.0)
             self.view?.presentScene(inv, transition: skTransition)
->>>>>>> Stashed changes
             }
         }
     }
