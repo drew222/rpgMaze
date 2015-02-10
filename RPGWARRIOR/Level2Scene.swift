@@ -79,6 +79,7 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate {
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        //println("current time: \(currentTime)")
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
@@ -105,9 +106,16 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate {
              //   self.addChild(winNode)
            // }
             if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life == 0{
-                let menuScene = MainMenuScene(size: self.frame.size)
+                //let menuScene = MainMenuScene(size: self.frame.size)
+                //println("got here111")
+                //(self.userData?.objectForKey("menu") as MainMenuScene).userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                //println("got here222")
+                //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
                 let skTransition = SKTransition.fadeWithDuration(5.0)
-                self.view?.presentScene(menuScene, transition: skTransition)
+                println("got here111")
+                //let gameScene = self.userData?.objectForKey("menu") as MainMenuScene
+                self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+                println("got here222")
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil){

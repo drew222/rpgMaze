@@ -14,6 +14,7 @@ class MainMenuScene: SKScene {
     var level1Node: SKLabelNode?
     var level2Node: SKLabelNode?
     var inventory: SKLabelNode?
+    var menuCounter = 0
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -27,6 +28,15 @@ class MainMenuScene: SKScene {
         level2Node!.position = CGPointMake(self.frame.midX, self.frame.midY - 60)
         level2Node!.name = "level2"
         self.addChild(level2Node!)
+        if self.userData?.objectForKey("inventory") == nil{
+            println("inventorydata was nil")
+            self.userData = NSMutableDictionary()
+            let theInventory = Inventory(size: self.frame.size)
+            theInventory.userData = NSMutableDictionary()
+            self.userData?.setObject(theInventory, forKey: "inventory")
+        }
+        menuCounter++
+        println("menuCounter = \(menuCounter)")
         
         inventory = SKLabelNode.init(text: "Inventory")
         inventory!.position = CGPointMake(self.frame.maxX - 60, self.frame.minY + 40)
@@ -38,16 +48,27 @@ class MainMenuScene: SKScene {
         for touch in touches{
             if level1Node!.containsPoint(touch.locationInNode(self)){
                 let gameplayScene = GameScene(size: self.frame.size)
+                gameplayScene.userData = NSMutableDictionary()
+                gameplayScene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                gameplayScene.userData?.setObject(self, forKey: "menu")
+                //gameplayScene.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(gameplayScene, transition: skTransition)
             }else if level2Node!.containsPoint(touch.locationInNode(self)){
                 let level2 = Level2Scene(size: self.frame.size)
+                level2.userData = NSMutableDictionary()
+                level2.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                level2.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(level2, transition: skTransition)
             }else if inventory!.containsPoint(touch.locationInNode(self)){
-                let inv = Inventory(size: self.frame.size)
+                println("clicked inventory")
+                //let inventoryScene = Inventory(size: self.frame.size)
                 let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(inv, transition: skTransition)
+                (self.userData?.objectForKey("inventory") as Inventory).userData?.setObject(self, forKey: "menu")
+                println("got here111")
+                self.view?.presentScene(self.userData?.objectForKey("inventory") as Inventory, transition: skTransition)
             }
         }
     }

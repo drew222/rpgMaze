@@ -101,6 +101,10 @@ class HeroClass: SKSpriteNode {
     }
     
     func pickupItem(theItem: SKSpriteNode){
+        if let theInventory = self.parent!.userData?.objectForKey("inventory") as? Inventory{
+            theInventory.testCount = theInventory.testCount + 1
+            println("testCount = \(theInventory.testCount)")
+        }
         theItem.removeFromParent()
     }
     

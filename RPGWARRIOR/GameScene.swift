@@ -115,9 +115,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //    self.addChild(winNode)
           //  }
             if droppedLoot && self.childNodeWithName("item") == nil{
-                let menuScene = MainMenuScene(size: self.frame.size)
+                //let menuScene = MainMenuScene(size: self.frame.size)
+                //(self.userData?.objectForKey("menu") as MainMenuScene).userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
                 let skTransition = SKTransition.fadeWithDuration(5.0)
-                self.view?.presentScene(menuScene, transition: skTransition)
+                //self.view?.presentScene(menuScene, transition: skTransition)
+                self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil){

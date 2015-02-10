@@ -14,6 +14,7 @@ class Inventory: SKScene {
     var menu: SKLabelNode?
     var backPack: SKSpriteNode?
     var itemSpaces: [ItemSpaceNode] = []
+    var testCount = 0
     
     
     override func didMoveToView(view: SKView) {
@@ -126,9 +127,12 @@ class Inventory: SKScene {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         for touch in touches{
             if menu!.containsPoint(touch.locationInNode(self)){
-                let menuScene = MainMenuScene(size: self.frame.size)
+                //let menuScene = MainMenuScene(size: self.frame.size)
+                //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
+                (self.userData?.objectForKey("menu") as MainMenuScene).userData?.setObject(self, forKey: "inventory")
                 let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(menuScene, transition: skTransition)
+                //self.view?.presentScene(menuScene, transition: skTransition)
+                self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
             }
         }
     }
