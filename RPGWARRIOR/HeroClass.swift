@@ -97,8 +97,29 @@ class HeroClass: SKSpriteNode {
             //self.moveTo(position, clickedEnemy: false, goingAround: false)
             self.runAction(getSimpleMove(self, position), withKey: "runAction")
             return
+
+        }else if let mineThrower = self.parent!.childNodeWithName("MineThrower") as? MineThrowerNode{
+            var myPos = position
+            //clicked on wizard node, move infront of instead of to the position
+            //check if any point generated is in the wizard
+            let manyPoints = generatePointsOnLine(self.position, position)
+            for onePoint in manyPoints{
+                if (mineThrower.containsPoint(onePoint) && !mineThrower.containsPoint(position)){
+                    self.runAction(getAroundMove(self, position, mineThrower), withKey: "runAction")
+                    return
+                }
+            }
+            if (mineThrower.containsPoint(position)){
+                //moveTo(self, self.position, infrontOf(aBomber, self.position))
+                self.runAction(getAttackMove(self, mineThrower, self.isAttacking), withKey: "runAction")
+                return
+            }
+            //self.moveTo(position, clickedEnemy: false, goingAround: false)
+            self.runAction(getSimpleMove(self, position), withKey: "runAction")
+            return
         }
     }
+<<<<<<< Updated upstream
     
     func pickupItem(theItem: SKSpriteNode){
         if let theInventory = self.parent!.userData?.objectForKey("inventory") as? Inventory{
@@ -106,6 +127,13 @@ class HeroClass: SKSpriteNode {
             println("testCount = \(theInventory.testCount)")
         }
         theItem.removeFromParent()
+=======
+
+
+    func pickupItem(){
+        let theItem = self.parent?.childNodeWithName("item") as ItemClass
+        println("picking up item!\(theItem.texture)")
+>>>>>>> Stashed changes
     }
     
     //push point out from a node, based on heros shoulder
@@ -240,6 +268,8 @@ class HeroClass: SKSpriteNode {
         }else if let theBomber = self.parent!.childNodeWithName("bomber") as? BomberClass{
             theBomber.takeDamage(1)
             //println("THE BOMBER HAS DIED!")
+        }else if let mineThrower = self.parent!.childNodeWithName("MineThrower") as? MineThrowerNode{
+            mineThrower.takeDamage(1)
         }
     }
 }

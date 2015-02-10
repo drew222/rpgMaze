@@ -57,6 +57,10 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         if myNum > 0{
             scene.addChild(ItemClass.itemInSpace(position, size: size, nameOfTexture: "noobSword"))
         }
+    }else if level == "level3"{
+        if randomWithMin(-50, 50) > 0{
+            scene.addChild(ItemClass.itemInSpace(position, size: size, nameOfTexture: "noobSword"))
+        }
     }
 }
 

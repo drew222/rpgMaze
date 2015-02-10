@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F62CE561A89C21000046DA7 /* MineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62CE541A89C21000046DA7 /* MineNode.swift */; };
+		2F62CE571A89C21000046DA7 /* MineThrowerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62CE551A89C21000046DA7 /* MineThrowerNode.swift */; };
+		2F62CE591A89C25000046DA7 /* Level3Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62CE581A89C25000046DA7 /* Level3Scene.swift */; };
 		DC1F57C11A88087500B5027B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27114F1A86A09D00986D2E /* AppDelegate.swift */; };
 		DC1F57EA1A88169800B5027B /* projectile_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1F57C81A88169800B5027B /* projectile_1@2x.png */; };
 		DC1F57EB1A88169800B5027B /* projectile_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1F57C91A88169800B5027B /* projectile_2@2x.png */; };
@@ -75,6 +78,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F62CE541A89C21000046DA7 /* MineNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineNode.swift; sourceTree = "<group>"; };
+		2F62CE551A89C21000046DA7 /* MineThrowerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineThrowerNode.swift; sourceTree = "<group>"; };
+		2F62CE581A89C25000046DA7 /* Level3Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level3Scene.swift; sourceTree = "<group>"; };
 		DC1F57C81A88169800B5027B /* projectile_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projectile_1@2x.png"; sourceTree = "<group>"; };
 		DC1F57C91A88169800B5027B /* projectile_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projectile_2@2x.png"; sourceTree = "<group>"; };
 		DC1F57CA1A88169800B5027B /* projectile_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projectile_3@2x.png"; sourceTree = "<group>"; };
@@ -231,7 +237,10 @@
 				DC2711411A85E1D300986D2E /* Utility.swift */,
 				DC2711431A85E1DE00986D2E /* WizardClass.swift */,
 				DC27113D1A85E1AB00986D2E /* GameScene.swift */,
+				2F62CE541A89C21000046DA7 /* MineNode.swift */,
+				2F62CE551A89C21000046DA7 /* MineThrowerNode.swift */,
 				DC1F580E1A886BB100B5027B /* Level2Scene.swift */,
+				2F62CE581A89C25000046DA7 /* Level3Scene.swift */,
 				DC2711211A85E11900986D2E /* Main.storyboard */,
 				DC2711241A85E11900986D2E /* Images.xcassets */,
 				DC2711261A85E11900986D2E /* LaunchScreen.xib */,
@@ -405,14 +414,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC4E3021A89760E000E5E89 /* Inventory.swift in Sources */,
+				2F62CE561A89C21000046DA7 /* MineNode.swift in Sources */,
 				DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */,
 				DC2711461A85E1F500986D2E /* HeroClass.swift in Sources */,
 				DC2711421A85E1D300986D2E /* Utility.swift in Sources */,
 				DC1F58111A886EFC00B5027B /* BomberClass.swift in Sources */,
+				2F62CE591A89C25000046DA7 /* Level3Scene.swift in Sources */,
 				DCC4E3041A897671000E5E89 /* ItemSpaceNode.swift in Sources */,
 				DC1F580F1A886BB100B5027B /* Level2Scene.swift in Sources */,
 				DCC4E3061A8976AB000E5E89 /* ItemClass.swift in Sources */,
 				DC27113E1A85E1AB00986D2E /* GameScene.swift in Sources */,
+				2F62CE571A89C21000046DA7 /* MineThrowerNode.swift in Sources */,
 				DC1F57C11A88087500B5027B /* AppDelegate.swift in Sources */,
 				DC2711441A85E1DE00986D2E /* WizardClass.swift in Sources */,
 				DC1F58131A88703500B5027B /* Bomb.swift in Sources */,
