@@ -52,7 +52,7 @@ class HeroClass: SKSpriteNode {
                 }
             }
             if (item.containsPoint(position)){
-                //moveTo(self, self.position, infrontOf(item, self.position))
+                moveTo(self, self.position, infrontOf(item, self.position))
                 self.runAction(getAttackMove(self, item, self.isAttacking), withKey: "runAction")
                 return
             }
@@ -100,9 +100,8 @@ class HeroClass: SKSpriteNode {
         }
     }
     
-    func pickupItem(){
-        let theItem = self.parent?.childNodeWithName("item") as ItemClass
-        println("picking up item!\(theItem.texture)")
+    func pickupItem(theItem: SKSpriteNode){
+        theItem.removeFromParent()
     }
     
     //push point out from a node, based on heros shoulder

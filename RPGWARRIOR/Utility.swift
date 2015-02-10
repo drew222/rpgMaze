@@ -18,7 +18,7 @@ enum CollisionBitMasks: UInt32{
     case collisionCategoryHero = 1
     case collisionCategoryProjectile = 2
     case collisionCategoryWizard = 4
-    case collisionCategoryGround = 8
+    case collisionCategoryItem = 8
 }
 
 
@@ -46,11 +46,15 @@ func distanceBetween(point1: CGPoint, point2: CGPoint)-> CGFloat{
 func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     if level == "level1"{
         //drop loot for killing wizard
-        if randomWithMin(-50, 50) > 0{
+        let myNum = randomWithMin(-50, 50)
+        println("myNum: \(myNum)")
+        if myNum > 0{
             scene.addChild(ItemClass.itemInSpace(position, size: size, nameOfTexture: "noobSword"))
         }
     }else if level == "level2"{
-        if randomWithMin(-50, 50) > 0{
+        let myNum = randomWithMin(-50, 50)
+        println("myNum: \(myNum)")
+        if myNum > 0{
             scene.addChild(ItemClass.itemInSpace(position, size: size, nameOfTexture: "noobSword"))
         }
     }
@@ -285,7 +289,8 @@ func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAtta
             if nodeToMove.name == "hero"{
                 let myNode = nodeToMove as HeroClass
                 if nodeToAttack.name == "item" {
-                    myNode.pickupItem()
+                    myNode.isAttacking = false
+                    myNode.pickupItem(nodeToAttack)
                 }else{
                     myNode.attack()
                     myNode.isAttacking = true
@@ -294,7 +299,7 @@ func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAtta
     })
     var sequence: SKAction?
     let moveAction = moveTo(nodeToMove, nodeToMove.position, spotInfront)
-    if (wasAttacking){
+    if (wasAttacking && nodeToAttack.name != "item"){
         sequence = SKAction.sequence([completionBlock])
     }else{
         sequence = SKAction.sequence([moveAction, completionBlock])

@@ -18,6 +18,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var lastFireball: Double = 0.0
     var levelOver = false
     let levelName = "level1"
+    var droppedLoot = false
     
     let wizardAttackSpeed = 1.0
     
@@ -103,24 +104,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //check for win condition
         if (theWizard!.isDead == true || theHero!.life == 0) && levelOver == false{
-            if theWizard!.isDead{
-                dropLoot("level1", self, theWizard!.position, CGSizeMake(30, 30))
-            }
             //parent of self is viewcontroller, has view, extends sknode
-            let menuScene = MainMenuScene(size: self.frame.size)
-            if (theHero!.life == 0){
-                let deathNode = SKLabelNode.init(text: "You died, try again!")
-                deathNode.position = CGPointMake(self.frame.midX, self.frame.midY)
-                self.addChild(deathNode)
-            }else if (theWizard!.isDead){
-                let winNode = SKLabelNode.init(text: "You win, congratulations!")
-                winNode.position = CGPointMake(self.frame.midX, self.frame.midY)
-                self.addChild(winNode)
-            }
-            if (self.childNodeWithName("item") == nil){
+          //  if (theHero!.life == 0){
+            //    let deathNode = SKLabelNode.init(text: "You died, try again!")
+            //    deathNode.position = CGPointMake(self.frame.midX, self.frame.midY)
+            //    self.addChild(deathNode)
+           // }else if (theWizard!.isDead){
+           //     let winNode = SKLabelNode.init(text: "You win, congratulations!")
+            //    winNode.position = CGPointMake(self.frame.midX, self.frame.midY)
+            //    self.addChild(winNode)
+          //  }
+            if droppedLoot && self.childNodeWithName("item") == nil{
+                let menuScene = MainMenuScene(size: self.frame.size)
                 let skTransition = SKTransition.fadeWithDuration(5.0)
                 self.view?.presentScene(menuScene, transition: skTransition)
                 levelOver = true
+            }
+            else if (self.childNodeWithName("item") == nil){
+                if theWizard!.isDead{
+                    dropLoot("level1", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    droppedLoot = true
+                }
             }
         }
     }
