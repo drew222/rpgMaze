@@ -46,11 +46,11 @@ func distanceBetween(point1: CGPoint, point2: CGPoint)-> CGFloat{
 func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     if level == "level1"{
         //drop loot for killing wizard
-        if randomWithMin(0, 100) > 50{
+        if randomWithMin(-50, 50) > 0{
             scene.addChild(ItemClass.itemInSpace(position, size: size, nameOfTexture: "noobSword"))
         }
     }else if level == "level2"{
-        if randomWithMin(0, 100) > 50{
+        if randomWithMin(-50, 50) > 0{
             scene.addChild(ItemClass.itemInSpace(position, size: size, nameOfTexture: "noobSword"))
         }
     }

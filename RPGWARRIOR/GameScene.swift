@@ -108,7 +108,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             //parent of self is viewcontroller, has view, extends sknode
             let menuScene = MainMenuScene(size: self.frame.size)
-            let skTransition = SKTransition.fadeWithDuration(5.0)
             if (theHero!.life == 0){
                 let deathNode = SKLabelNode.init(text: "You died, try again!")
                 deathNode.position = CGPointMake(self.frame.midX, self.frame.midY)
@@ -119,6 +118,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 self.addChild(winNode)
             }
             if (self.childNodeWithName("item") == nil){
+                let skTransition = SKTransition.fadeWithDuration(5.0)
                 self.view?.presentScene(menuScene, transition: skTransition)
                 levelOver = true
             }

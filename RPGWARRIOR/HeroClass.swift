@@ -101,9 +101,8 @@ class HeroClass: SKSpriteNode {
     }
     
     func pickupItem(){
-        println("picking up item!")
         let theItem = self.parent?.childNodeWithName("item") as ItemClass
-        theItem.removeFromParent()
+        println("picking up item!\(theItem.texture)")
     }
     
     //push point out from a node, based on heros shoulder
