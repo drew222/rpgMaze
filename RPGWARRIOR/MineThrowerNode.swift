@@ -9,10 +9,11 @@
 import Foundation
 import SpriteKit
 
-class MineThrowerNode: SKSpriteNode {
+class MineThrowerNode: SKSpriteNode  {
 
     var isDead = false
     var life = 1
+    
     
     class func mineThrowerAtPos(position: CGPoint) -> MineThrowerNode {
     let mineThrower = MineThrowerNode(imageNamed: "wizard1.png")
@@ -30,6 +31,7 @@ class MineThrowerNode: SKSpriteNode {
 
 
     }
+
 }
 
 

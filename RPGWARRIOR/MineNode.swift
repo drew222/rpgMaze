@@ -11,9 +11,12 @@ import SpriteKit
 
 class MineNode: SKSpriteNode {
     
+    let mineSpeed = CGFloat(300.0)
+    
     class func mineAtPos(position: CGPoint) -> MineNode {
         let mine = MineNode(imageNamed: "projectile_1.png")
         mine.position = position
+        mine.name = "Mine"
         mine.setupAnimation()
         mine.setupPhysicsBody()
         return mine
@@ -58,7 +61,21 @@ class MineNode: SKSpriteNode {
         self.runAction(sequence)
         
     }
-
-    
+    func throwMineToPos(position: CGPoint) {
+        
+        let frameX: UInt32 = UInt32(self.frame.width)
+        let frameY: UInt32 = UInt32(self.frame.height)
+        let randomPositionX = CGFloat(arc4random_uniform(frameX))
+        let randomPositionY = CGFloat(arc4random_uniform(frameY))
+        let randomPos = CGPointMake(randomPositionX, randomPositionY)
+        var distanceA = Float(randomPositionY - self.position.y)
+        var distanceB = Float(randomPositionX - self.position.x)
+        var distanceC = CGFloat((sqrt(powf(distanceA, 2))) + (sqrt(powf(distanceB, 2))))
+        let time = distanceC / mineSpeed
+        
+        let throw = SKAction.moveTo(position, duration: NSTimeInterval(time))
+        self.runAction(throw)
+        
+    }
 }
 

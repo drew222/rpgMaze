@@ -14,11 +14,12 @@ class Level3Scene: SKScene, SKPhysicsContactDelegate  {
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
-    var mineSpawnTimer = 0.2
+    var mineSpawnTimer = 0.1
     var levelOver = false
     let levelName = "level3"
     var theHero: HeroClass?
     var minethrower: MineThrowerNode?
+    var droppedItem = false
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -55,6 +56,12 @@ class Level3Scene: SKScene, SKPhysicsContactDelegate  {
             aHero.moveHelper(touch.locationInNode(self))
         }
     }
+    func throwMine(position: CGPoint) {
+        let theMinethrower = (self.childNodeWithName("MineThrower")) as? MineThrowerNode
+        let mine = MineNode.mineAtPos(CGPointMake(theMinethrower!.position.x, theMinethrower!.position.y + 10)) as MineNode
+        self.addChild(mine)
+        mine.throwMineToPos(position)
+    }
     override func update(currentTime: NSTimeInterval) {
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
@@ -64,32 +71,43 @@ class Level3Scene: SKScene, SKPhysicsContactDelegate  {
         self.totalGameTime += currentTime - lastUpdatesTime
         if currentTime - timeOfLastMine > mineSpawnTimer{
             
-            let randomPositionX = CGFloat(arc4random_uniform(300))
-            let randomPositionY = CGFloat(arc4random_uniform(500))
+            let frameX: UInt32 = UInt32(self.frame.width)
+            let frameY: UInt32 = UInt32(self.frame.height)
+            let randomPositionX = CGFloat(arc4random_uniform(frameX))
+            let randomPositionY = CGFloat(arc4random_uniform(frameY))
             let randomPos = CGPointMake(randomPositionX, randomPositionY)
-            let mine = MineNode.mineAtPos(randomPos)
-            self.addChild(mine)
+            self.throwMine(randomPos)
             timeOfLastMine = currentTime
         }
         if (minethrower!.isDead || theHero!.life == 0) && !levelOver{
-            if minethrower!.isDead{
-                dropLoot("level3", self, minethrower!.position, CGSizeMake(30, 30))
-            }
             //parent of self is viewcontroller, has view, extends sknode
-            let menuScene = MainMenuScene(size: self.frame.size)
-            let skTransition = SKTransition.fadeWithDuration(5.0)
-            if (theHero!.life == 0){
-                let deathNode = SKLabelNode.init(text: "You died, try again!")
-                deathNode.position = CGPointMake(self.frame.midX, self.frame.midY)
-                self.addChild(deathNode)
-            }else if (minethrower!.isDead){
-                let winNode = SKLabelNode.init(text: "You win, congratulations!")
-                winNode.position = CGPointMake(self.frame.midX, self.frame.midY)
-                self.addChild(winNode)
-            }
-            if (self.childNodeWithName("item") == nil){
-                self.view?.presentScene(menuScene, transition: skTransition)
+            //if (theHero!.life == 0){
+            //   let deathNode = SKLabelNode.init(text: "You died, try again!")
+            //   deathNode.position = CGPointMake(self.frame.midX, self.frame.midY)
+            //   self.addChild(deathNode)
+            // }else if (theBomber!.isDead){
+            //   let winNode = SKLabelNode.init(text: "You win, congratulations!")
+            //   winNode.position = CGPointMake(self.frame.midX, self.frame.midY)
+            //   self.addChild(winNode)
+            // }
+            if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life == 0{
+                //let menuScene = MainMenuScene(size: self.frame.size)
+                //println("got here111")
+                //(self.userData?.objectForKey("menu") as MainMenuScene).userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                //println("got here222")
+                //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
+                let skTransition = SKTransition.fadeWithDuration(5.0)
+                println("got here111")
+                //let gameScene = self.userData?.objectForKey("menu") as MainMenuScene
+                self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+                println("got here222")
                 levelOver = true
+            }
+            else if (self.childNodeWithName("item") == nil){
+                if minethrower!.isDead{
+                    dropLoot("level2", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    droppedItem = true
+                }
             }
         }
     }

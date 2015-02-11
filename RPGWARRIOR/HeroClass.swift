@@ -119,6 +119,9 @@ class HeroClass: SKSpriteNode {
             return
         }
     }
+
+
+
     
     func pickupItem(theItem: ItemClass){
         if let theInventory = self.parent!.userData?.objectForKey("inventory") as? Inventory{
@@ -126,14 +129,20 @@ class HeroClass: SKSpriteNode {
             theInventory.addItem(theItem.itemName!)
         }
         theItem.removeFromParent()
+
     }
+
+
+
 
 
     func pickupItem(){
         let theItem = self.parent?.childNodeWithName("item") as ItemClass
         println("picking up item!\(theItem.texture)")
+
         }
-    
+
+
     //push point out from a node, based on heros shoulder
     func pushPointOut(theNode: SKSpriteNode, corner: CGPoint) -> CGPoint{
         let pushDistance = self.frame.maxX - self.frame.midX - 8
@@ -267,6 +276,6 @@ class HeroClass: SKSpriteNode {
             //println("THE BOMBER HAS DIED!")
         }else if let mineThrower = self.parent!.childNodeWithName("MineThrower") as? MineThrowerNode{
             mineThrower.takeDamage(1)
+            }
         }
     }
-}
