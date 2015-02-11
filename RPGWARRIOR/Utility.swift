@@ -37,6 +37,7 @@ func randomWithMin(min: Int, max: Int) -> NSInteger{
     return myNum
 }
 
+
 func distanceBetween(point1: CGPoint, point2: CGPoint)-> CGFloat{
     let xDist = point2.x - point1.x
     let yDist = point2.y - point1.y
@@ -49,17 +50,26 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         let myNum = randomWithMin(-50, 50)
         println("myNum: \(myNum)")
         if myNum > 0{
-            scene.addChild(ItemClass.itemInSpace(position, size: size, nameOfTexture: "noobSword"))
+            let item = ItemClass.itemInSpace("noobSword")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
         }
     }else if level == "level2"{
         let myNum = randomWithMin(-50, 50)
         println("myNum: \(myNum)")
         if myNum > 0{
-            scene.addChild(ItemClass.itemInSpace(position, size: size, nameOfTexture: "noobSword"))
+            let item = ItemClass.itemInSpace("noobSword")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
         }
     }else if level == "level3"{
         if randomWithMin(-50, 50) > 0{
-            scene.addChild(ItemClass.itemInSpace(position, size: size, nameOfTexture: "noobSword"))
+            let item = ItemClass.itemInSpace("noobSword")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
         }
     }
 }
@@ -294,7 +304,7 @@ func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAtta
                 let myNode = nodeToMove as HeroClass
                 if nodeToAttack.name == "item" {
                     myNode.isAttacking = false
-                    myNode.pickupItem(nodeToAttack)
+                    myNode.pickupItem(nodeToAttack as ItemClass)
                 }else{
                     myNode.attack()
                     myNode.isAttacking = true

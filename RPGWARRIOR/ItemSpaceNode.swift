@@ -11,6 +11,8 @@ import SpriteKit
 
 class ItemSpaceNode: SKSpriteNode {
     var item: ItemClass?
+    var wasClicked = false
+    var hasItem = false
     
     class func spaceAtPosition(position: CGPoint) -> ItemSpaceNode{
         let space = ItemSpaceNode(color: UIColor.whiteColor(), size: CGSizeMake(40,40))
@@ -21,6 +23,14 @@ class ItemSpaceNode: SKSpriteNode {
     
     func insertItem(anItem: ItemClass){
         self.item = anItem
+        self.hasItem = true
+        self.item!.position = self.position
+        self.item!.size = self.frame.size
+        if self.parent!.childNodeWithName(self.item!.name!) != nil{
+            self.item!.name = "\(self.item!.name)\(self.name)"
+        }
+        self.item!.removeFromParent()
+        self.parent!.addChild(self.item!)
     }
     
     func removeItem(){

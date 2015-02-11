@@ -14,14 +14,13 @@ class ItemClass: SKSpriteNode {
     var itemType: ItemType?
     var itemStats: [(String, CGFloat)]?
     
-    class func itemInSpace(position: CGPoint, size: CGSize, nameOfTexture: String) -> ItemClass{
+    class func itemInSpace(nameOfTexture: String) -> ItemClass{
         let item = ItemClass(imageNamed: nameOfTexture)
-        item.position = position
-        item.size = size
         item.name = "item"
         item.itemType = item.getItemType(nameOfTexture)
         item.itemName = nameOfTexture
         item.itemStats = item.getItemStats(nameOfTexture)
+        item.zPosition = 2
         return item
     }
     
