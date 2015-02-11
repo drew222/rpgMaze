@@ -47,6 +47,15 @@ class Level3Scene: SKScene, SKPhysicsContactDelegate  {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+           secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
+            println("Hero ran over a mine")
+            let mine = secondBody.node as? MineNode
+            println("1")
+            mine!.explode(theHero!.position)//secondBody.node!.position)
+            let aHero = self.childNodeWithName("hero") as HeroClass
+              aHero.takeDamage(1)
+        }
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -105,7 +114,7 @@ class Level3Scene: SKScene, SKPhysicsContactDelegate  {
             }
             else if (self.childNodeWithName("item") == nil){
                 if minethrower!.isDead{
-                    dropLoot("level2", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    dropLoot("level3", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }

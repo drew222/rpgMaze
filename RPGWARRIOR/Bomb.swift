@@ -41,6 +41,7 @@ class Bomb: SKSpriteNode {
         self.runAction(repeatAction, withKey: "fire")
     }
     
+    
     func explode(position: CGPoint){
         let waitAction = SKAction.waitForDuration(NSTimeInterval(1))
         var liteAttack: SKEmitterNode?
