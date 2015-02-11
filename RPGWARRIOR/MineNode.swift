@@ -12,6 +12,7 @@ import SpriteKit
 class MineNode: SKSpriteNode {
     
     let mineSpeed = CGFloat(300.0)
+    var isArmed = false
     
     class func mineAtPos(position: CGPoint) -> MineNode {
         let mine = MineNode(imageNamed: "projectile_1.png")
@@ -38,7 +39,6 @@ class MineNode: SKSpriteNode {
         self.physicsBody?.contactTestBitMask = CollisionBitMasks.collisionCategoryHero.rawValue
     }
     func explode(position: CGPoint){
-        let waitAction = SKAction.waitForDuration(NSTimeInterval(1))
         var liteAttack: SKEmitterNode?
         let explodeCode = SKAction.runBlock({let litePath = NSBundle.mainBundle().pathForResource("LightParticle", ofType: "sks")
             liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as SKEmitterNode)
@@ -57,7 +57,7 @@ class MineNode: SKSpriteNode {
                 println("distance from bomb = \(distanceFromMine)")
                 theHero.takeDamage(3.0)
             }})
-        let sequence = SKAction.sequence([waitAction, explodeCode, damageBlock, SKAction.waitForDuration(0.5), removeBlock])
+        let sequence = SKAction.sequence([explodeCode, damageBlock, SKAction.waitForDuration(0.5), removeBlock])
         self.runAction(sequence)
         
     }
@@ -74,7 +74,9 @@ class MineNode: SKSpriteNode {
         let time = distanceC / mineSpeed
         
         let throw = SKAction.moveTo(position, duration: NSTimeInterval(time))
-        self.runAction(throw)
+        let armMine = SKAction.runBlock({self.isArmed = true})
+        let sequence = SKAction.sequence([throw, armMine])
+        self.runAction(sequence)
         
     }
 }

@@ -49,12 +49,12 @@ class Level3Scene: SKScene, SKPhysicsContactDelegate  {
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
-            println("Hero ran over a mine")
             let mine = secondBody.node as? MineNode
-            println("1")
-            mine!.explode(theHero!.position)//secondBody.node!.position)
-            let aHero = self.childNodeWithName("hero") as HeroClass
-              aHero.takeDamage(1)
+            if mine!.isArmed{
+                mine!.explode(theHero!.position)//secondBody.node!.position)
+                let aHero = self.childNodeWithName("hero") as HeroClass
+                aHero.takeDamage(1)
+            }
         }
     }
     
@@ -85,7 +85,9 @@ class Level3Scene: SKScene, SKPhysicsContactDelegate  {
             let randomPositionX = CGFloat(arc4random_uniform(frameX))
             let randomPositionY = CGFloat(arc4random_uniform(frameY))
             let randomPos = CGPointMake(randomPositionX, randomPositionY)
-            self.throwMine(randomPos)
+            if !droppedItem{
+                self.throwMine(randomPos)
+            }
             timeOfLastMine = currentTime
         }
         if (minethrower!.isDead || theHero!.life == 0) && !levelOver{
