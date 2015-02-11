@@ -16,6 +16,7 @@ class Inventory: SKScene {
     var itemSpaces: [ItemSpaceNode] = []
     var items: [ItemClass] = []
     var itemToMove: ItemClass?
+    var spaceToMove: ItemSpaceNode?
     
     
     override func didMoveToView(view: SKView) {
@@ -169,14 +170,36 @@ class Inventory: SKScene {
             }else{
                 for space in itemSpaces{
                     if space.containsPoint(touch.locationInNode(self)){
+                        //clicked on space with item in it
                         if space.item != nil{
-                            
+                            if self.itemToMove == nil{
+                                self.itemToMove = space.item
+                                self.spaceToMove = space
+                            }//already an item to move, swap
+                            else{
+                                self.spaceToMove!.insertItem(space.item!)
+                                space.insertItem(self.itemToMove!)
+                                //performed swap of items, clean up
+                                self.itemToMove = nil
+                                self.spaceToMove = nil
+                                
+                            }
+                        }//clicked on space with no item in it
+                        else{
+                            //add item to new space if have item to move
+                            if self.itemToMove != nil{
+                                space.insertItem(self.itemToMove!)
+                                //change position of item in array
+                            }
+                            //no item in this space so clean up
+                            self.itemToMove = nil
+                            self.spaceToMove = nil
                         }
-                        space.wasClicked = true
-                        self.itemToMove = space.item
-                    }else{
-                        space.wasClicked = false
-                    }
+                        //space.wasClicked = true
+                        //self.itemToMove = space.item
+                    }//else{
+                        //space.wasClicked = false
+                   // }
                 }
             }
         }
