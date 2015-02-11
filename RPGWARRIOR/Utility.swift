@@ -55,6 +55,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             item.size = size
             scene.addChild(item)
         }
+        //level1gold
+        (scene.userData?.objectForKey("inventory") as Inventory).gold += 5
     }else if level == "level2"{
         let myNum = randomWithMin(-50, 50)
         println("myNum: \(myNum)")
@@ -64,6 +66,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             item.size = size
             scene.addChild(item)
         }
+        (scene.userData?.objectForKey("inventory") as Inventory).gold += 10
     }else if level == "level3"{
         if randomWithMin(-50, 50) > 0{
             let item = ItemClass.itemInSpace("noobSword")

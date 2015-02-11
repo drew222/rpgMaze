@@ -60,6 +60,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
             let aHero = self.childNodeWithName("hero") as HeroClass
                 aHero.takeDamage(1)
+                secondBody.node!.removeFromParent()
         }
         //HERO VS WIZARD
         //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&

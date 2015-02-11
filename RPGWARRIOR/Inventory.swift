@@ -17,17 +17,22 @@ class Inventory: SKScene {
     var items: [ItemClass] = []
     var itemToMove: ItemClass?
     var spaceToMove: ItemSpaceNode?
+    var firstLoad = true
+    var backPackSpaces = 16
+    var gold = 0
+    var goldNode: SKLabelNode?
     
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        if firstLoad{
         self.backgroundColor = UIColor.grayColor()
         menu = SKLabelNode.init(text: "Main Menu")
         menu!.position = CGPointMake(self.frame.maxX - 70, self.frame.minY + 40)
         menu!.name = "menu"
         menu!.setScale(0.7)
         self.addChild(menu!)
-        backPack = SKSpriteNode(color: UIColor.brownColor(), size: CGSizeMake(260,260))
+        backPack = SKSpriteNode(color: UIColor.blackColor(), size: CGSizeMake(260,260))
         backPack!.position = CGPointMake(self.frame.midX, self.frame.midY - 50)
         backPack!.name = "backpack"
         self.addChild(backPack!)
@@ -123,39 +128,60 @@ class Inventory: SKScene {
         self.addChild(itemSpace16)
         let weaponSpace = ItemSpaceNode.spaceAtPosition(CGPointMake(weaponLabel.frame.midX, weaponLabel.frame.midY - 60))
         weaponSpace.zPosition = 1
+        weaponSpace.name = "weapon"
         self.addChild(weaponSpace)
+        itemSpaces.append(weaponSpace)
         let bodySpace = ItemSpaceNode.spaceAtPosition(CGPointMake(bodyLabel.frame.midX, bodyLabel.frame.midY - 60))
         bodySpace.zPosition = 1
+        bodySpace.name = "body"
         self.addChild(bodySpace)
+        itemSpaces.append(bodySpace)
         let feetSpace = ItemSpaceNode.spaceAtPosition(CGPointMake(feetLabel.frame.midX, feetLabel.frame.midY - 60))
         feetSpace.zPosition = 1
+        feetSpace.name = "feet"
         self.addChild(feetSpace)
+        itemSpaces.append(feetSpace)
+            
+        //gold node
+        goldNode = SKLabelNode.init(text: "\(gold)")
+        goldNode!.position = CGPointMake(self.frame.minX + 70, self.frame.minY + 40)
+        self.addChild(goldNode!)
+        }
+        
+        goldNode!.text = "\(gold)"
+        goldNode!.fontColor = UIColor.yellowColor()
         
         self.populateBags()
+        itemToMove = nil
+        spaceToMove = nil
+        self.firstLoad = false
         
     }
     
     func addItem(itemName: String){
         println("adding item to items array")
-        items.append(ItemClass.itemInSpace(itemName))
+        if backPackSpaces == 0 {
+            println("YOURBACK IS FULL")
+        }else{
+            items.append(ItemClass.itemInSpace(itemName))
+            backPackSpaces--
+        }
     }
     
     //put the items into itemSpaces
     func populateBags(){
-        println("populating bags")
         var count = 0
-        for space in itemSpaces{
-            space.item = nil
-        }
         for item in items{
             var placed = false
             for space in itemSpaces{
                 if space.item == nil && placed == false{
-                    println("inserting an item into spot")
                     space.insertItem(item)
                     placed = true
+                    items.removeAtIndex(count)
+                    count--
                 }
             }
+            count++
         }
     }
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -188,7 +214,29 @@ class Inventory: SKScene {
                         else{
                             //add item to new space if have item to move
                             if self.itemToMove != nil{
-                                space.insertItem(self.itemToMove!)
+                                if space.name == "weapon" || space.name == "body" || space.name == "feet"{
+                                    if space.name == "weapon" && itemToMove!.itemType == ItemType.weapon{
+                                        backPackSpaces++
+                                        spaceToMove!.removeItem()
+                                        space.insertItem(self.itemToMove!)
+                                    }else if space.name == "body" && itemToMove!.itemType == ItemType.body{
+                                        backPackSpaces++
+                                        spaceToMove!.removeItem()
+                                        space.insertItem(self.itemToMove!)
+                                    }else if space.name == "feet" && itemToMove!.itemType == ItemType.feet{
+                                        backPackSpaces++
+                                        spaceToMove!.removeItem()
+                                        space.insertItem(self.itemToMove!)
+                                    }else{
+                                        println("trying to move item into wrong typed slot dumbass")
+                                    }
+                                }else{
+                                    spaceToMove!.removeItem()
+                                    space.insertItem(self.itemToMove!)
+                                }
+                                if spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet"{
+                                    backPackSpaces--
+                                }
                                 //change position of item in array
                             }
                             //no item in this space so clean up
