@@ -42,6 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         background.zPosition = -1
         self.physicsWorld.contactDelegate = self
         self.addChild(background)
+        theHero!.updateStats()
 
     }
     

@@ -28,13 +28,20 @@ enum ItemType{
     case feet
 }
 
-enum nodeSpeeds: Int{
-    case heroSpeed = 160
-}
+var heroSpeed: CGFloat = 160
+//enum nodeSpeeds: Int{
+//    case heroSpeed = 160
+//}
 
 func randomWithMin(min: Int, max: Int) -> NSInteger{
     let myNum = random() % (max - min) + min as NSInteger
     return myNum
+}
+
+func resizeLabel(node: SKLabelNode){
+    let numChars = countElements(node.text)
+    node.fontSize = 25 - (CGFloat(numChars) / 6)
+    println("\(node.fontSize)")
 }
 
 
@@ -210,13 +217,13 @@ func pushPointOut(theNode: SKSpriteNode, corner: CGPoint, selfNode: SKSpriteNode
     }
 }
 
-func getNodeSpeed(node: SKSpriteNode) -> CGFloat{
-    if node.name == "hero"{
-        return CGFloat(nodeSpeeds.heroSpeed.rawValue)
-    }else{
-        return 0
-    }
-}
+//func getNodeSpeed(node: SKSpriteNode) -> CGFloat{
+//    if node.name == "hero"{
+//        return CGFloat(nodeSpeeds.heroSpeed.rawValue)
+//    }else{
+//        return 0
+//    }
+//}
 
 func getNodeAngle(node: SKSpriteNode) -> CGFloat{
     if node.name == "hero"{
@@ -278,7 +285,7 @@ func moveTo(nodeToMove: SKSpriteNode, startPosition: CGPoint, position: CGPoint)
     let xDistance = position.x - startPosition.x
     let yDistance = position.y - startPosition.y
     var distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
-    let time = NSTimeInterval(distance / getNodeSpeed(nodeToMove))
+    let time = NSTimeInterval(distance / CGFloat(heroSpeed))
     return SKAction.moveTo(position, duration: time)
 }
 

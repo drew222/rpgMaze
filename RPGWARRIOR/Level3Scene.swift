@@ -35,6 +35,7 @@ class Level3Scene: SKScene, SKPhysicsContactDelegate  {
         minethrower = MineThrowerNode.mineThrowerAtPos(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
         minethrower!.setScale(0.3)
         self.addChild(minethrower!)
+        theHero!.updateStats()
         
     }
     func didBeginContact(contact: SKPhysicsContact) {

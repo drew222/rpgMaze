@@ -24,16 +24,24 @@ class ItemClass: SKSpriteNode {
         return item
     }
     
+    func statString() -> String{
+        var myString = ""
+            for stat in itemStats!{
+                myString += "\(stat.0):\(stat.1) "
+            }
+        return myString
+    }
+    
     func getItemType(picName: String)->ItemType{
         if picName == "noobSword"{
             return ItemType.weapon
         }
         return ItemType.weapon
     }
-    
+    //weapons have Damage stat, body armor has Life stat, feet armor has Movement stat
     func getItemStats(picName: String)->[(String, CGFloat)]{
         if picName == "noobSword"{
-            return [("damage", CGFloat(5))]
+            return [("Damage", CGFloat(1))]
         }
         return []
     }

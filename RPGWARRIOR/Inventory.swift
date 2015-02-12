@@ -21,6 +21,10 @@ class Inventory: SKScene {
     var backPackSpaces = 16
     var gold = 0
     var goldNode: SKLabelNode?
+    var statLabel: SKLabelNode?
+    var weapon: ItemClass?
+    var body: ItemClass?
+    var feet: ItemClass?
     
     
     override func didMoveToView(view: SKView) {
@@ -36,6 +40,10 @@ class Inventory: SKScene {
         backPack!.position = CGPointMake(self.frame.midX, self.frame.midY - 50)
         backPack!.name = "backpack"
         self.addChild(backPack!)
+        statLabel = SKLabelNode.init(text: "")
+        statLabel!.position = CGPointMake(self.frame.midX, self.frame.midY - 200)
+        resizeLabel(statLabel!)
+        self.addChild(statLabel!)
         let bodyLabel = SKLabelNode.init(text: "Body")
         bodyLabel.position = CGPointMake(self.frame.midX, self.frame.midY + 200)
         self.addChild(bodyLabel)
@@ -152,6 +160,9 @@ class Inventory: SKScene {
         goldNode!.fontColor = UIColor.yellowColor()
         
         self.populateBags()
+        if spaceToMove != nil{
+            spaceToMove!.color = UIColor.whiteColor()
+        }
         itemToMove = nil
         spaceToMove = nil
         self.firstLoad = false
@@ -211,23 +222,42 @@ class Inventory: SKScene {
                                 //performed swap of items, clean up
                                 self.itemToMove = nil
                                 self.spaceToMove = nil
+                                if space.name == "weapon" || space.name == "body" || space.name == "feet"{
+                                    if space.name == "weapon"{
+                                        weapon = space.item
+                                    }else if space.name == "body" && itemToMove!.itemType == ItemType.body{
+                                        body = space.item
+                                    }else if space.name == "feet" && itemToMove!.itemType == ItemType.feet{
+                                        feet = space.item
+                                    }
+                                }
                                 
                             }
                         }//clicked on space with no item in it
                         else{
                             //add item to new space if have item to move
                             if self.itemToMove != nil{
+                                if spaceToMove!.name == "weapon"{
+                                    weapon = nil
+                                }else if spaceToMove!.name == "body"{
+                                    body = nil
+                                }else if spaceToMove!.name == "feet"{
+                                    feet = nil
+                                }
                                 if space.name == "weapon" || space.name == "body" || space.name == "feet"{
                                     if space.name == "weapon" && itemToMove!.itemType == ItemType.weapon{
                                         backPackSpaces++
+                                        weapon = itemToMove
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
                                     }else if space.name == "body" && itemToMove!.itemType == ItemType.body{
                                         backPackSpaces++
+                                        body = itemToMove
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
                                     }else if space.name == "feet" && itemToMove!.itemType == ItemType.feet{
                                         backPackSpaces++
+                                        feet = itemToMove
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
                                     }else{
@@ -249,7 +279,10 @@ class Inventory: SKScene {
                         //space.wasClicked = true
                         //self.itemToMove = space.item
                         if spaceToMove != nil{
-                            spaceToMove!.color = UIColor.redColor()
+                            spaceToMove!.color = UIColor.blueColor()
+                            statLabel!.text = itemToMove!.statString()
+                        }else{
+                            statLabel!.text = ""
                         }
                     }//else{
                         //space.wasClicked = false

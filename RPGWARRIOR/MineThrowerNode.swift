@@ -12,7 +12,7 @@ import SpriteKit
 class MineThrowerNode: SKSpriteNode  {
 
     var isDead = false
-    var life = 1
+    var life: CGFloat = 1
     
     
     class func mineThrowerAtPos(position: CGPoint) -> MineThrowerNode {
@@ -21,7 +21,7 @@ class MineThrowerNode: SKSpriteNode  {
         mineThrower.name = "MineThrower"
         return mineThrower
     }
-    func takeDamage(howMuch: Int){
+    func takeDamage(howMuch: CGFloat){
         self.life -= howMuch
         if (self.life <= 0){
             self.isDead = true

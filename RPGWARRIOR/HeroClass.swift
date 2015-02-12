@@ -12,10 +12,10 @@ import SpriteKit
 
 class HeroClass: SKSpriteNode {
     var currentAngle: CGFloat?
-    var life: Double?
+    var life: CGFloat?
     var isAttacking = false
     var damage: CGFloat?
-    let nodeSpeed = 125
+    //let nodeSpeed = 125
     
     class func makeHero(position: CGPoint) -> HeroClass{
         let hero = HeroClass(imageNamed: "walkman4.png")
@@ -26,6 +26,7 @@ class HeroClass: SKSpriteNode {
         hero.setupPhysicsBody()
         hero.life = 3.0
         hero.zPosition = 1
+        hero.damage = 1
         return hero
     }
     
@@ -257,7 +258,7 @@ class HeroClass: SKSpriteNode {
     
     
     
-    func takeDamage(damage: Double) -> Bool{
+    func takeDamage(damage: CGFloat) -> Bool{
         self.life! -= damage
         if (self.life! <= 0){
             println("THE HERO HAS DIED!")
@@ -267,15 +268,45 @@ class HeroClass: SKSpriteNode {
         }
     }
     
+    func updateStats(){
+        if let theInventory = self.parent!.userData?.objectForKey("inventory") as? Inventory{
+            //check that its holding a weapon
+            if let weaponSpot = theInventory.childNodeWithName("weapon") as? ItemSpaceNode{
+            if (theInventory.weapon != nil){
+                for stat in theInventory.weapon!.itemStats!{
+                    if stat.0 == "Damage"{
+                        self.damage! += stat.1
+                    }
+                }
+                }}
+            if let bodySpot = theInventory.childNodeWithName("body") as? ItemSpaceNode{
+            if (theInventory.body != nil){
+                for stat in theInventory.body!.itemStats!{
+                    if stat.0 == "Life"{
+                        self.life! += stat.1
+                    }
+                }
+                }}
+            if let feetSpot = theInventory.childNodeWithName("feet") as? ItemSpaceNode{
+            if (theInventory.feet != nil){
+                for stat in theInventory.feet!.itemStats!{
+                    if stat.0 == "Movement"{
+                        heroSpeed += stat.1
+                    }
+                }
+                }}
+        }
+    }
+    
     func attack(){
         if let theWizard = self.parent!.childNodeWithName("wizard") as? WizardClass{
-            theWizard.takeDamage(1)
+            theWizard.takeDamage(self.damage!)
             //println("THE WIZARD HAS DIED!")
         }else if let theBomber = self.parent!.childNodeWithName("bomber") as? BomberClass{
-            theBomber.takeDamage(1)
+            theBomber.takeDamage(self.damage!)
             //println("THE BOMBER HAS DIED!")
         }else if let mineThrower = self.parent!.childNodeWithName("MineThrower") as? MineThrowerNode{
-            mineThrower.takeDamage(1)
+            mineThrower.takeDamage(self.damage!)
             }
         }
     }
