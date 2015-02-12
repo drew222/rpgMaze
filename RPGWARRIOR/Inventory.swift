@@ -196,6 +196,9 @@ class Inventory: SKScene {
             }else{
                 for space in itemSpaces{
                     if space.containsPoint(touch.locationInNode(self)){
+                        if spaceToMove != nil{
+                            spaceToMove!.color = UIColor.whiteColor()
+                        }
                         //clicked on space with item in it
                         if space.item != nil{
                             if self.itemToMove == nil{
@@ -245,6 +248,9 @@ class Inventory: SKScene {
                         }
                         //space.wasClicked = true
                         //self.itemToMove = space.item
+                        if spaceToMove != nil{
+                            spaceToMove!.color = UIColor.redColor()
+                        }
                     }//else{
                         //space.wasClicked = false
                    // }
