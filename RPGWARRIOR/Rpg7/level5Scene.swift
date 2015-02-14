@@ -1,25 +1,26 @@
 //
-//  GameScene.swift
-//  ThrowMine
+//  level5Scene.swift
+//  RPGWARRIOR
 //
-//  Created by Tyler Mullins on 2/2/15.
-//  Copyright (c) 2015 Tyler Mullins. All rights reserved.
+//  Created by Drew Zoellner on 2/12/15.
+//  Copyright (c) 2015 Drew Zoellner. All rights reserved.
 //
+
 import Foundation
 import SpriteKit
 
-class Level3Scene: SKScene, SKPhysicsContactDelegate  {
+class Level5Scene: SKScene, SKPhysicsContactDelegate  {
     
-    var timeOfLastMine = 0.0
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
-    var mineSpawnTimer = 0.1
     var levelOver = false
-    let levelName = "level3"
+    let levelName = "level5"
     var theHero: HeroClass?
-    var minethrower: MineThrowerNode?
+    var bombthrower: BomberClass?
     var droppedItem = false
+    let bomberAttackSpeed = 1.0
+    var lastBomb: Double = 0.0
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -29,12 +30,15 @@ class Level3Scene: SKScene, SKPhysicsContactDelegate  {
         background.zPosition = -1
         self.physicsWorld.contactDelegate = self
         self.addChild(background)
-        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.1))
+        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.04))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
-        minethrower = MineThrowerNode.mineThrowerAtPos(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
-        minethrower!.setScale(0.3)
-        self.addChild(minethrower!)
+        bombthrower = BomberClass.makeBomber(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
+        bombthrower!.setScale(0.3)
+        for spot in generateMinePoints(){
+            placeMine(spot)
+        }
+        self.addChild(bombthrower!)
         theHero!.updateStats()
         
     }
@@ -49,13 +53,13 @@ class Level3Scene: SKScene, SKPhysicsContactDelegate  {
             secondBody = contact.bodyA
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-           secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
-            let mine = secondBody.node as? MineNode
-            if mine!.isArmed{
-                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
-                let aHero = self.childNodeWithName("hero") as HeroClass
-                aHero.takeDamage(1)
-            }
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
+                let mine = secondBody.node as? MineNode
+                if mine!.isArmed{
+                    mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+                    let aHero = self.childNodeWithName("hero") as HeroClass
+                    aHero.takeDamage(3)
+                }
         }
     }
     
@@ -66,32 +70,66 @@ class Level3Scene: SKScene, SKPhysicsContactDelegate  {
             aHero.moveHelper(touch.locationInNode(self))
         }
     }
-    func throwMine(position: CGPoint) {
-        let theMinethrower = (self.childNodeWithName("MineThrower")) as? MineThrowerNode
-        let mine = MineNode.mineAtPos(CGPointMake(theMinethrower!.position.x, theMinethrower!.position.y + 10)) as MineNode
-        self.addChild(mine)
-        mine.throwMineToPos(position)
+    
+    func generateMinePoints() -> [CGPoint]{
+        //generate line from mid x to c
+        var points: [CGPoint] = []
+        var startY = self.frame.midY - 90
+        while startY > self.frame.minY + 90{
+            points.append(CGPointMake(self.frame.midX, startY))
+            startY -= 13
+        }
+        var startX = self.frame.midX
+        while startX > self.frame.minX{
+            points.append(CGPointMake(startX, self.frame.minY + 90))
+            startX -= 13
+        }
+        startX = self.frame.midX
+        while startX > 0{
+            points.append(CGPointMake(startX, self.frame.midY - 90))
+            startX -= 13
+        }
+        startY = self.frame.minY + 90
+        while startY < self.frame.midY{
+            points.append(CGPointMake(self.frame.midX + 90, startY))
+            startY += 13
+        }
+        startX = self.frame.midX + 90
+        while startX < self.frame.maxX{
+            points.append(CGPointMake(startX, self.frame.minY + 90))
+            startX += 13
+        }
+        startX = self.frame.midX + 90
+        while startX > 90{
+            points.append(CGPointMake(startX, self.frame.midY))
+            startX -= 13
+        }
+        return points
     }
-    override func update(currentTime: NSTimeInterval) {
+    func placeMine(position: CGPoint) {
+        let theMinethrower = (self.childNodeWithName("MineThrower")) as? MineThrowerNode
+        let mine = MineNode.mineAtPos(position) as MineNode
+        mine.isArmed = true
+        self.addChild(mine)
+    }
+    override func update(currentTime: CFTimeInterval) {
+        /* Called before each frame is rendered */
+        //println("current time: \(currentTime)")
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
-            self.timeOfLastMine = currentTime
             self.lastUpdatesTime = currentTime
+            self.lastBomb = currentTime
         }
-        self.totalGameTime += currentTime - lastUpdatesTime
-        if currentTime - timeOfLastMine > mineSpawnTimer{
-            
-            let frameX: UInt32 = UInt32(self.frame.width)
-            let frameY: UInt32 = UInt32(self.frame.height)
-            let randomPositionX = CGFloat(arc4random_uniform(frameX))
-            let randomPositionY = CGFloat(arc4random_uniform(frameY))
-            let randomPos = CGPointMake(randomPositionX, randomPositionY)
-            if !droppedItem{
-                self.throwMine(randomPos)
-            }
-            timeOfLastMine = currentTime
+        self.totalGameTime += currentTime - self.lastUpdatesTime
+        if currentTime - lastBomb  > bomberAttackSpeed{
+            self.lastBomb = currentTime
+            bombthrower!.throwBomb()
         }
-        if (minethrower!.isDead || theHero!.life <= 0) && !levelOver{
+        
+        self.lastUpdatesTime = currentTime
+        
+        //check for win condition
+        if (bombthrower!.isDead || theHero!.life <= 0) && !levelOver{
             //parent of self is viewcontroller, has view, extends sknode
             //if (theHero!.life == 0){
             //   let deathNode = SKLabelNode.init(text: "You died, try again!")
@@ -109,15 +147,13 @@ class Level3Scene: SKScene, SKPhysicsContactDelegate  {
                 //println("got here222")
                 //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
                 let skTransition = SKTransition.fadeWithDuration(5.0)
-                println("got here111")
                 //let gameScene = self.userData?.objectForKey("menu") as MainMenuScene
                 self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
-                println("got here222")
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil){
-                if minethrower!.isDead{
-                    dropLoot("level3", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                if bombthrower!.isDead{
+                    dropLoot("level5", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }

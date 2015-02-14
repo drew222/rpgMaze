@@ -44,7 +44,9 @@ class MineNode: SKSpriteNode {
             liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as SKEmitterNode)
             liteAttack!.position = position
             liteAttack!.setScale(0.5)
-            self.parent!.addChild(liteAttack!)
+            //if (self.parent! as? SKScene != nil){
+                self.parent!.addChild(liteAttack!)
+            //}
             self.removeActionForKey("fire")
             self.texture = nil})
         

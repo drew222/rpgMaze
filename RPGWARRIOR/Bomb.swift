@@ -27,7 +27,7 @@ class Bomb: SKSpriteNode {
     func setupPhysicsBody() {
         self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
         self.physicsBody?.affectedByGravity = false
-        self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryProjectile.rawValue
+        self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryBomb.rawValue
         self.physicsBody?.collisionBitMask = 0
         self.physicsBody?.contactTestBitMask = CollisionBitMasks.collisionCategoryHero.rawValue
     }

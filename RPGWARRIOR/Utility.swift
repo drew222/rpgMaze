@@ -14,11 +14,14 @@ import SpriteKit
 let smoothnessFactor = 1.0
 let pi = CGFloat(3.1415927)
 
+
+//NOTE: currently bomb doesn't use collision checking
 enum CollisionBitMasks: UInt32{
     case collisionCategoryHero = 1
     case collisionCategoryProjectile = 2
     case collisionCategoryWizard = 4
     case collisionCategoryItem = 8
+    case collisionCategoryBomb = 16
 }
 
 
@@ -56,8 +59,28 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         //drop loot for killing wizard
         let myNum = randomWithMin(-50, 50)
         println("myNum: \(myNum)")
-        if myNum > 0{
+        if myNum > 30{
             let item = ItemClass.itemInSpace("noobSword")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }else if myNum > 20{
+            let item = ItemClass.itemInSpace("level1armor")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }else if myNum < -25{
+            let item = ItemClass.itemInSpace("level1boots")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }else if myNum > 0{
+            let item = ItemClass.itemInSpace("level1setarmor")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }else if myNum < 0{
+            let item = ItemClass.itemInSpace("level1setboots")
             item.position = position
             item.size = size
             scene.addChild(item)

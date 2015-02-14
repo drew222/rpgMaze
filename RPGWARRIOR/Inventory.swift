@@ -217,19 +217,43 @@ class Inventory: SKScene {
                                 self.spaceToMove = space
                             }//already an item to move, swap
                             else{
-                                self.spaceToMove!.insertItem(space.item!)
-                                space.insertItem(self.itemToMove!)
-                                //performed swap of items, clean up
-                                self.itemToMove = nil
-                                self.spaceToMove = nil
-                                if space.name == "weapon" || space.name == "body" || space.name == "feet"{
-                                    if space.name == "weapon"{
-                                        weapon = space.item
-                                    }else if space.name == "body" && itemToMove!.itemType == ItemType.body{
-                                        body = space.item
-                                    }else if space.name == "feet" && itemToMove!.itemType == ItemType.feet{
-                                        feet = space.item
+                                //check if both are equipped, item and space to move to nil and put everything else in an else
+                                if (spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "weapon") && (space.name == "body" || space.name == "feet" || space.name == "weapon"){
+                                    self.itemToMove = nil
+                                    self.spaceToMove = nil
+                                }else{
+                                    if space.name == "weapon" || space.name == "body" || space.name == "feet"{
+                                        if space.name == "weapon" && itemToMove!.itemType == ItemType.weapon{
+                                                //weapon = space.item
+                                            self.spaceToMove!.insertItem(space.item!)
+                                            space.insertItem(self.itemToMove!)
+                                        }else if space.name == "body" && itemToMove!.itemType == ItemType.body{
+                                            self.spaceToMove!.insertItem(space.item!)
+                                            space.insertItem(self.itemToMove!)
+                                                //body = space.item
+                                        }else if space.name == "feet" && itemToMove!.itemType == ItemType.feet{
+                                                //feet = space.item
+                                            self.spaceToMove!.insertItem(space.item!)
+                                            space.insertItem(self.itemToMove!)
+                                        }
+                                    }else{
+                                        //CHECK IF SPACETOMOVE IS WEP,BODY,FEET AND THEN CHECK SPACE'S ITEMTYPE
+                                        if spaceToMove!.name == "weapon" && space.item!.itemType == ItemType.weapon{
+                                            //weapon = space.item
+                                            self.spaceToMove!.insertItem(space.item!)
+                                            space.insertItem(self.itemToMove!)
+                                        }else if spaceToMove!.name == "body" && space.item!.itemType == ItemType.body{
+                                            self.spaceToMove!.insertItem(space.item!)
+                                            space.insertItem(self.itemToMove!)
+                                            //body = space.item
+                                        }else if spaceToMove!.name == "feet" && space.item!.itemType == ItemType.feet{
+                                            //feet = space.item
+                                            self.spaceToMove!.insertItem(space.item!)
+                                            space.insertItem(self.itemToMove!)
+                                        }
                                     }
+                                    self.itemToMove = nil
+                                    self.spaceToMove = nil
                                 }
                                 
                             }

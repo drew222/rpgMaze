@@ -12,7 +12,7 @@ import SpriteKit
 class MineThrowerNode: SKSpriteNode  {
 
     var isDead = false
-    var life: CGFloat = 1
+    var life: CGFloat = 2
     
     
     class func mineThrowerAtPos(position: CGPoint) -> MineThrowerNode {
