@@ -25,6 +25,7 @@ class BlizzNode: SKEmitterNode {
         let blizz = NSKeyedUnarchiver.unarchiveObjectWithFile(blizzPath!) as SKEmitterNode
         let blizzContactNode = SKSpriteNode(color: SKColor.blackColor(), size: blizz.frame.size)
         blizzContactNode.zPosition = -2.0
+        blizzContactNode.position = blizz.position
         return blizzContactNode
         
     }
