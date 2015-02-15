@@ -10,6 +10,9 @@
 		2F62CE561A89C21000046DA7 /* MineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62CE541A89C21000046DA7 /* MineNode.swift */; };
 		2F62CE571A89C21000046DA7 /* MineThrowerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62CE551A89C21000046DA7 /* MineThrowerNode.swift */; };
 		2F62CE591A89C25000046DA7 /* Level3Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F62CE581A89C25000046DA7 /* Level3Scene.swift */; };
+		2FC73DE11A912B690068A2FB /* BlizzParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2FC73DE01A912B690068A2FB /* BlizzParticle.sks */; };
+		2FC73DE31A912CAA0068A2FB /* BlizzNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC73DE21A912CAA0068A2FB /* BlizzNode.swift */; };
+		2FC73DE51A912D980068A2FB /* Level4Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC73DE41A912D980068A2FB /* Level4Scene.swift */; };
 		DC1F57C11A88087500B5027B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC27114F1A86A09D00986D2E /* AppDelegate.swift */; };
 		DC1F580D1A882D3200B5027B /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F580C1A882D3200B5027B /* MainMenuScene.swift */; };
 		DC1F580F1A886BB100B5027B /* Level2Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1F580E1A886BB100B5027B /* Level2Scene.swift */; };
@@ -102,6 +105,9 @@
 		2F62CE541A89C21000046DA7 /* MineNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineNode.swift; sourceTree = "<group>"; };
 		2F62CE551A89C21000046DA7 /* MineThrowerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineThrowerNode.swift; sourceTree = "<group>"; };
 		2F62CE581A89C25000046DA7 /* Level3Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level3Scene.swift; sourceTree = "<group>"; };
+		2FC73DE01A912B690068A2FB /* BlizzParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BlizzParticle.sks; sourceTree = "<group>"; };
+		2FC73DE21A912CAA0068A2FB /* BlizzNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlizzNode.swift; sourceTree = "<group>"; };
+		2FC73DE41A912D980068A2FB /* Level4Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level4Scene.swift; sourceTree = "<group>"; };
 		DC1F580C1A882D3200B5027B /* MainMenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
 		DC1F580E1A886BB100B5027B /* Level2Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level2Scene.swift; sourceTree = "<group>"; };
 		DC1F58101A886EFC00B5027B /* BomberClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BomberClass.swift; sourceTree = "<group>"; };
@@ -225,6 +231,7 @@
 			children = (
 				DCC4E30B1A8E8DFE000E5E89 /* Rpg8 */,
 				DC2711491A85E26C00986D2E /* Fireball.swift */,
+				2FC73DE21A912CAA0068A2FB /* BlizzNode.swift */,
 				DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */,
 				DCC4E3051A8976AB000E5E89 /* ItemClass.swift */,
 				DC1F58121A88703500B5027B /* Bomb.swift */,
@@ -242,12 +249,14 @@
 				DCC4E3781A8EEE59000E5E89 /* StoreScene.swift */,
 				DC1F580E1A886BB100B5027B /* Level2Scene.swift */,
 				2F62CE581A89C25000046DA7 /* Level3Scene.swift */,
+				2FC73DE41A912D980068A2FB /* Level4Scene.swift */,
 				DCC4E3091A8DB082000E5E89 /* level5Scene.swift */,
 				DC2711211A85E11900986D2E /* Main.storyboard */,
 				DC2711241A85E11900986D2E /* Images.xcassets */,
 				DC2711261A85E11900986D2E /* LaunchScreen.xib */,
 				DC2711171A85E11900986D2E /* Supporting Files */,
 				DC1F58181A88735300B5027B /* LightParticle.sks */,
+				2FC73DE01A912B690068A2FB /* BlizzParticle.sks */,
 				DC1F58191A88735300B5027B /* spark.png */,
 			);
 			path = RPGWARRIOR;
@@ -426,6 +435,7 @@
 				DCC4E35B1A8E8DFE000E5E89 /* walkman2.png in Resources */,
 				DCC4E3501A8E8DFE000E5E89 /* level3sword.png in Resources */,
 				DC2711281A85E11900986D2E /* LaunchScreen.xib in Resources */,
+				2FC73DE11A912B690068A2FB /* BlizzParticle.sks in Resources */,
 				DCC4E3521A8E8DFE000E5E89 /* level4dagger.png in Resources */,
 				DCC4E3431A8E8DFE000E5E89 /* healthglobe.png in Resources */,
 				DC1F581A1A88735300B5027B /* LightParticle.sks in Resources */,
@@ -498,12 +508,14 @@
 				DCC4E3021A89760E000E5E89 /* Inventory.swift in Sources */,
 				2F62CE561A89C21000046DA7 /* MineNode.swift in Sources */,
 				DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */,
+				2FC73DE31A912CAA0068A2FB /* BlizzNode.swift in Sources */,
 				DC2711461A85E1F500986D2E /* HeroClass.swift in Sources */,
 				DC2711421A85E1D300986D2E /* Utility.swift in Sources */,
 				DC1F58111A886EFC00B5027B /* BomberClass.swift in Sources */,
 				2F62CE591A89C25000046DA7 /* Level3Scene.swift in Sources */,
 				DCC4E3041A897671000E5E89 /* ItemSpaceNode.swift in Sources */,
 				DC1F580F1A886BB100B5027B /* Level2Scene.swift in Sources */,
+				2FC73DE51A912D980068A2FB /* Level4Scene.swift in Sources */,
 				DCC4E3061A8976AB000E5E89 /* ItemClass.swift in Sources */,
 				DC27113E1A85E1AB00986D2E /* GameScene.swift in Sources */,
 				2F62CE571A89C21000046DA7 /* MineThrowerNode.swift in Sources */,
