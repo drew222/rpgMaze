@@ -85,6 +85,7 @@
 		DCC4E3751A8E8DFE000E5E89 /* wizard7.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC4E33F1A8E8DFE000E5E89 /* wizard7.png */; };
 		DCC4E3761A8E8DFE000E5E89 /* wizard8.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC4E3401A8E8DFE000E5E89 /* wizard8.png */; };
 		DCC4E3771A8E8DFE000E5E89 /* wizard9.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC4E3411A8E8DFE000E5E89 /* wizard9.png */; };
+		DCC4E3791A8EEE59000E5E89 /* StoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3781A8EEE59000E5E89 /* StoreScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +181,7 @@
 		DCC4E33F1A8E8DFE000E5E89 /* wizard7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard7.png; sourceTree = "<group>"; };
 		DCC4E3401A8E8DFE000E5E89 /* wizard8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard8.png; sourceTree = "<group>"; };
 		DCC4E3411A8E8DFE000E5E89 /* wizard9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard9.png; sourceTree = "<group>"; };
+		DCC4E3781A8EEE59000E5E89 /* StoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,20 +225,21 @@
 			children = (
 				DCC4E30B1A8E8DFE000E5E89 /* Rpg8 */,
 				DC2711491A85E26C00986D2E /* Fireball.swift */,
-				DC1F58121A88703500B5027B /* Bomb.swift */,
-				DCC4E3011A89760E000E5E89 /* Inventory.swift */,
 				DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */,
 				DCC4E3051A8976AB000E5E89 /* ItemClass.swift */,
-				DC1F580C1A882D3200B5027B /* MainMenuScene.swift */,
+				DC1F58121A88703500B5027B /* Bomb.swift */,
 				DC1F58101A886EFC00B5027B /* BomberClass.swift */,
 				DC27114F1A86A09D00986D2E /* AppDelegate.swift */,
 				DC2711471A85E26100986D2E /* GameViewController.swift */,
 				DC2711451A85E1F500986D2E /* HeroClass.swift */,
 				DC2711411A85E1D300986D2E /* Utility.swift */,
+				DC1F580C1A882D3200B5027B /* MainMenuScene.swift */,
 				DC2711431A85E1DE00986D2E /* WizardClass.swift */,
-				DC27113D1A85E1AB00986D2E /* GameScene.swift */,
 				2F62CE541A89C21000046DA7 /* MineNode.swift */,
 				2F62CE551A89C21000046DA7 /* MineThrowerNode.swift */,
+				DCC4E3011A89760E000E5E89 /* Inventory.swift */,
+				DC27113D1A85E1AB00986D2E /* GameScene.swift */,
+				DCC4E3781A8EEE59000E5E89 /* StoreScene.swift */,
 				DC1F580E1A886BB100B5027B /* Level2Scene.swift */,
 				2F62CE581A89C25000046DA7 /* Level3Scene.swift */,
 				DCC4E3091A8DB082000E5E89 /* level5Scene.swift */,
@@ -505,6 +508,7 @@
 				DC27113E1A85E1AB00986D2E /* GameScene.swift in Sources */,
 				2F62CE571A89C21000046DA7 /* MineThrowerNode.swift in Sources */,
 				DC1F57C11A88087500B5027B /* AppDelegate.swift in Sources */,
+				DCC4E3791A8EEE59000E5E89 /* StoreScene.swift in Sources */,
 				DC2711441A85E1DE00986D2E /* WizardClass.swift in Sources */,
 				DC1F58131A88703500B5027B /* Bomb.swift in Sources */,
 				DCC4E30A1A8DB082000E5E89 /* level5Scene.swift in Sources */,

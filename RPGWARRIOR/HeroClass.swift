@@ -15,6 +15,9 @@ class HeroClass: SKSpriteNode {
     var life: CGFloat?
     var isAttacking = false
     var damage: CGFloat?
+    let baseDamage = 1
+    let baseLife = 1
+    let baseSpeed = 150
     //let nodeSpeed = 125
     
     class func makeHero(position: CGPoint) -> HeroClass{
@@ -269,6 +272,9 @@ class HeroClass: SKSpriteNode {
     }
     
     func updateStats(){
+        self.damage = CGFloat(baseDamage)
+        self.life = CGFloat(baseLife)
+        heroSpeed = CGFloat(baseSpeed)
         if let theInventory = self.parent!.userData?.objectForKey("inventory") as? Inventory{
             //check that its holding a weapon
             if let weaponSpot = theInventory.childNodeWithName("weapon") as? ItemSpaceNode{

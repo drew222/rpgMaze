@@ -12,6 +12,7 @@ import SpriteKit
 
 class Inventory: SKScene {
     var menu: SKLabelNode?
+    var store: SKLabelNode?
     var backPack: SKSpriteNode?
     var itemSpaces: [ItemSpaceNode] = []
     var items: [ItemClass] = []
@@ -36,6 +37,11 @@ class Inventory: SKScene {
         menu!.name = "menu"
         menu!.setScale(0.7)
         self.addChild(menu!)
+        store = SKLabelNode.init(text: "Store")
+        store!.position = CGPointMake(self.frame.midX, self.frame.minY + 40)
+        store!.name = "store"
+        store!.setScale(0.7)
+        self.addChild(store!)
         backPack = SKSpriteNode(color: UIColor.blackColor(), size: CGSizeMake(260,260))
         backPack!.position = CGPointMake(self.frame.midX, self.frame.midY - 50)
         backPack!.name = "backpack"
@@ -172,7 +178,7 @@ class Inventory: SKScene {
     func addItem(itemName: String){
         println("adding item to items array")
         if backPackSpaces == 0 {
-            println("YOURBACK IS FULL")
+            println("YOUR PACK IS FULL")
         }else{
             items.append(ItemClass.itemInSpace(itemName))
             backPackSpaces--
@@ -204,6 +210,14 @@ class Inventory: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 //self.view?.presentScene(menuScene, transition: skTransition)
                 self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+            }else if store!.containsPoint(touch.locationInNode(self)){
+                let storeScene = StoreScene(size: self.frame.size)
+                storeScene.userData = NSMutableDictionary()
+                storeScene.userData?.setObject(self, forKey: "inventory")
+                storeScene.userData?.setObject(self.userData?.objectForKey("menu") as MainMenuScene, forKey: "menu")
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                //self.view?.presentScene(menuScene, transition: skTransition)
+                self.view?.presentScene(storeScene, transition: skTransition)
             }else{
                 for space in itemSpaces{
                     if space.containsPoint(touch.locationInNode(self)){
@@ -236,7 +250,7 @@ class Inventory: SKScene {
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
                                         }
-                                    }else{
+                                    }else if spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet"{
                                         //CHECK IF SPACETOMOVE IS WEP,BODY,FEET AND THEN CHECK SPACE'S ITEMTYPE
                                         if spaceToMove!.name == "weapon" && space.item!.itemType == ItemType.weapon{
                                             //weapon = space.item
@@ -251,6 +265,10 @@ class Inventory: SKScene {
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
                                         }
+                                    }
+                                    else{
+                                        self.spaceToMove!.insertItem(space.item!)
+                                        space.insertItem(self.itemToMove!)
                                     }
                                     self.itemToMove = nil
                                     self.spaceToMove = nil

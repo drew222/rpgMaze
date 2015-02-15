@@ -31,10 +31,13 @@ enum ItemType{
     case feet
 }
 
-var heroSpeed: CGFloat = 160
+var heroSpeed: CGFloat = 150
 //enum nodeSpeeds: Int{
 //    case heroSpeed = 160
 //}
+
+let allStoreItems = ["noobSword", "level2sword", "level3sword", "level4dagger", "level6dagger", "level1armor", "level1setarmor", "level2armor", "level2setarmor", "level3armor", "level3setarmor", "level4armor", "level4setarmor", "level1boots", "level1setboots", "level2setboots", "level3setboots", "level4setboots"]
+
 
 func randomWithMin(min: Int, max: Int) -> NSInteger{
     let myNum = random() % (max - min) + min as NSInteger
@@ -44,7 +47,6 @@ func randomWithMin(min: Int, max: Int) -> NSInteger{
 func resizeLabel(node: SKLabelNode){
     let numChars = countElements(node.text)
     node.fontSize = 25 - (CGFloat(numChars) / 6)
-    println("\(node.fontSize)")
 }
 
 

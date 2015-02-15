@@ -37,7 +37,7 @@ class ItemClass: SKSpriteNode {
             return ItemType.weapon
         }else if picName == "level1armor" || picName == "level1setarmor" || picName == "level2armor" || picName == "level2setarmor" || picName == "level3armor" || picName == "level3setarmor" || picName == "level4armor" || picName == "level4setarmor"{
             return ItemType.body
-        }else if picName == "level1boots" || picName == "level1setboots" || picName == "level2setboots" || picName == "lvevl3setboots" || picName == "level4setboots"{
+        }else if picName == "level1boots" || picName == "level1setboots" || picName == "level2setboots" || picName == "level3setboots" || picName == "level4setboots"{
             return ItemType.feet
         }
         return ItemType.weapon
