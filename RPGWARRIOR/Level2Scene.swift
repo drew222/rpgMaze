@@ -96,24 +96,8 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate {
         
         //check for win condition
         if (theBomber!.isDead || theHero!.life <= 0) && !levelOver{
-            //parent of self is viewcontroller, has view, extends sknode
-            //if (theHero!.life == 0){
-             //   let deathNode = SKLabelNode.init(text: "You died, try again!")
-             //   deathNode.position = CGPointMake(self.frame.midX, self.frame.midY)
-             //   self.addChild(deathNode)
-           // }else if (theBomber!.isDead){
-             //   let winNode = SKLabelNode.init(text: "You win, congratulations!")
-             //   winNode.position = CGPointMake(self.frame.midX, self.frame.midY)
-             //   self.addChild(winNode)
-           // }
             if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
-                //let menuScene = MainMenuScene(size: self.frame.size)
-                //println("got here111")
-                //(self.userData?.objectForKey("menu") as MainMenuScene).userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
-                //println("got here222")
-                //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
                 let skTransition = SKTransition.fadeWithDuration(5.0)
-                //let gameScene = self.userData?.objectForKey("menu") as MainMenuScene
                 self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
                 levelOver = true
             }

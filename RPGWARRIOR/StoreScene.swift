@@ -83,7 +83,7 @@ class StoreScene: SKScene {
     }
     
     func buyItem(){
-        if (self.userData?.objectForKey("inventory") as Inventory).gold >= currentItem!.price{
+        if (self.userData?.objectForKey("inventory") as Inventory).gold >= currentItem!.price && (self.userData?.objectForKey("inventory") as Inventory).backPackSpaces > 0{
             (self.userData?.objectForKey("inventory") as Inventory).gold -= currentItem!.price!
             (self.userData?.objectForKey("inventory") as Inventory).addItem(currentItem!.itemName!)
             goldCount -= currentItem!.price!
@@ -121,6 +121,17 @@ class StoreScene: SKScene {
             buyNode.position = CGPointMake(self.frame.midX + 110, self.frame.minY + 150)
             buyNode.name = "buyButton"
             self.addChild(buyNode)
+        }
+        if currentItem != nil{
+            if self.childNodeWithName("priceButton") != nil{
+                self.childNodeWithName("priceButton")?.removeFromParent()
+            }
+            let priceNode = SKLabelNode.init(text: "Price: \(Int(currentItem!.price!))")
+            priceNode.position = CGPointMake(self.frame.midX + 110, self.frame.minY + 90)
+            priceNode.fontSize = 16
+            priceNode.name = "priceButton"
+            priceNode.fontColor = UIColor.redColor()
+            self.addChild(priceNode)
         }
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import Foundation
 
 //import AVFoundation
 
@@ -201,6 +202,19 @@ class Inventory: SKScene {
             count++
         }
     }
+    
+    func sellItem(){
+        gold += round(itemToMove!.price! / 3)
+        goldNode!.text = "\(Int(gold))"
+        spaceToMove!.item = nil
+        itemToMove?.removeFromParent()
+        spaceToMove!.color = UIColor.whiteColor()
+        self.childNodeWithName("sellButton")?.removeFromParent()
+        spaceToMove = nil
+        itemToMove = nil
+        statLabel!.text = ""
+    }
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         for touch in touches{
             if menu!.containsPoint(touch.locationInNode(self)){
@@ -218,6 +232,8 @@ class Inventory: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 //self.view?.presentScene(menuScene, transition: skTransition)
                 self.view?.presentScene(storeScene, transition: skTransition)
+            }else if self.childNodeWithName("sellButton")? != nil && self.childNodeWithName("sellButton")!.containsPoint(touch.locationInNode(self)){
+                sellItem()
             }else{
                 for space in itemSpaces{
                     if space.containsPoint(touch.locationInNode(self)){
@@ -323,8 +339,18 @@ class Inventory: SKScene {
                         if spaceToMove != nil{
                             spaceToMove!.color = UIColor.blueColor()
                             statLabel!.text = itemToMove!.statString()
+                            if self.childNodeWithName("priceButton") != nil{
+                                self.childNodeWithName("priceButton")?.removeFromParent()
+                            }
+                            let sellNode = SKLabelNode.init(text: "Sell: \(round(itemToMove!.price! / 3))")
+                            sellNode.position = CGPointMake(self.frame.midX, self.frame.minY + 90)
+                            sellNode.fontSize = 16
+                            sellNode.name = "sellButton"
+                            sellNode.fontColor = UIColor.blueColor()
+                            self.addChild(sellNode)
                         }else{
                             statLabel!.text = ""
+                            self.childNodeWithName("sellButton")?.removeFromParent()
                         }
                     }//else{
                         //space.wasClicked = false
