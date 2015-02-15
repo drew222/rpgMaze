@@ -106,26 +106,10 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
             //theWizard!.shootFireball()
         }
         if currentTime - lastBlizz > (3 * wizardAttackSpeed) {
-            let blizzContactNode = BlizzNode.blizzContactNode()
+            theWizard!.createBlizz(theWizard!.getBlizzLocation(theHero!.position))
             self.lastBlizz = currentTime
-            theWizard!.createBlizz()
-            let blizz = self.childNodeWithName("Blizzard")
-            let blizzContactNode = BlizzNode.blizzContactNode()
-            self.addChild(blizzContactNode)
         }
- 
-            if (distanceBetween(hero!.position, blizzContactNode.position) <= 100 ){
-                heroSpeed = 50
-                println(heroSpeed)
-            }else {
-                heroSpeed = 150
-                println(heroSpeed)
-                println(theHero!.baseSpeed)
-            }else {
-                heroSpeed = 150
-                println(theHero!.baseSpeed)
-            }
-            
+        
             self.lastUpdatesTime = currentTime
         
     

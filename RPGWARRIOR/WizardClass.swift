@@ -62,7 +62,7 @@ class WizardClass: SKSpriteNode {
             self.texture = nil
         }
     }
-        func getBlizzLocation(heroPosition: CGPoint)->CGPoint{
+    func getBlizzLocation(heroPosition: CGPoint)->CGPoint{
             //generate random x and y within a range of the hero
             let xRange = abs(self.position.x - heroPosition.x)
             let yRange = abs(self.position.y - heroPosition.y)
@@ -86,15 +86,29 @@ class WizardClass: SKSpriteNode {
             }
             return CGPointMake(xPosition!, yPosition!)
         }
-    func createBlizz() {
-        if self.isDead{
-            return
-        }
-        //calculate where to shoot the bomb
-        let hero = self.parent!.childNodeWithName("hero") as HeroClass
-        let shootAtPoint = getBlizzLocation(hero.position)
-        //shoot the fireball
-        let blizz = BlizzNode.blizzAtPos(getBlizzLocation(hero.position))
-        self.parent!.addChild(blizz)
+    func createBlizz(position: CGPoint){
+        
+        var blizzAttack: SKEmitterNode?
+        let blizzCode = SKAction.runBlock({let blizzPath = NSBundle.mainBundle().pathForResource("BlizzParticle", ofType: "sks")
+            blizzAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(blizzPath!) as SKEmitterNode)
+            blizzAttack!.position = position
+            //blizzAttack!.setScale(0.5)
+            self.parent!.addChild(blizzAttack!)
+            self.removeActionForKey("blizz")
+            self.texture = nil})
+        
+        let removeBlock = SKAction.runBlock({blizzAttack!.removeFromParent()
+            self.removeFromParent()})
+        let damageBlock = SKAction.runBlock({
+            let distanceFromBlizz = distanceBetween(self.parent!.childNodeWithName("hero")!.position, self.position)
+            if distanceFromBlizz <= 60{
+                let theHero = self.parent!.childNodeWithName("hero")! as HeroClass
+                println("distance from bomb = \(distanceFromBlizz)")
+                heroSpeed = heroSpeed - 75
+            }})
+        let sequence = SKAction.sequence([blizzCode, damageBlock, SKAction.waitForDuration(5.0), removeBlock])
+        self.runAction(sequence)
+        
     }
 }
+
