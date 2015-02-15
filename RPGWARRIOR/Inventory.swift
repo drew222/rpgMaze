@@ -20,7 +20,7 @@ class Inventory: SKScene {
     var spaceToMove: ItemSpaceNode?
     var firstLoad = true
     var backPackSpaces = 16
-    var gold = 0
+    var gold: CGFloat = 15
     var goldNode: SKLabelNode?
     var statLabel: SKLabelNode?
     var weapon: ItemClass?
@@ -157,12 +157,12 @@ class Inventory: SKScene {
         itemSpaces.append(feetSpace)
             
         //gold node
-        goldNode = SKLabelNode.init(text: "\(gold)")
+        goldNode = SKLabelNode.init(text: "\(Int(gold))")
         goldNode!.position = CGPointMake(self.frame.minX + 70, self.frame.minY + 40)
         self.addChild(goldNode!)
         }
         
-        goldNode!.text = "\(gold)"
+        goldNode!.text = "\(Int(gold))"
         goldNode!.fontColor = UIColor.yellowColor()
         
         self.populateBags()

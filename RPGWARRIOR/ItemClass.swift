@@ -13,6 +13,7 @@ class ItemClass: SKSpriteNode {
     var itemName: String?
     var itemType: ItemType?
     var itemStats: [(String, CGFloat)]?
+    var price: CGFloat?
     
     class func itemInSpace(nameOfTexture: String) -> ItemClass{
         let item = ItemClass(imageNamed: nameOfTexture)
@@ -45,38 +46,58 @@ class ItemClass: SKSpriteNode {
     //weapons have Damage stat, body armor has Life stat, feet armor has Movement stat
     func getItemStats(picName: String)->[(String, CGFloat)]{
         if picName == "noobSword"{
+            price = 0
             return [("Damage", CGFloat(1))]
         }else if picName == "level2sword"{
+            price = 40
             return [("Damage", CGFloat(2))]
         }else if picName == "level3sword"{
+            price = 100
             return [("Damage", CGFloat(3))]
         }else if picName == "level4dagger" {
+            price = 250
             return [("Damage", CGFloat(4))]
         }else if picName == "level6dagger"{
+            price = 1000
             return [("Damage", CGFloat(6))]
         }else if picName == "level1armor"{
+            price = 15
+            return [("Life", CGFloat(1))]
+        }else if picName == "level1setarmor"{
+            price = 15
             return [("Life", CGFloat(1))]
         }else if picName == "level2armor"{
+            price = 40
             return [("Life", CGFloat(2))]
         }else if picName == "level2setarmor"{
+            price = 40
             return [("Life", CGFloat(2))]
         }else if picName == "level3armor"{
+            price = 100
             return [("Life", CGFloat(3))]
         }else if picName == "level3setarmor"{
+            price = 100
             return [("Life", CGFloat(3))]
         }else if picName == "level4armor"{
+            price = 250
             return [("Life", CGFloat(4))]
         }else if picName == "level4setarmor"{
+            price = 250
             return [("Life", CGFloat(4))]
         }else if picName == "level1boots"{
+            price = 15
             return [("Movement", CGFloat(10))]
         }else if picName == "level1setboots"{
+            price = 15
             return [("Movement", CGFloat(10))]
         }else if picName == "level2setboots"{
+            price = 40
             return [("Movement", CGFloat(20))]
         }else if picName == "level3setboots"{
+            price = 100
             return [("Movement", CGFloat(30))]
         }else if picName == "level4setboots"{
+            price = 250
             return [("Movement", CGFloat(40))]
         }
         return []

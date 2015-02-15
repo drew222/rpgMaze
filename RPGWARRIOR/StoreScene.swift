@@ -15,14 +15,12 @@ class StoreScene: SKScene {
     var inv: SKLabelNode?
     var itemSpaces: [ItemSpaceNode] = []
     var items: [ItemClass] = []
-    var itemToMove: ItemClass?
-    var spaceToMove: ItemSpaceNode?
     var firstLoad = true
     var backPackSpaces = 16
     var goldNode: SKLabelNode?
     var statLabel: SKLabelNode?
-    var currentItem: SKSpriteNode?
-    var goldCount = 0
+    var currentItem: ItemClass?
+    var goldCount: CGFloat = 0
     
     
     override func didMoveToView(view: SKView) {
@@ -46,7 +44,7 @@ class StoreScene: SKScene {
         self.addChild(inv!)
         //gold node
         goldCount = (self.userData?.objectForKey("inventory") as Inventory).gold
-        goldNode = SKLabelNode.init(text: "\(goldCount)")
+        goldNode = SKLabelNode.init(text: "\(Int(goldCount))")
         goldNode!.position = CGPointMake(self.frame.minX + 70, self.frame.minY + 40)
         goldNode!.fontColor = UIColor.yellowColor()
         self.addChild(goldNode!)
@@ -84,6 +82,15 @@ class StoreScene: SKScene {
         return ""
     }
     
+    func buyItem(){
+        if (self.userData?.objectForKey("inventory") as Inventory).gold >= currentItem!.price{
+            (self.userData?.objectForKey("inventory") as Inventory).gold -= currentItem!.price!
+            (self.userData?.objectForKey("inventory") as Inventory).addItem(currentItem!.itemName!)
+            goldCount -= currentItem!.price!
+            goldNode!.text = "\(Int(goldCount))"
+        }
+    }
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         for touch in touches{
             if menu!.containsPoint(touch.locationInNode(self)){
@@ -92,6 +99,8 @@ class StoreScene: SKScene {
             }else if inv!.containsPoint(touch.locationInNode(self)){
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(self.userData?.objectForKey("inventory") as Inventory, transition: skTransition)
+            }else if self.childNodeWithName("buyButton") != nil && self.childNodeWithName("buyButton")!.containsPoint(touch.locationInNode(self)){
+                buyItem()
             }else if clickedItem(touch.locationInNode(self)) != ""{
                 if currentItem != nil{
                     currentItem!.removeFromParent()
@@ -100,13 +109,18 @@ class StoreScene: SKScene {
                 currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 150)
                 currentItem!.size = CGSizeMake(100, 100)
                 resizeLabel(statLabel!)
-                statLabel!.text = (currentItem as ItemClass).statString()
+                statLabel!.text = currentItem!.statString()
                 self.addChild(currentItem!)
-            }else{
-                currentItem?.removeFromParent()
-                currentItem = nil
-                statLabel!.text = ""
+            }else if self.childNodeWithName("buyButton") != nil && self.childNodeWithName("buyButton")!.containsPoint(touch.locationInNode(self)){
+                buyItem()
             }
+        }
+        //an item is being highlighted
+        if currentItem != nil && self.childNodeWithName("buyButton") == nil{
+            let buyNode = SKLabelNode.init(text: "Buy Item")
+            buyNode.position = CGPointMake(self.frame.midX + 110, self.frame.minY + 150)
+            buyNode.name = "buyButton"
+            self.addChild(buyNode)
         }
     }
 }
