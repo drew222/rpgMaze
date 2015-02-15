@@ -98,7 +98,7 @@ class WizardClass: SKSpriteNode {
             self.texture = nil})
         
         let removeBlock = SKAction.runBlock({blizzAttack!.removeFromParent()
-            self.removeFromParent()})
+            blizzAttack!.removeFromParent()})
         let damageBlock = SKAction.runBlock({
             let distanceFromBlizz = distanceBetween(self.parent!.childNodeWithName("hero")!.position, self.position)
             if distanceFromBlizz <= 60{
