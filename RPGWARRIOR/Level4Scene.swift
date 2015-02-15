@@ -10,18 +10,20 @@ import Foundation
 import SpriteKit
 
 class Level4Scene: SKScene, SKPhysicsContactDelegate {
+
     
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
-    var lastBomb: Double = 0.0
+    var lastFireball: Double = 0.0
     var levelOver = false
-    let levelName = "level2"
+    let levelName = "level1"
     var droppedItem = false
+    var lastBlizz = 0.0
     
-    let bomberAttackSpeed = 1.0
+    let wizardAttackSpeed = 1.0
     
-    var theBomber: BomberClass?
+    var theWizard: WizardClass?
     var theHero: HeroClass?
     
     override func didMoveToView(view: SKView) {
@@ -29,9 +31,9 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.1))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
-        theBomber = BomberClass.makeBomber(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
-        theBomber!.setScale(0.3)
-        self.addChild(theBomber!)
+        theWizard = WizardClass.makeWizard(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
+        theWizard!.setScale(0.3)
+        self.addChild(theWizard!)
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
         //ourHero.constraints = [distanceConstraint]
@@ -41,10 +43,6 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
         background.zPosition = -1
         self.physicsWorld.contactDelegate = self
         self.addChild(background)
-        
-        let blizz = BlizzNode.blizzAtPos(CGPointMake(100,100))
-        blizz.targetNode = self
-        
         theHero!.updateStats()
         
     }
@@ -60,11 +58,12 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
             secondBody = contact.bodyA
         }
         //HERO VS FIRE
-        // if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-        //   secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
-        //       let aHero = self.childNodeWithName("hero") as HeroClass
-        //      aHero.takeDamage(1)
-        //}
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
+                let aHero = self.childNodeWithName("hero") as HeroClass
+                aHero.takeDamage(1)
+                secondBody.node!.removeFromParent()
+        }
         //HERO VS WIZARD
         //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
         //secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWizard.rawValue){
@@ -76,29 +75,60 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as HeroClass
+        let aWizard = self.childNodeWithName("wizard") as WizardClass
         for touch in touches{
+            //stop when mouse comes in contact hero
+            //let theSpot = spotToStop(aHero, touch.locationInNode(self))
+            //if theSpot != aHero.position{
+            //aHero.moveTo(theSpot)
+            // if (aWizard.containsPoint(touch.locationInNode(self))){
+            //  if (distanceBetween(aWizard.position, aHero.position) < 10){
+            //      aHero.attack()
+            //  }
+            //}
             aHero.moveHelper(touch.locationInNode(self))
         }
     }
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
-        //println("current time: \(currentTime)")
+        let blizzContactNode = BlizzNode.blizzContactNode()
+        let hero = self.childNodeWithName("hero")
+        
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
-            self.lastBomb = currentTime
+            self.lastFireball = currentTime
+            self.lastBlizz = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastBomb  > bomberAttackSpeed{
-            self.lastBomb = currentTime
-            //theBomber!.throwBomb()
+        if currentTime - lastFireball  > wizardAttackSpeed{
+            self.lastFireball = currentTime
+            //theWizard!.shootFireball()
         }
+        if currentTime - lastBlizz > (3 * wizardAttackSpeed) {
+            self.lastBlizz = currentTime
+            theWizard!.createBlizz()
+            let blizz = self.childNodeWithName("Blizzard")
+            let blizzContactNode = BlizzNode.blizzContactNode()
+            blizzContactNode.position = blizz!.position
+            self.addChild(blizzContactNode)
+        }
+ 
+            if (distanceBetween(hero!.position, blizzContactNode.position) <= 100 ){
+                theHero!.baseSpeed = 50
+                println(theHero!.baseSpeed)
+            }else {
+                theHero!.baseSpeed = 150
+                println(theHero!.baseSpeed)
+            }
+            
+            self.lastUpdatesTime = currentTime
         
-        self.lastUpdatesTime = currentTime
+    
         
         //check for win condition
-        if (theBomber!.isDead || theHero!.life <= 0) && !levelOver{
+        if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
             //parent of self is viewcontroller, has view, extends sknode
             //if (theHero!.life == 0){
             //   let deathNode = SKLabelNode.init(text: "You died, try again!")
@@ -116,13 +146,15 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
                 //println("got here222")
                 //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
                 let skTransition = SKTransition.fadeWithDuration(5.0)
+                println("got here111")
                 //let gameScene = self.userData?.objectForKey("menu") as MainMenuScene
                 self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+                println("got here222")
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil){
-                if theBomber!.isDead{
-                    dropLoot("level2", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                if theWizard!.isDead{
+                    dropLoot("level1", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }

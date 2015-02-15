@@ -62,4 +62,39 @@ class WizardClass: SKSpriteNode {
             self.texture = nil
         }
     }
+        func getBlizzLocation(heroPosition: CGPoint)->CGPoint{
+            //generate random x and y within a range of the hero
+            let xRange = abs(self.position.x - heroPosition.x)
+            let yRange = abs(self.position.y - heroPosition.y)
+            let lowerXDiff = round(xRange * 0.45)
+            let lowerYDiff = round(yRange * 0.45)
+            let upperXDiff = round(xRange * 1)
+            let upperYDiff = round(yRange * 1)
+            let xDiff = CGFloat(randomWithMin(Int(lowerXDiff), Int(upperXDiff)))
+            let yDiff = CGFloat(randomWithMin(Int(lowerYDiff), Int(upperYDiff)))
+            var xPosition: CGFloat?
+            var yPosition: CGFloat?
+            if self.position.x > heroPosition.x{
+                xPosition = CGFloat(self.position.x - xDiff)
+            }else{
+                xPosition = CGFloat(self.position.x + xDiff)
+            }
+            if self.position.y > heroPosition.y{
+                yPosition = CGFloat(self.position.y - yDiff)
+            }else{
+                yPosition = CGFloat(self.position.y + yDiff)
+            }
+            return CGPointMake(xPosition!, yPosition!)
+        }
+    func createBlizz() {
+        if self.isDead{
+            return
+        }
+        //calculate where to shoot the bomb
+        let hero = self.parent!.childNodeWithName("hero") as HeroClass
+        let shootAtPoint = getBlizzLocation(hero.position)
+        //shoot the fireball
+        let blizz = BlizzNode.blizzAtPos(getBlizzLocation(hero.position))
+        self.parent!.addChild(blizz)
+    }
 }

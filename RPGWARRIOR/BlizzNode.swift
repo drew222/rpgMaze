@@ -20,12 +20,13 @@ class BlizzNode: SKEmitterNode {
         return blizz
     }
     
-    func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
-        self.physicsBody?.affectedByGravity = false
-        self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryBomb.rawValue
-        self.physicsBody?.collisionBitMask = 0
-        self.physicsBody?.contactTestBitMask = CollisionBitMasks.collisionCategoryHero.rawValue
+    class func blizzContactNode() -> SKSpriteNode {
+        let blizzPath = NSBundle.mainBundle().pathForResource("BlizzParticle", ofType: "sks")
+        let blizz = NSKeyedUnarchiver.unarchiveObjectWithFile(blizzPath!) as SKEmitterNode
+        let blizzContactNode = SKSpriteNode(color: SKColor.blackColor(), size: blizz.frame.size)
+        blizzContactNode.zPosition = -2.0
+        return blizzContactNode
+        
     }
     
 }

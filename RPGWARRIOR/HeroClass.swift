@@ -17,7 +17,7 @@ class HeroClass: SKSpriteNode {
     var damage: CGFloat?
     let baseDamage = 1
     let baseLife = 1
-    let baseSpeed = 150
+    var baseSpeed = 150
     //let nodeSpeed = 125
     
     class func makeHero(position: CGPoint) -> HeroClass{
