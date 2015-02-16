@@ -102,6 +102,7 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         let hero = self.childNodeWithName("hero")
+        var blizzContactNode = BlizzNode.blizzContactNode()
         
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
@@ -118,12 +119,21 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
             let blizz = BlizzNode.createBlizz(theWizard!.getBlizzLocation(theHero!.position))
             self.addChild(blizz)
             self.lastBlizz = currentTime
-        }
+}
         if blizzInContact != nil && !blizzInContact!.containsPoint(theHero!.position) {
             blizzInContact!.unSlow()
             blizzInContact = nil
         }
-
+ 
+        if (distanceBetween(hero!.position, blizzContactNode.position) <= 100 ){
+            heroSpeed = 50
+            println(heroSpeed)
+        }else {
+            heroSpeed = 150
+            println(heroSpeed)
+            println(theHero!.baseSpeed)
+            }
+            
             self.lastUpdatesTime = currentTime
         
     
