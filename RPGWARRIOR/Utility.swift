@@ -22,6 +22,7 @@ enum CollisionBitMasks: UInt32{
     case collisionCategoryWizard = 4
     case collisionCategoryItem = 8
     case collisionCategoryBomb = 16
+    case collisionCategoryBlizzard = 32
 }
 
 

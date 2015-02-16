@@ -40,7 +40,7 @@ class HeroClass: SKSpriteNode {
         self.physicsBody?.dynamic = true
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryHero.rawValue
         self.physicsBody?.collisionBitMask = 0 //CollisionBitMasks.collisionCategoryWizard.rawValue
-        self.physicsBody?.contactTestBitMask = CollisionBitMasks.collisionCategoryProjectile.rawValue
+        self.physicsBody?.contactTestBitMask = CollisionBitMasks.collisionCategoryProjectile.rawValue | CollisionBitMasks.collisionCategoryBlizzard.rawValue
     }
     
     func moveHelper(position: CGPoint) -> Void{
@@ -272,6 +272,7 @@ class HeroClass: SKSpriteNode {
     }
     
     func updateStats(){
+        heroSpeed = 150
         self.damage = CGFloat(baseDamage)
         self.life = CGFloat(baseLife)
         heroSpeed = CGFloat(baseSpeed)

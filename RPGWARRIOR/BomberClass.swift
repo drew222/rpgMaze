@@ -89,5 +89,4 @@ class BomberClass: SKSpriteNode {
             self.texture = nil
         }
     }
-    
 }

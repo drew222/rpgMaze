@@ -20,11 +20,12 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
     let levelName = "level1"
     var droppedItem = false
     var lastBlizz = 0.0
-    
+
     let wizardAttackSpeed = 1.0
     
     var theWizard: WizardClass?
     var theHero: HeroClass?
+    var blizzInContact: BlizzNode?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -63,7 +64,15 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
                 let aHero = self.childNodeWithName("hero") as HeroClass
                 aHero.takeDamage(1)
                 secondBody.node!.removeFromParent()
+        } else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+        secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryBlizzard.rawValue){
+        let aHero = self.childNodeWithName("hero") as HeroClass
+            if (blizzInContact == nil) {
+        (secondBody.node as BlizzNode).slow()
+        blizzInContact = secondBody.node as BlizzNode?
+            }
         }
+        
         //HERO VS WIZARD
         //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
         //secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWizard.rawValue){
@@ -106,10 +115,15 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
             //theWizard!.shootFireball()
         }
         if currentTime - lastBlizz > (3 * wizardAttackSpeed) {
-            theWizard!.createBlizz(theWizard!.getBlizzLocation(theHero!.position))
+            let blizz = BlizzNode.createBlizz(theWizard!.getBlizzLocation(theHero!.position))
+            self.addChild(blizz)
             self.lastBlizz = currentTime
         }
-        
+        if blizzInContact != nil && !blizzInContact!.containsPoint(theHero!.position) {
+            blizzInContact!.unSlow()
+            blizzInContact = nil
+        }
+
             self.lastUpdatesTime = currentTime
         
     
