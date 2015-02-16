@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 class Level4Scene: SKScene, SKPhysicsContactDelegate {
-
+    
     
     var gameStartTime = 0.0
     var totalGameTime = 0.0
@@ -29,7 +29,7 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.1))
+            theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.1))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
         theWizard = WizardClass.makeWizard(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
@@ -102,7 +102,6 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         let hero = self.childNodeWithName("hero")
-        var blizzContactNode = BlizzNode.blizzContactNode()
         
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
@@ -123,20 +122,13 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
         if blizzInContact != nil && !blizzInContact!.containsPoint(theHero!.position) {
             blizzInContact!.unSlow()
             blizzInContact = nil
+            theWizard!.createBlizz(theWizard!.getBlizzLocation(theHero!.position))
+            self.lastBlizz = currentTime
         }
- 
-        if (distanceBetween(hero!.position, blizzContactNode.position) <= 100 ){
-            heroSpeed = 50
-            println(heroSpeed)
-        }else {
-            heroSpeed = 150
-            println(heroSpeed)
-            println(theHero!.baseSpeed)
-            }
-            
-            self.lastUpdatesTime = currentTime
         
-    
+        self.lastUpdatesTime = currentTime
+        
+        
         
         //check for win condition
         if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
