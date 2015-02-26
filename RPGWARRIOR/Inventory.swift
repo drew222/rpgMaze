@@ -21,7 +21,7 @@ class Inventory: SKScene {
     var spaceToMove: ItemSpaceNode?
     var firstLoad = true
     var backPackSpaces = 16
-    var gold: CGFloat = 15
+    var gold: CGFloat = 1500
     var goldNode: SKLabelNode?
     var statLabel: SKLabelNode?
     var weapon: ItemClass?

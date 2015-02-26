@@ -65,20 +65,16 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
                 aHero.takeDamage(1)
                 secondBody.node!.removeFromParent()
         } else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-        secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryBlizzard.rawValue){
-        let aHero = self.childNodeWithName("hero") as HeroClass
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryBlizzard.rawValue){
+            let aHero = self.childNodeWithName("hero") as HeroClass
             if (blizzInContact == nil) {
-        (secondBody.node as BlizzNode).slow()
-        blizzInContact = secondBody.node as BlizzNode?
+                if heroSpeed >= theHero!.baseSpeed{
+                    println("slowing!!!!!!")
+                    (secondBody.node as BlizzNode).slow()
+                    blizzInContact = secondBody.node as BlizzNode?
+                }
             }
         }
-        
-        //HERO VS WIZARD
-        //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-        //secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWizard.rawValue){
-        //let aHero = self.childNodeWithName("hero") as HeroClass
-        //aHero.attack()
-        //}
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -86,15 +82,6 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
         let aHero = self.childNodeWithName("hero") as HeroClass
         let aWizard = self.childNodeWithName("wizard") as WizardClass
         for touch in touches{
-            //stop when mouse comes in contact hero
-            //let theSpot = spotToStop(aHero, touch.locationInNode(self))
-            //if theSpot != aHero.position{
-            //aHero.moveTo(theSpot)
-            // if (aWizard.containsPoint(touch.locationInNode(self))){
-            //  if (distanceBetween(aWizard.position, aHero.position) < 10){
-            //      aHero.attack()
-            //  }
-            //}
             aHero.moveHelper(touch.locationInNode(self))
         }
     }
@@ -115,15 +102,13 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
             //theWizard!.shootFireball()
         }
         if currentTime - lastBlizz > (3 * wizardAttackSpeed) {
-            let blizz = BlizzNode.createBlizz(theWizard!.getBlizzLocation(theHero!.position))
-            self.addChild(blizz)
-            self.lastBlizz = currentTime
-}
-        if blizzInContact != nil && !blizzInContact!.containsPoint(theHero!.position) {
-            blizzInContact!.unSlow()
-            blizzInContact = nil
             theWizard!.createBlizz(theWizard!.getBlizzLocation(theHero!.position))
             self.lastBlizz = currentTime
+        }
+        if blizzInContact != nil && !blizzInContact!.containsPoint(theHero!.position) {
+            println("unnslowing!!!!")
+            blizzInContact!.unSlow()
+            blizzInContact = nil
         }
         
         self.lastUpdatesTime = currentTime
@@ -132,32 +117,14 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
         
         //check for win condition
         if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
-            //parent of self is viewcontroller, has view, extends sknode
-            //if (theHero!.life == 0){
-            //   let deathNode = SKLabelNode.init(text: "You died, try again!")
-            //   deathNode.position = CGPointMake(self.frame.midX, self.frame.midY)
-            //   self.addChild(deathNode)
-            // }else if (theBomber!.isDead){
-            //   let winNode = SKLabelNode.init(text: "You win, congratulations!")
-            //   winNode.position = CGPointMake(self.frame.midX, self.frame.midY)
-            //   self.addChild(winNode)
-            // }
             if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
-                //let menuScene = MainMenuScene(size: self.frame.size)
-                //println("got here111")
-                //(self.userData?.objectForKey("menu") as MainMenuScene).userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
-                //println("got here222")
-                //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
                 let skTransition = SKTransition.fadeWithDuration(5.0)
-                println("got here111")
-                //let gameScene = self.userData?.objectForKey("menu") as MainMenuScene
                 self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
-                println("got here222")
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil){
                 if theWizard!.isDead{
-                    dropLoot("level1", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    dropLoot("level4", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }

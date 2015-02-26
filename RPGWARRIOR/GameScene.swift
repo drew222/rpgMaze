@@ -42,6 +42,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         background.zPosition = -1
         self.physicsWorld.contactDelegate = self
         self.addChild(background)
+        let block = Block.blockAtPosition(CGPointMake(self.frame.midX, self.frame.midY - 50), vertical: false)
+        block.name = "block"
+        self.addChild(block)
         theHero!.updateStats()
 
     }

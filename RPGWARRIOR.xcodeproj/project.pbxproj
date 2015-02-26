@@ -89,6 +89,7 @@
 		DCC4E3761A8E8DFE000E5E89 /* wizard8.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC4E3401A8E8DFE000E5E89 /* wizard8.png */; };
 		DCC4E3771A8E8DFE000E5E89 /* wizard9.png in Resources */ = {isa = PBXBuildFile; fileRef = DCC4E3411A8E8DFE000E5E89 /* wizard9.png */; };
 		DCC4E3791A8EEE59000E5E89 /* StoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3781A8EEE59000E5E89 /* StoreScene.swift */; };
+		DCC4E37B1A94EDED000E5E89 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E37A1A94EDED000E5E89 /* Block.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,6 +189,7 @@
 		DCC4E3401A8E8DFE000E5E89 /* wizard8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard8.png; sourceTree = "<group>"; };
 		DCC4E3411A8E8DFE000E5E89 /* wizard9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard9.png; sourceTree = "<group>"; };
 		DCC4E3781A8EEE59000E5E89 /* StoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreScene.swift; sourceTree = "<group>"; };
+		DCC4E37A1A94EDED000E5E89 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Block.swift; path = Rpg8/Block.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 				DCC4E30B1A8E8DFE000E5E89 /* Rpg8 */,
 				DC2711491A85E26C00986D2E /* Fireball.swift */,
 				2FC73DE21A912CAA0068A2FB /* BlizzNode.swift */,
+				DCC4E37A1A94EDED000E5E89 /* Block.swift */,
 				DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */,
 				DCC4E3051A8976AB000E5E89 /* ItemClass.swift */,
 				DC1F58121A88703500B5027B /* Bomb.swift */,
@@ -506,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC4E3021A89760E000E5E89 /* Inventory.swift in Sources */,
+				DCC4E37B1A94EDED000E5E89 /* Block.swift in Sources */,
 				2F62CE561A89C21000046DA7 /* MineNode.swift in Sources */,
 				DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */,
 				2FC73DE31A912CAA0068A2FB /* BlizzNode.swift in Sources */,
