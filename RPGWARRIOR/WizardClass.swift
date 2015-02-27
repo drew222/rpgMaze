@@ -88,25 +88,22 @@ class WizardClass: SKSpriteNode {
         }
     func createBlizz(position: CGPoint){
         
+        var blizzNode: BlizzNode?
         var blizzAttack: SKEmitterNode?
-        let blizzCode = SKAction.runBlock({let blizzPath = NSBundle.mainBundle().pathForResource("BlizzParticle", ofType: "sks")
-            blizzAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(blizzPath!) as SKEmitterNode)
-            blizzAttack!.position = position
+        
+        let blizzCode = SKAction.runBlock({
+            blizzNode = BlizzNode.createBlizz(position)
+            self.parent!.addChild(blizzNode!)
+            blizzAttack = blizzNode!.blizzAttack!
             //blizzAttack!.setScale(0.5)
             self.parent!.addChild(blizzAttack!)
-            self.removeActionForKey("blizz")
-            self.texture = nil})
+            //self.removeActionForKey("blizz")
+            //self.texture = nil
+        })
         
         let removeBlock = SKAction.runBlock({blizzAttack!.removeFromParent()
-            blizzAttack!.removeFromParent()})
-        let damageBlock = SKAction.runBlock({
-            let distanceFromBlizz = distanceBetween(self.parent!.childNodeWithName("hero")!.position, blizzAttack!.position)
-            if distanceFromBlizz <= 60{
-                let theHero = self.parent!.childNodeWithName("hero")! as HeroClass
-                println("distance from bomb = \(distanceFromBlizz)")
-                heroSpeed = heroSpeed - 75
-            }})
-        let sequence = SKAction.sequence([blizzCode, damageBlock, SKAction.waitForDuration(5.0), removeBlock])
+            blizzNode!.removeFromParent()})
+        let sequence = SKAction.sequence([blizzCode, SKAction.waitForDuration(5.0), removeBlock])
         self.runAction(sequence)
         
     }

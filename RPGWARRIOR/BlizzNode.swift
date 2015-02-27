@@ -16,37 +16,22 @@ class BlizzNode: SKSpriteNode{
     class func createBlizz(position: CGPoint) -> BlizzNode {
         
 
-        let blizzContactNode = BlizzNode(color: SKColor.blackColor(), size: CGSizeMake(60, 60))
+        let blizzContactNode = BlizzNode(color: SKColor.blackColor(), size: CGSizeMake(130, 130))
         blizzContactNode.zPosition = -2.0
         blizzContactNode.position = position
+        blizzContactNode.name = "blizz"
         
         let blizzPath = NSBundle.mainBundle().pathForResource("BlizzParticle", ofType: "sks")
         blizzContactNode.blizzAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(blizzPath!) as SKEmitterNode)
-        blizzContactNode.blizzAttack!.position = position
+        blizzContactNode.blizzAttack!.position = CGPointMake(position.x + 15, position.y + 60)
+        //blizzContactNode.blizzAttack!.zPosition = 2
         
-        blizzContactNode.setupPhysicsBody()
+        //blizzContactNode.setupPhysicsBody()
         
-        //blizzAttack!.setScale(0.5)
+        return blizzContactNode
+        
+    }
 
-        /*let damageBlock = SKAction.runBlock({
-            let distanceFromBlizz = distanceBetween(self.parent!.childNodeWithName("hero")!.position, blizzAttack!.position)
-            if distanceFromBlizz <= 60{
-                let theHero = self.parent!.childNodeWithName("hero")! as HeroClass
-                println("distance from bomb = \(distanceFromBlizz)")
-                
-            }else {
-                
-            }
-        })*/
-     return blizzContactNode
-        
-    }
-    func slow() {
-        heroSpeed -= 75
-    }
-    func unSlow() {
-        heroSpeed += 75
-    }
     func setupPhysicsBody() {
         self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
         self.physicsBody?.affectedByGravity = false
@@ -55,23 +40,3 @@ class BlizzNode: SKSpriteNode{
         self.physicsBody?.contactTestBitMask = CollisionBitMasks.collisionCategoryHero.rawValue
     }
 }
-    /*class func blizzAtPos(position: CGPoint) -> SKEmitterNode {
-        let blizzPath = NSBundle.mainBundle().pathForResource("BlizzParticle", ofType: "sks")
-        let blizz = NSKeyedUnarchiver.unarchiveObjectWithFile(blizzPath!) as SKEmitterNode
-        blizz.position = position
-        blizz.zPosition = 10
-        blizz.name = "Blizzard"
-        return blizz
-    }*/
-    
-    /*class func blizzContactNode(position: CGPoint, scene: SKScene) -> SKSpriteNode {
-        let blizzPath = NSBundle.mainBundle().pathForResource("BlizzParticle", ofType: "sks")
-        let blizz = NSKeyedUnarchiver.unarchiveObjectWithFile(blizzPath!) as SKEmitterNode
-        let blizzContactNode = SKSpriteNode(color: SKColor.blackColor(), size: CGSizeMake(100, 100))
-        blizzContactNode.zPosition = -2.0
-        blizzContactNode.position = position
-        
-        
-        return blizzContactNode
-        
-    }*/

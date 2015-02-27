@@ -18,6 +18,8 @@ class HeroClass: SKSpriteNode {
     let baseDamage = 1
     let baseLife = 1
     let baseSpeed: CGFloat = 150
+    var isSlowed = false
+    var movingToPoint = CGPointMake(0, 0)
     //let nodeSpeed = 125
     
     class func makeHero(position: CGPoint) -> HeroClass{
@@ -42,7 +44,9 @@ class HeroClass: SKSpriteNode {
         self.physicsBody?.collisionBitMask = 0 //CollisionBitMasks.collisionCategoryWizard.rawValue
         self.physicsBody?.contactTestBitMask = CollisionBitMasks.collisionCategoryProjectile.rawValue | CollisionBitMasks.collisionCategoryBlizzard.rawValue
     }
+ 
     
+    /*
     func oldmoveHelper(position: CGPoint) -> Void{
         if let item = self.parent!.childNodeWithName("item") as? ItemClass{
             var myPos = position
@@ -141,6 +145,8 @@ class HeroClass: SKSpriteNode {
             self.runAction(getSimpleMove(self, position), withKey: "runAction")
         }
     }
+
+*/
     
     func interactableNode(node: SKSpriteNode) -> Bool{
         if node.name? != nil{
@@ -153,8 +159,16 @@ class HeroClass: SKSpriteNode {
         return true
     }
     
+    func changeSpeed(change: CGFloat){
+        heroSpeed += change
+        if self.actionForKey("runAction") != nil{
+            moveHelper(movingToPoint)
+        }
+    }
+    
     func moveHelper(position: CGPoint) -> Void{
         //check all nodes to see if the point is within the node and set boolean
+        movingToPoint = position
         var clickedNode = false
         var theClickedNode: SKSpriteNode?
         for node in self.parent!.children{

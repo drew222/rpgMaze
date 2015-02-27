@@ -25,6 +25,7 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
     
     var theWizard: WizardClass?
     var theHero: HeroClass?
+    
     var blizzInContact: BlizzNode?
     
     override func didMoveToView(view: SKView) {
@@ -64,7 +65,7 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
                 let aHero = self.childNodeWithName("hero") as HeroClass
                 aHero.takeDamage(1)
                 secondBody.node!.removeFromParent()
-        } else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+        }/* else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryBlizzard.rawValue){
             let aHero = self.childNodeWithName("hero") as HeroClass
             if (blizzInContact == nil) {
@@ -75,6 +76,7 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
                 }
             }
         }
+        */
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -93,22 +95,40 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
-            self.lastFireball = currentTime
+           // self.lastFireball = currentTime
             self.lastBlizz = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         if currentTime - lastFireball  > wizardAttackSpeed{
             self.lastFireball = currentTime
-            //theWizard!.shootFireball()
+            theWizard!.shootFireball()
         }
         if currentTime - lastBlizz > (3 * wizardAttackSpeed) {
             theWizard!.createBlizz(theWizard!.getBlizzLocation(theHero!.position))
             self.lastBlizz = currentTime
         }
-        if blizzInContact != nil && !blizzInContact!.containsPoint(theHero!.position) {
-            println("unnslowing!!!!")
-            blizzInContact!.unSlow()
-            blizzInContact = nil
+        //loop through all the blizzards and check if position is in them
+        var blizzFound = false
+        for node in self.children{
+            if (node as? BlizzNode != nil){
+                //println("found blizzNode")
+                if node.name == "blizz"{
+                    if node.containsPoint(hero!.position){
+                        blizzFound = true
+                        if !theHero!.isSlowed{
+                            theHero!.changeSpeed(-50)
+                            theHero!.isSlowed = true
+                        }
+                        blizzInContact = node as? BlizzNode
+                    }
+                }
+            }
+        }
+        if !blizzFound && blizzInContact != nil{
+            if theHero!.isSlowed{
+                theHero!.changeSpeed(50)
+                theHero!.isSlowed = false
+            }
         }
         
         self.lastUpdatesTime = currentTime

@@ -53,8 +53,8 @@ class Level3Scene: SKScene, SKPhysicsContactDelegate  {
             let mine = secondBody.node as? MineNode
             if mine!.isArmed{
                 mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
-                let aHero = self.childNodeWithName("hero") as HeroClass
-                aHero.takeDamage(1)
+                //let aHero = self.childNodeWithName("hero") as HeroClass
+                //aHero.takeDamage(1)
             }
         }
     }
