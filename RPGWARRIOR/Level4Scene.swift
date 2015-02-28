@@ -116,7 +116,7 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
                     if node.containsPoint(hero!.position){
                         blizzFound = true
                         if !theHero!.isSlowed{
-                            theHero!.changeSpeed(-50)
+                            theHero!.changeSpeed(-60)
                             theHero!.isSlowed = true
                         }
                         blizzInContact = node as? BlizzNode
@@ -126,7 +126,7 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
         }
         if !blizzFound && blizzInContact != nil{
             if theHero!.isSlowed{
-                theHero!.changeSpeed(50)
+                theHero!.changeSpeed(60)
                 theHero!.isSlowed = false
             }
         }

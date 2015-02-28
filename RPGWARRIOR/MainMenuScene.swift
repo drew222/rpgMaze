@@ -61,7 +61,7 @@ class MainMenuScene: SKScene {
         }
         
         inventory = SKLabelNode.init(text: "Inventory")
-        inventory!.position = CGPointMake(self.frame.maxX - 60, self.frame.minY + 40)
+        inventory!.position = CGPointMake(self.frame.maxX - 70, self.frame.minY + 40)
         inventory!.name = "inventory"
         self.addChild(inventory!)
         firstTimeLoaded = false
