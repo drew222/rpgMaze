@@ -210,9 +210,13 @@ class Inventory: SKScene {
         itemToMove?.removeFromParent()
         spaceToMove!.color = UIColor.whiteColor()
         self.childNodeWithName("sellButton")?.removeFromParent()
+        if !(spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet"){
+            backPackSpaces++
+        }
         spaceToMove = nil
         itemToMove = nil
         statLabel!.text = ""
+        
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

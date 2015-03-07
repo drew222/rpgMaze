@@ -23,7 +23,7 @@ class Level3Scene: SKScene, SKPhysicsContactDelegate  {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        let background = SKSpriteNode(imageNamed: "valgrind_desert_forest1.png")
+        let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         background.zPosition = -1

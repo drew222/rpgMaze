@@ -20,10 +20,11 @@ class HeroClass: SKSpriteNode {
     let baseSpeed: CGFloat = 150
     var isSlowed = false
     var movingToPoint = CGPointMake(0, 0)
+    var isMoving = false
     //let nodeSpeed = 125
     
     class func makeHero(position: CGPoint) -> HeroClass{
-        let hero = HeroClass(imageNamed: "walkman4.png")
+        let hero = HeroClass(imageNamed: "Kraken_Movement_1.png")
         hero.position = position
         hero.anchorPoint = CGPointMake(0.5, 0.5)
         hero.name = "hero"
@@ -46,111 +47,9 @@ class HeroClass: SKSpriteNode {
     }
  
     
-    /*
-    func oldmoveHelper(position: CGPoint) -> Void{
-        if let item = self.parent!.childNodeWithName("item") as? ItemClass{
-            var myPos = position
-            //clicked on wizard node, move infront of instead of to the position
-            //check if any point generated is in the wizard
-            let manyPoints = generatePointsOnLine(self.position, position)
-            for onePoint in manyPoints{
-                if (item.containsPoint(onePoint) && !item.containsPoint(position)){
-                    self.runAction(getAroundMove(self, position, item), withKey: "runAction")
-                    return
-                }
-            }
-            if (item.containsPoint(position)){
-                moveTo(self, self.position, infrontOf(item, self.position))
-                self.runAction(getAttackMove(self, item, self.isAttacking), withKey: "runAction")
-                return
-            }
-            //self.moveTo(position, clickedEnemy: false, goingAround: false)
-            self.runAction(getSimpleMove(self, position), withKey: "runAction")
-            
-        }else if let aWizard = self.parent!.childNodeWithName("wizard") as? WizardClass{
-        var myPos = position
-        //clicked on wizard node, move infront of instead of to the position
-            //check if any point generated is in the wizard
-            let manyPoints = generatePointsOnLine(self.position, position)
-            for onePoint in manyPoints{
-                if (aWizard.containsPoint(onePoint) && !aWizard.containsPoint(position)){
-                    self.runAction(getAroundMove(self, position, aWizard), withKey: "runAction")
-                    return
-                }
-            }
-            if (aWizard.containsPoint(position)){
-                //moveTo(self, self.position, infrontOf(aWizard, self.position))
-                self.runAction(getAttackMove(self, aWizard, self.isAttacking), withKey: "runAction")
-                return
-            }
-        //self.moveTo(position, clickedEnemy: false, goingAround: false)
-        self.runAction(getSimpleMove(self, position), withKey: "runAction")
-        return
-        }else if let aBomber = self.parent!.childNodeWithName("bomber") as? BomberClass{
-            var myPos = position
-            //clicked on wizard node, move infront of instead of to the position
-            //check if any point generated is in the wizard
-            let manyPoints = generatePointsOnLine(self.position, position)
-            for onePoint in manyPoints{
-                if (aBomber.containsPoint(onePoint) && !aBomber.containsPoint(position)){
-                    self.runAction(getAroundMove(self, position, aBomber), withKey: "runAction")
-                    return
-                }
-            }
-            if (aBomber.containsPoint(position)){
-                //moveTo(self, self.position, infrontOf(aBomber, self.position))
-                self.runAction(getAttackMove(self, aBomber, self.isAttacking), withKey: "runAction")
-                return
-            }
-            //self.moveTo(position, clickedEnemy: false, goingAround: false)
-            self.runAction(getSimpleMove(self, position), withKey: "runAction")
-            return
-
-        }else if let mineThrower = self.parent!.childNodeWithName("MineThrower") as? MineThrowerNode{
-            var myPos = position
-            //clicked on wizard node, move infront of instead of to the position
-            //check if any point generated is in the wizard
-            let manyPoints = generatePointsOnLine(self.position, position)
-            for onePoint in manyPoints{
-                if (mineThrower.containsPoint(onePoint) && !mineThrower.containsPoint(position)){
-                    self.runAction(getAroundMove(self, position, mineThrower), withKey: "runAction")
-                    return
-                }
-            }
-            if (mineThrower.containsPoint(position)){
-                //moveTo(self, self.position, infrontOf(aBomber, self.position))
-                self.runAction(getAttackMove(self, mineThrower, self.isAttacking), withKey: "runAction")
-                return
-            }
-            //self.moveTo(position, clickedEnemy: false, goingAround: false)
-            self.runAction(getSimpleMove(self, position), withKey: "runAction")
-            return
-        }else if let block = self.parent!.childNodeWithName("block") as? Block{
-            var myPos = position
-            //clicked on wizard node, move infront of instead of to the position
-            //check if any point generated is in the wizard
-            let manyPoints = generatePointsOnLine(self.position, position)
-            for onePoint in manyPoints{
-                if (block.containsPoint(onePoint) && !block.containsPoint(position)){
-                    self.runAction(getAroundMove(self, position, block), withKey: "runAction")
-                    return
-                }
-            }
-            if (block.containsPoint(position)){
-                moveTo(self, self.position, infrontOf(block, self.position))
-                self.runAction(getAttackMove(self, block, self.isAttacking), withKey: "runAction")
-                return
-            }
-            //self.moveTo(position, clickedEnemy: false, goingAround: false)
-            self.runAction(getSimpleMove(self, position), withKey: "runAction")
-        }
-    }
-
-*/
-    
     func interactableNode(node: SKSpriteNode) -> Bool{
         if node.name? != nil{
-            if node.name! == "bomb" || node.name! == "Fireball" || node.name! == "Mine" || node.name! == "hero"{
+            if node.name! == "bomb" || node.name! == "Fireball" || node.name! == "Mine" || node.name! == "hero" || node.name! == "crab"{
                 return false
             }else{
                 return true
@@ -241,20 +140,48 @@ class HeroClass: SKSpriteNode {
     }
     
     func getStillTextures()-> SKTexture{
-        return SKTexture(imageNamed: "walkman4.png")
+        return SKTexture(imageNamed: "Kraken_Movement_1.png")
     }
     
     
     func getMoveTextures()-> [SKTexture]{
-        return [SKTexture(imageNamed: "walkman2.png"),
-            SKTexture(imageNamed: "walkman3.png"),
-            SKTexture(imageNamed: "walkman4.png"),
-            SKTexture(imageNamed: "walkman5.png"),
-            SKTexture(imageNamed: "walkman6.png"),
-            SKTexture(imageNamed: "walkman1.png")]
+        return [SKTexture(imageNamed: "Kraken_Movement_2.png"),
+            SKTexture(imageNamed: "Kraken_Movement_3.png"),
+            SKTexture(imageNamed: "Kraken_Movement_4.png"),
+            SKTexture(imageNamed: "Kraken_Movement_5.png"),
+            SKTexture(imageNamed: "Kraken_Movement_6.png"),
+            SKTexture(imageNamed: "Kraken_Movement_7.png"),
+            SKTexture(imageNamed: "Kraken_Movement_8.png"),
+            SKTexture(imageNamed: "Kraken_Movement_9.png"),
+            SKTexture(imageNamed: "Kraken_Movement_10.png"),
+            SKTexture(imageNamed: "Kraken_Movement_1.png")]
     }
     
     func takeDamage(damage: CGFloat) -> Bool{
+        //animate damage stuff
+        let codeBlock0 = SKAction.runBlock({
+            var textures: [SKTexture] = []
+            textures.append(SKTexture(imageNamed:"Kraken_gets_Hurt_1"))
+            let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+            let repeatAction0 = SKAction.repeatActionForever(animation)
+            self.runAction(repeatAction0, withKey: "repeatAction")
+        })
+        let codeBlock = SKAction.runBlock({
+            var textures: [SKTexture] = []
+            if (self.isMoving){
+                for var i = 1; i <= 10; i=i+1{
+                    textures.append(SKTexture(imageNamed:"Kraken_Movement_\(i)"))
+                }
+            }else{
+                textures.append(SKTexture(imageNamed:"Kraken_Movement_1"))
+            }
+            let animation2 = SKAction.animateWithTextures(textures, timePerFrame: 1)
+            let repeatAction = SKAction.repeatActionForever(animation2)
+            self.runAction(repeatAction , withKey: "repeatAction")
+        })
+        let sequence = SKAction.sequence([codeBlock0, SKAction.waitForDuration(0.1), codeBlock])
+        self.runAction(sequence)
+        //damage
         self.life! -= damage
         if (self.life! <= 0){
             println("THE HERO HAS DIED!")
@@ -300,17 +227,17 @@ class HeroClass: SKSpriteNode {
     
     func attack(){
         if let theWizard = self.parent!.childNodeWithName("wizard") as? WizardClass{
-            if distanceBetween(self.position, theWizard.position) < 30{
+            if distanceBetween(self.position, theWizard.position) < 110{
                 theWizard.takeDamage(self.damage!)
             }
             //println("THE WIZARD HAS DIED!")
         }else if let theBomber = self.parent!.childNodeWithName("bomber") as? BomberClass{
-            if distanceBetween(self.position, theBomber.position) < 30{
+            if distanceBetween(self.position, theBomber.position) < 110{
                 theBomber.takeDamage(self.damage!)
             }
             //println("THE BOMBER HAS DIED!")
         }else if let mineThrower = self.parent!.childNodeWithName("MineThrower") as? MineThrowerNode{
-            if distanceBetween(self.position, mineThrower.position) < 30{
+            if distanceBetween(self.position, mineThrower.position) < 110{
                 mineThrower.takeDamage(self.damage!)
             }
         }

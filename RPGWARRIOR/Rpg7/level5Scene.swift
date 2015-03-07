@@ -24,7 +24,7 @@ class Level5Scene: SKScene, SKPhysicsContactDelegate  {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        let background = SKSpriteNode(imageNamed: "valgrind_desert_forest1.png")
+        let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         background.zPosition = -1
@@ -40,7 +40,6 @@ class Level5Scene: SKScene, SKPhysicsContactDelegate  {
         }
         self.addChild(bombthrower!)
         theHero!.updateStats()
-        
     }
     func didBeginContact(contact: SKPhysicsContact) {
         var firstBody: SKPhysicsBody!
@@ -57,8 +56,8 @@ class Level5Scene: SKScene, SKPhysicsContactDelegate  {
                 let mine = secondBody.node as? MineNode
                 if mine!.isArmed{
                     mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
-                    let aHero = self.childNodeWithName("hero") as HeroClass
-                    aHero.takeDamage(3)
+                    //let aHero = self.childNodeWithName("hero") as HeroClass
+                    //aHero.takeDamage(3)
                 }
         }
     }
@@ -77,32 +76,32 @@ class Level5Scene: SKScene, SKPhysicsContactDelegate  {
         var startY = self.frame.midY - 90
         while startY > self.frame.minY + 90{
             points.append(CGPointMake(self.frame.midX, startY))
-            startY -= 13
+            startY -= 25
         }
         var startX = self.frame.midX
         while startX > self.frame.minX{
             points.append(CGPointMake(startX, self.frame.minY + 90))
-            startX -= 13
+            startX -= 25
         }
         startX = self.frame.midX
         while startX > 0{
             points.append(CGPointMake(startX, self.frame.midY - 90))
-            startX -= 13
+            startX -= 25
         }
         startY = self.frame.minY + 90
         while startY < self.frame.midY{
             points.append(CGPointMake(self.frame.midX + 90, startY))
-            startY += 13
+            startY += 25
         }
         startX = self.frame.midX + 90
         while startX < self.frame.maxX{
             points.append(CGPointMake(startX, self.frame.minY + 90))
-            startX += 13
+            startX += 25
         }
         startX = self.frame.midX + 90
         while startX > 90{
             points.append(CGPointMake(startX, self.frame.midY))
-            startX -= 13
+            startX -= 25
         }
         return points
     }

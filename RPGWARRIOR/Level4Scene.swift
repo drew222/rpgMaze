@@ -39,7 +39,7 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
         //ourHero.constraints = [distanceConstraint]
-        let background = SKSpriteNode(imageNamed: "valgrind_desert_forest1.png")
+        let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         background.zPosition = -1
@@ -95,7 +95,7 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
-           // self.lastFireball = currentTime
+            self.lastFireball = currentTime
             self.lastBlizz = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime

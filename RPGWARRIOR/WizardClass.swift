@@ -12,22 +12,23 @@ import SpriteKit
 
 class WizardClass: SKSpriteNode {
     var currentAngle: CGFloat?
-    var life: CGFloat = 2
+    var life: CGFloat = 1
     var isDead = false
     
     class func makeWizard(position: CGPoint) -> WizardClass{
-        let wizard = WizardClass(imageNamed: "wizard1.png")
+        let wizard = WizardClass(imageNamed: "Clam_Boss_1.png")
         wizard.position = position
         wizard.anchorPoint = CGPointMake(0.5, 0.5)
         wizard.name = "wizard"
         wizard.currentAngle = 3 * pi / 2.0
+        //if canAttack{
         var textures: [SKTexture] = []
-        for var i = 1; i <= 24; i=i+1{
-            textures.append(SKTexture(imageNamed:"wizard\(i)"))
+        for var i = 1; i <= 4; i=i+1{
+            textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_\(i)"))
         }
         let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
         let repeatAction = SKAction.repeatActionForever(animation)
-        wizard.runAction(repeatAction)
+        wizard.runAction(repeatAction, withKey: "repeatAction")
         wizard.setupPhysicsBody()
         return wizard
     }
@@ -45,11 +46,34 @@ class WizardClass: SKSpriteNode {
         if self.isDead{
             return
         }
+        //display shooting animation
+        //go back to rocking
+        //self.runAction(repeatAction0, withKey: "repeatAction")
+        let codeBlock0 = SKAction.runBlock({
+            var textures: [SKTexture] = []
+            for var i = 1; i <= 4; i=i+1{
+                textures.append(SKTexture(imageNamed:"Clam_Boss_\(i)"))
+            }
+            let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+            let repeatAction0 = SKAction.repeatActionForever(animation)
+            self.runAction(repeatAction0, withKey: "repeatAction")
+        })
+        let codeBlock = SKAction.runBlock({
+            var textures: [SKTexture] = []
+            for var i = 1; i <= 6; i=i+1{
+                textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_\(i)"))
+            }
+            let animation2 = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+            let repeatAction = SKAction.repeatActionForever(animation2)
+            self.runAction(repeatAction , withKey: "repeatAction")
+        })
+        let sequence = SKAction.sequence([codeBlock0, SKAction.waitForDuration(0.4), codeBlock])
+        self.runAction(sequence)
         //calculate where to shoot the fireball
         let hero = self.parent!.childNodeWithName("hero") as HeroClass
         let shootAtPoint = hero.position
         //shoot the fireball
-        let fireball = Fireball.fireballAtPosition(CGPointMake(self.position.x + 10, self.position.y + 17))
+        let fireball = Fireball.fireballAtPosition(CGPointMake(self.position.x, self.position.y - 10))
         self.parent!.addChild(fireball)
         fireball.moveTowardsPosition(shootAtPoint)
     }
