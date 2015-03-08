@@ -14,13 +14,14 @@ class BomberClass: SKSpriteNode {
     var currentAngle: CGFloat?
     var isDead = false
     var attackSpeed = 0.8
-    var life: CGFloat = 2
+    var life: CGFloat = 1
     
     class func makeBomber(position: CGPoint) -> BomberClass{
         let bomber = BomberClass(imageNamed: "wizard1.png")
         bomber.position = position
         bomber.anchorPoint = CGPointMake(0.5, 0.5)
         bomber.name = "bomber"
+        bomber.setScale(0.3)
         bomber.currentAngle = 3 * pi / 2.0
         var textures: [SKTexture] = []
         for var i = 1; i <= 24; i=i+1{

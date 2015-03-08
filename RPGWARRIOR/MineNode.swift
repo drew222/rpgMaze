@@ -35,7 +35,7 @@ class MineNode: SKSpriteNode {
     func setupPhysicsBody() {
         self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
         self.physicsBody?.affectedByGravity = false
-        self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryProjectile.rawValue
+        self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategorySeashell.rawValue
         self.physicsBody?.collisionBitMask = 0
         self.physicsBody?.contactTestBitMask = CollisionBitMasks.collisionCategoryHero.rawValue
     }
@@ -48,7 +48,7 @@ class MineNode: SKSpriteNode {
             //if (self.parent! as? SKScene != nil){
                 //self.parent!.addChild(liteAttack!)
             //}
-            let textures: [SKTexture] = [SKTexture(imageNamed:"Seashell_3"), SKTexture(imageNamed:"Seashell_2"), SKTexture(imageNamed:"Seashell_3")]
+            let textures: [SKTexture] = [SKTexture(imageNamed:"Seashell_3"), SKTexture(imageNamed:"Seashell_2"), SKTexture(imageNamed:"Seashell_1")]
             let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
             let repeat = SKAction.repeatAction(animation, count: 1)
             self.runAction(repeat)

@@ -18,6 +18,7 @@ class WizardClass: SKSpriteNode {
     class func makeWizard(position: CGPoint) -> WizardClass{
         let wizard = WizardClass(imageNamed: "Clam_Boss_1.png")
         wizard.position = position
+        wizard.setScale(0.2)
         wizard.anchorPoint = CGPointMake(0.5, 0.5)
         wizard.name = "wizard"
         wizard.currentAngle = 3 * pi / 2.0

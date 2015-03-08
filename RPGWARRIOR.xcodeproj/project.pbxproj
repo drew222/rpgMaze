@@ -110,6 +110,10 @@
 		DC321BDA1AAB6810006E3F2B /* wizard8.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B8B1AAB6810006E3F2B /* wizard8.png */; };
 		DC321BDB1AAB6810006E3F2B /* wizard9.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B8C1AAB6810006E3F2B /* wizard9.png */; };
 		DC321BDD1AAB9D68006E3F2B /* MiniCrab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BDC1AAB9D68006E3F2B /* MiniCrab.swift */; };
+		DC321BDF1AACCDBE006E3F2B /* IntroScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BDE1AACCDBE006E3F2B /* IntroScene.swift */; };
+		DC321BE11AACD471006E3F2B /* World1Level1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BE01AACD471006E3F2B /* World1Level1.swift */; };
+		DC321BE31AACDED6006E3F2B /* World1Level2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BE21AACDED6006E3F2B /* World1Level2.swift */; };
+		DC321BE51AACE497006E3F2B /* World1Level3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BE41AACE497006E3F2B /* World1Level3.swift */; };
 		DCC4E3021A89760E000E5E89 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3011A89760E000E5E89 /* Inventory.swift */; };
 		DCC4E3041A897671000E5E89 /* ItemSpaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */; };
 		DCC4E3061A8976AB000E5E89 /* ItemClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3051A8976AB000E5E89 /* ItemClass.swift */; };
@@ -236,6 +240,10 @@
 		DC321B8B1AAB6810006E3F2B /* wizard8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard8.png; sourceTree = "<group>"; };
 		DC321B8C1AAB6810006E3F2B /* wizard9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard9.png; sourceTree = "<group>"; };
 		DC321BDC1AAB9D68006E3F2B /* MiniCrab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniCrab.swift; sourceTree = "<group>"; };
+		DC321BDE1AACCDBE006E3F2B /* IntroScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScene.swift; sourceTree = "<group>"; };
+		DC321BE01AACD471006E3F2B /* World1Level1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level1.swift; sourceTree = "<group>"; };
+		DC321BE21AACDED6006E3F2B /* World1Level2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level2.swift; sourceTree = "<group>"; };
+		DC321BE41AACE497006E3F2B /* World1Level3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level3.swift; sourceTree = "<group>"; };
 		DCC4E3011A89760E000E5E89 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSpaceNode.swift; sourceTree = "<group>"; };
 		DCC4E3051A8976AB000E5E89 /* ItemClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemClass.swift; sourceTree = "<group>"; };
@@ -301,6 +309,10 @@
 				2F62CE551A89C21000046DA7 /* MineThrowerNode.swift */,
 				DC321BDC1AAB9D68006E3F2B /* MiniCrab.swift */,
 				DCC4E3011A89760E000E5E89 /* Inventory.swift */,
+				DC321BDE1AACCDBE006E3F2B /* IntroScene.swift */,
+				DC321BE01AACD471006E3F2B /* World1Level1.swift */,
+				DC321BE21AACDED6006E3F2B /* World1Level2.swift */,
+				DC321BE41AACE497006E3F2B /* World1Level3.swift */,
 				DC27113D1A85E1AB00986D2E /* GameScene.swift */,
 				DCC4E3781A8EEE59000E5E89 /* StoreScene.swift */,
 				DC1F580E1A886BB100B5027B /* Level2Scene.swift */,
@@ -617,6 +629,7 @@
 				DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */,
 				2FC73DE31A912CAA0068A2FB /* BlizzNode.swift in Sources */,
 				DC2711461A85E1F500986D2E /* HeroClass.swift in Sources */,
+				DC321BE31AACDED6006E3F2B /* World1Level2.swift in Sources */,
 				DC2711421A85E1D300986D2E /* Utility.swift in Sources */,
 				DC1F58111A886EFC00B5027B /* BomberClass.swift in Sources */,
 				DC321BDD1AAB9D68006E3F2B /* MiniCrab.swift in Sources */,
@@ -624,13 +637,16 @@
 				DCC4E3041A897671000E5E89 /* ItemSpaceNode.swift in Sources */,
 				DC1F580F1A886BB100B5027B /* Level2Scene.swift in Sources */,
 				2FC73DE51A912D980068A2FB /* Level4Scene.swift in Sources */,
+				DC321BDF1AACCDBE006E3F2B /* IntroScene.swift in Sources */,
 				DCC4E3061A8976AB000E5E89 /* ItemClass.swift in Sources */,
 				DC27113E1A85E1AB00986D2E /* GameScene.swift in Sources */,
+				DC321BE51AACE497006E3F2B /* World1Level3.swift in Sources */,
 				2F62CE571A89C21000046DA7 /* MineThrowerNode.swift in Sources */,
 				DC1F57C11A88087500B5027B /* AppDelegate.swift in Sources */,
 				DCC4E3791A8EEE59000E5E89 /* StoreScene.swift in Sources */,
 				DC2711441A85E1DE00986D2E /* WizardClass.swift in Sources */,
 				DC1F58131A88703500B5027B /* Bomb.swift in Sources */,
+				DC321BE11AACD471006E3F2B /* World1Level1.swift in Sources */,
 				DCC4E30A1A8DB082000E5E89 /* level5Scene.swift in Sources */,
 				DC1F580D1A882D3200B5027B /* MainMenuScene.swift in Sources */,
 				DC2711481A85E26100986D2E /* GameViewController.swift in Sources */,

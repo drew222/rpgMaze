@@ -68,6 +68,7 @@ class HeroClass: SKSpriteNode {
     func moveHelper(position: CGPoint) -> Void{
         //check all nodes to see if the point is within the node and set boolean
         movingToPoint = position
+        isMoving = true
         var clickedNode = false
         var theClickedNode: SKSpriteNode?
         for node in self.parent!.children{

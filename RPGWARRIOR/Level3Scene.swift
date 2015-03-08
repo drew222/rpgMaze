@@ -49,7 +49,7 @@ class Level3Scene: SKScene, SKPhysicsContactDelegate  {
             secondBody = contact.bodyA
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-           secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
+           secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
             let mine = secondBody.node as? MineNode
             if mine!.isArmed{
                 mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)

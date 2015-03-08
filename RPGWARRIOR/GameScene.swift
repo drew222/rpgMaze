@@ -31,7 +31,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         theHero!.setScale(0.6)
         self.addChild(theHero!)
         theWizard = WizardClass.makeWizard(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
-        theWizard!.setScale(0.3)
         self.addChild(theWizard!)
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)

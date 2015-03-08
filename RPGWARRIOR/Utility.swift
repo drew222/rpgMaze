@@ -23,6 +23,8 @@ enum CollisionBitMasks: UInt32{
     case collisionCategoryItem = 8
     case collisionCategoryBomb = 16
     case collisionCategoryBlizzard = 32
+    case collisionCategorySeashell = 64
+    case collisionCategoryMiniCrab = 128
 }
 
 
@@ -328,6 +330,7 @@ func getSimpleMove(nodeToMove: SKSpriteNode, position: CGPoint)->SKAction{
     let completionBlock = SKAction.runBlock(
         {nodeToMove.removeActionForKey("repeatAction")
             nodeToMove.texture = getStillTexture(nodeToMove)
+            (nodeToMove as HeroClass).isMoving = false
     })
     let moveAction = moveTo(nodeToMove, nodeToMove.position, position)
     let sequence = SKAction.sequence([moveAction, completionBlock])
@@ -350,6 +353,7 @@ func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAtta
                     myNode.isAttacking = true
                 }
             }
+            (nodeToMove as HeroClass).isMoving = false
     })
     var sequence: SKAction?
     let moveAction = moveTo(nodeToMove, nodeToMove.position, spotInfront)
@@ -390,6 +394,7 @@ func getAroundMove(nodeToMove: SKSpriteNode, clickPoint: CGPoint, nodeToGoAround
             {let runAction = moveTo(nodeToMove, cornerSide.0, secondCornerPushed)
                 let innerComplete = SKAction.runBlock({nodeToMove.runAction(completionBlock2)})
                 nodeToMove.runAction(SKAction.sequence([runAction, innerComplete]), withKey: "runAction")
+                (nodeToMove as HeroClass).isMoving = false
         })
         sequence = SKAction.sequence([firstCornerMove, completionBlock1])
     }else{
@@ -399,6 +404,7 @@ func getAroundMove(nodeToMove: SKSpriteNode, clickPoint: CGPoint, nodeToGoAround
             {(nodeToMove as HeroClass).moveHelper(clickPoint)
                 //nodeToMove.runAction(moveTo(nodeToMove, cornerSide.0, clickPoint), completion: {nodeToMove.removeActionForKey("repeatAction")
                 //nodeToMove.texture = getStillTexture(nodeToMove)})
+                (nodeToMove as HeroClass).isMoving = false
         })
         sequence = SKAction.sequence([firstCornerMove, completionBlock])
     }

@@ -21,6 +21,7 @@ class MiniCrab: SKSpriteNode {
         crab.startPosition = startPos
         crab.name = "crab"
         crab.endPosition = endPosition
+        crab.setScale(0.4)
         //rotate
         crab.runAction(SKAction.rotateToAngle(angleFromPoints(startPos, endPosition) - pi, duration: 0))
         //animate all textures
@@ -30,10 +31,48 @@ class MiniCrab: SKSpriteNode {
         crab.runAction(repeatAction)
         //move the crab
         let crabAction = crab.getCrabMoveAction()
+        crab.setupPhysicsBody()
         crab.runAction(crabAction)
         return crab
         
     }
+    func setupPhysicsBody() {
+        self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
+        self.physicsBody?.affectedByGravity = false
+        self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryMiniCrab.rawValue
+        self.physicsBody?.collisionBitMask = 0
+        self.physicsBody?.contactTestBitMask = CollisionBitMasks.collisionCategoryHero.rawValue
+    }
+    
+    func explode(position: CGPoint){
+        //var liteAttack: SKEmitterNode?
+        let explodeCode = SKAction.runBlock({//let litePath = NSBundle.mainBundle().pathForResource("LightParticle", ofType: "sks")
+            //liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as SKEmitterNode)
+            //liteAttack!.position = position
+            //liteAttack!.setScale(0.5)
+            //if (self.parent! as? SKScene != nil){
+            //self.parent!.addChild(liteAttack!)
+            //}
+            let textures: [SKTexture] = [SKTexture(imageNamed:"Seashell_3"), SKTexture(imageNamed:"Seashell_2"), SKTexture(imageNamed:"Seashell_1")]
+            let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+            let repeat = SKAction.repeatAction(animation, count: 1)
+            self.runAction(repeat)
+            //self.removeActionForKey("fire")
+            //self.texture = nil
+        })
+        
+        let removeBlock = SKAction.runBlock({//liteAttack!.removeFromParent()
+            self.removeFromParent()})
+        let damageBlock = SKAction.runBlock({
+            let distanceFromMine = distanceBetween(self.parent!.childNodeWithName("hero")!.position, self.position)
+            //if distanceFromMine < 25{
+            let theHero = self.parent!.childNodeWithName("hero")! as HeroClass
+            println("distance from bomb = \(distanceFromMine)")
+            theHero.takeDamage(3.0)
+            //}
+        })
+        let sequence = SKAction.sequence([explodeCode, damageBlock, SKAction.waitForDuration(0.3), removeBlock])
+        self.runAction(sequence)}
     
     func getCrabMoveAction() -> SKAction{
         let xDistance = self.endPosition!.x - self.startPosition!.x
@@ -47,8 +86,4 @@ class MiniCrab: SKSpriteNode {
         return repeatAction
     }
     
-    func getRotationRadians() -> CGFloat{
-        
-        return 0
-    }
 }
