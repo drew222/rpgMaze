@@ -20,7 +20,7 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate {
     let levelName = "level2"
     var droppedItem = false
     
-    let bomberAttackSpeed = 1.0
+    let bomberAttackSpeed = 2.0
     
     var theBomber: BomberClass?
     var theHero: HeroClass?
@@ -31,7 +31,6 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate {
         theHero!.setScale(0.6)
         self.addChild(theHero!)
         theBomber = BomberClass.makeBomber(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
-        theBomber!.setScale(0.3)
         self.addChild(theBomber!)
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)

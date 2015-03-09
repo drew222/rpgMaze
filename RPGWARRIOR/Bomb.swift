@@ -14,13 +14,14 @@ class Bomb: SKSpriteNode {
     
     class func bombAtPosition(position: CGPoint) -> Bomb{
         
-        let bomb = Bomb(imageNamed: "Beach_Ball_1")
+        let bomb = Bomb(imageNamed: "Beach_Ball_2")
         bomb.position = position
         bomb.name = "bomb"
         
         
-        //bomb.setupAnimation()
+        bomb.setupAnimation()
         bomb.setupPhysicsBody()
+        bomb.setScale(0.15)
         return bomb
         
     }
@@ -33,11 +34,11 @@ class Bomb: SKSpriteNode {
     }
     
     func setupAnimation() {
-        let textures = [SKTexture(imageNamed: "projectile_1"),
-            SKTexture(imageNamed: "projectile_2"),
-            SKTexture(imageNamed: "projectile_3")]
+        let textures = [SKTexture(imageNamed: "Beach_Ball_2"),
+            SKTexture(imageNamed: "Beach_Ball_3"),
+            SKTexture(imageNamed: "Beach_Ball_1")]
         let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-        let repeatAction = SKAction.repeatActionForever(animation)
+        let repeatAction = SKAction.repeatAction(animation, count: 1)
         self.runAction(repeatAction, withKey: "fire")
     }
     

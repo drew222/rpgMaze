@@ -15,13 +15,14 @@ class Fireball: SKSpriteNode {
     
     class func fireballAtPosition(position: CGPoint) -> Fireball{
         
-        let projectile = Fireball(imageNamed: "projectile_1")
+        let projectile = Fireball(imageNamed: "Pearl_Projectile_1")
         projectile.position = position
         projectile.name = "Fireball"
         
         
         projectile.setupAnimation()
         projectile.setupPhysicsBody()
+        projectile.setScale(0.3)
         return projectile
         
     }
@@ -34,9 +35,8 @@ class Fireball: SKSpriteNode {
     }
     
     func setupAnimation() {
-        let textures = [SKTexture(imageNamed: "projectile_1"),
-            SKTexture(imageNamed: "projectile_2"),
-            SKTexture(imageNamed: "projectile_3")]
+        let textures = [SKTexture(imageNamed: "Pearl_Projectile_2"),
+            SKTexture(imageNamed: "Pearl_Projectile_1")]
         let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
         let repeatAction = SKAction.repeatActionForever(animation)
         self.runAction(repeatAction)
