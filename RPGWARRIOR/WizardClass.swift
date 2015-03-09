@@ -27,6 +27,9 @@ class WizardClass: SKSpriteNode {
         for var i = 1; i <= 4; i=i+1{
             textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_\(i)"))
         }
+        for var i = 3; i >= 2; i=i-1{
+            textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_\(i)"))
+        }
         let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
         let repeatAction = SKAction.repeatActionForever(animation)
         wizard.runAction(repeatAction, withKey: "repeatAction")

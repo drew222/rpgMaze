@@ -30,90 +30,107 @@
 		DC2711461A85E1F500986D2E /* HeroClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2711451A85E1F500986D2E /* HeroClass.swift */; };
 		DC2711481A85E26100986D2E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2711471A85E26100986D2E /* GameViewController.swift */; };
 		DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2711491A85E26C00986D2E /* Fireball.swift */; };
-		DC321B8D1AAB6810006E3F2B /* Beach_Background_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B3E1AAB6810006E3F2B /* Beach_Background_1.png */; };
-		DC321B8E1AAB6810006E3F2B /* Clam_Boss_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B3F1AAB6810006E3F2B /* Clam_Boss_1.png */; };
-		DC321B8F1AAB6810006E3F2B /* Clam_Boss_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B401AAB6810006E3F2B /* Clam_Boss_2.png */; };
-		DC321B901AAB6810006E3F2B /* Clam_Boss_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B411AAB6810006E3F2B /* Clam_Boss_3.png */; };
-		DC321B911AAB6810006E3F2B /* Clam_Boss_4.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B421AAB6810006E3F2B /* Clam_Boss_4.png */; };
-		DC321B921AAB6810006E3F2B /* Clam_Boss_Rocking_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B431AAB6810006E3F2B /* Clam_Boss_Rocking_1.png */; };
-		DC321B931AAB6810006E3F2B /* Clam_Boss_Rocking_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B441AAB6810006E3F2B /* Clam_Boss_Rocking_2.png */; };
-		DC321B941AAB6810006E3F2B /* Clam_Boss_Rocking_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B451AAB6810006E3F2B /* Clam_Boss_Rocking_3.png */; };
-		DC321B951AAB6810006E3F2B /* Clam_Boss_Rocking_4.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B461AAB6810006E3F2B /* Clam_Boss_Rocking_4.png */; };
-		DC321B961AAB6810006E3F2B /* Clam_Boss_Rocking_5.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B471AAB6810006E3F2B /* Clam_Boss_Rocking_5.png */; };
-		DC321B971AAB6810006E3F2B /* Clam_Boss_Rocking_6.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B481AAB6810006E3F2B /* Clam_Boss_Rocking_6.png */; };
-		DC321B981AAB6810006E3F2B /* gem.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B491AAB6810006E3F2B /* gem.png */; };
-		DC321B991AAB6810006E3F2B /* healthglobe.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B4A1AAB6810006E3F2B /* healthglobe.png */; };
-		DC321B9A1AAB6810006E3F2B /* Kraken_Gets_Hurt_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B4B1AAB6810006E3F2B /* Kraken_Gets_Hurt_1.png */; };
-		DC321B9B1AAB6810006E3F2B /* Kraken_Movement_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B4C1AAB6810006E3F2B /* Kraken_Movement_1.png */; };
-		DC321B9C1AAB6810006E3F2B /* Kraken_Movement_10.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B4D1AAB6810006E3F2B /* Kraken_Movement_10.png */; };
-		DC321B9D1AAB6810006E3F2B /* Kraken_Movement_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B4E1AAB6810006E3F2B /* Kraken_Movement_2.png */; };
-		DC321B9E1AAB6810006E3F2B /* Kraken_Movement_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B4F1AAB6810006E3F2B /* Kraken_Movement_3.png */; };
-		DC321B9F1AAB6810006E3F2B /* Kraken_Movement_4.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B501AAB6810006E3F2B /* Kraken_Movement_4.png */; };
-		DC321BA01AAB6810006E3F2B /* Kraken_Movement_5.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B511AAB6810006E3F2B /* Kraken_Movement_5.png */; };
-		DC321BA11AAB6810006E3F2B /* Kraken_Movement_6.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B521AAB6810006E3F2B /* Kraken_Movement_6.png */; };
-		DC321BA21AAB6810006E3F2B /* Kraken_Movement_7.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B531AAB6810006E3F2B /* Kraken_Movement_7.png */; };
-		DC321BA31AAB6810006E3F2B /* Kraken_Movement_8.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B541AAB6810006E3F2B /* Kraken_Movement_8.png */; };
-		DC321BA41AAB6810006E3F2B /* Kraken_Movement_9.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B551AAB6810006E3F2B /* Kraken_Movement_9.png */; };
-		DC321BA51AAB6810006E3F2B /* largerhealthglobe.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B561AAB6810006E3F2B /* largerhealthglobe.png */; };
-		DC321BA61AAB6810006E3F2B /* level1armor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B571AAB6810006E3F2B /* level1armor.png */; };
-		DC321BA71AAB6810006E3F2B /* level1boots.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B581AAB6810006E3F2B /* level1boots.png */; };
-		DC321BA81AAB6810006E3F2B /* level1setarmor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B591AAB6810006E3F2B /* level1setarmor.png */; };
-		DC321BA91AAB6810006E3F2B /* level1setboots.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B5A1AAB6810006E3F2B /* level1setboots.png */; };
-		DC321BAA1AAB6810006E3F2B /* level2armor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B5B1AAB6810006E3F2B /* level2armor.png */; };
-		DC321BAB1AAB6810006E3F2B /* level2setarmor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B5C1AAB6810006E3F2B /* level2setarmor.png */; };
-		DC321BAC1AAB6810006E3F2B /* level2setboots.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B5D1AAB6810006E3F2B /* level2setboots.png */; };
-		DC321BAD1AAB6810006E3F2B /* level2sword.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B5E1AAB6810006E3F2B /* level2sword.png */; };
-		DC321BAE1AAB6810006E3F2B /* level3armor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B5F1AAB6810006E3F2B /* level3armor.png */; };
-		DC321BAF1AAB6810006E3F2B /* level3setarmor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B601AAB6810006E3F2B /* level3setarmor.png */; };
-		DC321BB01AAB6810006E3F2B /* level3setboots.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B611AAB6810006E3F2B /* level3setboots.png */; };
-		DC321BB11AAB6810006E3F2B /* level3sword.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B621AAB6810006E3F2B /* level3sword.png */; };
-		DC321BB21AAB6810006E3F2B /* level4armor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B631AAB6810006E3F2B /* level4armor.png */; };
-		DC321BB31AAB6810006E3F2B /* level4dagger.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B641AAB6810006E3F2B /* level4dagger.png */; };
-		DC321BB41AAB6810006E3F2B /* level4setarmor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B651AAB6810006E3F2B /* level4setarmor.png */; };
-		DC321BB51AAB6810006E3F2B /* level4setboots.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B661AAB6810006E3F2B /* level4setboots.png */; };
-		DC321BB61AAB6810006E3F2B /* level6dagger.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B671AAB6810006E3F2B /* level6dagger.png */; };
-		DC321BB71AAB6810006E3F2B /* projectile_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B681AAB6810006E3F2B /* projectile_1@2x.png */; };
-		DC321BB81AAB6810006E3F2B /* projectile_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B691AAB6810006E3F2B /* projectile_2@2x.png */; };
-		DC321BB91AAB6810006E3F2B /* projectile_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B6A1AAB6810006E3F2B /* projectile_3@2x.png */; };
-		DC321BBA1AAB6810006E3F2B /* Seashell_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B6B1AAB6810006E3F2B /* Seashell_1.png */; };
-		DC321BBB1AAB6810006E3F2B /* Seashell_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B6C1AAB6810006E3F2B /* Seashell_2.png */; };
-		DC321BBC1AAB6810006E3F2B /* Seashell_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B6D1AAB6810006E3F2B /* Seashell_3.png */; };
-		DC321BBD1AAB6810006E3F2B /* valgrind_desert_forest.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B6E1AAB6810006E3F2B /* valgrind_desert_forest.png */; };
-		DC321BBE1AAB6810006E3F2B /* walkman1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B6F1AAB6810006E3F2B /* walkman1.png */; };
-		DC321BBF1AAB6810006E3F2B /* walkman2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B701AAB6810006E3F2B /* walkman2.png */; };
-		DC321BC01AAB6810006E3F2B /* walkman3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B711AAB6810006E3F2B /* walkman3.png */; };
-		DC321BC11AAB6810006E3F2B /* walkman4.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B721AAB6810006E3F2B /* walkman4.png */; };
-		DC321BC21AAB6810006E3F2B /* walkman5.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B731AAB6810006E3F2B /* walkman5.png */; };
-		DC321BC31AAB6810006E3F2B /* walkman6.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B741AAB6810006E3F2B /* walkman6.png */; };
-		DC321BC41AAB6810006E3F2B /* wizard1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B751AAB6810006E3F2B /* wizard1.png */; };
-		DC321BC51AAB6810006E3F2B /* wizard10.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B761AAB6810006E3F2B /* wizard10.png */; };
-		DC321BC61AAB6810006E3F2B /* wizard11.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B771AAB6810006E3F2B /* wizard11.png */; };
-		DC321BC71AAB6810006E3F2B /* wizard12.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B781AAB6810006E3F2B /* wizard12.png */; };
-		DC321BC81AAB6810006E3F2B /* wizard13.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B791AAB6810006E3F2B /* wizard13.png */; };
-		DC321BC91AAB6810006E3F2B /* wizard14.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B7A1AAB6810006E3F2B /* wizard14.png */; };
-		DC321BCA1AAB6810006E3F2B /* wizard15.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B7B1AAB6810006E3F2B /* wizard15.png */; };
-		DC321BCB1AAB6810006E3F2B /* wizard16.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B7C1AAB6810006E3F2B /* wizard16.png */; };
-		DC321BCC1AAB6810006E3F2B /* wizard17.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B7D1AAB6810006E3F2B /* wizard17.png */; };
-		DC321BCD1AAB6810006E3F2B /* wizard18.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B7E1AAB6810006E3F2B /* wizard18.png */; };
-		DC321BCE1AAB6810006E3F2B /* wizard19.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B7F1AAB6810006E3F2B /* wizard19.png */; };
-		DC321BCF1AAB6810006E3F2B /* wizard2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B801AAB6810006E3F2B /* wizard2.png */; };
-		DC321BD01AAB6810006E3F2B /* wizard20.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B811AAB6810006E3F2B /* wizard20.png */; };
-		DC321BD11AAB6810006E3F2B /* wizard21.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B821AAB6810006E3F2B /* wizard21.png */; };
-		DC321BD21AAB6810006E3F2B /* wizard22.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B831AAB6810006E3F2B /* wizard22.png */; };
-		DC321BD31AAB6810006E3F2B /* wizard23.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B841AAB6810006E3F2B /* wizard23.png */; };
-		DC321BD41AAB6810006E3F2B /* wizard24.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B851AAB6810006E3F2B /* wizard24.png */; };
-		DC321BD51AAB6810006E3F2B /* wizard3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B861AAB6810006E3F2B /* wizard3.png */; };
-		DC321BD61AAB6810006E3F2B /* wizard4.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B871AAB6810006E3F2B /* wizard4.png */; };
-		DC321BD71AAB6810006E3F2B /* wizard5.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B881AAB6810006E3F2B /* wizard5.png */; };
-		DC321BD81AAB6810006E3F2B /* wizard6.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B891AAB6810006E3F2B /* wizard6.png */; };
-		DC321BD91AAB6810006E3F2B /* wizard7.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B8A1AAB6810006E3F2B /* wizard7.png */; };
-		DC321BDA1AAB6810006E3F2B /* wizard8.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B8B1AAB6810006E3F2B /* wizard8.png */; };
-		DC321BDB1AAB6810006E3F2B /* wizard9.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321B8C1AAB6810006E3F2B /* wizard9.png */; };
 		DC321BDD1AAB9D68006E3F2B /* MiniCrab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BDC1AAB9D68006E3F2B /* MiniCrab.swift */; };
 		DC321BDF1AACCDBE006E3F2B /* IntroScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BDE1AACCDBE006E3F2B /* IntroScene.swift */; };
 		DC321BE11AACD471006E3F2B /* World1Level1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BE01AACD471006E3F2B /* World1Level1.swift */; };
 		DC321BE31AACDED6006E3F2B /* World1Level2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BE21AACDED6006E3F2B /* World1Level2.swift */; };
 		DC321BE51AACE497006E3F2B /* World1Level3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BE41AACE497006E3F2B /* World1Level3.swift */; };
+		DC321C471AAD1423006E3F2B /* Beach_Background_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BE71AAD1423006E3F2B /* Beach_Background_1.png */; };
+		DC321C481AAD1423006E3F2B /* Beach_Ball_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BE81AAD1423006E3F2B /* Beach_Ball_1.png */; };
+		DC321C491AAD1423006E3F2B /* Beach_Crab_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BE91AAD1423006E3F2B /* Beach_Crab_1.png */; };
+		DC321C4A1AAD1423006E3F2B /* Beach_Crab_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BEA1AAD1423006E3F2B /* Beach_Crab_2.png */; };
+		DC321C4B1AAD1423006E3F2B /* Beach_Crab_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BEB1AAD1423006E3F2B /* Beach_Crab_3.png */; };
+		DC321C4C1AAD1423006E3F2B /* Clam_Boss_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BEC1AAD1423006E3F2B /* Clam_Boss_1.png */; };
+		DC321C4D1AAD1423006E3F2B /* Clam_Boss_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BED1AAD1423006E3F2B /* Clam_Boss_2.png */; };
+		DC321C4E1AAD1423006E3F2B /* Clam_Boss_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BEE1AAD1423006E3F2B /* Clam_Boss_3.png */; };
+		DC321C4F1AAD1423006E3F2B /* Clam_Boss_4.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BEF1AAD1423006E3F2B /* Clam_Boss_4.png */; };
+		DC321C501AAD1423006E3F2B /* Clam_Boss_Rocking_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BF01AAD1423006E3F2B /* Clam_Boss_Rocking_1.png */; };
+		DC321C511AAD1423006E3F2B /* Clam_Boss_Rocking_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BF11AAD1423006E3F2B /* Clam_Boss_Rocking_2.png */; };
+		DC321C521AAD1423006E3F2B /* Clam_Boss_Rocking_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BF21AAD1423006E3F2B /* Clam_Boss_Rocking_3.png */; };
+		DC321C531AAD1423006E3F2B /* Clam_Boss_Rocking_4.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BF31AAD1423006E3F2B /* Clam_Boss_Rocking_4.png */; };
+		DC321C541AAD1423006E3F2B /* Clam_Boss_Rocking_5.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BF41AAD1423006E3F2B /* Clam_Boss_Rocking_5.png */; };
+		DC321C551AAD1423006E3F2B /* Clam_Boss_Rocking_6.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BF51AAD1423006E3F2B /* Clam_Boss_Rocking_6.png */; };
+		DC321C561AAD1423006E3F2B /* Crab_Boss_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BF61AAD1423006E3F2B /* Crab_Boss_1.png */; };
+		DC321C571AAD1423006E3F2B /* Crab_Boss_10.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BF71AAD1423006E3F2B /* Crab_Boss_10.png */; };
+		DC321C581AAD1423006E3F2B /* Crab_Boss_11.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BF81AAD1423006E3F2B /* Crab_Boss_11.png */; };
+		DC321C591AAD1423006E3F2B /* Crab_Boss_12.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BF91AAD1423006E3F2B /* Crab_Boss_12.png */; };
+		DC321C5A1AAD1423006E3F2B /* Crab_Boss_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BFA1AAD1423006E3F2B /* Crab_Boss_2.png */; };
+		DC321C5B1AAD1423006E3F2B /* Crab_Boss_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BFB1AAD1423006E3F2B /* Crab_Boss_3.png */; };
+		DC321C5C1AAD1423006E3F2B /* Crab_Boss_4.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BFC1AAD1423006E3F2B /* Crab_Boss_4.png */; };
+		DC321C5D1AAD1423006E3F2B /* Crab_Boss_5.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BFD1AAD1423006E3F2B /* Crab_Boss_5.png */; };
+		DC321C5E1AAD1423006E3F2B /* Crab_Boss_6.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BFE1AAD1423006E3F2B /* Crab_Boss_6.png */; };
+		DC321C5F1AAD1423006E3F2B /* Crab_Boss_7.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321BFF1AAD1423006E3F2B /* Crab_Boss_7.png */; };
+		DC321C601AAD1423006E3F2B /* Crab_Boss_8.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C001AAD1423006E3F2B /* Crab_Boss_8.png */; };
+		DC321C611AAD1423006E3F2B /* Crab_Boss_9.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C011AAD1423006E3F2B /* Crab_Boss_9.png */; };
+		DC321C621AAD1423006E3F2B /* gem.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C021AAD1423006E3F2B /* gem.png */; };
+		DC321C631AAD1423006E3F2B /* healthglobe.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C031AAD1423006E3F2B /* healthglobe.png */; };
+		DC321C641AAD1423006E3F2B /* Kraken_Gets_Hurt_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C041AAD1423006E3F2B /* Kraken_Gets_Hurt_1.png */; };
+		DC321C651AAD1423006E3F2B /* Kraken_Movement_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C051AAD1423006E3F2B /* Kraken_Movement_1.png */; };
+		DC321C661AAD1423006E3F2B /* Kraken_Movement_10.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C061AAD1423006E3F2B /* Kraken_Movement_10.png */; };
+		DC321C671AAD1423006E3F2B /* Kraken_Movement_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C071AAD1423006E3F2B /* Kraken_Movement_2.png */; };
+		DC321C681AAD1423006E3F2B /* Kraken_Movement_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C081AAD1423006E3F2B /* Kraken_Movement_3.png */; };
+		DC321C691AAD1423006E3F2B /* Kraken_Movement_4.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C091AAD1423006E3F2B /* Kraken_Movement_4.png */; };
+		DC321C6A1AAD1423006E3F2B /* Kraken_Movement_5.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C0A1AAD1423006E3F2B /* Kraken_Movement_5.png */; };
+		DC321C6B1AAD1423006E3F2B /* Kraken_Movement_6.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C0B1AAD1423006E3F2B /* Kraken_Movement_6.png */; };
+		DC321C6C1AAD1423006E3F2B /* Kraken_Movement_7.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C0C1AAD1423006E3F2B /* Kraken_Movement_7.png */; };
+		DC321C6D1AAD1423006E3F2B /* Kraken_Movement_8.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C0D1AAD1423006E3F2B /* Kraken_Movement_8.png */; };
+		DC321C6E1AAD1423006E3F2B /* Kraken_Movement_9.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C0E1AAD1423006E3F2B /* Kraken_Movement_9.png */; };
+		DC321C6F1AAD1423006E3F2B /* largerhealthglobe.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C0F1AAD1423006E3F2B /* largerhealthglobe.png */; };
+		DC321C701AAD1423006E3F2B /* level1armor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C101AAD1423006E3F2B /* level1armor.png */; };
+		DC321C711AAD1423006E3F2B /* level1boots.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C111AAD1423006E3F2B /* level1boots.png */; };
+		DC321C721AAD1423006E3F2B /* level1setarmor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C121AAD1423006E3F2B /* level1setarmor.png */; };
+		DC321C731AAD1423006E3F2B /* level1setboots.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C131AAD1423006E3F2B /* level1setboots.png */; };
+		DC321C741AAD1423006E3F2B /* level2armor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C141AAD1423006E3F2B /* level2armor.png */; };
+		DC321C751AAD1423006E3F2B /* level2setarmor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C151AAD1423006E3F2B /* level2setarmor.png */; };
+		DC321C761AAD1423006E3F2B /* level2setboots.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C161AAD1423006E3F2B /* level2setboots.png */; };
+		DC321C771AAD1423006E3F2B /* level2sword.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C171AAD1423006E3F2B /* level2sword.png */; };
+		DC321C781AAD1423006E3F2B /* level3armor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C181AAD1423006E3F2B /* level3armor.png */; };
+		DC321C791AAD1423006E3F2B /* level3setarmor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C191AAD1423006E3F2B /* level3setarmor.png */; };
+		DC321C7A1AAD1423006E3F2B /* level3setboots.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C1A1AAD1423006E3F2B /* level3setboots.png */; };
+		DC321C7B1AAD1423006E3F2B /* level3sword.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C1B1AAD1423006E3F2B /* level3sword.png */; };
+		DC321C7C1AAD1423006E3F2B /* level4armor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C1C1AAD1423006E3F2B /* level4armor.png */; };
+		DC321C7D1AAD1423006E3F2B /* level4dagger.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C1D1AAD1423006E3F2B /* level4dagger.png */; };
+		DC321C7E1AAD1423006E3F2B /* level4setarmor.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C1E1AAD1423006E3F2B /* level4setarmor.png */; };
+		DC321C7F1AAD1423006E3F2B /* level4setboots.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C1F1AAD1423006E3F2B /* level4setboots.png */; };
+		DC321C801AAD1423006E3F2B /* level6dagger.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C201AAD1423006E3F2B /* level6dagger.png */; };
+		DC321C811AAD1423006E3F2B /* Opening_Screen_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C211AAD1423006E3F2B /* Opening_Screen_1.png */; };
+		DC321C821AAD1423006E3F2B /* projectile_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C221AAD1423006E3F2B /* projectile_1@2x.png */; };
+		DC321C831AAD1423006E3F2B /* projectile_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C231AAD1423006E3F2B /* projectile_2@2x.png */; };
+		DC321C841AAD1423006E3F2B /* projectile_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C241AAD1423006E3F2B /* projectile_3@2x.png */; };
+		DC321C851AAD1423006E3F2B /* Seashell_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C251AAD1423006E3F2B /* Seashell_1.png */; };
+		DC321C861AAD1423006E3F2B /* Seashell_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C261AAD1423006E3F2B /* Seashell_2.png */; };
+		DC321C871AAD1423006E3F2B /* Seashell_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C271AAD1423006E3F2B /* Seashell_3.png */; };
+		DC321C881AAD1423006E3F2B /* valgrind_desert_forest.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C281AAD1423006E3F2B /* valgrind_desert_forest.png */; };
+		DC321C891AAD1423006E3F2B /* walkman1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C291AAD1423006E3F2B /* walkman1.png */; };
+		DC321C8A1AAD1423006E3F2B /* walkman2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C2A1AAD1423006E3F2B /* walkman2.png */; };
+		DC321C8B1AAD1423006E3F2B /* walkman3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C2B1AAD1423006E3F2B /* walkman3.png */; };
+		DC321C8C1AAD1423006E3F2B /* walkman4.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C2C1AAD1423006E3F2B /* walkman4.png */; };
+		DC321C8D1AAD1423006E3F2B /* walkman5.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C2D1AAD1423006E3F2B /* walkman5.png */; };
+		DC321C8E1AAD1423006E3F2B /* walkman6.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C2E1AAD1423006E3F2B /* walkman6.png */; };
+		DC321C8F1AAD1423006E3F2B /* wizard1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C2F1AAD1423006E3F2B /* wizard1.png */; };
+		DC321C901AAD1423006E3F2B /* wizard10.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C301AAD1423006E3F2B /* wizard10.png */; };
+		DC321C911AAD1423006E3F2B /* wizard11.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C311AAD1423006E3F2B /* wizard11.png */; };
+		DC321C921AAD1423006E3F2B /* wizard12.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C321AAD1423006E3F2B /* wizard12.png */; };
+		DC321C931AAD1423006E3F2B /* wizard13.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C331AAD1423006E3F2B /* wizard13.png */; };
+		DC321C941AAD1423006E3F2B /* wizard14.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C341AAD1423006E3F2B /* wizard14.png */; };
+		DC321C951AAD1423006E3F2B /* wizard15.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C351AAD1423006E3F2B /* wizard15.png */; };
+		DC321C961AAD1423006E3F2B /* wizard16.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C361AAD1423006E3F2B /* wizard16.png */; };
+		DC321C971AAD1423006E3F2B /* wizard17.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C371AAD1423006E3F2B /* wizard17.png */; };
+		DC321C981AAD1423006E3F2B /* wizard18.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C381AAD1423006E3F2B /* wizard18.png */; };
+		DC321C991AAD1423006E3F2B /* wizard19.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C391AAD1423006E3F2B /* wizard19.png */; };
+		DC321C9A1AAD1423006E3F2B /* wizard2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C3A1AAD1423006E3F2B /* wizard2.png */; };
+		DC321C9B1AAD1423006E3F2B /* wizard20.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C3B1AAD1423006E3F2B /* wizard20.png */; };
+		DC321C9C1AAD1423006E3F2B /* wizard21.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C3C1AAD1423006E3F2B /* wizard21.png */; };
+		DC321C9D1AAD1423006E3F2B /* wizard22.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C3D1AAD1423006E3F2B /* wizard22.png */; };
+		DC321C9E1AAD1423006E3F2B /* wizard23.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C3E1AAD1423006E3F2B /* wizard23.png */; };
+		DC321C9F1AAD1423006E3F2B /* wizard24.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C3F1AAD1423006E3F2B /* wizard24.png */; };
+		DC321CA01AAD1423006E3F2B /* wizard3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C401AAD1423006E3F2B /* wizard3.png */; };
+		DC321CA11AAD1423006E3F2B /* wizard4.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C411AAD1423006E3F2B /* wizard4.png */; };
+		DC321CA21AAD1423006E3F2B /* wizard5.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C421AAD1423006E3F2B /* wizard5.png */; };
+		DC321CA31AAD1423006E3F2B /* wizard6.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C431AAD1423006E3F2B /* wizard6.png */; };
+		DC321CA41AAD1423006E3F2B /* wizard7.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C441AAD1423006E3F2B /* wizard7.png */; };
+		DC321CA51AAD1423006E3F2B /* wizard8.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C451AAD1423006E3F2B /* wizard8.png */; };
+		DC321CA61AAD1423006E3F2B /* wizard9.png in Resources */ = {isa = PBXBuildFile; fileRef = DC321C461AAD1423006E3F2B /* wizard9.png */; };
 		DCC4E3021A89760E000E5E89 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3011A89760E000E5E89 /* Inventory.swift */; };
 		DCC4E3041A897671000E5E89 /* ItemSpaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */; };
 		DCC4E3061A8976AB000E5E89 /* ItemClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3051A8976AB000E5E89 /* ItemClass.swift */; };
@@ -160,90 +177,107 @@
 		DC2711471A85E26100986D2E /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		DC2711491A85E26C00986D2E /* Fireball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fireball.swift; sourceTree = "<group>"; };
 		DC27114F1A86A09D00986D2E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DC321B3E1AAB6810006E3F2B /* Beach_Background_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Beach_Background_1.png; sourceTree = "<group>"; };
-		DC321B3F1AAB6810006E3F2B /* Clam_Boss_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_1.png; sourceTree = "<group>"; };
-		DC321B401AAB6810006E3F2B /* Clam_Boss_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_2.png; sourceTree = "<group>"; };
-		DC321B411AAB6810006E3F2B /* Clam_Boss_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_3.png; sourceTree = "<group>"; };
-		DC321B421AAB6810006E3F2B /* Clam_Boss_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_4.png; sourceTree = "<group>"; };
-		DC321B431AAB6810006E3F2B /* Clam_Boss_Rocking_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_Rocking_1.png; sourceTree = "<group>"; };
-		DC321B441AAB6810006E3F2B /* Clam_Boss_Rocking_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_Rocking_2.png; sourceTree = "<group>"; };
-		DC321B451AAB6810006E3F2B /* Clam_Boss_Rocking_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_Rocking_3.png; sourceTree = "<group>"; };
-		DC321B461AAB6810006E3F2B /* Clam_Boss_Rocking_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_Rocking_4.png; sourceTree = "<group>"; };
-		DC321B471AAB6810006E3F2B /* Clam_Boss_Rocking_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_Rocking_5.png; sourceTree = "<group>"; };
-		DC321B481AAB6810006E3F2B /* Clam_Boss_Rocking_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_Rocking_6.png; sourceTree = "<group>"; };
-		DC321B491AAB6810006E3F2B /* gem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gem.png; sourceTree = "<group>"; };
-		DC321B4A1AAB6810006E3F2B /* healthglobe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = healthglobe.png; sourceTree = "<group>"; };
-		DC321B4B1AAB6810006E3F2B /* Kraken_Gets_Hurt_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Gets_Hurt_1.png; sourceTree = "<group>"; };
-		DC321B4C1AAB6810006E3F2B /* Kraken_Movement_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_1.png; sourceTree = "<group>"; };
-		DC321B4D1AAB6810006E3F2B /* Kraken_Movement_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_10.png; sourceTree = "<group>"; };
-		DC321B4E1AAB6810006E3F2B /* Kraken_Movement_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_2.png; sourceTree = "<group>"; };
-		DC321B4F1AAB6810006E3F2B /* Kraken_Movement_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_3.png; sourceTree = "<group>"; };
-		DC321B501AAB6810006E3F2B /* Kraken_Movement_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_4.png; sourceTree = "<group>"; };
-		DC321B511AAB6810006E3F2B /* Kraken_Movement_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_5.png; sourceTree = "<group>"; };
-		DC321B521AAB6810006E3F2B /* Kraken_Movement_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_6.png; sourceTree = "<group>"; };
-		DC321B531AAB6810006E3F2B /* Kraken_Movement_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_7.png; sourceTree = "<group>"; };
-		DC321B541AAB6810006E3F2B /* Kraken_Movement_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_8.png; sourceTree = "<group>"; };
-		DC321B551AAB6810006E3F2B /* Kraken_Movement_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_9.png; sourceTree = "<group>"; };
-		DC321B561AAB6810006E3F2B /* largerhealthglobe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = largerhealthglobe.png; sourceTree = "<group>"; };
-		DC321B571AAB6810006E3F2B /* level1armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level1armor.png; sourceTree = "<group>"; };
-		DC321B581AAB6810006E3F2B /* level1boots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level1boots.png; sourceTree = "<group>"; };
-		DC321B591AAB6810006E3F2B /* level1setarmor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level1setarmor.png; sourceTree = "<group>"; };
-		DC321B5A1AAB6810006E3F2B /* level1setboots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level1setboots.png; sourceTree = "<group>"; };
-		DC321B5B1AAB6810006E3F2B /* level2armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level2armor.png; sourceTree = "<group>"; };
-		DC321B5C1AAB6810006E3F2B /* level2setarmor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level2setarmor.png; sourceTree = "<group>"; };
-		DC321B5D1AAB6810006E3F2B /* level2setboots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level2setboots.png; sourceTree = "<group>"; };
-		DC321B5E1AAB6810006E3F2B /* level2sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level2sword.png; sourceTree = "<group>"; };
-		DC321B5F1AAB6810006E3F2B /* level3armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level3armor.png; sourceTree = "<group>"; };
-		DC321B601AAB6810006E3F2B /* level3setarmor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level3setarmor.png; sourceTree = "<group>"; };
-		DC321B611AAB6810006E3F2B /* level3setboots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level3setboots.png; sourceTree = "<group>"; };
-		DC321B621AAB6810006E3F2B /* level3sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level3sword.png; sourceTree = "<group>"; };
-		DC321B631AAB6810006E3F2B /* level4armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level4armor.png; sourceTree = "<group>"; };
-		DC321B641AAB6810006E3F2B /* level4dagger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level4dagger.png; sourceTree = "<group>"; };
-		DC321B651AAB6810006E3F2B /* level4setarmor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level4setarmor.png; sourceTree = "<group>"; };
-		DC321B661AAB6810006E3F2B /* level4setboots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level4setboots.png; sourceTree = "<group>"; };
-		DC321B671AAB6810006E3F2B /* level6dagger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level6dagger.png; sourceTree = "<group>"; };
-		DC321B681AAB6810006E3F2B /* projectile_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projectile_1@2x.png"; sourceTree = "<group>"; };
-		DC321B691AAB6810006E3F2B /* projectile_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projectile_2@2x.png"; sourceTree = "<group>"; };
-		DC321B6A1AAB6810006E3F2B /* projectile_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projectile_3@2x.png"; sourceTree = "<group>"; };
-		DC321B6B1AAB6810006E3F2B /* Seashell_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seashell_1.png; sourceTree = "<group>"; };
-		DC321B6C1AAB6810006E3F2B /* Seashell_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seashell_2.png; sourceTree = "<group>"; };
-		DC321B6D1AAB6810006E3F2B /* Seashell_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seashell_3.png; sourceTree = "<group>"; };
-		DC321B6E1AAB6810006E3F2B /* valgrind_desert_forest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = valgrind_desert_forest.png; sourceTree = "<group>"; };
-		DC321B6F1AAB6810006E3F2B /* walkman1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkman1.png; sourceTree = "<group>"; };
-		DC321B701AAB6810006E3F2B /* walkman2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkman2.png; sourceTree = "<group>"; };
-		DC321B711AAB6810006E3F2B /* walkman3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkman3.png; sourceTree = "<group>"; };
-		DC321B721AAB6810006E3F2B /* walkman4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkman4.png; sourceTree = "<group>"; };
-		DC321B731AAB6810006E3F2B /* walkman5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkman5.png; sourceTree = "<group>"; };
-		DC321B741AAB6810006E3F2B /* walkman6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkman6.png; sourceTree = "<group>"; };
-		DC321B751AAB6810006E3F2B /* wizard1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard1.png; sourceTree = "<group>"; };
-		DC321B761AAB6810006E3F2B /* wizard10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard10.png; sourceTree = "<group>"; };
-		DC321B771AAB6810006E3F2B /* wizard11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard11.png; sourceTree = "<group>"; };
-		DC321B781AAB6810006E3F2B /* wizard12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard12.png; sourceTree = "<group>"; };
-		DC321B791AAB6810006E3F2B /* wizard13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard13.png; sourceTree = "<group>"; };
-		DC321B7A1AAB6810006E3F2B /* wizard14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard14.png; sourceTree = "<group>"; };
-		DC321B7B1AAB6810006E3F2B /* wizard15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard15.png; sourceTree = "<group>"; };
-		DC321B7C1AAB6810006E3F2B /* wizard16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard16.png; sourceTree = "<group>"; };
-		DC321B7D1AAB6810006E3F2B /* wizard17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard17.png; sourceTree = "<group>"; };
-		DC321B7E1AAB6810006E3F2B /* wizard18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard18.png; sourceTree = "<group>"; };
-		DC321B7F1AAB6810006E3F2B /* wizard19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard19.png; sourceTree = "<group>"; };
-		DC321B801AAB6810006E3F2B /* wizard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard2.png; sourceTree = "<group>"; };
-		DC321B811AAB6810006E3F2B /* wizard20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard20.png; sourceTree = "<group>"; };
-		DC321B821AAB6810006E3F2B /* wizard21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard21.png; sourceTree = "<group>"; };
-		DC321B831AAB6810006E3F2B /* wizard22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard22.png; sourceTree = "<group>"; };
-		DC321B841AAB6810006E3F2B /* wizard23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard23.png; sourceTree = "<group>"; };
-		DC321B851AAB6810006E3F2B /* wizard24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard24.png; sourceTree = "<group>"; };
-		DC321B861AAB6810006E3F2B /* wizard3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard3.png; sourceTree = "<group>"; };
-		DC321B871AAB6810006E3F2B /* wizard4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard4.png; sourceTree = "<group>"; };
-		DC321B881AAB6810006E3F2B /* wizard5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard5.png; sourceTree = "<group>"; };
-		DC321B891AAB6810006E3F2B /* wizard6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard6.png; sourceTree = "<group>"; };
-		DC321B8A1AAB6810006E3F2B /* wizard7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard7.png; sourceTree = "<group>"; };
-		DC321B8B1AAB6810006E3F2B /* wizard8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard8.png; sourceTree = "<group>"; };
-		DC321B8C1AAB6810006E3F2B /* wizard9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard9.png; sourceTree = "<group>"; };
 		DC321BDC1AAB9D68006E3F2B /* MiniCrab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniCrab.swift; sourceTree = "<group>"; };
 		DC321BDE1AACCDBE006E3F2B /* IntroScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScene.swift; sourceTree = "<group>"; };
 		DC321BE01AACD471006E3F2B /* World1Level1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level1.swift; sourceTree = "<group>"; };
 		DC321BE21AACDED6006E3F2B /* World1Level2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level2.swift; sourceTree = "<group>"; };
 		DC321BE41AACE497006E3F2B /* World1Level3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level3.swift; sourceTree = "<group>"; };
+		DC321BE71AAD1423006E3F2B /* Beach_Background_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Beach_Background_1.png; sourceTree = "<group>"; };
+		DC321BE81AAD1423006E3F2B /* Beach_Ball_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Beach_Ball_1.png; sourceTree = "<group>"; };
+		DC321BE91AAD1423006E3F2B /* Beach_Crab_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Beach_Crab_1.png; sourceTree = "<group>"; };
+		DC321BEA1AAD1423006E3F2B /* Beach_Crab_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Beach_Crab_2.png; sourceTree = "<group>"; };
+		DC321BEB1AAD1423006E3F2B /* Beach_Crab_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Beach_Crab_3.png; sourceTree = "<group>"; };
+		DC321BEC1AAD1423006E3F2B /* Clam_Boss_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_1.png; sourceTree = "<group>"; };
+		DC321BED1AAD1423006E3F2B /* Clam_Boss_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_2.png; sourceTree = "<group>"; };
+		DC321BEE1AAD1423006E3F2B /* Clam_Boss_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_3.png; sourceTree = "<group>"; };
+		DC321BEF1AAD1423006E3F2B /* Clam_Boss_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_4.png; sourceTree = "<group>"; };
+		DC321BF01AAD1423006E3F2B /* Clam_Boss_Rocking_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_Rocking_1.png; sourceTree = "<group>"; };
+		DC321BF11AAD1423006E3F2B /* Clam_Boss_Rocking_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_Rocking_2.png; sourceTree = "<group>"; };
+		DC321BF21AAD1423006E3F2B /* Clam_Boss_Rocking_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_Rocking_3.png; sourceTree = "<group>"; };
+		DC321BF31AAD1423006E3F2B /* Clam_Boss_Rocking_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_Rocking_4.png; sourceTree = "<group>"; };
+		DC321BF41AAD1423006E3F2B /* Clam_Boss_Rocking_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_Rocking_5.png; sourceTree = "<group>"; };
+		DC321BF51AAD1423006E3F2B /* Clam_Boss_Rocking_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_Rocking_6.png; sourceTree = "<group>"; };
+		DC321BF61AAD1423006E3F2B /* Crab_Boss_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crab_Boss_1.png; sourceTree = "<group>"; };
+		DC321BF71AAD1423006E3F2B /* Crab_Boss_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crab_Boss_10.png; sourceTree = "<group>"; };
+		DC321BF81AAD1423006E3F2B /* Crab_Boss_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crab_Boss_11.png; sourceTree = "<group>"; };
+		DC321BF91AAD1423006E3F2B /* Crab_Boss_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crab_Boss_12.png; sourceTree = "<group>"; };
+		DC321BFA1AAD1423006E3F2B /* Crab_Boss_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crab_Boss_2.png; sourceTree = "<group>"; };
+		DC321BFB1AAD1423006E3F2B /* Crab_Boss_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crab_Boss_3.png; sourceTree = "<group>"; };
+		DC321BFC1AAD1423006E3F2B /* Crab_Boss_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crab_Boss_4.png; sourceTree = "<group>"; };
+		DC321BFD1AAD1423006E3F2B /* Crab_Boss_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crab_Boss_5.png; sourceTree = "<group>"; };
+		DC321BFE1AAD1423006E3F2B /* Crab_Boss_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crab_Boss_6.png; sourceTree = "<group>"; };
+		DC321BFF1AAD1423006E3F2B /* Crab_Boss_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crab_Boss_7.png; sourceTree = "<group>"; };
+		DC321C001AAD1423006E3F2B /* Crab_Boss_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crab_Boss_8.png; sourceTree = "<group>"; };
+		DC321C011AAD1423006E3F2B /* Crab_Boss_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crab_Boss_9.png; sourceTree = "<group>"; };
+		DC321C021AAD1423006E3F2B /* gem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gem.png; sourceTree = "<group>"; };
+		DC321C031AAD1423006E3F2B /* healthglobe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = healthglobe.png; sourceTree = "<group>"; };
+		DC321C041AAD1423006E3F2B /* Kraken_Gets_Hurt_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Gets_Hurt_1.png; sourceTree = "<group>"; };
+		DC321C051AAD1423006E3F2B /* Kraken_Movement_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_1.png; sourceTree = "<group>"; };
+		DC321C061AAD1423006E3F2B /* Kraken_Movement_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_10.png; sourceTree = "<group>"; };
+		DC321C071AAD1423006E3F2B /* Kraken_Movement_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_2.png; sourceTree = "<group>"; };
+		DC321C081AAD1423006E3F2B /* Kraken_Movement_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_3.png; sourceTree = "<group>"; };
+		DC321C091AAD1423006E3F2B /* Kraken_Movement_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_4.png; sourceTree = "<group>"; };
+		DC321C0A1AAD1423006E3F2B /* Kraken_Movement_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_5.png; sourceTree = "<group>"; };
+		DC321C0B1AAD1423006E3F2B /* Kraken_Movement_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_6.png; sourceTree = "<group>"; };
+		DC321C0C1AAD1423006E3F2B /* Kraken_Movement_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_7.png; sourceTree = "<group>"; };
+		DC321C0D1AAD1423006E3F2B /* Kraken_Movement_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_8.png; sourceTree = "<group>"; };
+		DC321C0E1AAD1423006E3F2B /* Kraken_Movement_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Movement_9.png; sourceTree = "<group>"; };
+		DC321C0F1AAD1423006E3F2B /* largerhealthglobe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = largerhealthglobe.png; sourceTree = "<group>"; };
+		DC321C101AAD1423006E3F2B /* level1armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level1armor.png; sourceTree = "<group>"; };
+		DC321C111AAD1423006E3F2B /* level1boots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level1boots.png; sourceTree = "<group>"; };
+		DC321C121AAD1423006E3F2B /* level1setarmor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level1setarmor.png; sourceTree = "<group>"; };
+		DC321C131AAD1423006E3F2B /* level1setboots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level1setboots.png; sourceTree = "<group>"; };
+		DC321C141AAD1423006E3F2B /* level2armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level2armor.png; sourceTree = "<group>"; };
+		DC321C151AAD1423006E3F2B /* level2setarmor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level2setarmor.png; sourceTree = "<group>"; };
+		DC321C161AAD1423006E3F2B /* level2setboots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level2setboots.png; sourceTree = "<group>"; };
+		DC321C171AAD1423006E3F2B /* level2sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level2sword.png; sourceTree = "<group>"; };
+		DC321C181AAD1423006E3F2B /* level3armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level3armor.png; sourceTree = "<group>"; };
+		DC321C191AAD1423006E3F2B /* level3setarmor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level3setarmor.png; sourceTree = "<group>"; };
+		DC321C1A1AAD1423006E3F2B /* level3setboots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level3setboots.png; sourceTree = "<group>"; };
+		DC321C1B1AAD1423006E3F2B /* level3sword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level3sword.png; sourceTree = "<group>"; };
+		DC321C1C1AAD1423006E3F2B /* level4armor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level4armor.png; sourceTree = "<group>"; };
+		DC321C1D1AAD1423006E3F2B /* level4dagger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level4dagger.png; sourceTree = "<group>"; };
+		DC321C1E1AAD1423006E3F2B /* level4setarmor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level4setarmor.png; sourceTree = "<group>"; };
+		DC321C1F1AAD1423006E3F2B /* level4setboots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level4setboots.png; sourceTree = "<group>"; };
+		DC321C201AAD1423006E3F2B /* level6dagger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = level6dagger.png; sourceTree = "<group>"; };
+		DC321C211AAD1423006E3F2B /* Opening_Screen_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Opening_Screen_1.png; sourceTree = "<group>"; };
+		DC321C221AAD1423006E3F2B /* projectile_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projectile_1@2x.png"; sourceTree = "<group>"; };
+		DC321C231AAD1423006E3F2B /* projectile_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projectile_2@2x.png"; sourceTree = "<group>"; };
+		DC321C241AAD1423006E3F2B /* projectile_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "projectile_3@2x.png"; sourceTree = "<group>"; };
+		DC321C251AAD1423006E3F2B /* Seashell_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seashell_1.png; sourceTree = "<group>"; };
+		DC321C261AAD1423006E3F2B /* Seashell_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seashell_2.png; sourceTree = "<group>"; };
+		DC321C271AAD1423006E3F2B /* Seashell_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seashell_3.png; sourceTree = "<group>"; };
+		DC321C281AAD1423006E3F2B /* valgrind_desert_forest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = valgrind_desert_forest.png; sourceTree = "<group>"; };
+		DC321C291AAD1423006E3F2B /* walkman1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkman1.png; sourceTree = "<group>"; };
+		DC321C2A1AAD1423006E3F2B /* walkman2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkman2.png; sourceTree = "<group>"; };
+		DC321C2B1AAD1423006E3F2B /* walkman3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkman3.png; sourceTree = "<group>"; };
+		DC321C2C1AAD1423006E3F2B /* walkman4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkman4.png; sourceTree = "<group>"; };
+		DC321C2D1AAD1423006E3F2B /* walkman5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkman5.png; sourceTree = "<group>"; };
+		DC321C2E1AAD1423006E3F2B /* walkman6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkman6.png; sourceTree = "<group>"; };
+		DC321C2F1AAD1423006E3F2B /* wizard1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard1.png; sourceTree = "<group>"; };
+		DC321C301AAD1423006E3F2B /* wizard10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard10.png; sourceTree = "<group>"; };
+		DC321C311AAD1423006E3F2B /* wizard11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard11.png; sourceTree = "<group>"; };
+		DC321C321AAD1423006E3F2B /* wizard12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard12.png; sourceTree = "<group>"; };
+		DC321C331AAD1423006E3F2B /* wizard13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard13.png; sourceTree = "<group>"; };
+		DC321C341AAD1423006E3F2B /* wizard14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard14.png; sourceTree = "<group>"; };
+		DC321C351AAD1423006E3F2B /* wizard15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard15.png; sourceTree = "<group>"; };
+		DC321C361AAD1423006E3F2B /* wizard16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard16.png; sourceTree = "<group>"; };
+		DC321C371AAD1423006E3F2B /* wizard17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard17.png; sourceTree = "<group>"; };
+		DC321C381AAD1423006E3F2B /* wizard18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard18.png; sourceTree = "<group>"; };
+		DC321C391AAD1423006E3F2B /* wizard19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard19.png; sourceTree = "<group>"; };
+		DC321C3A1AAD1423006E3F2B /* wizard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard2.png; sourceTree = "<group>"; };
+		DC321C3B1AAD1423006E3F2B /* wizard20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard20.png; sourceTree = "<group>"; };
+		DC321C3C1AAD1423006E3F2B /* wizard21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard21.png; sourceTree = "<group>"; };
+		DC321C3D1AAD1423006E3F2B /* wizard22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard22.png; sourceTree = "<group>"; };
+		DC321C3E1AAD1423006E3F2B /* wizard23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard23.png; sourceTree = "<group>"; };
+		DC321C3F1AAD1423006E3F2B /* wizard24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard24.png; sourceTree = "<group>"; };
+		DC321C401AAD1423006E3F2B /* wizard3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard3.png; sourceTree = "<group>"; };
+		DC321C411AAD1423006E3F2B /* wizard4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard4.png; sourceTree = "<group>"; };
+		DC321C421AAD1423006E3F2B /* wizard5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard5.png; sourceTree = "<group>"; };
+		DC321C431AAD1423006E3F2B /* wizard6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard6.png; sourceTree = "<group>"; };
+		DC321C441AAD1423006E3F2B /* wizard7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard7.png; sourceTree = "<group>"; };
+		DC321C451AAD1423006E3F2B /* wizard8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard8.png; sourceTree = "<group>"; };
+		DC321C461AAD1423006E3F2B /* wizard9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard9.png; sourceTree = "<group>"; };
 		DCC4E3011A89760E000E5E89 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSpaceNode.swift; sourceTree = "<group>"; };
 		DCC4E3051A8976AB000E5E89 /* ItemClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemClass.swift; sourceTree = "<group>"; };
@@ -291,7 +325,7 @@
 		DC2711161A85E11900986D2E /* RPGWARRIOR */ = {
 			isa = PBXGroup;
 			children = (
-				DC321B3D1AAB6810006E3F2B /* Rpg9 */,
+				DC321BE61AAD1423006E3F2B /* Rpg10 */,
 				DC2711491A85E26C00986D2E /* Fireball.swift */,
 				2FC73DE21A912CAA0068A2FB /* BlizzNode.swift */,
 				DCC4E37A1A94EDED000E5E89 /* Block.swift */,
@@ -355,90 +389,107 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DC321B3D1AAB6810006E3F2B /* Rpg9 */ = {
+		DC321BE61AAD1423006E3F2B /* Rpg10 */ = {
 			isa = PBXGroup;
 			children = (
-				DC321B3E1AAB6810006E3F2B /* Beach_Background_1.png */,
-				DC321B3F1AAB6810006E3F2B /* Clam_Boss_1.png */,
-				DC321B401AAB6810006E3F2B /* Clam_Boss_2.png */,
-				DC321B411AAB6810006E3F2B /* Clam_Boss_3.png */,
-				DC321B421AAB6810006E3F2B /* Clam_Boss_4.png */,
-				DC321B431AAB6810006E3F2B /* Clam_Boss_Rocking_1.png */,
-				DC321B441AAB6810006E3F2B /* Clam_Boss_Rocking_2.png */,
-				DC321B451AAB6810006E3F2B /* Clam_Boss_Rocking_3.png */,
-				DC321B461AAB6810006E3F2B /* Clam_Boss_Rocking_4.png */,
-				DC321B471AAB6810006E3F2B /* Clam_Boss_Rocking_5.png */,
-				DC321B481AAB6810006E3F2B /* Clam_Boss_Rocking_6.png */,
-				DC321B491AAB6810006E3F2B /* gem.png */,
-				DC321B4A1AAB6810006E3F2B /* healthglobe.png */,
-				DC321B4B1AAB6810006E3F2B /* Kraken_Gets_Hurt_1.png */,
-				DC321B4C1AAB6810006E3F2B /* Kraken_Movement_1.png */,
-				DC321B4D1AAB6810006E3F2B /* Kraken_Movement_10.png */,
-				DC321B4E1AAB6810006E3F2B /* Kraken_Movement_2.png */,
-				DC321B4F1AAB6810006E3F2B /* Kraken_Movement_3.png */,
-				DC321B501AAB6810006E3F2B /* Kraken_Movement_4.png */,
-				DC321B511AAB6810006E3F2B /* Kraken_Movement_5.png */,
-				DC321B521AAB6810006E3F2B /* Kraken_Movement_6.png */,
-				DC321B531AAB6810006E3F2B /* Kraken_Movement_7.png */,
-				DC321B541AAB6810006E3F2B /* Kraken_Movement_8.png */,
-				DC321B551AAB6810006E3F2B /* Kraken_Movement_9.png */,
-				DC321B561AAB6810006E3F2B /* largerhealthglobe.png */,
-				DC321B571AAB6810006E3F2B /* level1armor.png */,
-				DC321B581AAB6810006E3F2B /* level1boots.png */,
-				DC321B591AAB6810006E3F2B /* level1setarmor.png */,
-				DC321B5A1AAB6810006E3F2B /* level1setboots.png */,
-				DC321B5B1AAB6810006E3F2B /* level2armor.png */,
-				DC321B5C1AAB6810006E3F2B /* level2setarmor.png */,
-				DC321B5D1AAB6810006E3F2B /* level2setboots.png */,
-				DC321B5E1AAB6810006E3F2B /* level2sword.png */,
-				DC321B5F1AAB6810006E3F2B /* level3armor.png */,
-				DC321B601AAB6810006E3F2B /* level3setarmor.png */,
-				DC321B611AAB6810006E3F2B /* level3setboots.png */,
-				DC321B621AAB6810006E3F2B /* level3sword.png */,
-				DC321B631AAB6810006E3F2B /* level4armor.png */,
-				DC321B641AAB6810006E3F2B /* level4dagger.png */,
-				DC321B651AAB6810006E3F2B /* level4setarmor.png */,
-				DC321B661AAB6810006E3F2B /* level4setboots.png */,
-				DC321B671AAB6810006E3F2B /* level6dagger.png */,
-				DC321B681AAB6810006E3F2B /* projectile_1@2x.png */,
-				DC321B691AAB6810006E3F2B /* projectile_2@2x.png */,
-				DC321B6A1AAB6810006E3F2B /* projectile_3@2x.png */,
-				DC321B6B1AAB6810006E3F2B /* Seashell_1.png */,
-				DC321B6C1AAB6810006E3F2B /* Seashell_2.png */,
-				DC321B6D1AAB6810006E3F2B /* Seashell_3.png */,
-				DC321B6E1AAB6810006E3F2B /* valgrind_desert_forest.png */,
-				DC321B6F1AAB6810006E3F2B /* walkman1.png */,
-				DC321B701AAB6810006E3F2B /* walkman2.png */,
-				DC321B711AAB6810006E3F2B /* walkman3.png */,
-				DC321B721AAB6810006E3F2B /* walkman4.png */,
-				DC321B731AAB6810006E3F2B /* walkman5.png */,
-				DC321B741AAB6810006E3F2B /* walkman6.png */,
-				DC321B751AAB6810006E3F2B /* wizard1.png */,
-				DC321B761AAB6810006E3F2B /* wizard10.png */,
-				DC321B771AAB6810006E3F2B /* wizard11.png */,
-				DC321B781AAB6810006E3F2B /* wizard12.png */,
-				DC321B791AAB6810006E3F2B /* wizard13.png */,
-				DC321B7A1AAB6810006E3F2B /* wizard14.png */,
-				DC321B7B1AAB6810006E3F2B /* wizard15.png */,
-				DC321B7C1AAB6810006E3F2B /* wizard16.png */,
-				DC321B7D1AAB6810006E3F2B /* wizard17.png */,
-				DC321B7E1AAB6810006E3F2B /* wizard18.png */,
-				DC321B7F1AAB6810006E3F2B /* wizard19.png */,
-				DC321B801AAB6810006E3F2B /* wizard2.png */,
-				DC321B811AAB6810006E3F2B /* wizard20.png */,
-				DC321B821AAB6810006E3F2B /* wizard21.png */,
-				DC321B831AAB6810006E3F2B /* wizard22.png */,
-				DC321B841AAB6810006E3F2B /* wizard23.png */,
-				DC321B851AAB6810006E3F2B /* wizard24.png */,
-				DC321B861AAB6810006E3F2B /* wizard3.png */,
-				DC321B871AAB6810006E3F2B /* wizard4.png */,
-				DC321B881AAB6810006E3F2B /* wizard5.png */,
-				DC321B891AAB6810006E3F2B /* wizard6.png */,
-				DC321B8A1AAB6810006E3F2B /* wizard7.png */,
-				DC321B8B1AAB6810006E3F2B /* wizard8.png */,
-				DC321B8C1AAB6810006E3F2B /* wizard9.png */,
+				DC321BE71AAD1423006E3F2B /* Beach_Background_1.png */,
+				DC321BE81AAD1423006E3F2B /* Beach_Ball_1.png */,
+				DC321BE91AAD1423006E3F2B /* Beach_Crab_1.png */,
+				DC321BEA1AAD1423006E3F2B /* Beach_Crab_2.png */,
+				DC321BEB1AAD1423006E3F2B /* Beach_Crab_3.png */,
+				DC321BEC1AAD1423006E3F2B /* Clam_Boss_1.png */,
+				DC321BED1AAD1423006E3F2B /* Clam_Boss_2.png */,
+				DC321BEE1AAD1423006E3F2B /* Clam_Boss_3.png */,
+				DC321BEF1AAD1423006E3F2B /* Clam_Boss_4.png */,
+				DC321BF01AAD1423006E3F2B /* Clam_Boss_Rocking_1.png */,
+				DC321BF11AAD1423006E3F2B /* Clam_Boss_Rocking_2.png */,
+				DC321BF21AAD1423006E3F2B /* Clam_Boss_Rocking_3.png */,
+				DC321BF31AAD1423006E3F2B /* Clam_Boss_Rocking_4.png */,
+				DC321BF41AAD1423006E3F2B /* Clam_Boss_Rocking_5.png */,
+				DC321BF51AAD1423006E3F2B /* Clam_Boss_Rocking_6.png */,
+				DC321BF61AAD1423006E3F2B /* Crab_Boss_1.png */,
+				DC321BF71AAD1423006E3F2B /* Crab_Boss_10.png */,
+				DC321BF81AAD1423006E3F2B /* Crab_Boss_11.png */,
+				DC321BF91AAD1423006E3F2B /* Crab_Boss_12.png */,
+				DC321BFA1AAD1423006E3F2B /* Crab_Boss_2.png */,
+				DC321BFB1AAD1423006E3F2B /* Crab_Boss_3.png */,
+				DC321BFC1AAD1423006E3F2B /* Crab_Boss_4.png */,
+				DC321BFD1AAD1423006E3F2B /* Crab_Boss_5.png */,
+				DC321BFE1AAD1423006E3F2B /* Crab_Boss_6.png */,
+				DC321BFF1AAD1423006E3F2B /* Crab_Boss_7.png */,
+				DC321C001AAD1423006E3F2B /* Crab_Boss_8.png */,
+				DC321C011AAD1423006E3F2B /* Crab_Boss_9.png */,
+				DC321C021AAD1423006E3F2B /* gem.png */,
+				DC321C031AAD1423006E3F2B /* healthglobe.png */,
+				DC321C041AAD1423006E3F2B /* Kraken_Gets_Hurt_1.png */,
+				DC321C051AAD1423006E3F2B /* Kraken_Movement_1.png */,
+				DC321C061AAD1423006E3F2B /* Kraken_Movement_10.png */,
+				DC321C071AAD1423006E3F2B /* Kraken_Movement_2.png */,
+				DC321C081AAD1423006E3F2B /* Kraken_Movement_3.png */,
+				DC321C091AAD1423006E3F2B /* Kraken_Movement_4.png */,
+				DC321C0A1AAD1423006E3F2B /* Kraken_Movement_5.png */,
+				DC321C0B1AAD1423006E3F2B /* Kraken_Movement_6.png */,
+				DC321C0C1AAD1423006E3F2B /* Kraken_Movement_7.png */,
+				DC321C0D1AAD1423006E3F2B /* Kraken_Movement_8.png */,
+				DC321C0E1AAD1423006E3F2B /* Kraken_Movement_9.png */,
+				DC321C0F1AAD1423006E3F2B /* largerhealthglobe.png */,
+				DC321C101AAD1423006E3F2B /* level1armor.png */,
+				DC321C111AAD1423006E3F2B /* level1boots.png */,
+				DC321C121AAD1423006E3F2B /* level1setarmor.png */,
+				DC321C131AAD1423006E3F2B /* level1setboots.png */,
+				DC321C141AAD1423006E3F2B /* level2armor.png */,
+				DC321C151AAD1423006E3F2B /* level2setarmor.png */,
+				DC321C161AAD1423006E3F2B /* level2setboots.png */,
+				DC321C171AAD1423006E3F2B /* level2sword.png */,
+				DC321C181AAD1423006E3F2B /* level3armor.png */,
+				DC321C191AAD1423006E3F2B /* level3setarmor.png */,
+				DC321C1A1AAD1423006E3F2B /* level3setboots.png */,
+				DC321C1B1AAD1423006E3F2B /* level3sword.png */,
+				DC321C1C1AAD1423006E3F2B /* level4armor.png */,
+				DC321C1D1AAD1423006E3F2B /* level4dagger.png */,
+				DC321C1E1AAD1423006E3F2B /* level4setarmor.png */,
+				DC321C1F1AAD1423006E3F2B /* level4setboots.png */,
+				DC321C201AAD1423006E3F2B /* level6dagger.png */,
+				DC321C211AAD1423006E3F2B /* Opening_Screen_1.png */,
+				DC321C221AAD1423006E3F2B /* projectile_1@2x.png */,
+				DC321C231AAD1423006E3F2B /* projectile_2@2x.png */,
+				DC321C241AAD1423006E3F2B /* projectile_3@2x.png */,
+				DC321C251AAD1423006E3F2B /* Seashell_1.png */,
+				DC321C261AAD1423006E3F2B /* Seashell_2.png */,
+				DC321C271AAD1423006E3F2B /* Seashell_3.png */,
+				DC321C281AAD1423006E3F2B /* valgrind_desert_forest.png */,
+				DC321C291AAD1423006E3F2B /* walkman1.png */,
+				DC321C2A1AAD1423006E3F2B /* walkman2.png */,
+				DC321C2B1AAD1423006E3F2B /* walkman3.png */,
+				DC321C2C1AAD1423006E3F2B /* walkman4.png */,
+				DC321C2D1AAD1423006E3F2B /* walkman5.png */,
+				DC321C2E1AAD1423006E3F2B /* walkman6.png */,
+				DC321C2F1AAD1423006E3F2B /* wizard1.png */,
+				DC321C301AAD1423006E3F2B /* wizard10.png */,
+				DC321C311AAD1423006E3F2B /* wizard11.png */,
+				DC321C321AAD1423006E3F2B /* wizard12.png */,
+				DC321C331AAD1423006E3F2B /* wizard13.png */,
+				DC321C341AAD1423006E3F2B /* wizard14.png */,
+				DC321C351AAD1423006E3F2B /* wizard15.png */,
+				DC321C361AAD1423006E3F2B /* wizard16.png */,
+				DC321C371AAD1423006E3F2B /* wizard17.png */,
+				DC321C381AAD1423006E3F2B /* wizard18.png */,
+				DC321C391AAD1423006E3F2B /* wizard19.png */,
+				DC321C3A1AAD1423006E3F2B /* wizard2.png */,
+				DC321C3B1AAD1423006E3F2B /* wizard20.png */,
+				DC321C3C1AAD1423006E3F2B /* wizard21.png */,
+				DC321C3D1AAD1423006E3F2B /* wizard22.png */,
+				DC321C3E1AAD1423006E3F2B /* wizard23.png */,
+				DC321C3F1AAD1423006E3F2B /* wizard24.png */,
+				DC321C401AAD1423006E3F2B /* wizard3.png */,
+				DC321C411AAD1423006E3F2B /* wizard4.png */,
+				DC321C421AAD1423006E3F2B /* wizard5.png */,
+				DC321C431AAD1423006E3F2B /* wizard6.png */,
+				DC321C441AAD1423006E3F2B /* wizard7.png */,
+				DC321C451AAD1423006E3F2B /* wizard8.png */,
+				DC321C461AAD1423006E3F2B /* wizard9.png */,
 			);
-			path = Rpg9;
+			path = Rpg10;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,91 +572,108 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC321B9E1AAB6810006E3F2B /* Kraken_Movement_3.png in Resources */,
+				DC321C761AAD1423006E3F2B /* level2setboots.png in Resources */,
+				DC321C6D1AAD1423006E3F2B /* Kraken_Movement_8.png in Resources */,
+				DC321C681AAD1423006E3F2B /* Kraken_Movement_3.png in Resources */,
+				DC321C7A1AAD1423006E3F2B /* level3setboots.png in Resources */,
+				DC321C831AAD1423006E3F2B /* projectile_2@2x.png in Resources */,
+				DC321C7E1AAD1423006E3F2B /* level4setarmor.png in Resources */,
+				DC321C671AAD1423006E3F2B /* Kraken_Movement_2.png in Resources */,
+				DC321C511AAD1423006E3F2B /* Clam_Boss_Rocking_2.png in Resources */,
+				DC321C9D1AAD1423006E3F2B /* wizard22.png in Resources */,
+				DC321C651AAD1423006E3F2B /* Kraken_Movement_1.png in Resources */,
+				DC321C771AAD1423006E3F2B /* level2sword.png in Resources */,
+				DC321C6C1AAD1423006E3F2B /* Kraken_Movement_7.png in Resources */,
+				DC321C551AAD1423006E3F2B /* Clam_Boss_Rocking_6.png in Resources */,
+				DC321C581AAD1423006E3F2B /* Crab_Boss_11.png in Resources */,
+				DC321C5D1AAD1423006E3F2B /* Crab_Boss_5.png in Resources */,
+				DC321C9B1AAD1423006E3F2B /* wizard20.png in Resources */,
+				DC321C661AAD1423006E3F2B /* Kraken_Movement_10.png in Resources */,
+				DC321C9A1AAD1423006E3F2B /* wizard2.png in Resources */,
+				DC321C5C1AAD1423006E3F2B /* Crab_Boss_4.png in Resources */,
+				DC321C8E1AAD1423006E3F2B /* walkman6.png in Resources */,
+				DC321C911AAD1423006E3F2B /* wizard11.png in Resources */,
+				DC321C991AAD1423006E3F2B /* wizard19.png in Resources */,
+				DC321C901AAD1423006E3F2B /* wizard10.png in Resources */,
+				DC321C931AAD1423006E3F2B /* wizard13.png in Resources */,
+				DC321C5F1AAD1423006E3F2B /* Crab_Boss_7.png in Resources */,
+				DC321C481AAD1423006E3F2B /* Beach_Ball_1.png in Resources */,
+				DC321C601AAD1423006E3F2B /* Crab_Boss_8.png in Resources */,
+				DC321C8B1AAD1423006E3F2B /* walkman3.png in Resources */,
+				DC321C861AAD1423006E3F2B /* Seashell_2.png in Resources */,
+				DC321C631AAD1423006E3F2B /* healthglobe.png in Resources */,
+				DC321C591AAD1423006E3F2B /* Crab_Boss_12.png in Resources */,
+				DC321C5A1AAD1423006E3F2B /* Crab_Boss_2.png in Resources */,
+				DC321C7F1AAD1423006E3F2B /* level4setboots.png in Resources */,
+				DC321C4C1AAD1423006E3F2B /* Clam_Boss_1.png in Resources */,
+				DC321C691AAD1423006E3F2B /* Kraken_Movement_4.png in Resources */,
 				DC2711281A85E11900986D2E /* LaunchScreen.xib in Resources */,
-				DC321BD31AAB6810006E3F2B /* wizard23.png in Resources */,
-				DC321BD61AAB6810006E3F2B /* wizard4.png in Resources */,
-				DC321BA01AAB6810006E3F2B /* Kraken_Movement_5.png in Resources */,
-				DC321B921AAB6810006E3F2B /* Clam_Boss_Rocking_1.png in Resources */,
-				DC321BD71AAB6810006E3F2B /* wizard5.png in Resources */,
-				DC321BC31AAB6810006E3F2B /* walkman6.png in Resources */,
-				DC321BBB1AAB6810006E3F2B /* Seashell_2.png in Resources */,
-				DC321BA91AAB6810006E3F2B /* level1setboots.png in Resources */,
-				DC321BA21AAB6810006E3F2B /* Kraken_Movement_7.png in Resources */,
-				DC321BAD1AAB6810006E3F2B /* level2sword.png in Resources */,
-				DC321BB01AAB6810006E3F2B /* level3setboots.png in Resources */,
-				DC321BAC1AAB6810006E3F2B /* level2setboots.png in Resources */,
-				DC321B9F1AAB6810006E3F2B /* Kraken_Movement_4.png in Resources */,
-				DC321BC41AAB6810006E3F2B /* wizard1.png in Resources */,
-				DC321B8D1AAB6810006E3F2B /* Beach_Background_1.png in Resources */,
-				DC321BB61AAB6810006E3F2B /* level6dagger.png in Resources */,
+				DC321CA61AAD1423006E3F2B /* wizard9.png in Resources */,
+				DC321C7D1AAD1423006E3F2B /* level4dagger.png in Resources */,
+				DC321C841AAD1423006E3F2B /* projectile_3@2x.png in Resources */,
+				DC321C4D1AAD1423006E3F2B /* Clam_Boss_2.png in Resources */,
+				DC321CA31AAD1423006E3F2B /* wizard6.png in Resources */,
+				DC321C7B1AAD1423006E3F2B /* level3sword.png in Resources */,
+				DC321C9C1AAD1423006E3F2B /* wizard21.png in Resources */,
+				DC321C5E1AAD1423006E3F2B /* Crab_Boss_6.png in Resources */,
+				DC321C951AAD1423006E3F2B /* wizard15.png in Resources */,
+				DC321C611AAD1423006E3F2B /* Crab_Boss_9.png in Resources */,
+				DC321C731AAD1423006E3F2B /* level1setboots.png in Resources */,
+				DC321CA11AAD1423006E3F2B /* wizard4.png in Resources */,
+				DC321C6F1AAD1423006E3F2B /* largerhealthglobe.png in Resources */,
+				DC321C981AAD1423006E3F2B /* wizard18.png in Resources */,
+				DC321C921AAD1423006E3F2B /* wizard12.png in Resources */,
+				DC321C531AAD1423006E3F2B /* Clam_Boss_Rocking_4.png in Resources */,
+				DC321C881AAD1423006E3F2B /* valgrind_desert_forest.png in Resources */,
+				DC321C871AAD1423006E3F2B /* Seashell_3.png in Resources */,
+				DC321CA21AAD1423006E3F2B /* wizard5.png in Resources */,
+				DC321C4F1AAD1423006E3F2B /* Clam_Boss_4.png in Resources */,
+				DC321C471AAD1423006E3F2B /* Beach_Background_1.png in Resources */,
+				DC321C6A1AAD1423006E3F2B /* Kraken_Movement_5.png in Resources */,
+				DC321C701AAD1423006E3F2B /* level1armor.png in Resources */,
+				DC321C521AAD1423006E3F2B /* Clam_Boss_Rocking_3.png in Resources */,
+				DC321C6E1AAD1423006E3F2B /* Kraken_Movement_9.png in Resources */,
+				DC321C4B1AAD1423006E3F2B /* Beach_Crab_3.png in Resources */,
 				2FC73DE11A912B690068A2FB /* BlizzParticle.sks in Resources */,
-				DC321BBC1AAB6810006E3F2B /* Seashell_3.png in Resources */,
-				DC321BD91AAB6810006E3F2B /* wizard7.png in Resources */,
+				DC321C971AAD1423006E3F2B /* wizard17.png in Resources */,
+				DC321C6B1AAD1423006E3F2B /* Kraken_Movement_6.png in Resources */,
+				DC321C941AAD1423006E3F2B /* wizard14.png in Resources */,
+				DC321C9F1AAD1423006E3F2B /* wizard24.png in Resources */,
+				DC321C751AAD1423006E3F2B /* level2setarmor.png in Resources */,
+				DC321C8D1AAD1423006E3F2B /* walkman5.png in Resources */,
+				DC321C781AAD1423006E3F2B /* level3armor.png in Resources */,
+				DC321CA01AAD1423006E3F2B /* wizard3.png in Resources */,
+				DC321CA41AAD1423006E3F2B /* wizard7.png in Resources */,
+				DC321C4E1AAD1423006E3F2B /* Clam_Boss_3.png in Resources */,
+				DC321C8A1AAD1423006E3F2B /* walkman2.png in Resources */,
+				DC321C721AAD1423006E3F2B /* level1setarmor.png in Resources */,
+				DC321C741AAD1423006E3F2B /* level2armor.png in Resources */,
+				DC321C501AAD1423006E3F2B /* Clam_Boss_Rocking_1.png in Resources */,
+				DC321C5B1AAD1423006E3F2B /* Crab_Boss_3.png in Resources */,
+				DC321C571AAD1423006E3F2B /* Crab_Boss_10.png in Resources */,
+				DC321C561AAD1423006E3F2B /* Crab_Boss_1.png in Resources */,
+				DC321C491AAD1423006E3F2B /* Beach_Crab_1.png in Resources */,
 				DC1F581A1A88735300B5027B /* LightParticle.sks in Resources */,
-				DC321B9A1AAB6810006E3F2B /* Kraken_Gets_Hurt_1.png in Resources */,
-				DC321B8F1AAB6810006E3F2B /* Clam_Boss_2.png in Resources */,
-				DC321B9C1AAB6810006E3F2B /* Kraken_Movement_10.png in Resources */,
-				DC321BC21AAB6810006E3F2B /* walkman5.png in Resources */,
-				DC321BA61AAB6810006E3F2B /* level1armor.png in Resources */,
-				DC321BB81AAB6810006E3F2B /* projectile_2@2x.png in Resources */,
-				DC321BD21AAB6810006E3F2B /* wizard22.png in Resources */,
-				DC321B9D1AAB6810006E3F2B /* Kraken_Movement_2.png in Resources */,
-				DC321B901AAB6810006E3F2B /* Clam_Boss_3.png in Resources */,
-				DC321BCE1AAB6810006E3F2B /* wizard19.png in Resources */,
-				DC321BA81AAB6810006E3F2B /* level1setarmor.png in Resources */,
-				DC321B931AAB6810006E3F2B /* Clam_Boss_Rocking_2.png in Resources */,
-				DC321BB11AAB6810006E3F2B /* level3sword.png in Resources */,
-				DC321BB51AAB6810006E3F2B /* level4setboots.png in Resources */,
-				DC321BB31AAB6810006E3F2B /* level4dagger.png in Resources */,
-				DC321BD11AAB6810006E3F2B /* wizard21.png in Resources */,
-				DC321BBF1AAB6810006E3F2B /* walkman2.png in Resources */,
-				DC321BC71AAB6810006E3F2B /* wizard12.png in Resources */,
+				DC321C791AAD1423006E3F2B /* level3setarmor.png in Resources */,
+				DC321C891AAD1423006E3F2B /* walkman1.png in Resources */,
+				DC321C7C1AAD1423006E3F2B /* level4armor.png in Resources */,
 				DC2711251A85E11900986D2E /* Images.xcassets in Resources */,
-				DC321BB91AAB6810006E3F2B /* projectile_3@2x.png in Resources */,
-				DC321BCB1AAB6810006E3F2B /* wizard16.png in Resources */,
-				DC321BA51AAB6810006E3F2B /* largerhealthglobe.png in Resources */,
-				DC321BAE1AAB6810006E3F2B /* level3armor.png in Resources */,
-				DC321B8E1AAB6810006E3F2B /* Clam_Boss_1.png in Resources */,
-				DC321BD81AAB6810006E3F2B /* wizard6.png in Resources */,
-				DC321BBD1AAB6810006E3F2B /* valgrind_desert_forest.png in Resources */,
-				DC321BD41AAB6810006E3F2B /* wizard24.png in Resources */,
-				DC321BCF1AAB6810006E3F2B /* wizard2.png in Resources */,
-				DC321BB71AAB6810006E3F2B /* projectile_1@2x.png in Resources */,
+				DC321C8F1AAD1423006E3F2B /* wizard1.png in Resources */,
+				DC321C961AAD1423006E3F2B /* wizard16.png in Resources */,
+				DC321C9E1AAD1423006E3F2B /* wizard23.png in Resources */,
 				DC2711231A85E11900986D2E /* Main.storyboard in Resources */,
-				DC321BC91AAB6810006E3F2B /* wizard14.png in Resources */,
-				DC321BDB1AAB6810006E3F2B /* wizard9.png in Resources */,
-				DC321BB21AAB6810006E3F2B /* level4armor.png in Resources */,
-				DC321BAB1AAB6810006E3F2B /* level2setarmor.png in Resources */,
-				DC321BA41AAB6810006E3F2B /* Kraken_Movement_9.png in Resources */,
-				DC321BC81AAB6810006E3F2B /* wizard13.png in Resources */,
-				DC321BD51AAB6810006E3F2B /* wizard3.png in Resources */,
-				DC321B971AAB6810006E3F2B /* Clam_Boss_Rocking_6.png in Resources */,
-				DC321BA11AAB6810006E3F2B /* Kraken_Movement_6.png in Resources */,
-				DC321BAA1AAB6810006E3F2B /* level2armor.png in Resources */,
-				DC321BD01AAB6810006E3F2B /* wizard20.png in Resources */,
-				DC321BA71AAB6810006E3F2B /* level1boots.png in Resources */,
+				DC321C711AAD1423006E3F2B /* level1boots.png in Resources */,
+				DC321C8C1AAD1423006E3F2B /* walkman4.png in Resources */,
+				DC321C541AAD1423006E3F2B /* Clam_Boss_Rocking_5.png in Resources */,
+				DC321C811AAD1423006E3F2B /* Opening_Screen_1.png in Resources */,
+				DC321C801AAD1423006E3F2B /* level6dagger.png in Resources */,
+				DC321C621AAD1423006E3F2B /* gem.png in Resources */,
+				DC321C641AAD1423006E3F2B /* Kraken_Gets_Hurt_1.png in Resources */,
+				DC321C821AAD1423006E3F2B /* projectile_1@2x.png in Resources */,
+				DC321C4A1AAD1423006E3F2B /* Beach_Crab_2.png in Resources */,
+				DC321C851AAD1423006E3F2B /* Seashell_1.png in Resources */,
 				DC1F581B1A88735300B5027B /* spark.png in Resources */,
-				DC321BB41AAB6810006E3F2B /* level4setarmor.png in Resources */,
-				DC321BBA1AAB6810006E3F2B /* Seashell_1.png in Resources */,
-				DC321BC61AAB6810006E3F2B /* wizard11.png in Resources */,
-				DC321BCA1AAB6810006E3F2B /* wizard15.png in Resources */,
-				DC321B911AAB6810006E3F2B /* Clam_Boss_4.png in Resources */,
-				DC321B9B1AAB6810006E3F2B /* Kraken_Movement_1.png in Resources */,
-				DC321BC11AAB6810006E3F2B /* walkman4.png in Resources */,
-				DC321BC01AAB6810006E3F2B /* walkman3.png in Resources */,
-				DC321BAF1AAB6810006E3F2B /* level3setarmor.png in Resources */,
-				DC321B961AAB6810006E3F2B /* Clam_Boss_Rocking_5.png in Resources */,
-				DC321BCC1AAB6810006E3F2B /* wizard17.png in Resources */,
-				DC321BDA1AAB6810006E3F2B /* wizard8.png in Resources */,
-				DC321BCD1AAB6810006E3F2B /* wizard18.png in Resources */,
-				DC321B981AAB6810006E3F2B /* gem.png in Resources */,
-				DC321BBE1AAB6810006E3F2B /* walkman1.png in Resources */,
-				DC321BA31AAB6810006E3F2B /* Kraken_Movement_8.png in Resources */,
-				DC321B951AAB6810006E3F2B /* Clam_Boss_Rocking_4.png in Resources */,
-				DC321B991AAB6810006E3F2B /* healthglobe.png in Resources */,
-				DC321B941AAB6810006E3F2B /* Clam_Boss_Rocking_3.png in Resources */,
-				DC321BC51AAB6810006E3F2B /* wizard10.png in Resources */,
+				DC321CA51AAD1423006E3F2B /* wizard8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

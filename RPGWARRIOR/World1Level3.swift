@@ -42,7 +42,7 @@ class World1Level3: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
         self.addChild(background)
         theHero!.updateStats()
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 10, self.frame.midY + 100), endPosition: CGPointMake(self.frame.maxX - 10, self.frame.midY + 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 10, self.frame.midY + 95), endPosition: CGPointMake(self.frame.maxX - 10, self.frame.midY + 105)))
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 100, self.frame.midY), endPosition: CGPointMake(self.frame.minX + 100, self.frame.midY)))
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 10, self.frame.midY - 100)))
         

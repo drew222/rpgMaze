@@ -14,12 +14,12 @@ class Bomb: SKSpriteNode {
     
     class func bombAtPosition(position: CGPoint) -> Bomb{
         
-        let bomb = Bomb(imageNamed: "projectile_1")
+        let bomb = Bomb(imageNamed: "Beach_Ball_1")
         bomb.position = position
         bomb.name = "bomb"
         
         
-        bomb.setupAnimation()
+        //bomb.setupAnimation()
         bomb.setupPhysicsBody()
         return bomb
         

@@ -15,7 +15,7 @@ class IntroScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        let background = SKSpriteNode(imageNamed: "Beach_Background_1")
+        let background = SKSpriteNode(imageNamed: "Opening_Screen_1")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         self.addChild(background)

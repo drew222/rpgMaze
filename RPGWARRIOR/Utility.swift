@@ -289,7 +289,7 @@ func getMoveAnimations(myNode: SKSpriteNode)->SKAction{
 
 func getStillTexture(myNode: SKSpriteNode)->SKTexture{
     if myNode.name == "hero"{
-        return SKTexture(imageNamed: "Kraken_Movement_1.png")
+        return SKTexture(imageNamed: "Kraken_Movement_5.png")
     }else{return SKTexture()}
 }
 

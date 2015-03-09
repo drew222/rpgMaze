@@ -16,16 +16,16 @@ class MiniCrab: SKSpriteNode {
     var endPosition: CGPoint?
     let crabSpeed = 150
     class func crabAtPosition(startPos: CGPoint, endPosition: CGPoint) -> MiniCrab{
-        let crab = MiniCrab(imageNamed: "Seashell_1")
+        let crab = MiniCrab(imageNamed: "Beach_Crab_1")
         crab.position = startPos
         crab.startPosition = startPos
         crab.name = "crab"
         crab.endPosition = endPosition
-        crab.setScale(0.4)
+        crab.setScale(0.07)
         //rotate
         crab.runAction(SKAction.rotateToAngle(angleFromPoints(startPos, endPosition) - pi, duration: 0))
         //animate all textures
-        let textures: [SKTexture] = [SKTexture(imageNamed: "Seashell_3"), SKTexture(imageNamed: "Seashell_2"), SKTexture(imageNamed: "Seashell_1"), SKTexture(imageNamed: "Seashell_2")]
+        let textures: [SKTexture] = [SKTexture(imageNamed: "Beach_Crab_1"), SKTexture(imageNamed: "Beach_Crab_2"), SKTexture(imageNamed: "Beach_Crab_3"), SKTexture(imageNamed: "Beach_Crab_2")]
         let animateAction = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
         let repeatAction = SKAction.repeatActionForever(animateAction)
         crab.runAction(repeatAction)
@@ -53,10 +53,10 @@ class MiniCrab: SKSpriteNode {
             //if (self.parent! as? SKScene != nil){
             //self.parent!.addChild(liteAttack!)
             //}
-            let textures: [SKTexture] = [SKTexture(imageNamed:"Seashell_3"), SKTexture(imageNamed:"Seashell_2"), SKTexture(imageNamed:"Seashell_1")]
-            let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-            let repeat = SKAction.repeatAction(animation, count: 1)
-            self.runAction(repeat)
+            //let textures: [SKTexture] = [SKTexture(imageNamed:"Seashell_3"), SKTexture(imageNamed:"Seashell_2"), SKTexture(imageNamed:"Seashell_1")]
+            //let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+            //let repeat = SKAction.repeatAction(animation, count: 1)
+            //self.runAction(repeat)
             //self.removeActionForKey("fire")
             //self.texture = nil
         })
