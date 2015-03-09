@@ -15,19 +15,20 @@ class MineNode: SKSpriteNode {
     var isArmed = false
     
     class func mineAtPos(position: CGPoint) -> MineNode {
-        let mine = MineNode(imageNamed: "Seashell_3.png")
+        let mine = MineNode(imageNamed: "Seashell_3")
         mine.position = position
         mine.name = "Mine"
-        //mine.setupAnimation()
+        mine.setupAnimation()
         mine.setupPhysicsBody()
         mine.setScale(0.5)
         return mine
     }
     
     func setupAnimation() {
-        let textures = [SKTexture(imageNamed: "projectile_1"),
-            SKTexture(imageNamed: "projectile_2"),
-            SKTexture(imageNamed: "projectile_3")]
+        let textures = [SKTexture(imageNamed: "Seashell_3"),
+            SKTexture(imageNamed: "Seashell_2"),
+            SKTexture(imageNamed: "Seashell_1"),
+            SKTexture(imageNamed: "Seashell_2")]
         let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
         let repeatAction = SKAction.repeatActionForever(animation)
         self.runAction(repeatAction)
@@ -48,7 +49,7 @@ class MineNode: SKSpriteNode {
             //if (self.parent! as? SKScene != nil){
                 //self.parent!.addChild(liteAttack!)
             //}
-            let textures: [SKTexture] = [SKTexture(imageNamed:"Seashell_3"), SKTexture(imageNamed:"Seashell_2"), SKTexture(imageNamed:"Seashell_1")]
+            let textures: [SKTexture] = [SKTexture(imageNamed:"Seashell_1")]
             let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
             let repeat = SKAction.repeatAction(animation, count: 1)
             self.runAction(repeat)

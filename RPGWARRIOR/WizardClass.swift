@@ -24,14 +24,28 @@ class WizardClass: SKSpriteNode {
         wizard.currentAngle = 3 * pi / 2.0
         //if canAttack{
         var textures: [SKTexture] = []
-        for var i = 1; i <= 4; i=i+1{
+        for var i = 1; i <= 3; i=i+1{
             textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_\(i)"))
         }
-        for var i = 3; i >= 2; i=i-1{
-            textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_\(i)"))
-        }
+        textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_2"))
+        textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_1"))
+        textures.append(SKTexture(imageNamed:"Clam_Boss_1"))
+        textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_4"))
+        textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_5"))
+        textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_6"))
+        textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_5"))
+        textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_4"))
+        textures.append(SKTexture(imageNamed:"Clam_Boss_1"))
+        textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_1"))
+        textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_2"))
+        textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_1"))
+        textures.append(SKTexture(imageNamed:"Clam_Boss_1"))
+        textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_4"))
+        textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_1"))
+        textures.append(SKTexture(imageNamed:"Clam_Boss_1"))
         let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-        let repeatAction = SKAction.repeatActionForever(animation)
+        let sequenceRepeat = SKAction.sequence([animation, SKAction.waitForDuration(1.5)])
+        let repeatAction = SKAction.repeatActionForever(sequenceRepeat)
         wizard.runAction(repeatAction, withKey: "repeatAction")
         wizard.setupPhysicsBody()
         return wizard
@@ -64,11 +78,28 @@ class WizardClass: SKSpriteNode {
         })
         let codeBlock = SKAction.runBlock({
             var textures: [SKTexture] = []
-            for var i = 1; i <= 6; i=i+1{
+            for var i = 1; i <= 3; i=i+1{
                 textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_\(i)"))
             }
+            textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_2"))
+            textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_1"))
+            textures.append(SKTexture(imageNamed:"Clam_Boss_1"))
+            textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_4"))
+            textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_5"))
+            textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_6"))
+            textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_5"))
+            textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_4"))
+            textures.append(SKTexture(imageNamed:"Clam_Boss_1"))
+            textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_1"))
+            textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_2"))
+            textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_1"))
+            textures.append(SKTexture(imageNamed:"Clam_Boss_1"))
+            textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_4"))
+            textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_1"))
+            textures.append(SKTexture(imageNamed:"Clam_Boss_1"))
             let animation2 = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-            let repeatAction = SKAction.repeatActionForever(animation2)
+            let sequenceRepeat = SKAction.sequence([animation2, SKAction.waitForDuration(1.5)])
+            let repeatAction = SKAction.repeatActionForever(sequenceRepeat)
             self.runAction(repeatAction , withKey: "repeatAction")
         })
         let sequence = SKAction.sequence([codeBlock0, SKAction.waitForDuration(0.4), codeBlock])
