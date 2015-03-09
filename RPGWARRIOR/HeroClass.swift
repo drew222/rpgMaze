@@ -24,7 +24,7 @@ class HeroClass: SKSpriteNode {
     //let nodeSpeed = 125
     
     class func makeHero(position: CGPoint) -> HeroClass{
-        let hero = HeroClass(imageNamed: "Kraken_Movement_1.png")
+        let hero = HeroClass(imageNamed: "Kraken_Movement_5.png")
         hero.position = position
         hero.anchorPoint = CGPointMake(0.5, 0.5)
         hero.name = "hero"
@@ -141,12 +141,17 @@ class HeroClass: SKSpriteNode {
     }
     
     func getStillTextures()-> SKTexture{
-        return SKTexture(imageNamed: "Kraken_Movement_1.png")
+        return SKTexture(imageNamed: "Kraken_Movement_5.png")
     }
     
     
     func getMoveTextures()-> [SKTexture]{
-        return [SKTexture(imageNamed: "Kraken_Movement_2.png"),
+        return [SKTexture(imageNamed: "Kraken_Movement_5.png"),
+            SKTexture(imageNamed: "Kraken_Movement_4.png"),
+            SKTexture(imageNamed: "Kraken_Movement_3.png"),
+            SKTexture(imageNamed: "Kraken_Movement_2.png"),
+            SKTexture(imageNamed: "Kraken_Movement_1.png"),
+            SKTexture(imageNamed: "Kraken_Movement_2.png"),
             SKTexture(imageNamed: "Kraken_Movement_3.png"),
             SKTexture(imageNamed: "Kraken_Movement_4.png"),
             SKTexture(imageNamed: "Kraken_Movement_5.png"),
@@ -155,7 +160,10 @@ class HeroClass: SKSpriteNode {
             SKTexture(imageNamed: "Kraken_Movement_8.png"),
             SKTexture(imageNamed: "Kraken_Movement_9.png"),
             SKTexture(imageNamed: "Kraken_Movement_10.png"),
-            SKTexture(imageNamed: "Kraken_Movement_1.png")]
+            SKTexture(imageNamed: "Kraken_Movement_9.png"),
+            SKTexture(imageNamed: "Kraken_Movement_8.png"),
+            SKTexture(imageNamed: "Kraken_Movement_7.png"),
+            SKTexture(imageNamed: "Kraken_Movement_6.png")]
     }
     
     func takeDamage(damage: CGFloat) -> Bool{
