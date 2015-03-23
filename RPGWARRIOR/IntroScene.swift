@@ -25,7 +25,7 @@ class IntroScene: SKScene {
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        let gameplayScene = MainMenuScene(size: self.frame.size)
+        let gameplayScene = ZoneScene(size: self.frame.size)
         let skTransition = SKTransition.fadeWithDuration(1.0)
         self.view?.presentScene(gameplayScene, transition: skTransition)
     }

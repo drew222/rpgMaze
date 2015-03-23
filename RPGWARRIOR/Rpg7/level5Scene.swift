@@ -34,7 +34,6 @@ class Level5Scene: SKScene, SKPhysicsContactDelegate  {
         theHero!.setScale(0.6)
         self.addChild(theHero!)
         bombthrower = BomberClass.makeBomber(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
-        bombthrower!.setScale(0.3)
         for spot in generateMinePoints(){
             placeMine(spot)
         }

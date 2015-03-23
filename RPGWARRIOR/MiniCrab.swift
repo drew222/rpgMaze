@@ -14,7 +14,7 @@ class MiniCrab: SKSpriteNode {
     
     var startPosition: CGPoint?
     var endPosition: CGPoint?
-    let crabSpeed = 150
+    var crabSpeed = 150
     class func crabAtPosition(startPos: CGPoint, endPosition: CGPoint) -> MiniCrab{
         let crab = MiniCrab(imageNamed: "Beach_Crab_1")
         crab.position = startPos
@@ -23,7 +23,21 @@ class MiniCrab: SKSpriteNode {
         crab.endPosition = endPosition
         crab.setScale(0.07)
         //rotate
-        crab.runAction(SKAction.rotateToAngle(angleFromPoints(startPos, endPosition) - pi, duration: 0))
+        var angle = angleFromPoints(startPos, endPosition)
+        println(angle)
+        //if angle > pi + pi / 2{
+          //  angle += pi
+        //}
+        if angle != -1 {
+            //angle = angle - pi
+            if angle < 3.14 {
+                angle = angle + pi
+            }
+            if angle > pi + pi / 2{
+                angle += pi
+            }
+        crab.runAction(SKAction.rotateToAngle(angle - pi, duration: 0))
+        }
         //animate all textures
         let textures: [SKTexture] = [SKTexture(imageNamed: "Beach_Crab_1"), SKTexture(imageNamed: "Beach_Crab_2"), SKTexture(imageNamed: "Beach_Crab_3"), SKTexture(imageNamed: "Beach_Crab_2")]
         let animateAction = SKAction.animateWithTextures(textures, timePerFrame: 0.1)

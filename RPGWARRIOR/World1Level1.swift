@@ -39,8 +39,8 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         background.zPosition = -1
-        self.physicsWorld.contactDelegate = self
         self.addChild(background)
+        self.physicsWorld.contactDelegate = self
         theHero!.updateStats()
         //self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 100, self.frame.midY)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY)))

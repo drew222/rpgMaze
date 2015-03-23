@@ -17,9 +17,15 @@ class MainMenuScene: SKScene {
     var level4Node: SKLabelNode?
     var level5Node: SKLabelNode?
     var inventory: SKLabelNode?
+    var mainScreen: SKLabelNode?
     var world1level1node: SKLabelNode?
     var world1level2node: SKLabelNode?
     var world1level3node: SKLabelNode?
+    var world1level4node: SKLabelNode?
+    var world1level5node: SKLabelNode?
+    var world1level6node: SKLabelNode?
+    var world1level7node: SKLabelNode?
+    var world1level8node: SKLabelNode?
     var firstTimeLoaded = true
     
     override func didMoveToView(view: SKView) {
@@ -27,17 +33,17 @@ class MainMenuScene: SKScene {
         if firstTimeLoaded{
         self.backgroundColor = UIColor.blueColor()
         level1Node = SKLabelNode.init(text: "Level 1")
-        level1Node!.position = CGPointMake(self.frame.midX, self.frame.midY - 10)
+        level1Node!.position = CGPointMake(self.frame.midX + 50, self.frame.midY - 10)
         level1Node!.name = "level1"
         self.addChild(level1Node!)
         
         level2Node = SKLabelNode.init(text: "Level 2")
-        level2Node!.position = CGPointMake(self.frame.midX, self.frame.midY - 60)
+        level2Node!.position = CGPointMake(self.frame.midX + 50, self.frame.midY - 60)
         level2Node!.name = "level2"
         self.addChild(level2Node!)
         if self.userData?.objectForKey("inventory") == nil{
             println("inventorydata was nil")
-            self.userData = NSMutableDictionary()
+            //self.userData = NSMutableDictionary()
             let theInventory = Inventory(size: self.frame.size)
             theInventory.userData = NSMutableDictionary()
             self.userData?.setObject(theInventory, forKey: "inventory")
@@ -45,20 +51,20 @@ class MainMenuScene: SKScene {
         
         level3Node = SKLabelNode.init(text: "Level 3")
         if let Node = level3Node {
-            Node.position = CGPointMake(self.frame.midX, self.frame.midY - 110)
+            Node.position = CGPointMake(self.frame.midX + 50, self.frame.midY - 110)
             Node.name = "level3"
             self.addChild(Node)
         }
 
         level4Node = SKLabelNode.init(text: "Level 4")
         if let Node = level4Node {
-            Node.position = CGPointMake(self.frame.midX, self.frame.midY - 160)
+            Node.position = CGPointMake(self.frame.midX + 50, self.frame.midY - 160)
             Node.name = "level4"
             self.addChild(Node)
         }
         level5Node = SKLabelNode.init(text: "Level 5")
         if let Node = level5Node {
-            Node.position = CGPointMake(self.frame.midX, self.frame.midY - 210)
+            Node.position = CGPointMake(self.frame.midX + 50, self.frame.midY - 210)
             Node.name = "level5"
             self.addChild(Node)
         }
@@ -85,12 +91,57 @@ class MainMenuScene: SKScene {
             Node.name = "world1level3"
             self.addChild(Node)
         }
+            
+            world1level4node = SKLabelNode.init(text: "World 1 : Level 4")
+            resizeLabel(world1level4node!)
+            if let Node = world1level4node {
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 150)
+                Node.name = "world1level4"
+                self.addChild(Node)
+            }
+            
+            world1level5node = SKLabelNode.init(text: "World 1 : Level 5")
+            resizeLabel(world1level5node!)
+            if let Node = world1level5node {
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 100)
+                Node.name = "world1level5"
+                self.addChild(Node)
+            }
+            
+            world1level6node = SKLabelNode.init(text: "World 1 : Level 6")
+            resizeLabel(world1level6node!)
+            if let Node = world1level6node {
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 50)
+                Node.name = "world1level6"
+                self.addChild(Node)
+            }
+            
+            world1level7node = SKLabelNode.init(text: "World 1 : Level 7")
+            resizeLabel(world1level7node!)
+            if let Node = world1level7node {
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY)
+                Node.name = "world1level7"
+                self.addChild(Node)
+            }
+            world1level8node = SKLabelNode.init(text: "World 1 : Level 8")
+            resizeLabel(world1level8node!)
+            if let Node = world1level8node {
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 50)
+                Node.name = "world1level8"
+                self.addChild(Node)
+            }
         
         inventory = SKLabelNode.init(text: "Inventory")
         inventory!.position = CGPointMake(self.frame.maxX - 70, self.frame.minY + 40)
         inventory!.name = "inventory"
         self.addChild(inventory!)
         firstTimeLoaded = false
+            
+            mainScreen = SKLabelNode.init(text: "Main Menu")
+            mainScreen!.position = CGPointMake(self.frame.minX + 70, self.frame.minY + 40)
+            mainScreen!.name = "inventory"
+            self.addChild(mainScreen!)
+            firstTimeLoaded = false
         }
     }
     
@@ -168,16 +219,65 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level3scene, transition: skTransition)
                 
+            }else if world1level4node!.containsPoint(touch.locationInNode(self)){
+                let world1level4scene = World1Level4(size: self.frame.size)
+                world1level4scene.userData = NSMutableDictionary()
+                world1level4scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                world1level4scene.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(world1level4scene, transition: skTransition)
+                
+            }else if world1level5node!.containsPoint(touch.locationInNode(self)){
+                let world1level5scene = World1Level5(size: self.frame.size)
+                world1level5scene.userData = NSMutableDictionary()
+                world1level5scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                world1level5scene.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(world1level5scene, transition: skTransition)
+                
+            }else if world1level6node!.containsPoint(touch.locationInNode(self)){
+                let world1level6scene = World1Level6(size: self.frame.size)
+                world1level6scene.userData = NSMutableDictionary()
+                world1level6scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                world1level6scene.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(world1level6scene, transition: skTransition)
+                
+            }else if world1level7node!.containsPoint(touch.locationInNode(self)){
+                let world1level7scene = World1Level7(size: self.frame.size)
+                world1level7scene.userData = NSMutableDictionary()
+                world1level7scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                world1level7scene.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(world1level7scene, transition: skTransition)
+                
+            }else if world1level8node!.containsPoint(touch.locationInNode(self)){
+                let world1level8scene = World1Level8(size: self.frame.size)
+                world1level8scene.userData = NSMutableDictionary()
+                world1level8scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                world1level8scene.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(world1level8scene, transition: skTransition)
+                
             }else if inventory!.containsPoint(touch.locationInNode(self)){
-                println("clicked inventory")
                 //let inventoryScene = Inventory(size: self.frame.size)
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 (self.userData?.objectForKey("inventory") as Inventory).userData?.setObject(self, forKey: "menu")
-                println("got here111")
                 self.view?.presentScene(self.userData?.objectForKey("inventory") as Inventory, transition: skTransition)
-                }
+                
+            }else if mainScreen!.containsPoint(touch.locationInNode(self)){
+                //let inventoryScene = Inventory(size: self.frame.size)
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                //(self.userData?.objectForKey("worldScene") as Inventory).userData?.setObject(self, forKey: "worldScene")
+                self.view?.presentScene(self.userData?.objectForKey("worldscene") as ZoneScene, transition: skTransition)
             }
         }
     }
+}
 
 

@@ -27,6 +27,11 @@ class StoreScene: SKScene {
         /* Setup your scene here */
        //add menu option node here
         self.backgroundColor = UIColor.grayColor()
+        let background = SKSpriteNode(imageNamed: "Store_1.png")
+        background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        background.size = CGSize(width: self.frame.width, height: self.frame.height)
+        background.zPosition = -1
+        self.addChild(background)
         statLabel = SKLabelNode.init(text: "")
         statLabel!.position = CGPointMake(self.frame.midX, self.frame.minY + 75)
         statLabel!.name = "stats"
@@ -53,8 +58,8 @@ class StoreScene: SKScene {
     
     func addItems(){
         //generate points
-        var startX = self.frame.minX + 40
-        var startY = self.frame.maxY - 40
+        var startX = self.frame.minX + 50
+        var startY = self.frame.maxY - 160
         var counter = 1
         for itemName in allStoreItems{
             let item = ItemClass.itemInSpace(itemName)
@@ -64,7 +69,7 @@ class StoreScene: SKScene {
             counter += 1
             self.addChild(item)
             if self.frame.maxX - startX < 60{
-                startY -= 60
+                startY -= 140
                 startX = self.frame.minX + 40
             }else{
                 startX += 40
