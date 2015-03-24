@@ -21,7 +21,7 @@ class ZoneScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        let background = SKSpriteNode(imageNamed: "Beach_Background_1")
+        let background = SKSpriteNode(imageNamed: "Zone_Screen_2")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         background.zPosition = -1
