@@ -271,16 +271,36 @@ func setAngle(myNode: SKSpriteNode, angle: CGFloat){
 
 func getMoveAnimations(myNode: SKSpriteNode)->SKAction{
     if myNode.name == "hero"{
-        let textures = [SKTexture(imageNamed: "Kraken_Movement_2.png"),
+        let textures = [SKTexture(imageNamed: "Kraken_Movement_4.png"),
+            SKTexture(imageNamed: "Kraken_Movement_3.png"),
+            SKTexture(imageNamed: "Kraken_Movement_2.png"),
+            SKTexture(imageNamed: "Kraken_Movement_1.png"),
+            SKTexture(imageNamed: "Kraken_Movement_2.png"),
             SKTexture(imageNamed: "Kraken_Movement_3.png"),
             SKTexture(imageNamed: "Kraken_Movement_4.png"),
             SKTexture(imageNamed: "Kraken_Movement_5.png"),
+            SKTexture(imageNamed: "Kraken_Movement_11.png"),
+            SKTexture(imageNamed: "Kraken_Movement_12.png"),
+            SKTexture(imageNamed: "Kraken_Movement_13.png"),
+            SKTexture(imageNamed: "Kraken_Movement_14.png"),
+            SKTexture(imageNamed: "Kraken_Movement_15.png"),
+            SKTexture(imageNamed: "Kraken_Movement_16.png"),
             SKTexture(imageNamed: "Kraken_Movement_6.png"),
             SKTexture(imageNamed: "Kraken_Movement_7.png"),
             SKTexture(imageNamed: "Kraken_Movement_8.png"),
             SKTexture(imageNamed: "Kraken_Movement_9.png"),
             SKTexture(imageNamed: "Kraken_Movement_10.png"),
-            SKTexture(imageNamed: "Kraken_Movement_1.png")]
+            SKTexture(imageNamed: "Kraken_Movement_9.png"),
+            SKTexture(imageNamed: "Kraken_Movement_8.png"),
+            SKTexture(imageNamed: "Kraken_Movement_7.png"),
+            SKTexture(imageNamed: "Kraken_Movement_6.png"),
+            SKTexture(imageNamed: "Kraken_Movement_16.png"),
+            SKTexture(imageNamed: "Kraken_Movement_15.png"),
+            SKTexture(imageNamed: "Kraken_Movement_14.png"),
+            SKTexture(imageNamed: "Kraken_Movement_13.png"),
+            SKTexture(imageNamed: "Kraken_Movement_12.png"),
+            SKTexture(imageNamed: "Kraken_Movement_11.png"),
+            SKTexture(imageNamed: "Kraken_Movement_5.png")]
         let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
         return SKAction.repeatActionForever(animation)
     }

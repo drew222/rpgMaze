@@ -147,8 +147,7 @@ class HeroClass: SKSpriteNode {
     
     
     func getMoveTextures()-> [SKTexture]{
-        return [SKTexture(imageNamed: "Kraken_Movement_5.png"),
-            SKTexture(imageNamed: "Kraken_Movement_4.png"),
+        return [SKTexture(imageNamed: "Kraken_Movement_4.png"),
             SKTexture(imageNamed: "Kraken_Movement_3.png"),
             SKTexture(imageNamed: "Kraken_Movement_2.png"),
             SKTexture(imageNamed: "Kraken_Movement_1.png"),
@@ -156,6 +155,12 @@ class HeroClass: SKSpriteNode {
             SKTexture(imageNamed: "Kraken_Movement_3.png"),
             SKTexture(imageNamed: "Kraken_Movement_4.png"),
             SKTexture(imageNamed: "Kraken_Movement_5.png"),
+            SKTexture(imageNamed: "Kraken_Movement_11.png"),
+            SKTexture(imageNamed: "Kraken_Movement_12.png"),
+            SKTexture(imageNamed: "Kraken_Movement_13.png"),
+            SKTexture(imageNamed: "Kraken_Movement_14.png"),
+            SKTexture(imageNamed: "Kraken_Movement_15.png"),
+            SKTexture(imageNamed: "Kraken_Movement_16.png"),
             SKTexture(imageNamed: "Kraken_Movement_6.png"),
             SKTexture(imageNamed: "Kraken_Movement_7.png"),
             SKTexture(imageNamed: "Kraken_Movement_8.png"),
@@ -164,7 +169,14 @@ class HeroClass: SKSpriteNode {
             SKTexture(imageNamed: "Kraken_Movement_9.png"),
             SKTexture(imageNamed: "Kraken_Movement_8.png"),
             SKTexture(imageNamed: "Kraken_Movement_7.png"),
-            SKTexture(imageNamed: "Kraken_Movement_6.png")]
+            SKTexture(imageNamed: "Kraken_Movement_6.png"),
+            SKTexture(imageNamed: "Kraken_Movement_16.png"),
+            SKTexture(imageNamed: "Kraken_Movement_15.png"),
+            SKTexture(imageNamed: "Kraken_Movement_14.png"),
+            SKTexture(imageNamed: "Kraken_Movement_13.png"),
+            SKTexture(imageNamed: "Kraken_Movement_12.png"),
+            SKTexture(imageNamed: "Kraken_Movement_11.png"),
+            SKTexture(imageNamed: "Kraken_Movement_5.png")]
     }
     
     func takeDamage(damage: CGFloat) -> Bool{
