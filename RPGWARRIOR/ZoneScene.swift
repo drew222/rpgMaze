@@ -18,6 +18,7 @@ class ZoneScene: SKScene {
     var world1Node: SKSpriteNode?
     var inventoryNode: SKSpriteNode?
     var storeNode: SKSpriteNode?
+    var zonesTextNode: SKSpriteNode?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -38,7 +39,7 @@ class ZoneScene: SKScene {
             world1Node = SKSpriteNode(imageNamed: "The_Beach_Zone_Button_1")
             //world1Node!.zPosition = -2
             world1Node!.size = CGSizeMake(350, 80)
-            world1Node!.position = CGPointMake(self.frame.midX, self.frame.maxY - 140)
+            world1Node!.position = CGPointMake(self.frame.midX, self.frame.maxY - 150)
             self.addChild(world1Node!)
             inventoryNode = SKSpriteNode(imageNamed: "Fitting_Room__Button_1")
             //inventoryNode!.zPosition = -2
@@ -50,6 +51,11 @@ class ZoneScene: SKScene {
             storeNode!.size = CGSizeMake(100, 100)
             storeNode!.position = CGPointMake(self.frame.maxX - 50, self.frame.maxY - 50)
             self.addChild(storeNode!)
+            zonesTextNode = SKSpriteNode(imageNamed: "Zones_Text_1")
+            //zonesTextNode!.zPosition = -2
+            zonesTextNode!.size = CGSizeMake(188, 47)
+            zonesTextNode!.position = CGPointMake(self.frame.maxX - 200, self.frame.maxY - 50)
+            self.addChild(zonesTextNode!)
             firstLoad = false
         }
         
