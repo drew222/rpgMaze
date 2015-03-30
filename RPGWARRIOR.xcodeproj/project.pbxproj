@@ -213,7 +213,6 @@
 		DCE69DA01ABC8F91003561E6 /* wizard8.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69CF81ABC8F91003561E6 /* wizard8.png */; };
 		DCE69DA11ABC8F91003561E6 /* wizard9.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69CF91ABC8F91003561E6 /* wizard9.png */; };
 		DCE69DA31ABC8F91003561E6 /* Zones__Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69CFB1ABC8F91003561E6 /* Zones__Button_1.png */; };
-<<<<<<< HEAD
 		EE9A0B731AC0FCC300903D3E /* Opening_Screen_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EE9A0B721AC0FCC300903D3E /* Opening_Screen_1.png */; };
 		EE9A0B751AC0FD4A00903D3E /* Zone_Screen_2.png in Resources */ = {isa = PBXBuildFile; fileRef = EE9A0B741AC0FD4A00903D3E /* Zone_Screen_2.png */; };
 		EE9A0B771AC1083500903D3E /* Zones_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EE9A0B761AC1083500903D3E /* Zones_Text_1.png */; };
@@ -458,7 +457,6 @@
 		DCE69CF81ABC8F91003561E6 /* wizard8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard8.png; sourceTree = "<group>"; };
 		DCE69CF91ABC8F91003561E6 /* wizard9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard9.png; sourceTree = "<group>"; };
 		DCE69CFB1ABC8F91003561E6 /* Zones__Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zones__Button_1.png; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		EE9A0B721AC0FCC300903D3E /* Opening_Screen_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Opening_Screen_1.png; path = ../../../../Downloads/Opening_Screen_1.png; sourceTree = "<group>"; };
 		EE9A0B741AC0FD4A00903D3E /* Zone_Screen_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Zone_Screen_2.png; path = ../../../../Downloads/Zone_Screen_2.png; sourceTree = "<group>"; };
 		EE9A0B761AC1083500903D3E /* Zones_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Zones_Text_1.png; path = ../../../../Downloads/Zones_Text_1.png; sourceTree = "<group>"; };
