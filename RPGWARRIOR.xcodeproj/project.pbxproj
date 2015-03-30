@@ -229,6 +229,7 @@
 		DCE69F121AC9F18D003561E6 /* Zone_Screen_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69E5C1AC9F18D003561E6 /* Zone_Screen_1.png */; };
 		DCE69F131AC9F18D003561E6 /* Zones__Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69E5D1AC9F18D003561E6 /* Zones__Button_1.png */; };
 		DCE69F141AC9F18D003561E6 /* Zones_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69E5E1AC9F18D003561E6 /* Zones_Text_1.png */; };
+		DCE69F161AC9F374003561E6 /* Zone_Screen_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69F151AC9F374003561E6 /* Zone_Screen_2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -468,6 +469,7 @@
 		DCE69E5C1AC9F18D003561E6 /* Zone_Screen_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zone_Screen_1.png; sourceTree = "<group>"; };
 		DCE69E5D1AC9F18D003561E6 /* Zones__Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zones__Button_1.png; sourceTree = "<group>"; };
 		DCE69E5E1AC9F18D003561E6 /* Zones_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zones_Text_1.png; sourceTree = "<group>"; };
+		DCE69F151AC9F374003561E6 /* Zone_Screen_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zone_Screen_2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -582,6 +584,7 @@
 		DCE69DA81AC9F18D003561E6 /* Rpg14 */ = {
 			isa = PBXGroup;
 			children = (
+				DCE69F151AC9F374003561E6 /* Zone_Screen_2.png */,
 				DCE69DA91AC9F18D003561E6 /* Beach_Background_1.png */,
 				DCE69DAA1AC9F18D003561E6 /* Beach_Ball_1.png */,
 				DCE69DAB1AC9F18D003561E6 /* Beach_Ball_2.png */,
@@ -1005,6 +1008,7 @@
 				DCE69F141AC9F18D003561E6 /* Zones_Text_1.png in Resources */,
 				DCE69E611AC9F18D003561E6 /* Beach_Ball_2.png in Resources */,
 				DCE69E6F1AC9F18D003561E6 /* Clam_Boss_Rocking_4.png in Resources */,
+				DCE69F161AC9F374003561E6 /* Zone_Screen_2.png in Resources */,
 				DCE69EFD1AC9F18D003561E6 /* wizard12.png in Resources */,
 				DCE69E631AC9F18D003561E6 /* Beach_Ball_4.png in Resources */,
 				DCE69EE71AC9F18D003561E6 /* Whale_Boss_1.png in Resources */,
