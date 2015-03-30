@@ -214,6 +214,7 @@
 		DCE69DA11ABC8F91003561E6 /* wizard9.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69CF91ABC8F91003561E6 /* wizard9.png */; };
 		DCE69DA31ABC8F91003561E6 /* Zones__Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69CFB1ABC8F91003561E6 /* Zones__Button_1.png */; };
 		DCE69DA51AC6310F003561E6 /* Opening_Screen_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69DA41AC6310F003561E6 /* Opening_Screen_1.png */; };
+		DCE69DA71AC9EC9C003561E6 /* Seashell_4.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69DA61AC9EC9C003561E6 /* Seashell_4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -438,6 +439,7 @@
 		DCE69CF91ABC8F91003561E6 /* wizard9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wizard9.png; sourceTree = "<group>"; };
 		DCE69CFB1ABC8F91003561E6 /* Zones__Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zones__Button_1.png; sourceTree = "<group>"; };
 		DCE69DA41AC6310F003561E6 /* Opening_Screen_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Opening_Screen_1.png; sourceTree = "<group>"; };
+		DCE69DA61AC9EC9C003561E6 /* Seashell_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seashell_4.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -710,6 +712,7 @@
 				DCE69CEF1ABC8F91003561E6 /* wizard21.png */,
 				DCE69CF01ABC8F91003561E6 /* wizard22.png */,
 				DCE69CF11ABC8F91003561E6 /* wizard23.png */,
+				DCE69DA61AC9EC9C003561E6 /* Seashell_4.png */,
 				DCE69CF21ABC8F91003561E6 /* wizard24.png */,
 				DCE69CF31ABC8F91003561E6 /* wizard3.png */,
 				DCE69CF41ABC8F91003561E6 /* wizard4.png */,
@@ -924,6 +927,7 @@
 				DCE69D0D1ABC8F91003561E6 /* Clam_Boss_Rocking_5.png in Resources */,
 				DCE69D171ABC8F91003561E6 /* Crab_Boss_3.png in Resources */,
 				DCE69D781ABC8F91003561E6 /* Whale_Boss_10.png in Resources */,
+				DCE69DA71AC9EC9C003561E6 /* Seashell_4.png in Resources */,
 				DCE69D961ABC8F91003561E6 /* wizard20.png in Resources */,
 				DCE69D151ABC8F91003561E6 /* Crab_Boss_12.png in Resources */,
 				DCE69D981ABC8F91003561E6 /* wizard22.png in Resources */,
