@@ -53,8 +53,9 @@ class ZoneScene: SKScene {
             self.addChild(storeNode!)
             zonesTextNode = SKSpriteNode(imageNamed: "Zones_Text_1")
             //zonesTextNode!.zPosition = -2
-            zonesTextNode!.size = CGSizeMake(188, 47)
-            zonesTextNode!.position = CGPointMake(self.frame.maxX - 200, self.frame.maxY - 50)
+            zonesTextNode!.size = CGSizeMake(172
+                , 43)
+            zonesTextNode!.position = CGPointMake(self.frame.maxX - 187, self.frame.maxY - 53)
             self.addChild(zonesTextNode!)
             firstLoad = false
         }

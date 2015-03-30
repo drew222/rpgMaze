@@ -216,6 +216,7 @@
 		EE9A0B731AC0FCC300903D3E /* Opening_Screen_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EE9A0B721AC0FCC300903D3E /* Opening_Screen_1.png */; };
 		EE9A0B751AC0FD4A00903D3E /* Zone_Screen_2.png in Resources */ = {isa = PBXBuildFile; fileRef = EE9A0B741AC0FD4A00903D3E /* Zone_Screen_2.png */; };
 		EE9A0B771AC1083500903D3E /* Zones_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EE9A0B761AC1083500903D3E /* Zones_Text_1.png */; };
+		EE9A0B791AC47AD400903D3E /* Seashell_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EE9A0B781AC47AD400903D3E /* Seashell_4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -442,6 +443,7 @@
 		EE9A0B721AC0FCC300903D3E /* Opening_Screen_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Opening_Screen_1.png; path = ../../../../Downloads/Opening_Screen_1.png; sourceTree = "<group>"; };
 		EE9A0B741AC0FD4A00903D3E /* Zone_Screen_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Zone_Screen_2.png; path = ../../../../Downloads/Zone_Screen_2.png; sourceTree = "<group>"; };
 		EE9A0B761AC1083500903D3E /* Zones_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Zones_Text_1.png; path = ../../../../Downloads/Zones_Text_1.png; sourceTree = "<group>"; };
+		EE9A0B781AC47AD400903D3E /* Seashell_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Seashell_4.png; path = ../../../../Downloads/Seashell_4.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -660,6 +662,7 @@
 				DCE69CB91ABC8F90003561E6 /* Seashell_1.png */,
 				DCE69CBA1ABC8F90003561E6 /* Seashell_2.png */,
 				DCE69CBB1ABC8F90003561E6 /* Seashell_3.png */,
+				EE9A0B781AC47AD400903D3E /* Seashell_4.png */,
 				DCE69CBC1ABC8F90003561E6 /* Silver_Ring_1.png */,
 				DCE69CBD1ABC8F90003561E6 /* Silver_Ring_2.png */,
 				DCE69CBE1ABC8F90003561E6 /* Store_1.png */,
@@ -862,6 +865,7 @@
 				DCE69D8D1ABC8F91003561E6 /* wizard12.png in Resources */,
 				DCE69D101ABC8F91003561E6 /* Copper_Ring_1.png in Resources */,
 				DCE69D9B1ABC8F91003561E6 /* wizard3.png in Resources */,
+				EE9A0B791AC47AD400903D3E /* Seashell_4.png in Resources */,
 				DCE69D301ABC8F91003561E6 /* Kraken_Movement_12.png in Resources */,
 				DCE69D1C1ABC8F91003561E6 /* Crab_Boss_8.png in Resources */,
 				DCE69D8A1ABC8F91003561E6 /* wizard1.png in Resources */,
