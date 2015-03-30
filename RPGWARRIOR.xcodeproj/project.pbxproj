@@ -233,13 +233,8 @@
 		EE9A0B951AC9ED4B00903D3E /* Tentacles_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EE9A0B861AC9ED4B00903D3E /* Tentacles_Text_1.png */; };
 		EE9A0B961AC9ED4B00903D3E /* Zone_Screen_2.png in Resources */ = {isa = PBXBuildFile; fileRef = EE9A0B871AC9ED4B00903D3E /* Zone_Screen_2.png */; };
 		EE9A0B971AC9ED4B00903D3E /* Zones_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EE9A0B881AC9ED4B00903D3E /* Zones_Text_1.png */; };
-=======
 		DCE69DA51AC6310F003561E6 /* Opening_Screen_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69DA41AC6310F003561E6 /* Opening_Screen_1.png */; };
-<<<<<<< HEAD
 		DCE69DA71AC9EC9C003561E6 /* Seashell_4.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69DA61AC9EC9C003561E6 /* Seashell_4.png */; };
-=======
->>>>>>> origin/master
->>>>>>> origin/master
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -483,13 +478,8 @@
 		EE9A0B861AC9ED4B00903D3E /* Tentacles_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tentacles_Text_1.png; path = ../../../../Downloads/whatskrakenupdatedimages/Tentacles_Text_1.png; sourceTree = "<group>"; };
 		EE9A0B871AC9ED4B00903D3E /* Zone_Screen_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Zone_Screen_2.png; path = ../../../../Downloads/whatskrakenupdatedimages/Zone_Screen_2.png; sourceTree = "<group>"; };
 		EE9A0B881AC9ED4B00903D3E /* Zones_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Zones_Text_1.png; path = ../../../../Downloads/whatskrakenupdatedimages/Zones_Text_1.png; sourceTree = "<group>"; };
-=======
 		DCE69DA41AC6310F003561E6 /* Opening_Screen_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Opening_Screen_1.png; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		DCE69DA61AC9EC9C003561E6 /* Seashell_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seashell_4.png; sourceTree = "<group>"; };
-=======
->>>>>>> origin/master
->>>>>>> origin/master
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
