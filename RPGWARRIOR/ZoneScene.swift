@@ -44,17 +44,16 @@ class ZoneScene: SKScene {
             inventoryNode = SKSpriteNode(imageNamed: "Fitting_Room__Button_1")
             //inventoryNode!.zPosition = -2
             inventoryNode!.size = CGSizeMake(100, 100)
-            inventoryNode!.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 50)
+            inventoryNode!.position = CGPointMake(self.frame.minX + 55, self.frame.maxY - 55)
             self.addChild(inventoryNode!)
             storeNode = SKSpriteNode(imageNamed: "Store_Button_1")
             //storeNode!.zPosition = -2
             storeNode!.size = CGSizeMake(100, 100)
-            storeNode!.position = CGPointMake(self.frame.maxX - 50, self.frame.maxY - 50)
+            storeNode!.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 55)
             self.addChild(storeNode!)
             zonesTextNode = SKSpriteNode(imageNamed: "Zones_Text_1")
             //zonesTextNode!.zPosition = -2
-            zonesTextNode!.size = CGSizeMake(172
-                , 43)
+            zonesTextNode!.size = CGSizeMake(165, 60)
             zonesTextNode!.position = CGPointMake(self.frame.maxX - 187, self.frame.maxY - 53)
             self.addChild(zonesTextNode!)
             firstLoad = false

@@ -47,7 +47,7 @@ class StoreScene: SKScene {
         self.addChild(shelf3)
         let storeTextNode = SKSpriteNode(imageNamed: "Store_Text_1")
         storeTextNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 50)
-        storeTextNode.setScale(0.3)
+        storeTextNode.size = CGSizeMake(165, 60)
         self.addChild(storeTextNode)
         //shelf1.zPosition = -1
         //stats label
@@ -57,12 +57,12 @@ class StoreScene: SKScene {
         statLabel!.setScale(0.7)
         self.addChild(statLabel!)
         menu = SKSpriteNode(imageNamed: "Zones__Button_1")
-        menu!.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 50)
+        menu!.position = CGPointMake(self.frame.minX + 55, self.frame.maxY - 55)
         menu!.name = "menu"
         menu!.size = CGSizeMake(100, 100)
         self.addChild(menu!)
         inv = SKSpriteNode(imageNamed: "Fitting_Room__Button_1")
-        inv!.position = CGPointMake(self.frame.maxX - 50, self.frame.maxY - 50)
+        inv!.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 55)
         inv!.name = "inventory"
         inv!.size = CGSizeMake(100, 100)
         self.addChild(inv!)

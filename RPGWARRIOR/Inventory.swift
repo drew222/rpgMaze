@@ -34,22 +34,23 @@ class Inventory: SKScene {
         if firstLoad{
         self.backgroundColor = UIColor.grayColor()
         menu = SKSpriteNode(imageNamed: "Zones__Button_1")
-        menu!.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 50)
+        menu!.position = CGPointMake(self.frame.minX + 55, self.frame.maxY - 55)
         menu!.name = "menu"
         menu!.size = CGSizeMake(100, 100)
         self.addChild(menu!)
         store = SKSpriteNode(imageNamed: "Store_Button_1")
-        store!.position = CGPointMake(self.frame.maxX - 50, self.frame.maxY - 50)
+        store!.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 55)
         store!.name = "store"
         store!.size = CGSizeMake(100, 100)
         self.addChild(store!)
             let storeText = SKSpriteNode(imageNamed: "Fitting_Room_Text_1")
             storeText.position = CGPointMake(self.frame.midX, self.frame.maxY - 50)
             storeText.name = "store"
-            storeText.size = CGSizeMake(110, 60)
+            storeText.size = CGSizeMake(165, 60)
             self.addChild(storeText)
-        backPack = SKSpriteNode(color: UIColor.blackColor(), size: CGSizeMake(260,260))
-        backPack!.position = CGPointMake(self.frame.midX, self.frame.midY - 50)
+            backPack = SKSpriteNode(imageNamed: "Inventory_Array_Background_1")
+        backPack!.position = CGPointMake(self.frame.maxX - 135, self.frame.minY + 135)
+        backPack!.size = CGSizeMake(260,260)
         backPack!.name = "backpack"
         self.addChild(backPack!)
         statLabel = SKLabelNode.init(text: "")
@@ -186,7 +187,9 @@ class Inventory: SKScene {
         if backPackSpaces == 0 {
             println("YOUR PACK IS FULL")
         }else{
-            items.append(ItemClass.itemInSpace(itemName))
+            let anItem = ItemClass.itemInSpace(itemName)
+            anItem.size = CGSizeMake(37, 37)
+            items.append(anItem)
             backPackSpaces--
         }
     }
@@ -248,15 +251,19 @@ class Inventory: SKScene {
                 for space in itemSpaces{
                     if space.containsPoint(touch.locationInNode(self)){
                         if spaceToMove != nil{
-                            spaceToMove!.color = UIColor.whiteColor()
+                            spaceToMove!.texture = SKTexture(imageNamed: "Inventory_Slot_1")
                         }
                         //clicked on space with item in it
                         if space.item != nil{
                             if self.itemToMove == nil{
                                 self.itemToMove = space.item
                                 self.spaceToMove = space
+                                //set "clicked" texture
+                                space.texture = SKTexture(imageNamed: "Inventory_Slot_3")
                             }//already an item to move, swap
                             else{
+                                //unset "clicked" texture
+                                space.texture = SKTexture(imageNamed: "Inventory_Slot_1")
                                 //check if both are equipped, item and space to move to nil and put everything else in an else
                                 if (spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "weapon") && (space.name == "body" || space.name == "feet" || space.name == "weapon"){
                                     self.itemToMove = nil

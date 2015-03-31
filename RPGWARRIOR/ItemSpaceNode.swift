@@ -16,7 +16,7 @@ class ItemSpaceNode: SKSpriteNode {
     
     class func spaceAtPosition(position: CGPoint) -> ItemSpaceNode{
         //let space = ItemSpaceNode(color: UIColor.whiteColor(), size: CGSizeMake(40,40))
-        let space = ItemSpaceNode(imageNamed: "Inventory_Slot_2")
+        let space = ItemSpaceNode(imageNamed: "Inventory_Slot_1")
         space.size = CGSizeMake(40, 40)
         space.position = position
         return space
