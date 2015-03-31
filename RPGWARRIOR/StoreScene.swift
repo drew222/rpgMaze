@@ -45,10 +45,10 @@ class StoreScene: SKScene {
         shelf3.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 450)
         shelf3.setScale(0.35)
         self.addChild(shelf3)
-        let fittingRoomTextNode = SKSpriteNode(imageNamed: "Fitting_Room_Text_1")
-        fittingRoomTextNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 50)
-        fittingRoomTextNode.setScale(0.3)
-        self.addChild(fittingRoomTextNode)
+        let storeTextNode = SKSpriteNode(imageNamed: "Store_Text_1")
+        storeTextNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 50)
+        storeTextNode.setScale(0.3)
+        self.addChild(storeTextNode)
         //shelf1.zPosition = -1
         //stats label
         statLabel = SKLabelNode.init(text: "")

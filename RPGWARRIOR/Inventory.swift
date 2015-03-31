@@ -12,8 +12,8 @@ import Foundation
 //import AVFoundation
 
 class Inventory: SKScene {
-    var menu: SKLabelNode?
-    var store: SKLabelNode?
+    var menu: SKSpriteNode?
+    var store: SKSpriteNode?
     var backPack: SKSpriteNode?
     var itemSpaces: [ItemSpaceNode] = []
     var items: [ItemClass] = []
@@ -33,16 +33,21 @@ class Inventory: SKScene {
         /* Setup your scene here */
         if firstLoad{
         self.backgroundColor = UIColor.grayColor()
-        menu = SKLabelNode.init(text: "Main Menu")
-        menu!.position = CGPointMake(self.frame.maxX - 70, self.frame.minY + 40)
+        menu = SKSpriteNode(imageNamed: "Zones__Button_1")
+        menu!.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 50)
         menu!.name = "menu"
-        menu!.setScale(0.7)
+        menu!.size = CGSizeMake(100, 100)
         self.addChild(menu!)
-        store = SKLabelNode.init(text: "Store")
-        store!.position = CGPointMake(self.frame.midX, self.frame.minY + 40)
+        store = SKSpriteNode(imageNamed: "Store_Button_1")
+        store!.position = CGPointMake(self.frame.maxX - 50, self.frame.maxY - 50)
         store!.name = "store"
-        store!.setScale(0.7)
+        store!.size = CGSizeMake(100, 100)
         self.addChild(store!)
+            let storeText = SKSpriteNode(imageNamed: "Fitting_Room_Text_1")
+            storeText.position = CGPointMake(self.frame.midX, self.frame.maxY - 50)
+            storeText.name = "store"
+            storeText.size = CGSizeMake(110, 60)
+            self.addChild(storeText)
         backPack = SKSpriteNode(color: UIColor.blackColor(), size: CGSizeMake(260,260))
         backPack!.position = CGPointMake(self.frame.midX, self.frame.midY - 50)
         backPack!.name = "backpack"
