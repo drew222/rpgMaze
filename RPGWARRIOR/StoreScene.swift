@@ -35,16 +35,20 @@ class StoreScene: SKScene {
         //add shelves
         let shelf1 = SKSpriteNode(imageNamed: "Store_Shelf_1.png")
         shelf1.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 170)
-        shelf1.setScale(0.4)
+        shelf1.setScale(0.35)
         self.addChild(shelf1)
         let shelf2 = SKSpriteNode(imageNamed: "Store_Shelf_1.png")
         shelf2.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 310)
-        shelf2.setScale(0.4)
+        shelf2.setScale(0.35)
         self.addChild(shelf2)
         let shelf3 = SKSpriteNode(imageNamed: "Store_Shelf_1.png")
         shelf3.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 450)
-        shelf3.setScale(0.4)
+        shelf3.setScale(0.35)
         self.addChild(shelf3)
+        let fittingRoomTextNode = SKSpriteNode(imageNamed: "Fitting_Room_Text_1")
+        fittingRoomTextNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 50)
+        fittingRoomTextNode.setScale(0.3)
+        self.addChild(fittingRoomTextNode)
         //shelf1.zPosition = -1
         //stats label
         statLabel = SKLabelNode.init(text: "")
@@ -55,12 +59,12 @@ class StoreScene: SKScene {
         menu = SKSpriteNode(imageNamed: "Zones__Button_1")
         menu!.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 50)
         menu!.name = "menu"
-        menu!.setScale(0.3)
+        menu!.size = CGSizeMake(100, 100)
         self.addChild(menu!)
         inv = SKSpriteNode(imageNamed: "Fitting_Room__Button_1")
         inv!.position = CGPointMake(self.frame.maxX - 50, self.frame.maxY - 50)
         inv!.name = "inventory"
-        inv!.setScale(0.3)
+        inv!.size = CGSizeMake(100, 100)
         self.addChild(inv!)
         //gold node
         goldCount = (self.userData?.objectForKey("inventory") as Inventory).gold
@@ -115,7 +119,7 @@ class StoreScene: SKScene {
         for touch in touches{
             if menu!.containsPoint(touch.locationInNode(self)){
                 let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+                self.view?.presentScene(self.userData?.objectForKey("worldscene") as ZoneScene, transition: skTransition)
             }else if inv!.containsPoint(touch.locationInNode(self)){
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(self.userData?.objectForKey("inventory") as Inventory, transition: skTransition)

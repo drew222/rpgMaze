@@ -73,7 +73,8 @@ class ZoneScene: SKScene {
                 let aStoreScene = StoreScene(size: self.frame.size)
                 aStoreScene.userData = NSMutableDictionary()
                 aStoreScene.userData?.setObject(inventory!, forKey: "inventory")
-                aStoreScene.userData?.setObject(world1Menu!, forKey: "menu")
+                //aStoreScene.userData?.setObject(world1Menu!, forKey: "menu")
+                aStoreScene.userData?.setObject(self, forKey: "worldscene")
                 self.view?.presentScene(aStoreScene, transition: skTransition)
             }
         }
