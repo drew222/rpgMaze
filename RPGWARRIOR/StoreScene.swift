@@ -53,6 +53,7 @@ class StoreScene: SKScene {
         //stats label
         statLabel = SKLabelNode.init(text: "")
         statLabel!.position = CGPointMake(self.frame.midX, self.frame.minY + 60)
+        statLabel!.fontColor = UIColor.blueColor()
         statLabel!.name = "stats"
         statLabel!.setScale(0.7)
         self.addChild(statLabel!)
@@ -70,7 +71,7 @@ class StoreScene: SKScene {
         goldCount = (self.userData?.objectForKey("inventory") as Inventory).gold
         goldNode = SKLabelNode.init(text: "\(Int(goldCount))")
         goldNode!.position = CGPointMake(self.frame.minX + 70, self.frame.minY + 40)
-        goldNode!.fontColor = UIColor.yellowColor()
+        goldNode!.fontColor = UIColor.redColor()
         self.addChild(goldNode!)
         addItems()
     }
@@ -143,6 +144,7 @@ class StoreScene: SKScene {
         if currentItem != nil && self.childNodeWithName("buyButton") == nil{
             let buyNode = SKLabelNode.init(text: "Buy Item")
             buyNode.position = CGPointMake(self.frame.midX + 110, self.frame.minY + 150)
+            buyNode.fontColor = UIColor.blueColor()
             buyNode.name = "buyButton"
             self.addChild(buyNode)
         }
