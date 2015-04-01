@@ -20,7 +20,7 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate {
     let levelName = "level2"
     var droppedItem = false
     
-    let bomberAttackSpeed = 2.0
+    let bomberAttackSpeed = 0.5
     
     var theBomber: BomberClass?
     var theHero: HeroClass?
