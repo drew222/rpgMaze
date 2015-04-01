@@ -367,7 +367,7 @@ class Inventory: SKScene {
                             if self.childNodeWithName("priceButton") != nil{
                                 self.childNodeWithName("priceButton")?.removeFromParent()
                             }
-                            let sellNode = SKLabelNode.init(text: "Sell: \(round(itemToMove!.price! / 3))")
+                            let sellNode = SKLabelNode.init(text: "Sell: \(round(itemToMove!.price! / 10))")
                             sellNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 400)
                             sellNode.fontSize = 30
                             sellNode.name = "sellButton"
