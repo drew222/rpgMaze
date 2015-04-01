@@ -52,7 +52,7 @@ class StoreScene: SKScene {
         //shelf1.zPosition = -1
         //stats label
         statLabel = SKLabelNode.init(text: "")
-        statLabel!.position = CGPointMake(self.frame.midX, self.frame.minY + 75)
+        statLabel!.position = CGPointMake(self.frame.midX, self.frame.minY + 60)
         statLabel!.name = "stats"
         statLabel!.setScale(0.7)
         self.addChild(statLabel!)
@@ -130,7 +130,7 @@ class StoreScene: SKScene {
                     currentItem!.removeFromParent()
                 }
                 currentItem = ItemClass.itemInSpace(clickedItem(touch.locationInNode(self)))
-                currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 150)
+                currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 135)
                 currentItem!.size = CGSizeMake(100, 100)
                 resizeLabel(statLabel!)
                 statLabel!.text = currentItem!.statString()

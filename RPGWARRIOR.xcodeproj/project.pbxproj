@@ -230,6 +230,11 @@
 		DCE69F131AC9F18D003561E6 /* Zones__Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69E5D1AC9F18D003561E6 /* Zones__Button_1.png */; };
 		DCE69F141AC9F18D003561E6 /* Zones_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69E5E1AC9F18D003561E6 /* Zones_Text_1.png */; };
 		DCE69F161AC9F374003561E6 /* Zone_Screen_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69F151AC9F374003561E6 /* Zone_Screen_2.png */; };
+		DCE69F181ACB92D8003561E6 /* Shades_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69F171ACB92D7003561E6 /* Shades_1.png */; };
+		DCE69F1A1ACB92F6003561E6 /* Seaweed_Mustache_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69F191ACB92F6003561E6 /* Seaweed_Mustache_1.png */; };
+		DCE69F1C1ACB9307003561E6 /* Shades_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69F1B1ACB9307003561E6 /* Shades_2.png */; };
+		DCE69F1E1ACB9317003561E6 /* Coral_Crown_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69F1D1ACB9317003561E6 /* Coral_Crown_1.png */; };
+		DCE69F201ACB9324003561E6 /* Crab_Claw_Cap_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69F1F1ACB9324003561E6 /* Crab_Claw_Cap_1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -470,6 +475,11 @@
 		DCE69E5D1AC9F18D003561E6 /* Zones__Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zones__Button_1.png; sourceTree = "<group>"; };
 		DCE69E5E1AC9F18D003561E6 /* Zones_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zones_Text_1.png; sourceTree = "<group>"; };
 		DCE69F151AC9F374003561E6 /* Zone_Screen_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zone_Screen_2.png; sourceTree = "<group>"; };
+		DCE69F171ACB92D7003561E6 /* Shades_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shades_1.png; sourceTree = "<group>"; };
+		DCE69F191ACB92F6003561E6 /* Seaweed_Mustache_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seaweed_Mustache_1.png; sourceTree = "<group>"; };
+		DCE69F1B1ACB9307003561E6 /* Shades_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shades_2.png; sourceTree = "<group>"; };
+		DCE69F1D1ACB9317003561E6 /* Coral_Crown_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Coral_Crown_1.png; sourceTree = "<group>"; };
+		DCE69F1F1ACB9324003561E6 /* Crab_Claw_Cap_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crab_Claw_Cap_1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -584,11 +594,16 @@
 		DCE69DA81AC9F18D003561E6 /* Rpg14 */ = {
 			isa = PBXGroup;
 			children = (
+				DCE69F171ACB92D7003561E6 /* Shades_1.png */,
 				DCE69F151AC9F374003561E6 /* Zone_Screen_2.png */,
+				DCE69F191ACB92F6003561E6 /* Seaweed_Mustache_1.png */,
 				DCE69DA91AC9F18D003561E6 /* Beach_Background_1.png */,
 				DCE69DAA1AC9F18D003561E6 /* Beach_Ball_1.png */,
 				DCE69DAB1AC9F18D003561E6 /* Beach_Ball_2.png */,
 				DCE69DAC1AC9F18D003561E6 /* Beach_Ball_3.png */,
+				DCE69F1B1ACB9307003561E6 /* Shades_2.png */,
+				DCE69F1F1ACB9324003561E6 /* Crab_Claw_Cap_1.png */,
+				DCE69F1D1ACB9317003561E6 /* Coral_Crown_1.png */,
 				DCE69DAD1AC9F18D003561E6 /* Beach_Ball_4.png */,
 				DCE69DAE1AC9F18D003561E6 /* Beach_Ball_5.png */,
 				DCE69DAF1AC9F18D003561E6 /* Beach_Crab_1.png */,
@@ -925,6 +940,7 @@
 				DCE69EC91AC9F18D003561E6 /* Rusty_Gold_Ring_1.png in Resources */,
 				DC2711281A85E11900986D2E /* LaunchScreen.xib in Resources */,
 				DCE69EF71AC9F18D003561E6 /* Whale_Boss_8.png in Resources */,
+				DCE69F1E1ACB9317003561E6 /* Coral_Crown_1.png in Resources */,
 				DCE69E901AC9F18D003561E6 /* Kraken_Boss_1.png in Resources */,
 				DCE69E681AC9F18D003561E6 /* Clam_Boss_1.png in Resources */,
 				DCE69EBB1AC9F18D003561E6 /* Mossy_Copper_Ring_2.png in Resources */,
@@ -964,6 +980,7 @@
 				DCE69E971AC9F18D003561E6 /* Kraken_Movement_1.png in Resources */,
 				DCE69F051AC9F18D003561E6 /* wizard2.png in Resources */,
 				DCE69E711AC9F18D003561E6 /* Clam_Boss_Rocking_6.png in Resources */,
+				DCE69F181ACB92D8003561E6 /* Shades_1.png in Resources */,
 				DCE69EA61AC9F18D003561E6 /* Kraken_Movement_9.png in Resources */,
 				DCE69EB81AC9F18D003561E6 /* level6dagger.png in Resources */,
 				DCE69F111AC9F18D003561E6 /* wizard9.png in Resources */,
@@ -974,6 +991,7 @@
 				DCE69ECA1AC9F18D003561E6 /* Rusty_Gold_Ring_2.png in Resources */,
 				DCE69EED1AC9F18D003561E6 /* Whale_Boss_15.png in Resources */,
 				DCE69EC81AC9F18D003561E6 /* Rusty_Copper_Ring_2.png in Resources */,
+				DCE69F201ACB9324003561E6 /* Crab_Claw_Cap_1.png in Resources */,
 				DCE69ECF1AC9F18D003561E6 /* Seashell_3.png in Resources */,
 				DCE69EE61AC9F18D003561E6 /* walkman6.png in Resources */,
 				DCE69EB61AC9F18D003561E6 /* level4setarmor.png in Resources */,
@@ -988,6 +1006,7 @@
 				DCE69F021AC9F18D003561E6 /* wizard17.png in Resources */,
 				DCE69E8C1AC9F18D003561E6 /* Inventory_Slot_1.png in Resources */,
 				DCE69E891AC9F18D003561E6 /* Gold_Ring_2.png in Resources */,
+				DCE69F1A1ACB92F6003561E6 /* Seaweed_Mustache_1.png in Resources */,
 				DCE69E621AC9F18D003561E6 /* Beach_Ball_3.png in Resources */,
 				DCE69E701AC9F18D003561E6 /* Clam_Boss_Rocking_5.png in Resources */,
 				DCE69E8A1AC9F18D003561E6 /* healthglobe.png in Resources */,
@@ -1017,6 +1036,7 @@
 				DCE69EEA1AC9F18D003561E6 /* Whale_Boss_12.png in Resources */,
 				DCE69EB11AC9F18D003561E6 /* level3setarmor.png in Resources */,
 				DCE69EE91AC9F18D003561E6 /* Whale_Boss_11.png in Resources */,
+				DCE69F1C1ACB9307003561E6 /* Shades_2.png in Resources */,
 				DCE69EDD1AC9F18D003561E6 /* Treasure_Chest_4.png in Resources */,
 				DC2711231A85E11900986D2E /* Main.storyboard in Resources */,
 				DCE69F0A1AC9F18D003561E6 /* wizard24.png in Resources */,

@@ -32,73 +32,61 @@ class ItemClass: SKSpriteNode {
             }
         return myString
     }
+   
+    
     
     func getItemType(picName: String)->ItemType{
-        if picName == "noobSword" || picName == "level2sword" || picName == "level3sword" || picName == "level4dagger" || picName == "level6dagger"{
+        if picName == "Seaweed_Mustache_1" || picName == "Shades_1" || picName == "Crab_Claw_Cap" || picName == "Coral_Crown_1"{
             return ItemType.weapon
-        }else if picName == "level1armor" || picName == "level1setarmor" || picName == "level2armor" || picName == "level2setarmor" || picName == "level3armor" || picName == "level3setarmor" || picName == "level4armor" || picName == "level4setarmor"{
+        }else if picName == "Copper_Ring_1" || picName == "Gold_Ring_1" || picName == "Mossy_Copper_Ring_1" || picName == "Mossy_Gold_Ring_1" || picName == "Mossy_Silver_Ring_1" || picName == "Rusty_Copper_Ring_1" || picName == "Rusty_Gold_Ring_1" || picName == "Rusty_Silver_Ring_1" || picName == "Silver_Ring_1"{
             return ItemType.body
-        }else if picName == "level1boots" || picName == "level1setboots" || picName == "level2setboots" || picName == "level3setboots" || picName == "level4setboots"{
+        }else if picName == "level1boots"{
+            //This is a placeholder type
             return ItemType.feet
         }
         return ItemType.weapon
     }
     //weapons have Damage stat, body armor has Life stat, feet armor has Movement stat
     func getItemStats(picName: String)->[(String, CGFloat)]{
-        if picName == "noobSword"{
-            price = 0
-            return [("Damage", CGFloat(1))]
-        }else if picName == "level2sword"{
-            price = 40
-            return [("Damage", CGFloat(2))]
-        }else if picName == "level3sword"{
+        if picName == "Copper_Ring_1"{
+            price = 10
+            return [("Movement", CGFloat(3))]
+        }else if picName == "Rusty_Copper_Ring_1"{
+            price = 20
+            return [("Life", CGFloat(1))]
+        }else if picName == "Crab_Claw_Cap_1"{
+            price = 50
+            return [("Life", CGFloat(1))]
+        }else if picName == "Mossy_Copper_Ring_1" {
+            price = 50
+            return [("Life", CGFloat(2))]
+        }else if picName == "Silver_Ring_1"{
             price = 100
-            return [("Damage", CGFloat(3))]
-        }else if picName == "level4dagger" {
-            price = 250
-            return [("Damage", CGFloat(4))]
-        }else if picName == "level6dagger"{
+            return [("Movement", CGFloat(4))]
+        }else if picName == "Rusty_Silver_Ring_1"{
+            price = 150
+            return [("Life", CGFloat(2))]
+        }else if picName == "Mossy_Silver_Ring_1"{
+            price = 300
+            return [("Movement", CGFloat(5))]
+        }else if picName == "Gold_Ring_1"{
+            price = 400
+            return [("Movement", CGFloat(6))]
+        }else if picName == "Rusty_Gold_Ring_1"{
+            price = 500
+            return [("Life", CGFloat(3))]
+        }else if picName == "Mossy_Gold_Ring_1"{
+            price = 700
+            return [("Movement", CGFloat(7))]
+        }else if picName == "Shades_1"{
+            price = 400
+            return [("Life", CGFloat(2))]
+        }else if picName == "Coral_Crown_1"{
             price = 1000
-            return [("Damage", CGFloat(6))]
-        }else if picName == "level1armor"{
-            price = 15
-            return [("Life", CGFloat(1))]
-        }else if picName == "level1setarmor"{
-            price = 15
-            return [("Life", CGFloat(1))]
-        }else if picName == "level2armor"{
-            price = 40
-            return [("Life", CGFloat(2))]
-        }else if picName == "level2setarmor"{
-            price = 40
-            return [("Life", CGFloat(2))]
-        }else if picName == "level3armor"{
-            price = 100
             return [("Life", CGFloat(3))]
-        }else if picName == "level3setarmor"{
-            price = 100
-            return [("Life", CGFloat(3))]
-        }else if picName == "level4armor"{
-            price = 250
-            return [("Life", CGFloat(4))]
-        }else if picName == "level4setarmor"{
-            price = 250
-            return [("Life", CGFloat(4))]
-        }else if picName == "level1boots"{
-            price = 15
-            return [("Movement", CGFloat(10))]
-        }else if picName == "level1setboots"{
-            price = 15
-            return [("Movement", CGFloat(10))]
-        }else if picName == "level2setboots"{
-            price = 40
-            return [("Movement", CGFloat(20))]
-        }else if picName == "level3setboots"{
-            price = 100
-            return [("Movement", CGFloat(30))]
-        }else if picName == "level4setboots"{
-            price = 250
-            return [("Movement", CGFloat(40))]
+        }else if picName == "Seaweed_Mustache_1"{
+            price = 5000
+            return [("Movement", CGFloat(15))]
         }
         return []
     }

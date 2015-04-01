@@ -38,6 +38,11 @@ class Inventory: SKScene {
         menu!.name = "menu"
         menu!.size = CGSizeMake(100, 100)
         self.addChild(menu!)
+            let krakenNode = SKSpriteNode(imageNamed: "Fitting_Room_Kraken_1")
+            krakenNode.position = CGPointMake(self.frame.midX, self.frame.midY + 100)
+            krakenNode.name = "kraken"
+            krakenNode.size = CGSizeMake(200, 200)
+            self.addChild(krakenNode)
         store = SKSpriteNode(imageNamed: "Store_Button_1")
         store!.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 55)
         store!.name = "store"
@@ -54,17 +59,17 @@ class Inventory: SKScene {
         backPack!.name = "backpack"
         self.addChild(backPack!)
         statLabel = SKLabelNode.init(text: "")
-        statLabel!.position = CGPointMake(self.frame.midX, self.frame.midY - 200)
+        statLabel!.position = CGPointMake(self.frame.midX + 70, self.frame.maxY - 360)
         resizeLabel(statLabel!)
         self.addChild(statLabel!)
-        let bodyLabel = SKLabelNode.init(text: "Body")
-        bodyLabel.position = CGPointMake(self.frame.midX, self.frame.midY + 200)
+        let bodyLabel = SKLabelNode.init(text: "Left")
+        bodyLabel.position = CGPointMake(self.frame.minX + 50, self.frame.minY + 150)
         self.addChild(bodyLabel)
-        let weaponLabel = SKLabelNode.init(text: "Weapon")
-        weaponLabel.position = CGPointMake(self.frame.midX + 120, self.frame.midY + 200)
+        let weaponLabel = SKLabelNode.init(text: "Noggin")
+        weaponLabel.position = CGPointMake(self.frame.minX + 50, self.frame.minY + 230)
         self.addChild(weaponLabel)
-        let feetLabel = SKLabelNode.init(text: "Feet")
-        feetLabel.position = CGPointMake(self.frame.midX - 120, self.frame.midY + 200)
+        let feetLabel = SKLabelNode.init(text: "Right")
+        feetLabel.position = CGPointMake(self.frame.minX + 50, self.frame.minY + 70)
         self.addChild(feetLabel)
         //create all the item spaces
         let itemSpace1 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 40, backPack!.frame.maxY - 40))
@@ -147,17 +152,19 @@ class Inventory: SKScene {
         itemSpace1.name = "16"
         itemSpaces.append(itemSpace16)
         self.addChild(itemSpace16)
-        let weaponSpace = ItemSpaceNode.spaceAtPosition(CGPointMake(weaponLabel.frame.midX, weaponLabel.frame.midY - 60))
+            //weaponspace holds noggin items
+        let weaponSpace = ItemSpaceNode.spaceAtPosition(CGPointMake(weaponLabel.frame.midX, weaponLabel.frame.midY - 40))
         weaponSpace.zPosition = 1
         weaponSpace.name = "weapon"
         self.addChild(weaponSpace)
         itemSpaces.append(weaponSpace)
-        let bodySpace = ItemSpaceNode.spaceAtPosition(CGPointMake(bodyLabel.frame.midX, bodyLabel.frame.midY - 60))
+            //body and feet spaces are tentacles
+        let bodySpace = ItemSpaceNode.spaceAtPosition(CGPointMake(bodyLabel.frame.midX, bodyLabel.frame.midY - 40))
         bodySpace.zPosition = 1
         bodySpace.name = "body"
         self.addChild(bodySpace)
         itemSpaces.append(bodySpace)
-        let feetSpace = ItemSpaceNode.spaceAtPosition(CGPointMake(feetLabel.frame.midX, feetLabel.frame.midY - 60))
+        let feetSpace = ItemSpaceNode.spaceAtPosition(CGPointMake(feetLabel.frame.midX, feetLabel.frame.midY - 40))
         feetSpace.zPosition = 1
         feetSpace.name = "feet"
         self.addChild(feetSpace)
@@ -165,7 +172,7 @@ class Inventory: SKScene {
             
         //gold node
         goldNode = SKLabelNode.init(text: "\(Int(gold))")
-        goldNode!.position = CGPointMake(self.frame.minX + 70, self.frame.minY + 40)
+        goldNode!.position = CGPointMake(self.frame.maxX - 80, self.frame.maxY - 400)
         self.addChild(goldNode!)
         }
         
@@ -212,8 +219,9 @@ class Inventory: SKScene {
     }
     
     func sellItem(){
-        gold += round(itemToMove!.price! / 3)
+        gold += round(itemToMove!.price! / 10)
         goldNode!.text = "\(Int(gold))"
+        spaceToMove!.texture = SKTexture(imageNamed: "Inventory_Slot_1")
         spaceToMove!.item = nil
         itemToMove?.removeFromParent()
         spaceToMove!.color = UIColor.whiteColor()
@@ -274,11 +282,11 @@ class Inventory: SKScene {
                                                 //weapon = space.item
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
-                                        }else if space.name == "body" && itemToMove!.itemType == ItemType.body{
+                                        }else if space.name == "body" && (itemToMove!.itemType == ItemType.body || itemToMove!.itemType == ItemType.feet){
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
                                                 //body = space.item
-                                        }else if space.name == "feet" && itemToMove!.itemType == ItemType.feet{
+                                        }else if space.name == "feet" && (itemToMove!.itemType == ItemType.feet || itemToMove!.itemType == ItemType.body){
                                                 //feet = space.item
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
@@ -325,12 +333,12 @@ class Inventory: SKScene {
                                         weapon = itemToMove
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
-                                    }else if space.name == "body" && itemToMove!.itemType == ItemType.body{
+                                    }else if space.name == "body" && (itemToMove!.itemType == ItemType.body || itemToMove!.itemType == ItemType.feet){
                                         backPackSpaces++
                                         body = itemToMove
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
-                                    }else if space.name == "feet" && itemToMove!.itemType == ItemType.feet{
+                                    }else if space.name == "feet" && (itemToMove!.itemType == ItemType.feet || itemToMove!.itemType == ItemType.body){
                                         backPackSpaces++
                                         feet = itemToMove
                                         spaceToMove!.removeItem()
@@ -360,8 +368,8 @@ class Inventory: SKScene {
                                 self.childNodeWithName("priceButton")?.removeFromParent()
                             }
                             let sellNode = SKLabelNode.init(text: "Sell: \(round(itemToMove!.price! / 3))")
-                            sellNode.position = CGPointMake(self.frame.midX, self.frame.minY + 90)
-                            sellNode.fontSize = 16
+                            sellNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 400)
+                            sellNode.fontSize = 30
                             sellNode.name = "sellButton"
                             sellNode.fontColor = UIColor.blueColor()
                             self.addChild(sellNode)

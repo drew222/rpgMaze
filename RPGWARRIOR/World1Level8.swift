@@ -28,7 +28,8 @@ class World1Level8: SKScene, SKPhysicsContactDelegate {
     let levelName = "world1level8"
     var droppedItem = false
     
-    let wizardAttackSpeed = 1.0
+    //larger attack speed, slower attack
+    let wizardAttackSpeed = 1.4
     
     var theWizard: WizardClass?
     var theHero: HeroClass?
