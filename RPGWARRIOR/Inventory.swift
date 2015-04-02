@@ -27,9 +27,11 @@ class Inventory: SKScene {
     var weapon: ItemClass?
     var body: ItemClass?
     var feet: ItemClass?
+    var neck: ItemClass?
     var headDisplay: SKSpriteNode?
     var leftDisplay: SKSpriteNode?
     var rightDisplay: SKSpriteNode?
+    var neckDisplay: SKSpriteNode?
     
     
     override func didMoveToView(view: SKView) {
@@ -48,8 +50,8 @@ class Inventory: SKScene {
             self.addChild(krakenNode)
             headDisplay = SKSpriteNode(imageNamed: "")
             headDisplay!.texture = nil
-            headDisplay!.size = CGSizeMake(80, 80)
-            headDisplay!.position = CGPointMake(krakenNode.position.x - 10, krakenNode.position.y + 90)
+            headDisplay!.size = CGSizeMake(135, 80)
+            headDisplay!.position = CGPointMake(krakenNode.position.x - 10, krakenNode.position.y + 75)
             headDisplay!.zPosition = 2
             self.addChild(headDisplay!)
             leftDisplay = SKSpriteNode(imageNamed: "")
@@ -66,6 +68,13 @@ class Inventory: SKScene {
             rightDisplay!.position = CGPointMake(krakenNode.position.x + 65, krakenNode.position.y - 28)
             rightDisplay!.zPosition = 2
             self.addChild(rightDisplay!)
+            neckDisplay = SKSpriteNode(imageNamed: "")
+            neckDisplay!.size = CGSizeMake(110, 45)
+            //neckDisplay!.zRotation = pi/3
+            neckDisplay!.texture = nil
+            neckDisplay!.position = CGPointMake(krakenNode.position.x, krakenNode.position.y - 25)
+            neckDisplay!.zPosition = 2
+            self.addChild(neckDisplay!)
         store = SKSpriteNode(imageNamed: "Store_Button_1")
         store!.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 55)
         store!.name = "store"
@@ -91,6 +100,9 @@ class Inventory: SKScene {
         let weaponLabel = SKLabelNode.init(text: "Noggin")
         weaponLabel.position = CGPointMake(self.frame.minX + 50, self.frame.minY + 230)
         self.addChild(weaponLabel)
+            let neckLabel = SKLabelNode.init(text: "Neck")
+            neckLabel.position = CGPointMake(self.frame.minX + 50, self.frame.minY + 310)
+            self.addChild(neckLabel)
         let feetLabel = SKLabelNode.init(text: "Right")
         feetLabel.position = CGPointMake(self.frame.minX + 50, self.frame.minY + 70)
         self.addChild(feetLabel)
@@ -181,6 +193,11 @@ class Inventory: SKScene {
         weaponSpace.name = "weapon"
         self.addChild(weaponSpace)
         itemSpaces.append(weaponSpace)
+            let neckSpace = ItemSpaceNode.spaceAtPosition(CGPointMake(neckLabel.frame.midX, neckLabel.frame.midY - 40))
+            neckSpace.zPosition = 1
+            neckSpace.name = "neck"
+            self.addChild(neckSpace)
+            itemSpaces.append(neckSpace)
             //body and feet spaces are tentacles
         let bodySpace = ItemSpaceNode.spaceAtPosition(CGPointMake(bodyLabel.frame.midX, bodyLabel.frame.midY - 40))
         bodySpace.zPosition = 1
@@ -249,15 +266,17 @@ class Inventory: SKScene {
         itemToMove?.removeFromParent()
         spaceToMove!.color = UIColor.whiteColor()
         self.childNodeWithName("sellButton")?.removeFromParent()
-        if !(spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet"){
+        if !(spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "neck"){
             backPackSpaces++
         }else{
             if spaceToMove!.name == "weapon"{
                 headDisplay!.texture = nil
             }else if spaceToMove!.name == "body" {
                 leftDisplay!.texture = nil
-            }else{
+            }else if spaceToMove!.name == "feet"{
                 rightDisplay!.texture = nil
+            }else{
+                neckDisplay!.texture = nil
             }
         }
         spaceToMove = nil
@@ -279,6 +298,8 @@ class Inventory: SKScene {
             var itemName = item.itemName!
             itemName = itemName.stringByReplacingOccurrencesOfString("1", withString: "2", options: NSStringCompareOptions.LiteralSearch, range: nil)
             rightDisplay!.texture = SKTexture(imageNamed: "\(itemName)")
+        }else {
+            neckDisplay!.texture = SKTexture(imageNamed: "\(item.itemName!)")
         }
     }
     
@@ -320,11 +341,11 @@ class Inventory: SKScene {
                                 //unset "clicked" texture
                                 space.texture = SKTexture(imageNamed: "Inventory_Slot_1")
                                 //check if both are equipped, item and space to move to nil and put everything else in an else
-                                if (spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "weapon") && (space.name == "body" || space.name == "feet" || space.name == "weapon"){
+                                if (spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "weapon" || spaceToMove!.name == "neck") && (space.name == "body" || space.name == "feet" || space.name == "weapon" || space.name == "neck"){
                                     self.itemToMove = nil
                                     self.spaceToMove = nil
                                 }else{
-                                    if space.name == "weapon" || space.name == "body" || space.name == "feet"{
+                                    if space.name == "weapon" || space.name == "body" || space.name == "feet" || space.name == "neck"{
                                         if space.name == "weapon" && itemToMove!.itemType == ItemType.weapon{
                                                 //weapon = space.item
                                             self.spaceToMove!.insertItem(space.item!)
@@ -340,8 +361,12 @@ class Inventory: SKScene {
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
                                             displayItem(itemToMove!, spot: "feet")
+                                        }else if space.name == "neck" && itemToMove!.itemType == ItemType.neck{
+                                            self.spaceToMove!.insertItem(space.item!)
+                                            space.insertItem(self.itemToMove!)
+                                            displayItem(itemToMove!, spot: "neck")
                                         }
-                                    }else if spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet"{
+                                    }else if spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "neck"{
                                         //CHECK IF SPACETOMOVE IS WEP,BODY,FEET AND THEN CHECK SPACE'S ITEMTYPE
                                         if spaceToMove!.name == "weapon" && space.item!.itemType == ItemType.weapon{
                                             //weapon = space.item
@@ -358,6 +383,10 @@ class Inventory: SKScene {
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
                                             displayItem(space.item!, spot: "feet")
+                                        }else if spaceToMove!.name == "neck" && space.item!.itemType == ItemType.neck{
+                                            self.spaceToMove!.insertItem(space.item!)
+                                            displayItem(space.item!, spot: "neck")
+                                            space.insertItem(self.itemToMove!)
                                         }
                                     }
                                     else{
@@ -379,8 +408,10 @@ class Inventory: SKScene {
                                     body = nil
                                 }else if spaceToMove!.name == "feet"{
                                     feet = nil
+                                }else {
+                                    neck = nil
                                 }
-                                if space.name == "weapon" || space.name == "body" || space.name == "feet"{
+                                if space.name == "weapon" || space.name == "body" || space.name == "feet" || space.name == "neck"{
                                     if space.name == "weapon" && itemToMove!.itemType == ItemType.weapon{
                                         backPackSpaces++
                                         weapon = itemToMove
@@ -402,6 +433,12 @@ class Inventory: SKScene {
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
                                         
+                                    }else if space.name == "neck" && itemToMove!.itemType == ItemType.neck{
+                                        backPackSpaces++
+                                        neck = itemToMove
+                                        displayItem(itemToMove!, spot: "neck")
+                                        spaceToMove!.removeItem()
+                                        space.insertItem(self.itemToMove!)
                                     }else{
                                         println("trying to move item into wrong typed slot dumbass")
                                     }
@@ -409,7 +446,7 @@ class Inventory: SKScene {
                                     spaceToMove!.removeItem()
                                     space.insertItem(self.itemToMove!)
                                 }
-                                if spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet"{
+                                if spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "neck"{
                                     backPackSpaces--
                                     if spaceToMove!.name == "weapon"{
                                         headDisplay!.texture = nil
@@ -417,6 +454,8 @@ class Inventory: SKScene {
                                         leftDisplay!.texture = nil
                                     }else if spaceToMove!.name == "feet"{
                                         rightDisplay!.texture = nil
+                                    }else if spaceToMove!.name == "neck"{
+                                        neckDisplay!.texture = nil
                                     }
                                 }
                                 //change position of item in array

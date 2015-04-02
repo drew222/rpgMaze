@@ -36,6 +36,7 @@
 		DC321BE31AACDED6006E3F2B /* World1Level2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BE21AACDED6006E3F2B /* World1Level2.swift */; };
 		DC321BE51AACE497006E3F2B /* World1Level3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BE41AACE497006E3F2B /* World1Level3.swift */; };
 		DC321D731AAE3A0E006E3F2B /* ZoneScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321D721AAE3A0E006E3F2B /* ZoneScene.swift */; };
+		DC4A44281ACD040D00BE81D8 /* Bow_Tie_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4A44271ACD040D00BE81D8 /* Bow_Tie_1.png */; };
 		DCC4E3021A89760E000E5E89 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3011A89760E000E5E89 /* Inventory.swift */; };
 		DCC4E3041A897671000E5E89 /* ItemSpaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */; };
 		DCC4E3061A8976AB000E5E89 /* ItemClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3051A8976AB000E5E89 /* ItemClass.swift */; };
@@ -281,6 +282,7 @@
 		DC321BE21AACDED6006E3F2B /* World1Level2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level2.swift; sourceTree = "<group>"; };
 		DC321BE41AACE497006E3F2B /* World1Level3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level3.swift; sourceTree = "<group>"; };
 		DC321D721AAE3A0E006E3F2B /* ZoneScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneScene.swift; sourceTree = "<group>"; };
+		DC4A44271ACD040D00BE81D8 /* Bow_Tie_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bow_Tie_1.png; sourceTree = "<group>"; };
 		DCC4E3011A89760E000E5E89 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSpaceNode.swift; sourceTree = "<group>"; };
 		DCC4E3051A8976AB000E5E89 /* ItemClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemClass.swift; sourceTree = "<group>"; };
@@ -594,6 +596,7 @@
 		DCE69DA81AC9F18D003561E6 /* Rpg14 */ = {
 			isa = PBXGroup;
 			children = (
+				DC4A44271ACD040D00BE81D8 /* Bow_Tie_1.png */,
 				DCE69F171ACB92D7003561E6 /* Shades_1.png */,
 				DCE69F151AC9F374003561E6 /* Zone_Screen_2.png */,
 				DCE69F191ACB92F6003561E6 /* Seaweed_Mustache_1.png */,
@@ -1011,6 +1014,7 @@
 				DCE69E701AC9F18D003561E6 /* Clam_Boss_Rocking_5.png in Resources */,
 				DCE69E8A1AC9F18D003561E6 /* healthglobe.png in Resources */,
 				DCE69F011AC9F18D003561E6 /* wizard16.png in Resources */,
+				DC4A44281ACD040D00BE81D8 /* Bow_Tie_1.png in Resources */,
 				DCE69EA51AC9F18D003561E6 /* Kraken_Movement_8.png in Resources */,
 				DCE69ECB1AC9F18D003561E6 /* Rusty_Silver_Ring_1.png in Resources */,
 				DCE69EA81AC9F18D003561E6 /* level1armor.png in Resources */,

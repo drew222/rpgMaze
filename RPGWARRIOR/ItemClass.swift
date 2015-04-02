@@ -40,9 +40,9 @@ class ItemClass: SKSpriteNode {
             return ItemType.weapon
         }else if picName == "Copper_Ring_1" || picName == "Gold_Ring_1" || picName == "Mossy_Copper_Ring_1" || picName == "Mossy_Gold_Ring_1" || picName == "Mossy_Silver_Ring_1" || picName == "Rusty_Copper_Ring_1" || picName == "Rusty_Gold_Ring_1" || picName == "Rusty_Silver_Ring_1" || picName == "Silver_Ring_1"{
             return ItemType.body
-        }else if picName == "level1boots"{
+        }else if picName == "Bow_Tie_1"{
             //This is a placeholder type
-            return ItemType.feet
+            return ItemType.neck
         }
         return ItemType.weapon
     }
@@ -87,8 +87,11 @@ class ItemClass: SKSpriteNode {
         }else if picName == "Seaweed_Mustache_1"{
             price = 5000
             return [("Movement", CGFloat(15))]
+        }else if picName == "Bow_Tie_1"{
+            price = 100
+            return [("Regeneration", CGFloat(1))]
         }
-        return []
+            return []
     }
     
 }

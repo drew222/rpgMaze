@@ -21,6 +21,7 @@ class HeroClass: SKSpriteNode {
     var isSlowed = false
     var movingToPoint = CGPointMake(0, 0)
     var isMoving = false
+    var regeneration: CGFloat?
     //let nodeSpeed = 125
     
     class func makeHero(position: CGPoint) -> HeroClass{
@@ -31,6 +32,7 @@ class HeroClass: SKSpriteNode {
         hero.currentAngle = pi / 2.0
         hero.setupPhysicsBody()
         hero.life = 3.0
+        hero.regeneration = 0
         hero.zPosition = 1
         hero.setScale(0.6)
         hero.damage = 1
@@ -223,8 +225,8 @@ class HeroClass: SKSpriteNode {
             if let weaponSpot = theInventory.childNodeWithName("weapon") as? ItemSpaceNode{
             if (theInventory.weapon != nil){
                 for stat in theInventory.weapon!.itemStats!{
-                    if stat.0 == "Damage"{
-                        self.damage! += stat.1
+                    if stat.0 == "Life"{
+                        self.life! += stat.1
                     }
                 }
                 }}
@@ -233,6 +235,8 @@ class HeroClass: SKSpriteNode {
                 for stat in theInventory.body!.itemStats!{
                     if stat.0 == "Life"{
                         self.life! += stat.1
+                    }else if stat.0 == "Movement"{
+                        heroSpeed += stat.1
                     }
                 }
                 }}
@@ -241,8 +245,18 @@ class HeroClass: SKSpriteNode {
                 for stat in theInventory.feet!.itemStats!{
                     if stat.0 == "Movement"{
                         heroSpeed += stat.1
+                    }else if stat.0 == "Life"{
+                        self.life! += stat.1
                     }
                 }
+                }}
+            if let neckSpot = theInventory.childNodeWithName("neck") as? ItemSpaceNode{
+                if (theInventory.neck != nil){
+                    for stat in theInventory.neck!.itemStats!{
+                        if stat.0 == "Regeneration"{
+                            self.regeneration! += stat.1
+                        }
+                    }
                 }}
         }
     }

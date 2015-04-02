@@ -32,6 +32,7 @@ enum ItemType{
     case body
     case weapon
     case feet
+    case neck
 }
 
 var heroSpeed: CGFloat = 150
@@ -41,7 +42,7 @@ var heroSpeed: CGFloat = 150
 
 //let allStoreItems = ["noobSword", "level2sword", "level3sword", "level4dagger", "level6dagger", "level1armor", "level1setarmor", "level2armor", "level2setarmor", "level3armor", "level3setarmor", "level4armor", "level4setarmor", "level1boots", "level1setboots", "level2setboots", "level3setboots", "level4setboots"]
 
-let allStoreItems = ["Shades_1", "Coral_Crown_1", "Crab_Claw_Cap_1", "Seaweed_Mustache_1", "Copper_Ring_1", "Gold_Ring_1", "Mossy_Copper_Ring_1", "Mossy_Gold_Ring_1", "Mossy_Silver_Ring_1", "Rusty_Copper_Ring_1", "Rusty_Gold_Ring_1", "Rusty_Silver_Ring_1", "Silver_Ring_1"]
+let allStoreItems = ["Shades_1", "Coral_Crown_1", "Crab_Claw_Cap_1", "Seaweed_Mustache_1", "Copper_Ring_1", "Gold_Ring_1", "Mossy_Copper_Ring_1", "Mossy_Gold_Ring_1", "Mossy_Silver_Ring_1", "Rusty_Copper_Ring_1", "Rusty_Gold_Ring_1", "Rusty_Silver_Ring_1", "Silver_Ring_1", "Bow_Tie_1"]
 
 
 func randomWithMin(min: Int, max: Int) -> NSInteger{

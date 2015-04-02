@@ -19,8 +19,14 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
     var levelOver = false
     let levelName = "world1level1"
     var droppedItem = false
-    
+    //REGEN CODE******
+    var lastHeal: Double = 0.0
+    let healSpeed = 5.0
+    var lifeNode: SKLabelNode?
+    var maxLife: CGFloat = 0.0
+    //*****************
     let wizardAttackSpeed = 1.0
+    
     
     var theWizard: WizardClass?
     var theHero: HeroClass?
@@ -30,6 +36,11 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.1))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
+        lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
+        lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
+        lifeNode!.fontColor = UIColor.redColor()
+        lifeNode!.fontSize = 20
+        self.addChild(lifeNode!)
         theWizard = WizardClass.makeWizard(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
         self.addChild(theWizard!)
         //the below constraints did nothing
@@ -42,6 +53,10 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         self.addChild(background)
         self.physicsWorld.contactDelegate = self
         theHero!.updateStats()
+        //*****REGENE CODE****
+        maxLife = theHero!.life!
+        //********************
+        println("world1lvl1afterupdatingstats: Regneration: \(theHero!.regeneration!)")
         //self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 100, self.frame.midY)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.midY + 50)))
@@ -108,31 +123,22 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
+        //******REGEN CODE
+        if currentTime - lastHeal  > healSpeed{
+            self.lastHeal = currentTime
+            if theHero!.life < maxLife{
+                theHero!.life! += theHero!.regeneration!
+            }
+        }
         self.lastUpdatesTime = currentTime
+        lifeNode!.text = "\(Int(floor(theHero!.life!)))"
+        //***************
         
         //check for win condition
         if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
-            //parent of self is viewcontroller, has view, extends sknode
-            //if (theHero!.life == 0){
-            //   let deathNode = SKLabelNode.init(text: "You died, try again!")
-            //   deathNode.position = CGPointMake(self.frame.midX, self.frame.midY)
-            //   self.addChild(deathNode)
-            // }else if (theBomber!.isDead){
-            //   let winNode = SKLabelNode.init(text: "You win, congratulations!")
-            //   winNode.position = CGPointMake(self.frame.midX, self.frame.midY)
-            //   self.addChild(winNode)
-            // }
             if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
-                //let menuScene = MainMenuScene(size: self.frame.size)
-                //println("got here111")
-                //(self.userData?.objectForKey("menu") as MainMenuScene).userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
-                //println("got here222")
-                //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
                 let skTransition = SKTransition.fadeWithDuration(5.0)
-                println("got here111")
-                //let gameScene = self.userData?.objectForKey("menu") as MainMenuScene
                 self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
-                println("got here222")
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil){
