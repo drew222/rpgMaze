@@ -27,6 +27,9 @@ class Inventory: SKScene {
     var weapon: ItemClass?
     var body: ItemClass?
     var feet: ItemClass?
+    var headDisplay: SKSpriteNode?
+    var leftDisplay: SKSpriteNode?
+    var rightDisplay: SKSpriteNode?
     
     
     override func didMoveToView(view: SKView) {
@@ -43,6 +46,26 @@ class Inventory: SKScene {
             krakenNode.name = "kraken"
             krakenNode.size = CGSizeMake(200, 200)
             self.addChild(krakenNode)
+            headDisplay = SKSpriteNode(imageNamed: "")
+            headDisplay!.texture = nil
+            headDisplay!.size = CGSizeMake(80, 80)
+            headDisplay!.position = CGPointMake(krakenNode.position.x - 10, krakenNode.position.y + 90)
+            headDisplay!.zPosition = 2
+            self.addChild(headDisplay!)
+            leftDisplay = SKSpriteNode(imageNamed: "")
+            leftDisplay!.texture = nil
+            leftDisplay!.size = CGSizeMake(40, 40)
+            leftDisplay!.zRotation = -pi/3
+            leftDisplay!.position = CGPointMake(krakenNode.position.x - 65, krakenNode.position.y - 40)
+            leftDisplay!.zPosition = 2
+            self.addChild(leftDisplay!)
+            rightDisplay = SKSpriteNode(imageNamed: "")
+            rightDisplay!.size = CGSizeMake(40, 40)
+            rightDisplay!.zRotation = pi/3
+            rightDisplay!.texture = nil
+            rightDisplay!.position = CGPointMake(krakenNode.position.x + 65, krakenNode.position.y - 28)
+            rightDisplay!.zPosition = 2
+            self.addChild(rightDisplay!)
         store = SKSpriteNode(imageNamed: "Store_Button_1")
         store!.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 55)
         store!.name = "store"
@@ -228,11 +251,35 @@ class Inventory: SKScene {
         self.childNodeWithName("sellButton")?.removeFromParent()
         if !(spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet"){
             backPackSpaces++
+        }else{
+            if spaceToMove!.name == "weapon"{
+                headDisplay!.texture = nil
+            }else if spaceToMove!.name == "body" {
+                leftDisplay!.texture = nil
+            }else{
+                rightDisplay!.texture = nil
+            }
         }
         spaceToMove = nil
         itemToMove = nil
         statLabel!.text = ""
         
+    }
+    
+    func displayItem(item: ItemClass, spot: String) {
+        println("got here!!!!\(spaceToMove!.item!.itemName!)")
+        if spot == "weapon" {
+            println("got here222@!!!!!!!")
+            headDisplay!.texture = SKTexture(imageNamed: "\(item.itemName!)")
+        }else if spot == "body" {
+            var itemName = item.itemName!
+            itemName = itemName.stringByReplacingOccurrencesOfString("1", withString: "2", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            leftDisplay!.texture = SKTexture(imageNamed: "\(itemName)")
+        }else if spot == "feet" {
+            var itemName = item.itemName!
+            itemName = itemName.stringByReplacingOccurrencesOfString("1", withString: "2", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            rightDisplay!.texture = SKTexture(imageNamed: "\(itemName)")
+        }
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -282,29 +329,35 @@ class Inventory: SKScene {
                                                 //weapon = space.item
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
+                                            displayItem(itemToMove!, spot: "weapon")
                                         }else if space.name == "body" && (itemToMove!.itemType == ItemType.body || itemToMove!.itemType == ItemType.feet){
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
+                                            displayItem(itemToMove!, spot: "body")
                                                 //body = space.item
                                         }else if space.name == "feet" && (itemToMove!.itemType == ItemType.feet || itemToMove!.itemType == ItemType.body){
                                                 //feet = space.item
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
+                                            displayItem(itemToMove!, spot: "feet")
                                         }
                                     }else if spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet"{
                                         //CHECK IF SPACETOMOVE IS WEP,BODY,FEET AND THEN CHECK SPACE'S ITEMTYPE
                                         if spaceToMove!.name == "weapon" && space.item!.itemType == ItemType.weapon{
                                             //weapon = space.item
                                             self.spaceToMove!.insertItem(space.item!)
+                                            displayItem(space.item!, spot: "weapon")
                                             space.insertItem(self.itemToMove!)
                                         }else if spaceToMove!.name == "body" && space.item!.itemType == ItemType.body{
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
+                                            displayItem(space.item!, spot: "body")
                                             //body = space.item
                                         }else if spaceToMove!.name == "feet" && space.item!.itemType == ItemType.feet{
                                             //feet = space.item
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
+                                            displayItem(space.item!, spot: "feet")
                                         }
                                     }
                                     else{
@@ -331,18 +384,24 @@ class Inventory: SKScene {
                                     if space.name == "weapon" && itemToMove!.itemType == ItemType.weapon{
                                         backPackSpaces++
                                         weapon = itemToMove
+                                        displayItem(itemToMove!, spot: "weapon")
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
+                                        
                                     }else if space.name == "body" && (itemToMove!.itemType == ItemType.body || itemToMove!.itemType == ItemType.feet){
                                         backPackSpaces++
                                         body = itemToMove
+                                        displayItem(itemToMove!, spot: "body")
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
+                                        
                                     }else if space.name == "feet" && (itemToMove!.itemType == ItemType.feet || itemToMove!.itemType == ItemType.body){
                                         backPackSpaces++
                                         feet = itemToMove
+                                        displayItem(itemToMove!, spot: "feet")
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
+                                        
                                     }else{
                                         println("trying to move item into wrong typed slot dumbass")
                                     }
@@ -352,6 +411,13 @@ class Inventory: SKScene {
                                 }
                                 if spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet"{
                                     backPackSpaces--
+                                    if spaceToMove!.name == "weapon"{
+                                        headDisplay!.texture = nil
+                                    }else if spaceToMove!.name == "body"{
+                                        leftDisplay!.texture = nil
+                                    }else if spaceToMove!.name == "feet"{
+                                        rightDisplay!.texture = nil
+                                    }
                                 }
                                 //change position of item in array
                             }
