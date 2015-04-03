@@ -45,7 +45,7 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         
     
         
-        /*self.addChild(MiniCrab.crabAtPosition(CGPointMake(randomWithMin(self.frame.minX, max: self.frame.maxX - 5), self.frame.midY + 95), endPosition: CGPointMake(self.frame.maxX + 30, self.frame.midY + 105)))*/
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(CGFloat(randomWithMin(Int(self.frame.minX), Int(self.frame.maxX - 5))), self.frame.midY + 95), endPosition: CGPointMake(self.frame.maxX + 30, self.frame.midY + 105)))
     
         
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX - 30, self.frame.midY + 95), endPosition: CGPointMake(self.frame.maxX + 30, self.frame.midY + 105)))
