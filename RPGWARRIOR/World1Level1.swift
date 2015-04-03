@@ -41,7 +41,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         lifeNode!.fontColor = UIColor.redColor()
         lifeNode!.fontSize = 20
         self.addChild(lifeNode!)
-        theWizard = WizardClass.makeWizard(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
+        theWizard = WizardClass.makeWizard(CGPointMake(self.frame.midX, self.frame.maxY - 50))
         self.addChild(theWizard!)
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
