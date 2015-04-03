@@ -27,6 +27,8 @@ class MainMenuScene: SKScene {
     var world1level7node: SKLabelNode?
     var world1level8node: SKLabelNode?
     var world1level15node: SKLabelNode?
+    var world1level20node: SKLabelNode?
+    // ##### change this for new level#####
     var firstTimeLoaded = true
     
     override func didMoveToView(view: SKView) {
@@ -143,6 +145,14 @@ class MainMenuScene: SKScene {
                 Node.name = "world1level15"
                 self.addChild(Node)
             }
+            world1level20node = SKLabelNode.init(text: "World 1 : Level 20")
+            resizeLabel(world1level20node!)
+            if let Node = world1level20node {
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 150)
+                Node.name = "world1level20"
+                self.addChild(Node)
+            }
+            // #####change this for new level#####
         
         inventory = SKLabelNode.init(text: "Inventory")
         inventory!.position = CGPointMake(self.frame.maxX - 70, self.frame.minY + 40)
@@ -285,6 +295,16 @@ class MainMenuScene: SKScene {
                 //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level15scene, transition: skTransition)
+                
+            }else if world1level20node!.containsPoint(touch.locationInNode(self)){
+                let world1level20scene = World1Level20(size: self.frame.size)
+                world1level20scene.userData = NSMutableDictionary()
+                world1level20scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                world1level20scene.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(world1level20scene, transition: skTransition)
+                // ##### change this for new level #####
                 
             }else if inventory!.containsPoint(touch.locationInNode(self)){
                 //let inventoryScene = Inventory(size: self.frame.size)
