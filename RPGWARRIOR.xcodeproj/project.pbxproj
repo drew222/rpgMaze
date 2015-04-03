@@ -246,6 +246,7 @@
 		DCE69F1E1ACB9317003561E6 /* Coral_Crown_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69F1D1ACB9317003561E6 /* Coral_Crown_1.png */; };
 		DCE69F201ACB9324003561E6 /* Crab_Claw_Cap_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69F1F1ACB9324003561E6 /* Crab_Claw_Cap_1.png */; };
 		EE3D364C1ACE1DE4002A27B8 /* World1Level20.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */; };
+		EE3D364E1ACEEFDA002A27B8 /* World1Level21.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -502,6 +503,7 @@
 		DCE69F1D1ACB9317003561E6 /* Coral_Crown_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Coral_Crown_1.png; sourceTree = "<group>"; };
 		DCE69F1F1ACB9324003561E6 /* Crab_Claw_Cap_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crab_Claw_Cap_1.png; sourceTree = "<group>"; };
 		EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level20.swift; sourceTree = "<group>"; };
+		EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level21.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -575,6 +577,7 @@
 				DCE69C511AB604F2003561E6 /* World1Level8.swift */,
 				DC4A442D1ACDF79D00BE81D8 /* World1Level15.swift */,
 				EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */,
+				EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */,
 				DC27113D1A85E1AB00986D2E /* GameScene.swift */,
 				DCC4E3781A8EEE59000E5E89 /* StoreScene.swift */,
 				DC1F580E1A886BB100B5027B /* Level2Scene.swift */,
@@ -1133,6 +1136,7 @@
 				DC4A442A1ACDDCED00BE81D8 /* WaveNode.swift in Sources */,
 				2F62CE591A89C25000046DA7 /* Level3Scene.swift in Sources */,
 				DCC4E3041A897671000E5E89 /* ItemSpaceNode.swift in Sources */,
+				EE3D364E1ACEEFDA002A27B8 /* World1Level21.swift in Sources */,
 				DC1F580F1A886BB100B5027B /* Level2Scene.swift in Sources */,
 				2FC73DE51A912D980068A2FB /* Level4Scene.swift in Sources */,
 				DC321BDF1AACCDBE006E3F2B /* IntroScene.swift in Sources */,

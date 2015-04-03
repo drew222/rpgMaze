@@ -28,6 +28,7 @@ class MainMenuScene: SKScene {
     var world1level8node: SKLabelNode?
     var world1level15node: SKLabelNode?
     var world1level20node: SKLabelNode?
+    var world1level21node: SKLabelNode?
     // ##### change this for new level#####
     var firstTimeLoaded = true
     
@@ -150,6 +151,13 @@ class MainMenuScene: SKScene {
             if let Node = world1level20node {
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 150)
                 Node.name = "world1level20"
+                self.addChild(Node)
+            }
+            world1level21node = SKLabelNode.init(text: "World 1 : Level 21")
+            resizeLabel(world1level21node!)
+            if let Node = world1level21node {
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 200)
+                Node.name = "world1level21"
                 self.addChild(Node)
             }
             // #####change this for new level#####
@@ -304,6 +312,16 @@ class MainMenuScene: SKScene {
                 //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level20scene, transition: skTransition)
+                
+            }else if world1level21node!.containsPoint(touch.locationInNode(self)){
+                let world1level21scene = World1Level21(size: self.frame.size)
+                world1level21scene.userData = NSMutableDictionary()
+                world1level21scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                world1level21scene.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(world1level21scene, transition: skTransition)
+                
                 // ##### change this for new level #####
                 
             }else if inventory!.containsPoint(touch.locationInNode(self)){
