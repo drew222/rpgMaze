@@ -74,16 +74,16 @@ class WhaleBoss: SKSpriteNode {
         textures2.append(SKTexture(imageNamed: "Whale_Boss_2"))
         textures2.append(SKTexture(imageNamed: "Whale_Boss_3"))
         textures2.append(SKTexture(imageNamed: "Whale_Boss_2"))
-        let idleAnimation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+        let idleAnimation = SKAction.animateWithTextures(textures2, timePerFrame: 0.1)
         let repeatAction = SKAction.repeatAction(idleAnimation, count: 1)
         let waitAction = SKAction.waitForDuration(2)
         let sequence = SKAction.sequence([repeatAction, waitAction])
         let realRepeatAction = SKAction.repeatActionForever(sequence)
         let finalSequence = SKAction.sequence([waveAttackAnimation, realRepeatAction])
         self.runAction(finalSequence)
-        let lengthOfTop = self.parent!.frame.maxY - gapPosition.y + 25
+        var lengthOfTop = self.parent!.frame.maxY - gapPosition.y + 25
+        var lengthOfBot = gapPosition.y - 25
         self.parent!.addChild(WaveNode.waveAtPosition(CGPointMake(gapPosition.x, gapPosition.y + (lengthOfTop)/2), length: lengthOfTop, distance: self.parent!.frame.maxX + 50))
-        let lengthOfBot = gapPosition.y - 25
         self.parent!.addChild(WaveNode.waveAtPosition(CGPointMake(gapPosition.x, lengthOfBot/2), length: lengthOfBot, distance: self.parent!.frame.maxX + 50))
     }
 

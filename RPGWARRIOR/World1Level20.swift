@@ -119,7 +119,7 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        if currentTime - lastWave  > whaleAttackSpeed{
+        if currentTime - lastWave  > whaleAttackSpeed && !levelOver{
             self.lastWave = currentTime
             theWhale!.throwWave(wavePositions![whichWave])
             if whichWave < 2{
