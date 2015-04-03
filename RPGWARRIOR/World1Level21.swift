@@ -43,12 +43,26 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         self.addChild(background)
         theHero!.updateStats()
         
+        /*let lowerXDiff = round(xRange * 0.45)
+        let lowerYDiff = round(yRange * 0.45)
+        let upperXDiff = round(xRange * 1)
+        let upperYDiff = round(yRange * 1)
+        let xDiff = CGFloat(randomWithMin(Int(lowerXDiff), Int(upperXDiff)))
+        let yDiff = CGFloat(randomWithMin(Int(lowerYDiff), Int(upperYDiff)))
+        var xPosition: CGFloat?
+        var yPosition: CGFloat?
+        if self.position.x > heroPosition.x{
+            xPosition = CGFloat(self.position.x - xDiff)
+        }else{
+            xPosition = CGFloat(self.position.x + xDiff)*/
+
+        
+
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(randomWithMin(self.frame.minX, max: self.frame.maxX - 5), self.frame.midY + 95), endPosition: CGPointMake(self.frame.maxX + 30, self.frame.midY + 105)))
+
     
         
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(CGFloat(randomWithMin(Int(self.frame.minX), Int(self.frame.maxX - 5))), self.frame.midY + 95), endPosition: CGPointMake(self.frame.maxX + 30, self.frame.midY + 105)))
-    
-        
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX - 30, self.frame.midY + 95), endPosition: CGPointMake(self.frame.maxX + 30, self.frame.midY + 105)))
+        //self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX - 30, self.frame.midY + 95), endPosition: CGPointMake(self.frame.maxX + 30, self.frame.midY + 105)))
         
     }
     
