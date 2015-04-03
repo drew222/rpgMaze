@@ -37,6 +37,15 @@
 		DC321BE51AACE497006E3F2B /* World1Level3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BE41AACE497006E3F2B /* World1Level3.swift */; };
 		DC321D731AAE3A0E006E3F2B /* ZoneScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321D721AAE3A0E006E3F2B /* ZoneScene.swift */; };
 		DC4A44281ACD040D00BE81D8 /* Bow_Tie_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4A44271ACD040D00BE81D8 /* Bow_Tie_1.png */; };
+		DC4A442A1ACDDCED00BE81D8 /* WaveNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A44291ACDDCED00BE81D8 /* WaveNode.swift */; };
+		DC4A442C1ACDE6CF00BE81D8 /* WhaleBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A442B1ACDE6CF00BE81D8 /* WhaleBoss.swift */; };
+		DC4A442E1ACDF79D00BE81D8 /* World1Level15.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A442D1ACDF79D00BE81D8 /* World1Level15.swift */; };
+		DC4A44301ACE192100BE81D8 /* Pearl_Necklace_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4A442F1ACE192100BE81D8 /* Pearl_Necklace_1.png */; };
+		DC4A44321ACE195400BE81D8 /* Pearl_Necklace_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4A44311ACE195400BE81D8 /* Pearl_Necklace_2.png */; };
+		DC4A44341ACE196800BE81D8 /* Booty_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4A44331ACE196800BE81D8 /* Booty_1.png */; };
+		DC4A44361ACE197800BE81D8 /* Wave_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4A44351ACE197800BE81D8 /* Wave_1.png */; };
+		DC4A44381ACE197E00BE81D8 /* Wave_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4A44371ACE197E00BE81D8 /* Wave_2.png */; };
+		DC4A443A1ACE198200BE81D8 /* Wave_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4A44391ACE198200BE81D8 /* Wave_3.png */; };
 		DCC4E3021A89760E000E5E89 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3011A89760E000E5E89 /* Inventory.swift */; };
 		DCC4E3041A897671000E5E89 /* ItemSpaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */; };
 		DCC4E3061A8976AB000E5E89 /* ItemClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3051A8976AB000E5E89 /* ItemClass.swift */; };
@@ -283,6 +292,15 @@
 		DC321BE41AACE497006E3F2B /* World1Level3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level3.swift; sourceTree = "<group>"; };
 		DC321D721AAE3A0E006E3F2B /* ZoneScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneScene.swift; sourceTree = "<group>"; };
 		DC4A44271ACD040D00BE81D8 /* Bow_Tie_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bow_Tie_1.png; sourceTree = "<group>"; };
+		DC4A44291ACDDCED00BE81D8 /* WaveNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveNode.swift; sourceTree = "<group>"; };
+		DC4A442B1ACDE6CF00BE81D8 /* WhaleBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhaleBoss.swift; sourceTree = "<group>"; };
+		DC4A442D1ACDF79D00BE81D8 /* World1Level15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level15.swift; sourceTree = "<group>"; };
+		DC4A442F1ACE192100BE81D8 /* Pearl_Necklace_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pearl_Necklace_1.png; sourceTree = "<group>"; };
+		DC4A44311ACE195400BE81D8 /* Pearl_Necklace_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pearl_Necklace_2.png; sourceTree = "<group>"; };
+		DC4A44331ACE196800BE81D8 /* Booty_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Booty_1.png; sourceTree = "<group>"; };
+		DC4A44351ACE197800BE81D8 /* Wave_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wave_1.png; sourceTree = "<group>"; };
+		DC4A44371ACE197E00BE81D8 /* Wave_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wave_2.png; sourceTree = "<group>"; };
+		DC4A44391ACE198200BE81D8 /* Wave_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wave_3.png; sourceTree = "<group>"; };
 		DCC4E3011A89760E000E5E89 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSpaceNode.swift; sourceTree = "<group>"; };
 		DCC4E3051A8976AB000E5E89 /* ItemClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemClass.swift; sourceTree = "<group>"; };
@@ -531,6 +549,7 @@
 				DCC4E3051A8976AB000E5E89 /* ItemClass.swift */,
 				DC1F58121A88703500B5027B /* Bomb.swift */,
 				DC1F58101A886EFC00B5027B /* BomberClass.swift */,
+				DC4A442B1ACDE6CF00BE81D8 /* WhaleBoss.swift */,
 				DC27114F1A86A09D00986D2E /* AppDelegate.swift */,
 				DC2711471A85E26100986D2E /* GameViewController.swift */,
 				DC2711451A85E1F500986D2E /* HeroClass.swift */,
@@ -540,6 +559,7 @@
 				2F62CE541A89C21000046DA7 /* MineNode.swift */,
 				2F62CE551A89C21000046DA7 /* MineThrowerNode.swift */,
 				DC321BDC1AAB9D68006E3F2B /* MiniCrab.swift */,
+				DC4A44291ACDDCED00BE81D8 /* WaveNode.swift */,
 				DCC4E3011A89760E000E5E89 /* Inventory.swift */,
 				DC321BDE1AACCDBE006E3F2B /* IntroScene.swift */,
 				DC321D721AAE3A0E006E3F2B /* ZoneScene.swift */,
@@ -551,6 +571,7 @@
 				DCE69C4D1AB4A04C003561E6 /* World1Level6.swift */,
 				DCE69C4F1AB507CB003561E6 /* World1Level7.swift */,
 				DCE69C511AB604F2003561E6 /* World1Level8.swift */,
+				DC4A442D1ACDF79D00BE81D8 /* World1Level15.swift */,
 				DC27113D1A85E1AB00986D2E /* GameScene.swift */,
 				DCC4E3781A8EEE59000E5E89 /* StoreScene.swift */,
 				DC1F580E1A886BB100B5027B /* Level2Scene.swift */,
@@ -596,15 +617,21 @@
 		DCE69DA81AC9F18D003561E6 /* Rpg14 */ = {
 			isa = PBXGroup;
 			children = (
+				DC4A442F1ACE192100BE81D8 /* Pearl_Necklace_1.png */,
 				DC4A44271ACD040D00BE81D8 /* Bow_Tie_1.png */,
 				DCE69F171ACB92D7003561E6 /* Shades_1.png */,
+				DC4A44311ACE195400BE81D8 /* Pearl_Necklace_2.png */,
 				DCE69F151AC9F374003561E6 /* Zone_Screen_2.png */,
+				DC4A44331ACE196800BE81D8 /* Booty_1.png */,
+				DC4A44351ACE197800BE81D8 /* Wave_1.png */,
 				DCE69F191ACB92F6003561E6 /* Seaweed_Mustache_1.png */,
 				DCE69DA91AC9F18D003561E6 /* Beach_Background_1.png */,
+				DC4A44371ACE197E00BE81D8 /* Wave_2.png */,
 				DCE69DAA1AC9F18D003561E6 /* Beach_Ball_1.png */,
 				DCE69DAB1AC9F18D003561E6 /* Beach_Ball_2.png */,
 				DCE69DAC1AC9F18D003561E6 /* Beach_Ball_3.png */,
 				DCE69F1B1ACB9307003561E6 /* Shades_2.png */,
+				DC4A44391ACE198200BE81D8 /* Wave_3.png */,
 				DCE69F1F1ACB9324003561E6 /* Crab_Claw_Cap_1.png */,
 				DCE69F1D1ACB9317003561E6 /* Coral_Crown_1.png */,
 				DCE69DAD1AC9F18D003561E6 /* Beach_Ball_4.png */,
@@ -893,12 +920,14 @@
 				DCE69EA31AC9F18D003561E6 /* Kraken_Movement_6.png in Resources */,
 				DCE69EAB1AC9F18D003561E6 /* level1setboots.png in Resources */,
 				DCE69E811AC9F18D003561E6 /* Crab_Level_Icon_1.png in Resources */,
+				DC4A44301ACE192100BE81D8 /* Pearl_Necklace_1.png in Resources */,
 				DCE69EDF1AC9F18D003561E6 /* Treasure_Chest_6.png in Resources */,
 				DCE69ED61AC9F18D003561E6 /* Store_Shelf_1.png in Resources */,
 				DCE69EFC1AC9F18D003561E6 /* wizard11.png in Resources */,
 				DCE69E881AC9F18D003561E6 /* Gold_Ring_1.png in Resources */,
 				DCE69ECE1AC9F18D003561E6 /* Seashell_2.png in Resources */,
 				DCE69EAC1AC9F18D003561E6 /* level2armor.png in Resources */,
+				DC4A44321ACE195400BE81D8 /* Pearl_Necklace_2.png in Resources */,
 				DCE69EC51AC9F18D003561E6 /* projectile_2@2x.png in Resources */,
 				DCE69EF11AC9F18D003561E6 /* Whale_Boss_2.png in Resources */,
 				DCE69E651AC9F18D003561E6 /* Beach_Crab_1.png in Resources */,
@@ -942,12 +971,14 @@
 				DCE69E851AC9F18D003561E6 /* Fitting_Room_Kraken_1.png in Resources */,
 				DCE69EC91AC9F18D003561E6 /* Rusty_Gold_Ring_1.png in Resources */,
 				DC2711281A85E11900986D2E /* LaunchScreen.xib in Resources */,
+				DC4A443A1ACE198200BE81D8 /* Wave_3.png in Resources */,
 				DCE69EF71AC9F18D003561E6 /* Whale_Boss_8.png in Resources */,
 				DCE69F1E1ACB9317003561E6 /* Coral_Crown_1.png in Resources */,
 				DCE69E901AC9F18D003561E6 /* Kraken_Boss_1.png in Resources */,
 				DCE69E681AC9F18D003561E6 /* Clam_Boss_1.png in Resources */,
 				DCE69EBB1AC9F18D003561E6 /* Mossy_Copper_Ring_2.png in Resources */,
 				DCE69E911AC9F18D003561E6 /* Kraken_Boss_2.png in Resources */,
+				DC4A44381ACE197E00BE81D8 /* Wave_2.png in Resources */,
 				DCE69F061AC9F18D003561E6 /* wizard20.png in Resources */,
 				DCE69E8D1AC9F18D003561E6 /* Inventory_Slot_2.png in Resources */,
 				DCE69EEE1AC9F18D003561E6 /* Whale_Boss_16.png in Resources */,
@@ -986,6 +1017,7 @@
 				DCE69F181ACB92D8003561E6 /* Shades_1.png in Resources */,
 				DCE69EA61AC9F18D003561E6 /* Kraken_Movement_9.png in Resources */,
 				DCE69EB81AC9F18D003561E6 /* level6dagger.png in Resources */,
+				DC4A44361ACE197800BE81D8 /* Wave_1.png in Resources */,
 				DCE69F111AC9F18D003561E6 /* wizard9.png in Resources */,
 				DCE69EFE1AC9F18D003561E6 /* wizard13.png in Resources */,
 				DCE69E9E1AC9F18D003561E6 /* Kraken_Movement_16.png in Resources */,
@@ -1034,6 +1066,7 @@
 				DCE69F161AC9F374003561E6 /* Zone_Screen_2.png in Resources */,
 				DCE69EFD1AC9F18D003561E6 /* wizard12.png in Resources */,
 				DCE69E631AC9F18D003561E6 /* Beach_Ball_4.png in Resources */,
+				DC4A44341ACE196800BE81D8 /* Booty_1.png in Resources */,
 				DCE69EE71AC9F18D003561E6 /* Whale_Boss_1.png in Resources */,
 				DCE69E861AC9F18D003561E6 /* Fitting_Room_Text_1.png in Resources */,
 				DCE69E6A1AC9F18D003561E6 /* Clam_Boss_3.png in Resources */,
@@ -1090,9 +1123,11 @@
 				DCE69C4C1AB49A7E003561E6 /* World1Level5.swift in Sources */,
 				DC2711461A85E1F500986D2E /* HeroClass.swift in Sources */,
 				DC321BE31AACDED6006E3F2B /* World1Level2.swift in Sources */,
+				DC4A442E1ACDF79D00BE81D8 /* World1Level15.swift in Sources */,
 				DC2711421A85E1D300986D2E /* Utility.swift in Sources */,
 				DC1F58111A886EFC00B5027B /* BomberClass.swift in Sources */,
 				DC321BDD1AAB9D68006E3F2B /* MiniCrab.swift in Sources */,
+				DC4A442A1ACDDCED00BE81D8 /* WaveNode.swift in Sources */,
 				2F62CE591A89C25000046DA7 /* Level3Scene.swift in Sources */,
 				DCC4E3041A897671000E5E89 /* ItemSpaceNode.swift in Sources */,
 				DC1F580F1A886BB100B5027B /* Level2Scene.swift in Sources */,
@@ -1108,6 +1143,7 @@
 				DC321D731AAE3A0E006E3F2B /* ZoneScene.swift in Sources */,
 				DCC4E3791A8EEE59000E5E89 /* StoreScene.swift in Sources */,
 				DCE69C4E1AB4A04C003561E6 /* World1Level6.swift in Sources */,
+				DC4A442C1ACDE6CF00BE81D8 /* WhaleBoss.swift in Sources */,
 				DC2711441A85E1DE00986D2E /* WizardClass.swift in Sources */,
 				DC1F58131A88703500B5027B /* Bomb.swift in Sources */,
 				DC321BE11AACD471006E3F2B /* World1Level1.swift in Sources */,
