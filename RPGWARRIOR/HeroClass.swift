@@ -264,17 +264,21 @@ class HeroClass: SKSpriteNode {
     func attack(){
         if let theWizard = self.parent!.childNodeWithName("wizard") as? WizardClass{
             if distanceBetween(self.position, theWizard.position) < 110{
-                theWizard.takeDamage(self.damage!)
+                theWizard.takeDamage(1)
             }
             //println("THE WIZARD HAS DIED!")
         }else if let theBomber = self.parent!.childNodeWithName("bomber") as? BomberClass{
             if distanceBetween(self.position, theBomber.position) < 110{
-                theBomber.takeDamage(self.damage!)
+                theBomber.takeDamage(1)
             }
             //println("THE BOMBER HAS DIED!")
         }else if let mineThrower = self.parent!.childNodeWithName("MineThrower") as? MineThrowerNode{
             if distanceBetween(self.position, mineThrower.position) < 110{
-                mineThrower.takeDamage(self.damage!)
+                mineThrower.takeDamage(1)
+            }
+        }else if let whaleBoss = self.parent!.childNodeWithName("whale") as? WhaleBoss{
+            if distanceBetween(self.position, whaleBoss.position) < 110{
+                whaleBoss.takeDamage(1)
             }
         }
     }

@@ -53,6 +53,34 @@ class WhaleBoss: SKSpriteNode {
     
     //throw a wave with gap at this position
     func throwWave(gapPosition: CGPoint){
+        //run tail animation
+        var textures: [SKTexture] = []
+        textures.append(SKTexture(imageNamed: "Whale_Boss_10"))
+        textures.append(SKTexture(imageNamed: "Whale_Boss_11"))
+        textures.append(SKTexture(imageNamed: "Whale_Boss_12"))
+        textures.append(SKTexture(imageNamed: "Whale_Boss_13"))
+        textures.append(SKTexture(imageNamed: "Whale_Boss_14"))
+        textures.append(SKTexture(imageNamed: "Whale_Boss_15"))
+        textures.append(SKTexture(imageNamed: "Whale_Boss_16"))
+        textures.append(SKTexture(imageNamed: "Whale_Boss_15"))
+        textures.append(SKTexture(imageNamed: "Whale_Boss_14"))
+        textures.append(SKTexture(imageNamed: "Whale_Boss_13"))
+        textures.append(SKTexture(imageNamed: "Whale_Boss_12"))
+        textures.append(SKTexture(imageNamed: "Whale_Boss_11"))
+        textures.append(SKTexture(imageNamed: "Whale_Boss_10"))
+        let waveAttackAnimation = SKAction.animateWithTextures(textures, timePerFrame: 0.05)
+        var textures2: [SKTexture] = []
+        textures2.append(SKTexture(imageNamed: "Whale_Boss_1"))
+        textures2.append(SKTexture(imageNamed: "Whale_Boss_2"))
+        textures2.append(SKTexture(imageNamed: "Whale_Boss_3"))
+        textures2.append(SKTexture(imageNamed: "Whale_Boss_2"))
+        let idleAnimation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+        let repeatAction = SKAction.repeatAction(idleAnimation, count: 1)
+        let waitAction = SKAction.waitForDuration(2)
+        let sequence = SKAction.sequence([repeatAction, waitAction])
+        let realRepeatAction = SKAction.repeatActionForever(sequence)
+        let finalSequence = SKAction.sequence([waveAttackAnimation, realRepeatAction])
+        self.runAction(finalSequence)
         let lengthOfTop = self.parent!.frame.maxY - gapPosition.y + 25
         self.parent!.addChild(WaveNode.waveAtPosition(CGPointMake(gapPosition.x, gapPosition.y + (lengthOfTop)/2), length: lengthOfTop, distance: self.parent!.frame.maxX + 50))
         let lengthOfBot = gapPosition.y - 25
