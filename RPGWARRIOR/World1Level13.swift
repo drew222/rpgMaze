@@ -39,14 +39,18 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
         theHero!.setScale(0.6)
         self.addChild(theHero!)
         wavePositions = [
-            CGPointMake(-20, 150),
-            CGPointMake(self.frame.maxX + 20, 250),
-            CGPointMake(-20, 150),
-            CGPointMake(self.frame.maxX + 20, 250),
-            CGPointMake(-20, 400),
-            CGPointMake(self.frame.maxX + 20, 500),
-            CGPointMake(-20, 400),
-            CGPointMake(self.frame.maxX + 20, 500)]
+            CGPointMake(-20, 100),
+            CGPointMake(self.frame.maxX + 20, 200),
+            CGPointMake(-20, 300),
+            CGPointMake(self.frame.maxX + 20, 400),
+            CGPointMake(-20, 300),
+            CGPointMake(self.frame.maxX + 20, 200),
+            CGPointMake(-20, 100),
+            CGPointMake(self.frame.maxX + 20, 200),
+            CGPointMake(-20, 300),
+            CGPointMake(self.frame.maxX + 20, 400),
+            CGPointMake(-20, 500),
+            CGPointMake(self.frame.maxX + 20, 600)]
         lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
         lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
         lifeNode!.fontColor = UIColor.redColor()
@@ -67,28 +71,7 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
         //*****REGENE CODE****
         maxLife = theHero!.life!
         //********************
-        
-        //middle
-        for (var i = 20; i < Int(self.frame.maxX) - 20; i += 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY)))
-        }
-        
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, 20)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, 20)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, 70)))
-        
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 70, self.frame.maxY - 20)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 70, self.frame.maxY - 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 70, self.frame.maxY - 20)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 70, self.frame.maxY - 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.maxY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.maxY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.maxY - 100)))
-        
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(50, 200), endPosition: CGPointMake(self.frame.maxX - 50, 200)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(50, 450), endPosition: CGPointMake(self.frame.maxX - 50, 450)))
+    
         
     }
     
@@ -101,18 +84,6 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
         }else{
             firstBody = contact.bodyB
             secondBody = contact.bodyA
-        }
-        //HERO VS SEASHELL
-        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                let mine = secondBody.node as? MineNode
-                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
-        }
-        //HERO VS CRAB
-        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
-                let mine = secondBody.node as? MiniCrab
-                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
         }
         //HERO VS WAVE
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
@@ -152,6 +123,8 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
             if whichWave == wavePositions!.count {
                 whichWave = 0
             }
+            theWhale!.throwWave(wavePositions![whichWave])
+            whichWave += 1
             theWhale!.throwWave(wavePositions![whichWave])
             whichWave += 1
         }

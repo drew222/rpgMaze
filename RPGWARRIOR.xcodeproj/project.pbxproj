@@ -591,6 +591,7 @@
 				EE3D36511ACFA57B002A27B8 /* World1Level10.swift */,
 				DC4A442D1ACDF79D00BE81D8 /* World1Level12.swift */,
 				DC4A443F1AD064A800BE81D8 /* World1Level13.swift */,
+				DC4A44411AD071EE00BE81D8 /* World1Level14.swift */,
 				EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */,
 				EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */,
 				DC321BE41AACE497006E3F2B /* World1Level103.swift */,
@@ -608,7 +609,6 @@
 				DC1F58181A88735300B5027B /* LightParticle.sks */,
 				2FC73DE01A912B690068A2FB /* BlizzParticle.sks */,
 				DC1F58191A88735300B5027B /* spark.png */,
-				DC4A44411AD071EE00BE81D8 /* World1Level14.swift */,
 			);
 			path = RPGWARRIOR;
 			sourceTree = "<group>";
