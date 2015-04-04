@@ -44,7 +44,7 @@ class World1Level3: SKScene, SKPhysicsContactDelegate {
         theHero!.updateStats()
         //self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 100, self.frame.midY)))
         //add bot horizontal row
-        for (var i = 20; i < self.frame.maxX - 70; i += 20){
+        for (var i = 20; i < Int(self.frame.maxX - 70); i += 20){
             self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + i, self.frame.minY + 50)))
         }
         //self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, self.frame.minY + 50)))
