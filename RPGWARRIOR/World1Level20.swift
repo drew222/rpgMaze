@@ -35,7 +35,7 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.1))
+        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
         wavePositions = [CGPointMake(-20, self.frame.minY + 200), CGPointMake(self.frame.maxX + 20, self.frame.minY + 400), CGPointMake(-20, self.frame.minY + 600)]
