@@ -42,9 +42,15 @@ class World1Level4: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
         self.addChild(background)
         theHero!.updateStats()
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 10, self.frame.midY + 50), endPosition: CGPointMake(self.frame.maxX - 10, self.frame.midY + 105)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 100, self.frame.midY + 195), endPosition: CGPointMake(self.frame.minX + 100, self.frame.midY)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, self.frame.midY + 100), endPosition: CGPointMake(self.frame.minX + 10, self.frame.midY - 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 150), endPosition: CGPointMake(10, 150)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 200), endPosition: CGPointMake(self.frame.maxX - 10, 200)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 250), endPosition: CGPointMake(10, 250)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 300), endPosition: CGPointMake(self.frame.maxX - 10, 300)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 350), endPosition: CGPointMake(10, 350)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 400), endPosition: CGPointMake(self.frame.maxX - 10, 400)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 450), endPosition: CGPointMake(10, 450)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 500), endPosition: CGPointMake(self.frame.maxX - 10, 500)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 550), endPosition: CGPointMake(10, 550)))
         
     }
     
