@@ -28,7 +28,7 @@ class World1Level7: SKScene, SKPhysicsContactDelegate {
     let levelName = "world1level7"
     var droppedItem = false
     
-    let bomberAttackSpeed = 2.0
+    let bomberAttackSpeed = 1.0
     
     var theBomber: BomberClass?
     var theHero: HeroClass?
@@ -51,6 +51,7 @@ class World1Level7: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
         self.addChild(background)
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 50, self.frame.midY), endPosition: CGPointMake(self.frame.maxX - 50, self.frame.midY + 30)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 50, self.frame.midY + 60), endPosition: CGPointMake(50, self.frame.midY + 90)))
         theHero!.updateStats()
         
     }
