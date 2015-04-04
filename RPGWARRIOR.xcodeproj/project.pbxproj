@@ -583,14 +583,13 @@
 				DCE69C4D1AB4A04C003561E6 /* World1Level6.swift */,
 				DCE69C4F1AB507CB003561E6 /* World1Level7.swift */,
 				DC4A443D1ACFA47400BE81D8 /* World1Level8.swift */,
-				DCE69C511AB604F2003561E6 /* World1Level108.swift */,
-				DCE69C511AB604F2003561E6 /* World1Level8.swift */,
 				EE3D364F1ACFA0ED002A27B8 /* World1Level9.swift */,
 				EE3D36511ACFA57B002A27B8 /* World1Level10.swift */,
 				DC4A442D1ACDF79D00BE81D8 /* World1Level15.swift */,
 				EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */,
 				EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */,
 				DC321BE41AACE497006E3F2B /* World1Level103.swift */,
+				DCE69C511AB604F2003561E6 /* World1Level108.swift */,
 				DC27113D1A85E1AB00986D2E /* GameScene.swift */,
 				DCC4E3781A8EEE59000E5E89 /* StoreScene.swift */,
 				DC1F580E1A886BB100B5027B /* Level2Scene.swift */,
@@ -1135,12 +1134,9 @@
 			files = (
 				DCC4E3021A89760E000E5E89 /* Inventory.swift in Sources */,
 				DCC4E37B1A94EDED000E5E89 /* Block.swift in Sources */,
-<<<<<<< HEAD
 				EE3D36521ACFA57B002A27B8 /* World1Level10.swift in Sources */,
 				DCE69C521AB604F2003561E6 /* World1Level8.swift in Sources */,
-=======
-				DCE69C521AB604F2003561E6 /* World1Level108.swift in Sources */,
->>>>>>> origin/master
+				/*DCE69C521AB604F2003561E6  World1Level108.swift in Sources ,*/
 				2F62CE561A89C21000046DA7 /* MineNode.swift in Sources */,
 				DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */,
 				2FC73DE31A912CAA0068A2FB /* BlizzNode.swift in Sources */,
