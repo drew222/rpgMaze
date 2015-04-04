@@ -41,6 +41,43 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
         self.addChild(background)
         theHero!.updateStats()
         
+        //add bot horizontal row
+        for (var i = 20; i < Int(self.frame.maxX - 50); i += 40){
+            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i),  100)))
+        }
+        //add second row
+        //for (var i = Int(self.frame.maxX - 75); i > 50; i -= 40){
+            //self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), 180)))
+        //}
+        //add top row
+        for (var i = 75; i < Int(self.frame.maxX); i += 40){
+            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 100)))
+        }
+        //top right column
+        for (var i = Int(self.frame.maxY) - 210; i > 100; i -= 40){
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 60, CGFloat(i))))
+        }
+        //bot left column
+        for (var i = 210; i < Int(self.frame.maxY) - 100; i += 40){
+            self.addChild(MineNode.mineAtPos(CGPointMake(60, CGFloat(i))))
+        }
+        //middle top horizontal row
+        for (var i = 75; i < Int(self.frame.maxX - 115); i += 40){
+            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 165)))
+        }
+        //third row
+        for (var i = Int(self.frame.maxX - 115); i > 115; i -= 40){
+            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), 180)))
+        }
+        //mid right column
+        for (var i = Int(self.frame.maxY) - 200; i > 310; i -= 40){
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 140, CGFloat(i))))
+        }
+        //mid left column
+        for (var i = 290; i < Int(self.frame.maxY) - 220; i += 40){
+            self.addChild(MineNode.mineAtPos(CGPointMake(140, CGFloat(i))))
+        }
+        
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
