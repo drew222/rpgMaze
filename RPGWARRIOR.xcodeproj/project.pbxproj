@@ -580,13 +580,10 @@
 				DCE69C4B1AB49A7E003561E6 /* World1Level5.swift */,
 				DCE69C4D1AB4A04C003561E6 /* World1Level6.swift */,
 				DCE69C4F1AB507CB003561E6 /* World1Level7.swift */,
-<<<<<<< HEAD
 				DC4A443D1ACFA47400BE81D8 /* World1Level8.swift */,
 				DCE69C511AB604F2003561E6 /* World1Level108.swift */,
-=======
 				DCE69C511AB604F2003561E6 /* World1Level8.swift */,
 				EE3D364F1ACFA0ED002A27B8 /* World1Level9.swift */,
->>>>>>> origin/master
 				DC4A442D1ACDF79D00BE81D8 /* World1Level15.swift */,
 				EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */,
 				EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */,
