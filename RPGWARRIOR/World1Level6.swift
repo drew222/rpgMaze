@@ -31,12 +31,12 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
-    var lastFireball: Double = 0.0
+    var lastBomb: Double = 0.0
     var levelOver = false
-    let levelName = "world1level6"
+    let levelName = "World1Level6"
     var droppedItem = false
     
-    let wizardAttackSpeed = 1.0
+    let bomberAttackSpeed = 1.0
     
     var theBomber: BomberClass?
     var theHero: HeroClass?
@@ -58,15 +58,6 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
         self.addChild(background)
         theHero!.updateStats()
-        //crabs
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 20, self.frame.midY - 50), endPosition: CGPointMake(self.frame.maxX - 10, self.frame.midY + 105)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.minX + 20, self.frame.midY - 100)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX, self.frame.midY), endPosition: CGPointMake(self.frame.minX + 20, self.frame.midY + 100)))
-        //shells
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.midY + 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.midY - 80)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 150, self.frame.midY + 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY - 100)))
         
     }
     
@@ -80,16 +71,12 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        //HERO VS SEASHELL
-        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
-                let mine = secondBody.node as? MiniCrab
-                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
-        }else  if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                let mine = secondBody.node as? MineNode
-                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
-        }
+        //HERO VS FIRE
+        // if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+        //   secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
+        //       let aHero = self.childNodeWithName("hero") as HeroClass
+        //      aHero.takeDamage(1)
+        //}
         //HERO VS WIZARD
         //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
         //secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWizard.rawValue){
@@ -101,64 +88,40 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as HeroClass
-        let aBomber = self.childNodeWithName("bomber") as BomberClass
         for touch in touches{
-            //stop when mouse comes in contact hero
-            //let theSpot = spotToStop(aHero, touch.locationInNode(self))
-            //if theSpot != aHero.position{
-            //aHero.moveTo(theSpot)
-            // if (aWizard.containsPoint(touch.locationInNode(self))){
-            //  if (distanceBetween(aWizard.position, aHero.position) < 10){
-            //      aHero.attack()
-            //  }
-            //}
             aHero.moveHelper(touch.locationInNode(self))
         }
     }
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        //println("current time: \(currentTime)")
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
-            self.lastFireball = currentTime
+            self.lastBomb = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
+        if currentTime - lastBomb  > bomberAttackSpeed{
+            self.lastBomb = currentTime
+            theBomber!.throwBomb()
+        }
         
         self.lastUpdatesTime = currentTime
         
         //check for win condition
         if (theBomber!.isDead || theHero!.life <= 0) && !levelOver{
-            //parent of self is viewcontroller, has view, extends sknode
-            //if (theHero!.life == 0){
-            //   let deathNode = SKLabelNode.init(text: "You died, try again!")
-            //   deathNode.position = CGPointMake(self.frame.midX, self.frame.midY)
-            //   self.addChild(deathNode)
-            // }else if (theBomber!.isDead){
-            //   let winNode = SKLabelNode.init(text: "You win, congratulations!")
-            //   winNode.position = CGPointMake(self.frame.midX, self.frame.midY)
-            //   self.addChild(winNode)
-            // }
             if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
-                //let menuScene = MainMenuScene(size: self.frame.size)
-                //println("got here111")
-                //(self.userData?.objectForKey("menu") as MainMenuScene).userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
-                //println("got here222")
-                //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
                 let skTransition = SKTransition.fadeWithDuration(5.0)
-                //let gameScene = self.userData?.objectForKey("menu") as MainMenuScene
                 self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil){
                 if theBomber!.isDead{
-                    dropLoot("world1level6", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    dropLoot("World1Level6", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }
         }
     }
 }
-
-
-

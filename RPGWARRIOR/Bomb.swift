@@ -46,7 +46,7 @@ class Bomb: SKSpriteNode {
     
     
     func explode(position: CGPoint){
-        let waitAction = SKAction.waitForDuration(NSTimeInterval(1))
+        let waitAction = SKAction.waitForDuration(NSTimeInterval(0.7))
         var liteAttack: SKEmitterNode?
         let explodeCode = SKAction.runBlock({let litePath = NSBundle.mainBundle().pathForResource("LightParticle", ofType: "sks")
             liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as SKEmitterNode)

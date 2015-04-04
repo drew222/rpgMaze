@@ -54,6 +54,9 @@ class BomberClass: SKSpriteNode {
         //generate random x and y within a range of the hero
         let xRange = abs(self.position.x - heroPosition.x)
         let yRange = abs(self.position.y - heroPosition.y)
+        if (xRange == 0 || yRange == 0){
+            return CGPointMake(heroPosition.x, heroPosition.y + 80)
+        }
         let lowerXDiff = round(xRange * 0.45)
         let lowerYDiff = round(yRange * 0.45)
         let upperXDiff = round(xRange * 1)
