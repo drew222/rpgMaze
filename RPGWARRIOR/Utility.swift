@@ -47,6 +47,9 @@ let allStoreItems = ["Shades_1", "Coral_Crown_1", "Crab_Claw_Cap_1", "Seaweed_Mu
 
 
 func randomWithMin(min: Int, max: Int) -> NSInteger{
+    if min == max{
+        return min as NSInteger
+    }
     let myNum = random() % (max - min) + min as NSInteger
     return myNum
 }

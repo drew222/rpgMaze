@@ -10,14 +10,14 @@ import SpriteKit
 
 //import AVFoundation
 
-class World1Level15: SKScene, SKPhysicsContactDelegate {
+class World1Level12: SKScene, SKPhysicsContactDelegate {
     
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
     var lastWave: Double = 0.0
     var levelOver = false
-    let levelName = "world1level15"
+    let levelName = "world1level12"
     var droppedItem = false
     //REGEN CODE******
     var lastHeal: Double = 0.0
@@ -59,6 +59,7 @@ class World1Level15: SKScene, SKPhysicsContactDelegate {
         //*****REGENE CODE****
         maxLife = theHero!.life!
         //********************
+        /*
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.midY + 50)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.midY - 50)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.midY + 75)))
@@ -67,6 +68,7 @@ class World1Level15: SKScene, SKPhysicsContactDelegate {
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 200, self.frame.midY)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 200, self.frame.midY - 100)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY - 150)))
+        */
         
     }
     
@@ -140,7 +142,7 @@ class World1Level15: SKScene, SKPhysicsContactDelegate {
             }
             else if (self.childNodeWithName("item") == nil){
                 if theWhale!.isDead{
-                    dropLoot("world1level15", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    dropLoot("world1level12", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }
