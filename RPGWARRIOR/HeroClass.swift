@@ -41,7 +41,7 @@ class HeroClass: SKSpriteNode {
     
     
     func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.width * 0.90, self.frame.height * 0.90))
+        self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.width * 0.80, self.frame.height * 0.80))
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.dynamic = true
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryHero.rawValue

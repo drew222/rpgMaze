@@ -34,7 +34,7 @@ class MineNode: SKSpriteNode {
         self.runAction(repeatAction)
     }
     func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
+        self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.width * 0.80, self.frame.height * 0.80))
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategorySeashell.rawValue
         self.physicsBody?.collisionBitMask = 0
