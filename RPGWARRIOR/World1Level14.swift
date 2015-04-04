@@ -108,10 +108,16 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
                 let mine = secondBody.node as? MineNode
                 mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
         }
+        //HERO VS CRAB
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
+                let mine = secondBody.node as? MiniCrab
+                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+        }
         //HERO VS WAVE
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
-                theHero!.takeDamage(3)
+                theHero!.takeDamage(5)
         }
     }
     

@@ -25,7 +25,7 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
     var lifeNode: SKLabelNode?
     var maxLife: CGFloat = 0.0
     //*****************
-    let whaleAttackSpeed = 2.0
+    let whaleAttackSpeed = 3.0
     var whichWave = 0
     var wavePositions: [CGPoint]?
     
@@ -88,7 +88,7 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
         //HERO VS WAVE
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
-                theHero!.takeDamage(3)
+                theHero!.takeDamage(5)
         }
     }
     
