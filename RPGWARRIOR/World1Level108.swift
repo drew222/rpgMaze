@@ -2,7 +2,15 @@
 //  World1Level8.swift
 //  RPGWARRIOR
 //
-//  Created by Drew Zoellner on 4/3/15.
+//  Created by Drew Zoellner on 3/15/15.
+//  Copyright (c) 2015 Drew Zoellner. All rights reserved.
+//
+
+//
+//  GameScene.swift
+//  TestRpgGame
+//
+//  Created by Drew Zoellner on 1/26/15.
 //  Copyright (c) 2015 Drew Zoellner. All rights reserved.
 //
 
@@ -10,19 +18,20 @@ import SpriteKit
 
 //import AVFoundation
 
-class World1Level8: SKScene, SKPhysicsContactDelegate {
+class World1Level108: SKScene, SKPhysicsContactDelegate {
     
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
-    var lastBomb: Double = 0.0
+    var lastFireball: Double = 0.0
     var levelOver = false
-    let levelName = "world1level8"
+    let levelName = "world1level108"
     var droppedItem = false
     
-    let bomberAttackSpeed = 1.0
+    //larger attack speed, slower attack
+    let wizardAttackSpeed = 1.4
     
-    var theBomber: BomberClass?
+    var theWizard: WizardClass?
     var theHero: HeroClass?
     
     override func didMoveToView(view: SKView) {
@@ -30,20 +39,14 @@ class World1Level8: SKScene, SKPhysicsContactDelegate {
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
-        theBomber = BomberClass.makeBomber(CGPointMake(self.frame.midX, self.frame.maxY - 50))
-        theBomber!.attackSpeed = 1.5
-        self.addChild(theBomber!)
-        //the below constraints did nothing
-        //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
-        //ourHero.constraints = [distanceConstraint]
+        theWizard = WizardClass.makeWizard(CGPointMake(self.frame.midX, self.frame.maxY - 50))
+        self.addChild(theWizard!)
         let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         background.zPosition = -1
         self.physicsWorld.contactDelegate = self
         self.addChild(background)
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 50, self.frame.midY - 30), endPosition: CGPointMake(self.frame.maxX - 50, self.frame.midY + 90)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 50, self.frame.midY - 100), endPosition: CGPointMake(50, self.frame.midY - 200)))
         theHero!.updateStats()
         
     }
@@ -58,29 +61,19 @@ class World1Level8: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        
-        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
-                let mine = secondBody.node as? MiniCrab
-                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
-        }
         //HERO VS FIRE
-        // if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-        //   secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
-        //       let aHero = self.childNodeWithName("hero") as HeroClass
-        //      aHero.takeDamage(1)
-        //}
-        //HERO VS WIZARD
-        //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-        //secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWizard.rawValue){
-        //let aHero = self.childNodeWithName("hero") as HeroClass
-        //aHero.attack()
-        //}
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
+                let aHero = self.childNodeWithName("hero") as HeroClass
+                aHero.takeDamage(1)
+                secondBody.node!.removeFromParent()
+        }
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as HeroClass
+        let aWizard = self.childNodeWithName("wizard") as WizardClass
         for touch in touches{
             aHero.moveHelper(touch.locationInNode(self))
         }
@@ -88,33 +81,33 @@ class World1Level8: SKScene, SKPhysicsContactDelegate {
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
-        //println("current time: \(currentTime)")
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
-            self.lastBomb = currentTime
+            self.lastFireball = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastBomb  > bomberAttackSpeed{
-            self.lastBomb = currentTime
-            theBomber!.throwBomb()
+        if currentTime - lastFireball  > wizardAttackSpeed{
+            self.lastFireball = currentTime
+            theWizard!.shootFireball()
         }
         
         self.lastUpdatesTime = currentTime
         
         //check for win condition
-        if (theBomber!.isDead || theHero!.life <= 0) && !levelOver{
+        if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
             if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
                 let skTransition = SKTransition.fadeWithDuration(5.0)
                 self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil){
-                if theBomber!.isDead{
-                    dropLoot("world1level8", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                if theWizard!.isDead{
+                    dropLoot("world1level108", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }
         }
     }
 }
+

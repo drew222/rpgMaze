@@ -47,6 +47,7 @@
 		DC4A44381ACE197E00BE81D8 /* Wave_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4A44371ACE197E00BE81D8 /* Wave_2.png */; };
 		DC4A443A1ACE198200BE81D8 /* Wave_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4A44391ACE198200BE81D8 /* Wave_3.png */; };
 		DC4A443C1ACF672200BE81D8 /* World1Level3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A443B1ACF672200BE81D8 /* World1Level3.swift */; };
+		DC4A443E1ACFA47400BE81D8 /* World1Level8.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A443D1ACFA47400BE81D8 /* World1Level8.swift */; };
 		DCC4E3021A89760E000E5E89 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3011A89760E000E5E89 /* Inventory.swift */; };
 		DCC4E3041A897671000E5E89 /* ItemSpaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */; };
 		DCC4E3061A8976AB000E5E89 /* ItemClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3051A8976AB000E5E89 /* ItemClass.swift */; };
@@ -57,7 +58,7 @@
 		DCE69C4C1AB49A7E003561E6 /* World1Level5.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C4B1AB49A7E003561E6 /* World1Level5.swift */; };
 		DCE69C4E1AB4A04C003561E6 /* World1Level6.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C4D1AB4A04C003561E6 /* World1Level6.swift */; };
 		DCE69C501AB507CB003561E6 /* World1Level7.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C4F1AB507CB003561E6 /* World1Level7.swift */; };
-		DCE69C521AB604F2003561E6 /* World1Level8.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C511AB604F2003561E6 /* World1Level8.swift */; };
+		DCE69C521AB604F2003561E6 /* World1Level108.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C511AB604F2003561E6 /* World1Level108.swift */; };
 		DCE69E5F1AC9F18D003561E6 /* Beach_Background_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69DA91AC9F18D003561E6 /* Beach_Background_1.png */; };
 		DCE69E601AC9F18D003561E6 /* Beach_Ball_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69DAA1AC9F18D003561E6 /* Beach_Ball_1.png */; };
 		DCE69E611AC9F18D003561E6 /* Beach_Ball_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE69DAB1AC9F18D003561E6 /* Beach_Ball_2.png */; };
@@ -307,6 +308,7 @@
 		DC4A44371ACE197E00BE81D8 /* Wave_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wave_2.png; sourceTree = "<group>"; };
 		DC4A44391ACE198200BE81D8 /* Wave_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wave_3.png; sourceTree = "<group>"; };
 		DC4A443B1ACF672200BE81D8 /* World1Level3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level3.swift; sourceTree = "<group>"; };
+		DC4A443D1ACFA47400BE81D8 /* World1Level8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level8.swift; sourceTree = "<group>"; };
 		DCC4E3011A89760E000E5E89 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSpaceNode.swift; sourceTree = "<group>"; };
 		DCC4E3051A8976AB000E5E89 /* ItemClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemClass.swift; sourceTree = "<group>"; };
@@ -317,7 +319,7 @@
 		DCE69C4B1AB49A7E003561E6 /* World1Level5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = World1Level5.swift; path = Rpg12/World1Level5.swift; sourceTree = "<group>"; };
 		DCE69C4D1AB4A04C003561E6 /* World1Level6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level6.swift; sourceTree = "<group>"; };
 		DCE69C4F1AB507CB003561E6 /* World1Level7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level7.swift; sourceTree = "<group>"; };
-		DCE69C511AB604F2003561E6 /* World1Level8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level8.swift; sourceTree = "<group>"; };
+		DCE69C511AB604F2003561E6 /* World1Level108.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level108.swift; sourceTree = "<group>"; };
 		DCE69DA91AC9F18D003561E6 /* Beach_Background_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Beach_Background_1.png; sourceTree = "<group>"; };
 		DCE69DAA1AC9F18D003561E6 /* Beach_Ball_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Beach_Ball_1.png; sourceTree = "<group>"; };
 		DCE69DAB1AC9F18D003561E6 /* Beach_Ball_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Beach_Ball_2.png; sourceTree = "<group>"; };
@@ -580,6 +582,8 @@
 				DCE69C4B1AB49A7E003561E6 /* World1Level5.swift */,
 				DCE69C4D1AB4A04C003561E6 /* World1Level6.swift */,
 				DCE69C4F1AB507CB003561E6 /* World1Level7.swift */,
+				DC4A443D1ACFA47400BE81D8 /* World1Level8.swift */,
+				DCE69C511AB604F2003561E6 /* World1Level108.swift */,
 				DCE69C511AB604F2003561E6 /* World1Level8.swift */,
 				EE3D364F1ACFA0ED002A27B8 /* World1Level9.swift */,
 				EE3D36511ACFA57B002A27B8 /* World1Level10.swift */,
@@ -1131,8 +1135,12 @@
 			files = (
 				DCC4E3021A89760E000E5E89 /* Inventory.swift in Sources */,
 				DCC4E37B1A94EDED000E5E89 /* Block.swift in Sources */,
+<<<<<<< HEAD
 				EE3D36521ACFA57B002A27B8 /* World1Level10.swift in Sources */,
 				DCE69C521AB604F2003561E6 /* World1Level8.swift in Sources */,
+=======
+				DCE69C521AB604F2003561E6 /* World1Level108.swift in Sources */,
+>>>>>>> origin/master
 				2F62CE561A89C21000046DA7 /* MineNode.swift in Sources */,
 				DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */,
 				2FC73DE31A912CAA0068A2FB /* BlizzNode.swift in Sources */,
@@ -1161,6 +1169,7 @@
 				DC1F57C11A88087500B5027B /* AppDelegate.swift in Sources */,
 				DC321D731AAE3A0E006E3F2B /* ZoneScene.swift in Sources */,
 				DC4A443C1ACF672200BE81D8 /* World1Level3.swift in Sources */,
+				DC4A443E1ACFA47400BE81D8 /* World1Level8.swift in Sources */,
 				DCC4E3791A8EEE59000E5E89 /* StoreScene.swift in Sources */,
 				DCE69C4E1AB4A04C003561E6 /* World1Level6.swift in Sources */,
 				DC4A442C1ACDE6CF00BE81D8 /* WhaleBoss.swift in Sources */,
