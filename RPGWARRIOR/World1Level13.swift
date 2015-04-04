@@ -1,8 +1,8 @@
 //
-//  World1Level15.swift
+//  World1Level13.swift
 //  RPGWARRIOR
 //
-//  Created by Drew Zoellner on 4/2/15.
+//  Created by Drew Zoellner on 4/4/15.
 //  Copyright (c) 2015 Drew Zoellner. All rights reserved.
 //
 
@@ -10,14 +10,14 @@ import SpriteKit
 
 //import AVFoundation
 
-class World1Level12: SKScene, SKPhysicsContactDelegate {
+class World1Level13: SKScene, SKPhysicsContactDelegate {
     
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
     var lastWave: Double = 0.0
     var levelOver = false
-    let levelName = "world1level12"
+    let levelName = "world1level13"
     var droppedItem = false
     //REGEN CODE******
     var lastHeal: Double = 0.0
@@ -39,12 +39,12 @@ class World1Level12: SKScene, SKPhysicsContactDelegate {
         theHero!.setScale(0.6)
         self.addChild(theHero!)
         wavePositions = [
-            CGPointMake(-20, 300),
-            CGPointMake(self.frame.maxX + 20, 200),
-            CGPointMake(-20, 350),
-            CGPointMake(self.frame.maxX + 20, 150),
-            CGPointMake(-20, 200),
-            CGPointMake(self.frame.maxX + 20, 300),
+            CGPointMake(-20, 150),
+            CGPointMake(self.frame.maxX + 20, 250),
+            CGPointMake(-20, 150),
+            CGPointMake(self.frame.maxX + 20, 250),
+            CGPointMake(-20, 400),
+            CGPointMake(self.frame.maxX + 20, 500),
             CGPointMake(-20, 400),
             CGPointMake(self.frame.maxX + 20, 500)]
         lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
@@ -67,16 +67,25 @@ class World1Level12: SKScene, SKPhysicsContactDelegate {
         //*****REGENE CODE****
         maxLife = theHero!.life!
         //********************
-        /*
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.midY + 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.midY - 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.midY + 75)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 75, self.frame.midY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 200, self.frame.midY)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 200, self.frame.midY)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 200, self.frame.midY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY - 150)))
-        */
+        
+        //middle
+        for (var i = 20; i < Int(self.frame.maxX) - 20; i += 40){
+            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY)))
+        }
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, 20)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, 20)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, 70)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 70, self.frame.maxY - 20)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 70, self.frame.maxY - 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 70, self.frame.maxY - 20)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 70, self.frame.maxY - 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.maxY - 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.maxY - 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.maxY - 100)))
         
     }
     
@@ -151,7 +160,7 @@ class World1Level12: SKScene, SKPhysicsContactDelegate {
             }
             else if (self.childNodeWithName("item") == nil){
                 if theWhale!.isDead{
-                    dropLoot("world1level12", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    dropLoot("world1level13", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }

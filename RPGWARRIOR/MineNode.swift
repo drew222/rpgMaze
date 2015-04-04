@@ -64,7 +64,7 @@ class MineNode: SKSpriteNode {
             //if distanceFromMine < 25{
             let theHero = self.parent!.childNodeWithName("hero")! as HeroClass
             println("distance from bomb = \(distanceFromMine)")
-            theHero.takeDamage(1.0)
+            theHero.takeDamage(3.0)
             //}
         })
         let sequence = SKAction.sequence([explodeCode, damageBlock, SKAction.waitForDuration(0.3), removeBlock])

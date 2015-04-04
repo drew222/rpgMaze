@@ -48,6 +48,8 @@
 		DC4A443A1ACE198200BE81D8 /* Wave_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC4A44391ACE198200BE81D8 /* Wave_3.png */; };
 		DC4A443C1ACF672200BE81D8 /* World1Level3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A443B1ACF672200BE81D8 /* World1Level3.swift */; };
 		DC4A443E1ACFA47400BE81D8 /* World1Level8.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A443D1ACFA47400BE81D8 /* World1Level8.swift */; };
+		DC4A44401AD064A800BE81D8 /* World1Level13.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A443F1AD064A800BE81D8 /* World1Level13.swift */; };
+		DC4A44421AD071EE00BE81D8 /* World1Level14.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A44411AD071EE00BE81D8 /* World1Level14.swift */; };
 		DCC4E3021A89760E000E5E89 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3011A89760E000E5E89 /* Inventory.swift */; };
 		DCC4E3041A897671000E5E89 /* ItemSpaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */; };
 		DCC4E3061A8976AB000E5E89 /* ItemClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3051A8976AB000E5E89 /* ItemClass.swift */; };
@@ -309,6 +311,8 @@
 		DC4A44391ACE198200BE81D8 /* Wave_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wave_3.png; sourceTree = "<group>"; };
 		DC4A443B1ACF672200BE81D8 /* World1Level3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level3.swift; sourceTree = "<group>"; };
 		DC4A443D1ACFA47400BE81D8 /* World1Level8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level8.swift; sourceTree = "<group>"; };
+		DC4A443F1AD064A800BE81D8 /* World1Level13.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level13.swift; sourceTree = "<group>"; };
+		DC4A44411AD071EE00BE81D8 /* World1Level14.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level14.swift; sourceTree = "<group>"; };
 		DCC4E3011A89760E000E5E89 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSpaceNode.swift; sourceTree = "<group>"; };
 		DCC4E3051A8976AB000E5E89 /* ItemClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemClass.swift; sourceTree = "<group>"; };
@@ -586,6 +590,7 @@
 				EE3D364F1ACFA0ED002A27B8 /* World1Level9.swift */,
 				EE3D36511ACFA57B002A27B8 /* World1Level10.swift */,
 				DC4A442D1ACDF79D00BE81D8 /* World1Level12.swift */,
+				DC4A443F1AD064A800BE81D8 /* World1Level13.swift */,
 				EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */,
 				EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */,
 				DC321BE41AACE497006E3F2B /* World1Level103.swift */,
@@ -603,6 +608,7 @@
 				DC1F58181A88735300B5027B /* LightParticle.sks */,
 				2FC73DE01A912B690068A2FB /* BlizzParticle.sks */,
 				DC1F58191A88735300B5027B /* spark.png */,
+				DC4A44411AD071EE00BE81D8 /* World1Level14.swift */,
 			);
 			path = RPGWARRIOR;
 			sourceTree = "<group>";
@@ -1136,6 +1142,7 @@
 				DCC4E37B1A94EDED000E5E89 /* Block.swift in Sources */,
 				EE3D36521ACFA57B002A27B8 /* World1Level10.swift in Sources */,
 				DCE69C521AB604F2003561E6 /* World1Level108.swift in Sources */,
+				DC4A44421AD071EE00BE81D8 /* World1Level14.swift in Sources */,
 				2F62CE561A89C21000046DA7 /* MineNode.swift in Sources */,
 				DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */,
 				2FC73DE31A912CAA0068A2FB /* BlizzNode.swift in Sources */,
@@ -1157,6 +1164,7 @@
 				EE3D364C1ACE1DE4002A27B8 /* World1Level20.swift in Sources */,
 				DCC4E3061A8976AB000E5E89 /* ItemClass.swift in Sources */,
 				DCE69C4A1AB4813A003561E6 /* World1Level4.swift in Sources */,
+				DC4A44401AD064A800BE81D8 /* World1Level13.swift in Sources */,
 				DC27113E1A85E1AB00986D2E /* GameScene.swift in Sources */,
 				DC321BE51AACE497006E3F2B /* World1Level103.swift in Sources */,
 				2F62CE571A89C21000046DA7 /* MineThrowerNode.swift in Sources */,

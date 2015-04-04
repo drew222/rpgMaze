@@ -37,7 +37,7 @@ class WaveNode: SKSpriteNode {
             xPosition = position.x - distance
         }
         //WAVESPEED IS 120***
-        let time = NSTimeInterval(distance / CGFloat(120))
+        let time = NSTimeInterval(distance / CGFloat(150))
         let moveToAction = SKAction.moveTo(CGPointMake(xPosition, position.y), duration: time)
         let codeBlock = SKAction.runBlock({wave.removeFromParent()})
         let sequence = SKAction.sequence([moveToAction, codeBlock])
