@@ -257,6 +257,7 @@
 		EEB7AB061AD0E4DE00064D9C /* World1Level19.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB051AD0E4DE00064D9C /* World1Level19.swift */; };
 		EEB7AB081AD0F27600064D9C /* World1Level15.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB071AD0F27600064D9C /* World1Level15.swift */; };
 		EEB7AB0A1AD0FED000064D9C /* World1Level16.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB091AD0FED000064D9C /* World1Level16.swift */; };
+		EEF8559A1AD1D8F000112A59 /* World1Level28.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF855991AD1D8F000112A59 /* World1Level28.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -524,6 +525,7 @@
 		EEB7AB051AD0E4DE00064D9C /* World1Level19.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level19.swift; sourceTree = "<group>"; };
 		EEB7AB071AD0F27600064D9C /* World1Level15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level15.swift; sourceTree = "<group>"; };
 		EEB7AB091AD0FED000064D9C /* World1Level16.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level16.swift; sourceTree = "<group>"; };
+		EEF855991AD1D8F000112A59 /* World1Level28.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level28.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -606,6 +608,7 @@
 				EEB7AB051AD0E4DE00064D9C /* World1Level19.swift */,
 				EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */,
 				EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */,
+				EEF855991AD1D8F000112A59 /* World1Level28.swift */,
 				DC321BE41AACE497006E3F2B /* World1Level103.swift */,
 				DCE69C511AB604F2003561E6 /* World1Level108.swift */,
 				DC27113D1A85E1AB00986D2E /* GameScene.swift */,
@@ -1195,6 +1198,7 @@
 				DC2711441A85E1DE00986D2E /* WizardClass.swift in Sources */,
 				DC1F58131A88703500B5027B /* Bomb.swift in Sources */,
 				DC321BE11AACD471006E3F2B /* World1Level1.swift in Sources */,
+				EEF8559A1AD1D8F000112A59 /* World1Level28.swift in Sources */,
 				DCC4E30A1A8DB082000E5E89 /* level5Scene.swift in Sources */,
 				DC1F580D1A882D3200B5027B /* MainMenuScene.swift in Sources */,
 				DC2711481A85E26100986D2E /* GameViewController.swift in Sources */,

@@ -37,6 +37,7 @@ class MainMenuScene: SKScene {
     var world1level19node: SKLabelNode?
     var world1level20node: SKLabelNode?
     var world1level21node: SKLabelNode?
+    var world1level28node: SKLabelNode?
     
     // ##### change this for new level#####
     var firstTimeLoaded = true
@@ -225,6 +226,14 @@ class MainMenuScene: SKScene {
                 Node.name = "world1level21"
                 self.addChild(Node)
             }
+            world1level28node = SKLabelNode.init(text: "World 1 : Level 28")
+            resizeLabel(world1level28node!)
+            if let Node = world1level28node {
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 175)
+                Node.name = "world1level28"
+                self.addChild(Node)
+            }
+
             // #####change this for new level#####
         
         inventory = SKLabelNode.init(text: "Inventory")
@@ -458,6 +467,15 @@ class MainMenuScene: SKScene {
                 //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level21scene, transition: skTransition)
+                
+            }else if world1level28node!.containsPoint(touch.locationInNode(self)){
+                let world1level28scene = World1Level28(size: self.frame.size)
+                world1level28scene.userData = NSMutableDictionary()
+                world1level28scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                world1level28scene.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(world1level28scene, transition: skTransition)
                 
                 // ##### change this for new level #####
                 
