@@ -46,7 +46,7 @@ class Bomb: SKSpriteNode {
     
     
     func explode(position: CGPoint){
-        let waitAction = SKAction.waitForDuration(NSTimeInterval(0.7))
+        let waitAction = SKAction.waitForDuration(NSTimeInterval(0.8))
         var liteAttack: SKEmitterNode?
         let explodeCode = SKAction.runBlock({let litePath = NSBundle.mainBundle().pathForResource("LightParticle", ofType: "sks")
             liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as SKEmitterNode)
@@ -60,7 +60,7 @@ class Bomb: SKSpriteNode {
                                              self.removeFromParent()})
         let damageBlock = SKAction.runBlock({
             let distanceFromBomb = distanceBetween(self.parent!.childNodeWithName("hero")!.position, self.position)
-            if distanceFromBomb < 60{
+            if distanceFromBomb < 55{
             let theHero = self.parent!.childNodeWithName("hero")! as HeroClass
                 println("distance from bomb = \(distanceFromBomb)")
                 theHero.takeDamage(3.0)
