@@ -62,7 +62,7 @@ class World1Level15: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
                 let aHero = self.childNodeWithName("hero") as HeroClass
-                aHero.takeDamage(1)
+                aHero.takeDamage(3)
                 secondBody.node!.removeFromParent()
         }/* else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
         secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryBlizzard.rawValue){
