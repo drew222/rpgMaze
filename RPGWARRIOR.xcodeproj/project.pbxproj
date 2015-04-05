@@ -300,7 +300,7 @@
 		DC27114F1A86A09D00986D2E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC321BDC1AAB9D68006E3F2B /* MiniCrab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniCrab.swift; sourceTree = "<group>"; };
 		DC321BDE1AACCDBE006E3F2B /* IntroScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScene.swift; sourceTree = "<group>"; };
-		DC321BE01AACD471006E3F2B /* World1Level1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level1.swift; sourceTree = "<group>"; };
+		DC321BE01AACD471006E3F2B /* World1Level1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = World1Level1.swift; sourceTree = "<group>"; };
 		DC321BE21AACDED6006E3F2B /* World1Level2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level2.swift; sourceTree = "<group>"; };
 		DC321BE41AACE497006E3F2B /* World1Level103.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level103.swift; sourceTree = "<group>"; };
 		DC321D721AAE3A0E006E3F2B /* ZoneScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneScene.swift; sourceTree = "<group>"; };

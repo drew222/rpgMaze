@@ -12,6 +12,8 @@ import SpriteKit
 
 class World1Level28: SKScene, SKPhysicsContactDelegate {
     
+    var timeSinceCrabAdded : NSTimeInterval = 0
+    var addCrabTimeInterval : NSTimeInterval = 1.5
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
@@ -42,17 +44,9 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
         self.addChild(background)
         theHero!.updateStats()
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 150), endPosition: CGPointMake(10, 150)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 200), endPosition: CGPointMake(self.frame.maxX - 10, 200)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 250), endPosition: CGPointMake(10, 250)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 300), endPosition: CGPointMake(self.frame.maxX - 10, 300)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 350), endPosition: CGPointMake(10, 350)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 400), endPosition: CGPointMake(self.frame.maxX - 10, 400)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 450), endPosition: CGPointMake(10, 450)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 500), endPosition: CGPointMake(self.frame.maxX - 10, 500)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 550), endPosition: CGPointMake(10, 550)))
         
     }
+    
     
     func didBeginContact(contact: SKPhysicsContact) {
         var firstBody: SKPhysicsBody!
@@ -105,7 +99,19 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
+        //CRAB STAMPEDE
+        self.timeSinceCrabAdded = self.timeSinceCrabAdded + currentTime - self.lastUpdatesTime
+        
+        
+        if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver) {
+            self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX, CGFloat(randomWithMin(Int(self.frame.minY), Int(self.frame.maxY)))), endPosition: CGPointMake(self.frame.maxX + 100, self.frame.midY + 105)))
+            
+            
+            self.timeSinceCrabAdded = 0
+        }
+        
         self.lastUpdatesTime = currentTime
+        
         
         //check for win condition
         if (theBomber!.isDead || theHero!.life <= 0) && !levelOver{

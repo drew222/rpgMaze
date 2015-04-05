@@ -15,6 +15,8 @@ class MiniCrab: SKSpriteNode {
     var startPosition: CGPoint?
     var endPosition: CGPoint?
     var crabSpeed = 150
+    
+    
     class func crabAtPosition(startPos: CGPoint, endPosition: CGPoint) -> MiniCrab{
         let crab = MiniCrab(imageNamed: "Beach_Crab_1")
         crab.position = startPos
@@ -50,6 +52,43 @@ class MiniCrab: SKSpriteNode {
         return crab
         
     }
+    
+    //crab runs to location then gets removed
+    class func crabDash(startPos: CGPoint, endPosition: CGPoint) -> MiniCrab{
+        let crab = MiniCrab(imageNamed: "Beach_Crab_1")
+        crab.position = startPos
+        crab.startPosition = startPos
+        crab.name = "crab"
+        crab.endPosition = endPosition
+        crab.setScale(0.07)
+        //rotate
+        var angle = angleFromPoints(startPos, endPosition)
+        println(angle)
+        //if angle > pi + pi / 2{
+        //  angle += pi
+        //}
+        if angle != -1 {
+            //angle = angle - pi
+            if angle < 3.14 {
+                angle = angle + pi
+            }
+            if angle > pi + pi / 2{
+                angle += pi
+            }
+            crab.runAction(SKAction.rotateToAngle(angle - pi, duration: 0))
+        }
+        //animate all textures
+        let textures: [SKTexture] = [SKTexture(imageNamed: "Beach_Crab_1"), SKTexture(imageNamed: "Beach_Crab_2"), SKTexture(imageNamed: "Beach_Crab_3"), SKTexture(imageNamed: "Beach_Crab_2")]
+        let animateAction = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+        let repeatAction = SKAction.repeatActionForever(animateAction)
+        crab.runAction(repeatAction)
+        //move the crab
+        let crabAction = crab.getCrabDashAction()
+        crab.setupPhysicsBody()
+        crab.runAction(crabAction)
+        return crab
+    }
+    
     func setupPhysicsBody() {
         self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
         self.physicsBody?.affectedByGravity = false
@@ -98,6 +137,17 @@ class MiniCrab: SKSpriteNode {
         let sequence = SKAction.sequence([moveToAction, moveFromAction])
         let repeatAction = SKAction.repeatActionForever(sequence)
         return repeatAction
+    }
+    //crab runs to location then gets removed
+    func getCrabDashAction() -> SKAction{
+        let xDistance = self.endPosition!.x - self.startPosition!.x
+        let yDistance = self.endPosition!.y - self.startPosition!.y
+        var distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
+        let time = NSTimeInterval(distance / CGFloat(crabSpeed))
+        let moveToAction = SKAction.moveTo(self.endPosition!, duration: time)
+        let removeAction = SKAction.removeFromParent()
+        let sequence = SKAction.sequence([moveToAction, removeAction])
+        return sequence
     }
     
 }
