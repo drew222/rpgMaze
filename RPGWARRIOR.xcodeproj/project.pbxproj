@@ -254,6 +254,7 @@
 		EE3D36501ACFA0ED002A27B8 /* World1Level9.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D364F1ACFA0ED002A27B8 /* World1Level9.swift */; };
 		EE3D36521ACFA57B002A27B8 /* World1Level10.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D36511ACFA57B002A27B8 /* World1Level10.swift */; };
 		EEB7AB041AD0B8EB00064D9C /* World1Level11.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB031AD0B8EB00064D9C /* World1Level11.swift */; };
+		EEB7AB061AD0E4DE00064D9C /* World1Level19.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB051AD0E4DE00064D9C /* World1Level19.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -518,6 +519,7 @@
 		EE3D364F1ACFA0ED002A27B8 /* World1Level9.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level9.swift; sourceTree = "<group>"; };
 		EE3D36511ACFA57B002A27B8 /* World1Level10.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = World1Level10.swift; path = ../World1Level10.swift; sourceTree = "<group>"; };
 		EEB7AB031AD0B8EB00064D9C /* World1Level11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = World1Level11.swift; path = ../World1Level11.swift; sourceTree = "<group>"; };
+		EEB7AB051AD0E4DE00064D9C /* World1Level19.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level19.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -590,6 +592,7 @@
 				DCE69C4F1AB507CB003561E6 /* World1Level7.swift */,
 				DC4A443D1ACFA47400BE81D8 /* World1Level8.swift */,
 				EE3D364F1ACFA0ED002A27B8 /* World1Level9.swift */,
+				EEB7AB051AD0E4DE00064D9C /* World1Level19.swift */,
 				EE3D36511ACFA57B002A27B8 /* World1Level10.swift */,
 				EEB7AB031AD0B8EB00064D9C /* World1Level11.swift */,
 				DC4A442D1ACDF79D00BE81D8 /* World1Level12.swift */,
@@ -1164,6 +1167,7 @@
 				EE3D364E1ACEEFDA002A27B8 /* World1Level21.swift in Sources */,
 				DC1F580F1A886BB100B5027B /* Level2Scene.swift in Sources */,
 				2FC73DE51A912D980068A2FB /* Level4Scene.swift in Sources */,
+				EEB7AB061AD0E4DE00064D9C /* World1Level19.swift in Sources */,
 				DC321BDF1AACCDBE006E3F2B /* IntroScene.swift in Sources */,
 				EE3D364C1ACE1DE4002A27B8 /* World1Level20.swift in Sources */,
 				DCC4E3061A8976AB000E5E89 /* ItemClass.swift in Sources */,
