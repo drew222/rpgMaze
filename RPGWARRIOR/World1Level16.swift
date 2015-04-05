@@ -19,7 +19,7 @@ class World1Level16: SKScene, SKPhysicsContactDelegate  {
     var theHero: HeroClass?
     var bombthrower: BomberClass?
     var droppedItem = false
-    let bomberAttackSpeed = 1.0
+    let bomberAttackSpeed = 1.5
     var lastBomb: Double = 0.0
     
     override func didMoveToView(view: SKView) {
