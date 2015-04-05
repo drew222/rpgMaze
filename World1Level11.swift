@@ -81,13 +81,26 @@ class World1Level11: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        //HERO VS FIRE
+        //HERO VS PEARL PROJECTILE
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
                 let aHero = self.childNodeWithName("hero") as HeroClass
                 aHero.takeDamage(1)
                 secondBody.node!.removeFromParent()
         }
+        //HERO VS SEASHELL
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
+                let mine = secondBody.node as? MineNode
+                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+        }
+        //HERO VS MINI CRAB
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
+                let mine = secondBody.node as? MiniCrab
+                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+        }
+
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
