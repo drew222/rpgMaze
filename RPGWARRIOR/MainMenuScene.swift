@@ -191,21 +191,21 @@ class MainMenuScene: SKScene {
             world1level19node = SKLabelNode.init(text: "World 1 : Level 19")
             resizeLabel(world1level19node!)
             if let Node = world1level19node {
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 25)
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 50)
                 Node.name = "world1level19"
                 self.addChild(Node)
             }
             world1level20node = SKLabelNode.init(text: "World 1 : Level 20")
             resizeLabel(world1level20node!)
             if let Node = world1level20node {
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 50)
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 75)
                 Node.name = "world1level20"
                 self.addChild(Node)
             }
             world1level21node = SKLabelNode.init(text: "World 1 : Level 21")
             resizeLabel(world1level21node!)
             if let Node = world1level21node {
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 75)
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 100)
                 Node.name = "world1level21"
                 self.addChild(Node)
             }
