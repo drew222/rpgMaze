@@ -28,6 +28,7 @@ class MainMenuScene: SKScene {
     var world1level8node: SKLabelNode?
     var world1level9node: SKLabelNode?
     var world1level10node: SKLabelNode?
+    var world1level11node: SKLabelNode?
     var world1level12node: SKLabelNode?
     var world1level13node: SKLabelNode?
     var world1level14node: SKLabelNode?
@@ -158,38 +159,45 @@ class MainMenuScene: SKScene {
                 Node.name = "world1level10"
                 self.addChild(Node)
             }
+            world1level11node = SKLabelNode.init(text: "World 1 : Level 11")
+            resizeLabel(world1level11node!)
+            if let Node = world1level11node {
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 50)
+                Node.name = "world1level11"
+                self.addChild(Node)
+            }
             world1level12node = SKLabelNode.init(text: "World 1 : Level 12")
             resizeLabel(world1level12node!)
             if let Node = world1level12node {
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 50)
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 25)
                 Node.name = "world1level12"
                 self.addChild(Node)
             }
             world1level13node = SKLabelNode.init(text: "World 1 : Level 13")
             resizeLabel(world1level13node!)
             if let Node = world1level13node {
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 25)
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY)
                 Node.name = "world1level13"
                 self.addChild(Node)
             }
             world1level14node = SKLabelNode.init(text: "World 1 : Level 14")
             resizeLabel(world1level14node!)
             if let Node = world1level14node {
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY)
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 25)
                 Node.name = "world1level14"
                 self.addChild(Node)
             }
             world1level20node = SKLabelNode.init(text: "World 1 : Level 20")
             resizeLabel(world1level20node!)
             if let Node = world1level20node {
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 25)
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 50)
                 Node.name = "world1level20"
                 self.addChild(Node)
             }
             world1level21node = SKLabelNode.init(text: "World 1 : Level 21")
             resizeLabel(world1level21node!)
             if let Node = world1level21node {
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 50)
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 75)
                 Node.name = "world1level21"
                 self.addChild(Node)
             }
@@ -345,6 +353,15 @@ class MainMenuScene: SKScene {
                 //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level10scene, transition: skTransition)
+                
+            }else if world1level11node!.containsPoint(touch.locationInNode(self)){
+                let world1level11scene = World1Level11(size: self.frame.size)
+                world1level11scene.userData = NSMutableDictionary()
+                world1level11scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                world1level11scene.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(world1level11scene, transition: skTransition)
                 
             }else if world1level12node!.containsPoint(touch.locationInNode(self)){
                 let world1level12scene = World1Level12(size: self.frame.size)
