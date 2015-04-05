@@ -43,46 +43,45 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
         
         //### Seashell Maze ###
         
+        
+        //add bot right corner
+        self.addChild(MineNode.mineAtPos(CGPointMake(260, 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(290, 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(310, 180)))
+        //add top right corner
+        self.addChild(MineNode.mineAtPos(CGPointMake(180, 490)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(220, 490)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(260, 470)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(290, 440)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(310, 410)))
+        //add top left corner
+        self.addChild(MineNode.mineAtPos(CGPointMake(70, 490)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(90, 520)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(120, 550)))
+        //add bottom left corner
+        self.addChild(MineNode.mineAtPos(CGPointMake(70, 260)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(90, 230)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(120, 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(160, 180)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(200, 180)))
+        
         //add bot horizontal row
         for (var i = 20; i < Int(self.frame.maxX - 130); i += 40){
             self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i),  100)))
         }
-        //add bot right corner
-        self.addChild(MineNode.mineAtPos(CGPointMake(260, 110)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(290, 140)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(310, 180)))
-        //add top right corner
-        self.addChild(MineNode.mineAtPos(CGPointMake(260, 490)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(290, 470)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(310, 450)))
-        //add top left corner
-        self.addChild(MineNode.mineAtPos(CGPointMake(70, 520)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(90, 540)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(110, 560)))
-        //add bottom left corner
-        self.addChild(MineNode.mineAtPos(CGPointMake(80, 260)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(100, 230)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(120, 200)))
         //add top row
         for (var i = 155; i < Int(self.frame.maxX); i += 40){
             self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 100)))
         }
         //right column
-        for (var i = Int(self.frame.maxY) - 250; i > 180; i -= 40){
+        for (var i = Int(self.frame.maxY) - 290; i > 180; i -= 40){
             self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 60, CGFloat(i))))
         }
         //left column
-        for (var i = 290; i < Int(self.frame.maxY) - 140; i += 40){
+        for (var i = 290; i < Int(self.frame.maxY) - 180; i += 40){
             self.addChild(MineNode.mineAtPos(CGPointMake(60, CGFloat(i))))
         }
-        //middle top horizontal row
-        for (var i = 180; i < Int(self.frame.maxX - 120); i += 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 165)))
-        }
-        //second row
-        for (var i = 140; i < Int(self.frame.maxX - 130); i += 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i),  180)))
-        }
+        
         
         // ### Crabs ###
         

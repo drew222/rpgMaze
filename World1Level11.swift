@@ -41,59 +41,33 @@ class World1Level11: SKScene, SKPhysicsContactDelegate {
         self.addChild(background)
         theHero!.updateStats()
         
-        //### Seashell Maze ###
-        
-        //add bot horizontal row
-        for (var i = 20; i < Int(self.frame.maxX - 130); i += 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i),  100)))
-        }
-        //add bot right corner
-        self.addChild(MineNode.mineAtPos(CGPointMake(260, 110)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(290, 140)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(310, 180)))
-        //add top right corner
-        self.addChild(MineNode.mineAtPos(CGPointMake(260, 490)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(290, 470)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(310, 450)))
-        //add top left corner
-        self.addChild(MineNode.mineAtPos(CGPointMake(70, 520)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(90, 540)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(110, 560)))
-        //add bottom left corner
-        self.addChild(MineNode.mineAtPos(CGPointMake(80, 260)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(100, 230)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(120, 200)))
-        //add top row
-        for (var i = 155; i < Int(self.frame.maxX); i += 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 100)))
-        }
-        //right column
-        for (var i = Int(self.frame.maxY) - 250; i > 180; i -= 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 60, CGFloat(i))))
-        }
-        //left column
-        for (var i = 290; i < Int(self.frame.maxY) - 140; i += 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(60, CGFloat(i))))
-        }
-        //middle top horizontal row
-        for (var i = 180; i < Int(self.frame.maxX - 120); i += 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 165)))
-        }
-        //second row
-        for (var i = 140; i < Int(self.frame.maxX - 130); i += 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i),  180)))
-        }
-        
         // ### Crabs ###
+        //middle three vertical crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 50, self.frame.maxY - 150), endPosition: CGPointMake(self.frame.midX + 50, self.frame.minY + 50)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 50, self.frame.maxY - 150), endPosition: CGPointMake(self.frame.midX - 50, self.frame.minY + 50)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.maxY - 150), endPosition: CGPointMake(self.frame.midX, self.frame.minY + 50)))
+        //top left two vertical crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.midY + 20), endPosition: CGPointMake(self.frame.minX + 30, self.frame.maxY - 50)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 80, self.frame.midY + 20), endPosition: CGPointMake(self.frame.minX + 80, self.frame.maxY - 50)))
+        //top right two vertical crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.midY + 20), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.maxY - 50)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 80, self.frame.midY + 20), endPosition: CGPointMake(self.frame.maxX - 80, self.frame.maxY - 50)))
+        //bottom left two vertical crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.midY - 20), endPosition: CGPointMake(self.frame.minX + 30, self.frame.minY + 50)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 80, self.frame.midY - 20), endPosition: CGPointMake(self.frame.minX + 80, self.frame.minY + 50)))
+        //bottom right two vertical crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.midY - 20), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 50)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 80, self.frame.midY - 20), endPosition: CGPointMake(self.frame.maxX - 80, self.frame.minY + 50)))
+        //horizontal crabs (bottom to top)
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 30), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 30)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.minY + 180),
+            endPosition: CGPointMake(self.frame.minX + 30, self.frame.minY + 180)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 330), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 330)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.minY + 480),
+            endPosition: CGPointMake(self.frame.minX + 30, self.frame.minY + 480)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 630), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 630)))
         
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.minX, self.frame.midY + 20)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.minX + 20, self.frame.midY + 150)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX, self.frame.maxY - 120)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.maxX - 20, self.frame.midY + 150)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.maxX, self.frame.midY + 20)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.midY - 150)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX, self.frame.minY + 140)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.minX + 30, self.frame.midY - 150)))
+        
         
     }
     

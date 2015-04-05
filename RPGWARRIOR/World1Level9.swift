@@ -21,7 +21,7 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
     var droppedItem = false
     
     //larger attack speed, slower attack
-    let wizardAttackSpeed = 1.4
+    let wizardAttackSpeed = 1.0
     
     var theWizard: WizardClass?
     var theHero: HeroClass?
