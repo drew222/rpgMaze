@@ -33,7 +33,7 @@ class World1Level16: SKScene, SKPhysicsContactDelegate  {
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.04))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
-        bombthrower = BomberClass.makeBomber(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
+        bombthrower = BomberClass.makeBomber(CGPointMake(self.frame.midX, self.frame.maxY - 50))
         for spot in generateMinePoints(){
             placeMine(spot)
         }
@@ -101,6 +101,16 @@ class World1Level16: SKScene, SKPhysicsContactDelegate  {
         while startX > 90{
             points.append(CGPointMake(startX, self.frame.midY))
             startX -= 25
+        }
+        startX = self.frame.minX + 20
+        while startX < self.frame.maxX - 90{
+            points.append(CGPointMake(startX, self.frame.midY + 90))
+            startX += 25
+        }
+        startY = self.frame.midY + 120
+        while startY < self.frame.maxY - 100{
+            points.append(CGPointMake(self.frame.maxX - 105, startY))
+            startY += 25
         }
         return points
     }
