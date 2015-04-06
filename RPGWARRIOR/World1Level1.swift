@@ -30,6 +30,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
     
     var theWizard: WizardClass?
     var theHero: HeroClass?
+    var theChest: TreasureChest?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -135,8 +136,28 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         lifeNode!.text = "\(Int(floor(theHero!.life!)))"
         //***************
         
-        //check for win condition
-        if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
+        //loss condition
+        if theHero!.life <= 0 && !levelOver{
+            let skTransition = SKTransition.fadeWithDuration(5.0)
+            self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+            levelOver = true
+        }
+        
+        //win condition
+        if theWizard!.isDead && theHero!.life > 0 && !levelOver{
+            let theChest = TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY))
+            addChild(theChest)
+        }
+        /*if theWizard!.isDead && theHero!.life > 0 && !levelOver && theChest!.isDead{
+                let chest = TreasureChest(imageNamed:"Treasure_Chest_1")
+                let textures = [SKTexture (imageNamed: "Treasure_Chest_6"), SKTexture (imageNamed: "Treasure_Chest_2"), SKTexture (imageNamed: "Treasure_Chest_3"), SKTexture (imageNamed: "Treasure_Chest_4"), SKTexture (imageNamed: "Treasure_Chest_5") ]
+                let chestAnimation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+                chest.runAction(chestAnimation)
+                
+            }*/
+            
+        
+           
             if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
                 let skTransition = SKTransition.fadeWithDuration(5.0)
                 self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
@@ -150,4 +171,3 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
-}
