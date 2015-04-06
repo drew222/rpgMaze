@@ -19,6 +19,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
     var levelOver = false
     let levelName = "world1level1"
     var droppedItem = false
+    var chestSpawn = false
     //REGEN CODE******
     var lastHeal: Double = 0.0
     let healSpeed = 5.0
@@ -137,24 +138,76 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         //***************
         
         //loss condition
-        if theHero!.life <= 0 && !levelOver{
+        /*if theHero!.life <= 0 && !levelOver{
             let skTransition = SKTransition.fadeWithDuration(5.0)
             self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
             levelOver = true
-        }
+        }*/
         
         //win condition
-        if theWizard!.isDead && theHero!.life > 0 && !levelOver{
-            let theChest = TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY))
-            addChild(theChest)
+        //check for win condition
+       /* if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
+            
+            if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
+                
+                let skTransition = SKTransition.fadeWithDuration(5.0)
+                
+                self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+               
+                levelOver = true
+            }
+            else if (self.childNodeWithName("item") == nil){
+                if theWizard!.isDead{
+                    dropLoot("level1", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    droppedItem = true
+                }
+            }*/
+        
+        
+        
+        
+      
+        if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
+            
+            if !theWizard!.isDead && theHero!.life <= 0{
+                
+                let skTransition = SKTransition.fadeWithDuration(5.0)
+                self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+                levelOver = true
+            }
+                else if (self.childNodeWithName("chest") == nil) {
+                    if theWizard!.isDead{
+                        
+                        let theChest = TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY))
+                        addChild(theChest)
+                        chestSpawn = true
+                        
+                    }
+            }
+                    else if chestSpawn == true && theChest!.isDead && !levelOver{
+               
+                        println("got it")
+                        let chest = TreasureChest.openChest(CGPointMake(self.frame.midX, self.frame.midY))
+                        
+                        let skTransition = SKTransition.fadeWithDuration(5.0)
+                        self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+                
+                        let openSequence = SKAction.sequence([chest, SKAction.waitForDuration(1), skTransition])
+                        self.runAction(openSequence)
+                        levelOver = true
+            
+            }
         }
+        
+                
+        
         /*if theWizard!.isDead && theHero!.life > 0 && !levelOver && theChest!.isDead{
                 let chest = TreasureChest(imageNamed:"Treasure_Chest_1")
                 let textures = [SKTexture (imageNamed: "Treasure_Chest_6"), SKTexture (imageNamed: "Treasure_Chest_2"), SKTexture (imageNamed: "Treasure_Chest_3"), SKTexture (imageNamed: "Treasure_Chest_4"), SKTexture (imageNamed: "Treasure_Chest_5") ]
                 let chestAnimation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
                 chest.runAction(chestAnimation)
                 
-            }*/
+            }
             
         
            
@@ -168,6 +221,8 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
                     dropLoot("world1level1", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                 }
+            }*/
             }
         }
-    }
+
+

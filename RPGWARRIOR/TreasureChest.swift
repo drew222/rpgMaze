@@ -20,17 +20,32 @@ class TreasureChest: SKSpriteNode {
         chest.name = "chest"
         chest.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         chest.setScale(0.1)
-        chest.zPosition = 0
-        
+        chest.setupPhysicsBody()
         
         return chest
         
     }
+    
+    class func openChest(position: CGPoint) ->TreasureChest {
+        let aChest = TreasureChest(imageNamed:"Treasure_Chest_6")
+        aChest.position = position
+        aChest.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        aChest.setScale(0.1)
+        
+        let textures = [SKTexture (imageNamed: "Treasure_Chest_2"), SKTexture (imageNamed: "Treasure_Chest_3"), SKTexture (imageNamed: "Treasure_Chest_4"), SKTexture (imageNamed: "Treasure_Chest_5") ]
+        let chestAnimation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+        aChest.runAction(chestAnimation)
+        aChest.setupPhysicsBody()
+        
+        return aChest
+        
+    }
+
     func setupPhysicsBody() {
         self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
         self.physicsBody?.dynamic = false
         self.physicsBody?.affectedByGravity = false
-        self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryWizard.rawValue
+        self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryChest.rawValue
         self.physicsBody?.collisionBitMask = 0 //CollisionBitMasks.collisionCategoryHero.rawValue
         self.physicsBody?.contactTestBitMask = CollisionBitMasks.collisionCategoryHero.rawValue
     }
@@ -38,8 +53,9 @@ class TreasureChest: SKSpriteNode {
         self.life -= howMuch
         if (self.life <= 0){
             self.isDead = true
-            self.removeAllActions()
+            
             self.texture = nil
         }
+        
     }
 }
