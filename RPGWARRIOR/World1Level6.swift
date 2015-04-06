@@ -6,22 +6,6 @@
 //  Copyright (c) 2015 Drew Zoellner. All rights reserved.
 //
 
-//
-//  World1Level5.swift
-//  RPGWARRIOR
-//
-//  Created by Drew Zoellner on 3/14/15.
-//  Copyright (c) 2015 Drew Zoellner. All rights reserved.
-//
-
-//
-//  World1Level4.swift
-//  RPGWARRIOR
-//
-//  Created by Drew Zoellner on 3/14/15.
-//  Copyright (c) 2015 Drew Zoellner. All rights reserved.
-//
-
 import SpriteKit
 
 //import AVFoundation

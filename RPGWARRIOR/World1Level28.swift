@@ -13,16 +13,17 @@ import SpriteKit
 class World1Level28: SKScene, SKPhysicsContactDelegate {
     
     var timeSinceCrabAdded : NSTimeInterval = 0
-    var addCrabTimeInterval : NSTimeInterval = 1.5
+    var addCrabTimeInterval : NSTimeInterval = 0.25
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
     var lastFireball: Double = 0.0
+    var lastBomb: Double = 0.0
     var levelOver = false
     let levelName = "world1level28"
     var droppedItem = false
     
-    let wizardAttackSpeed = 1.0
+    let bomberAttackSpeed = 1.0
     
     var theBomber: BomberClass?
     var theHero: HeroClass?
@@ -58,7 +59,7 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        //HERO VS SEASHELL
+        //HERO VS BEACH CRAB
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
                 let mine = secondBody.node as? MiniCrab
@@ -99,12 +100,20 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
+        //BEACH BALL BOMBS
+        if currentTime - lastBomb  > bomberAttackSpeed{
+            self.lastBomb = currentTime
+            theBomber!.throwBomb()
+        }
+        
         //CRAB STAMPEDE
+         
+        var yMatch = CGFloat(randomWithMin(Int(self.frame.minY), Int(self.frame.maxY)))
         self.timeSinceCrabAdded = self.timeSinceCrabAdded + currentTime - self.lastUpdatesTime
         
         
         if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver) {
-            self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX, CGFloat(randomWithMin(Int(self.frame.minY), Int(self.frame.maxY)))), endPosition: CGPointMake(self.frame.maxX + 100, self.frame.midY + 105)))
+            self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX, yMatch), endPosition: CGPointMake(self.frame.maxX + 100, yMatch)))
             
             
             self.timeSinceCrabAdded = 0
