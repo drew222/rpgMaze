@@ -284,6 +284,7 @@ class HeroClass: SKSpriteNode {
             if distanceBetween(self.position, treasureChest.position) < 110{
                 treasureChest.takeDamage(1)
             }
+        
         }
     }
 }

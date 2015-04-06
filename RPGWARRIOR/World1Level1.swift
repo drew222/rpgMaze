@@ -32,9 +32,11 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
     var theWizard: WizardClass?
     var theHero: HeroClass?
     var theChest: TreasureChest?
+   
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
@@ -169,35 +171,32 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
       
         if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
             
-            if !theWizard!.isDead && theHero!.life <= 0{
+            if theHero!.life <= 0{
                 
                 let skTransition = SKTransition.fadeWithDuration(5.0)
                 self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
                 levelOver = true
             }
-                else if (self.childNodeWithName("chest") == nil) {
-                    if theWizard!.isDead{
+            else if (theHero!.life > 0 && theChest?.isDead != nil){
                         
                         let theChest = TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY))
                         addChild(theChest)
                         chestSpawn = true
-                        
-                    }
             }
-                    else if chestSpawn == true && theChest!.isDead && !levelOver{
-               
-                        println("got it")
-                        let chest = TreasureChest.openChest(CGPointMake(self.frame.midX, self.frame.midY))
-                        
-                        let skTransition = SKTransition.fadeWithDuration(5.0)
-                        self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+            else if (theHero!.life > 0 && chestSpawn == true){
                 
-                        let openSequence = SKAction.sequence([chest, SKAction.waitForDuration(1), skTransition])
-                        self.runAction(openSequence)
-                        levelOver = true
-            
+                            println("got it")
+                            let chest = TreasureChest.openChest(CGPointMake(self.frame.midX, self.frame.midY))
+                            let skTransition = SKTransition.fadeWithDuration(5.0)
+                            self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+                            let openSequence = SKAction.sequence([chest, SKAction.waitForDuration(2), skTransition])
+                            self.runAction(openSequence)
+                            levelOver = true
+                            }
+                    }
+                
             }
-        }
+    }
         
                 
         
@@ -222,7 +221,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
                     droppedItem = true
                 }
             }*/
-            }
-        }
+
+
 
 

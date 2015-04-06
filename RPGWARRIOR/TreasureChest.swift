@@ -15,24 +15,24 @@ class TreasureChest: SKSpriteNode {
     var isDead = false
     
     class func chestAtPosition(position: CGPoint) ->TreasureChest {
-        let chest = TreasureChest(imageNamed:"Treasure_Chest_1")
+        let chest = TreasureChest(imageNamed:"Treasure_Chest_1.png")
         chest.position = position
         chest.name = "chest"
         chest.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         chest.setScale(0.1)
         chest.setupPhysicsBody()
-        
+        chest.currentAngle = 3 * pi / 2.0
         return chest
         
     }
     
     class func openChest(position: CGPoint) ->TreasureChest {
-        let aChest = TreasureChest(imageNamed:"Treasure_Chest_6")
+        let aChest = TreasureChest(imageNamed:"Treasure_Chest_6.png")
         aChest.position = position
         aChest.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         aChest.setScale(0.1)
         
-        let textures = [SKTexture (imageNamed: "Treasure_Chest_2"), SKTexture (imageNamed: "Treasure_Chest_3"), SKTexture (imageNamed: "Treasure_Chest_4"), SKTexture (imageNamed: "Treasure_Chest_5") ]
+        let textures = [SKTexture (imageNamed: "Treasure_Chest_2.png"), SKTexture (imageNamed: "Treasure_Chest_3.png"), SKTexture (imageNamed: "Treasure_Chest_4.png"), SKTexture (imageNamed: "Treasure_Chest_5.png") ]
         let chestAnimation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
         aChest.runAction(chestAnimation)
         aChest.setupPhysicsBody()
@@ -53,7 +53,7 @@ class TreasureChest: SKSpriteNode {
         self.life -= howMuch
         if (self.life <= 0){
             self.isDead = true
-            
+          
             self.texture = nil
         }
         
