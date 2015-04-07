@@ -12,6 +12,8 @@ import SpriteKit
 
 class World1Level26: SKScene, SKPhysicsContactDelegate {
     
+    var timeSinceCrabAdded : NSTimeInterval = 0
+    var addCrabTimeInterval : NSTimeInterval = 0.35
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
@@ -42,19 +44,64 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate = self
         self.addChild(background)
         theHero!.updateStats()
-        //crabs
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 40, self.frame.maxY - 200), endPosition: CGPointMake(self.frame.midX - 40, self.frame.maxY - 360)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 40, self.frame.maxY - 360), endPosition: CGPointMake(self.frame.midX + 40, self.frame.maxY - 200)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(65, self.frame.maxY - 250), endPosition: CGPointMake(65, 130)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 50, 140), endPosition: CGPointMake(self.frame.midX - 50, 140)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 50, 220), endPosition: CGPointMake(self.frame.maxX - 50, 220)))
-        //shells i = y, k = x
-        for (var i = 100; i < Int(self.frame.maxY - 100); i += 80){
-            for (var k = 30; k < Int(self.frame.maxX - 20); k += 80){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(k), CGFloat(i))))
-            }
-        }
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 65, 260)))
+        
+        //patrol crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY - 1000), endPosition: CGPointMake(self.frame.minX + 30, self.frame.maxY + 1000)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.minY - 1000), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.maxY + 1000)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY - 2000), endPosition: CGPointMake(self.frame.minX + 30, self.frame.maxY + 2000)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.minY - 2000), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.maxY + 2000)))
+        
+        
+        //seashells
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 130)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 130)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 230)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 230)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 300)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 300)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 330)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 330)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 400)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 400)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 430)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 430)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 500)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 500)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 530)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 530)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 130)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 130)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 230)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 230)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 300)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 300)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 330)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 330)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 400)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 400)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 430)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 430)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 500)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 500)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 530)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 530)))
         
     }
     
@@ -112,6 +159,20 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
             self.lastFireball = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
+        
+        //CRAB STAMPEDE
+        
+        var xMatch = CGFloat(randomWithMin(Int(self.frame.minX + 80), Int(self.frame.maxX - 80)))
+        self.timeSinceCrabAdded = self.timeSinceCrabAdded + currentTime - self.lastUpdatesTime
+    
+        
+        if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver) {
+            self.addChild(MiniCrab.crabDash(CGPointMake(xMatch, self.frame.maxY + 30), endPosition: CGPointMake(xMatch, self.frame.minY)))
+            
+            
+            self.timeSinceCrabAdded = 0
+        }
+
         
         self.lastUpdatesTime = currentTime
         

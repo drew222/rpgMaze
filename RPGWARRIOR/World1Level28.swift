@@ -113,7 +113,7 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
         
         
         if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver) {
-            self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX, yMatch), endPosition: CGPointMake(self.frame.maxX + 100, yMatch)))
+            self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX, yMatch), endPosition: CGPointMake(self.frame.maxX, yMatch)))
             
             
             self.timeSinceCrabAdded = 0
