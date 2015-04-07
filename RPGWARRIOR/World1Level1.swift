@@ -105,6 +105,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as HeroClass
         let aWizard = self.childNodeWithName("wizard") as WizardClass
+        
         for touch in touches{
             //stop when mouse comes in contact hero
             //let theSpot = spotToStop(aHero, touch.locationInNode(self))
@@ -177,13 +178,13 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
                 self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
                 levelOver = true
             }
-            else if (theHero!.life > 0 && theChest?.isDead != nil){
+            else if theHero!.life > 0 && chestSpawn == false {
                         
                         let theChest = TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY))
                         addChild(theChest)
                         chestSpawn = true
             }
-            else if (theHero!.life > 0 && chestSpawn == true){
+            else if theHero!.life > 0  {
                 
                             println("got it")
                             let chest = TreasureChest.openChest(CGPointMake(self.frame.midX, self.frame.midY))

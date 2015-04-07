@@ -259,6 +259,7 @@
 		EEB7AB0A1AD0FED000064D9C /* World1Level16.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB091AD0FED000064D9C /* World1Level16.swift */; };
 		EEF8559A1AD1D8F000112A59 /* World1Level28.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF855991AD1D8F000112A59 /* World1Level28.swift */; };
 		EEF8D9811AD2264200FC2A4F /* TreasureChest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9801AD2264200FC2A4F /* TreasureChest.swift */; };
+		EEF8D9831AD3770800FC2A4F /* World1Level26.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9821AD3770800FC2A4F /* World1Level26.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -528,6 +529,7 @@
 		EEB7AB091AD0FED000064D9C /* World1Level16.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level16.swift; sourceTree = "<group>"; };
 		EEF855991AD1D8F000112A59 /* World1Level28.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level28.swift; sourceTree = "<group>"; };
 		EEF8D9801AD2264200FC2A4F /* TreasureChest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureChest.swift; sourceTree = "<group>"; };
+		EEF8D9821AD3770800FC2A4F /* World1Level26.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level26.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -611,6 +613,7 @@
 				EEB7AB051AD0E4DE00064D9C /* World1Level19.swift */,
 				EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */,
 				EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */,
+				EEF8D9821AD3770800FC2A4F /* World1Level26.swift */,
 				EEF855991AD1D8F000112A59 /* World1Level28.swift */,
 				DC321BE41AACE497006E3F2B /* World1Level103.swift */,
 				DCE69C511AB604F2003561E6 /* World1Level108.swift */,
@@ -1173,6 +1176,7 @@
 				DC2711421A85E1D300986D2E /* Utility.swift in Sources */,
 				DC1F58111A886EFC00B5027B /* BomberClass.swift in Sources */,
 				DC321BDD1AAB9D68006E3F2B /* MiniCrab.swift in Sources */,
+				EEF8D9831AD3770800FC2A4F /* World1Level26.swift in Sources */,
 				DC4A442A1ACDDCED00BE81D8 /* WaveNode.swift in Sources */,
 				EEF8D9811AD2264200FC2A4F /* TreasureChest.swift in Sources */,
 				2F62CE591A89C25000046DA7 /* Level3Scene.swift in Sources */,
