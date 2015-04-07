@@ -86,6 +86,47 @@ class WhaleBoss: SKSpriteNode {
         self.parent!.addChild(WaveNode.waveAtPosition(CGPointMake(gapPosition.x, gapPosition.y + (lengthOfTop)/2), length: lengthOfTop, distance: self.parent!.frame.maxX + 50))
         self.parent!.addChild(WaveNode.waveAtPosition(CGPointMake(gapPosition.x, lengthOfBot/2), length: lengthOfBot, distance: self.parent!.frame.maxX + 50))
     }
+    
+    func shootKrill(){
+        if self.isDead{
+            return
+        }
+        //display shooting animation
+        //go back to rocking
+        //self.runAction(repeatAction0, withKey: "repeatAction")
+        let codeBlock0 = SKAction.runBlock({
+            var textures: [SKTexture] = []
+            for var i = 1; i <= 4; i=i+1{
+                textures.append(SKTexture(imageNamed:"Whale_Boss_\(i)"))
+            }
+            let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+            let repeatAction0 = SKAction.repeatActionForever(animation)
+            self.runAction(repeatAction0, withKey: "repeatAction")
+        })
+        let codeBlock = SKAction.runBlock({
+            var textures: [SKTexture] = []
+            for var i = 1; i <= 3; i=i+1{
+                textures.append(SKTexture(imageNamed:"Whale_Boss_\(i)"))
+            }
+            textures.append(SKTexture(imageNamed:"Whale_Boss_2"))
+            textures.append(SKTexture(imageNamed:"Whale_Boss_3"))
+            textures.append(SKTexture(imageNamed:"Whale_Boss_4"))
+            
+            let animation2 = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+            let sequenceRepeat = SKAction.sequence([animation2, SKAction.waitForDuration(1.5)])
+            let repeatAction = SKAction.repeatActionForever(sequenceRepeat)
+            self.runAction(repeatAction , withKey: "repeatAction")
+        })
+        let sequence = SKAction.sequence([codeBlock0, SKAction.waitForDuration(0.4), codeBlock])
+        self.runAction(sequence)
+        //calculate where to shoot the krill
+        let hero = self.parent!.childNodeWithName("hero") as HeroClass
+        let shootAtPoint = hero.position
+        //shoot the krill
+        let krill = Krill.krillAtPosition(CGPointMake(self.position.x, self.position.y - 10))
+        self.parent!.addChild(krill)
+        krill.moveTowardsPosition(shootAtPoint)
+    }
 
     
     func takeDamage(howMuch: CGFloat){

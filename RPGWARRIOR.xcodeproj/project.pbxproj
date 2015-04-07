@@ -261,6 +261,8 @@
 		EEF8D9811AD2264200FC2A4F /* TreasureChest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9801AD2264200FC2A4F /* TreasureChest.swift */; };
 		EEF8D9831AD3770800FC2A4F /* World1Level26.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9821AD3770800FC2A4F /* World1Level26.swift */; };
 		EEF8D9851AD397AD00FC2A4F /* KrakenBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9841AD397AD00FC2A4F /* KrakenBoss.swift */; };
+		EEF8D9871AD422FF00FC2A4F /* World1Level17.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9861AD422FF00FC2A4F /* World1Level17.swift */; };
+		EEF8D9891AD4249A00FC2A4F /* Krill.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9881AD4249A00FC2A4F /* Krill.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -532,6 +534,8 @@
 		EEF8D9801AD2264200FC2A4F /* TreasureChest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureChest.swift; sourceTree = "<group>"; };
 		EEF8D9821AD3770800FC2A4F /* World1Level26.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level26.swift; sourceTree = "<group>"; };
 		EEF8D9841AD397AD00FC2A4F /* KrakenBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KrakenBoss.swift; sourceTree = "<group>"; };
+		EEF8D9861AD422FF00FC2A4F /* World1Level17.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level17.swift; sourceTree = "<group>"; };
+		EEF8D9881AD4249A00FC2A4F /* Krill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Krill.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -592,6 +596,7 @@
 				2F62CE541A89C21000046DA7 /* MineNode.swift */,
 				2F62CE551A89C21000046DA7 /* MineThrowerNode.swift */,
 				DC321BDC1AAB9D68006E3F2B /* MiniCrab.swift */,
+				EEF8D9881AD4249A00FC2A4F /* Krill.swift */,
 				DC4A44291ACDDCED00BE81D8 /* WaveNode.swift */,
 				DCC4E3011A89760E000E5E89 /* Inventory.swift */,
 				DC321BDE1AACCDBE006E3F2B /* IntroScene.swift */,
@@ -613,6 +618,7 @@
 				DC4A44411AD071EE00BE81D8 /* World1Level14.swift */,
 				EEB7AB071AD0F27600064D9C /* World1Level15.swift */,
 				EEB7AB091AD0FED000064D9C /* World1Level16.swift */,
+				EEF8D9861AD422FF00FC2A4F /* World1Level17.swift */,
 				EEB7AB051AD0E4DE00064D9C /* World1Level19.swift */,
 				EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */,
 				EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */,
@@ -1194,6 +1200,7 @@
 				EE3D364C1ACE1DE4002A27B8 /* World1Level20.swift in Sources */,
 				DCC4E3061A8976AB000E5E89 /* ItemClass.swift in Sources */,
 				DCE69C4A1AB4813A003561E6 /* World1Level4.swift in Sources */,
+				EEF8D9891AD4249A00FC2A4F /* Krill.swift in Sources */,
 				DC4A44401AD064A800BE81D8 /* World1Level13.swift in Sources */,
 				DC27113E1A85E1AB00986D2E /* GameScene.swift in Sources */,
 				DC321BE51AACE497006E3F2B /* World1Level103.swift in Sources */,
@@ -1211,6 +1218,7 @@
 				DC1F58131A88703500B5027B /* Bomb.swift in Sources */,
 				DC321BE11AACD471006E3F2B /* World1Level1.swift in Sources */,
 				EEF8559A1AD1D8F000112A59 /* World1Level28.swift in Sources */,
+				EEF8D9871AD422FF00FC2A4F /* World1Level17.swift in Sources */,
 				DCC4E30A1A8DB082000E5E89 /* level5Scene.swift in Sources */,
 				DC1F580D1A882D3200B5027B /* MainMenuScene.swift in Sources */,
 				DC2711481A85E26100986D2E /* GameViewController.swift in Sources */,
