@@ -53,7 +53,7 @@ class TreasureChest: SKSpriteNode {
         self.life -= howMuch
         if (self.life <= 0){
             self.isDead = true
-          
+            self.removeAllActions()
             self.texture = nil
         }
         

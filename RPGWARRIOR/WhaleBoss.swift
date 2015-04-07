@@ -96,9 +96,8 @@ class WhaleBoss: SKSpriteNode {
         //self.runAction(repeatAction0, withKey: "repeatAction")
         let codeBlock0 = SKAction.runBlock({
             var textures: [SKTexture] = []
-            for var i = 1; i <= 4; i=i+1{
-                textures.append(SKTexture(imageNamed:"Whale_Boss_\(i)"))
-            }
+            textures.append(SKTexture(imageNamed:"Whale_Boss_1"))
+
             let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
             let repeatAction0 = SKAction.repeatActionForever(animation)
             self.runAction(repeatAction0, withKey: "repeatAction")
@@ -108,9 +107,17 @@ class WhaleBoss: SKSpriteNode {
             for var i = 1; i <= 3; i=i+1{
                 textures.append(SKTexture(imageNamed:"Whale_Boss_\(i)"))
             }
-            textures.append(SKTexture(imageNamed:"Whale_Boss_2"))
-            textures.append(SKTexture(imageNamed:"Whale_Boss_3"))
+            textures.append(SKTexture(imageNamed:"Whale_Boss_5"))
             textures.append(SKTexture(imageNamed:"Whale_Boss_4"))
+            textures.append(SKTexture(imageNamed:"Whale_Boss_6"))
+            textures.append(SKTexture(imageNamed:"Whale_Boss_4"))
+            textures.append(SKTexture(imageNamed:"Whale_Boss_5"))
+            textures.append(SKTexture(imageNamed:"Whale_Boss_7"))
+            textures.append(SKTexture(imageNamed:"Whale_Boss_8"))
+            textures.append(SKTexture(imageNamed:"Whale_Boss_9"))
+            textures.append(SKTexture(imageNamed:"Whale_Boss_8"))
+            textures.append(SKTexture(imageNamed:"Whale_Boss_7"))
+
             
             let animation2 = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
             let sequenceRepeat = SKAction.sequence([animation2, SKAction.waitForDuration(1.5)])
@@ -123,7 +130,7 @@ class WhaleBoss: SKSpriteNode {
         let hero = self.parent!.childNodeWithName("hero") as HeroClass
         let shootAtPoint = hero.position
         //shoot the krill
-        let krill = Krill.krillAtPosition(CGPointMake(self.position.x, self.position.y - 10))
+        let krill = Krill.krillAtPosition(CGPointMake(self.position.x, self.position.y - 45))
         self.parent!.addChild(krill)
         krill.moveTowardsPosition(shootAtPoint)
     }

@@ -11,18 +11,18 @@ import SpriteKit
 
 
 class Krill: SKSpriteNode {
-    let fireballSpeed = 300
+    let krillSpeed = 300
     
     class func krillAtPosition(position: CGPoint) -> Krill{
         
-        let krill = Krill(imageNamed: "Pearl_Projectile_1")
+        let krill = Krill(imageNamed: "Krill_1")
         krill.position = position
         krill.name = "krill"
         
         
         krill.setupAnimation()
         krill.setupPhysicsBody()
-        krill.setScale(0.3)
+        krill.setScale(0.1)
         return krill
         
     }
@@ -35,8 +35,8 @@ class Krill: SKSpriteNode {
     }
     
     func setupAnimation() {
-        let textures = [SKTexture(imageNamed: "Pearl_Projectile_2"),
-            SKTexture(imageNamed: "Pearl_Projectile_1")]
+        let textures = [SKTexture(imageNamed: "Krill_2"),
+            SKTexture(imageNamed: "Krill_1")]
         let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
         let repeatAction = SKAction.repeatActionForever(animation)
         self.runAction(repeatAction)
@@ -63,7 +63,7 @@ class Krill: SKSpriteNode {
         
         let distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
         
-        let time = NSTimeInterval(distance / CGFloat(fireballSpeed))
+        let time = NSTimeInterval(distance / CGFloat(krillSpeed))
         
         let moveProjectile = SKAction.moveTo(pointOffScreen, duration: time)
         

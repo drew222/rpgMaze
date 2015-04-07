@@ -75,6 +75,10 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         //self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 200, self.frame.midY - 100)))
         //self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY - 150)))
         
+        
+        let theChest = TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY))
+        addChild(theChest)
+        
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -93,18 +97,13 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
                 let mine = secondBody.node as? MineNode
                 mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
         }
-        //HERO VS WIZARD
-        //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-        //secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWizard.rawValue){
-        //let aHero = self.childNodeWithName("hero") as HeroClass
-        //aHero.attack()
-        //}
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as HeroClass
         let aWizard = self.childNodeWithName("wizard") as WizardClass
+        let aChest = self.childNodeWithName("chest") as TreasureChest
         
         for touch in touches{
             //stop when mouse comes in contact hero
@@ -178,7 +177,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
                 self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
                 levelOver = true
             }
-            else if theHero!.life > 0 && chestSpawn == false {
+            else if theHero!.life > 0 && chestSpawn == false && !levelOver {
                         
                         let theChest = TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY))
                         addChild(theChest)
