@@ -280,6 +280,10 @@ class HeroClass: SKSpriteNode {
             if distanceBetween(self.position, whaleBoss.position) < 110{
                 whaleBoss.takeDamage(1)
             }
+        }else if let krakenBoss = self.parent!.childNodeWithName("kraken") as? KrakenBoss{
+            if distanceBetween(self.position, krakenBoss.position) < 110{
+                krakenBoss.takeDamage(1)
+            }
         }else if let treasureChest = self.parent!.childNodeWithName("chest") as? TreasureChest{
             if distanceBetween(self.position, treasureChest.position) < 110{
                 treasureChest.takeDamage(1)

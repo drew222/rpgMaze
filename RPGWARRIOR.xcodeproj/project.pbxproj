@@ -260,6 +260,7 @@
 		EEF8559A1AD1D8F000112A59 /* World1Level28.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF855991AD1D8F000112A59 /* World1Level28.swift */; };
 		EEF8D9811AD2264200FC2A4F /* TreasureChest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9801AD2264200FC2A4F /* TreasureChest.swift */; };
 		EEF8D9831AD3770800FC2A4F /* World1Level26.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9821AD3770800FC2A4F /* World1Level26.swift */; };
+		EEF8D9851AD397AD00FC2A4F /* KrakenBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9841AD397AD00FC2A4F /* KrakenBoss.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -530,6 +531,7 @@
 		EEF855991AD1D8F000112A59 /* World1Level28.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level28.swift; sourceTree = "<group>"; };
 		EEF8D9801AD2264200FC2A4F /* TreasureChest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureChest.swift; sourceTree = "<group>"; };
 		EEF8D9821AD3770800FC2A4F /* World1Level26.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level26.swift; sourceTree = "<group>"; };
+		EEF8D9841AD397AD00FC2A4F /* KrakenBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KrakenBoss.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -580,6 +582,7 @@
 				DC1F58121A88703500B5027B /* Bomb.swift */,
 				DC1F58101A886EFC00B5027B /* BomberClass.swift */,
 				DC4A442B1ACDE6CF00BE81D8 /* WhaleBoss.swift */,
+				EEF8D9841AD397AD00FC2A4F /* KrakenBoss.swift */,
 				DC27114F1A86A09D00986D2E /* AppDelegate.swift */,
 				DC2711471A85E26100986D2E /* GameViewController.swift */,
 				DC2711451A85E1F500986D2E /* HeroClass.swift */,
@@ -1197,6 +1200,7 @@
 				2F62CE571A89C21000046DA7 /* MineThrowerNode.swift in Sources */,
 				DCE69C501AB507CB003561E6 /* World1Level7.swift in Sources */,
 				DC1F57C11A88087500B5027B /* AppDelegate.swift in Sources */,
+				EEF8D9851AD397AD00FC2A4F /* KrakenBoss.swift in Sources */,
 				DC321D731AAE3A0E006E3F2B /* ZoneScene.swift in Sources */,
 				DC4A443C1ACF672200BE81D8 /* World1Level3.swift in Sources */,
 				DC4A443E1ACFA47400BE81D8 /* World1Level8.swift in Sources */,

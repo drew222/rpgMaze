@@ -26,7 +26,8 @@ enum CollisionBitMasks: UInt32{
     case collisionCategorySeashell = 64
     case collisionCategoryMiniCrab = 128
     case collisionCategoryWave = 256
-    case collisionCategoryChest = 512
+    case collisionCategoryKraken = 512
+    case collisionCategoryChest = 1024
 }
 
 
