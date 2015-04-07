@@ -308,6 +308,7 @@
 		EEF8D9DF1AD43A8F00FC2A4F /* Yes_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEF8D9DB1AD43A8F00FC2A4F /* Yes_Text_1.png */; };
 		EEF8D9E21AD43E0800FC2A4F /* Krill_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEF8D9E01AD43E0800FC2A4F /* Krill_1.png */; };
 		EEF8D9E31AD43E0800FC2A4F /* Krill_2.png in Resources */ = {isa = PBXBuildFile; fileRef = EEF8D9E11AD43E0800FC2A4F /* Krill_2.png */; };
+		EEF8D9E51AD4720C00FC2A4F /* World1Level27.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9E41AD4720C00FC2A4F /* World1Level27.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -626,6 +627,7 @@
 		EEF8D9DB1AD43A8F00FC2A4F /* Yes_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yes_Text_1.png; path = ../../../../Downloads/whatskrakenretryanimationandbeachballparticle/Yes_Text_1.png; sourceTree = "<group>"; };
 		EEF8D9E01AD43E0800FC2A4F /* Krill_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Krill_1.png; path = ../../../../Downloads/whatskrakenkrill/Krill_1.png; sourceTree = "<group>"; };
 		EEF8D9E11AD43E0800FC2A4F /* Krill_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Krill_2.png; path = ../../../../Downloads/whatskrakenkrill/Krill_2.png; sourceTree = "<group>"; };
+		EEF8D9E41AD4720C00FC2A4F /* World1Level27.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level27.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -713,6 +715,7 @@
 				EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */,
 				EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */,
 				EEF8D9821AD3770800FC2A4F /* World1Level26.swift */,
+				EEF8D9E41AD4720C00FC2A4F /* World1Level27.swift */,
 				EEF855991AD1D8F000112A59 /* World1Level28.swift */,
 				DC321BE41AACE497006E3F2B /* World1Level103.swift */,
 				DCE69C511AB604F2003561E6 /* World1Level108.swift */,
@@ -1385,6 +1388,7 @@
 				DC27113E1A85E1AB00986D2E /* GameScene.swift in Sources */,
 				DC321BE51AACE497006E3F2B /* World1Level103.swift in Sources */,
 				2F62CE571A89C21000046DA7 /* MineThrowerNode.swift in Sources */,
+				EEF8D9E51AD4720C00FC2A4F /* World1Level27.swift in Sources */,
 				DCE69C501AB507CB003561E6 /* World1Level7.swift in Sources */,
 				DC1F57C11A88087500B5027B /* AppDelegate.swift in Sources */,
 				EEF8D9851AD397AD00FC2A4F /* KrakenBoss.swift in Sources */,
