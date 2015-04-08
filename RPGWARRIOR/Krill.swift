@@ -11,7 +11,7 @@ import SpriteKit
 
 
 class Krill: SKSpriteNode {
-    let krillSpeed = 300
+    let krillSpeed = 250
     
     class func krillAtPosition(position: CGPoint) -> Krill{
         
