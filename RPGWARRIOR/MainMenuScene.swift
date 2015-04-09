@@ -14,7 +14,8 @@ import SpriteKit
 
 class MainMenuScene: SKScene {
     var inventory: Inventory?
-    var world1Menu: MainMenuScene?
+    var zonesMenu: ZoneScene?
+    var theStore: StoreScene?
     var storeNode: SKSpriteNode?
     var inventoryNode: SKSpriteNode?
     var level1Node: SKSpriteNode?
@@ -24,6 +25,7 @@ class MainMenuScene: SKScene {
     var level5Node: SKLabelNode?
     //var inventory: SKLabelNode?
     var mainScreen: SKLabelNode?
+    var menu: SKSpriteNode?
     var world1level1node: SKSpriteNode?
     var world1level2node: SKSpriteNode?
     var world1level3node: SKLabelNode?
@@ -66,26 +68,40 @@ class MainMenuScene: SKScene {
             sandCastle.position = CGPointMake(self.frame.midX, self.frame.midY - 50)
             self.addChild(sandCastle)
             
-            world1Menu = MainMenuScene(size: self.frame.size)
-            world1Menu!.userData = NSMutableDictionary()
-            world1Menu!.userData?.setObject(self, forKey: "worldscene")
+            zonesMenu = ZoneScene(size: self.frame.size)
+            zonesMenu!.userData = NSMutableDictionary()
+            zonesMenu!.userData?.setObject(self, forKey: "worldscene")
             inventory = Inventory(size: self.frame.size)
-            world1Menu!.userData?.setObject(inventory!, forKey: "inventory")
+            zonesMenu!.userData?.setObject(inventory!, forKey: "inventory")
+            
             inventory!.userData = NSMutableDictionary()
-            inventory!.userData?.setObject(world1Menu!, forKey: "menu")
+            inventory!.userData?.setObject(zonesMenu!, forKey: "menu")
             inventory!.userData?.setObject(self, forKey: "worldscene")
+            
+            
+            
+            theStore = StoreScene(size:self.frame.size)
+            theStore!.userData = NSMutableDictionary()
+            theStore!.userData?.setObject(self, forKey: "worldscene")
+            theStore!.userData?.setObject(zonesMenu!, forKey: "menu")
             
            
             inventoryNode = SKSpriteNode(imageNamed: "Fitting_Room__Button_1")
             //inventoryNode!.zPosition = -2
             inventoryNode!.size = CGSizeMake(100, 100)
-            inventoryNode!.position = CGPointMake(self.frame.minX + 55, self.frame.maxY - 55)
+            inventoryNode!.position = CGPointMake(self.frame.midX, self.frame.maxY - 55)
             self.addChild(inventoryNode!)
             storeNode = SKSpriteNode(imageNamed: "Store_Button_1")
             //storeNode!.zPosition = -2
             storeNode!.size = CGSizeMake(100, 100)
             storeNode!.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 55)
             self.addChild(storeNode!)
+            
+            menu = SKSpriteNode(imageNamed: "Zones__Button_1")
+            menu!.position = CGPointMake(self.frame.minX + 55, self.frame.maxY - 55)
+            menu!.name = "zones"
+            menu!.size = CGSizeMake(100, 100)
+            self.addChild(menu!)
             /*
             inventory = SKLabelNode.init(text: "Inventory")
             inventory!.position = CGPointMake(self.frame.maxX - 70, self.frame.minY + 40)
@@ -590,20 +606,58 @@ class MainMenuScene: SKScene {
                 
                 // ##### change this for new level #####
                 
-            }else if inventory!.containsPoint(touch.locationInNode(self)){
+           /* }else if inventory!.containsPoint(touch.locationInNode(self)){
                 //let inventoryScene = Inventory(size: self.frame.size)
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 (self.userData?.objectForKey("inventory") as Inventory).userData?.setObject(self, forKey: "menu")
-                self.view?.presentScene(self.userData?.objectForKey("inventory") as Inventory, transition: skTransition)
+                self.view?.presentScene(self.userData?.objectForKey("inventory") as Inventory, transition: skTransition)*/
                 
+            }else if inventoryNode!.containsPoint(touch.locationInNode(self)){
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(inventory, transition: skTransition)
+                
+            }else if storeNode!.containsPoint(touch.locationInNode(self)){
+                let aStoreScene = StoreScene(size: self.frame.size)
+                aStoreScene.userData = NSMutableDictionary()
+                aStoreScene.userData?.setObject(inventory!, forKey: "inventory")
+                //aStoreScene.userData?.setObject(world1Menu!, forKey: "menu")
+                aStoreScene.userData?.setObject(self, forKey: "worldscene")
+                self.view?.presentScene(aStoreScene, transition: skTransition)
+            
+            } else if menu!.containsPoint(touch.locationInNode(self)){
+                    //let menuScene = MainMenuScene(size: self.frame.size)
+                    //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
+                    //(self.userData?.objectForKey("menu") as MainMenuScene).userData?.setObject(self, forKey: "inventory")
+                    let skTransition = SKTransition.fadeWithDuration(1.0)
+                    //self.view?.presentScene(menuScene, transition: skTransition)
+                    self.view?.presentScene(self.userData?.objectForKey("worldscene") as ZoneScene, transition: skTransition)
+                
+                }
+             /*
+            
+            }else if inventoryNode!.containsPoint(touch.locationInNode(self)){
+            self.view?.presentScene(inventory, transition: skTransition)
+            }else if storeNode!.containsPoint(touch.locationInNode(self)){
+            let aStoreScene = StoreScene(size: self.frame.size)
+            aStoreScene.userData = NSMutableDictionary()
+            aStoreScene.userData?.setObject(inventory!, forKey: "inventory")
+            //aStoreScene.userData?.setObject(world1Menu!, forKey: "menu")
+            aStoreScene.userData?.setObject(self, forKey: "worldscene")
+            self.view?.presentScene(aStoreScene, transition: skTransition)
+            
+            
+            
+            
+            
+            
             }else if mainScreen!.containsPoint(touch.locationInNode(self)){
                 //let inventoryScene = Inventory(size: self.frame.size)
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 //(self.userData?.objectForKey("worldScene") as Inventory).userData?.setObject(self, forKey: "worldScene")
                 self.view?.presentScene(self.userData?.objectForKey("worldscene") as ZoneScene, transition: skTransition)
             }
+                        */
         }
     }
 }
-
 
