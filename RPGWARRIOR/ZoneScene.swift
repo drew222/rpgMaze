@@ -28,6 +28,7 @@ class ZoneScene: SKScene {
         background.zPosition = -1
         self.addChild(background)
         if firstLoad{
+            
             world1Menu = MainMenuScene(size: self.frame.size)
             world1Menu!.userData = NSMutableDictionary()
             world1Menu!.userData?.setObject(self, forKey: "worldscene")
@@ -36,6 +37,7 @@ class ZoneScene: SKScene {
             inventory!.userData = NSMutableDictionary()
             inventory!.userData?.setObject(world1Menu!, forKey: "menu")
             inventory!.userData?.setObject(self, forKey: "worldscene")
+            
             world1Node = SKSpriteNode(imageNamed: "The_Beach_Zone_Button_1")
             //world1Node!.zPosition = -2
             world1Node!.size = CGSizeMake(350, 80)

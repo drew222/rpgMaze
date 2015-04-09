@@ -6,20 +6,26 @@
 //  Copyright (c) 2015 Drew Zoellner. All rights reserved.
 //
 
+import Foundation
 import SpriteKit
+
 
 //import AVFoundation
 
 class MainMenuScene: SKScene {
-    var level1Node: SKLabelNode?
+    var inventory: Inventory?
+    var world1Menu: MainMenuScene?
+    var storeNode: SKSpriteNode?
+    var inventoryNode: SKSpriteNode?
+    var level1Node: SKSpriteNode?
     var level2Node: SKLabelNode?
     var level3Node: SKLabelNode?
     var level4Node: SKLabelNode?
     var level5Node: SKLabelNode?
-    var inventory: SKLabelNode?
+    //var inventory: SKLabelNode?
     var mainScreen: SKLabelNode?
-    var world1level1node: SKLabelNode?
-    var world1level2node: SKLabelNode?
+    var world1level1node: SKSpriteNode?
+    var world1level2node: SKSpriteNode?
     var world1level3node: SKLabelNode?
     var world1level4node: SKLabelNode?
     var world1level5node: SKLabelNode?
@@ -44,21 +50,62 @@ class MainMenuScene: SKScene {
     var world1level28node: SKLabelNode?
     
     // ##### change this for new level#####
+    
     var firstTimeLoaded = true
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         if firstTimeLoaded{
-        self.backgroundColor = UIColor.blueColor()
-            let background = SKSpriteNode(imageNamed: "Zone_Screen_2")
+            let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
             background.size = self.frame.size
             background.position = CGPointMake(self.frame.midX, self.frame.midY)
             background.zPosition = -1
             self.addChild(background)
-        level1Node = SKLabelNode.init(text: "Level 1")
-        level1Node!.position = CGPointMake(self.frame.midX + 50, self.frame.midY - 10)
+            let sandCastle = SKSpriteNode(imageNamed: "Sand_Castle_1.png")
+            sandCastle.setScale(0.35)
+            sandCastle.position = CGPointMake(self.frame.midX, self.frame.midY - 50)
+            self.addChild(sandCastle)
+            
+            world1Menu = MainMenuScene(size: self.frame.size)
+            world1Menu!.userData = NSMutableDictionary()
+            world1Menu!.userData?.setObject(self, forKey: "worldscene")
+            inventory = Inventory(size: self.frame.size)
+            world1Menu!.userData?.setObject(inventory!, forKey: "inventory")
+            inventory!.userData = NSMutableDictionary()
+            inventory!.userData?.setObject(world1Menu!, forKey: "menu")
+            inventory!.userData?.setObject(self, forKey: "worldscene")
+            
+           
+            inventoryNode = SKSpriteNode(imageNamed: "Fitting_Room__Button_1")
+            //inventoryNode!.zPosition = -2
+            inventoryNode!.size = CGSizeMake(100, 100)
+            inventoryNode!.position = CGPointMake(self.frame.minX + 55, self.frame.maxY - 55)
+            self.addChild(inventoryNode!)
+            storeNode = SKSpriteNode(imageNamed: "Store_Button_1")
+            //storeNode!.zPosition = -2
+            storeNode!.size = CGSizeMake(100, 100)
+            storeNode!.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 55)
+            self.addChild(storeNode!)
+            /*
+            inventory = SKLabelNode.init(text: "Inventory")
+            inventory!.position = CGPointMake(self.frame.maxX - 70, self.frame.minY + 40)
+            inventory!.name = "inventory"
+            self.addChild(inventory!)
+            firstTimeLoaded = false
+            
+            mainScreen = SKLabelNode.init(text: "Main Menu")
+            mainScreen!.position = CGPointMake(self.frame.minX + 70, self.frame.minY + 40)
+            mainScreen!.name = "inventory"
+            self.addChild(mainScreen!)
+            firstTimeLoaded = false */
+            
+        /*
+        level1Node = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+        level1Node!.size = CGSizeMake(40, 40)
+        level1Node!.position = CGPointMake(self.frame.midX + 120, self.frame.midY - 10)
         level1Node!.name = "level1"
         self.addChild(level1Node!)
+        
         
         level2Node = SKLabelNode.init(text: "Level 2")
         level2Node!.position = CGPointMake(self.frame.midX + 50, self.frame.midY - 60)
@@ -91,22 +138,23 @@ class MainMenuScene: SKScene {
             Node.name = "level5"
             self.addChild(Node)
         }
-        world1level1node = SKLabelNode.init(text: "World 1 : Level 1")
-        resizeLabel(world1level1node!)
+        */
+        world1level1node = SKSpriteNode(imageNamed: "World_1_Level_1_Text")
         if let Node = world1level1node {
-            Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 300)
+            Node.setScale(0.4)
+            Node.position = CGPointMake(self.frame.midX, self.frame.midY)
             Node.name = "world1level1"
             self.addChild(Node)
         }
-            
-        world1level2node = SKLabelNode.init(text: "World 1 : Level 2")
-        resizeLabel(world1level2node!)
+
+        world1level2node = SKSpriteNode(imageNamed: "World_1_Level_2_Text")
         if let Node = world1level2node {
-            Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 275)
+            Node.setScale(0.4)
+            Node.position = CGPointMake(self.frame.midX - 45, self.frame.midY - 25)
             Node.name = "world1level2"
             self.addChild(Node)
         }
-            
+      
         world1level3node = SKLabelNode.init(text: "World 1 : Level 3")
         resizeLabel(world1level3node!)
         if let Node = world1level3node {
@@ -268,22 +316,15 @@ class MainMenuScene: SKScene {
 
             // #####change this for new level#####
         
-        inventory = SKLabelNode.init(text: "Inventory")
-        inventory!.position = CGPointMake(self.frame.maxX - 70, self.frame.minY + 40)
-        inventory!.name = "inventory"
-        self.addChild(inventory!)
-        firstTimeLoaded = false
-            
-            mainScreen = SKLabelNode.init(text: "Main Menu")
-            mainScreen!.position = CGPointMake(self.frame.minX + 70, self.frame.minY + 40)
-            mainScreen!.name = "inventory"
-            self.addChild(mainScreen!)
-            firstTimeLoaded = false
+        
         }
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        let skTransition = SKTransition.fadeWithDuration(1.0)
         for touch in touches{
+            
+            /*
             if level1Node!.containsPoint(touch.locationInNode(self)){
                 let gameplayScene = GameScene(size: self.frame.size)
                 gameplayScene.userData = NSMutableDictionary()
@@ -328,8 +369,9 @@ class MainMenuScene: SKScene {
                 //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(level5, transition: skTransition)
+                */
                 
-            }else if world1level1node!.containsPoint(touch.locationInNode(self)){
+            if world1level1node!.containsPoint(touch.locationInNode(self)){
                 let world1level1scene = World1Level1(size: self.frame.size)
                 world1level1scene.userData = NSMutableDictionary()
                 world1level1scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
