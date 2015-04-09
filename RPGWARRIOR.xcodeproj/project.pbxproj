@@ -258,6 +258,14 @@
 		EEB7AB081AD0F27600064D9C /* World1Level15.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB071AD0F27600064D9C /* World1Level15.swift */; };
 		EEB7AB0A1AD0FED000064D9C /* World1Level16.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB091AD0FED000064D9C /* World1Level16.swift */; };
 		EEBBAFEC1AD5912600125105 /* World1Level18.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBAFEB1AD5912600125105 /* World1Level18.swift */; };
+		EEBBAFF51AD6C02800125105 /* Ink_Flood_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEBBAFED1AD6C02800125105 /* Ink_Flood_1.png */; };
+		EEBBAFF61AD6C02800125105 /* Ink_Flood_2.png in Resources */ = {isa = PBXBuildFile; fileRef = EEBBAFEE1AD6C02800125105 /* Ink_Flood_2.png */; };
+		EEBBAFF71AD6C02800125105 /* Ink_Flood_3.png in Resources */ = {isa = PBXBuildFile; fileRef = EEBBAFEF1AD6C02800125105 /* Ink_Flood_3.png */; };
+		EEBBAFF81AD6C02800125105 /* Level_Revealing_Tide_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEBBAFF01AD6C02800125105 /* Level_Revealing_Tide_1.png */; };
+		EEBBAFF91AD6C02800125105 /* Safety_Pillar_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEBBAFF11AD6C02800125105 /* Safety_Pillar_1.png */; };
+		EEBBAFFA1AD6C02800125105 /* Safety_Pillar_2.png in Resources */ = {isa = PBXBuildFile; fileRef = EEBBAFF21AD6C02800125105 /* Safety_Pillar_2.png */; };
+		EEBBAFFB1AD6C02800125105 /* Safety_Pillar_3.png in Resources */ = {isa = PBXBuildFile; fileRef = EEBBAFF31AD6C02800125105 /* Safety_Pillar_3.png */; };
+		EEBBAFFC1AD6C02800125105 /* Sand_Castle_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEBBAFF41AD6C02800125105 /* Sand_Castle_1.png */; };
 		EEF8559A1AD1D8F000112A59 /* World1Level28.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF855991AD1D8F000112A59 /* World1Level28.swift */; };
 		EEF8D9811AD2264200FC2A4F /* TreasureChest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9801AD2264200FC2A4F /* TreasureChest.swift */; };
 		EEF8D9831AD3770800FC2A4F /* World1Level26.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9821AD3770800FC2A4F /* World1Level26.swift */; };
@@ -579,6 +587,14 @@
 		EEB7AB071AD0F27600064D9C /* World1Level15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level15.swift; sourceTree = "<group>"; };
 		EEB7AB091AD0FED000064D9C /* World1Level16.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level16.swift; sourceTree = "<group>"; };
 		EEBBAFEB1AD5912600125105 /* World1Level18.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level18.swift; sourceTree = "<group>"; };
+		EEBBAFED1AD6C02800125105 /* Ink_Flood_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Ink_Flood_1.png; path = ../../../../Downloads/whatskrakenartbundle6/Ink_Flood_1.png; sourceTree = "<group>"; };
+		EEBBAFEE1AD6C02800125105 /* Ink_Flood_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Ink_Flood_2.png; path = ../../../../Downloads/whatskrakenartbundle6/Ink_Flood_2.png; sourceTree = "<group>"; };
+		EEBBAFEF1AD6C02800125105 /* Ink_Flood_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Ink_Flood_3.png; path = ../../../../Downloads/whatskrakenartbundle6/Ink_Flood_3.png; sourceTree = "<group>"; };
+		EEBBAFF01AD6C02800125105 /* Level_Revealing_Tide_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Level_Revealing_Tide_1.png; path = ../../../../Downloads/whatskrakenartbundle6/Level_Revealing_Tide_1.png; sourceTree = "<group>"; };
+		EEBBAFF11AD6C02800125105 /* Safety_Pillar_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Safety_Pillar_1.png; path = ../../../../Downloads/whatskrakenartbundle6/Safety_Pillar_1.png; sourceTree = "<group>"; };
+		EEBBAFF21AD6C02800125105 /* Safety_Pillar_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Safety_Pillar_2.png; path = ../../../../Downloads/whatskrakenartbundle6/Safety_Pillar_2.png; sourceTree = "<group>"; };
+		EEBBAFF31AD6C02800125105 /* Safety_Pillar_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Safety_Pillar_3.png; path = ../../../../Downloads/whatskrakenartbundle6/Safety_Pillar_3.png; sourceTree = "<group>"; };
+		EEBBAFF41AD6C02800125105 /* Sand_Castle_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Sand_Castle_1.png; path = ../../../../Downloads/whatskrakenartbundle6/Sand_Castle_1.png; sourceTree = "<group>"; };
 		EEF855991AD1D8F000112A59 /* World1Level28.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level28.swift; sourceTree = "<group>"; };
 		EEF8D9801AD2264200FC2A4F /* TreasureChest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureChest.swift; sourceTree = "<group>"; };
 		EEF8D9821AD3770800FC2A4F /* World1Level26.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level26.swift; sourceTree = "<group>"; };
@@ -770,6 +786,14 @@
 		DCE69DA81AC9F18D003561E6 /* Rpg14 */ = {
 			isa = PBXGroup;
 			children = (
+				EEBBAFED1AD6C02800125105 /* Ink_Flood_1.png */,
+				EEBBAFEE1AD6C02800125105 /* Ink_Flood_2.png */,
+				EEBBAFEF1AD6C02800125105 /* Ink_Flood_3.png */,
+				EEBBAFF01AD6C02800125105 /* Level_Revealing_Tide_1.png */,
+				EEBBAFF11AD6C02800125105 /* Safety_Pillar_1.png */,
+				EEBBAFF21AD6C02800125105 /* Safety_Pillar_2.png */,
+				EEBBAFF31AD6C02800125105 /* Safety_Pillar_3.png */,
+				EEBBAFF41AD6C02800125105 /* Sand_Castle_1.png */,
 				EEF8D9D81AD43A8F00FC2A4F /* Beach_Ball_Particle.png */,
 				EEF8D9D91AD43A8F00FC2A4F /* Ink_Splat_1.png */,
 				EEF8D9DA1AD43A8F00FC2A4F /* No_Text_1.png */,
@@ -1120,6 +1144,7 @@
 				DCE69EC41AC9F18D003561E6 /* projectile_1@2x.png in Resources */,
 				DCE69EDA1AC9F18D003561E6 /* Treasure_Chest_1.png in Resources */,
 				EEF8D9D71AD42C1700FC2A4F /* Tentacle_35.png in Resources */,
+				EEBBAFFA1AD6C02800125105 /* Safety_Pillar_2.png in Resources */,
 				DCE69E7B1AC9F18D003561E6 /* Crab_Boss_4.png in Resources */,
 				DCE69EFF1AC9F18D003561E6 /* wizard14.png in Resources */,
 				DCE69EA31AC9F18D003561E6 /* Kraken_Movement_6.png in Resources */,
@@ -1137,6 +1162,7 @@
 				DCE69EF11AC9F18D003561E6 /* Whale_Boss_2.png in Resources */,
 				DCE69E651AC9F18D003561E6 /* Beach_Crab_1.png in Resources */,
 				EEF8D9DF1AD43A8F00FC2A4F /* Yes_Text_1.png in Resources */,
+				EEBBAFF71AD6C02800125105 /* Ink_Flood_3.png in Resources */,
 				EEF8D9CC1AD42C1700FC2A4F /* Tentacle_23.png in Resources */,
 				DCE69ED91AC9F18D003561E6 /* The_Beach_Zone_Button_1.png in Resources */,
 				DCE69F0F1AC9F18D003561E6 /* wizard7.png in Resources */,
@@ -1182,6 +1208,7 @@
 				DCE69F0C1AC9F18D003561E6 /* wizard4.png in Resources */,
 				DCE69F031AC9F18D003561E6 /* wizard18.png in Resources */,
 				DCE69E741AC9F18D003561E6 /* Copper_Ring_2.png in Resources */,
+				EEBBAFF51AD6C02800125105 /* Ink_Flood_1.png in Resources */,
 				DCE69EA91AC9F18D003561E6 /* level1boots.png in Resources */,
 				DCE69E851AC9F18D003561E6 /* Fitting_Room_Kraken_1.png in Resources */,
 				EEF8D9CD1AD42C1700FC2A4F /* Tentacle_24.png in Resources */,
@@ -1233,6 +1260,7 @@
 				DCE69EA41AC9F18D003561E6 /* Kraken_Movement_7.png in Resources */,
 				DCE69EB31AC9F18D003561E6 /* level3sword.png in Resources */,
 				DCE69E9D1AC9F18D003561E6 /* Kraken_Movement_15.png in Resources */,
+				EEBBAFF91AD6C02800125105 /* Safety_Pillar_1.png in Resources */,
 				DCE69E971AC9F18D003561E6 /* Kraken_Movement_1.png in Resources */,
 				DCE69F051AC9F18D003561E6 /* wizard2.png in Resources */,
 				EEF8D9BB1AD42C1700FC2A4F /* Tentacle_5.png in Resources */,
@@ -1264,6 +1292,7 @@
 				DCE69EC71AC9F18D003561E6 /* Rusty_Copper_Ring_1.png in Resources */,
 				DCE69EAE1AC9F18D003561E6 /* level2setboots.png in Resources */,
 				DCE69ED31AC9F18D003561E6 /* Store_1.png in Resources */,
+				EEBBAFFB1AD6C02800125105 /* Safety_Pillar_3.png in Resources */,
 				DCE69EBD1AC9F18D003561E6 /* Mossy_Gold_Ring_2.png in Resources */,
 				EEF8D9B71AD42C1700FC2A4F /* Tentacle_1.png in Resources */,
 				DCE69F021AC9F18D003561E6 /* wizard17.png in Resources */,
@@ -1325,17 +1354,20 @@
 				DCE69ED01AC9F18D003561E6 /* Seashell_4.png in Resources */,
 				DCE69EF41AC9F18D003561E6 /* Whale_Boss_5.png in Resources */,
 				DCE69E831AC9F18D003561E6 /* Fitting_Room_2.png in Resources */,
+				EEBBAFF61AD6C02800125105 /* Ink_Flood_2.png in Resources */,
 				DCE69EA11AC9F18D003561E6 /* Kraken_Movement_4.png in Resources */,
 				DCE69F0B1AC9F18D003561E6 /* wizard3.png in Resources */,
 				DCE69EE51AC9F18D003561E6 /* walkman5.png in Resources */,
 				DCE69E771AC9F18D003561E6 /* Crab_Boss_11.png in Resources */,
 				EEF8D9DD1AD43A8F00FC2A4F /* Ink_Splat_1.png in Resources */,
 				DCE69EC11AC9F18D003561E6 /* Opening_Screen_1.png in Resources */,
+				EEBBAFF81AD6C02800125105 /* Level_Revealing_Tide_1.png in Resources */,
 				DCE69E691AC9F18D003561E6 /* Clam_Boss_2.png in Resources */,
 				DCE69EB91AC9F18D003561E6 /* Levels_Text_1.png in Resources */,
 				DCE69E8B1AC9F18D003561E6 /* Inventory_Array_Background_1.png in Resources */,
 				DCE69EE31AC9F18D003561E6 /* walkman3.png in Resources */,
 				DCE69ECC1AC9F18D003561E6 /* Rusty_Silver_Ring_2.png in Resources */,
+				EEBBAFFC1AD6C02800125105 /* Sand_Castle_1.png in Resources */,
 				DCE69E761AC9F18D003561E6 /* Crab_Boss_10.png in Resources */,
 				DCE69EE21AC9F18D003561E6 /* walkman2.png in Resources */,
 				EEF8D9C51AD42C1700FC2A4F /* Tentacle_16.png in Resources */,
