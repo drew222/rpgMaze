@@ -22,6 +22,8 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
     let levelName = "world1level27"
     var droppedItem = false
     
+    
+    
     let wizardAttackSpeed = 1.0
     
     var theBomber: BomberClass?
