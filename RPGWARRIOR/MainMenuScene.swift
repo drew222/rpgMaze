@@ -28,28 +28,28 @@ class MainMenuScene: SKScene {
     var menu: SKSpriteNode?
     var world1level1node: SKSpriteNode?
     var world1level2node: SKSpriteNode?
-    var world1level3node: SKLabelNode?
-    var world1level4node: SKLabelNode?
-    var world1level5node: SKLabelNode?
-    var world1level6node: SKLabelNode?
-    var world1level7node: SKLabelNode?
-    var world1level8node: SKLabelNode?
-    var world1level9node: SKLabelNode?
-    var world1level10node: SKLabelNode?
-    var world1level11node: SKLabelNode?
-    var world1level12node: SKLabelNode?
-    var world1level13node: SKLabelNode?
-    var world1level14node: SKLabelNode?
-    var world1level15node: SKLabelNode?
-    var world1level16node: SKLabelNode?
-    var world1level17node: SKLabelNode?
-    var world1level18node: SKLabelNode?
-    var world1level19node: SKLabelNode?
-    var world1level20node: SKLabelNode?
-    var world1level21node: SKLabelNode?
-    var world1level26node: SKLabelNode?
-    var world1level27node: SKLabelNode?
-    var world1level28node: SKLabelNode?
+    var world1level3node: SKSpriteNode?
+    var world1level4node: SKSpriteNode?
+    var world1level5node: SKSpriteNode?
+    var world1level6node: SKSpriteNode?
+    var world1level7node: SKSpriteNode?
+    var world1level8node: SKSpriteNode?
+    var world1level9node: SKSpriteNode?
+    var world1level10node: SKSpriteNode?
+    var world1level11node: SKSpriteNode?
+    var world1level12node: SKSpriteNode?
+    var world1level13node: SKSpriteNode?
+    var world1level14node: SKSpriteNode?
+    var world1level15node: SKSpriteNode?
+    var world1level16node: SKSpriteNode?
+    var world1level17node: SKSpriteNode?
+    var world1level18node: SKSpriteNode?
+    var world1level19node: SKSpriteNode?
+    var world1level20node: SKSpriteNode?
+    var world1level21node: SKSpriteNode?
+    var world1level26node: SKSpriteNode?
+    var world1level27node: SKSpriteNode?
+    var world1level28node: SKSpriteNode?
     
     // ##### change this for new level#####
     
@@ -157,6 +157,10 @@ class MainMenuScene: SKScene {
         */
         world1level1node = SKSpriteNode(imageNamed: "World_1_Level_1_Text")
         if let Node = world1level1node {
+            let levelIcon = SKSpriteNode(imageNamed: "Clam_Boss_Level_Icon_1")
+            Node.setScale(0.4)
+            levelIcon.position = CGPointMake(self.frame.midX, self.frame.midY)
+            self.addChild(levelIcon)
             Node.setScale(0.4)
             Node.position = CGPointMake(self.frame.midX, self.frame.midY)
             Node.name = "world1level1"
@@ -171,160 +175,160 @@ class MainMenuScene: SKScene {
             self.addChild(Node)
         }
       
-        world1level3node = SKLabelNode.init(text: "World 1 : Level 3")
-        resizeLabel(world1level3node!)
-        if let Node = world1level3node {
+            world1level3node = SKSpriteNode(imageNamed: "World_1_Level_3_Text")
+            if let Node = world1level3node {
+                Node.setScale(0.4)
             Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 250)
             Node.name = "world1level3"
             self.addChild(Node)
         }
             
-            world1level4node = SKLabelNode.init(text: "World 1 : Level 4")
-            resizeLabel(world1level4node!)
+            world1level4node = SKSpriteNode(imageNamed: "World_1_Level_4_Text")
             if let Node = world1level4node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 225)
                 Node.name = "world1level4"
                 self.addChild(Node)
             }
             
-            world1level5node = SKLabelNode.init(text: "World 1 : Level 5")
-            resizeLabel(world1level5node!)
+            world1level5node = SKSpriteNode(imageNamed: "World_1_Level_5_Text")
             if let Node = world1level5node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 200)
                 Node.name = "world1level5"
                 self.addChild(Node)
             }
             
-            world1level6node = SKLabelNode.init(text: "World 1 : Level 6")
-            resizeLabel(world1level6node!)
+            world1level6node = SKSpriteNode(imageNamed: "World_1_Level_6_Text")
             if let Node = world1level6node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 175)
                 Node.name = "world1level6"
                 self.addChild(Node)
             }
             
-            world1level7node = SKLabelNode.init(text: "World 1 : Level 7")
-            resizeLabel(world1level7node!)
+            world1level7node = SKSpriteNode(imageNamed: "World_1_Level_7_Text")
             if let Node = world1level7node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 150)
                 Node.name = "world1level7"
                 self.addChild(Node)
             }
-            world1level8node = SKLabelNode.init(text: "World 1 : Level 8")
-            resizeLabel(world1level8node!)
+            world1level8node = SKSpriteNode(imageNamed: "World_1_Level_8_Text")
             if let Node = world1level8node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 125)
                 Node.name = "world1level8"
                 self.addChild(Node)
             }
-            world1level9node = SKLabelNode.init(text: "World 1 : Level 9")
-            resizeLabel(world1level9node!)
+            world1level9node = SKSpriteNode(imageNamed: "World_1_Level_9_Text")
             if let Node = world1level9node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 100)
                 Node.name = "world1level9"
                 self.addChild(Node)
             }
-            world1level10node = SKLabelNode.init(text: "World 1 : Level 10")
-            resizeLabel(world1level10node!)
+            world1level10node = SKSpriteNode(imageNamed: "World_1_Level_10_Text")
             if let Node = world1level10node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 75)
                 Node.name = "world1level10"
                 self.addChild(Node)
             }
-            world1level11node = SKLabelNode.init(text: "World 1 : Level 11")
-            resizeLabel(world1level11node!)
+            world1level11node = SKSpriteNode(imageNamed: "World_1_Level_11_Text")
             if let Node = world1level11node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 50)
                 Node.name = "world1level11"
                 self.addChild(Node)
             }
-            world1level12node = SKLabelNode.init(text: "World 1 : Level 12")
-            resizeLabel(world1level12node!)
+            world1level12node = SKSpriteNode(imageNamed: "World_1_Level_12_Text")
             if let Node = world1level12node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 25)
                 Node.name = "world1level12"
                 self.addChild(Node)
             }
-            world1level13node = SKLabelNode.init(text: "World 1 : Level 13")
-            resizeLabel(world1level13node!)
+            world1level13node = SKSpriteNode(imageNamed: "World_1_Level_13_Text")
             if let Node = world1level13node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY)
                 Node.name = "world1level13"
                 self.addChild(Node)
             }
-            world1level14node = SKLabelNode.init(text: "World 1 : Level 14")
-            resizeLabel(world1level14node!)
+            world1level14node = SKSpriteNode(imageNamed: "World_1_Level_14_Text")
             if let Node = world1level14node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 25)
                 Node.name = "world1level14"
                 self.addChild(Node)
             }
-            world1level15node = SKLabelNode.init(text: "World 1 : Level 15")
-            resizeLabel(world1level15node!)
+            world1level15node = SKSpriteNode(imageNamed: "World_1_Level_15_Text")
             if let Node = world1level15node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 50)
                 Node.name = "world1level15"
                 self.addChild(Node)
             }
-            world1level16node = SKLabelNode.init(text: "World 1 : Level 16")
-            resizeLabel(world1level16node!)
+            world1level16node = SKSpriteNode(imageNamed: "World_1_Level_16_Text")
             if let Node = world1level16node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 75)
                 Node.name = "world1level16"
                 self.addChild(Node)
             }
-            world1level17node = SKLabelNode.init(text: "World 1 : Level 17")
-            resizeLabel(world1level17node!)
+            world1level17node = SKSpriteNode(imageNamed: "World_1_Level_17_Text")
             if let Node = world1level17node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 100)
                 Node.name = "world1level17"
                 self.addChild(Node)
             }
-            world1level18node = SKLabelNode.init(text: "World 1 : Level 18")
-            resizeLabel(world1level18node!)
+            world1level18node = SKSpriteNode(imageNamed: "World_1_Level_18_Text")
             if let Node = world1level18node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX + 100, self.frame.midY + 300)
                 Node.name = "world1level18"
                 self.addChild(Node)
             }
-            world1level19node = SKLabelNode.init(text: "World 1 : Level 19")
-            resizeLabel(world1level19node!)
+            world1level19node = SKSpriteNode(imageNamed: "World_1_Level_19_Text")
             if let Node = world1level19node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 125)
                 Node.name = "world1level19"
                 self.addChild(Node)
             }
-            world1level20node = SKLabelNode.init(text: "World 1 : Level 20")
-            resizeLabel(world1level20node!)
+            world1level20node = SKSpriteNode(imageNamed: "World_1_Level_20_Text")
             if let Node = world1level20node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 150)
                 Node.name = "world1level20"
                 self.addChild(Node)
             }
-            world1level21node = SKLabelNode.init(text: "World 1 : Level 21")
-            resizeLabel(world1level21node!)
+            world1level21node = SKSpriteNode(imageNamed: "World_1_Level_21_Text")
             if let Node = world1level21node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 175)
                 Node.name = "world1level21"
                 self.addChild(Node)
             }
-            world1level26node = SKLabelNode.init(text: "World 1 : Level 26")
-            resizeLabel(world1level26node!)
+            world1level26node = SKSpriteNode(imageNamed: "World_1_Level_26_Text")
             if let Node = world1level26node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 200)
                 Node.name = "world1level26"
                 self.addChild(Node)
             }
-            world1level27node = SKLabelNode.init(text: "World 1 : Level 27")
-            resizeLabel(world1level27node!)
+            world1level27node = SKSpriteNode(imageNamed: "World_1_Level_27_Text")
             if let Node = world1level27node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 225)
                 Node.name = "world1level27"
                 self.addChild(Node)
             }
-            world1level28node = SKLabelNode.init(text: "World 1 : Level 28")
-            resizeLabel(world1level28node!)
+            world1level28node = SKSpriteNode(imageNamed: "World_1_Level_28_Text")
             if let Node = world1level28node {
+                Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 250)
                 Node.name = "world1level28"
                 self.addChild(Node)
