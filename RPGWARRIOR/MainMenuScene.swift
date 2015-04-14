@@ -157,8 +157,8 @@ class MainMenuScene: SKScene {
         */
         world1level1node = SKSpriteNode(imageNamed: "World_1_Level_1_Text")
         if let Node = world1level1node {
-            let levelIcon = SKSpriteNode(imageNamed: "Clam_Boss_Level_Icon_1")
-            Node.setScale(0.4)
+            let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+            levelIcon.setScale(0.28)
             levelIcon.position = CGPointMake(self.frame.midX, self.frame.midY)
             self.addChild(levelIcon)
             Node.setScale(0.4)
