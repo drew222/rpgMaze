@@ -75,33 +75,12 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         //drop loot for killing wizard
         let myNum = randomWithMin(-50, 50)
         println("myNum: \(myNum)")
-        if myNum > 30{
-            let item = ItemClass.itemInSpace("noobSword")
+        if myNum > 0{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
-        }else if myNum > 20{
-            let item = ItemClass.itemInSpace("level1armor")
-            item.position = position
-            item.size = size
-            scene.addChild(item)
-        }else if myNum < -25{
-            let item = ItemClass.itemInSpace("level1boots")
-            item.position = position
-            item.size = size
-            scene.addChild(item)
-        }else if myNum > 0{
-            let item = ItemClass.itemInSpace("level1setarmor")
-            item.position = position
-            item.size = size
-            scene.addChild(item)
-        }else if myNum < 0{
-            let item = ItemClass.itemInSpace("level1setboots")
-            item.position = position
-            item.size = size
-            scene.addChild(item)
-        }
-        //level1gold
+        }        //level1gold
         (scene.userData?.objectForKey("inventory") as Inventory).gold += 5
     }else if level == "level2"{
         let myNum = randomWithMin(-50, 50)
