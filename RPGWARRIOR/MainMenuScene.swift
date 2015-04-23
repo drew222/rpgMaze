@@ -47,9 +47,15 @@ class MainMenuScene: SKScene {
     var world1level19node: SKSpriteNode?
     var world1level20node: SKSpriteNode?
     var world1level21node: SKSpriteNode?
+    var world1level22node: SKSpriteNode?
+    var world1level23node: SKSpriteNode?
+    var world1level24node: SKSpriteNode?
+    var world1level25node: SKSpriteNode?
     var world1level26node: SKSpriteNode?
     var world1level27node: SKSpriteNode?
     var world1level28node: SKSpriteNode?
+    var world1level29node: SKSpriteNode?
+    var world1level30node: SKSpriteNode?
     
     // ##### change this for new level#####
     
@@ -115,14 +121,14 @@ class MainMenuScene: SKScene {
             self.addChild(mainScreen!)
             firstTimeLoaded = false */
             
-        /*
+        
         level1Node = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
         level1Node!.size = CGSizeMake(40, 40)
-        level1Node!.position = CGPointMake(self.frame.midX + 120, self.frame.midY - 10)
+        level1Node!.position = CGPointMake(self.frame.midX + 120, self.frame.minY + 30)
         level1Node!.name = "level1"
         self.addChild(level1Node!)
         
-        
+        /*
         level2Node = SKLabelNode.init(text: "Level 2")
         level2Node!.position = CGPointMake(self.frame.midX + 50, self.frame.midY - 60)
         level2Node!.name = "level2"
@@ -161,7 +167,7 @@ class MainMenuScene: SKScene {
             levelIcon.setScale(0.28)
             levelIcon.position = CGPointMake(self.frame.midX, self.frame.midY)
             self.addChild(levelIcon)
-            Node.setScale(0.4)
+            Node.setScale(0.3)
             Node.position = CGPointMake(self.frame.midX, self.frame.midY)
             Node.name = "world1level1"
             self.addChild(Node)
@@ -169,7 +175,11 @@ class MainMenuScene: SKScene {
 
         world1level2node = SKSpriteNode(imageNamed: "World_1_Level_2_Text")
         if let Node = world1level2node {
-            Node.setScale(0.4)
+            let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+            levelIcon.setScale(0.28)
+            levelIcon.position = CGPointMake(self.frame.midX - 45, self.frame.midY - 25)
+            self.addChild(levelIcon)
+            Node.setScale(0.3)
             Node.position = CGPointMake(self.frame.midX - 45, self.frame.midY - 25)
             Node.name = "world1level2"
             self.addChild(Node)
@@ -177,160 +187,314 @@ class MainMenuScene: SKScene {
       
             world1level3node = SKSpriteNode(imageNamed: "World_1_Level_3_Text")
             if let Node = world1level3node {
-                Node.setScale(0.4)
-            Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 250)
+            let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+            levelIcon.setScale(0.28)
+            levelIcon.position = CGPointMake(self.frame.midX - 70, self.frame.midY - 120)
+            self.addChild(levelIcon)
+            Node.setScale(0.3)
+            Node.position = CGPointMake(self.frame.midX - 70, self.frame.midY - 120)
             Node.name = "world1level3"
             self.addChild(Node)
         }
             
             world1level4node = SKSpriteNode(imageNamed: "World_1_Level_4_Text")
             if let Node = world1level4node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 225)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 65)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 65)
                 Node.name = "world1level4"
                 self.addChild(Node)
             }
             
             world1level5node = SKSpriteNode(imageNamed: "World_1_Level_5_Text")
             if let Node = world1level5node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 200)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX - 110, self.frame.midY)
                 Node.name = "world1level5"
                 self.addChild(Node)
             }
             
             world1level6node = SKSpriteNode(imageNamed: "World_1_Level_6_Text")
             if let Node = world1level6node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 175)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY + 70)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX - 110, self.frame.midY + 70)
                 Node.name = "world1level6"
                 self.addChild(Node)
             }
             
             world1level7node = SKSpriteNode(imageNamed: "World_1_Level_7_Text")
             if let Node = world1level7node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 150)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY + 130)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX - 110, self.frame.midY + 130)
                 Node.name = "world1level7"
                 self.addChild(Node)
             }
             world1level8node = SKSpriteNode(imageNamed: "World_1_Level_8_Text")
             if let Node = world1level8node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 125)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX - 45, self.frame.midY + 135)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX - 45, self.frame.midY + 135)
                 Node.name = "world1level8"
                 self.addChild(Node)
             }
             world1level9node = SKSpriteNode(imageNamed: "World_1_Level_9_Text")
             if let Node = world1level9node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 100)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX + 45, self.frame.midY + 135)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX + 45, self.frame.midY + 135)
                 Node.name = "world1level9"
                 self.addChild(Node)
             }
             world1level10node = SKSpriteNode(imageNamed: "World_1_Level_10_Text")
             if let Node = world1level10node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 75)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX + 110, self.frame.midY + 130)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX + 110, self.frame.midY + 130)
                 Node.name = "world1level10"
                 self.addChild(Node)
             }
             world1level11node = SKSpriteNode(imageNamed: "World_1_Level_11_Text")
             if let Node = world1level11node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 50)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX + 110, self.frame.midY + 70)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX + 110, self.frame.midY + 70)
                 Node.name = "world1level11"
                 self.addChild(Node)
             }
             world1level12node = SKSpriteNode(imageNamed: "World_1_Level_12_Text")
             if let Node = world1level12node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY + 25)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX + 110, self.frame.midY)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX + 110, self.frame.midY)
                 Node.name = "world1level12"
                 self.addChild(Node)
             }
             world1level13node = SKSpriteNode(imageNamed: "World_1_Level_13_Text")
             if let Node = world1level13node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX + 110, self.frame.midY - 65)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX + 110, self.frame.midY - 65)
                 Node.name = "world1level13"
                 self.addChild(Node)
             }
             world1level14node = SKSpriteNode(imageNamed: "World_1_Level_14_Text")
             if let Node = world1level14node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 25)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX + 70, self.frame.midY - 115)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX + 70, self.frame.midY - 115)
                 Node.name = "world1level14"
                 self.addChild(Node)
             }
             world1level15node = SKSpriteNode(imageNamed: "World_1_Level_15_Text")
             if let Node = world1level15node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 50)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX, self.frame.midY - 120)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX, self.frame.midY - 120)
                 Node.name = "world1level15"
                 self.addChild(Node)
             }
             world1level16node = SKSpriteNode(imageNamed: "World_1_Level_16_Text")
             if let Node = world1level16node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 75)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX + 35, self.frame.midY - 210)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX + 35, self.frame.midY - 210)
                 Node.name = "world1level16"
                 self.addChild(Node)
             }
             world1level17node = SKSpriteNode(imageNamed: "World_1_Level_17_Text")
             if let Node = world1level17node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 100)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX + 105, self.frame.midY - 210)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX + 105, self.frame.midY - 210)
                 Node.name = "world1level17"
                 self.addChild(Node)
             }
             world1level18node = SKSpriteNode(imageNamed: "World_1_Level_18_Text")
             if let Node = world1level18node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX + 100, self.frame.midY + 300)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 160)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 160)
                 Node.name = "world1level18"
                 self.addChild(Node)
             }
             world1level19node = SKSpriteNode(imageNamed: "World_1_Level_19_Text")
             if let Node = world1level19node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 125)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 90)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 90)
                 Node.name = "world1level19"
                 self.addChild(Node)
             }
             world1level20node = SKSpriteNode(imageNamed: "World_1_Level_20_Text")
             if let Node = world1level20node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 150)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 20)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 20)
                 Node.name = "world1level20"
                 self.addChild(Node)
             }
             world1level21node = SKSpriteNode(imageNamed: "World_1_Level_21_Text")
             if let Node = world1level21node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 175)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY + 50)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX + 155, self.frame.midY + 50)
                 Node.name = "world1level21"
+                self.addChild(Node)
+            }
+            world1level22node = SKSpriteNode(imageNamed: "World_1_Level_22_Text")
+            if let Node = world1level22node {
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY + 120)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX + 155, self.frame.midY + 120)
+                Node.name = "world1level22"
+                self.addChild(Node)
+            }
+            world1level23node = SKSpriteNode(imageNamed: "World_1_Level_23_Text")
+            if let Node = world1level23node {
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX + 140, self.frame.midY + 180)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX + 140, self.frame.midY + 180)
+                Node.name = "world1level23"
+                self.addChild(Node)
+            }
+            world1level24node = SKSpriteNode(imageNamed: "World_1_Level_24_Text")
+            if let Node = world1level24node {
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX + 70, self.frame.midY + 180)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX + 70, self.frame.midY + 180)
+                Node.name = "world1level24"
+                self.addChild(Node)
+            }
+            world1level25node = SKSpriteNode(imageNamed: "World_1_Level_25_Text")
+            if let Node = world1level25node {
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX, self.frame.midY + 180)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX, self.frame.midY + 180)
+                Node.name = "world1level25"
                 self.addChild(Node)
             }
             world1level26node = SKSpriteNode(imageNamed: "World_1_Level_26_Text")
             if let Node = world1level26node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 200)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX - 70, self.frame.midY + 180)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX - 70, self.frame.midY + 180)
                 Node.name = "world1level26"
                 self.addChild(Node)
             }
             world1level27node = SKSpriteNode(imageNamed: "World_1_Level_27_Text")
             if let Node = world1level27node {
-                Node.setScale(0.4)
-                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 225)
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX - 140, self.frame.midY + 180)
+                self.addChild(levelIcon)
+                Node.setScale(0.3)
+                Node.position = CGPointMake(self.frame.midX - 140, self.frame.midY + 180)
                 Node.name = "world1level27"
                 self.addChild(Node)
             }
             world1level28node = SKSpriteNode(imageNamed: "World_1_Level_28_Text")
             if let Node = world1level28node {
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX, self.frame.midY)
+                self.addChild(levelIcon)
                 Node.setScale(0.4)
                 Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 250)
                 Node.name = "world1level28"
+                self.addChild(Node)
+            }
+            world1level29node = SKSpriteNode(imageNamed: "World_1_Level_29_Text")
+            if let Node = world1level29node {
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX, self.frame.midY)
+                self.addChild(levelIcon)
+                Node.setScale(0.4)
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 250)
+                Node.name = "world1level29"
+                self.addChild(Node)
+            }
+            world1level30node = SKSpriteNode(imageNamed: "World_1_Level_30_Text")
+            if let Node = world1level30node {
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.setScale(0.28)
+                levelIcon.position = CGPointMake(self.frame.midX, self.frame.midY)
+                self.addChild(levelIcon)
+                Node.setScale(0.4)
+                Node.position = CGPointMake(self.frame.midX - 100, self.frame.midY - 250)
+                Node.name = "world1level30"
                 self.addChild(Node)
             }
 
@@ -344,7 +508,7 @@ class MainMenuScene: SKScene {
         let skTransition = SKTransition.fadeWithDuration(1.0)
         for touch in touches{
             
-            /*
+            
             if level1Node!.containsPoint(touch.locationInNode(self)){
                 let gameplayScene = GameScene(size: self.frame.size)
                 gameplayScene.userData = NSMutableDictionary()
@@ -353,7 +517,7 @@ class MainMenuScene: SKScene {
                 //gameplayScene.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(gameplayScene, transition: skTransition)
-                
+               /*
             }else if level2Node!.containsPoint(touch.locationInNode(self)){
                 let level2 = Level2Scene(size: self.frame.size)
                 level2.userData = NSMutableDictionary()
@@ -391,7 +555,7 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(level5, transition: skTransition)
                 */
                 
-            if world1level1node!.containsPoint(touch.locationInNode(self)){
+        }else if world1level1node!.containsPoint(touch.locationInNode(self)){
                 let world1level1scene = World1Level1(size: self.frame.size)
                 world1level1scene.userData = NSMutableDictionary()
                 world1level1scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
@@ -580,6 +744,42 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level21scene, transition: skTransition)
                 
+            }else if world1level22node!.containsPoint(touch.locationInNode(self)){
+                let world1level22scene = World1Level22(size: self.frame.size)
+                world1level22scene.userData = NSMutableDictionary()
+                world1level22scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                world1level22scene.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(world1level22scene, transition: skTransition)
+                
+            }else if world1level23node!.containsPoint(touch.locationInNode(self)){
+                let world1level23scene = World1Level23(size: self.frame.size)
+                world1level23scene.userData = NSMutableDictionary()
+                world1level23scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                world1level23scene.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(world1level23scene, transition: skTransition)
+                
+            }else if world1level24node!.containsPoint(touch.locationInNode(self)){
+                let world1level24scene = World1Level24(size: self.frame.size)
+                world1level24scene.userData = NSMutableDictionary()
+                world1level24scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                world1level24scene.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(world1level24scene, transition: skTransition)
+                
+            }else if world1level25node!.containsPoint(touch.locationInNode(self)){
+                let world1level25scene = World1Level25(size: self.frame.size)
+                world1level25scene.userData = NSMutableDictionary()
+                world1level25scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                world1level25scene.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(world1level25scene, transition: skTransition)
+                
             }else if world1level26node!.containsPoint(touch.locationInNode(self)){
                 let world1level26scene = World1Level26(size: self.frame.size)
                 world1level26scene.userData = NSMutableDictionary()
@@ -608,6 +808,24 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level28scene, transition: skTransition)
                 
+            }else if world1level29node!.containsPoint(touch.locationInNode(self)){
+                let world1level29scene = World1Level29(size: self.frame.size)
+                world1level29scene.userData = NSMutableDictionary()
+                world1level29scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                world1level29scene.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(world1level29scene, transition: skTransition)
+                
+            }else if world1level30node!.containsPoint(touch.locationInNode(self)){
+                let world1level30scene = World1Level30(size: self.frame.size)
+                world1level30scene.userData = NSMutableDictionary()
+                world1level30scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                world1level30scene.userData?.setObject(self, forKey: "menu")
+                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                self.view?.presentScene(world1level30scene, transition: skTransition)
+                
                 // ##### change this for new level #####
                 
            /* }else if inventory!.containsPoint(touch.locationInNode(self)){
@@ -628,8 +846,14 @@ class MainMenuScene: SKScene {
                 aStoreScene.userData?.setObject(self, forKey: "worldscene")
                 self.view?.presentScene(aStoreScene, transition: skTransition)
             
-            } else if menu!.containsPoint(touch.locationInNode(self)){
-                    //let menuScene = MainMenuScene(size: self.frame.size)
+            } else if zonesMenu!.containsPoint(touch.locationInNode(self)){
+                let aZoneScene = ZoneScene(size: self.frame.size)
+                aZoneScene.userData = NSMutableDictionary()
+                aZoneScene.userData?.setObject(inventory!, forKey: "inventory")
+                //aStoreScene.userData?.setObject(world1Menu!, forKey: "menu")
+                aZoneScene.userData?.setObject(self, forKey: "worldscene")
+                self.view?.presentScene(aZoneScene, transition: skTransition)
+                
                     //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
                     //(self.userData?.objectForKey("menu") as MainMenuScene).userData?.setObject(self, forKey: "inventory")
                     let skTransition = SKTransition.fadeWithDuration(1.0)

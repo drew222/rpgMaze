@@ -254,6 +254,12 @@
 		EE3D364C1ACE1DE4002A27B8 /* World1Level20.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */; };
 		EE3D364E1ACEEFDA002A27B8 /* World1Level21.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */; };
 		EE3D36501ACFA0ED002A27B8 /* World1Level9.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D364F1ACFA0ED002A27B8 /* World1Level9.swift */; };
+		EE60A9E61AE868F100A56313 /* World1Level22.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60A9E51AE868F100A56313 /* World1Level22.swift */; };
+		EE60A9E81AE869FB00A56313 /* World1Level23.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60A9E71AE869FB00A56313 /* World1Level23.swift */; };
+		EE60A9EA1AE86ACF00A56313 /* World1Level24.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60A9E91AE86ACF00A56313 /* World1Level24.swift */; };
+		EE60A9EC1AE86B9400A56313 /* World1Level25.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60A9EB1AE86B9400A56313 /* World1Level25.swift */; };
+		EE60A9EE1AE86C4B00A56313 /* World1Level29.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60A9ED1AE86C4B00A56313 /* World1Level29.swift */; };
+		EE60A9F01AE86CF300A56313 /* World1Level30.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60A9EF1AE86CF300A56313 /* World1Level30.swift */; };
 		EEB7AB061AD0E4DE00064D9C /* World1Level19.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB051AD0E4DE00064D9C /* World1Level19.swift */; };
 		EEB7AB081AD0F27600064D9C /* World1Level15.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB071AD0F27600064D9C /* World1Level15.swift */; };
 		EEB7AB0A1AD0FED000064D9C /* World1Level16.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB091AD0FED000064D9C /* World1Level16.swift */; };
@@ -696,6 +702,12 @@
 		EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level20.swift; sourceTree = "<group>"; };
 		EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level21.swift; sourceTree = "<group>"; };
 		EE3D364F1ACFA0ED002A27B8 /* World1Level9.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level9.swift; sourceTree = "<group>"; };
+		EE60A9E51AE868F100A56313 /* World1Level22.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level22.swift; sourceTree = "<group>"; };
+		EE60A9E71AE869FB00A56313 /* World1Level23.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level23.swift; sourceTree = "<group>"; };
+		EE60A9E91AE86ACF00A56313 /* World1Level24.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level24.swift; sourceTree = "<group>"; };
+		EE60A9EB1AE86B9400A56313 /* World1Level25.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level25.swift; sourceTree = "<group>"; };
+		EE60A9ED1AE86C4B00A56313 /* World1Level29.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level29.swift; sourceTree = "<group>"; };
+		EE60A9EF1AE86CF300A56313 /* World1Level30.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level30.swift; sourceTree = "<group>"; };
 		EEB7AB051AD0E4DE00064D9C /* World1Level19.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level19.swift; sourceTree = "<group>"; };
 		EEB7AB071AD0F27600064D9C /* World1Level15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level15.swift; sourceTree = "<group>"; };
 		EEB7AB091AD0FED000064D9C /* World1Level16.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level16.swift; sourceTree = "<group>"; };
@@ -963,9 +975,15 @@
 				EEB7AB051AD0E4DE00064D9C /* World1Level19.swift */,
 				EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */,
 				EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */,
+				EE60A9E51AE868F100A56313 /* World1Level22.swift */,
+				EE60A9E71AE869FB00A56313 /* World1Level23.swift */,
+				EE60A9E91AE86ACF00A56313 /* World1Level24.swift */,
+				EE60A9EB1AE86B9400A56313 /* World1Level25.swift */,
 				EEF8D9821AD3770800FC2A4F /* World1Level26.swift */,
 				EEF8D9E41AD4720C00FC2A4F /* World1Level27.swift */,
 				EEF855991AD1D8F000112A59 /* World1Level28.swift */,
+				EE60A9ED1AE86C4B00A56313 /* World1Level29.swift */,
+				EE60A9EF1AE86CF300A56313 /* World1Level30.swift */,
 				DC321BE41AACE497006E3F2B /* World1Level103.swift */,
 				DCE69C511AB604F2003561E6 /* World1Level108.swift */,
 				DC27113D1A85E1AB00986D2E /* GameScene.swift */,
@@ -1844,22 +1862,26 @@
 				DCC4E3021A89760E000E5E89 /* Inventory.swift in Sources */,
 				DCC4E37B1A94EDED000E5E89 /* Block.swift in Sources */,
 				EEB7AB081AD0F27600064D9C /* World1Level15.swift in Sources */,
+				EE60A9E61AE868F100A56313 /* World1Level22.swift in Sources */,
 				DCF8C7211AD9E61F00DAE15A /* World1Level5.swift in Sources */,
 				DCE69C521AB604F2003561E6 /* World1Level108.swift in Sources */,
 				DC4A44421AD071EE00BE81D8 /* World1Level14.swift in Sources */,
 				2F62CE561A89C21000046DA7 /* MineNode.swift in Sources */,
 				DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */,
+				EE60A9EA1AE86ACF00A56313 /* World1Level24.swift in Sources */,
 				2FC73DE31A912CAA0068A2FB /* BlizzNode.swift in Sources */,
 				DC2711461A85E1F500986D2E /* HeroClass.swift in Sources */,
 				DC321BE31AACDED6006E3F2B /* World1Level2.swift in Sources */,
 				DC4A442E1ACDF79D00BE81D8 /* World1Level12.swift in Sources */,
 				DC2711421A85E1D300986D2E /* Utility.swift in Sources */,
 				DC1F58111A886EFC00B5027B /* BomberClass.swift in Sources */,
+				EE60A9EE1AE86C4B00A56313 /* World1Level29.swift in Sources */,
 				DC321BDD1AAB9D68006E3F2B /* MiniCrab.swift in Sources */,
 				EEF8D9831AD3770800FC2A4F /* World1Level26.swift in Sources */,
 				DC4A442A1ACDDCED00BE81D8 /* WaveNode.swift in Sources */,
 				EEF8D9811AD2264200FC2A4F /* TreasureChest.swift in Sources */,
 				2F62CE591A89C25000046DA7 /* Level3Scene.swift in Sources */,
+				EE60A9E81AE869FB00A56313 /* World1Level23.swift in Sources */,
 				EE3D36501ACFA0ED002A27B8 /* World1Level9.swift in Sources */,
 				DCC4E3041A897671000E5E89 /* ItemSpaceNode.swift in Sources */,
 				EE3D364E1ACEEFDA002A27B8 /* World1Level21.swift in Sources */,
@@ -1878,6 +1900,7 @@
 				DC27113E1A85E1AB00986D2E /* GameScene.swift in Sources */,
 				DC321BE51AACE497006E3F2B /* World1Level103.swift in Sources */,
 				2F62CE571A89C21000046DA7 /* MineThrowerNode.swift in Sources */,
+				EE60A9EC1AE86B9400A56313 /* World1Level25.swift in Sources */,
 				EEF8D9E51AD4720C00FC2A4F /* World1Level27.swift in Sources */,
 				DCE69C501AB507CB003561E6 /* World1Level7.swift in Sources */,
 				DC1F57C11A88087500B5027B /* AppDelegate.swift in Sources */,
@@ -1887,6 +1910,7 @@
 				DC4A443E1ACFA47400BE81D8 /* World1Level8.swift in Sources */,
 				DCC4E3791A8EEE59000E5E89 /* StoreScene.swift in Sources */,
 				DCE69C4E1AB4A04C003561E6 /* World1Level6.swift in Sources */,
+				EE60A9F01AE86CF300A56313 /* World1Level30.swift in Sources */,
 				DC4A442C1ACDE6CF00BE81D8 /* WhaleBoss.swift in Sources */,
 				EEBBAFEC1AD5912600125105 /* World1Level18.swift in Sources */,
 				DC2711441A85E1DE00986D2E /* WizardClass.swift in Sources */,
