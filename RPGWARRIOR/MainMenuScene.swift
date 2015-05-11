@@ -13,9 +13,9 @@ import SpriteKit
 //import AVFoundation
 
 class MainMenuScene: SKScene {
-    var inventory: Inventory?
+    
     var zonesMenu: ZoneScene?
-    var theStore: StoreScene?
+    var inventory: Inventory?
     var storeNode: SKSpriteNode?
     var inventoryNode: SKSpriteNode?
     var level1Node: SKSpriteNode?
@@ -73,23 +73,17 @@ class MainMenuScene: SKScene {
             sandCastle.setScale(0.35)
             sandCastle.position = CGPointMake(self.frame.midX, self.frame.midY - 50)
             self.addChild(sandCastle)
+        
             
             zonesMenu = ZoneScene(size: self.frame.size)
             zonesMenu!.userData = NSMutableDictionary()
-            zonesMenu!.userData?.setObject(self, forKey: "worldscene")
+            zonesMenu!.userData?.setObject(self, forKey: "levelscene")
             inventory = Inventory(size: self.frame.size)
             zonesMenu!.userData?.setObject(inventory!, forKey: "inventory")
-            
             inventory!.userData = NSMutableDictionary()
             inventory!.userData?.setObject(zonesMenu!, forKey: "menu")
-            inventory!.userData?.setObject(self, forKey: "worldscene")
+            inventory!.userData?.setObject(self, forKey: "levelscene")
             
-            
-            
-            theStore = StoreScene(size:self.frame.size)
-            theStore!.userData = NSMutableDictionary()
-            theStore!.userData?.setObject(self, forKey: "worldscene")
-            theStore!.userData?.setObject(zonesMenu!, forKey: "menu")
             
            
             inventoryNode = SKSpriteNode(imageNamed: "Fitting_Room__Button_1")
@@ -497,8 +491,8 @@ class MainMenuScene: SKScene {
                 Node.name = "world1level30"
                 self.addChild(Node)
             }
-
-            // #####change this for new level#####
+            
+            firstTimeLoaded = false
         
         
         }
@@ -555,7 +549,7 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(level5, transition: skTransition)
                 */
                 
-        }else if world1level1node!.containsPoint(touch.locationInNode(self)){
+            }else if world1level1node!.containsPoint(touch.locationInNode(self)){
                 let world1level1scene = World1Level1(size: self.frame.size)
                 world1level1scene.userData = NSMutableDictionary()
                 world1level1scene.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")

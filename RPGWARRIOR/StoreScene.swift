@@ -46,8 +46,8 @@ class StoreScene: SKScene {
         shelf3.setScale(0.35)
         self.addChild(shelf3)
         let storeTextNode = SKSpriteNode(imageNamed: "Store_Text_1")
-        storeTextNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 50)
-        storeTextNode.size = CGSizeMake(165, 60)
+        storeTextNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 53)
+        storeTextNode.size = CGSizeMake(150, 40)
         self.addChild(storeTextNode)
         //shelf1.zPosition = -1
         //stats label
