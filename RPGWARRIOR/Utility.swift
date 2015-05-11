@@ -379,7 +379,7 @@ func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAtta
     })
     var sequence: SKAction?
     let moveAction = moveTo(nodeToMove, nodeToMove.position, spotInfront)
-    if (wasAttacking && nodeToAttack.name != "item"){
+    if (wasAttacking && nodeToAttack.name != "item" && nodeToAttack.name != "gold"){
         sequence = SKAction.sequence([completionBlock])
     }else{
         sequence = SKAction.sequence([moveAction, completionBlock])
