@@ -51,10 +51,12 @@ let allStoreItems = ["Shades_1", "Coral_Crown_1", "Crab_Claw_Cap_1", "Seaweed_Mu
 
 
 func randomWithMin(min: Int, max: Int) -> NSInteger{
+    //let randomNum = arc4random_uniform(50)
+    //random()
     if min == max{
         return min as NSInteger
     }
-    let myNum = random() % (max - min) + min as NSInteger
+    let myNum = Int(arc4random_uniform(UInt32(max))) % (max - min) + min as NSInteger
     return myNum
 }
 
@@ -73,15 +75,21 @@ func distanceBetween(point1: CGPoint, point2: CGPoint)-> CGFloat{
 func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     if level == "level1"{
         //drop loot for killing wizard
-        let myNum = randomWithMin(-50, 50)
+        let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
-        if myNum > 0{
+        if myNum > 50{
             let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
-        }        //level1gold
-        (scene.userData?.objectForKey("inventory") as Inventory).gold += 5
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }//level1gold
     }else if level == "level2"{
         let myNum = randomWithMin(-50, 50)
         println("myNum: \(myNum)")
@@ -179,6 +187,8 @@ func entryExitPoints(node: SKSpriteNode, startSpot: CGPoint, endSpot: CGPoint)->
     }
     if (points.count != 2){
         println("Entry/Exit Points function fucked up!")
+        println("m = \(m)")
+        println("b = \(b)")
     }
     //points contains the entry.exit points, return in first, second order
     if (distanceBetween(points[0], startSpot) >= distanceBetween(points[1], startSpot)){
@@ -358,6 +368,8 @@ func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAtta
                 if nodeToAttack.name == "item" {
                     myNode.isAttacking = false
                     myNode.pickupItem(nodeToAttack as ItemClass)
+                }else if nodeToAttack.name == "gold" {
+                    nodeToAttack.removeFromParent()
                 }else{
                     myNode.attack()
                     myNode.isAttacking = true
