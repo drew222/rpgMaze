@@ -49,32 +49,34 @@ class ItemClass: SKSpriteNode {
     //weapons have Damage stat, body armor has Life stat, feet armor has Movement stat
     func getItemStats(picName: String)->[(String, CGFloat)]{
         if picName == "Rusty_Copper_Ring_1"{
-            price = 1
+            price = 0
             return []
         }else if picName == "Mossy_Copper_Ring_1" {
             price = 1
-            return [("Movement", CGFloat(1))]
+            return []
         }else if picName == "Copper_Ring_1"{
             price = 1
-            return [("Movement", CGFloat(2))]
+            return [("Movement", CGFloat(1))]
         }else if picName == "Rusty_Silver_Ring_1"{
-            price = 150
-            return [("Life", CGFloat(2))]
+            price = 2
+            return [("Movement", CGFloat(1))]
         }else if picName == "Mossy_Silver_Ring_1"{
-            price = 300
-            return [("Movement", CGFloat(5))]
+            price = 2
+            return [("Movement", CGFloat(2))]
         }else if picName == "Silver_Ring_1"{
-            price = 100
-            return [("Movement", CGFloat(4))]
+            price = 2
+            return [("Movement", CGFloat(3))]
         }else if picName == "Rusty_Gold_Ring_1"{
-            price = 500
-            return [("Life", CGFloat(3))]
+            price = 4
+            return [("Movement", CGFloat(3))]
         }else if picName == "Mossy_Gold_Ring_1"{
-            price = 700
-            return [("Movement", CGFloat(7))]
+            price = 4
+            return [("Movement", CGFloat(4))]
         }else if picName == "Gold_Ring_1"{
-            price = 400
-            return [("Movement", CGFloat(6))]
+            price = 4
+            return [("Movement", CGFloat(5))]
+            
+            
             
         }else if picName == "Crab_Claw_Cap_1"{
             price = 50
