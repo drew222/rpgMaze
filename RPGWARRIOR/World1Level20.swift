@@ -76,12 +76,14 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
                 theHero!.takeDamage(3)
+                println("died by tentalce")
         }
         
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySpike.rawValue){
                 if !self.childNodeWithName("safeSpot1")!.containsPoint(theHero!.position){
                     theHero!.takeDamage(3)
+                    println("died by wave")
                 }
         }
         
@@ -110,6 +112,13 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
         }
         
         if currentTime - lastWave  > krakenAttackSpeed * 3{
+            for node in self.children{
+                if let aNode = node as? SKSpriteNode{
+                    if aNode.name == "safeSpot1" || aNode.name == "safeSpot2"{
+                            aNode.removeFromParent()
+                    }
+                }
+            }
             self.lastWave = currentTime
             theKraken!.createSafeAndWave()
         }
