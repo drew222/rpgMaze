@@ -26,7 +26,7 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
     var lifeNode: SKLabelNode?
     var maxLife: CGFloat = 0.0
     //*****************
-    let krakenAttackSpeed = 5.0
+    let krakenAttackSpeed = 3.0
     
     
     var theKraken: KrakenBoss?

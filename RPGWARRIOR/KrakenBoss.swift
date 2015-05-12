@@ -105,15 +105,17 @@ class KrakenBoss: SKSpriteNode {
         var realX = CGFloat(randomWithMin(Int(xPos - 150), Int(xPos + 150)))
         var realY = CGFloat(randomWithMin(Int(yPos - 150), Int(yPos + 150)))
         let distanceFromHero = CGFloat(30)
-        if ((xPos - realX) < distanceFromHero && (xPos - realX) > 0){
-            realX = distanceFromHero
-        }else if ((xPos - realX) > -distanceFromHero && (xPos - realX) < 0){
-            realX = -distanceFromHero
-        }
-        if ((yPos - realY) < distanceFromHero && (yPos - realY) > 0){
-            realY = distanceFromHero
-        }else if((yPos - realY) > -distanceFromHero && (yPos - realY) < 0){
-            realY = -distanceFromHero
+        if abs(xPos - realX) < 50 && abs(yPos - realY) < 50 {
+            if ((xPos - realX) < distanceFromHero && (xPos - realX) > 0){
+                realX = distanceFromHero
+            }else if ((xPos - realX) > -distanceFromHero && (xPos - realX) < 0){
+                realX = -distanceFromHero
+            }
+            if ((yPos - realY) < distanceFromHero && (yPos - realY) > 0){
+                realY = distanceFromHero
+            }else if((yPos - realY) > -distanceFromHero && (yPos - realY) < 0){
+                realY = -distanceFromHero
+            }
         }
         return CGPointMake(realX, realY)
     }
