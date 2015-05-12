@@ -52,28 +52,28 @@ class ItemClass: SKSpriteNode {
             price = 0
             return []
         }else if picName == "Mossy_Copper_Ring_1" {
-            price = 1
+            price = 5
             return []
         }else if picName == "Copper_Ring_1"{
-            price = 1
+            price = 5
             return [("Movement", CGFloat(1))]
         }else if picName == "Rusty_Silver_Ring_1"{
-            price = 2
+            price = 10
             return [("Movement", CGFloat(1))]
         }else if picName == "Mossy_Silver_Ring_1"{
-            price = 2
+            price = 10
             return [("Movement", CGFloat(2))]
         }else if picName == "Silver_Ring_1"{
-            price = 2
+            price = 10
             return [("Movement", CGFloat(3))]
         }else if picName == "Rusty_Gold_Ring_1"{
-            price = 4
+            price = 20
             return [("Movement", CGFloat(3))]
         }else if picName == "Mossy_Gold_Ring_1"{
-            price = 4
+            price = 20
             return [("Movement", CGFloat(4))]
         }else if picName == "Gold_Ring_1"{
-            price = 4
+            price = 20
             return [("Movement", CGFloat(5))]
             
             
