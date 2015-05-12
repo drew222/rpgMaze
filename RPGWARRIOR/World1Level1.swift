@@ -109,15 +109,6 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         //let aChest = self.childNodeWithName("chest") as TreasureChest
         
         for touch in touches{
-            //stop when mouse comes in contact hero
-            //let theSpot = spotToStop(aHero, touch.locationInNode(self))
-            //if theSpot != aHero.position{
-            //aHero.moveTo(theSpot)
-            // if (aWizard.containsPoint(touch.locationInNode(self))){
-            //  if (distanceBetween(aWizard.position, aHero.position) < 10){
-            //      aHero.attack()
-            //  }
-            //}
             aHero.moveHelper(touch.locationInNode(self))
         }
     }
