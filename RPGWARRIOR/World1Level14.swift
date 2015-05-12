@@ -37,6 +37,7 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
         /* Setup your scene here */
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
+        theHero!.name = "hero"
         self.addChild(theHero!)
         wavePositions = [
             CGPointMake(-20, 150),
@@ -59,6 +60,7 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
         //ourHero.constraints = [distanceConstraint]
         let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        background.name = "background"
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         background.zPosition = -1
         self.addChild(background)
@@ -146,33 +148,36 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
             self.lastHeal = currentTime
             if theHero!.life < maxLife{
                 theHero!.life! += theHero!.regeneration!
+                if theHero!.life > maxLife{
+                    theHero!.life = maxLife
+                }
             }
         }
-        
-        if currentTime - lastWave  > whaleAttackSpeed && !levelOver{
-            self.lastWave = currentTime
-            if whichWave == wavePositions!.count {
-                whichWave = 0
-            }
-            theWhale!.throwWave(wavePositions![whichWave])
-            whichWave += 1
-        }
-        
         self.lastUpdatesTime = currentTime
         lifeNode!.text = "\(Int(floor(theHero!.life!)))"
         //***************
         
+        //win condition
         //check for win condition
         if (theWhale!.isDead || theHero!.life <= 0) && !levelOver{
-            if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
+            
+            if (self.childNodeWithName("gold") == nil && self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
+                
                 let skTransition = SKTransition.fadeWithDuration(5.0)
+                
                 self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+                
                 levelOver = true
             }
-            else if (self.childNodeWithName("item") == nil){
+            else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil){
                 if theWhale!.isDead{
-                    dropLoot("world1level14", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    dropLoot("level14", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
+                    for node in self.children{
+                        if node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "wizard" && node.name != "life" && node.name != "gold"{
+                            node.removeFromParent()
+                        }
+                    }
                 }
             }
         }

@@ -209,6 +209,7 @@ class HeroClass: SKSpriteNode {
         self.life! -= damage
         if (self.life! <= 0){
             println("THE HERO HAS DIED!")
+            self.life! = 0
             return true
         }else{
             return false
