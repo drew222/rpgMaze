@@ -89,23 +89,470 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.size = size
             (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
             scene.addChild(gold)
-        }//level1gold
-    }else if level == "level2"{
-        let myNum = randomWithMin(-50, 50)
-        println("myNum: \(myNum)")
-        if myNum > 0{
-            let item = ItemClass.itemInSpace("noobSword")
-            item.position = position
-            item.size = size
-            scene.addChild(item)
         }
-        (scene.userData?.objectForKey("inventory") as Inventory).gold += 10
-    }else if level == "level3"{
-        if randomWithMin(-50, 50) > 0{
-            let item = ItemClass.itemInSpace("noobSword")
+    }else if level == "level2"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level3"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level4"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level5"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level6"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level7"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level8"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level9"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level10"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level11"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level12"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level13"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level14"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level15"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level16"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level17"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level18"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level19"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level20"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level21"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level22"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level23"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level24"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level25"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level26"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level27"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level28"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level29"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
+        }
+    }else if level == "level30"{
+        let myNum = randomWithMin(0, 100)
+        println("myNum: \(myNum)")
+        if myNum > 50{
+            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            scene.addChild(gold)
         }
     }
 }
