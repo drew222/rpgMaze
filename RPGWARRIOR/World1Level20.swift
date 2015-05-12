@@ -16,6 +16,7 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
     var lastTentacle = 0.0
+    var lastWave = 0.0
     
     var levelOver = false
     let levelName = "world1level20"
@@ -26,7 +27,7 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
     var lifeNode: SKLabelNode?
     var maxLife: CGFloat = 0.0
     //*****************
-    let krakenAttackSpeed = 3.0
+    let krakenAttackSpeed = 5.0
     
     
     var theKraken: KrakenBoss?
@@ -43,6 +44,7 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
         lifeNode!.fontSize = 20
         self.addChild(lifeNode!)
         theKraken = KrakenBoss.makeKraken(CGPointMake(self.frame.midX, self.frame.maxY - 50))
+        theKraken!.size = CGSizeMake(150, 120)
         self.addChild(theKraken!)
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
@@ -76,6 +78,13 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
                 theHero!.takeDamage(3)
         }
         
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySpike.rawValue){
+                if !self.childNodeWithName("safeSpot1")!.containsPoint(theHero!.position){
+                    theHero!.takeDamage(3)
+                }
+        }
+        
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
@@ -98,6 +107,11 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
         if currentTime - lastTentacle  > krakenAttackSpeed{
             self.lastTentacle = currentTime
             theKraken!.throwTentacle()
+        }
+        
+        if currentTime - lastWave  > krakenAttackSpeed * 3{
+            self.lastWave = currentTime
+            theKraken!.createSafeAndWave()
         }
         
         

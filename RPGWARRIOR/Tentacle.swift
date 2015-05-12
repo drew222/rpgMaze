@@ -15,24 +15,24 @@ class Tentacle: SKSpriteNode {
     //create wave at point with size
     class func tentacleAtPosition(position: CGPoint) -> Tentacle{
         let tentacle = Tentacle(imageNamed: "Tentacle_1")
+        tentacle.anchorPoint = CGPointMake(0.5, 0)
         tentacle.position = position
         tentacle.name = "tentacle"
-        tentacle.size = CGSizeMake(60, 30)
+        tentacle.size = CGSizeMake(50, 20)
         //animate all textures
         var textures: [SKTexture] = []
-        let sizeAction1 = SKAction.runBlock({tentacle.size = CGSizeMake(60, 90)})
+        let sizeAction1 = SKAction.runBlock({tentacle.runAction(SKAction.scaleXBy(1, y: 5, duration: 0.5))})
         var textures2: [SKTexture] = []
-        let sizeAction2 = SKAction.runBlock({
-            tentacle.position = CGPointMake(tentacle.position.x - 15, tentacle.position.y)
-            tentacle.size = CGSizeMake(90, 60)})
+        let sizeAction2 = SKAction.runBlock({tentacle.runAction(SKAction.scaleXBy(2.5, y: 0.7, duration: 0.5))})
         var textures3: [SKTexture] = []
-        let sizeAction3 = SKAction.runBlock({
-            tentacle.position = CGPointMake(tentacle.position.x + 30, tentacle.position.y)
-            tentacle.size = CGSizeMake(90, 60)
-            tentacle.position = CGPointMake(tentacle.position.x - 15, tentacle.position.y)})
+        let sizeAction3 = SKAction.runBlock({tentacle.runAction(SKAction.scaleXBy(0.4, y: 1.2, duration: 0.5))})
         var textures4: [SKTexture] = []
-        let sizeAction4 = SKAction.runBlock({tentacle.size = CGSizeMake(60, 90)})
+        let sizeAction4 = SKAction.runBlock({tentacle.runAction(SKAction.scaleXBy(2.5, y: 0.7, duration: 0.5))})
         var textures5: [SKTexture] = []
+        let sizeAction5 = SKAction.runBlock({tentacle.runAction(SKAction.scaleXBy(0.4, y: 1.2, duration: 0.5))})
+        var textures6: [SKTexture] = []
+        let sizeAction6 = SKAction.runBlock({tentacle.runAction(SKAction.scaleXBy(0.2, y: 0.2, duration: 0.5))})
+        var textures7: [SKTexture] = []
         textures.append(SKTexture(imageNamed: "Cracked_Ground_1"))
         textures.append(SKTexture(imageNamed: "Cracked_Ground_2"))
         for (var i = 33; i > 29; i-=1){
@@ -57,21 +57,21 @@ class Tentacle: SKSpriteNode {
         textures4.append(SKTexture(imageNamed: "Tentacle_15"))
         textures4.append(SKTexture(imageNamed: "Tentacle_16"))
         textures4.append(SKTexture(imageNamed: "Tentacle_17"))
-        textures4.append(SKTexture(imageNamed: "Tentacle_18"))
-        textures4.append(SKTexture(imageNamed: "Tentacle_17"))
-        textures4.append(SKTexture(imageNamed: "Tentacle_16"))
-        textures4.append(SKTexture(imageNamed: "Tentacle_15"))
-        textures4.append(SKTexture(imageNamed: "Tentacle_14"))
-        textures4.append(SKTexture(imageNamed: "Tentacle_35"))
-        textures5.append(SKTexture(imageNamed: "Tentacle_24"))
-        textures5.append(SKTexture(imageNamed: "Tentacle_25"))
-        textures5.append(SKTexture(imageNamed: "Tentacle_26"))
-        textures5.append(SKTexture(imageNamed: "Tentacle_27"))
-        textures5.append(SKTexture(imageNamed: "Tentacle_28"))
-        textures5.append(SKTexture(imageNamed: "Tentacle_30"))
-        textures5.append(SKTexture(imageNamed: "Tentacle_31"))
-        textures5.append(SKTexture(imageNamed: "Tentacle_32"))
-        textures5.append(SKTexture(imageNamed: "Tentacle_33"))
+        textures5.append(SKTexture(imageNamed: "Tentacle_18"))
+        textures5.append(SKTexture(imageNamed: "Tentacle_17"))
+        textures5.append(SKTexture(imageNamed: "Tentacle_16"))
+        textures5.append(SKTexture(imageNamed: "Tentacle_15"))
+        textures5.append(SKTexture(imageNamed: "Tentacle_14"))
+        textures5.append(SKTexture(imageNamed: "Tentacle_35"))
+        textures6.append(SKTexture(imageNamed: "Tentacle_24"))
+        textures6.append(SKTexture(imageNamed: "Tentacle_25"))
+        textures6.append(SKTexture(imageNamed: "Tentacle_26"))
+        textures6.append(SKTexture(imageNamed: "Tentacle_27"))
+        textures6.append(SKTexture(imageNamed: "Tentacle_28"))
+        textures7.append(SKTexture(imageNamed: "Tentacle_30"))
+        textures7.append(SKTexture(imageNamed: "Tentacle_31"))
+        textures7.append(SKTexture(imageNamed: "Tentacle_32"))
+        textures7.append(SKTexture(imageNamed: "Tentacle_33"))
         
         
         let animateAction = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
@@ -79,9 +79,11 @@ class Tentacle: SKSpriteNode {
         let animateAction3 = SKAction.animateWithTextures(textures3, timePerFrame: 0.1)
         let animateAction4 = SKAction.animateWithTextures(textures4, timePerFrame: 0.1)
         let animateAction5 = SKAction.animateWithTextures(textures5, timePerFrame: 0.1)
+        let animateAction6 = SKAction.animateWithTextures(textures6, timePerFrame: 0.1)
+        let animateAction7 = SKAction.animateWithTextures(textures7, timePerFrame: 0.1)
         let repeatAction = SKAction.repeatAction(animateAction, count: 1)
         let codeBlock = SKAction.runBlock({tentacle.removeFromParent()})
-        let sequence = SKAction.sequence([repeatAction, sizeAction1, animateAction2, sizeAction2, animateAction3, sizeAction3, animateAction4, sizeAction4, animateAction5, codeBlock])
+        let sequence = SKAction.sequence([repeatAction, sizeAction1, animateAction2, sizeAction2, animateAction3, sizeAction3, animateAction4, sizeAction4, animateAction5, sizeAction5, animateAction6, sizeAction6, animateAction7, codeBlock])
         tentacle.setupPhysicsBody()
         tentacle.runAction(sequence)
         return tentacle
