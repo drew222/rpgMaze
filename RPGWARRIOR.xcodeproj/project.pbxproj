@@ -293,6 +293,7 @@
 		DCFD753E1B01C5D90054E370 /* Kraken_Boss_12.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFD75371B01C5D90054E370 /* Kraken_Boss_12.png */; };
 		DCFD753F1B01C5D90054E370 /* Kraken_Boss_13.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFD75381B01C5D90054E370 /* Kraken_Boss_13.png */; };
 		DCFD75411B01C5ED0054E370 /* Sand_Castle_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFD75401B01C5ED0054E370 /* Sand_Castle_2.png */; };
+		DCFD75431B01CA210054E370 /* Tentacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFD75421B01CA210054E370 /* Tentacle.swift */; };
 		EE3D364C1ACE1DE4002A27B8 /* World1Level20.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */; };
 		EE3D364E1ACEEFDA002A27B8 /* World1Level21.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */; };
 		EE3D36501ACFA0ED002A27B8 /* World1Level9.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3D364F1ACFA0ED002A27B8 /* World1Level9.swift */; };
@@ -313,7 +314,6 @@
 		EEF8D9871AD422FF00FC2A4F /* World1Level17.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9861AD422FF00FC2A4F /* World1Level17.swift */; };
 		EEF8D9891AD4249A00FC2A4F /* Krill.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9881AD4249A00FC2A4F /* Krill.swift */; };
 		EEF8D9E51AD4720C00FC2A4F /* World1Level27.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9E41AD4720C00FC2A4F /* World1Level27.swift */; };
-		EEF8D9E71AD57EF100FC2A4F /* TentacleSpike.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9E61AD57EF100FC2A4F /* TentacleSpike.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -617,6 +617,7 @@
 		DCFD75371B01C5D90054E370 /* Kraken_Boss_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Boss_12.png; sourceTree = "<group>"; };
 		DCFD75381B01C5D90054E370 /* Kraken_Boss_13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Boss_13.png; sourceTree = "<group>"; };
 		DCFD75401B01C5ED0054E370 /* Sand_Castle_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sand_Castle_2.png; sourceTree = "<group>"; };
+		DCFD75421B01CA210054E370 /* Tentacle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tentacle.swift; sourceTree = "<group>"; };
 		EE3D364B1ACE1DE4002A27B8 /* World1Level20.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level20.swift; sourceTree = "<group>"; };
 		EE3D364D1ACEEFDA002A27B8 /* World1Level21.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level21.swift; sourceTree = "<group>"; };
 		EE3D364F1ACFA0ED002A27B8 /* World1Level9.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level9.swift; sourceTree = "<group>"; };
@@ -637,7 +638,6 @@
 		EEF8D9861AD422FF00FC2A4F /* World1Level17.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level17.swift; sourceTree = "<group>"; };
 		EEF8D9881AD4249A00FC2A4F /* Krill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Krill.swift; sourceTree = "<group>"; };
 		EEF8D9E41AD4720C00FC2A4F /* World1Level27.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level27.swift; sourceTree = "<group>"; };
-		EEF8D9E61AD57EF100FC2A4F /* TentacleSpike.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TentacleSpike.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -687,9 +687,9 @@
 				DCC4E3051A8976AB000E5E89 /* ItemClass.swift */,
 				DC1F58121A88703500B5027B /* Bomb.swift */,
 				DC1F58101A886EFC00B5027B /* BomberClass.swift */,
-				EEF8D9E61AD57EF100FC2A4F /* TentacleSpike.swift */,
 				DC4A442B1ACDE6CF00BE81D8 /* WhaleBoss.swift */,
 				EEF8D9841AD397AD00FC2A4F /* KrakenBoss.swift */,
+				DCFD75421B01CA210054E370 /* Tentacle.swift */,
 				DC27114F1A86A09D00986D2E /* AppDelegate.swift */,
 				DC2711471A85E26100986D2E /* GameViewController.swift */,
 				DC2711451A85E1F500986D2E /* HeroClass.swift */,
@@ -1388,10 +1388,10 @@
 				EE60A9E81AE869FB00A56313 /* World1Level23.swift in Sources */,
 				EE3D36501ACFA0ED002A27B8 /* World1Level9.swift in Sources */,
 				DCC4E3041A897671000E5E89 /* ItemSpaceNode.swift in Sources */,
+				DCFD75431B01CA210054E370 /* Tentacle.swift in Sources */,
 				EE3D364E1ACEEFDA002A27B8 /* World1Level21.swift in Sources */,
 				EEB7AB0A1AD0FED000064D9C /* World1Level16.swift in Sources */,
 				DC1F580F1A886BB100B5027B /* Level2Scene.swift in Sources */,
-				EEF8D9E71AD57EF100FC2A4F /* TentacleSpike.swift in Sources */,
 				DCF8C7251AD9E69D00DAE15A /* World1Level11.swift in Sources */,
 				2FC73DE51A912D980068A2FB /* Level4Scene.swift in Sources */,
 				EEB7AB061AD0E4DE00064D9C /* World1Level19.swift in Sources */,

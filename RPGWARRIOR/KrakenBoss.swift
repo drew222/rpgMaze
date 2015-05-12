@@ -13,15 +13,15 @@ import SpriteKit
 class KrakenBoss: SKSpriteNode {
     //var currentAngle: CGFloat?
     var isDead = false
-    var attackSpeed = 3
+    var attackSpeed = 1
     var life: CGFloat = 1
     
     class func makeKraken(position: CGPoint) -> KrakenBoss{
-        let whale = KrakenBoss(imageNamed: "Kraken_Boss_1")
-        whale.position = position
-        whale.anchorPoint = CGPointMake(0.5, 0.5)
-        whale.name = "kraken"
-        whale.setScale(0.15)
+        let kraken = KrakenBoss(imageNamed: "Kraken_Boss_1")
+        kraken.position = position
+        kraken.anchorPoint = CGPointMake(0.5, 0.5)
+        kraken.name = "kraken"
+        kraken.setScale(0.15)
         //whale.currentAngle = 3 * pi / 2.0
         var textures: [SKTexture] = []
         //for var i = 1; i <= 24; i=i+1{
@@ -37,9 +37,9 @@ class KrakenBoss: SKSpriteNode {
         let waitAction = SKAction.waitForDuration(2)
         let sequence = SKAction.sequence([repeatAction, waitAction])
         let realRepeatAction = SKAction.repeatActionForever(sequence)
-        whale.runAction(realRepeatAction)
-        whale.setupPhysicsBody()
-        return whale
+        kraken.runAction(realRepeatAction)
+        kraken.setupPhysicsBody()
+        return kraken
     }
     
     func setupPhysicsBody() {
@@ -52,28 +52,39 @@ class KrakenBoss: SKSpriteNode {
     }
     
     //throw a wave with gap at this position
-    func throwWave(gapPosition: CGPoint){
+    func throwTentacle(){
         //run tail animation
         var textures: [SKTexture] = []
-        textures.append(SKTexture(imageNamed: "Whale_Boss_10"))
-        textures.append(SKTexture(imageNamed: "Whale_Boss_11"))
-        textures.append(SKTexture(imageNamed: "Whale_Boss_12"))
-        textures.append(SKTexture(imageNamed: "Whale_Boss_13"))
-        textures.append(SKTexture(imageNamed: "Whale_Boss_14"))
-        textures.append(SKTexture(imageNamed: "Whale_Boss_15"))
-        textures.append(SKTexture(imageNamed: "Whale_Boss_16"))
-        textures.append(SKTexture(imageNamed: "Whale_Boss_15"))
-        textures.append(SKTexture(imageNamed: "Whale_Boss_14"))
-        textures.append(SKTexture(imageNamed: "Whale_Boss_13"))
-        textures.append(SKTexture(imageNamed: "Whale_Boss_12"))
-        textures.append(SKTexture(imageNamed: "Whale_Boss_11"))
-        textures.append(SKTexture(imageNamed: "Whale_Boss_10"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_2"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_3"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_4"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_5"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_6"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_7"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_8"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_9"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_10"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_11"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_12"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_13"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_12"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_11"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_10"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_9"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_8"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_7"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_6"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_5"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_4"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_3"))
+        textures.append(SKTexture(imageNamed: "Kraken_Boss_2"))
+        
         let waveAttackAnimation = SKAction.animateWithTextures(textures, timePerFrame: 0.05)
         var textures2: [SKTexture] = []
-        textures2.append(SKTexture(imageNamed: "Whale_Boss_1"))
-        textures2.append(SKTexture(imageNamed: "Whale_Boss_2"))
-        textures2.append(SKTexture(imageNamed: "Whale_Boss_3"))
-        textures2.append(SKTexture(imageNamed: "Whale_Boss_2"))
+        textures2.append(SKTexture(imageNamed: "Kraken_Boss_1"))
+        textures2.append(SKTexture(imageNamed: "Kraken_Boss_2"))
+        textures2.append(SKTexture(imageNamed: "Kraken_Boss_3"))
+        textures2.append(SKTexture(imageNamed: "Kraken_Boss_2"))
         let idleAnimation = SKAction.animateWithTextures(textures2, timePerFrame: 0.1)
         let repeatAction = SKAction.repeatAction(idleAnimation, count: 1)
         let waitAction = SKAction.waitForDuration(2)
@@ -81,10 +92,30 @@ class KrakenBoss: SKSpriteNode {
         let realRepeatAction = SKAction.repeatActionForever(sequence)
         let finalSequence = SKAction.sequence([waveAttackAnimation, realRepeatAction])
         self.runAction(finalSequence)
-        var lengthOfTop = self.parent!.frame.maxY - gapPosition.y + 25
-        var lengthOfBot = gapPosition.y - 25
-        self.parent!.addChild(WaveNode.waveAtPosition(CGPointMake(gapPosition.x, gapPosition.y + (lengthOfTop)/2), length: lengthOfTop, distance: self.parent!.frame.maxX + 50))
-        self.parent!.addChild(WaveNode.waveAtPosition(CGPointMake(gapPosition.x, lengthOfBot/2), length: lengthOfBot, distance: self.parent!.frame.maxX + 50))
+        
+        //create tentacle
+        self.parent!.addChild(Tentacle.tentacleAtPosition(getTentaclePoint()))
+        self.parent!.addChild(Tentacle.tentacleAtPosition(getTentaclePoint()))
+    }
+    
+    func getTentaclePoint() -> CGPoint {
+        let heroPosition = self.parent!.childNodeWithName("hero")!.position
+        let xPos = CGFloat(heroPosition.x)
+        let yPos = CGFloat(heroPosition.y)
+        var realX = CGFloat(randomWithMin(Int(xPos - 150), Int(xPos + 150)))
+        var realY = CGFloat(randomWithMin(Int(yPos - 150), Int(yPos + 150)))
+        let distanceFromHero = CGFloat(30)
+        if ((xPos - realX) < distanceFromHero && (xPos - realX) > 0){
+            realX = distanceFromHero
+        }else if ((xPos - realX) > -distanceFromHero && (xPos - realX) < 0){
+            realX = -distanceFromHero
+        }
+        if ((yPos - realY) < distanceFromHero && (yPos - realY) > 0){
+            realY = distanceFromHero
+        }else if((yPos - realY) > -distanceFromHero && (yPos - realY) < 0){
+            realY = -distanceFromHero
+        }
+        return CGPointMake(realX, realY)
     }
     
     func shootKrill(){

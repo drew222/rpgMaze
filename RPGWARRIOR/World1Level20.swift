@@ -15,6 +15,7 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
+    var lastTentacle = 0.0
     
     var levelOver = false
     let levelName = "world1level20"
@@ -25,7 +26,7 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
     var lifeNode: SKLabelNode?
     var maxLife: CGFloat = 0.0
     //*****************
-    let krakenAttackSpeed = 3.0
+    let krakenAttackSpeed = 5.0
     
     
     var theKraken: KrakenBoss?
@@ -56,14 +57,6 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
         //*****REGENE CODE****
         maxLife = theHero!.life!
         //********************
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.midY + 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.midY - 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.midY + 75)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 75, self.frame.midY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 200, self.frame.midY)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 200, self.frame.midY)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 200, self.frame.midY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY - 150)))
         
     }
     
@@ -79,9 +72,8 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
         }
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                let mine = secondBody.node as? MineNode
-                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
+                theHero!.takeDamage(3)
         }
         
     }
@@ -103,6 +95,11 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
             
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
+        if currentTime - lastTentacle  > krakenAttackSpeed{
+            self.lastTentacle = currentTime
+            theKraken!.throwTentacle()
+        }
+        
         
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
