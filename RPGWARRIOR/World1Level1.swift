@@ -19,27 +19,23 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
     var levelOver = false
     let levelName = "world1level1"
     var droppedItem = false
-    var chestSpawn = false
     //REGEN CODE******
     var lastHeal: Double = 0.0
     let healSpeed = 5.0
     var lifeNode: SKLabelNode?
     var maxLife: CGFloat = 0.0
     //*****************
-    let wizardAttackSpeed = 1.0
     
+    let wizardAttackSpeed = 1.0
     
     var theWizard: WizardClass?
     var theHero: HeroClass?
-    var theChest: TreasureChest?
-   
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
-        theHero!.name = "hero"
         theHero!.setScale(0.6)
+        theHero!.name = "hero"
         self.addChild(theHero!)
         lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
         lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
@@ -57,30 +53,27 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         background.name = "background"
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         background.zPosition = -1
-        self.addChild(background)
         self.physicsWorld.contactDelegate = self
+        self.addChild(background)
         theHero!.updateStats()
         //*****REGENE CODE****
         maxLife = theHero!.life!
         //********************
-        println("world1lvl1afterupdatingstats: Regneration: \(theHero!.regeneration!)")
-        //self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 100, self.frame.midY)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.midY + 50)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.midY - 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.midY + 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 140, self.frame.midY + 160)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.midY - 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.midY + 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.midY + 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY - 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.midY - 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY + 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 150, self.frame.midY + 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 150, self.frame.midY - 150)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 150, self.frame.midY - 150)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 130, self.frame.midY + 140)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 150, self.frame.midY + 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 150)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 150)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 75, self.frame.midY)))
-        //self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 200, self.frame.midY)))
-        //self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 200, self.frame.midY)))
-        //self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 200, self.frame.midY - 100)))
-        //self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY - 150)))
-        
-        
-        //let theChest = TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY))
-        //addChild(theChest)
         
     }
     
@@ -100,14 +93,18 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
                 let mine = secondBody.node as? MineNode
                 mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
         }
+        //HERO VS WIZARD
+        //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+        //secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWizard.rawValue){
+        //let aHero = self.childNodeWithName("hero") as HeroClass
+        //aHero.attack()
+        //}
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as HeroClass
         let aWizard = self.childNodeWithName("wizard") as WizardClass
-        //let aChest = self.childNodeWithName("chest") as TreasureChest
-        
         for touch in touches{
             aHero.moveHelper(touch.locationInNode(self))
         }
@@ -121,7 +118,6 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
             self.lastFireball = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
             self.lastHeal = currentTime
@@ -136,24 +132,16 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         lifeNode!.text = "\(Int(floor(theHero!.life!)))"
         //***************
         
-        //loss condition
-        if theHero!.life <= 0 && !levelOver{
-            let skTransition = SKTransition.fadeWithDuration(5.0)
-            self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
-            levelOver = true
-            println("got here")
-        }
-        
         //win condition
         //check for win condition
-       if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
+        if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
             
             if (self.childNodeWithName("gold") == nil && self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
                 
                 let skTransition = SKTransition.fadeWithDuration(5.0)
                 
                 self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
-               
+                
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil){
