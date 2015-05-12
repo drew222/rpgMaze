@@ -122,8 +122,8 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
                 theHero!.life! += theHero!.regeneration!
             }
         }
-        
-        if currentTime - lastWave  > whaleAttackSpeed && !levelOver{
+
+        if currentTime - lastWave  > whaleAttackSpeed && !levelOver && !droppedItem{
             self.lastWave = currentTime
             if whichWave == wavePositions!.count {
                 whichWave = 0
@@ -165,8 +165,11 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
                     dropLoot("level10", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                     for node in self.children{
-                        if node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "whale" && node.name != "life" && node.name != "gold"{
-                            node.removeFromParent()
+                        //NEW: check if node has a name
+                        if let myNode = node as? SKSpriteNode{
+                            if node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "whale" && node.name != "life" && node.name != "gold"{
+                                node.removeFromParent()
+                            }
                         }
                     }
                 }

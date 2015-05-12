@@ -164,7 +164,7 @@ class World1Level15: SKScene, SKPhysicsContactDelegate {
                     dropLoot("level15", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                     for node in self.children{
-                        if node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "wizard" && node.name != "life" && node.name != "gold"{
+                        if node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "whale" && node.name != "life" && node.name != "gold"{
                             node.removeFromParent()
                         }
                     }
