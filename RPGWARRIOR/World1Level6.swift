@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Drew Zoellner. All rights reserved.
 //
 
+
+
 import SpriteKit
 
 //import AVFoundation
@@ -15,9 +17,9 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
-    var lastBomb: Double = 0.0
+    var lastFireball: Double = 0.0
     var levelOver = false
-    let levelName = "World1Level6"
+    let levelName = "world1level6"
     var droppedItem = false
     //REGEN CODE******
     var lastHeal: Double = 0.0
@@ -25,7 +27,7 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
     var lifeNode: SKLabelNode?
     var maxLife: CGFloat = 0.0
     //*****************
-    let bomberAttackSpeed = 1.0
+    let wizardAttackSpeed = 1.0
     
     var theBomber: BomberClass?
     var theHero: HeroClass?
@@ -59,6 +61,20 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
         maxLife = theHero!.life!
         //********************
         
+        //crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 40, self.frame.maxY - 200), endPosition: CGPointMake(self.frame.midX - 40, self.frame.maxY - 360)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 40, self.frame.maxY - 360), endPosition: CGPointMake(self.frame.midX + 40, self.frame.maxY - 200)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(65, self.frame.maxY - 250), endPosition: CGPointMake(65, 130)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 50, 140), endPosition: CGPointMake(self.frame.midX - 50, 140)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 50, 220), endPosition: CGPointMake(self.frame.maxX - 50, 220)))
+        //shells i = y, k = x
+        for (var i = 100; i < Int(self.frame.maxY - 100); i += 80){
+            for (var k = 30; k < Int(self.frame.maxX - 20); k += 80){
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(k), CGFloat(i))))
+            }
+        }
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 65, 260)))
+        
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -71,12 +87,16 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        //HERO VS FIRE
-        // if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-        //   secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
-        //       let aHero = self.childNodeWithName("hero") as HeroClass
-        //      aHero.takeDamage(1)
-        //}
+        //HERO VS SEASHELL
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
+                let mine = secondBody.node as? MiniCrab
+                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+        }else  if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
+                let mine = secondBody.node as? MineNode
+                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+        }
         //HERO VS WIZARD
         //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
         //secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWizard.rawValue){
@@ -88,25 +108,28 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as HeroClass
+        let aBomber = self.childNodeWithName("bomber") as BomberClass
         for touch in touches{
+            //stop when mouse comes in contact hero
+            //let theSpot = spotToStop(aHero, touch.locationInNode(self))
+            //if theSpot != aHero.position{
+            //aHero.moveTo(theSpot)
+            // if (aWizard.containsPoint(touch.locationInNode(self))){
+            //  if (distanceBetween(aWizard.position, aHero.position) < 10){
+            //      aHero.attack()
+            //  }
+            //}
             aHero.moveHelper(touch.locationInNode(self))
         }
     }
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
-        //println("current time: \(currentTime)")
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
-            self.lastBomb = currentTime
+            self.lastFireball = currentTime
         }
-        self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastBomb  > bomberAttackSpeed{
-            self.lastBomb = currentTime
-            theBomber!.throwBomb()
-        }
-        
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
         //******REGEN CODE
@@ -149,3 +172,4 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
         }
     }
 }
+

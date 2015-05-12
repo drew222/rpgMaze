@@ -15,7 +15,7 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
-    var lastWave: Double = 0.0
+    var lastFireball: Double = 0.0
     var levelOver = false
     let levelName = "world1level13"
     var droppedItem = false
@@ -25,12 +25,11 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
     var lifeNode: SKLabelNode?
     var maxLife: CGFloat = 0.0
     //*****************
-    let whaleAttackSpeed = 3.0
-    var whichWave = 0
-    var wavePositions: [CGPoint]?
     
+    //larger attack speed, slower attack
+    let wizardAttackSpeed = 1.4
     
-    var theWhale: WhaleBoss?
+    var theWizard: WizardClass?
     var theHero: HeroClass?
     
     override func didMoveToView(view: SKView) {
@@ -39,41 +38,53 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
         theHero!.setScale(0.6)
         theHero!.name = "hero"
         self.addChild(theHero!)
-        wavePositions = [
-            CGPointMake(-20, 100),
-            CGPointMake(self.frame.maxX + 20, 200),
-            CGPointMake(-20, 300),
-            CGPointMake(self.frame.maxX + 20, 400),
-            CGPointMake(-20, 300),
-            CGPointMake(self.frame.maxX + 20, 200),
-            CGPointMake(-20, 100),
-            CGPointMake(self.frame.maxX + 20, 200),
-            CGPointMake(-20, 300),
-            CGPointMake(self.frame.maxX + 20, 400),
-            CGPointMake(-20, 500),
-            CGPointMake(self.frame.maxX + 20, 600)]
         lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
         lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
+        lifeNode!.name = "life"
         lifeNode!.fontColor = UIColor.redColor()
         lifeNode!.fontSize = 20
         self.addChild(lifeNode!)
-        theWhale = WhaleBoss.makeWhale(CGPointMake(self.frame.midX, self.frame.maxY - 50))
-        self.addChild(theWhale!)
-        //the below constraints did nothing
-        //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
-        //ourHero.constraints = [distanceConstraint]
+        theWizard = WizardClass.makeWizard(CGPointMake(self.frame.midX, self.frame.maxY - 50))
+        self.addChild(theWizard!)
         let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.name = "background"
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         background.zPosition = -1
-        self.addChild(background)
         self.physicsWorld.contactDelegate = self
+        self.addChild(background)
         theHero!.updateStats()
         //*****REGENE CODE****
         maxLife = theHero!.life!
         //********************
-    
+        
+        // ### Crabs ###
+        //middle three vertical crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 50, self.frame.maxY - 150), endPosition: CGPointMake(self.frame.midX + 50, self.frame.minY + 50)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 50, self.frame.maxY - 150), endPosition: CGPointMake(self.frame.midX - 50, self.frame.minY + 50)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.maxY - 150), endPosition: CGPointMake(self.frame.midX, self.frame.minY + 50)))
+        //top left two vertical crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.midY + 20), endPosition: CGPointMake(self.frame.minX + 30, self.frame.maxY - 50)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 80, self.frame.midY + 20), endPosition: CGPointMake(self.frame.minX + 80, self.frame.maxY - 50)))
+        //top right two vertical crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.midY + 20), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.maxY - 50)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 80, self.frame.midY + 20), endPosition: CGPointMake(self.frame.maxX - 80, self.frame.maxY - 50)))
+        //bottom left two vertical crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.midY - 20), endPosition: CGPointMake(self.frame.minX + 30, self.frame.minY + 50)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 80, self.frame.midY - 20), endPosition: CGPointMake(self.frame.minX + 80, self.frame.minY + 50)))
+        //bottom right two vertical crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.midY - 20), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 50)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 80, self.frame.midY - 20), endPosition: CGPointMake(self.frame.maxX - 80, self.frame.minY + 50)))
+        //horizontal crabs (bottom to top)
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 30), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 30)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.minY + 180),
+            endPosition: CGPointMake(self.frame.minX + 30, self.frame.minY + 180)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 330), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 330)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.minY + 480),
+            endPosition: CGPointMake(self.frame.minX + 30, self.frame.minY + 480)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 630), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 630)))
+        
+        
         
     }
     
@@ -87,17 +98,32 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        //HERO VS WAVE
+        //HERO VS PEARL PROJECTILE
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
-                theHero!.takeDamage(5)
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
+                let aHero = self.childNodeWithName("hero") as HeroClass
+                aHero.takeDamage(1)
+                secondBody.node!.removeFromParent()
         }
+        //HERO VS SEASHELL
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
+                let mine = secondBody.node as? MineNode
+                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+        }
+        //HERO VS MINI CRAB
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
+                let mine = secondBody.node as? MiniCrab
+                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+        }
+        
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as HeroClass
-        let aWhale = self.childNodeWithName("whale") as WhaleBoss
+        let aWizard = self.childNodeWithName("wizard") as WizardClass
         for touch in touches{
             aHero.moveHelper(touch.locationInNode(self))
         }
@@ -108,27 +134,12 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
-            self.lastWave = currentTime
+            self.lastFireball = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        
-        //******REGEN CODE
-        if currentTime - lastHeal  > healSpeed{
-            self.lastHeal = currentTime
-            if theHero!.life < maxLife{
-                theHero!.life! += theHero!.regeneration!
-            }
-        }
-        
-        if currentTime - lastWave  > whaleAttackSpeed && !levelOver{
-            self.lastWave = currentTime
-            if whichWave == wavePositions!.count {
-                whichWave = 0
-            }
-            theWhale!.throwWave(wavePositions![whichWave])
-            whichWave += 1
-            theWhale!.throwWave(wavePositions![whichWave])
-            whichWave += 1
+        if currentTime - lastFireball  > wizardAttackSpeed{
+            self.lastFireball = currentTime
+            theWizard!.shootFireball()
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
@@ -148,7 +159,7 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
         
         //win condition
         //check for win condition
-        if (theWhale!.isDead || theHero!.life <= 0) && !levelOver{
+        if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
             
             if (self.childNodeWithName("gold") == nil && self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
                 
@@ -159,7 +170,7 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil){
-                if theWhale!.isDead{
+                if theWizard!.isDead{
                     dropLoot("level13", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                     for node in self.children{

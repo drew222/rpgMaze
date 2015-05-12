@@ -15,7 +15,7 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
-    var lastFireball: Double = 0.0
+    var lastBomb: Double = 0.0
     var levelOver = false
     let levelName = "world1level9"
     var droppedItem = false
@@ -26,10 +26,9 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
     var maxLife: CGFloat = 0.0
     //*****************
     
-    //larger attack speed, slower attack
-    let wizardAttackSpeed = 1.0
+    let bomberAttackSpeed = 0.75
     
-    var theWizard: WizardClass?
+    var theBomber: BomberClass?
     var theHero: HeroClass?
     
     override func didMoveToView(view: SKView) {
@@ -44,9 +43,12 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
         lifeNode!.fontColor = UIColor.redColor()
         lifeNode!.fontSize = 20
         self.addChild(lifeNode!)
-
-        theWizard = WizardClass.makeWizard(CGPointMake(self.frame.midX, self.frame.maxY - 50))
-        self.addChild(theWizard!)
+        theBomber = BomberClass.makeBomber(CGPointMake(self.frame.midX, self.frame.maxY - 50))
+        theBomber!.attackSpeed = 1.5
+        self.addChild(theBomber!)
+        //the below constraints did nothing
+        //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
+        //ourHero.constraints = [distanceConstraint]
         let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.name = "background"
@@ -54,10 +56,20 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
         background.zPosition = -1
         self.physicsWorld.contactDelegate = self
         self.addChild(background)
+        
+        //left crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 50, self.frame.minY + 100), endPosition: CGPointMake(self.frame.maxX - 50, self.frame.minY + 250)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 50, self.frame.minY + 250), endPosition: CGPointMake(self.frame.maxX - 50, self.frame.minY + 400)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 50, self.frame.minY + 400), endPosition: CGPointMake(self.frame.maxX - 50, self.frame.minY + 550)))
+        //right crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 50, self.frame.minY + 175), endPosition: CGPointMake(self.frame.minX + 50, self.frame.minY + 325)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 50, self.frame.minY + 325), endPosition: CGPointMake(self.frame.minX + 50, self.frame.minY + 475)))
+        
         theHero!.updateStats()
         //*****REGENE CODE****
         maxLife = theHero!.life!
         //********************
+        
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -70,19 +82,29 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        //HERO VS FIRE
+        
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
-                let aHero = self.childNodeWithName("hero") as HeroClass
-                aHero.takeDamage(1)
-                secondBody.node!.removeFromParent()
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
+                let mine = secondBody.node as? MiniCrab
+                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
         }
+        //HERO VS FIRE
+        // if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+        //   secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
+        //       let aHero = self.childNodeWithName("hero") as HeroClass
+        //      aHero.takeDamage(1)
+        //}
+        //HERO VS WIZARD
+        //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+        //secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWizard.rawValue){
+        //let aHero = self.childNodeWithName("hero") as HeroClass
+        //aHero.attack()
+        //}
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as HeroClass
-        let aWizard = self.childNodeWithName("wizard") as WizardClass
         for touch in touches{
             aHero.moveHelper(touch.locationInNode(self))
         }
@@ -90,15 +112,16 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        //println("current time: \(currentTime)")
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
-            self.lastFireball = currentTime
+            self.lastBomb = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastFireball  > wizardAttackSpeed{
-            self.lastFireball = currentTime
-            theWizard!.shootFireball()
+        if currentTime - lastBomb  > bomberAttackSpeed{
+            self.lastBomb = currentTime
+            theBomber!.throwBomb()
         }
         
         self.totalGameTime += currentTime - self.lastUpdatesTime
@@ -119,7 +142,7 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
         
         //win condition
         //check for win condition
-        if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
+        if (theBomber!.isDead || theHero!.life <= 0) && !levelOver{
             
             if (self.childNodeWithName("gold") == nil && self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
                 
@@ -130,7 +153,7 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil){
-                if theWizard!.isDead{
+                if theBomber!.isDead{
                     dropLoot("level9", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                     for node in self.children{
