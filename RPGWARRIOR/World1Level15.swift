@@ -156,6 +156,15 @@ class World1Level15: SKScene, SKPhysicsContactDelegate {
         lifeNode!.text = "\(Int(floor(theHero!.life!)))"
         //***************
         
+        if currentTime - lastWave  > whaleAttackSpeed && !levelOver{
+            self.lastWave = currentTime
+            if whichWave == wavePositions!.count {
+                whichWave = 0
+            }
+            theWhale!.throwWave(wavePositions![whichWave])
+            whichWave += 1
+        }
+        
         //win condition
         //check for win condition
         if (theWhale!.isDead || theHero!.life <= 0) && !levelOver{
