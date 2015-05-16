@@ -16,6 +16,7 @@ class Krill: SKSpriteNode {
     class func krillAtPosition(position: CGPoint) -> Krill{
         
         let krill = Krill(imageNamed: "Krill_1")
+        krill.zRotation = pi / 4
         krill.position = position
         krill.name = "krill"
         
@@ -42,32 +43,40 @@ class Krill: SKSpriteNode {
         self.runAction(repeatAction)
     }
     
-    func moveTowardsPosition(position: CGPoint){
-        //println("Click position at (\(position.x), \(position.y))")
-        let slope = (position.y - self.position.y) / (position.x - self.position.x)
-        var offScreenX = CGFloat(0)
-        let ourScene = self.parent as SKScene
-        if (position.x <= self.position.x){
-            offScreenX = -10
+    func moveTowardsPosition(){
+        let distanceToMove = CGFloat(50.0)
+        let numberOfMoves = Int(CGFloat(self.parent!.frame.maxY) / CGFloat(distanceToMove))
+        var moveAction: SKAction
+        var turnAction: SKAction
+        var xValue = self.position.x
+        var yValue = self.position.y
+        var lastWasLeft = true
+        var actionArray: [SKAction] = []
+        for (var i = 0; i < numberOfMoves; i++){
+            let leftOrRight = randomWithMin(0, 100)
+            if leftOrRight < 50 {
+                moveAction = SKAction.moveTo(CGPointMake(xValue + distanceToMove, yValue - distanceToMove), duration: 1)
+                turnAction = SKAction.rotateToAngle(pi / 4, duration: 0)
+                if lastWasLeft {
+                    actionArray.append(turnAction)
+                }
+                actionArray.append(moveAction)
+                lastWasLeft = false
+                xValue = xValue + distanceToMove
+                yValue = yValue - distanceToMove
+            }else{
+                moveAction = SKAction.moveTo(CGPointMake(xValue - distanceToMove, yValue - distanceToMove), duration: 1)
+                turnAction = SKAction.rotateToAngle(-pi / 4, duration: 0)
+                if !lastWasLeft{
+                    actionArray.append(turnAction)
+                }
+                actionArray.append(moveAction)
+                lastWasLeft = true
+                xValue = xValue - distanceToMove
+                yValue = yValue - distanceToMove
+            }
         }
-        else{
-            offScreenX = ourScene.frame.width + 10
-        }
-        let offScreenY = position.y + slope * offScreenX - slope * position.x
-        
-        let pointOffScreen = CGPointMake(offScreenX, offScreenY)
-        //println("Offscreen Position is at (\(pointOffScreen.x), \(pointOffScreen.y))")
-        let xDistance = self.position.x - offScreenX
-        
-        let yDistance = self.position.y - offScreenY
-        
-        let distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
-        
-        let time = NSTimeInterval(distance / CGFloat(krillSpeed))
-        
-        let moveProjectile = SKAction.moveTo(pointOffScreen, duration: time)
-        
-        self.runAction(moveProjectile)
-        
+        actionArray.append(SKAction.removeFromParent())
+        self.runAction(SKAction.sequence(actionArray))
     }
 }

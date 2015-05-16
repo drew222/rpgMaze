@@ -223,7 +223,7 @@ class KrakenBoss: SKSpriteNode {
         //shoot the krill
         let krill = Krill.krillAtPosition(CGPointMake(self.position.x, self.position.y - 45))
         self.parent!.addChild(krill)
-        krill.moveTowardsPosition(shootAtPoint)
+        krill.moveTowardsPosition()
     }
     
     
