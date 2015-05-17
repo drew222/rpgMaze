@@ -86,12 +86,12 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        let aHero = self.childNodeWithName("hero") as HeroClass
-        let aKraken = self.childNodeWithName("kraken") as KrakenBoss
+        let aHero = self.childNodeWithName("hero") as! HeroClass
+        let aKraken = self.childNodeWithName("kraken") as! KrakenBoss
         for touch in touches{
-            aHero.moveHelper(touch.locationInNode(self))
+            aHero.moveHelper((touch as! UITouch).locationInNode(self))
         }
     }
     
@@ -120,7 +120,7 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
         if (theKraken!.isDead || theHero!.life <= 0) && !levelOver{
             if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
                 let skTransition = SKTransition.fadeWithDuration(5.0)
-                self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+                self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil){

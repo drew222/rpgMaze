@@ -24,7 +24,7 @@ class IntroScene: SKScene {
         //-1 sets loops to infinity
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         let gameplayScene = ZoneScene(size: self.frame.size)
         let skTransition = SKTransition.fadeWithDuration(1.0)
         self.view?.presentScene(gameplayScene, transition: skTransition)

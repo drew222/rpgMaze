@@ -51,7 +51,7 @@ class HeroClass: SKSpriteNode {
  
     
     func interactableNode(node: SKSpriteNode) -> Bool{
-        if node.name? != nil{
+        if node.name != nil{
             if node.name! == "bomb" || node.name! == "Fireball" || node.name! == "krill" || node.name! == "Mine" || node.name! == "hero" || node.name! == "spike" || node.name! == "crab" || node.name! == "tentacle" || node.name! == "safeSpot1" || node.name! == "safeSpot2" || node.name! == "wave" {
                 return false
             }else{
@@ -75,7 +75,7 @@ class HeroClass: SKSpriteNode {
         var clickedNode = false
         var theClickedNode: SKSpriteNode?
         for node in self.parent!.children{
-            if node is SKSpriteNode && node.containsPoint(position) && node.zPosition? > -1 && node.position? != self.position && interactableNode(node as SKSpriteNode){
+            if node is SKSpriteNode && node.containsPoint(position) && node.zPosition > -1 && node.position != self.position && interactableNode(node as! SKSpriteNode){
                 clickedNode = true
                 theClickedNode = node as? SKSpriteNode
             }
@@ -84,8 +84,8 @@ class HeroClass: SKSpriteNode {
         let manyPoints = generatePointsOnLine(self.position, position)
         for onePoint in manyPoints{
             for node in self.parent!.children{
-                if (node is SKSpriteNode && node.containsPoint(onePoint) && !node.containsPoint(position) && node.zPosition > -1) && interactableNode(node as SKSpriteNode){
-                    self.runAction(getAroundMove(self, position, node as SKSpriteNode), withKey: "runAction")
+                if (node is SKSpriteNode && node.containsPoint(onePoint) && !node.containsPoint(position) && node.zPosition > -1) && interactableNode(node as! SKSpriteNode){
+                    self.runAction(getAroundMove(self, position, node as! SKSpriteNode), withKey: "runAction")
                     return
                 }
             }
@@ -116,7 +116,7 @@ class HeroClass: SKSpriteNode {
 
 
     func pickupItem(){
-        let theItem = self.parent?.childNodeWithName("item") as ItemClass
+        let theItem = self.parent?.childNodeWithName("item") as! ItemClass
         println("picking up item!\(theItem.texture)")
 
         }
@@ -185,7 +185,7 @@ class HeroClass: SKSpriteNode {
         //animate damage stuff
         let codeBlock0 = SKAction.runBlock({
             var textures: [SKTexture] = []
-            textures.append(SKTexture(imageNamed:"Kraken_gets_Hurt_1"))
+            textures.append(SKTexture(imageNamed:"Kraken_Gets_Hurt_1"))
             let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
             let repeatAction0 = SKAction.repeatActionForever(animation)
             self.runAction(repeatAction0, withKey: "repeatAction")

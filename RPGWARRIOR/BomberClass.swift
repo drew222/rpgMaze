@@ -120,7 +120,7 @@ class BomberClass: SKSpriteNode {
             let sequenceRepeat = SKAction.sequence([animation2])
             let repeatAction = SKAction.repeatActionForever(sequenceRepeat)
             self.runAction(repeatAction , withKey: "repeatAction")
-            let hero = self.parent!.childNodeWithName("hero") as HeroClass
+            let hero = self.parent!.childNodeWithName("hero") as! HeroClass
             let shootAtPoint = self.getBombLocation(hero.position)
             //shoot the fireball
             let bomb = Bomb.bombAtPosition(self.getBombLocation(hero.position))

@@ -93,12 +93,12 @@ class World1Level12: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        let aHero = self.childNodeWithName("hero") as HeroClass
-        let aWhale = self.childNodeWithName("whale") as WhaleBoss
+        let aHero = self.childNodeWithName("hero") as! HeroClass
+        let aWhale = self.childNodeWithName("whale") as! WhaleBoss
         for touch in touches{
-            aHero.moveHelper(touch.locationInNode(self))
+            aHero.moveHelper((touch as! UITouch).locationInNode(self))
         }
     }
     
@@ -153,7 +153,7 @@ class World1Level12: SKScene, SKPhysicsContactDelegate {
                 
                 let skTransition = SKTransition.fadeWithDuration(5.0)
                 
-                self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+                self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
                 
                 levelOver = true
             }

@@ -63,14 +63,14 @@ class ZoneScene: SKScene {
         
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         let skTransition = SKTransition.fadeWithDuration(1.0)
         for touch in touches{
-            if world1Node!.containsPoint(touch.locationInNode(self)){
+            if world1Node!.containsPoint((touch as! UITouch).locationInNode(self)){
                 self.view?.presentScene(world1Menu, transition: skTransition)
-            }else if inventoryNode!.containsPoint(touch.locationInNode(self)){
+            }else if inventoryNode!.containsPoint((touch as! UITouch).locationInNode(self)){
                 self.view?.presentScene(inventory, transition: skTransition)
-            }else if storeNode!.containsPoint(touch.locationInNode(self)){
+            }else if storeNode!.containsPoint((touch as! UITouch).locationInNode(self)){
                 let aStoreScene = StoreScene(size: self.frame.size)
                 aStoreScene.userData = NSMutableDictionary()
                 aStoreScene.userData?.setObject(inventory!, forKey: "inventory")

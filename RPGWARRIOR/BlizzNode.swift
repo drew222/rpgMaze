@@ -22,7 +22,7 @@ class BlizzNode: SKSpriteNode{
         blizzContactNode.name = "blizz"
         
         let blizzPath = NSBundle.mainBundle().pathForResource("BlizzParticle", ofType: "sks")
-        blizzContactNode.blizzAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(blizzPath!) as SKEmitterNode)
+        blizzContactNode.blizzAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(blizzPath!) as! SKEmitterNode)
         blizzContactNode.blizzAttack!.position = CGPointMake(position.x + 15, position.y + 60)
         //blizzContactNode.blizzAttack!.zPosition = 2
         

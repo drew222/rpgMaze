@@ -218,7 +218,7 @@ class KrakenBoss: SKSpriteNode {
         let sequence = SKAction.sequence([codeBlock0, SKAction.waitForDuration(0.4), codeBlock])
         self.runAction(sequence)
         //calculate where to shoot the krill
-        let hero = self.parent!.childNodeWithName("hero") as HeroClass
+        let hero = self.parent!.childNodeWithName("hero") as! HeroClass
         let shootAtPoint = hero.position
         //shoot the krill
         let krill = Krill.krillAtPosition(CGPointMake(self.position.x, self.position.y - 45))

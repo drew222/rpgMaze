@@ -105,10 +105,10 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
         //}
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        let aHero = self.childNodeWithName("hero") as HeroClass
-        let aBomber = self.childNodeWithName("bomber") as BomberClass
+        let aHero = self.childNodeWithName("hero") as! HeroClass
+        let aBomber = self.childNodeWithName("bomber") as! BomberClass
         for touch in touches{
             //stop when mouse comes in contact hero
             //let theSpot = spotToStop(aHero, touch.locationInNode(self))
@@ -119,7 +119,7 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
             //      aHero.attack()
             //  }
             //}
-            aHero.moveHelper(touch.locationInNode(self))
+            aHero.moveHelper((touch as! UITouch).locationInNode(self))
         }
     }
     
@@ -154,7 +154,7 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
                 
                 let skTransition = SKTransition.fadeWithDuration(5.0)
                 
-                self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+                self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
                 
                 levelOver = true
             }

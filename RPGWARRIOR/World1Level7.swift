@@ -80,18 +80,18 @@ class World1Level7: SKScene, SKPhysicsContactDelegate {
         //HERO VS FIRE
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
-                let aHero = self.childNodeWithName("hero") as HeroClass
+                let aHero = self.childNodeWithName("hero") as! HeroClass
                 aHero.takeDamage(1)
                 secondBody.node!.removeFromParent()
         }
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        let aHero = self.childNodeWithName("hero") as HeroClass
-        let aWizard = self.childNodeWithName("wizard") as WizardClass
+        let aHero = self.childNodeWithName("hero") as! HeroClass
+        let aWizard = self.childNodeWithName("wizard") as! WizardClass
         for touch in touches{
-            aHero.moveHelper(touch.locationInNode(self))
+            aHero.moveHelper((touch as! UITouch).locationInNode(self))
         }
     }
     
@@ -132,7 +132,7 @@ class World1Level7: SKScene, SKPhysicsContactDelegate {
                 
                 let skTransition = SKTransition.fadeWithDuration(5.0)
                 
-                self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+                self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
                 
                 levelOver = true
             }

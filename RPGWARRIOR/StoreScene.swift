@@ -68,7 +68,7 @@ class StoreScene: SKScene {
         inv!.size = CGSizeMake(100, 100)
         self.addChild(inv!)
         //gold node
-        goldCount = (self.userData?.objectForKey("inventory") as Inventory).gold
+        goldCount = (self.userData?.objectForKey("inventory") as! Inventory).gold
         goldNode = SKLabelNode.init(text: "\(Int(goldCount))")
         goldNode!.position = CGPointMake(self.frame.minX + 70, self.frame.minY + 40)
         goldNode!.fontColor = UIColor.redColor()
@@ -99,7 +99,7 @@ class StoreScene: SKScene {
     }
     func clickedItem(point: CGPoint) -> String{
         for var x = 1; x < allStoreItems.count+1; x+=1{
-            let anItem = self.childNodeWithName("item\(x)") as ItemClass
+            let anItem = self.childNodeWithName("item\(x)") as! ItemClass
             if anItem.containsPoint(point){
                 return anItem.itemName!
             }
@@ -108,35 +108,35 @@ class StoreScene: SKScene {
     }
     
     func buyItem(){
-        if (self.userData?.objectForKey("inventory") as Inventory).gold >= currentItem!.price && (self.userData?.objectForKey("inventory") as Inventory).backPackSpaces > 0{
-            (self.userData?.objectForKey("inventory") as Inventory).gold -= currentItem!.price!
-            (self.userData?.objectForKey("inventory") as Inventory).addItem(currentItem!.itemName!)
+        if (self.userData?.objectForKey("inventory") as! Inventory).gold >= currentItem!.price && (self.userData?.objectForKey("inventory") as! Inventory).backPackSpaces > 0{
+            (self.userData?.objectForKey("inventory") as! Inventory).gold -= currentItem!.price!
+            (self.userData?.objectForKey("inventory") as! Inventory).addItem(currentItem!.itemName!)
             goldCount -= currentItem!.price!
             goldNode!.text = "\(Int(goldCount))"
         }
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         for touch in touches{
-            if menu!.containsPoint(touch.locationInNode(self)){
+            if menu!.containsPoint((touch as! UITouch).locationInNode(self)){
                 let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(self.userData?.objectForKey("worldscene") as ZoneScene, transition: skTransition)
-            }else if inv!.containsPoint(touch.locationInNode(self)){
+                self.view?.presentScene(self.userData?.objectForKey("worldscene") as! ZoneScene, transition: skTransition)
+            }else if inv!.containsPoint((touch as! UITouch).locationInNode(self)){
                 let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(self.userData?.objectForKey("inventory") as Inventory, transition: skTransition)
-            }else if self.childNodeWithName("buyButton") != nil && self.childNodeWithName("buyButton")!.containsPoint(touch.locationInNode(self)){
+                self.view?.presentScene(self.userData?.objectForKey("inventory") as! Inventory, transition: skTransition)
+            }else if self.childNodeWithName("buyButton") != nil && self.childNodeWithName("buyButton")!.containsPoint((touch as! UITouch).locationInNode(self)){
                 buyItem()
-            }else if clickedItem(touch.locationInNode(self)) != ""{
+            }else if clickedItem((touch as! UITouch).locationInNode(self)) != ""{
                 if currentItem != nil{
                     currentItem!.removeFromParent()
                 }
-                currentItem = ItemClass.itemInSpace(clickedItem(touch.locationInNode(self)))
+                currentItem = ItemClass.itemInSpace(clickedItem((touch as! UITouch).locationInNode(self)))
                 currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 135)
                 currentItem!.size = CGSizeMake(100, 100)
                 resizeLabel(statLabel!)
                 statLabel!.text = currentItem!.statString()
                 self.addChild(currentItem!)
-            }else if self.childNodeWithName("buyButton") != nil && self.childNodeWithName("buyButton")!.containsPoint(touch.locationInNode(self)){
+            }else if self.childNodeWithName("buyButton") != nil && self.childNodeWithName("buyButton")!.containsPoint((touch as! UITouch).locationInNode(self)){
                 buyItem()
             }
         }

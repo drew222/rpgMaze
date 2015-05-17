@@ -62,7 +62,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //HERO VS FIRE
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
-            let aHero = self.childNodeWithName("hero") as HeroClass
+            let aHero = self.childNodeWithName("hero") as! HeroClass
                 aHero.takeDamage(1)
                 secondBody.node!.removeFromParent()
         }
@@ -74,10 +74,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //}
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        let aHero = self.childNodeWithName("hero") as HeroClass
-        let aWizard = self.childNodeWithName("wizard") as WizardClass
+        let aHero = self.childNodeWithName("hero") as! HeroClass
+        let aWizard = self.childNodeWithName("wizard") as! WizardClass
         for touch in touches{
             //stop when mouse comes in contact hero
             //let theSpot = spotToStop(aHero, touch.locationInNode(self))
@@ -88,7 +88,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
               //      aHero.attack()
               //  }
             //}
-            aHero.moveHelper(touch.locationInNode(self))
+            aHero.moveHelper((touch as! UITouch).locationInNode(self))
         }
     }
    
@@ -128,7 +128,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let skTransition = SKTransition.fadeWithDuration(5.0)
                 println("got here111")
                 //let gameScene = self.userData?.objectForKey("menu") as MainMenuScene
-                self.view?.presentScene(self.userData?.objectForKey("menu") as MainMenuScene, transition: skTransition)
+                self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
                 println("got here222")
                 levelOver = true
             }

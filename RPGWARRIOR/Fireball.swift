@@ -46,7 +46,7 @@ class Fireball: SKSpriteNode {
         //println("Click position at (\(position.x), \(position.y))")
         let slope = (position.y - self.position.y) / (position.x - self.position.x)
         var offScreenX = CGFloat(0)
-        let ourScene = self.parent as SKScene
+        let ourScene = self.parent as! SKScene
         if (position.x <= self.position.x){
             offScreenX = -10
         }

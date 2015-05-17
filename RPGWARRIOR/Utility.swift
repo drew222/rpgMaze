@@ -61,7 +61,7 @@ func randomWithMin(min: Int, max: Int) -> NSInteger{
 }
 
 func resizeLabel(node: SKLabelNode){
-    let numChars = countElements(node.text)
+    let numChars = count(node.text)
     node.fontSize = 25 - (CGFloat(numChars) / 6)
 }
 
@@ -87,7 +87,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level2"{
@@ -104,7 +104,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         } else {
             let item = ItemClass.itemInSpace("Rusty_Copper_Ring_1")
@@ -126,7 +126,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         } else if (myNum <= 50) && (myNum > 25){
             let item = ItemClass.itemInSpace("Rusty_Copper_Ring_1")
@@ -153,7 +153,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 2
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 2
             scene.addChild(gold)
         }
     }else if level == "level5"{
@@ -170,7 +170,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 2
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 2
             scene.addChild(gold)
         } else {
             let item = ItemClass.itemInSpace("Rusty_Silver_Ring_1")
@@ -192,7 +192,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 2
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 2
             scene.addChild(gold)
         } else if (myNum <= 50) && (myNum > 25){
             let item = ItemClass.itemInSpace("Rusty_Silver_Ring_1")
@@ -219,7 +219,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 4
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 4
             scene.addChild(gold)
         }
     }else if level == "level8"{
@@ -236,7 +236,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 4
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 4
             scene.addChild(gold)
         } else {
             let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
@@ -258,7 +258,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 4
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 4
             scene.addChild(gold)
         } else if (myNum <= 50) && (myNum > 25){
             let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
@@ -284,7 +284,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level11"{
@@ -300,7 +300,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level12"{
@@ -316,7 +316,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level13"{
@@ -332,7 +332,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level14"{
@@ -348,7 +348,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level15"{
@@ -364,7 +364,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level16"{
@@ -380,7 +380,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level17"{
@@ -396,7 +396,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level18"{
@@ -412,7 +412,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level19"{
@@ -428,7 +428,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level20"{
@@ -444,7 +444,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level21"{
@@ -460,7 +460,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level22"{
@@ -476,7 +476,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level23"{
@@ -492,7 +492,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level24"{
@@ -508,7 +508,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level25"{
@@ -524,7 +524,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level26"{
@@ -540,7 +540,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level27"{
@@ -556,7 +556,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level28"{
@@ -572,7 +572,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level29"{
@@ -588,7 +588,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }else if level == "level30"{
@@ -604,7 +604,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             scene.addChild(gold)
         }
     }
@@ -755,7 +755,7 @@ func pushPointOut(theNode: SKSpriteNode, corner: CGPoint, selfNode: SKSpriteNode
 
 func getNodeAngle(node: SKSpriteNode) -> CGFloat{
     if node.name == "hero"{
-        let myNode = node as HeroClass
+        let myNode = node as! HeroClass
         return CGFloat(myNode.currentAngle!)
     }else{
         return CGFloat(0)
@@ -764,7 +764,7 @@ func getNodeAngle(node: SKSpriteNode) -> CGFloat{
 
 func setAngle(myNode: SKSpriteNode, angle: CGFloat){
     if myNode.name == "hero"{
-        let aNode = myNode as HeroClass
+        let aNode = myNode as! HeroClass
         aNode.currentAngle = angle
     }
 }
@@ -844,13 +844,13 @@ func moveTo(nodeToMove: SKSpriteNode, startPosition: CGPoint, position: CGPoint)
 //return the action sequence for simple move type
 func getSimpleMove(nodeToMove: SKSpriteNode, position: CGPoint)->SKAction{
     if nodeToMove.name == "hero"{
-        let myNode = nodeToMove as HeroClass
+        let myNode = nodeToMove as! HeroClass
         myNode.isAttacking = false
     }
     let completionBlock = SKAction.runBlock(
         {nodeToMove.removeActionForKey("repeatAction")
             nodeToMove.texture = getStillTexture(nodeToMove)
-            (nodeToMove as HeroClass).isMoving = false
+            (nodeToMove as! HeroClass).isMoving = false
     })
     let moveAction = moveTo(nodeToMove, nodeToMove.position, position)
     let sequence = SKAction.sequence([moveAction, completionBlock])
@@ -864,10 +864,10 @@ func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAtta
         {nodeToMove.removeActionForKey("repeatAction")
             nodeToMove.texture = getStillTexture(nodeToMove)
             if nodeToMove.name == "hero"{
-                let myNode = nodeToMove as HeroClass
+                let myNode = nodeToMove as! HeroClass
                 if nodeToAttack.name == "item" {
                     myNode.isAttacking = false
-                    myNode.pickupItem(nodeToAttack as ItemClass)
+                    myNode.pickupItem(nodeToAttack as! ItemClass)
                 }else if nodeToAttack.name == "gold" {
                     nodeToAttack.removeFromParent()
                 }else{
@@ -875,7 +875,7 @@ func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAtta
                     myNode.isAttacking = true
                 }
             }
-            (nodeToMove as HeroClass).isMoving = false
+            (nodeToMove as! HeroClass).isMoving = false
     })
     var sequence: SKAction?
     let moveAction = moveTo(nodeToMove, nodeToMove.position, spotInfront)
@@ -890,7 +890,7 @@ func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAtta
 //return action sequence for aroundMove
 func getAroundMove(nodeToMove: SKSpriteNode, clickPoint: CGPoint, nodeToGoAround: SKSpriteNode)-> SKAction{
     if nodeToMove.name == "hero"{
-        let myNode = nodeToMove as HeroClass
+        let myNode = nodeToMove as! HeroClass
         myNode.isAttacking = false
     }
     let cornerSide = getGoAroundCorner(nodeToGoAround, nodeToMove.position, clickPoint)
@@ -905,7 +905,7 @@ func getAroundMove(nodeToMove: SKSpriteNode, clickPoint: CGPoint, nodeToGoAround
         //let secondCornerMove = moveTo(nodeToMove, cornerSide.0, secondCornerPushed)
         //let moveToPoint = moveTo(nodeToMove,cornerSide.2, clickPoint)
         let completionBlock2 = SKAction.runBlock(
-            {(nodeToMove as HeroClass).moveHelper(clickPoint)
+            {(nodeToMove as! HeroClass).moveHelper(clickPoint)
                 //let runAction = moveTo(nodeToMove,cornerSide.2, clickPoint)
                 //let innerComplete = SKAction.runBlock({nodeToMove.removeActionForKey("repeatAction")
                 //nodeToMove.texture = getStillTexture(nodeToMove)})
@@ -916,17 +916,17 @@ func getAroundMove(nodeToMove: SKSpriteNode, clickPoint: CGPoint, nodeToGoAround
             {let runAction = moveTo(nodeToMove, cornerSide.0, secondCornerPushed)
                 let innerComplete = SKAction.runBlock({nodeToMove.runAction(completionBlock2)})
                 nodeToMove.runAction(SKAction.sequence([runAction, innerComplete]), withKey: "runAction")
-                (nodeToMove as HeroClass).isMoving = false
+                (nodeToMove as! HeroClass).isMoving = false
         })
         sequence = SKAction.sequence([firstCornerMove, completionBlock1])
     }else{
         let firstCornerMove = moveTo(nodeToMove, nodeToMove.position, cornerPointPushed)
         //let moveToPoint = moveTo(nodeToMove, cornerSide.0, clickPoint)
         let completionBlock = SKAction.runBlock(
-            {(nodeToMove as HeroClass).moveHelper(clickPoint)
+            {(nodeToMove as! HeroClass).moveHelper(clickPoint)
                 //nodeToMove.runAction(moveTo(nodeToMove, cornerSide.0, clickPoint), completion: {nodeToMove.removeActionForKey("repeatAction")
                 //nodeToMove.texture = getStillTexture(nodeToMove)})
-                (nodeToMove as HeroClass).isMoving = false
+                (nodeToMove as! HeroClass).isMoving = false
         })
         sequence = SKAction.sequence([firstCornerMove, completionBlock])
     }

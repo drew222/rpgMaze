@@ -105,7 +105,7 @@ class WizardClass: SKSpriteNode {
         let sequence = SKAction.sequence([codeBlock0, SKAction.waitForDuration(0.4), codeBlock])
         self.runAction(sequence)
         //calculate where to shoot the fireball
-        let hero = self.parent!.childNodeWithName("hero") as HeroClass
+        let hero = self.parent!.childNodeWithName("hero") as! HeroClass
         let shootAtPoint = hero.position
         //shoot the fireball
         let fireball = Fireball.fireballAtPosition(CGPointMake(self.position.x, self.position.y - 10))
