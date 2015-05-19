@@ -29,6 +29,8 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
     var attackSpots: [CGPoint] = []
     var whichSpot = 0
     
+    //larger attack speed, slower attack
+    
     var theWizard: WizardClass?
     var theHero: HeroClass?
     var blizzInContact: BlizzNode?
@@ -50,6 +52,9 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
         //ourHero.constraints = [distanceConstraint]
+        
+        theWizard = WizardClass.makeWizard(CGPointMake(self.frame.midX, self.frame.maxY - 50))
+        self.addChild(theWizard!)
         let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.name = "background"
@@ -107,7 +112,7 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
         }
         
         
-    }
+           }
     
     func didBeginContact(contact: SKPhysicsContact) {
         var firstBody: SKPhysicsBody!
@@ -119,11 +124,12 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        //HERO VS SEASHELL
+        //HERO VS FIRE
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                let mine = secondBody.node as? MineNode
-                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
+                let aHero = self.childNodeWithName("hero") as! HeroClass
+                aHero.takeDamage(1)
+                secondBody.node!.removeFromParent()
         }
             //HERO VS FIRE
         else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
