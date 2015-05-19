@@ -46,7 +46,7 @@ var heroSpeed: CGFloat = 150
 //    case heroSpeed = 160
 //}
 
-let allStoreItems = ["Shades_1", "Coral_Crown_1", "Crab_Claw_Cap_1", "Seaweed_Mustache_1", "Copper_Ring_1", "Gold_Ring_1", "Mossy_Copper_Ring_1", "Mossy_Gold_Ring_1", "Mossy_Silver_Ring_1", "Rusty_Copper_Ring_1", "Rusty_Gold_Ring_1", "Rusty_Silver_Ring_1", "Silver_Ring_1", "Bow_Tie_1", "Seashell_Charm_Bracelet_1", "Whale_Flesh_Ring_1", "King_Kraken_Tentacle_1", "Inky_Ring_1", "Pearl_Snap_Ring_1", "Watch_1", "Beach_Ball_Fragment_1", "Lifejacket_1", "Pearl_Necklace_1", "Whistle_1", "Top_Hat_1", "Sunhat_1", "Sand_Bucket_1", "Monocle_1", "Seashell_Necklace_1"]
+let allStoreItems = ["Shades_1", "Coral_Crown_1", "Crab_Claw_Cap_1", "Seaweed_Mustache_1", "Copper_Ring_1", "Gold_Ring_1", "Mossy_Copper_Ring_1", "Mossy_Gold_Ring_1", "Mossy_Silver_Ring_1", "Rusty_Copper_Ring_1", "Rusty_Gold_Ring_1", "Rusty_Silver_Ring_1", "Silver_Ring_1", "Bow_Tie_1", "Seashell_Charm_Bracelet_1", "Whale_Flesh_Ring_1", "King_Kraken_Tentacle_1", "Inky_Ring_1", "Pearl_Snap_Ring_1", "Watch_1", "Beach_Ball_Fragment_1", "Lifejacket_1", "Pearl_Necklace_1", "Whistle_1", "Top_Hat_1", "Sunhat_1", "Sand_Bucket_1", "Monocle_1", "Seashell_Necklace_1", "Beach_Towel_1"]
 
 
 func randomWithMin(min: Int, max: Int) -> NSInteger{

@@ -41,7 +41,7 @@ class ItemClass: SKSpriteNode {
         }else if picName == "Copper_Ring_1" || picName == "Gold_Ring_1" || picName == "Mossy_Copper_Ring_1" || picName == "Mossy_Gold_Ring_1" || picName == "Mossy_Silver_Ring_1" || picName == "Rusty_Copper_Ring_1" || picName == "Rusty_Gold_Ring_1" || picName == "Rusty_Silver_Ring_1" || picName == "Silver_Ring_1" || picName == "Beach_Ball_Fragment_1" || picName == "Seashell_Charm_Bracelet_1" || picName == "Inky_Ring_1" || picName == "Pearl_Snap_Ring_1" || picName == "Watch_1" || picName == "Whale_Flesh_Ring_1"
         {
             return ItemType.body
-        }else if picName == "Bow_Tie_1" || picName == "Lifejacket_1" || picName == "Pearl_Necklace_1" || picName == "Seashell_Necklace_1" || picName == "Seaweed_Mustache_1" || picName == "Whistle_1"{
+        }else if picName == "Bow_Tie_1" || picName == "Lifejacket_1" || picName == "Pearl_Necklace_1" || picName == "Seashell_Necklace_1" || picName == "Seaweed_Mustache_1" || picName == "Whistle_1" || picName == "Beach_Towel_1"{
             //This is a placeholder type
             return ItemType.neck
         }
@@ -143,7 +143,10 @@ class ItemClass: SKSpriteNode {
         }else if picName == "Bow_Tie_1"{
             price = 100
             return [("Regeneration", CGFloat(2))]
-        }
+        }else if picName == "Beach_Towel_1"{
+    price = 100
+    return [("Regeneration", CGFloat(2))]
+    }
             return []
     }
     
