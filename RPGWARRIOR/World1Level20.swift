@@ -60,15 +60,39 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
         //********************
         
         //shells i = y, k = x
-        for (var i = 100; i < Int(self.frame.maxY - 100); i += 30){
-            for (var k = 30.0; k < Double(self.frame.maxX); k += 30){
+        //right column
+        for (var i = 20; i < Int(self.frame.maxY); i += 30){
+            for (var k = 260.0; k < Double(self.frame.maxX); k += 30){
                 self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(k), CGFloat(i))))
-                if Double(self.frame.maxX) - k > 40 && Double(self.frame.maxX) - k < 80 {
+                if Double(self.frame.maxX) - k > 40 && Double(self.frame.maxX) - k < 30 {
                     self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(k + 30), CGFloat(i))))
                 }
             }
         }
-
+        //left column a = x b = y
+        for (var b = 20; b < Int(self.frame.maxY); b += 30){
+            for (var a = 20.0; a < Double(self.frame.maxX - 255); a += 30){
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(a), CGFloat(b))))
+                if Double(self.frame.maxX) - a > 40 && Double(self.frame.maxX) - a < 30 {
+                    self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(a + 30), CGFloat(b))))
+                }
+            }
+        }
+        //mid column c = x d = y
+        for (var d = 80; d < Int(self.frame.maxY - 100); d += 30){
+            for (var c = 140.0; c < Double(self.frame.maxX - 140); c += 30){
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(c), CGFloat(d))))
+                if Double(self.frame.maxX) - c > 150 && Double(self.frame.maxX) - c < 150 {
+                    self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(c + 30), CGFloat(d))))
+                }
+            }
+        }
+        //4 shells surrounding kraken at bottom
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 40, self.frame.minY + 20)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 40, self.frame.minY + 20)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 40, self.frame.minY + 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 40, self.frame.minY + 50)))
+        
         
     }
     
@@ -89,6 +113,13 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
                 aHero.takeDamage(1)
                 secondBody.node!.removeFromParent()
         }
+        //HERO VS SEASHELL
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
+                let mine = secondBody.node as? MineNode
+                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+        }
+
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
