@@ -91,14 +91,14 @@ class KrakenBoss: SKSpriteNode {
         let repeatAction = SKAction.repeatActionForever(animateWave)
         oilWave.runAction(repeatAction)
         //oilWave.size = self.parent!.frame.size
-        oilWave.size = CGSizeMake(self.parent!.frame.maxX, self.parent!.frame.maxY + 50)
+        oilWave.size = CGSizeMake(self.parent!.frame.maxX, self.parent!.frame.maxY + 70)
         oilWave.anchorPoint = CGPointMake(0.5, 0)
         oilWave.zPosition = 1
         oilWave.position = CGPointMake(self.parent!.frame.midX, self.parent!.frame.maxY + 30)
-        let moveDownAction = SKAction.moveTo(CGPointMake(self.parent!.frame.midX, self.parent!.frame.minY - 50), duration: 2)
+        let moveDownAction = SKAction.moveTo(CGPointMake(self.parent!.frame.midX, self.parent!.frame.minY - 70), duration: 2)
         let moveUpAction = SKAction.fadeOutWithDuration(1)
         let remBlock = SKAction.runBlock({oilWave.removeFromParent()})
-        let waitToWave = SKAction.waitForDuration(2)
+        let waitToWave = SKAction.waitForDuration(1.75)
         let sequence = SKAction.sequence([waitToWave, moveDownAction, moveUpAction, remBlock])
         oilWave.runAction(sequence)
         self.parent?.addChild(oilWave)
