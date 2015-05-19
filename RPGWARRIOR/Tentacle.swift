@@ -15,10 +15,10 @@ class Tentacle: SKSpriteNode {
     //create wave at point with size
     class func tentacleAtPosition(position: CGPoint) -> Tentacle{
         let tentacle = Tentacle(imageNamed: "Tentacle_1")
-        tentacle.anchorPoint = CGPointMake(0.5, 0)
+        //tentacle.anchorPoint = CGPointMake(0.5, 0)
         tentacle.position = position
         tentacle.name = "tentacle"
-        tentacle.size = CGSizeMake(50, 20)
+        tentacle.size = CGSizeMake(100, 100)
         //animate all textures
         var textures: [SKTexture] = []
         for (var i = 1; i < 8; i+=1){
@@ -27,8 +27,8 @@ class Tentacle: SKSpriteNode {
         
         let animateAction = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
         let repeatAction = SKAction.repeatAction(animateAction, count: 1)
-        let rotateAction = SKAction.rotateByAngle(2 * pi, duration: 1)
-        let repRotateAction = SKAction.repeatAction(rotateAction, count: 4)
+        let rotateAction = SKAction.rotateByAngle(2 * pi, duration: 0.5)
+        let repRotateAction = SKAction.repeatAction(rotateAction, count: 10)
         let codeBlock = SKAction.runBlock({tentacle.removeFromParent()})
         let sequence = SKAction.sequence([repeatAction, repRotateAction, codeBlock])
         tentacle.setupPhysicsBody()
