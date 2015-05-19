@@ -372,7 +372,7 @@
 		DC1F58121A88703500B5027B /* Bomb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bomb.swift; sourceTree = "<group>"; };
 		DC1F58181A88735300B5027B /* LightParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LightParticle.sks; sourceTree = "<group>"; };
 		DC1F58191A88735300B5027B /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
-		DC2711141A85E11900986D2E /* RPGWARRIOR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPGWARRIOR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC2711141A85E11900986D2E /* WhatsKraken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsKraken.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC2711181A85E11900986D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC2711221A85E11900986D2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DC2711241A85E11900986D2E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -736,7 +736,7 @@
 		DC2711151A85E11900986D2E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DC2711141A85E11900986D2E /* RPGWARRIOR.app */,
+				DC2711141A85E11900986D2E /* WhatsKraken.app */,
 				DC27112D1A85E11900986D2E /* RPGWARRIORTests.xctest */,
 			);
 			name = Products;
@@ -1139,7 +1139,7 @@
 			);
 			name = RPGWARRIOR;
 			productName = RPGWARRIOR;
-			productReference = DC2711141A85E11900986D2E /* RPGWARRIOR.app */;
+			productReference = DC2711141A85E11900986D2E /* WhatsKraken.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DC27112C1A85E11900986D2E /* RPGWARRIORTests */ = {
@@ -1167,7 +1167,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = "Drew Zoellner";
+				ORGANIZATIONNAME = "Drew and Zach";
 				TargetAttributes = {
 					DC2711131A85E11900986D2E = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -1687,7 +1687,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RPGWARRIOR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WhatsKraken;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1701,7 +1701,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RPGWARRIOR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WhatsKraken;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
