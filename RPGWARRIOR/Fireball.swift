@@ -11,6 +11,7 @@ import SpriteKit
 
 
 class Fireball: SKSpriteNode {
+    
     let fireballSpeed = 300
     
     class func fireballAtPosition(position: CGPoint) -> Fireball{
@@ -63,6 +64,7 @@ class Fireball: SKSpriteNode {
         
         let distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
         
+        
         let time = NSTimeInterval(distance / CGFloat(fireballSpeed))
         
         let moveProjectile = SKAction.moveTo(pointOffScreen, duration: time)
@@ -70,4 +72,4 @@ class Fireball: SKSpriteNode {
         self.runAction(moveProjectile)
         
     }
-}
+    }

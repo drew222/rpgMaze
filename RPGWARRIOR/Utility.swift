@@ -348,7 +348,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(gold)
         }
     }else if level == "level15"{
-        //25% mossy silver ring, 75% 5 booty
+        //25% mossy silver ring, 75% 6 booty
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
         if myNum > 75{
@@ -361,7 +361,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 5
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 6
             scene.addChild(gold)
         }
     }else if level == "level16"{
