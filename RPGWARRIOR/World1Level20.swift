@@ -12,6 +12,8 @@ import SpriteKit
 
 class World1Level20: SKScene, SKPhysicsContactDelegate {
     
+    var timeSinceCrabAdded : NSTimeInterval = 0
+    var addCrabTimeInterval : NSTimeInterval = 0.35
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
@@ -19,80 +21,87 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
     var levelOver = false
     let levelName = "world1level20"
     var droppedItem = false
-    //REGEN CODE******
-    var lastHeal: Double = 0.0
-    let healSpeed = 5.0
-    var lifeNode: SKLabelNode?
-    var maxLife: CGFloat = 0.0
-    //*****************
     
-    //larger attack speed, slower attack
     let wizardAttackSpeed = 1.0
     
-    var theWizard: WizardClass?
+    var theBomber: BomberClass?
     var theHero: HeroClass?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
-        theHero!.name = "hero"
         self.addChild(theHero!)
-        lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
-        lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
-        lifeNode!.name = "life"
-        lifeNode!.fontColor = UIColor.redColor()
-        lifeNode!.fontSize = 20
-        self.addChild(lifeNode!)
-        
-        theWizard = WizardClass.makeWizard(CGPointMake(self.frame.midX, self.frame.maxY - 50))
-        self.addChild(theWizard!)
+        theBomber = BomberClass.makeBomber(CGPointMake(self.frame.midX, self.frame.maxY - 50))
+        self.addChild(theBomber!)
+        //the below constraints did nothing
+        //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
+        //ourHero.constraints = [distanceConstraint]
         let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
-        background.name = "background"
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         background.zPosition = -1
         self.physicsWorld.contactDelegate = self
         self.addChild(background)
         theHero!.updateStats()
-        //*****REGENE CODE****
-        maxLife = theHero!.life!
-        //********************
         
-        //shells i = y, k = x
-        //right column
-        for (var i = 20; i < Int(self.frame.maxY); i += 30){
-            for (var k = 260.0; k < Double(self.frame.maxX); k += 30){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(k), CGFloat(i))))
-                if Double(self.frame.maxX) - k > 40 && Double(self.frame.maxX) - k < 30 {
-                    self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(k + 30), CGFloat(i))))
-                }
-            }
-        }
-        //left column a = x b = y
-        for (var b = 20; b < Int(self.frame.maxY); b += 30){
-            for (var a = 20.0; a < Double(self.frame.maxX - 255); a += 30){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(a), CGFloat(b))))
-                if Double(self.frame.maxX) - a > 40 && Double(self.frame.maxX) - a < 30 {
-                    self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(a + 30), CGFloat(b))))
-                }
-            }
-        }
-        //mid column c = x d = y
-        for (var d = 80; d < Int(self.frame.maxY - 100); d += 30){
-            for (var c = 140.0; c < Double(self.frame.maxX - 140); c += 30){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(c), CGFloat(d))))
-                if Double(self.frame.maxX) - c > 150 && Double(self.frame.maxX) - c < 150 {
-                    self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(c + 30), CGFloat(d))))
-                }
-            }
-        }
-        //4 shells surrounding kraken at bottom
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 40, self.frame.minY + 20)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 40, self.frame.minY + 20)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 40, self.frame.minY + 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 40, self.frame.minY + 50)))
+        //patrol crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY - 1000), endPosition: CGPointMake(self.frame.minX + 30, self.frame.maxY + 1000)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.minY - 1000), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.maxY + 1000)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY - 2000), endPosition: CGPointMake(self.frame.minX + 30, self.frame.maxY + 2000)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.minY - 2000), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.maxY + 2000)))
         
+        
+        //seashells
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 130)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 130)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 230)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 230)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 300)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 300)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 330)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 330)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 400)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 400)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 430)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 430)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 500)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 500)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 20, 530)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 50, 530)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 130)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 130)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 230)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 230)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 300)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 300)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 330)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 330)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 400)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 400)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 430)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 430)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 500)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 500)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 20, 530)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 50, 530)))
         
     }
     
@@ -106,27 +115,38 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        //HERO VS FIRE
-        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
-                let aHero = self.childNodeWithName("hero") as! HeroClass
-                aHero.takeDamage(1)
-                secondBody.node!.removeFromParent()
-        }
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
+                let mine = secondBody.node as? MiniCrab
+                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+        }else  if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
                 let mine = secondBody.node as? MineNode
                 mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
         }
-
+        //HERO VS WIZARD
+        //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+        //secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWizard.rawValue){
+        //let aHero = self.childNodeWithName("hero") as HeroClass
+        //aHero.attack()
+        //}
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as! HeroClass
-        let aWizard = self.childNodeWithName("wizard") as! WizardClass
+        let aBomber = self.childNodeWithName("bomber") as! BomberClass
         for touch in touches{
+            //stop when mouse comes in contact hero
+            //let theSpot = spotToStop(aHero, touch.locationInNode(self))
+            //if theSpot != aHero.position{
+            //aHero.moveTo(theSpot)
+            // if (aWizard.containsPoint(touch.locationInNode(self))){
+            //  if (distanceBetween(aWizard.position, aHero.position) < 10){
+            //      aHero.attack()
+            //  }
+            //}
             aHero.moveHelper((touch as! UITouch).locationInNode(self))
         }
     }
@@ -139,48 +159,50 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
             self.lastFireball = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastFireball  > wizardAttackSpeed{
-            self.lastFireball = currentTime
-            theWizard!.shootFireball(theHero!.position)
-        }
         
-        self.totalGameTime += currentTime - self.lastUpdatesTime
+        //CRAB STAMPEDE
         
-        //******REGEN CODE
-        if currentTime - lastHeal  > healSpeed{
-            self.lastHeal = currentTime
-            if theHero!.life < maxLife{
-                theHero!.life! += theHero!.regeneration!
-                if theHero!.life > maxLife{
-                    theHero!.life = maxLife
-                }
-            }
-        }
-        self.lastUpdatesTime = currentTime
-        lifeNode!.text = "\(Int(floor(theHero!.life!)))"
-        //***************
+        var xMatch = CGFloat(randomWithMin(Int(self.frame.minX + 80), Int(self.frame.maxX - 80)))
+        self.timeSinceCrabAdded = self.timeSinceCrabAdded + currentTime - self.lastUpdatesTime
         
-        //win condition
-        //check for win condition
-        if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
+        
+        if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver) {
+            self.addChild(MiniCrab.crabDash(CGPointMake(xMatch, self.frame.maxY + 30), endPosition: CGPointMake(xMatch, self.frame.minY)))
             
-            if (self.childNodeWithName("gold") == nil && self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
-                
+            
+            self.timeSinceCrabAdded = 0
+        }
+        
+        
+        self.lastUpdatesTime = currentTime
+        
+        //check for win condition
+        if (theBomber!.isDead || theHero!.life <= 0) && !levelOver{
+            //parent of self is viewcontroller, has view, extends sknode
+            //if (theHero!.life == 0){
+            //   let deathNode = SKLabelNode.init(text: "You died, try again!")
+            //   deathNode.position = CGPointMake(self.frame.midX, self.frame.midY)
+            //   self.addChild(deathNode)
+            // }else if (theBomber!.isDead){
+            //   let winNode = SKLabelNode.init(text: "You win, congratulations!")
+            //   winNode.position = CGPointMake(self.frame.midX, self.frame.midY)
+            //   self.addChild(winNode)
+            // }
+            if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
+                //let menuScene = MainMenuScene(size: self.frame.size)
+                //println("got here111")
+                //(self.userData?.objectForKey("menu") as MainMenuScene).userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
+                //println("got here222")
+                //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
                 let skTransition = SKTransition.fadeWithDuration(1.0)
-                
+                //let gameScene = self.userData?.objectForKey("menu") as MainMenuScene
                 self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
-                
                 levelOver = true
             }
-            else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil){
-                if theWizard!.isDead{
-                    dropLoot("level20", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+            else if (self.childNodeWithName("item") == nil){
+                if theBomber!.isDead{
+                    dropLoot("world1level20", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
-                    for node in self.children{
-                        if node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "wizard" && node.name != "life" && node.name != "gold"{
-                            node.removeFromParent()
-                        }
-                    }
                 }
             }
         }
