@@ -329,7 +329,7 @@ class MainMenuScene: SKScene {
             }
             world1level20node = SKSpriteNode(imageNamed: "World_1_Level_20_Text")
             if let Node = world1level20node {
-                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY + 130)
                 self.addChild(levelIcon)
@@ -373,7 +373,7 @@ class MainMenuScene: SKScene {
             }
             world1level24node = SKSpriteNode(imageNamed: "World_1_Level_24_Text")
             if let Node = world1level24node {
-                let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY + 180)
                 self.addChild(levelIcon)
@@ -384,11 +384,11 @@ class MainMenuScene: SKScene {
             }
             world1level25node = SKSpriteNode(imageNamed: "World_1_Level_25_Text")
             if let Node = world1level25node {
-                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
-                levelIcon.setScale(0.28)
+                let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
+                levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 155, self.frame.midY + 130)
                 self.addChild(levelIcon)
-                Node.setScale(0.3)
+                Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 155, self.frame.midY + 130)
                 Node.name = "world1level25"
                 self.addChild(Node)
@@ -396,21 +396,21 @@ class MainMenuScene: SKScene {
             world1level26node = SKSpriteNode(imageNamed: "World_1_Level_26_Text")
             if let Node = world1level26node {
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
-                levelIcon.setScale(0.28)
+                levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 155, self.frame.midY + 60)
                 self.addChild(levelIcon)
-                Node.setScale(0.3)
+                Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 155, self.frame.midY + 60)
                 Node.name = "world1level26"
                 self.addChild(Node)
             }
             world1level27node = SKSpriteNode(imageNamed: "World_1_Level_27_Text")
             if let Node = world1level27node {
-                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
-                levelIcon.setScale(0.28)
+                let levelIcon = SKSpriteNode(imageNamed: "Whale_Level_Icon_1")
+                levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 155, self.frame.midY - 10)
                 self.addChild(levelIcon)
-                Node.setScale(0.3)
+                Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 155, self.frame.midY - 10)
                 Node.name = "world1level27"
                 self.addChild(Node)
@@ -418,32 +418,32 @@ class MainMenuScene: SKScene {
             world1level28node = SKSpriteNode(imageNamed: "World_1_Level_28_Text")
             if let Node = world1level28node {
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
-                levelIcon.setScale(0.28)
+                levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 155, self.frame.midY - 80)
                 self.addChild(levelIcon)
-                Node.setScale(0.3)
+                Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 155, self.frame.midY - 80)
                 Node.name = "world1level28"
                 self.addChild(Node)
             }
             world1level29node = SKSpriteNode(imageNamed: "World_1_Level_29_Text")
             if let Node = world1level29node {
-                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
-                levelIcon.setScale(0.28)
+                let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
+                levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 155, self.frame.midY - 150)
                 self.addChild(levelIcon)
-                Node.setScale(0.3)
+                Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 155, self.frame.midY - 150)
                 Node.name = "world1level29"
                 self.addChild(Node)
             }
             world1level30node = SKSpriteNode(imageNamed: "World_1_Level_30_Text")
             if let Node = world1level30node {
-                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
-                levelIcon.setScale(0.28)
+                let levelIcon = SKSpriteNode(imageNamed: "Kraken_Level_Icon_1")
+                levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 210)
                 self.addChild(levelIcon)
-                Node.setScale(0.3)
+                Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 210)
                 Node.name = "world1level30"
                 self.addChild(Node)
