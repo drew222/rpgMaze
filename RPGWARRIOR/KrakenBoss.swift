@@ -153,17 +153,18 @@ class KrakenBoss: SKSpriteNode {
         
         //create tentacle
         self.parent!.addChild(Tentacle.tentacleAtPosition(getTentaclePoint()))
-        self.parent!.addChild(Tentacle.tentacleAtPosition(getTentaclePoint()))
+        //self.parent!.addChild(Tentacle.tentacleAtPosition(getTentaclePoint()))
     }
     
     func getTentaclePoint() -> CGPoint {
         let heroPosition = self.parent!.childNodeWithName("hero")!.position
         let xPos = CGFloat(heroPosition.x)
         let yPos = CGFloat(heroPosition.y)
-        var realX = CGFloat(randomWithMin(Int(xPos - 150), Int(xPos + 150)))
-        var realY = CGFloat(randomWithMin(Int(yPos - 150), Int(yPos + 150)))
-        let distanceFromHero = CGFloat(70)
-        if abs(xPos - realX) < 70 && abs(yPos - realY) < 70 {
+        /*
+        var realX = CGFloat(randomWithMin(Int(xPos - 100), Int(xPos + 100)))
+        var realY = CGFloat(randomWithMin(Int(yPos - 100), Int(yPos + 100)))
+        let distanceFromHero = CGFloat(80)
+        if abs(xPos - realX) < 80 && abs(yPos - realY) < 80 {
             if ((xPos - realX) < distanceFromHero && (xPos - realX) > 0){
                 realX = distanceFromHero
             }else if ((xPos - realX) > -distanceFromHero && (xPos - realX) < 0){
@@ -174,56 +175,20 @@ class KrakenBoss: SKSpriteNode {
             }else if((yPos - realY) > -distanceFromHero && (yPos - realY) < 0){
                 realY = -distanceFromHero
             }
-        }
-        return CGPointMake(realX, realY)
-    }
-    
-    func shootKrill(){
-        if self.isDead{
-            return
-        }
-        //display shooting animation
-        //go back to rocking
-        //self.runAction(repeatAction0, withKey: "repeatAction")
-        let codeBlock0 = SKAction.runBlock({
-            var textures: [SKTexture] = []
-            textures.append(SKTexture(imageNamed:"Whale_Boss_1"))
-            
-            let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-            let repeatAction0 = SKAction.repeatActionForever(animation)
-            self.runAction(repeatAction0, withKey: "repeatAction")
-        })
-        let codeBlock = SKAction.runBlock({
-            var textures: [SKTexture] = []
-            for var i = 1; i <= 3; i=i+1{
-                textures.append(SKTexture(imageNamed:"Whale_Boss_\(i)"))
-            }
-            textures.append(SKTexture(imageNamed:"Whale_Boss_5"))
-            textures.append(SKTexture(imageNamed:"Whale_Boss_4"))
-            textures.append(SKTexture(imageNamed:"Whale_Boss_6"))
-            textures.append(SKTexture(imageNamed:"Whale_Boss_4"))
-            textures.append(SKTexture(imageNamed:"Whale_Boss_5"))
-            textures.append(SKTexture(imageNamed:"Whale_Boss_7"))
-            textures.append(SKTexture(imageNamed:"Whale_Boss_8"))
-            textures.append(SKTexture(imageNamed:"Whale_Boss_9"))
-            textures.append(SKTexture(imageNamed:"Whale_Boss_8"))
-            textures.append(SKTexture(imageNamed:"Whale_Boss_7"))
-            
-            
-            let animation2 = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-            let sequenceRepeat = SKAction.sequence([animation2, SKAction.waitForDuration(1.5)])
-            let repeatAction = SKAction.repeatActionForever(sequenceRepeat)
-            self.runAction(repeatAction , withKey: "repeatAction")
-        })
-        let sequence = SKAction.sequence([codeBlock0, SKAction.waitForDuration(0.4), codeBlock])
-        self.runAction(sequence)
-        //calculate where to shoot the krill
-        let hero = self.parent!.childNodeWithName("hero") as! HeroClass
-        let shootAtPoint = hero.position
-        //shoot the krill
-        let krill = Krill.krillAtPosition(CGPointMake(self.position.x, self.position.y - 45))
-        self.parent!.addChild(krill)
-        krill.moveTowardsPosition()
+        }*/
+        var trapSpots: [CGPoint] = []
+        let distance = CGFloat(70)
+        trapSpots.append(CGPointMake(xPos + distance, yPos + distance))
+        trapSpots.append(CGPointMake(xPos - distance, yPos - distance))
+        trapSpots.append(CGPointMake(xPos + distance, yPos - distance))
+        trapSpots.append(CGPointMake(xPos - distance, yPos + distance))
+        trapSpots.append(CGPointMake(xPos + distance, yPos))
+        trapSpots.append(CGPointMake(xPos - distance, yPos))
+        trapSpots.append(CGPointMake(xPos, yPos + distance))
+        trapSpots.append(CGPointMake(xPos, yPos - distance))
+        let aSpot = Int(randomWithMin(0, 8))
+        println("aSpot = \(aSpot)")
+        return trapSpots[aSpot]
     }
     
     
