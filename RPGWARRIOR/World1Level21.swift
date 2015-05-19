@@ -19,7 +19,12 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
     var levelOver = false
     let levelName = "world1leve21"
     var droppedItem = false
-    
+    //REGEN CODE******
+    var lastHeal: Double = 0.0
+    let healSpeed = 5.0
+    var lifeNode: SKLabelNode?
+    var maxLife: CGFloat = 0.0
+    //*****************
     let wizardAttackSpeed = 1.0
     
     var theBomber: BomberClass?
@@ -29,7 +34,14 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         /* Setup your scene here */
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
+        theHero!.name = "hero"
         self.addChild(theHero!)
+        lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
+        lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
+        lifeNode!.name = "life"
+        lifeNode!.fontColor = UIColor.redColor()
+        lifeNode!.fontSize = 20
+        self.addChild(lifeNode!)
         theBomber = BomberClass.makeBomber(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
         self.addChild(theBomber!)
         //the below constraints did nothing
@@ -37,6 +49,7 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         //ourHero.constraints = [distanceConstraint]
         let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        background.name = "background"
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         background.zPosition = -1
         self.physicsWorld.contactDelegate = self
