@@ -292,12 +292,17 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         //5% whale flesh ring, 20% rusty silver ring, 75% 4 booty
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
-        if myNum > 50{
-            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+        if myNum > 95{
+            let item = ItemClass.itemInSpace("Whale_Flesh_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
-        } else {
+        }else if (myNum <= 95) && (myNum > 75){
+            let item = ItemClass.itemInSpace("Rusty_Silver_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }else {
             let gold = SKSpriteNode(imageNamed: "Booty_1")
             gold.name = "gold"
             gold.position = position
@@ -310,7 +315,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
         if myNum > 50{
-            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            let item = ItemClass.itemInSpace("Coral_Crown_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -326,12 +331,17 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         //10% whale flesh ring, 15% rusty silver ring, 75% 5 booty
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
-        if myNum > 50{
-            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+        if myNum > 90{
+            let item = ItemClass.itemInSpace("Whale_Flesh_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
-        } else {
+        }else if (myNum <= 90) && (myNum > 75){
+            let item = ItemClass.itemInSpace("Rusty_Silver_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }else {
             let gold = SKSpriteNode(imageNamed: "Booty_1")
             gold.name = "gold"
             gold.position = position
@@ -343,8 +353,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         //25% mossy silver ring, 75% booty
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
-        if myNum > 50{
-            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+        if myNum > 75{
+            let item = ItemClass.itemInSpace("Mossy_Silver_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
