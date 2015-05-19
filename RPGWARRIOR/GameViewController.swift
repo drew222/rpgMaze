@@ -32,6 +32,11 @@ class GameViewController: UIViewController {
     var inventoryScene: Inventory?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //set isPlus if its an iPhone 6+
+        if self.view.frame.maxX == 414.0{
+            isPlus = true
+        }
 
       //  if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             titleScene = IntroScene(size: self.view.frame.size)

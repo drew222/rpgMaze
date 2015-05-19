@@ -80,6 +80,9 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 270, self.frame.maxY - 100)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 310, self.frame.maxY - 100)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 350, self.frame.maxY - 100)))
+        if isPlus{
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 390, self.frame.maxY - 100)))
+        }
         //right inside diagnols
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 140)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 245, self.frame.minY + 180)))
@@ -102,6 +105,10 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, self.frame.minY + 420)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 320, self.frame.minY + 460)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, self.frame.minY + 500)))
+        if isPlus{
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 400, self.frame.minY + 380)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 400, self.frame.minY + 220)))
+        }
         //left inside diagnols
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 140)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 180)))

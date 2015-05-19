@@ -46,9 +46,6 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
         self.addChild(lifeNode!)
         theBomber = BomberClass.makeBomber(CGPointMake(self.frame.midX, self.frame.maxY - 50))
         self.addChild(theBomber!)
-        //the below constraints did nothing
-        //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
-        //ourHero.constraints = [distanceConstraint]
         let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.name = "background"
@@ -69,11 +66,19 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 50, 220), endPosition: CGPointMake(self.frame.maxX - 50, 220)))
         //shells i = y, k = x
         for (var i = 100; i < Int(self.frame.maxY - 100); i += 80){
-            for (var k = 30; k < Int(self.frame.maxX - 20); k += 80){
+            for (var k = 30.0; k < Double(self.frame.maxX); k += 80){
                 self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(k), CGFloat(i))))
+                if Double(self.frame.maxX) - k > 40 && Double(self.frame.maxX) - k < 80 {
+                    self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(k + 40), CGFloat(i))))
+                }
             }
         }
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 65, 260)))
+        if isPlus{
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 105, 260)))
+        }
+        else{
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 65, 260)))
+        }
         
     }
     
@@ -97,12 +102,6 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
                 let mine = secondBody.node as? MineNode
                 mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
         }
-        //HERO VS WIZARD
-        //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-        //secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWizard.rawValue){
-        //let aHero = self.childNodeWithName("hero") as HeroClass
-        //aHero.attack()
-        //}
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -110,15 +109,6 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
         let aHero = self.childNodeWithName("hero") as! HeroClass
         let aBomber = self.childNodeWithName("bomber") as! BomberClass
         for touch in touches{
-            //stop when mouse comes in contact hero
-            //let theSpot = spotToStop(aHero, touch.locationInNode(self))
-            //if theSpot != aHero.position{
-            //aHero.moveTo(theSpot)
-            // if (aWizard.containsPoint(touch.locationInNode(self))){
-            //  if (distanceBetween(aWizard.position, aHero.position) < 10){
-            //      aHero.attack()
-            //  }
-            //}
             aHero.moveHelper((touch as! UITouch).locationInNode(self))
         }
     }

@@ -13,6 +13,7 @@ import SpriteKit
 
 let smoothnessFactor = 1.0
 let pi = CGFloat(3.1415927)
+var isPlus = false
 
 
 //NOTE: currently bomb doesn't use collision checking

@@ -127,7 +127,8 @@ class WhaleBoss: SKSpriteNode {
         let sequence = SKAction.sequence([codeBlock0, SKAction.waitForDuration(0.4), codeBlock])
         self.runAction(sequence)
         //shoot the krill
-        let krill = Krill.krillAtPosition(CGPointMake(self.position.x, self.position.y - 45))
+        /*
+        let krill = Krill.krillAtPosition(CGPointMake(self.position.x, self.position.y + 45))
         self.parent!.addChild(krill)
         krill.moveTowardsPosition()
         
@@ -144,6 +145,27 @@ class WhaleBoss: SKSpriteNode {
         krill4.moveTowardsPosition()
         
         let krill5 = Krill.krillAtPosition(CGPointMake(self.position.x + 100, self.position.y))
+        self.parent!.addChild(krill5)
+        krill5.moveTowardsPosition()
+        */
+        
+        let krill = Krill.krillAtPosition(CGPointMake(self.position.x, self.position.y + 5))
+        self.parent!.addChild(krill)
+        krill.moveTowardsPosition()
+        
+        let krill2 = Krill.krillAtPosition(CGPointMake(self.position.x - 50, self.position.y + 5))
+        self.parent!.addChild(krill2)
+        krill2.moveTowardsPosition()
+        
+        let krill3 = Krill.krillAtPosition(CGPointMake(self.position.x + 50, self.position.y + 5))
+        self.parent!.addChild(krill3)
+        krill3.moveTowardsPosition()
+        
+        let krill4 = Krill.krillAtPosition(CGPointMake(self.position.x - 100, self.position.y + 40))
+        self.parent!.addChild(krill4)
+        krill4.moveTowardsPosition()
+        
+        let krill5 = Krill.krillAtPosition(CGPointMake(self.position.x + 100, self.position.y + 40))
         self.parent!.addChild(krill5)
         krill5.moveTowardsPosition()
     }
