@@ -36,12 +36,12 @@ class ItemClass: SKSpriteNode {
     
     
     func getItemType(picName: String)->ItemType{
-        if  picName == "Shades_1" || picName == "Crab_Claw_Cap_1" || picName == "Coral_Crown_1" || picName == "Top_Hat_1" || picName == "Sunhat_1" || picName == "Sand_Bucket_1" || picName == "Monocle_1"{
+        if  picName == "Shades_1" || picName == "Crab_Claw_Cap_1" || picName == "Coral_Crown_1" || picName == "Top_Hat_1" || picName == "Sunhat_1" || picName == "Sand_Bucket_1" || picName == "Monocle_1" || picName == "Sweatband_1" || picName == "Visor_1" || picName == "Afro_Seaweed_1"{
             return ItemType.weapon
         }else if picName == "Copper_Ring_1" || picName == "Gold_Ring_1" || picName == "Mossy_Copper_Ring_1" || picName == "Mossy_Gold_Ring_1" || picName == "Mossy_Silver_Ring_1" || picName == "Rusty_Copper_Ring_1" || picName == "Rusty_Gold_Ring_1" || picName == "Rusty_Silver_Ring_1" || picName == "Silver_Ring_1" || picName == "Beach_Ball_Fragment_1" || picName == "Seashell_Charm_Bracelet_1" || picName == "Inky_Ring_1" || picName == "Pearl_Snap_Ring_1" || picName == "Watch_1" || picName == "Whale_Flesh_Ring_1"
         {
             return ItemType.body
-        }else if picName == "Bow_Tie_1" || picName == "Lifejacket_1" || picName == "Pearl_Necklace_1" || picName == "Seashell_Necklace_1" || picName == "Seaweed_Mustache_1" || picName == "Whistle_1" || picName == "Beach_Towel_1"{
+        }else if picName == "Bow_Tie_1" || picName == "Lifejacket_1" || picName == "Pearl_Necklace_1" || picName == "Seashell_Necklace_1" || picName == "Seaweed_Mustache_1" || picName == "Whistle_1" || picName == "Beach_Towel_1" || picName == "Floatie_1" || picName == "Sun_Screen_1" || picName == "Barnacles_1"{
             //This is a placeholder type
             return ItemType.neck
         }
@@ -121,6 +121,16 @@ class ItemClass: SKSpriteNode {
         }else if picName == "Shades_1"{
             price = 50
             return [("Life", CGFloat(1))]
+        }else if picName == "Sweatband_1"{
+            price = 50
+            return [("Life", CGFloat(1))]
+        }else if picName == "Visor_1"{
+            price = 50
+            return [("Life", CGFloat(1))]
+        }else if picName == "Afro_Seaweed_1"{
+            price = 50
+            return [("Life", CGFloat(1))]
+        
     
             
         
@@ -144,8 +154,17 @@ class ItemClass: SKSpriteNode {
             price = 100
             return [("Regeneration", CGFloat(2))]
         }else if picName == "Beach_Towel_1"{
-    price = 100
-    return [("Regeneration", CGFloat(2))]
+            price = 50
+            return [("Life", CGFloat(1))]
+        }else if picName == "Floatie_1"{
+            price = 50
+            return [("Life", CGFloat(1))]
+        }else if picName == "Sun_Screen_1"{
+            price = 50
+            return [("Life", CGFloat(1))]
+        }else if picName == "Barnacles_1"{
+            price = 50
+            return [("Life", CGFloat(1))]
     }
             return []
     }
