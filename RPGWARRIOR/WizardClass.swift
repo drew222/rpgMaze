@@ -60,7 +60,7 @@ class WizardClass: SKSpriteNode {
         self.physicsBody?.contactTestBitMask = CollisionBitMasks.collisionCategoryHero.rawValue
     }
     
-    func shootFireball(){
+    func shootFireball(aPosition: CGPoint){
         if self.isDead{
             return
         }
@@ -106,7 +106,7 @@ class WizardClass: SKSpriteNode {
         self.runAction(sequence)
         //calculate where to shoot the fireball
         let hero = self.parent!.childNodeWithName("hero") as! HeroClass
-        let shootAtPoint = hero.position
+        let shootAtPoint = aPosition
         //shoot the fireball
         let fireball = Fireball.fireballAtPosition(CGPointMake(self.position.x, self.position.y - 10))
         self.parent!.addChild(fireball)

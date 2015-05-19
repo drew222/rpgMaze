@@ -11,7 +11,7 @@ import SpriteKit
 
 
 class Fireball: SKSpriteNode {
-    let fireballSpeed = 300
+    var fireballSpeed = 300
     
     class func fireballAtPosition(position: CGPoint) -> Fireball{
         
@@ -43,6 +43,9 @@ class Fireball: SKSpriteNode {
     }
     
     func moveTowardsPosition(position: CGPoint){
+        if let world = (self.parent as? World1Level18){
+            fireballSpeed = 50
+        }
         //println("Click position at (\(position.x), \(position.y))")
         let slope = (position.y - self.position.y) / (position.x - self.position.x)
         var offScreenX = CGFloat(0)
