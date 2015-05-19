@@ -189,7 +189,7 @@ class World1Level25: SKScene, SKPhysicsContactDelegate {
             
             if (self.childNodeWithName("gold") == nil && self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
                 
-                let skTransition = SKTransition.fadeWithDuration(5.0)
+                let skTransition = SKTransition.fadeWithDuration(1.0)
                 
                 self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
                 

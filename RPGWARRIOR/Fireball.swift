@@ -69,10 +69,14 @@ class Fireball: SKSpriteNode {
         
         
         let time = NSTimeInterval(distance / CGFloat(fireballSpeed))
+        println("time = \(time)")
+        if time > 300{
+            self.removeFromParent()
+        }else{
+            let moveProjectile = SKAction.moveTo(pointOffScreen, duration: time)
         
-        let moveProjectile = SKAction.moveTo(pointOffScreen, duration: time)
-        
-        self.runAction(moveProjectile)
+            self.runAction(moveProjectile)
+        }
         
     }
     }

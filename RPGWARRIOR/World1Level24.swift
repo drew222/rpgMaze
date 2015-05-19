@@ -108,7 +108,7 @@ class World1Level24: SKScene, SKPhysicsContactDelegate {
         //check for win condition
         if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
             if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
-                let skTransition = SKTransition.fadeWithDuration(5.0)
+                let skTransition = SKTransition.fadeWithDuration(1.0)
                 println("got here111")
                 self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
                 println("got here222")

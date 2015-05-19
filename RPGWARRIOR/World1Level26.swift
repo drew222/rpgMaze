@@ -194,7 +194,7 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
                 //(self.userData?.objectForKey("menu") as MainMenuScene).userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
                 //println("got here222")
                 //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
-                let skTransition = SKTransition.fadeWithDuration(5.0)
+                let skTransition = SKTransition.fadeWithDuration(1.0)
                 //let gameScene = self.userData?.objectForKey("menu") as MainMenuScene
                 self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
                 levelOver = true
