@@ -432,7 +432,7 @@
 		DCF23E241B0BABCF00484040 /* Whistle_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Whistle_1.png; sourceTree = "<group>"; };
 		DCF23E261B0BABE900484040 /* Whale_Flesh_Ring_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Whale_Flesh_Ring_1.png; sourceTree = "<group>"; };
 		DCF23E281B0BABEE00484040 /* Whale_Flesh_Ring_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Whale_Flesh_Ring_2.png; sourceTree = "<group>"; };
-		DCF23E2A1B0BABF400484040 /* Whats_Kraken_App_Icon_76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Whats_Kraken_App_Icon_76x76.png; sourceTree = "<group>"; };
+		DCF23E2A1B0BABF400484040 /* Whats_Kraken_App_Icon_76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Whats_Kraken_App_Icon_76x76.png; path = Rpg14/Whats_Kraken_App_Icon_76x76.png; sourceTree = "<group>"; };
 		DCF23E2C1B0BABFC00484040 /* Visor_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Visor_1.png; sourceTree = "<group>"; };
 		DCF23E2E1B0BAC0100484040 /* Visor_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Visor_2.png; sourceTree = "<group>"; };
 		DCF23E301B0BAC5600484040 /* Barnacles_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Barnacles_1.png; sourceTree = "<group>"; };
@@ -811,6 +811,7 @@
 				DCC4E3091A8DB082000E5E89 /* level5Scene.swift */,
 				DC2711211A85E11900986D2E /* Main.storyboard */,
 				DC2711241A85E11900986D2E /* Images.xcassets */,
+				DCF23E2A1B0BABF400484040 /* Whats_Kraken_App_Icon_76x76.png */,
 				DC2711261A85E11900986D2E /* LaunchScreen.xib */,
 				DC2711171A85E11900986D2E /* Supporting Files */,
 				DC1F58181A88735300B5027B /* LightParticle.sks */,
@@ -921,7 +922,6 @@
 				DCFD73931B01532F0054E370 /* Fitting_Room_2.png */,
 				DCFD73941B01532F0054E370 /* Fitting_Room__Button_1.png */,
 				DCF23E281B0BABEE00484040 /* Whale_Flesh_Ring_2.png */,
-				DCF23E2A1B0BABF400484040 /* Whats_Kraken_App_Icon_76x76.png */,
 				DCFD73951B01532F0054E370 /* Fitting_Room_Kraken_1.png */,
 				DCFD73961B01532F0054E370 /* Fitting_Room_Text_1.png */,
 				DCFD73971B01532F0054E370 /* Gold_Ring_1.png */,
