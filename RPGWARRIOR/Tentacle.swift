@@ -27,12 +27,12 @@ class Tentacle: SKSpriteNode {
             textures.append(SKTexture(imageNamed: "Tentacle_Swing_\(i)"))
         }
         
-        let animateAction = SKAction.animateWithTextures(textures, timePerFrame: 0.2)
+        let animateAction = SKAction.animateWithTextures(textures, timePerFrame: 0.3)
         let repeatAction = SKAction.repeatAction(animateAction, count: 1)
         let codeBlock0 = SKAction.runBlock({//tentacle.isArmed = true
         tentacle.setupPhysicsBody()})
         let rotateAction = SKAction.rotateByAngle(2 * pi, duration: 0.3)
-        let repRotateAction = SKAction.repeatAction(rotateAction, count: 100)
+        let repRotateAction = SKAction.repeatAction(rotateAction, count: 200)
         let codeBlock = SKAction.runBlock({tentacle.removeFromParent()})
         let sequence = SKAction.sequence([repeatAction, codeBlock0, repRotateAction, codeBlock])
         //tentacle.setupPhysicsBody()

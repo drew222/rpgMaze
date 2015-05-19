@@ -23,11 +23,11 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
     var droppedItem = false
     //REGEN CODE******
     var lastHeal: Double = 0.0
-    let healSpeed = 5.0
+    let healSpeed = 45.0
     var lifeNode: SKLabelNode?
     var maxLife: CGFloat = 0.0
     //*****************
-    let krakenAttackSpeed = 2.0
+    let krakenAttackSpeed = 1.5
     
     
     var theKraken: KrakenBoss?
@@ -92,6 +92,10 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
         }
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
+                theHero!.takeDamage(2)
+        }
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
                 //if (secondBody.node as! Tentacle).isArmed{
                     theHero!.takeDamage(3)
@@ -126,7 +130,7 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
             
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastTentacle  > krakenAttackSpeed{
+        if currentTime - lastTentacle  > krakenAttackSpeed && !levelOver{
             self.lastTentacle = currentTime
             theKraken!.throwTentacle()
         }
