@@ -81,6 +81,8 @@
 		DCF23E2F1B0BAC0100484040 /* Visor_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF23E2E1B0BAC0100484040 /* Visor_2.png */; };
 		DCF23E311B0BAC5600484040 /* Barnacles_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF23E301B0BAC5600484040 /* Barnacles_1.png */; };
 		DCF23E331B0BAC5C00484040 /* Afro_Seaweed_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF23E321B0BAC5C00484040 /* Afro_Seaweed_1.png */; };
+		DCF23E361B0BAEB600484040 /* Beach_Ball_Fragment_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF23E341B0BAEB600484040 /* Beach_Ball_Fragment_1.png */; };
+		DCF23E371B0BAEB600484040 /* Beach_Ball_Fragment_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF23E351B0BAEB600484040 /* Beach_Ball_Fragment_2.png */; };
 		DCF8C7211AD9E61F00DAE15A /* World1Level5.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF8C7201AD9E61F00DAE15A /* World1Level5.swift */; };
 		DCF8C7231AD9E69500DAE15A /* World1Level10.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF8C7221AD9E69400DAE15A /* World1Level10.swift */; };
 		DCF8C7251AD9E69D00DAE15A /* World1Level11.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF8C7241AD9E69D00DAE15A /* World1Level11.swift */; };
@@ -436,6 +438,8 @@
 		DCF23E2E1B0BAC0100484040 /* Visor_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Visor_2.png; sourceTree = "<group>"; };
 		DCF23E301B0BAC5600484040 /* Barnacles_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Barnacles_1.png; sourceTree = "<group>"; };
 		DCF23E321B0BAC5C00484040 /* Afro_Seaweed_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Afro_Seaweed_1.png; sourceTree = "<group>"; };
+		DCF23E341B0BAEB600484040 /* Beach_Ball_Fragment_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Beach_Ball_Fragment_1.png; sourceTree = "<group>"; };
+		DCF23E351B0BAEB600484040 /* Beach_Ball_Fragment_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Beach_Ball_Fragment_2.png; sourceTree = "<group>"; };
 		DCF8C7201AD9E61F00DAE15A /* World1Level5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level5.swift; sourceTree = "<group>"; };
 		DCF8C7221AD9E69400DAE15A /* World1Level10.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level10.swift; sourceTree = "<group>"; };
 		DCF8C7241AD9E69D00DAE15A /* World1Level11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level11.swift; sourceTree = "<group>"; };
@@ -855,6 +859,8 @@
 				DCFD736F1B01532F0054E370 /* Beach_Crab_1.png */,
 				DCFD73701B01532F0054E370 /* Beach_Crab_2.png */,
 				DCFD73711B01532F0054E370 /* Beach_Crab_3.png */,
+				DCF23E341B0BAEB600484040 /* Beach_Ball_Fragment_1.png */,
+				DCF23E351B0BAEB600484040 /* Beach_Ball_Fragment_2.png */,
 				DCF23DFE1B0BAA0500484040 /* Sand_Bucket_1.png */,
 				DCF23E121B0BAB7800484040 /* Beach_Towel_1.png */,
 				DCF23DFF1B0BAA0500484040 /* Tentacle_Swing_1.png */,
@@ -1227,6 +1233,7 @@
 				DCFD748B1B0153300054E370 /* Kraken_Movement_11.png in Resources */,
 				DCFD74881B0153300054E370 /* Kraken_Level_Icon_1.png in Resources */,
 				DCFD74D81B0153300054E370 /* Tentacle_30.png in Resources */,
+				DCF23E361B0BAEB600484040 /* Beach_Ball_Fragment_1.png in Resources */,
 				DCFD753F1B01C5D90054E370 /* Kraken_Boss_13.png in Resources */,
 				DCFD749E1B0153300054E370 /* Mossy_Copper_Ring_1.png in Resources */,
 				DCFD74FF1B0153300054E370 /* Whale_Boss_5.png in Resources */,
@@ -1317,6 +1324,7 @@
 				DCFD74B21B0153300054E370 /* Safety_Pillar_2.png in Resources */,
 				DCFD74D51B0153300054E370 /* Tentacle_27.png in Resources */,
 				DCFD75241B0153300054E370 /* Zone_Screen_1.png in Resources */,
+				DCF23E371B0BAEB600484040 /* Beach_Ball_Fragment_2.png in Resources */,
 				DCF23E071B0BAA0500484040 /* Sand_Bucket_1.png in Resources */,
 				DCFD74711B0153300054E370 /* Cracked_Ground_2.png in Resources */,
 				DCFD74C21B0153300054E370 /* Store_Text_1.png in Resources */,
