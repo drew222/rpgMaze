@@ -11,7 +11,7 @@ import SpriteKit
 
 
 class Krill: SKSpriteNode {
-    let krillSpeed = 250
+    let krillSpeed = 350
     
     class func krillAtPosition(position: CGPoint) -> Krill{
         
@@ -52,8 +52,13 @@ class Krill: SKSpriteNode {
         var yValue = self.position.y
         var lastWasLeft = true
         var actionArray: [SKAction] = []
+        var isFirst = true
         for (var i = 0; i < numberOfMoves; i++){
             let leftOrRight = randomWithMin(0, 100)
+            if isFirst && leftOrRight > 49 {
+                isFirst = false
+                self.zRotation = -pi / 4
+            }
             if leftOrRight < 50 {
                 moveAction = SKAction.moveTo(CGPointMake(xValue + distanceToMove, yValue - distanceToMove), duration: 1)
                 turnAction = SKAction.rotateToAngle(pi / 4, duration: 0)

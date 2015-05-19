@@ -24,7 +24,7 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
     var lifeNode: SKLabelNode?
     var maxLife: CGFloat = 0.0
     //*****************
-    let whaleAttackSpeed = 2.0
+    let whaleAttackSpeed = 1.5
     
     
     var theWhale: WhaleBoss?
@@ -51,6 +51,15 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
         background.zPosition = -1
         self.addChild(background)
         self.physicsWorld.contactDelegate = self
+        for (var i = 80; i < Int(self.frame.maxX) - 70; i += 40){
+            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.minY + 70)))
+        }
+        for (var i = Int(self.frame.maxX - 20); i > Int(self.frame.midX) + 30; i -= 40){
+            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.minY + 140)))
+        }
+        for (var i = Int(self.frame.minX + 20); i < Int(self.frame.midX) - 30; i += 40){
+            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.minY + 140)))
+        }
         theHero!.updateStats()
         //*****REGENE CODE****
         maxLife = theHero!.life!
@@ -68,7 +77,11 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
+                let mine = secondBody.node as? MineNode
+                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+        }
         //HERO VS FIRE
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryKrill.rawValue){
@@ -96,7 +109,7 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
             self.lastKrill = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastKrill  > whaleAttackSpeed{
+        if currentTime - lastKrill  > whaleAttackSpeed || lastUpdatesTime == 0.0{
             self.lastKrill = currentTime
             theWhale!.shootKrill()
         }

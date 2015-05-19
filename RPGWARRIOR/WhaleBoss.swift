@@ -22,6 +22,7 @@ class WhaleBoss: SKSpriteNode {
         whale.anchorPoint = CGPointMake(0.5, 0.5)
         whale.name = "whale"
         whale.setScale(0.15)
+        whale.zPosition = 1
         //whale.currentAngle = 3 * pi / 2.0
         var textures: [SKTexture] = []
         //for var i = 1; i <= 24; i=i+1{
@@ -149,23 +150,23 @@ class WhaleBoss: SKSpriteNode {
         krill5.moveTowardsPosition()
         */
         
-        let krill = Krill.krillAtPosition(CGPointMake(self.position.x, self.position.y + 5))
+        let krill = Krill.krillAtPosition(CGPointMake(self.position.x, self.position.y + 45))
         self.parent!.addChild(krill)
         krill.moveTowardsPosition()
         
-        let krill2 = Krill.krillAtPosition(CGPointMake(self.position.x - 50, self.position.y + 5))
+        let krill2 = Krill.krillAtPosition(CGPointMake(self.position.x - 50, self.position.y + 45))
         self.parent!.addChild(krill2)
         krill2.moveTowardsPosition()
         
-        let krill3 = Krill.krillAtPosition(CGPointMake(self.position.x + 50, self.position.y + 5))
+        let krill3 = Krill.krillAtPosition(CGPointMake(self.position.x + 50, self.position.y + 45))
         self.parent!.addChild(krill3)
         krill3.moveTowardsPosition()
         
-        let krill4 = Krill.krillAtPosition(CGPointMake(self.position.x - 100, self.position.y + 40))
+        let krill4 = Krill.krillAtPosition(CGPointMake(self.position.x - 120, self.position.y + 60))
         self.parent!.addChild(krill4)
         krill4.moveTowardsPosition()
         
-        let krill5 = Krill.krillAtPosition(CGPointMake(self.position.x + 100, self.position.y + 40))
+        let krill5 = Krill.krillAtPosition(CGPointMake(self.position.x + 120, self.position.y + 60))
         self.parent!.addChild(krill5)
         krill5.moveTowardsPosition()
     }
