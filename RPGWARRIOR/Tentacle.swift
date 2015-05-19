@@ -21,7 +21,7 @@ class Tentacle: SKSpriteNode {
         tentacle.size = CGSizeMake(50, 20)
         //animate all textures
         var textures: [SKTexture] = []
-        for (var i = 1; i < 11; i+=1){
+        for (var i = 1; i < 8; i+=1){
             textures.append(SKTexture(imageNamed: "Tentacle_Swing_\(i)"))
         }
         
