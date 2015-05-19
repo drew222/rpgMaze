@@ -36,11 +36,12 @@ class ItemClass: SKSpriteNode {
     
     
     func getItemType(picName: String)->ItemType{
-        if picName == "Seaweed_Mustache_1" || picName == "Shades_1" || picName == "Crab_Claw_Cap" || picName == "Coral_Crown_1"{
+        if  picName == "Shades_1" || picName == "Crab_Claw_Cap_1" || picName == "Coral_Crown_1" || picName == "Top_Hat_1" || picName == "Sunhat_1" || picName == "Sand_Bucket_1" || picName == "Monocle_1"{
             return ItemType.weapon
-        }else if picName == "Copper_Ring_1" || picName == "Gold_Ring_1" || picName == "Mossy_Copper_Ring_1" || picName == "Mossy_Gold_Ring_1" || picName == "Mossy_Silver_Ring_1" || picName == "Rusty_Copper_Ring_1" || picName == "Rusty_Gold_Ring_1" || picName == "Rusty_Silver_Ring_1" || picName == "Silver_Ring_1"{
+        }else if picName == "Copper_Ring_1" || picName == "Gold_Ring_1" || picName == "Mossy_Copper_Ring_1" || picName == "Mossy_Gold_Ring_1" || picName == "Mossy_Silver_Ring_1" || picName == "Rusty_Copper_Ring_1" || picName == "Rusty_Gold_Ring_1" || picName == "Rusty_Silver_Ring_1" || picName == "Silver_Ring_1" || picName == "Beach_Ball_Fragment_1" || picName == "Seashell_Charm_Bracelet_1" || picName == "Inky_Ring_1" || picName == "Pearl_Snap_Ring_1" || picName == "Watch_1" || picName == "Whale_Flesh_Ring_1"
+        {
             return ItemType.body
-        }else if picName == "Bow_Tie_1"{
+        }else if picName == "Bow_Tie_1" || picName == "Lifejacket_1" || picName == "Pearl_Necklace_1" || picName == "Seashell_Necklace_1" || picName == "Seaweed_Mustache_1" || picName == "Whistle_1"{
             //This is a placeholder type
             return ItemType.neck
         }
@@ -48,49 +49,94 @@ class ItemClass: SKSpriteNode {
     }
     //weapons have Damage stat, body armor has Life stat, feet armor has Movement stat
     func getItemStats(picName: String)->[(String, CGFloat)]{
+        //TENTACLE ITEMS
         if picName == "Rusty_Copper_Ring_1"{
-            price = 0
+            price = 10
             return []
         }else if picName == "Mossy_Copper_Ring_1" {
-            price = 5
-            return []
+            price = 10
+            return [("Movement", CGFloat(5))]
         }else if picName == "Copper_Ring_1"{
-            price = 5
-            return [("Movement", CGFloat(1))]
+            price = 20
+            return [("Movement", CGFloat(7))]
         }else if picName == "Rusty_Silver_Ring_1"{
-            price = 10
-            return [("Movement", CGFloat(1))]
+            price = 50
+            return [("Movement", CGFloat(9))]
         }else if picName == "Mossy_Silver_Ring_1"{
-            price = 10
-            return [("Movement", CGFloat(2))]
+            price = 50
+            return [("Movement", CGFloat(11))]
         }else if picName == "Silver_Ring_1"{
-            price = 10
-            return [("Movement", CGFloat(3))]
+            price = 50
+            return [("Movement", CGFloat(13))]
         }else if picName == "Rusty_Gold_Ring_1"{
             price = 20
-            return [("Movement", CGFloat(3))]
+            return [("Movement", CGFloat(15))]
         }else if picName == "Mossy_Gold_Ring_1"{
             price = 20
-            return [("Movement", CGFloat(4))]
+            return [("Movement", CGFloat(17))]
         }else if picName == "Gold_Ring_1"{
+            price = 100
+            return [("Movement", CGFloat(19))]
+        }else if picName == "Seashell_Charm_Bracelet_1"{
             price = 20
             return [("Movement", CGFloat(5))]
+        }else if picName == "Whale_Flesh_Ring_1"{
+            price = 20
+            return [("Movement", CGFloat(5)), ("Life", CGFloat(1))]
+        }else if picName == "King_Kraken_Tentacle_Ring_1"{
+            price = 20
+            return [("Movement", CGFloat(5))]
+        }else if picName == "Inky_Ring_1"{
+            price = 20
+            return [("Movement", CGFloat(5))]
+        }else if picName == "Pearl_Snap_Ring_1"{
+            price = 20
+            return [("Movement", CGFloat(5))]
+        }else if picName == "Watch_1"{
+            price = 20
+            return [("Movement", CGFloat(5))]
+        }else if picName == "Beach_Ball_Fragment_1"{
+            price = 20
+            return [("Life", CGFloat(1))]
             
-            
-            
+        //NOGGIN ITEMS
         }else if picName == "Crab_Claw_Cap_1"{
+            price = 50
+            return [("Movement", CGFloat(3))]
+        }else if picName == "Top_Hat_1"{
+            price = 50
+            return [("Life", CGFloat(1))]
+        }else if picName == "Sunhat_1"{
+            price = 50
+            return [("Life", CGFloat(1))]
+        }else if picName == "Sand_Bucket_1"{
+            price = 50
+            return [("Life", CGFloat(1))]
+        }else if picName == "Monocle_1"{
+            price = 50
+            return [("Life", CGFloat(1))]
+        }else if picName == "Coral_Crown_1"{
+            price = 50
+            return [("Life", CGFloat(2))]
+        }else if picName == "Shades_1"{
             price = 50
             return [("Life", CGFloat(1))]
     
             
         
-        
-        }else if picName == "Shades_1"{
-            price = 400
-            return [("Life", CGFloat(2))]
-        }else if picName == "Coral_Crown_1"{
-            price = 1000
-            return [("Life", CGFloat(3))]
+        //NECK ITEMS
+        }else if picName == "Lifejacket_1"{
+            price = 5000
+            return [("Movement", CGFloat(15))]
+        }else if picName == "Pearl_Necklace_1"{
+            price = 5000
+            return [("Movement", CGFloat(15))]
+        }else if picName == "Seashell_Necklace_1"{
+            price = 5000
+            return [("Movement", CGFloat(15))]
+        }else if picName == "Whistle_1"{
+            price = 5000
+            return [("Movement", CGFloat(15))]
         }else if picName == "Seaweed_Mustache_1"{
             price = 5000
             return [("Movement", CGFloat(15))]

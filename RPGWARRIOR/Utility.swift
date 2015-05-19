@@ -46,9 +46,7 @@ var heroSpeed: CGFloat = 150
 //    case heroSpeed = 160
 //}
 
-//let allStoreItems = ["noobSword", "level2sword", "level3sword", "level4dagger", "level6dagger", "level1armor", "level1setarmor", "level2armor", "level2setarmor", "level3armor", "level3setarmor", "level4armor", "level4setarmor", "level1boots", "level1setboots", "level2setboots", "level3setboots", "level4setboots"]
-
-let allStoreItems = ["Shades_1", "Coral_Crown_1", "Crab_Claw_Cap_1", "Seaweed_Mustache_1", "Copper_Ring_1", "Gold_Ring_1", "Mossy_Copper_Ring_1", "Mossy_Gold_Ring_1", "Mossy_Silver_Ring_1", "Rusty_Copper_Ring_1", "Rusty_Gold_Ring_1", "Rusty_Silver_Ring_1", "Silver_Ring_1", "Bow_Tie_1"]
+let allStoreItems = ["Shades_1", "Coral_Crown_1", "Crab_Claw_Cap_1", "Seaweed_Mustache_1", "Copper_Ring_1", "Gold_Ring_1", "Mossy_Copper_Ring_1", "Mossy_Gold_Ring_1", "Mossy_Silver_Ring_1", "Rusty_Copper_Ring_1", "Rusty_Gold_Ring_1", "Rusty_Silver_Ring_1", "Silver_Ring_1", "Bow_Tie_1", "Seashell_Charm_Bracelet_1", "Whale_Flesh_Ring_1", "King_Kraken_Tentacle_1", "Inky_Ring_1", "Pearl_Snap_Ring_1", "Watch_1", "Beach_Ball_Fragment_1", "Lifejacket_1", "Pearl_Necklace_1", "Whistle_1", "Top_Hat_1", "Sunhat_1", "Sand_Bucket_1", "Monocle_1", "Seashell_Necklace_1"]
 
 
 func randomWithMin(min: Int, max: Int) -> NSInteger{
@@ -189,7 +187,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(item)
         }
     }else if level == "level7"{
-        //25% copper ring, 75% 2 booty
+        //25% copper ring, 75% 3 booty
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
         if myNum > 75{
@@ -202,7 +200,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 4
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 3
             scene.addChild(gold)
         }
     }else if level == "level8"{
@@ -219,7 +217,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 4
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 3
             scene.addChild(gold)
         } else {
             let item = ItemClass.itemInSpace("Copper_Ring_1")
@@ -228,7 +226,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(item)
         }
     }else if level == "level9"{
-        //25% crab claw cap, 10% beach ball fragment, 65% booty
+        //25% crab claw cap, 10% beach ball fragment, 65% 3 booty
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
         if myNum > 75{
@@ -241,7 +239,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 4
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 3
             scene.addChild(gold)
         } else {
             let item = ItemClass.itemInSpace("Beachball_Fragment_1")
@@ -263,7 +261,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 3
             scene.addChild(gold)
         }
     }else if level == "level11"{
@@ -285,7 +283,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 4
             scene.addChild(gold)
         }
     }else if level == "level12"{
@@ -307,11 +305,11 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 4
             scene.addChild(gold)
         }
     }else if level == "level13"{
-        //50% coral crown, 50% booty
+        //50% coral crown, 50% 5 booty
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
         if myNum > 50{
@@ -324,7 +322,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 5
             scene.addChild(gold)
         }
     }else if level == "level14"{
@@ -346,11 +344,11 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 5
             scene.addChild(gold)
         }
     }else if level == "level15"{
-        //25% mossy silver ring, 75% booty
+        //25% mossy silver ring, 75% 5 booty
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
         if myNum > 75{
@@ -363,7 +361,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 5
             scene.addChild(gold)
         }
     }else if level == "level16"{
