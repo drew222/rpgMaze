@@ -69,7 +69,7 @@ class Fireball: SKSpriteNode {
         
         
         let time = NSTimeInterval(distance / CGFloat(fireballSpeed))
-        println("time = \(time)")
+        //println("time = \(time)")
         if time > 300{
             self.removeFromParent()
         }else{

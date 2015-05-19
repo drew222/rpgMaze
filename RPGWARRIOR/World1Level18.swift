@@ -131,7 +131,7 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
         }
             //HERO VS FIRE
         else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
                 let aHero = self.childNodeWithName("hero") as! HeroClass
                 aHero.takeDamage(3)
                 secondBody.node!.removeFromParent()
