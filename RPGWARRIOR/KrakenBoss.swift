@@ -87,17 +87,18 @@ class KrakenBoss: SKSpriteNode {
         oilWave.name = "wave"
         setupWavePhysicsBody(oilWave)
         let textures = [SKTexture(imageNamed: "Ink_Flood_2"),SKTexture(imageNamed: "Ink_Flood_3"), SKTexture(imageNamed: "Ink_Flood_1")]
-        let animateWave = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+        let animateWave = SKAction.animateWithTextures(textures, timePerFrame: 0.3)
         let repeatAction = SKAction.repeatActionForever(animateWave)
         oilWave.runAction(repeatAction)
-        oilWave.size = self.parent!.frame.size
+        //oilWave.size = self.parent!.frame.size
+        oilWave.size = CGSizeMake(self.parent!.frame.maxX, self.parent!.frame.maxY + 50)
         oilWave.anchorPoint = CGPointMake(0.5, 0)
         oilWave.zPosition = 1
         oilWave.position = CGPointMake(self.parent!.frame.midX, self.parent!.frame.maxY + 30)
-        let moveDownAction = SKAction.moveTo(CGPointMake(self.parent!.frame.midX, self.parent!.frame.minY), duration: 2)
-        let moveUpAction = SKAction.fadeOutWithDuration(2)
+        let moveDownAction = SKAction.moveTo(CGPointMake(self.parent!.frame.midX, self.parent!.frame.minY - 50), duration: 2)
+        let moveUpAction = SKAction.fadeOutWithDuration(1)
         let remBlock = SKAction.runBlock({oilWave.removeFromParent()})
-        let waitToWave = SKAction.waitForDuration(5)
+        let waitToWave = SKAction.waitForDuration(2)
         let sequence = SKAction.sequence([waitToWave, moveDownAction, moveUpAction, remBlock])
         oilWave.runAction(sequence)
         self.parent?.addChild(oilWave)

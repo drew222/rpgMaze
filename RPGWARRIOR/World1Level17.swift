@@ -106,12 +106,8 @@ class World1Level17: SKScene, SKPhysicsContactDelegate {
             
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastTentacle  > krakenAttackSpeed{
-            self.lastTentacle = currentTime
-            theKraken!.throwTentacle()
-        }
         
-        if currentTime - lastWave  > krakenAttackSpeed * 3{
+        if currentTime - lastWave  > krakenAttackSpeed * 1.3{
             for node in self.children{
                 if let aNode = node as? SKSpriteNode{
                     if aNode.name == "safeSpot1" || aNode.name == "safeSpot2"{
