@@ -34,19 +34,19 @@ class StoreScene: SKScene {
         self.addChild(background)
         //add shelves
         let shelf1 = SKSpriteNode(imageNamed: "Store_Shelf_1.png")
-        shelf1.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 150)
+        shelf1.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 175)
         shelf1.setScale(0.35)
         self.addChild(shelf1)
         let shelf2 = SKSpriteNode(imageNamed: "Store_Shelf_1.png")
-        shelf2.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 250)
+        shelf2.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 275)
         shelf2.setScale(0.35)
         self.addChild(shelf2)
         let shelf3 = SKSpriteNode(imageNamed: "Store_Shelf_1.png")
-        shelf3.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 350)
+        shelf3.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 375)
         shelf3.setScale(0.35)
         self.addChild(shelf3)
         let shelf4 = SKSpriteNode(imageNamed: "Store_Shelf_1.png")
-        shelf4.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 450)
+        shelf4.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 475)
         shelf4.setScale(0.35)
         self.addChild(shelf4)
         let storeTextNode = SKSpriteNode(imageNamed: "Store_Text_1")
@@ -83,7 +83,7 @@ class StoreScene: SKScene {
     func addItems(){
         //generate points
         var startX = self.frame.minX + 50
-        var startY = self.frame.maxY - 160
+        var startY = self.frame.maxY - 155
         var counter = 1
         for itemName in allStoreItems{
             let item = ItemClass.itemInSpace(itemName)
@@ -92,11 +92,11 @@ class StoreScene: SKScene {
             item.name = "item\(counter)"
             counter += 1
             self.addChild(item)
-            if self.frame.maxX - startX < 60{
-                startY -= 140
-                startX = self.frame.minX + 40
+            if self.frame.maxX - startX < 150{
+                startY -= 100
+                startX = self.frame.minX + 100
             }else{
-                startX += 40
+                startX += 50
             }
         }
         
