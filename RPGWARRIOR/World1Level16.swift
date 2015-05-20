@@ -11,6 +11,8 @@ import SpriteKit
 
 class World1Level16: SKScene, SKPhysicsContactDelegate  {
     
+    var timeSinceCrabAdded : NSTimeInterval = 0
+    var addCrabTimeInterval : NSTimeInterval = 1.0
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
@@ -26,7 +28,6 @@ class World1Level16: SKScene, SKPhysicsContactDelegate  {
     var maxLife: CGFloat = 0.0
     //*****************
     let bomberAttackSpeed = 1.5
-    var lastBomb: Double = 0.0
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -48,14 +49,34 @@ class World1Level16: SKScene, SKPhysicsContactDelegate  {
         lifeNode!.fontSize = 20
         self.addChild(lifeNode!)
         bombthrower = BomberClass.makeBomber(CGPointMake(self.frame.midX, self.frame.maxY - 50))
-        for spot in generateMinePoints(){
-            placeMine(spot)
-        }
         self.addChild(bombthrower!)
         theHero!.updateStats()
         //*****REGENE CODE****
         maxLife = theHero!.life!
         //********************
+        
+        //lower strafing crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 500, self.frame.midY - 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 150, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 650, self.frame.midY - 100)))
+        
+
+        
+        
+        //seashells
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 10, self.frame.midY - 250)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.midY - 250)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 70, self.frame.midY - 250)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 100, self.frame.midY - 250)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 130, self.frame.midY - 250)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 160, self.frame.midY - 250)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 190, self.frame.midY - 250)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 220, self.frame.midY - 250)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 250, self.frame.midY - 250)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 280, self.frame.midY - 250)))
+        
+       
+        
+        
     }
     func didBeginContact(contact: SKPhysicsContact) {
         var firstBody: SKPhysicsBody!
@@ -67,6 +88,15 @@ class World1Level16: SKScene, SKPhysicsContactDelegate  {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
+        
+        //HERO VS BEACH CRAB
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
+                let mine = secondBody.node as? MiniCrab
+                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+        }
+
+        //HERO VS SEASHELLS
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
                 let mine = secondBody.node as? MineNode
@@ -86,72 +116,32 @@ class World1Level16: SKScene, SKPhysicsContactDelegate  {
         }
     }
     
-    func generateMinePoints() -> [CGPoint]{
-        //generate line from mid x to c
-        var points: [CGPoint] = []
-        var startY = self.frame.midY - 90
-        while startY > self.frame.minY + 90{
-            points.append(CGPointMake(self.frame.midX, startY))
-            startY -= 25
-        }
-        var startX = self.frame.midX
-        while startX > self.frame.minX{
-            points.append(CGPointMake(startX, self.frame.minY + 90))
-            startX -= 25
-        }
-        startX = self.frame.midX
-        while startX > 0{
-            points.append(CGPointMake(startX, self.frame.midY - 90))
-            startX -= 25
-        }
-        startY = self.frame.minY + 90
-        while startY < self.frame.midY{
-            points.append(CGPointMake(self.frame.midX + 90, startY))
-            startY += 25
-        }
-        startX = self.frame.midX + 90
-        while startX < self.frame.maxX{
-            points.append(CGPointMake(startX, self.frame.minY + 90))
-            startX += 25
-        }
-        startX = self.frame.midX + 90
-        while startX > 90{
-            points.append(CGPointMake(startX, self.frame.midY))
-            startX -= 25
-        }
-        startX = self.frame.minX + 20
-        while startX < self.frame.maxX - 90{
-            points.append(CGPointMake(startX, self.frame.midY + 90))
-            startX += 25
-        }
-        startY = self.frame.midY + 120
-        while startY < self.frame.maxY - 100{
-            points.append(CGPointMake(self.frame.maxX - 105, startY))
-            startY += 25
-        }
-        return points
-    }
-    func placeMine(position: CGPoint) {
-        let theMinethrower = (self.childNodeWithName("MineThrower")) as? MineThrowerNode
-        let mine = MineNode.mineAtPos(position) as MineNode
-        mine.isArmed = true
-        self.addChild(mine)
-    }
+        
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         //println("current time: \(currentTime)")
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
-            self.lastBomb = currentTime
-        }
-        self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastBomb  > bomberAttackSpeed{
-            self.lastBomb = currentTime
-            bombthrower!.throwBomb()
         }
         
         self.totalGameTime += currentTime - self.lastUpdatesTime
+        
+        //CRAB STAMPEDE
+        
+        self.timeSinceCrabAdded = self.timeSinceCrabAdded + currentTime - self.lastUpdatesTime
+        
+        
+        if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver) {
+            self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX, self.frame.midY ), endPosition: CGPointMake(self.frame.maxX, self.frame.midY)))
+            self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.maxX, self.frame.midY - 200 ), endPosition: CGPointMake(self.frame.minX, self.frame.midY - 200)))
+            self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX, self.frame.midY - 400), endPosition: CGPointMake(self.frame.maxX, self.frame.midY - 400)))
+            self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.maxX, self.frame.midY + 200), endPosition: CGPointMake(self.frame.minX, self.frame.midY + 200)))
+            
+            
+            self.timeSinceCrabAdded = 0
+        }
+
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
             self.lastHeal = currentTime
