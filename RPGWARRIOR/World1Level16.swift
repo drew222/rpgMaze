@@ -58,11 +58,20 @@ class World1Level16: SKScene, SKPhysicsContactDelegate  {
         //lower strafing crabs
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 500, self.frame.midY - 100)))
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 150, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 650, self.frame.midY - 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 300, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 800, self.frame.midY - 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX - 150, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 350, self.frame.midY - 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX - 300, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 200, self.frame.midY - 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX - 450, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 50, self.frame.midY - 100)))
+        //higher strafing crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX, self.frame.midY + 100), endPosition: CGPointMake(self.frame.minX + 500, self.frame.midY + 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 150, self.frame.midY + 100), endPosition: CGPointMake(self.frame.minX + 650, self.frame.midY + 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 300, self.frame.midY + 100), endPosition: CGPointMake(self.frame.minX + 800, self.frame.midY + 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX - 150, self.frame.midY + 100), endPosition: CGPointMake(self.frame.minX + 350, self.frame.midY + 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX - 300, self.frame.midY + 100), endPosition: CGPointMake(self.frame.minX + 200, self.frame.midY + 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX - 450, self.frame.midY + 100), endPosition: CGPointMake(self.frame.minX + 50, self.frame.midY + 100)))
         
-
         
-        
-        //seashells
+        //bottom row seashells
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 10, self.frame.midY - 250)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.midY - 250)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 70, self.frame.midY - 250)))
@@ -73,9 +82,54 @@ class World1Level16: SKScene, SKPhysicsContactDelegate  {
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 220, self.frame.midY - 250)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 250, self.frame.midY - 250)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 280, self.frame.midY - 250)))
+        //2nd from bottom
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.midY - 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 80, self.frame.midY - 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.midY - 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.midY - 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 110, self.frame.midY - 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 110, self.frame.midY - 150)))
+        //3rd from bottom
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 30, self.frame.midY - 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY - 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 90, self.frame.midY - 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 120, self.frame.midY - 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 30, self.frame.midY - 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY - 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 90, self.frame.midY - 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 120, self.frame.midY - 50)))
+       //top row
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 10, self.frame.midY + 230)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 40, self.frame.midY + 230)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 70, self.frame.midY + 230)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 100, self.frame.midY + 230)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 130, self.frame.midY + 230)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 160, self.frame.midY + 230)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 190, self.frame.midY + 230)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 220, self.frame.midY + 230)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 250, self.frame.midY + 230)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 280, self.frame.midY + 230)))
+        //2nd from top
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 10, self.frame.midY + 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.midY + 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 70, self.frame.midY + 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 100, self.frame.midY + 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 130, self.frame.midY + 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 160, self.frame.midY + 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 230, self.frame.midY + 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 260, self.frame.midY + 150)))
         
-       
-        
+        //3rd from top
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 30, self.frame.midY + 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 30, self.frame.midY + 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 10, self.frame.midY + 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.midY + 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 70, self.frame.midY + 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 10, self.frame.midY + 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 40, self.frame.midY + 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 70, self.frame.midY + 50)))
         
     }
     func didBeginContact(contact: SKPhysicsContact) {
@@ -96,17 +150,15 @@ class World1Level16: SKScene, SKPhysicsContactDelegate  {
                 mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
         }
 
-        //HERO VS SEASHELLS
+        //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
                 let mine = secondBody.node as? MineNode
-                if mine!.isArmed{
-                    mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
-                    //let aHero = self.childNodeWithName("hero") as HeroClass
-                    //aHero.takeDamage(3)
-                }
+                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
         }
-    }
+
+        
+            }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
