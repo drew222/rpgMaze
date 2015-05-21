@@ -147,7 +147,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
         if myNum > 95{
-            let item = ItemClass.itemInSpace("Beachball_Fragment_1")
+            let item = ItemClass.itemInSpace("Beach_Ball_Fragment_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -656,6 +656,9 @@ func entryExitPoints(node: SKSpriteNode, startSpot: CGPoint, endSpot: CGPoint)->
     let topY = node.frame.maxY
     let leftX = node.frame.minX
     let rightX = node.frame.maxX
+    if m.isInfinite || b.isInfinite {
+        return (CGPointMake(node.frame.midX, node.frame.minY), CGPointMake(node.frame.maxY, node.frame.midX))
+    }
     //y=mx+b
     let botXIntersection = (botY - b) / m
     let topXIntersection = (topY - b) / m
