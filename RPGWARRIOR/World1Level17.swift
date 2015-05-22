@@ -99,7 +99,7 @@ class World1Level17: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
                 theHero!.takeDamage(3)
-                println("died by tentalce")
+                //println("died by tentalce")
         }
         
         
