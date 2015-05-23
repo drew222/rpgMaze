@@ -162,7 +162,7 @@ class World1Level12: SKScene, SKPhysicsContactDelegate {
                     dropLoot("level12", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                     for node in self.children{
-                        if node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "whale" && node.name != "life" && node.name != "gold"{
+                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "whale" && node.name != "life" && node.name != "gold"{
                             node.removeFromParent()
                         }
                     }

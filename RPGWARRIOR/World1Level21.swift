@@ -79,8 +79,10 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 80, self.frame.maxY - 80)))
         
         var yValue = self.frame.midY - 160
-        for (var i = 0.0; CGFloat(i) < self.frame.midX + 160; i+=40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 160, self.frame.maxY - yValue)))
+        for (var i = self.frame.midX - 160; CGFloat(i) < self.frame.midX + 160; i+=40){
+            if (i <= self.frame.midX - 30 || i >= self.frame.midX + 30){
+                self.addChild(MineNode.mineAtPos(CGPointMake(i, yValue)))
+            }
             yValue += 40
         }
         

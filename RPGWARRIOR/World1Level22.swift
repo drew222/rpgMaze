@@ -2,7 +2,7 @@
 //  World1Level22.swift
 //  RPGWARRIOR
 //
-//  Created by Cody Witt on 4/22/15.
+//  Created by Cody Witt on 4/2/15.
 //  Copyright (c) 2015 Drew Zoellner. All rights reserved.
 //
 
@@ -15,14 +15,22 @@ class World1Level22: SKScene, SKPhysicsContactDelegate {
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
-    var lastFireball: Double = 0.0
+    var lastTentacle = 0.0
+    var lastWave = 0.0
+    
     var levelOver = false
-    let levelName = "world1level22"
+    let levelName = "world1level19"
     var droppedItem = false
+    //REGEN CODE******
+    var lastHeal: Double = 0.0
+    let healSpeed = 25.0
+    var lifeNode: SKLabelNode?
+    var maxLife: CGFloat = 0.0
+    //*****************
+    let krakenAttackSpeed = 1.5
     
-    let wizardAttackSpeed = 1.0
     
-    var theWizard: WizardClass?
+    var theKraken: KrakenBoss?
     var theHero: HeroClass?
     
     override func didMoveToView(view: SKView) {
@@ -30,8 +38,14 @@ class World1Level22: SKScene, SKPhysicsContactDelegate {
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
-        theWizard = WizardClass.makeWizard(CGPointMake(self.frame.midX, self.frame.maxY - 30))
-        self.addChild(theWizard!)
+        lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
+        lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
+        lifeNode!.fontColor = UIColor.redColor()
+        lifeNode!.fontSize = 20
+        self.addChild(lifeNode!)
+        theKraken = KrakenBoss.makeKraken(CGPointMake(self.frame.midX, self.frame.maxY - 50))
+        theKraken!.size = CGSizeMake(150, 120)
+        self.addChild(theKraken!)
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
         //ourHero.constraints = [distanceConstraint]
@@ -39,25 +53,34 @@ class World1Level22: SKScene, SKPhysicsContactDelegate {
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         background.zPosition = -1
-        self.physicsWorld.contactDelegate = self
         self.addChild(background)
+        self.physicsWorld.contactDelegate = self
         theHero!.updateStats()
-        //self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 100, self.frame.midY)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.midY + 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.midY - 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.midY - 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.midY + 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.midY + 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.midY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY + 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 150, self.frame.midY + 150)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 150, self.frame.midY - 150)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 150, self.frame.midY - 150)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 150, self.frame.midY + 150)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 150)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 150)))
+        //*****REGENE CODE****
+        maxLife = theHero!.life!
+        //********************
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, 20)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, 20)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, 70)))
+        
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.maxY - 20)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.maxY - 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 80, self.frame.maxY - 20)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 80, self.frame.maxY - 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.maxY - 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.maxY - 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 80, self.frame.maxY - 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.maxY - 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.maxY - 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.maxY - 80)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 80, self.frame.maxY - 80)))
+        
+        for (var i = 20; CGFloat(i) < (self.frame.maxX - CGFloat(20)); i += 40) {
+            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY)))
+        }
         
     }
     
@@ -74,21 +97,30 @@ class World1Level22: SKScene, SKPhysicsContactDelegate {
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                let mine = secondBody.node as? MineNode
-                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+                theHero!.takeDamage(2)
         }
-        //HERO VS WIZARD
-        //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-        //secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWizard.rawValue){
-        //let aHero = self.childNodeWithName("hero") as HeroClass
-        //aHero.attack()
-        //}
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
+                //if (secondBody.node as! Tentacle).isArmed{
+                theHero!.takeDamage(3)
+                //}
+                println("died by tentalce")
+        }
+        /*
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+        secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySpike.rawValue){
+        if !self.childNodeWithName("safeSpot1")!.containsPoint(theHero!.position){
+        theHero!.takeDamage(3)
+        println("died by wave")
+        }
+        }*/
+        
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as! HeroClass
-        let aWizard = self.childNodeWithName("wizard") as! WizardClass
+        let aKraken = self.childNodeWithName("kraken") as! KrakenBoss
         for touch in touches{
             aHero.moveHelper((touch as! UITouch).locationInNode(self))
         }
@@ -99,23 +131,50 @@ class World1Level22: SKScene, SKPhysicsContactDelegate {
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
-            self.lastFireball = currentTime
+            
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
+        if currentTime - lastTentacle  > krakenAttackSpeed && !levelOver{
+            self.lastTentacle = currentTime
+            theKraken!.throwTentacle()
+        }
+        
+        /*
+        if currentTime - lastWave  > krakenAttackSpeed * 3{
+        for node in self.children{
+        if let aNode = node as? SKSpriteNode{
+        if aNode.name == "safeSpot1" || aNode.name == "safeSpot2"{
+        aNode.removeFromParent()
+        }
+        }
+        }
+        self.lastWave = currentTime
+        theKraken!.createSafeAndWave()
+        }
+        */
+        
+        
+        //******REGEN CODE
+        if currentTime - lastHeal  > healSpeed{
+            self.lastHeal = currentTime
+            if theHero!.life < maxLife{
+                theHero!.life! += theHero!.regeneration!
+            }
+        }
         
         self.lastUpdatesTime = currentTime
+        lifeNode!.text = "\(Int(floor(theHero!.life!)))"
+        //***************
         
         //check for win condition
-        if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
+        if (theKraken!.isDead || theHero!.life <= 0) && !levelOver{
             if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
-                let skTransition = SKTransition.fadeWithDuration(1.0)
-                println("got here111")
+                let skTransition = SKTransition.fadeWithDuration(5.0)
                 self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
-                println("got here222")
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil){
-                if theWizard!.isDead{
+                if theKraken!.isDead{
                     dropLoot("world1level22", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                 }
