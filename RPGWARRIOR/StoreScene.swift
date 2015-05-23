@@ -82,21 +82,56 @@ class StoreScene: SKScene {
     
     func addItems(){
         //generate points
-        var startX = self.frame.minX + 50
-        var startY = self.frame.maxY - 155
+        var startX = self.frame.minX + 60
+        var startY = self.frame.maxY - 165
         var counter = 1
         for itemName in allStoreItems{
             let item = ItemClass.itemInSpace(itemName)
             item.position = CGPointMake(startX, startY)
-            item.size = CGSizeMake(40, 40)
+            if itemName == "Copper_Ring_1"{
+                item.size = CGSizeMake(40, 40)
+            }else if itemName == "Silver_Ring_1"{
+                item.size = CGSizeMake(40, 40)
+            }else if itemName == "Gold_Ring_1"{
+                item.size = CGSizeMake(40, 40)
+            }else if itemName == "Top_Hat_1"{
+                item.size = CGSizeMake(50, 50)
+            }else if itemName == "Sunhat_1"{
+                item.size = CGSizeMake(50, 50)
+            }else if itemName == "Shades_1"{
+                item.size = CGSizeMake(50, 50)
+            }else if itemName == "Monocle_1"{
+                item.size = CGSizeMake(50, 50)
+            }else if itemName == "Sweatband_1"{
+                item.size = CGSizeMake(50, 50)
+            }else if itemName == "Visor_1"{
+                item.size = CGSizeMake(50, 50)
+            }else if itemName == "Watch_1"{
+                item.size = CGSizeMake(50, 50)
+            }else if itemName == "Bow_Tie_1"{
+                item.size = CGSizeMake(50, 50)
+            }else if itemName == "Lifejacket_1"{
+                item.size = CGSizeMake(50, 50)
+            }else if itemName == "Whistle_1"{
+                item.size = CGSizeMake(50, 50)
+            }else if itemName == "Beach_Towel_1"{
+                item.size = CGSizeMake(50, 50)
+            }else if itemName == "Floatie_1"{
+                item.size = CGSizeMake(50, 50)
+            }else if itemName == "Sunscreen_1"{
+                item.size = CGSizeMake(50, 50)
+            }
+            else{
+                item.size = CGSizeMake(40, 40)
+            }
             item.name = "item\(counter)"
             counter += 1
             self.addChild(item)
-            if self.frame.maxX - startX < 150{
+            if self.frame.maxX - startX < 100{
                 startY -= 100
-                startX = self.frame.minX + 100
+                startX = self.frame.minX + 60
             }else{
-                startX += 50
+                startX += 63
             }
         }
         

@@ -46,7 +46,9 @@ var heroSpeed: CGFloat = 150
 //    case heroSpeed = 160
 //}
 
-let allStoreItems = ["Copper_Ring_1", "Silver_Ring_1", "Gold_Ring_1", "Inky_Ring_1", "Watch_1"]
+let allStoreItems = ["Copper_Ring_1","Sweaty_Wristband_1", "Silver_Ring_1","Water_Wing_1", "Gold_Ring_1", "Whistle_1", "Lifejacket_1", "Beach_Towel_1", "Floatie_1", "Sun_Screen_1",
+    "Sweat_Band_1", "Visor_1", "Sand_Bucket_1", "Sunhat_1", "Shades_1",
+    "Watch_1", "Bow_Tie_1", "Top_Hat_1", "Monocle_1", "Whale_Flesh_Ring_1"]
 
 
 func randomWithMin(min: Int, max: Int) -> NSInteger{

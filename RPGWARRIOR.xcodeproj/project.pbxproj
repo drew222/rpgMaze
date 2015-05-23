@@ -750,7 +750,6 @@
 				2FC73DE21A912CAA0068A2FB /* BlizzNode.swift */,
 				DCC4E37A1A94EDED000E5E89 /* Block.swift */,
 				DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */,
-				DCC4E3051A8976AB000E5E89 /* ItemClass.swift */,
 				DC1F58121A88703500B5027B /* Bomb.swift */,
 				DC1F58101A886EFC00B5027B /* BomberClass.swift */,
 				DC4A442B1ACDE6CF00BE81D8 /* WhaleBoss.swift */,
@@ -770,6 +769,7 @@
 				DC321D721AAE3A0E006E3F2B /* ZoneScene.swift */,
 				DC1F580C1A882D3200B5027B /* MainMenuScene.swift */,
 				DCC4E3011A89760E000E5E89 /* Inventory.swift */,
+				DCC4E3051A8976AB000E5E89 /* ItemClass.swift */,
 				DCC4E3781A8EEE59000E5E89 /* StoreScene.swift */,
 				EEF8D9801AD2264200FC2A4F /* TreasureChest.swift */,
 				DC321BE01AACD471006E3F2B /* World1Level1.swift */,
@@ -1722,7 +1722,7 @@
 				INFOPLIST_FILE = RPGWARRIORTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RPGWARRIOR.app/RPGWARRIOR";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhatsKraken.app/WhatsKraken";
 			};
 			name = Debug;
 		};
@@ -1737,7 +1737,7 @@
 				INFOPLIST_FILE = RPGWARRIORTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RPGWARRIOR.app/RPGWARRIOR";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WhatsKraken.app/WhatsKraken";
 			};
 			name = Release;
 		};
