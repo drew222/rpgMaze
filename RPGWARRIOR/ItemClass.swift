@@ -26,9 +26,10 @@ class ItemClass: SKSpriteNode {
     }
     
     func statString() -> String{
-        var myString = ""
+        var myString = "\n"
             for stat in itemStats!{
-                myString += "\(stat.0):\(stat.1) "
+                myString += ("\(stat.0): \(stat.1)")
+               
             }
         return myString
     }
@@ -82,7 +83,7 @@ class ItemClass: SKSpriteNode {
             return [("Movement", CGFloat(5))]
         }else if picName == "Whale_Flesh_Ring_1"{
             price = 20
-            return [("Movement", CGFloat(5)), ("Life", CGFloat(1))]
+            return [("Movement", CGFloat(5)), ("Life", CGFloat(10)), ("Regeneration", CGFloat(4))]
         }else if picName == "King_Kraken_Tentacle_Ring_1"{
             price = 20
             return [("Movement", CGFloat(5))]

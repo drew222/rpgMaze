@@ -56,7 +56,7 @@ class StoreScene: SKScene {
         //shelf1.zPosition = -1
         //stats label
         statLabel = SKLabelNode.init(text: "")
-        statLabel!.position = CGPointMake(self.frame.midX, self.frame.minY + 60)
+        statLabel!.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 60)
         statLabel!.fontColor = UIColor.blueColor()
         statLabel!.name = "stats"
         statLabel!.setScale(0.7)
@@ -74,9 +74,14 @@ class StoreScene: SKScene {
         //gold node
         goldCount = (self.userData?.objectForKey("inventory") as! Inventory).gold
         goldNode = SKLabelNode.init(text: "\(Int(goldCount))")
-        goldNode!.position = CGPointMake(self.frame.minX + 70, self.frame.minY + 40)
+        goldNode!.position = CGPointMake(self.frame.midX - 30, self.frame.maxY - 120)
         goldNode!.fontColor = UIColor.redColor()
         self.addChild(goldNode!)
+        //booty coin image
+        let booty = SKSpriteNode(imageNamed: "Booty_1.png")
+        booty.position = CGPointMake(self.frame.midX + 30, self.frame.maxY - 110)
+        booty.setScale(0.10)
+        self.addChild(booty)
         addItems()
     }
     
@@ -173,7 +178,7 @@ class StoreScene: SKScene {
                     currentItem!.removeFromParent()
                 }
                 currentItem = ItemClass.itemInSpace(clickedItem((touch as! UITouch).locationInNode(self)))
-                currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 135)
+                currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
                 currentItem!.size = CGSizeMake(100, 100)
                 resizeLabel(statLabel!)
                 statLabel!.text = currentItem!.statString()
@@ -184,21 +189,29 @@ class StoreScene: SKScene {
         }
         //an item is being highlighted
         if currentItem != nil && self.childNodeWithName("buyButton") == nil{
-            let buyNode = SKLabelNode.init(text: "Buy Item")
-            buyNode.position = CGPointMake(self.frame.midX + 110, self.frame.minY + 150)
+            let buyNode = SKLabelNode.init(text: "Buy")
+            buyNode.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 40)
             buyNode.fontColor = UIColor.blueColor()
             buyNode.name = "buyButton"
             self.addChild(buyNode)
+            let priceText = SKLabelNode.init(text: "Price")
+            priceText.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
+            priceText.fontColor = UIColor.blueColor()
+            self.addChild(priceText)
         }
         if currentItem != nil{
             if self.childNodeWithName("priceButton") != nil{
                 self.childNodeWithName("priceButton")?.removeFromParent()
             }
-            let priceNode = SKLabelNode.init(text: "Price: \(Int(currentItem!.price!))")
-            priceNode.position = CGPointMake(self.frame.midX + 110, self.frame.minY + 90)
+            let priceNode = SKLabelNode.init(text: "\(Int(currentItem!.price!))")
+            priceNode.position = CGPointMake(self.frame.maxX - 80, self.frame.minY + 80)
             priceNode.fontSize = 16
             priceNode.name = "priceButton"
             priceNode.fontColor = UIColor.redColor()
+            let booty = SKSpriteNode(imageNamed: "Booty_1.png")
+            booty.position = CGPointMake(self.frame.maxX - 40, self.frame.minY + 90)
+            booty.setScale(0.075)
+            self.addChild(booty)
             self.addChild(priceNode)
         }
     }
