@@ -25,7 +25,7 @@ class World1Level23: SKScene, SKPhysicsContactDelegate {
     var lifeNode: SKLabelNode?
     var maxLife: CGFloat = 0.0
     //*****************
-    let whaleAttackSpeed = 2.0
+    let whaleAttackSpeed = 2.5
     var whichWave = 0
     var wavePositions: [CGPoint]?
     var lastKrill: Double = 3.0
@@ -41,12 +41,12 @@ class World1Level23: SKScene, SKPhysicsContactDelegate {
         theHero!.name = "hero"
         self.addChild(theHero!)
         wavePositions = [
+            CGPointMake(-20, 150),
+            CGPointMake(self.frame.maxX + 20, 200),
+            CGPointMake(-20, 100),
+            CGPointMake(self.frame.maxX + 20, 250),
             CGPointMake(-20, 300),
             CGPointMake(self.frame.maxX + 20, 200),
-            CGPointMake(-20, 350),
-            CGPointMake(self.frame.maxX + 20, 150),
-            CGPointMake(-20, 200),
-            CGPointMake(self.frame.maxX + 20, 300),
             CGPointMake(-20, 400),
             CGPointMake(self.frame.maxX + 20, 500)]
         lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
