@@ -97,27 +97,30 @@ class StoreScene: SKScene {
             }else if itemName == "Top_Hat_1"{
                 item.size = CGSizeMake(50, 50)
             }else if itemName == "Sunhat_1"{
-                item.size = CGSizeMake(50, 50)
+                item.size = CGSizeMake(70, 70)
             }else if itemName == "Shades_1"{
-                item.size = CGSizeMake(50, 50)
+                item.size = CGSizeMake(50, 35)
             }else if itemName == "Monocle_1"{
                 item.size = CGSizeMake(50, 50)
             }else if itemName == "Sweatband_1"{
                 item.size = CGSizeMake(50, 50)
             }else if itemName == "Visor_1"{
-                item.size = CGSizeMake(50, 50)
+                item.size = CGSizeMake(50, 60)
             }else if itemName == "Watch_1"{
                 item.size = CGSizeMake(50, 50)
             }else if itemName == "Bow_Tie_1"{
                 item.size = CGSizeMake(50, 50)
             }else if itemName == "Lifejacket_1"{
-                item.size = CGSizeMake(50, 50)
+                item.size = CGSizeMake(90, 65)
             }else if itemName == "Whistle_1"{
-                item.size = CGSizeMake(50, 50)
+                item.size = CGSizeMake(60, 40)
             }else if itemName == "Beach_Towel_1"{
-                item.size = CGSizeMake(50, 50)
+                item.size = CGSizeMake(60, 40)
             }else if itemName == "Floatie_1"{
+                item.size = CGSizeMake(70, 45)
+            }else if itemName == "Sand_Bucket_1"{
                 item.size = CGSizeMake(50, 50)
+
             }else if itemName == "Sunscreen_1"{
                 item.size = CGSizeMake(50, 50)
             }
@@ -128,7 +131,7 @@ class StoreScene: SKScene {
             counter += 1
             self.addChild(item)
             if self.frame.maxX - startX < 100{
-                startY -= 100
+                startY -= 98
                 startX = self.frame.minX + 60
             }else{
                 startX += 63
