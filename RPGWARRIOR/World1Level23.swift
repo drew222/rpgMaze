@@ -28,6 +28,7 @@ class World1Level23: SKScene, SKPhysicsContactDelegate {
     let whaleAttackSpeed = 2.0
     var whichWave = 0
     var wavePositions: [CGPoint]?
+    var lastKrill: Double = 3.0
     
     
     var theWhale: WhaleBoss?
@@ -88,6 +89,15 @@ class World1Level23: SKScene, SKPhysicsContactDelegate {
                 let mine = secondBody.node as? MineNode
                 mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
         }
+        
+        //HERO VS KRILL
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryKrill.rawValue){
+                let aHero = self.childNodeWithName("hero") as! HeroClass
+                aHero.takeDamage(1)
+                secondBody.node!.removeFromParent()
+        }
+
         //HERO VS WAVE
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
@@ -109,9 +119,15 @@ class World1Level23: SKScene, SKPhysicsContactDelegate {
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
+            self.lastKrill = currentTime
             self.lastWave = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
+        if currentTime - lastKrill  > whaleAttackSpeed || lastUpdatesTime == 0.0{
+            self.lastKrill = currentTime
+            theWhale!.shootKrill()
+        }
+
         
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
@@ -165,7 +181,7 @@ class World1Level23: SKScene, SKPhysicsContactDelegate {
                     for node in self.children{
                         //NEW: check if node has a name
                         if let myNode = node as? SKSpriteNode{
-                            if node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "whale" && node.name != "life" && node.name != "gold"{
+                            if node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "whale" && node.name != "life" && node.name != "krill" && node.name != "gold"{
                                 node.removeFromParent()
                             }
                         }

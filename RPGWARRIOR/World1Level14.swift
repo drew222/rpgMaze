@@ -82,7 +82,7 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
                 let mine = secondBody.node as? MineNode
                 mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
         }
-        //HERO VS FIRE
+        //HERO VS KRILL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryKrill.rawValue){
                 let aHero = self.childNodeWithName("hero") as! HeroClass

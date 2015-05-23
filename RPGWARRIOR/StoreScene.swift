@@ -198,6 +198,11 @@ class StoreScene: SKScene {
             priceText.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
             priceText.fontColor = UIColor.blueColor()
             self.addChild(priceText)
+            //remove this, but using temporarily for visual
+            let nameText = SKLabelNode.init(text: "Item Name")
+            nameText.position = CGPointMake(self.frame.midX, self.frame.minY + 135)
+            nameText.fontColor = UIColor.blueColor()
+            self.addChild(nameText)
         }
         if currentItem != nil{
             if self.childNodeWithName("priceButton") != nil{
