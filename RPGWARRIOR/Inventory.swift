@@ -52,9 +52,9 @@ class Inventory: SKScene {
         menu!.size = CGSizeMake(100, 100)
         self.addChild(menu!)
             let krakenNode = SKSpriteNode(imageNamed: "Fitting_Room_Kraken_1")
-            krakenNode.position = CGPointMake(self.frame.midX, self.frame.midY + 100)
+            krakenNode.position = CGPointMake(self.frame.midX + 30, self.frame.maxY - 270)
             krakenNode.name = "kraken"
-            krakenNode.size = CGSizeMake(200, 200)
+            krakenNode.size = CGSizeMake(250, 250)
             self.addChild(krakenNode)
             headDisplay = SKSpriteNode(imageNamed: "")
             headDisplay!.texture = nil
@@ -102,17 +102,18 @@ class Inventory: SKScene {
         statLabel!.position = CGPointMake(self.frame.midX + 70, self.frame.maxY - 360)
         resizeLabel(statLabel!)
         self.addChild(statLabel!)
-        let bodyLabel = SKLabelNode.init(text: "Left")
-        bodyLabel.position = CGPointMake(self.frame.minX + 50, self.frame.minY + 150)
-        self.addChild(bodyLabel)
+            
         let weaponLabel = SKLabelNode.init(text: "Noggin")
-        weaponLabel.position = CGPointMake(self.frame.minX + 50, self.frame.minY + 230)
+        weaponLabel.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 140)
         self.addChild(weaponLabel)
-            let neckLabel = SKLabelNode.init(text: "Neck")
-            neckLabel.position = CGPointMake(self.frame.minX + 50, self.frame.minY + 310)
+        let neckLabel = SKLabelNode.init(text: "Neck")
+            neckLabel.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 220)
             self.addChild(neckLabel)
+        let bodyLabel = SKLabelNode.init(text: "Left")
+            bodyLabel.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 300)
+            self.addChild(bodyLabel)
         let feetLabel = SKLabelNode.init(text: "Right")
-        feetLabel.position = CGPointMake(self.frame.minX + 50, self.frame.minY + 70)
+        feetLabel.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 380)
         self.addChild(feetLabel)
         //create all the item spaces
         let itemSpace1 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 40, backPack!.frame.maxY - 40))
@@ -195,6 +196,7 @@ class Inventory: SKScene {
         itemSpace1.name = "16"
         itemSpaces.append(itemSpace16)
         self.addChild(itemSpace16)
+            
             //weaponspace holds noggin items
         let weaponSpace = ItemSpaceNode.spaceAtPosition(CGPointMake(weaponLabel.frame.midX, weaponLabel.frame.midY - 40))
         weaponSpace.zPosition = 1
@@ -218,9 +220,15 @@ class Inventory: SKScene {
         self.addChild(feetSpace)
         itemSpaces.append(feetSpace)
             
+        
+        //booty coin image
+        let booty = SKSpriteNode(imageNamed: "Booty_1.png")
+        booty.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 130)
+        booty.setScale(0.08)
+        self.addChild(booty)
         //gold node
         goldNode = SKLabelNode.init(text: "\(Int(gold))")
-        goldNode!.position = CGPointMake(self.frame.maxX - 80, self.frame.maxY - 400)
+        goldNode!.position = CGPointMake(self.frame.maxX - 80, self.frame.maxY - 140)
         self.addChild(goldNode!)
         }
         

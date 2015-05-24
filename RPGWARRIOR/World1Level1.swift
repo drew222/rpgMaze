@@ -78,6 +78,8 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 180, self.frame.midY + 180)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 150)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 165, self.frame.midY)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 165, self.frame.midY)))
         
     }
     

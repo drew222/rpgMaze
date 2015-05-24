@@ -119,7 +119,7 @@ class World1Level8: SKScene, SKPhysicsContactDelegate  {
             points.append(CGPointMake(startX, self.frame.midY))
             startX -= 25
         }
-        startX = self.frame.minX + 20
+        startX = self.frame.minX + 10
         while startX < self.frame.maxX - 90{
             points.append(CGPointMake(startX, self.frame.midY + 90))
             startX += 25

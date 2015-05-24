@@ -63,15 +63,30 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
         
         //seashells
         //bottom row
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 30, self.frame.minY + 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 70, self.frame.minY + 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 110, self.frame.minY + 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 150, self.frame.minY + 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 190, self.frame.minY + 100)))
+        if isPlus{
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 30, self.frame.minY + 160)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 70, self.frame.minY + 160)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 110, self.frame.minY + 160)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 150, self.frame.minY + 160)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 190, self.frame.minY + 160)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 230, self.frame.minY + 160)))
         
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 310, self.frame.minY + 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 350, self.frame.minY + 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 350, self.frame.minY + 160)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 390, self.frame.minY + 160)))
+        }else{
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 30, self.frame.minY + 100)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 70, self.frame.minY + 100)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 110, self.frame.minY + 100)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 150, self.frame.minY + 100)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 190, self.frame.minY + 100)))
+            
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 310, self.frame.minY + 100)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 350, self.frame.minY + 100)))
+        }
         //top row
+        if isPlus{
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 390, self.frame.maxY - 100)))
+        }
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 30, self.frame.maxY - 100)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 70, self.frame.maxY - 100)))
         
@@ -80,36 +95,55 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 270, self.frame.maxY - 100)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 310, self.frame.maxY - 100)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 350, self.frame.maxY - 100)))
-        if isPlus{
-            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 390, self.frame.maxY - 100)))
-        }
         //right inside diagnols
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 140)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 245, self.frame.minY + 180)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 265, self.frame.minY + 220)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 245, self.frame.minY + 260)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 300)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 245, self.frame.minY + 340)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 265, self.frame.minY + 380)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 245, self.frame.minY + 420)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 460)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 245, self.frame.minY + 500)))
-        //right outside diagnols
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 320, self.frame.minY + 140)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, self.frame.minY + 180)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 360, self.frame.minY + 220)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, self.frame.minY + 260)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 320, self.frame.minY + 300)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, self.frame.minY + 340)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 360, self.frame.minY + 380)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, self.frame.minY + 420)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 320, self.frame.minY + 460)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, self.frame.minY + 500)))
         if isPlus{
-            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 400, self.frame.minY + 380)))
-            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 400, self.frame.minY + 220)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 265, self.frame.minY + 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 285, self.frame.minY + 240)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 305, self.frame.minY + 280)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 285, self.frame.minY + 320)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 265, self.frame.minY + 360)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 285, self.frame.minY + 400)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 305, self.frame.minY + 440)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 285, self.frame.minY + 480)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 265, self.frame.minY + 520)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 285, self.frame.minY + 560)))
+        }else{
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 140)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 245, self.frame.minY + 180)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 265, self.frame.minY + 220)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 245, self.frame.minY + 260)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 300)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 245, self.frame.minY + 340)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 265, self.frame.minY + 380)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 245, self.frame.minY + 420)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 460)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 245, self.frame.minY + 500)))
         }
-        //left inside diagnols
+        //right outside diagnols
+        if isPlus{
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 360, self.frame.minY + 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 380, self.frame.minY + 240)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 400, self.frame.minY + 280)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 380, self.frame.minY + 320)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 360, self.frame.minY + 360)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 380, self.frame.minY + 400)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 400, self.frame.minY + 440)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 380, self.frame.minY + 480)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 360, self.frame.minY + 520)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 380, self.frame.minY + 560)))
+        }else{
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 320, self.frame.minY + 140)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, self.frame.minY + 180)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 360, self.frame.minY + 220)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, self.frame.minY + 260)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 320, self.frame.minY + 300)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, self.frame.minY + 340)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 360, self.frame.minY + 380)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, self.frame.minY + 420)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 320, self.frame.minY + 460)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, self.frame.minY + 500)))
+        }
+                //left inside diagnols
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 140)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 180)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 125, self.frame.maxY - 220)))
