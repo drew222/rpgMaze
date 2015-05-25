@@ -86,48 +86,126 @@ class StoreScene: SKScene {
     }
     
     func addItems(){
-        //generate points
-        var startX = self.frame.minX + 60
-        var startY = self.frame.maxY - 165
+        
         var counter = 1
         for itemName in allStoreItems{
             let item = ItemClass.itemInSpace(itemName)
-            item.position = CGPointMake(startX, startY)
+            //shelf 1
             if itemName == "Copper_Ring_1"{
                 item.size = CGSizeMake(40, 40)
+                item.position = CGPointMake(self.frame.minX + 60, self.frame.maxY - 165)
+                if isPlus{
+                   item.position = CGPointMake(self.frame.minX + 80, self.frame.maxY - 165)
+                }
+            }else if itemName == "Sweaty_Wristband_1"{
+                item.size = CGSizeMake(45, 60)
+                item.position = CGPointMake(self.frame.minX + 120, self.frame.maxY - 160)
+                if isPlus{
+                    item.position = CGPointMake(self.frame.minX + 140, self.frame.maxY - 160)
+                }
             }else if itemName == "Silver_Ring_1"{
                 item.size = CGSizeMake(40, 40)
+                item.position = CGPointMake(self.frame.midX, self.frame.maxY - 165)
+            }else if itemName == "Water_Wing_1"{
+                item.size = CGSizeMake(70, 70)
+                item.position = CGPointMake(self.frame.maxX - 120, self.frame.maxY - 155)
+                if isPlus{
+                    item.position = CGPointMake(self.frame.maxX - 140, self.frame.maxY - 160)
+                }
             }else if itemName == "Gold_Ring_1"{
                 item.size = CGSizeMake(40, 40)
-            }else if itemName == "Top_Hat_1"{
-                item.size = CGSizeMake(50, 50)
-            }else if itemName == "Sunhat_1"{
+                item.position = CGPointMake(self.frame.maxX - 60, self.frame.maxY - 165)
+                if isPlus{
+                    item.position = CGPointMake(self.frame.maxX - 80, self.frame.maxY - 165)
+                }
+            
+            
+            //shelf 2
+            }else if itemName == "Whistle_1"{
+                item.size = CGSizeMake(50, 35)
+                item.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 265)
+                if isPlus{
+                    item.position = CGPointMake(self.frame.minX + 70, self.frame.maxY - 265)
+                }
+            }else if itemName == "Lifejacket_1"{
+                item.size = CGSizeMake(110, 75)
+                item.position = CGPointMake(self.frame.minX + 105, self.frame.maxY - 245)
+                if isPlus{
+                    item.position = CGPointMake(self.frame.minX + 125, self.frame.maxY - 250)
+                }
+            }else if itemName == "Beach_Towel_1"{
+                item.size = CGSizeMake(100, 50)
+                item.position = CGPointMake(self.frame.midX, self.frame.maxY - 255)
+            }else if itemName == "Floatie_1"{
+                item.size = CGSizeMake(90, 60)
+                item.position = CGPointMake(self.frame.maxX - 95, self.frame.maxY - 245)
+                if isPlus{
+                    item.position = CGPointMake(self.frame.maxX - 115, self.frame.maxY - 250)
+                }
+            }else if itemName == "Sun_Screen_1"{
+                item.size = CGSizeMake(35, 50)
+                item.position = CGPointMake(self.frame.maxX - 40, self.frame.maxY - 250)
+                if isPlus{
+                    item.position = CGPointMake(self.frame.maxX - 60, self.frame.maxY - 255)
+                }
+                
+            //shelf 3
+            }else if itemName == "Sweatband_1"{
+                item.size = CGSizeMake(65, 65)
+                item.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 360)
+                if isPlus{
+                    item.position = CGPointMake(self.frame.minX + 70, self.frame.maxY - 360)
+                }
+            }else if itemName == "Visor_1"{
+                item.size = CGSizeMake(65, 75)
+                item.position = CGPointMake(self.frame.minX + 115, self.frame.maxY - 360)
+                if isPlus{
+                    item.position = CGPointMake(self.frame.minX + 135, self.frame.maxY - 360)
+                }
+            }else if itemName == "Sand_Bucket_1"{
                 item.size = CGSizeMake(70, 70)
+                item.position = CGPointMake(self.frame.midX - 7, self.frame.maxY - 350)
+            }else if itemName == "Sunhat_1"{
+                item.size = CGSizeMake(80, 80)
+                item.position = CGPointMake(self.frame.maxX - 120, self.frame.maxY - 360)
+                if isPlus{
+                    item.position = CGPointMake(self.frame.maxX - 140, self.frame.maxY - 360)
+                }
             }else if itemName == "Shades_1"{
                 item.size = CGSizeMake(50, 35)
-            }else if itemName == "Monocle_1"{
-                item.size = CGSizeMake(50, 50)
-            }else if itemName == "Sweatband_1"{
-                item.size = CGSizeMake(50, 50)
-            }else if itemName == "Visor_1"{
-                item.size = CGSizeMake(50, 60)
+                item.position = CGPointMake(self.frame.maxX - 52, self.frame.maxY - 365)
+                if isPlus{
+                    item.position = CGPointMake(self.frame.maxX - 72, self.frame.maxY - 365)
+                }
+                
+            //shelf 4
+            }else if itemName == "Bling_Ring_1"{
+                item.size = CGSizeMake(40, 40)
+                item.position = CGPointMake(self.frame.minX + 60, self.frame.maxY - 465)
+                if isPlus{
+                    item.position = CGPointMake(self.frame.minX + 80, self.frame.maxY - 465)
+                }
             }else if itemName == "Watch_1"{
-                item.size = CGSizeMake(50, 50)
+                item.size = CGSizeMake(60, 60)
+                item.position = CGPointMake(self.frame.minX + 125, self.frame.maxY - 460)
+                if isPlus{
+                    item.position = CGPointMake(self.frame.minX + 145, self.frame.maxY - 460)
+                }
             }else if itemName == "Bow_Tie_1"{
-                item.size = CGSizeMake(50, 50)
-            }else if itemName == "Lifejacket_1"{
-                item.size = CGSizeMake(90, 65)
-            }else if itemName == "Whistle_1"{
-                item.size = CGSizeMake(60, 40)
-            }else if itemName == "Beach_Towel_1"{
-                item.size = CGSizeMake(60, 40)
-            }else if itemName == "Floatie_1"{
-                item.size = CGSizeMake(70, 45)
-            }else if itemName == "Sand_Bucket_1"{
-                item.size = CGSizeMake(50, 50)
-
-            }else if itemName == "Sunscreen_1"{
-                item.size = CGSizeMake(50, 50)
+                item.size = CGSizeMake(90, 70)
+                item.position = CGPointMake(self.frame.midX, self.frame.maxY - 465)
+            }else if itemName == "Monocle_1"{
+                item.size = CGSizeMake(60, 60)
+                item.position = CGPointMake(self.frame.maxX - 135, self.frame.maxY - 470)
+                if isPlus{
+                    item.position = CGPointMake(self.frame.maxX - 155, self.frame.maxY - 475)
+                }
+            }else if itemName == "Top_Hat_1"{
+                item.size = CGSizeMake(70, 70)
+                item.position = CGPointMake(self.frame.maxX - 60, self.frame.maxY - 445)
+                if isPlus{
+                    item.position = CGPointMake(self.frame.maxX - 80, self.frame.maxY - 445)
+                }
             }
             else{
                 item.size = CGSizeMake(40, 40)
@@ -135,12 +213,7 @@ class StoreScene: SKScene {
             item.name = "item\(counter)"
             counter += 1
             self.addChild(item)
-            if self.frame.maxX - startX < 100{
-                startY -= 98
-                startX = self.frame.minX + 60
-            }else{
-                startX += 63
-            }
+            
         }
         
     }
