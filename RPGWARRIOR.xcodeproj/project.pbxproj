@@ -61,6 +61,46 @@
 		DCBCE4551B12EC5E00FCF4A5 /* Napsack_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4541B12EC5E00FCF4A5 /* Napsack_Text_1.png */; };
 		DCBCE4571B12EC6D00FCF4A5 /* Buy_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4561B12EC6D00FCF4A5 /* Buy_Text_1.png */; };
 		DCBCE4591B12EC7D00FCF4A5 /* Sun_Screen_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4581B12EC7D00FCF4A5 /* Sun_Screen_2.png */; };
+		DCBCE4821B13914E00FCF4A5 /* Afro_Seaweed_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE45A1B13914E00FCF4A5 /* Afro_Seaweed_Text.png */; };
+		DCBCE4831B13914E00FCF4A5 /* Barnacles_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE45B1B13914E00FCF4A5 /* Barnacles_Text.png */; };
+		DCBCE4841B13914E00FCF4A5 /* Beach_Ball_Fragment_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE45C1B13914E00FCF4A5 /* Beach_Ball_Fragment_Text.png */; };
+		DCBCE4851B13914E00FCF4A5 /* Beach_Towel_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE45D1B13914E00FCF4A5 /* Beach_Towel_Text.png */; };
+		DCBCE4861B13914E00FCF4A5 /* Bling_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE45E1B13914E00FCF4A5 /* Bling_Ring_Text.png */; };
+		DCBCE4871B13914E00FCF4A5 /* Bow_Tie_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE45F1B13914E00FCF4A5 /* Bow_Tie_Text.png */; };
+		DCBCE4881B13914E00FCF4A5 /* Copper_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4601B13914E00FCF4A5 /* Copper_Ring_Text.png */; };
+		DCBCE4891B13914E00FCF4A5 /* Coral_Crown_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4611B13914E00FCF4A5 /* Coral_Crown_Text.png */; };
+		DCBCE48A1B13914E00FCF4A5 /* Crab_Claw_Cap_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4621B13914E00FCF4A5 /* Crab_Claw_Cap_Text.png */; };
+		DCBCE48B1B13914E00FCF4A5 /* Floatie_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4631B13914E00FCF4A5 /* Floatie_Text.png */; };
+		DCBCE48C1B13914E00FCF4A5 /* Gold_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4641B13914E00FCF4A5 /* Gold_Ring_Text.png */; };
+		DCBCE48D1B13914E00FCF4A5 /* Inky_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4651B13914E00FCF4A5 /* Inky_Ring_Text.png */; };
+		DCBCE48E1B13914E00FCF4A5 /* King_Kraken_Tentacle_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4661B13914E00FCF4A5 /* King_Kraken_Tentacle_Text.png */; };
+		DCBCE48F1B13914E00FCF4A5 /* Life_Jacket_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4671B13914E00FCF4A5 /* Life_Jacket_Text.png */; };
+		DCBCE4901B13914E00FCF4A5 /* Lifeguard_Whistle_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4681B13914E00FCF4A5 /* Lifeguard_Whistle_Text.png */; };
+		DCBCE4911B13914E00FCF4A5 /* Monocle_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4691B13914E00FCF4A5 /* Monocle_Text.png */; };
+		DCBCE4921B13914E00FCF4A5 /* Mossy_Copper_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE46A1B13914E00FCF4A5 /* Mossy_Copper_Ring_Text.png */; };
+		DCBCE4931B13914E00FCF4A5 /* Mossy_Gold_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE46B1B13914E00FCF4A5 /* Mossy_Gold_Ring_Text.png */; };
+		DCBCE4941B13914E00FCF4A5 /* Mossy_Silver_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE46C1B13914E00FCF4A5 /* Mossy_Silver_Ring_Text.png */; };
+		DCBCE4951B13914E00FCF4A5 /* Pearl_Necklace_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE46D1B13914E00FCF4A5 /* Pearl_Necklace_Text.png */; };
+		DCBCE4961B13914E00FCF4A5 /* Pearl_Snap_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE46E1B13914E00FCF4A5 /* Pearl_Snap_Ring_Text.png */; };
+		DCBCE4971B13914E00FCF4A5 /* Rusty_Copper_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE46F1B13914E00FCF4A5 /* Rusty_Copper_Ring_Text.png */; };
+		DCBCE4981B13914E00FCF4A5 /* Rusty_Gold_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4701B13914E00FCF4A5 /* Rusty_Gold_Ring_Text.png */; };
+		DCBCE4991B13914E00FCF4A5 /* Rusty_Silver_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4711B13914E00FCF4A5 /* Rusty_Silver_Ring_Text.png */; };
+		DCBCE49A1B13914E00FCF4A5 /* Sand_Bucket_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4721B13914E00FCF4A5 /* Sand_Bucket_Text.png */; };
+		DCBCE49B1B13914E00FCF4A5 /* Seashell_Charm_Bracelet_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4731B13914E00FCF4A5 /* Seashell_Charm_Bracelet_Text.png */; };
+		DCBCE49C1B13914E00FCF4A5 /* Seashell_Necklace_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4741B13914E00FCF4A5 /* Seashell_Necklace_Text.png */; };
+		DCBCE49D1B13914E00FCF4A5 /* Seashell_Necklace.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4751B13914E00FCF4A5 /* Seashell_Necklace.png */; };
+		DCBCE49E1B13914E00FCF4A5 /* Seaweed_Mustache_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4761B13914E00FCF4A5 /* Seaweed_Mustache_Text.png */; };
+		DCBCE49F1B13914E00FCF4A5 /* Shades_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4771B13914E00FCF4A5 /* Shades_Text.png */; };
+		DCBCE4A01B13914E00FCF4A5 /* Silver_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4781B13914E00FCF4A5 /* Silver_Ring_Text.png */; };
+		DCBCE4A11B13914E00FCF4A5 /* Sun_Hat_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4791B13914E00FCF4A5 /* Sun_Hat_Text.png */; };
+		DCBCE4A21B13914E00FCF4A5 /* Sunscreen_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE47A1B13914E00FCF4A5 /* Sunscreen_Text.png */; };
+		DCBCE4A31B13914E00FCF4A5 /* Sweaty_Headband_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE47B1B13914E00FCF4A5 /* Sweaty_Headband_Text.png */; };
+		DCBCE4A41B13914E00FCF4A5 /* Sweaty_Wristband_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE47C1B13914E00FCF4A5 /* Sweaty_Wristband_Text.png */; };
+		DCBCE4A51B13914E00FCF4A5 /* Top_Hat_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE47D1B13914E00FCF4A5 /* Top_Hat_Text.png */; };
+		DCBCE4A61B13914E00FCF4A5 /* Visor_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE47E1B13914E00FCF4A5 /* Visor_Text.png */; };
+		DCBCE4A71B13914E00FCF4A5 /* Watch_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE47F1B13914E00FCF4A5 /* Watch_Text.png */; };
+		DCBCE4A81B13914E00FCF4A5 /* Water_Wing_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4801B13914E00FCF4A5 /* Water_Wing_Text.png */; };
+		DCBCE4A91B13914E00FCF4A5 /* Whale_Flesh_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4811B13914E00FCF4A5 /* Whale_Flesh_Text.png */; };
 		DCC4E3021A89760E000E5E89 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3011A89760E000E5E89 /* Inventory.swift */; };
 		DCC4E3041A897671000E5E89 /* ItemSpaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */; };
 		DCC4E3061A8976AB000E5E89 /* ItemClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3051A8976AB000E5E89 /* ItemClass.swift */; };
@@ -436,6 +476,46 @@
 		DCBCE4541B12EC5E00FCF4A5 /* Napsack_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Napsack_Text_1.png; path = "../../../../Library/Containers/com.apple.mail/Data/Library/Mail Downloads/9CFCE535-7CFF-4AB4-82AD-823E8E7DAC99/Napsack_Text_1.png"; sourceTree = "<group>"; };
 		DCBCE4561B12EC6D00FCF4A5 /* Buy_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Buy_Text_1.png; path = "../../../../Library/Containers/com.apple.mail/Data/Library/Mail Downloads/D6FA3771-7E53-4015-8305-543302649ABA/Buy_Text_1.png"; sourceTree = "<group>"; };
 		DCBCE4581B12EC7D00FCF4A5 /* Sun_Screen_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sun_Screen_2.png; sourceTree = "<group>"; };
+		DCBCE45A1B13914E00FCF4A5 /* Afro_Seaweed_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Afro_Seaweed_Text.png; path = ../../../../Pictures/Afro_Seaweed_Text.png; sourceTree = "<group>"; };
+		DCBCE45B1B13914E00FCF4A5 /* Barnacles_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Barnacles_Text.png; path = ../../../../Pictures/Barnacles_Text.png; sourceTree = "<group>"; };
+		DCBCE45C1B13914E00FCF4A5 /* Beach_Ball_Fragment_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Beach_Ball_Fragment_Text.png; path = ../../../../Pictures/Beach_Ball_Fragment_Text.png; sourceTree = "<group>"; };
+		DCBCE45D1B13914E00FCF4A5 /* Beach_Towel_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Beach_Towel_Text.png; path = ../../../../Pictures/Beach_Towel_Text.png; sourceTree = "<group>"; };
+		DCBCE45E1B13914E00FCF4A5 /* Bling_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Bling_Ring_Text.png; path = ../../../../Pictures/Bling_Ring_Text.png; sourceTree = "<group>"; };
+		DCBCE45F1B13914E00FCF4A5 /* Bow_Tie_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Bow_Tie_Text.png; path = ../../../../Pictures/Bow_Tie_Text.png; sourceTree = "<group>"; };
+		DCBCE4601B13914E00FCF4A5 /* Copper_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Copper_Ring_Text.png; path = ../../../../Pictures/Copper_Ring_Text.png; sourceTree = "<group>"; };
+		DCBCE4611B13914E00FCF4A5 /* Coral_Crown_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Coral_Crown_Text.png; path = ../../../../Pictures/Coral_Crown_Text.png; sourceTree = "<group>"; };
+		DCBCE4621B13914E00FCF4A5 /* Crab_Claw_Cap_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Crab_Claw_Cap_Text.png; path = ../../../../Pictures/Crab_Claw_Cap_Text.png; sourceTree = "<group>"; };
+		DCBCE4631B13914E00FCF4A5 /* Floatie_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Floatie_Text.png; path = ../../../../Pictures/Floatie_Text.png; sourceTree = "<group>"; };
+		DCBCE4641B13914E00FCF4A5 /* Gold_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Gold_Ring_Text.png; path = ../../../../Pictures/Gold_Ring_Text.png; sourceTree = "<group>"; };
+		DCBCE4651B13914E00FCF4A5 /* Inky_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Inky_Ring_Text.png; path = ../../../../Pictures/Inky_Ring_Text.png; sourceTree = "<group>"; };
+		DCBCE4661B13914E00FCF4A5 /* King_Kraken_Tentacle_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = King_Kraken_Tentacle_Text.png; path = ../../../../Pictures/King_Kraken_Tentacle_Text.png; sourceTree = "<group>"; };
+		DCBCE4671B13914E00FCF4A5 /* Life_Jacket_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Life_Jacket_Text.png; path = ../../../../Pictures/Life_Jacket_Text.png; sourceTree = "<group>"; };
+		DCBCE4681B13914E00FCF4A5 /* Lifeguard_Whistle_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Lifeguard_Whistle_Text.png; path = ../../../../Pictures/Lifeguard_Whistle_Text.png; sourceTree = "<group>"; };
+		DCBCE4691B13914E00FCF4A5 /* Monocle_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Monocle_Text.png; path = ../../../../Pictures/Monocle_Text.png; sourceTree = "<group>"; };
+		DCBCE46A1B13914E00FCF4A5 /* Mossy_Copper_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mossy_Copper_Ring_Text.png; path = ../../../../Pictures/Mossy_Copper_Ring_Text.png; sourceTree = "<group>"; };
+		DCBCE46B1B13914E00FCF4A5 /* Mossy_Gold_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mossy_Gold_Ring_Text.png; path = ../../../../Pictures/Mossy_Gold_Ring_Text.png; sourceTree = "<group>"; };
+		DCBCE46C1B13914E00FCF4A5 /* Mossy_Silver_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mossy_Silver_Ring_Text.png; path = ../../../../Pictures/Mossy_Silver_Ring_Text.png; sourceTree = "<group>"; };
+		DCBCE46D1B13914E00FCF4A5 /* Pearl_Necklace_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pearl_Necklace_Text.png; path = ../../../../Pictures/Pearl_Necklace_Text.png; sourceTree = "<group>"; };
+		DCBCE46E1B13914E00FCF4A5 /* Pearl_Snap_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pearl_Snap_Ring_Text.png; path = ../../../../Pictures/Pearl_Snap_Ring_Text.png; sourceTree = "<group>"; };
+		DCBCE46F1B13914E00FCF4A5 /* Rusty_Copper_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Rusty_Copper_Ring_Text.png; path = ../../../../Pictures/Rusty_Copper_Ring_Text.png; sourceTree = "<group>"; };
+		DCBCE4701B13914E00FCF4A5 /* Rusty_Gold_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Rusty_Gold_Ring_Text.png; path = ../../../../Pictures/Rusty_Gold_Ring_Text.png; sourceTree = "<group>"; };
+		DCBCE4711B13914E00FCF4A5 /* Rusty_Silver_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Rusty_Silver_Ring_Text.png; path = ../../../../Pictures/Rusty_Silver_Ring_Text.png; sourceTree = "<group>"; };
+		DCBCE4721B13914E00FCF4A5 /* Sand_Bucket_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Sand_Bucket_Text.png; path = ../../../../Pictures/Sand_Bucket_Text.png; sourceTree = "<group>"; };
+		DCBCE4731B13914E00FCF4A5 /* Seashell_Charm_Bracelet_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Seashell_Charm_Bracelet_Text.png; path = ../../../../Pictures/Seashell_Charm_Bracelet_Text.png; sourceTree = "<group>"; };
+		DCBCE4741B13914E00FCF4A5 /* Seashell_Necklace_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Seashell_Necklace_Text.png; path = ../../../../Pictures/Seashell_Necklace_Text.png; sourceTree = "<group>"; };
+		DCBCE4751B13914E00FCF4A5 /* Seashell_Necklace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Seashell_Necklace.png; path = ../../../../Pictures/Seashell_Necklace.png; sourceTree = "<group>"; };
+		DCBCE4761B13914E00FCF4A5 /* Seaweed_Mustache_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Seaweed_Mustache_Text.png; path = ../../../../Pictures/Seaweed_Mustache_Text.png; sourceTree = "<group>"; };
+		DCBCE4771B13914E00FCF4A5 /* Shades_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Shades_Text.png; path = ../../../../Pictures/Shades_Text.png; sourceTree = "<group>"; };
+		DCBCE4781B13914E00FCF4A5 /* Silver_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Silver_Ring_Text.png; path = ../../../../Pictures/Silver_Ring_Text.png; sourceTree = "<group>"; };
+		DCBCE4791B13914E00FCF4A5 /* Sun_Hat_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Sun_Hat_Text.png; path = ../../../../Pictures/Sun_Hat_Text.png; sourceTree = "<group>"; };
+		DCBCE47A1B13914E00FCF4A5 /* Sunscreen_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Sunscreen_Text.png; path = ../../../../Pictures/Sunscreen_Text.png; sourceTree = "<group>"; };
+		DCBCE47B1B13914E00FCF4A5 /* Sweaty_Headband_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Sweaty_Headband_Text.png; path = ../../../../Pictures/Sweaty_Headband_Text.png; sourceTree = "<group>"; };
+		DCBCE47C1B13914E00FCF4A5 /* Sweaty_Wristband_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Sweaty_Wristband_Text.png; path = ../../../../Pictures/Sweaty_Wristband_Text.png; sourceTree = "<group>"; };
+		DCBCE47D1B13914E00FCF4A5 /* Top_Hat_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Top_Hat_Text.png; path = ../../../../Pictures/Top_Hat_Text.png; sourceTree = "<group>"; };
+		DCBCE47E1B13914E00FCF4A5 /* Visor_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Visor_Text.png; path = ../../../../Pictures/Visor_Text.png; sourceTree = "<group>"; };
+		DCBCE47F1B13914E00FCF4A5 /* Watch_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Watch_Text.png; path = ../../../../Pictures/Watch_Text.png; sourceTree = "<group>"; };
+		DCBCE4801B13914E00FCF4A5 /* Water_Wing_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Water_Wing_Text.png; path = ../../../../Pictures/Water_Wing_Text.png; sourceTree = "<group>"; };
+		DCBCE4811B13914E00FCF4A5 /* Whale_Flesh_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Whale_Flesh_Text.png; path = ../../../../Pictures/Whale_Flesh_Text.png; sourceTree = "<group>"; };
 		DCC4E3011A89760E000E5E89 /* Inventory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSpaceNode.swift; sourceTree = "<group>"; };
 		DCC4E3051A8976AB000E5E89 /* ItemClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemClass.swift; sourceTree = "<group>"; };
@@ -987,6 +1067,46 @@
 				DCFD75371B01C5D90054E370 /* Kraken_Boss_12.png */,
 				DCFD75381B01C5D90054E370 /* Kraken_Boss_13.png */,
 				DCFD73A71B01532F0054E370 /* Kraken_Gets_Hurt_1.png */,
+				DCBCE45A1B13914E00FCF4A5 /* Afro_Seaweed_Text.png */,
+				DCBCE45B1B13914E00FCF4A5 /* Barnacles_Text.png */,
+				DCBCE45C1B13914E00FCF4A5 /* Beach_Ball_Fragment_Text.png */,
+				DCBCE45D1B13914E00FCF4A5 /* Beach_Towel_Text.png */,
+				DCBCE45E1B13914E00FCF4A5 /* Bling_Ring_Text.png */,
+				DCBCE45F1B13914E00FCF4A5 /* Bow_Tie_Text.png */,
+				DCBCE4601B13914E00FCF4A5 /* Copper_Ring_Text.png */,
+				DCBCE4611B13914E00FCF4A5 /* Coral_Crown_Text.png */,
+				DCBCE4621B13914E00FCF4A5 /* Crab_Claw_Cap_Text.png */,
+				DCBCE4631B13914E00FCF4A5 /* Floatie_Text.png */,
+				DCBCE4641B13914E00FCF4A5 /* Gold_Ring_Text.png */,
+				DCBCE4651B13914E00FCF4A5 /* Inky_Ring_Text.png */,
+				DCBCE4661B13914E00FCF4A5 /* King_Kraken_Tentacle_Text.png */,
+				DCBCE4671B13914E00FCF4A5 /* Life_Jacket_Text.png */,
+				DCBCE4681B13914E00FCF4A5 /* Lifeguard_Whistle_Text.png */,
+				DCBCE4691B13914E00FCF4A5 /* Monocle_Text.png */,
+				DCBCE46A1B13914E00FCF4A5 /* Mossy_Copper_Ring_Text.png */,
+				DCBCE46B1B13914E00FCF4A5 /* Mossy_Gold_Ring_Text.png */,
+				DCBCE46C1B13914E00FCF4A5 /* Mossy_Silver_Ring_Text.png */,
+				DCBCE46D1B13914E00FCF4A5 /* Pearl_Necklace_Text.png */,
+				DCBCE46E1B13914E00FCF4A5 /* Pearl_Snap_Ring_Text.png */,
+				DCBCE46F1B13914E00FCF4A5 /* Rusty_Copper_Ring_Text.png */,
+				DCBCE4701B13914E00FCF4A5 /* Rusty_Gold_Ring_Text.png */,
+				DCBCE4711B13914E00FCF4A5 /* Rusty_Silver_Ring_Text.png */,
+				DCBCE4721B13914E00FCF4A5 /* Sand_Bucket_Text.png */,
+				DCBCE4731B13914E00FCF4A5 /* Seashell_Charm_Bracelet_Text.png */,
+				DCBCE4741B13914E00FCF4A5 /* Seashell_Necklace_Text.png */,
+				DCBCE4751B13914E00FCF4A5 /* Seashell_Necklace.png */,
+				DCBCE4761B13914E00FCF4A5 /* Seaweed_Mustache_Text.png */,
+				DCBCE4771B13914E00FCF4A5 /* Shades_Text.png */,
+				DCBCE4781B13914E00FCF4A5 /* Silver_Ring_Text.png */,
+				DCBCE4791B13914E00FCF4A5 /* Sun_Hat_Text.png */,
+				DCBCE47A1B13914E00FCF4A5 /* Sunscreen_Text.png */,
+				DCBCE47B1B13914E00FCF4A5 /* Sweaty_Headband_Text.png */,
+				DCBCE47C1B13914E00FCF4A5 /* Sweaty_Wristband_Text.png */,
+				DCBCE47D1B13914E00FCF4A5 /* Top_Hat_Text.png */,
+				DCBCE47E1B13914E00FCF4A5 /* Visor_Text.png */,
+				DCBCE47F1B13914E00FCF4A5 /* Watch_Text.png */,
+				DCBCE4801B13914E00FCF4A5 /* Water_Wing_Text.png */,
+				DCBCE4811B13914E00FCF4A5 /* Whale_Flesh_Text.png */,
 				DCFD73A81B01532F0054E370 /* Kraken_Level_Icon_1.png */,
 				DCFD73A91B01532F0054E370 /* Kraken_Movement_1.png */,
 				DCFD73B11B01532F0054E370 /* Kraken_Movement_2.png */,
@@ -1268,10 +1388,13 @@
 				DCFD74B41B0153300054E370 /* Sand_Castle_1.png in Resources */,
 				DCFD74F61B0153300054E370 /* Whale_Boss_13.png in Resources */,
 				DCFD744D1B0153300054E370 /* Beach_Ball_5.png in Resources */,
+				DCBCE48B1B13914E00FCF4A5 /* Floatie_Text.png in Resources */,
 				DCBCE4571B12EC6D00FCF4A5 /* Buy_Text_1.png in Resources */,
 				DCBCE44D1B12EBA100FCF4A5 /* Water_Wing_2.png in Resources */,
+				DCBCE4A51B13914E00FCF4A5 /* Top_Hat_Text.png in Resources */,
 				DCFD75261B0153300054E370 /* Zones__Button_1.png in Resources */,
 				DCFD74CF1B0153300054E370 /* Tentacle_21.png in Resources */,
+				DCBCE48F1B13914E00FCF4A5 /* Life_Jacket_Text.png in Resources */,
 				DCFD747B1B0153300054E370 /* Ink_Flood_3.png in Resources */,
 				DCFD746C1B0153300054E370 /* Crab_Boss_8.png in Resources */,
 				DCFD74DA1B0153300054E370 /* Tentacle_32.png in Resources */,
@@ -1292,6 +1415,7 @@
 				DCF23E3B1B0BB2A100484040 /* Tentacle_Swing_6.png in Resources */,
 				DCFD74D81B0153300054E370 /* Tentacle_30.png in Resources */,
 				DCF23E361B0BAEB600484040 /* Beach_Ball_Fragment_1.png in Resources */,
+				DCBCE49A1B13914E00FCF4A5 /* Sand_Bucket_Text.png in Resources */,
 				DCFD753F1B01C5D90054E370 /* Kraken_Boss_13.png in Resources */,
 				DCFD749E1B0153300054E370 /* Mossy_Copper_Ring_1.png in Resources */,
 				DCFD74FF1B0153300054E370 /* Whale_Boss_5.png in Resources */,
@@ -1299,6 +1423,7 @@
 				DCFD74741B0153300054E370 /* Fitting_Room__Button_1.png in Resources */,
 				DCFD74961B0153300054E370 /* Kraken_Movement_7.png in Resources */,
 				DCFD74C71B0153300054E370 /* Tentacle_13.png in Resources */,
+				DCBCE4A11B13914E00FCF4A5 /* Sun_Hat_Text.png in Resources */,
 				DCFD74531B0153300054E370 /* Bow_Tie_1.png in Resources */,
 				DCFD74A71B0153300054E370 /* Pearl_Necklace_1.png in Resources */,
 				DCFD746A1B0153300054E370 /* Crab_Boss_6.png in Resources */,
@@ -1308,9 +1433,11 @@
 				DCFD751F1B0153300054E370 /* World_1_Level_6_Text.png in Resources */,
 				DCFD75021B0153300054E370 /* Whale_Boss_8.png in Resources */,
 				DCFD74BC1B0153300054E370 /* Silver_Ring_1.png in Resources */,
+				DCBCE4921B13914E00FCF4A5 /* Mossy_Copper_Ring_Text.png in Resources */,
 				DCFD74BD1B0153300054E370 /* Silver_Ring_2.png in Resources */,
 				DCFD74791B0153300054E370 /* Ink_Flood_1.png in Resources */,
 				DCFD74491B0153300054E370 /* Beach_Ball_1.png in Resources */,
+				DCBCE49D1B13914E00FCF4A5 /* Seashell_Necklace.png in Resources */,
 				DC2711281A85E11900986D2E /* LaunchScreen.xib in Resources */,
 				DCF23E191B0BAB8D00484040 /* Floatie_2.png in Resources */,
 				DCFD74C91B0153300054E370 /* Tentacle_16.png in Resources */,
@@ -1319,16 +1446,23 @@
 				DCFD747F1B0153300054E370 /* Inventory_Slot_2.png in Resources */,
 				DCFD754E1B01D9100054E370 /* Shades_2.png in Resources */,
 				DCFD74481B0153300054E370 /* Beach_Background_1.png in Resources */,
+				DCBCE4851B13914E00FCF4A5 /* Beach_Towel_Text.png in Resources */,
 				DCFD753E1B01C5D90054E370 /* Kraken_Boss_12.png in Resources */,
+				DCBCE4A61B13914E00FCF4A5 /* Visor_Text.png in Resources */,
 				DCFD74731B0153300054E370 /* Fitting_Room_2.png in Resources */,
 				DCBCE44B1B12EB9900FCF4A5 /* Sun_Screen_1.png in Resources */,
 				DCFD74721B0153300054E370 /* Fitting_Room_1.png in Resources */,
+				DCBCE49E1B13914E00FCF4A5 /* Seaweed_Mustache_Text.png in Resources */,
+				DCBCE4A31B13914E00FCF4A5 /* Sweaty_Headband_Text.png in Resources */,
 				2FC73DE11A912B690068A2FB /* BlizzParticle.sks in Resources */,
+				DCBCE4A41B13914E00FCF4A5 /* Sweaty_Wristband_Text.png in Resources */,
+				DCBCE4951B13914E00FCF4A5 /* Pearl_Necklace_Text.png in Resources */,
 				DCFD74E31B0153300054E370 /* Tentacle_9.png in Resources */,
 				DCFD75231B0153300054E370 /* Yes_Text_1.png in Resources */,
 				DCFD74A31B0153300054E370 /* Mossy_Silver_Ring_2.png in Resources */,
 				DCFD74CE1B0153300054E370 /* Tentacle_20.png in Resources */,
 				DCFD74921B0153300054E370 /* Kraken_Movement_3.png in Resources */,
+				DCBCE4A21B13914E00FCF4A5 /* Sunscreen_Text.png in Resources */,
 				DCF23E2F1B0BAC0100484040 /* Visor_2.png in Resources */,
 				DCFD74EC1B0153300054E370 /* Treasure_Chest_6.png in Resources */,
 				DCFD746B1B0153300054E370 /* Crab_Boss_7.png in Resources */,
@@ -1352,6 +1486,7 @@
 				DCFD745A1B0153300054E370 /* Clam_Boss_Rocking_3.png in Resources */,
 				DCFD74941B0153300054E370 /* Kraken_Movement_5.png in Resources */,
 				DCF23E0D1B0BAA0500484040 /* Tentacle_Swing_7.png in Resources */,
+				DCBCE4A01B13914E00FCF4A5 /* Silver_Ring_Text.png in Resources */,
 				DCFD74FB1B0153300054E370 /* Whale_Boss_18.png in Resources */,
 				DCFD75101B0153300054E370 /* World_1_Level_20_Text.png in Resources */,
 				DCFD75011B0153300054E370 /* Whale_Boss_7.png in Resources */,
@@ -1359,6 +1494,7 @@
 				DCFD74E81B0153300054E370 /* Treasure_Chest_2.png in Resources */,
 				DCFD75251B0153300054E370 /* Zone_Screen_2.png in Resources */,
 				DCFD74C31B0153300054E370 /* Tentacle_1.png in Resources */,
+				DCBCE4941B13914E00FCF4A5 /* Mossy_Silver_Ring_Text.png in Resources */,
 				DCFD750D1B0153300054E370 /* World_1_Level_18_Text.png in Resources */,
 				DCFD74FA1B0153300054E370 /* Whale_Boss_17.png in Resources */,
 				DCFD74651B0153300054E370 /* Crab_Boss_12.png in Resources */,
@@ -1366,6 +1502,8 @@
 				DCFD75511B01D9100054E370 /* Seashell_Necklace_1.png in Resources */,
 				DCFD748D1B0153300054E370 /* Kraken_Movement_13.png in Resources */,
 				DCFD74B01B0153300054E370 /* Rusty_Silver_Ring_2.png in Resources */,
+				DCBCE4A91B13914E00FCF4A5 /* Whale_Flesh_Text.png in Resources */,
+				DCBCE4971B13914E00FCF4A5 /* Rusty_Copper_Ring_Text.png in Resources */,
 				DCFD75501B01D9100054E370 /* Seashell_Necklace_2.png in Resources */,
 				DCFD74D91B0153300054E370 /* Tentacle_31.png in Resources */,
 				DCFD74841B0153300054E370 /* Kraken_Boss_3.png in Resources */,
@@ -1380,6 +1518,7 @@
 				DCFD751E1B0153300054E370 /* World_1_Level_5_Text.png in Resources */,
 				DCFD74591B0153300054E370 /* Clam_Boss_Rocking_2.png in Resources */,
 				DCFD74ED1B0153300054E370 /* Watch_1.png in Resources */,
+				DCBCE4871B13914E00FCF4A5 /* Bow_Tie_Text.png in Resources */,
 				DCFD753B1B01C5D90054E370 /* Kraken_Boss_9.png in Resources */,
 				DCFD74B21B0153300054E370 /* Safety_Pillar_2.png in Resources */,
 				DCFD74D51B0153300054E370 /* Tentacle_27.png in Resources */,
@@ -1400,12 +1539,16 @@
 				DCFD750B1B0153300054E370 /* World_1_Level_16_Text.png in Resources */,
 				DCFD75271B0153300054E370 /* Zones_Text_1.png in Resources */,
 				DCFD74E11B0153300054E370 /* Tentacle_7.png in Resources */,
+				DCBCE49F1B13914E00FCF4A5 /* Shades_Text.png in Resources */,
 				DCF23E331B0BAC5C00484040 /* Afro_Seaweed_1.png in Resources */,
 				DCFD75551B01D9100054E370 /* Pearl_Snap_Ring_1.png in Resources */,
+				DCBCE4A71B13914E00FCF4A5 /* Watch_Text.png in Resources */,
 				DCFD74571B0153300054E370 /* Clam_Boss_4.png in Resources */,
 				DCF23DF91B0BA9C100484040 /* Lifejacket_1.png in Resources */,
 				DCBCE4371B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png in Resources */,
 				DCBCE4531B12EC3E00FCF4A5 /* Price_Text_1.png in Resources */,
+				DCBCE49C1B13914E00FCF4A5 /* Seashell_Necklace_Text.png in Resources */,
+				DCBCE4A81B13914E00FCF4A5 /* Water_Wing_Text.png in Resources */,
 				DCF23E271B0BABE900484040 /* Whale_Flesh_Ring_1.png in Resources */,
 				DCFD74801B0153300054E370 /* Inventory_Slot_3.png in Resources */,
 				DCFD74DB1B0153300054E370 /* Tentacle_33.png in Resources */,
@@ -1413,6 +1556,9 @@
 				DCFD74831B0153300054E370 /* Kraken_Boss_2.png in Resources */,
 				DCFD74871B0153300054E370 /* Kraken_Gets_Hurt_1.png in Resources */,
 				DCFD75541B01D9100054E370 /* Pearl_Snap_Ring_2.png in Resources */,
+				DCBCE4891B13914E00FCF4A5 /* Coral_Crown_Text.png in Resources */,
+				DCBCE48C1B13914E00FCF4A5 /* Gold_Ring_Text.png in Resources */,
+				DCBCE4831B13914E00FCF4A5 /* Barnacles_Text.png in Resources */,
 				DCFD75531B01D9100054E370 /* Seashell_Charm_Bracelet_1.png in Resources */,
 				DCFD74BF1B0153300054E370 /* Store_2.png in Resources */,
 				DCFD75171B0153300054E370 /* World_1_Level_27_Text.png in Resources */,
@@ -1428,6 +1574,8 @@
 				DCF23E2B1B0BABF400484040 /* Whats_Kraken_App_Icon_76x76.png in Resources */,
 				DCF23E2D1B0BABFC00484040 /* Visor_1.png in Resources */,
 				DCFD74C81B0153300054E370 /* Tentacle_14.png in Resources */,
+				DCBCE4911B13914E00FCF4A5 /* Monocle_Text.png in Resources */,
+				DCBCE48E1B13914E00FCF4A5 /* King_Kraken_Tentacle_Text.png in Resources */,
 				DCFD747C1B0153300054E370 /* Ink_Splat_1.png in Resources */,
 				DCFD74B31B0153300054E370 /* Safety_Pillar_3.png in Resources */,
 				DCFD75411B01C5ED0054E370 /* Sand_Castle_2.png in Resources */,
@@ -1445,10 +1593,13 @@
 				DCFD74AF1B0153300054E370 /* Rusty_Silver_Ring_1.png in Resources */,
 				DC2711251A85E11900986D2E /* Images.xcassets in Resources */,
 				DCFD74CC1B0153300054E370 /* Tentacle_19.png in Resources */,
+				DCBCE4821B13914E00FCF4A5 /* Afro_Seaweed_Text.png in Resources */,
 				DCFD75151B0153300054E370 /* World_1_Level_25_Text.png in Resources */,
 				DCFD74D31B0153300054E370 /* Tentacle_25.png in Resources */,
 				DCF23DFB1B0BA9CD00484040 /* Lifejacket_2.png in Resources */,
 				DCFD74C01B0153300054E370 /* Store_Button_1.png in Resources */,
+				DCBCE4861B13914E00FCF4A5 /* Bling_Ring_Text.png in Resources */,
+				DCBCE4841B13914E00FCF4A5 /* Beach_Ball_Fragment_Text.png in Resources */,
 				DCFD75051B0153300054E370 /* World_1_Level_10_Text.png in Resources */,
 				DCFD75031B0153300054E370 /* Whale_Boss_9.png in Resources */,
 				DCFD75201B0153300054E370 /* World_1_Level_7_Text.png in Resources */,
@@ -1458,6 +1609,7 @@
 				DCFD74E21B0153300054E370 /* Tentacle_8.png in Resources */,
 				DCBCE4551B12EC5E00FCF4A5 /* Napsack_Text_1.png in Resources */,
 				DCFD74B11B0153300054E370 /* Safety_Pillar_1.png in Resources */,
+				DCBCE4931B13914E00FCF4A5 /* Mossy_Gold_Ring_Text.png in Resources */,
 				DCFD744A1B0153300054E370 /* Beach_Ball_2.png in Resources */,
 				DCFD74761B0153300054E370 /* Fitting_Room_Text_1.png in Resources */,
 				DCBCE43B1B12EB5400FCF4A5 /* Regeneration_Symbol_1.png in Resources */,
@@ -1467,13 +1619,16 @@
 				DCFD744C1B0153300054E370 /* Beach_Ball_4.png in Resources */,
 				DCBCE4431B12EB7500FCF4A5 /* Life_Symbol_1.png in Resources */,
 				DCFD74E91B0153300054E370 /* Treasure_Chest_3.png in Resources */,
+				DCBCE4881B13914E00FCF4A5 /* Copper_Ring_Text.png in Resources */,
 				DCFD74931B0153300054E370 /* Kraken_Movement_4.png in Resources */,
+				DCBCE49B1B13914E00FCF4A5 /* Seashell_Charm_Bracelet_Text.png in Resources */,
 				DCFD753D1B01C5D90054E370 /* Kraken_Boss_11.png in Resources */,
 				DCFD74B71B0153300054E370 /* Seashell_3.png in Resources */,
 				DCFD75181B0153300054E370 /* World_1_Level_28_Text.png in Resources */,
 				DCBCE4411B12EB6B00FCF4A5 /* Sweatband_2.png in Resources */,
 				DCFD75121B0153300054E370 /* World_1_Level_22_Text.png in Resources */,
 				DCFD74DC1B0153300054E370 /* Tentacle_34.png in Resources */,
+				DCBCE4901B13914E00FCF4A5 /* Lifeguard_Whistle_Text.png in Resources */,
 				DCFD74B81B0153300054E370 /* Seashell_4.png in Resources */,
 				DCFD749C1B0153300054E370 /* Levels_Text_1.png in Resources */,
 				DCF23E0F1B0BAA0500484040 /* Whistle_2.png in Resources */,
@@ -1484,12 +1639,14 @@
 				DCFD746E1B0153300054E370 /* Crab_Claw_Cap_1.png in Resources */,
 				DCF23E081B0BAA0500484040 /* Tentacle_Swing_1.png in Resources */,
 				DCFD74A61B0153300054E370 /* Opening_Screen_1.png in Resources */,
+				DCBCE4981B13914E00FCF4A5 /* Rusty_Gold_Ring_Text.png in Resources */,
 				DC2711231A85E11900986D2E /* Main.storyboard in Resources */,
 				DCFD74F01B0153300054E370 /* Wave_2.png in Resources */,
 				DCFD74B91B0153300054E370 /* Seaweed_Mustache_1.png in Resources */,
 				DCFD74F71B0153300054E370 /* Whale_Boss_14.png in Resources */,
 				DCFD74951B0153300054E370 /* Kraken_Movement_6.png in Resources */,
 				DCF23E0B1B0BAA0500484040 /* Tentacle_Swing_4.png in Resources */,
+				DCBCE4961B13914E00FCF4A5 /* Pearl_Snap_Ring_Text.png in Resources */,
 				DCFD74891B0153300054E370 /* Kraken_Movement_1.png in Resources */,
 				DCFD754D1B01D9100054E370 /* Seashell_Charm_Bracelet_2.png in Resources */,
 				DC1F581B1A88735300B5027B /* spark.png in Resources */,
@@ -1512,6 +1669,7 @@
 				DCFD74A81B0153300054E370 /* Pearl_Necklace_2.png in Resources */,
 				DCFD74751B0153300054E370 /* Fitting_Room_Kraken_1.png in Resources */,
 				DCFD744F1B0153300054E370 /* Beach_Crab_1.png in Resources */,
+				DCBCE48D1B13914E00FCF4A5 /* Inky_Ring_Text.png in Resources */,
 				DCFD74671B0153300054E370 /* Crab_Boss_3.png in Resources */,
 				DCBCE43D1B12EB5C00FCF4A5 /* Speed_Symbol_1.png in Resources */,
 				DCFD75061B0153300054E370 /* World_1_Level_11_Text.png in Resources */,
@@ -1532,6 +1690,7 @@
 				DCFD75091B0153300054E370 /* World_1_Level_14_Text.png in Resources */,
 				DCFD75111B0153300054E370 /* World_1_Level_21_Text.png in Resources */,
 				DCFD74781B0153300054E370 /* Gold_Ring_2.png in Resources */,
+				DCBCE4991B13914E00FCF4A5 /* Rusty_Silver_Ring_Text.png in Resources */,
 				DCFD75221B0153300054E370 /* World_1_Level_9_Text.png in Resources */,
 				DCFD74DE1B0153300054E370 /* Tentacle_4.png in Resources */,
 				DCFD75001B0153300054E370 /* Whale_Boss_6.png in Resources */,
@@ -1548,6 +1707,7 @@
 				DCFD75311B01C5CC0054E370 /* Kraken_Boss_6.png in Resources */,
 				DCF23E1B1B0BAB9600484040 /* Inky_Ring_1.png in Resources */,
 				DCFD74521B0153300054E370 /* Booty_1.png in Resources */,
+				DCBCE48A1B13914E00FCF4A5 /* Crab_Claw_Cap_Text.png in Resources */,
 				DCFD74A51B0153300054E370 /* Noggin_Text_1.png in Resources */,
 				DCFD74901B0153300054E370 /* Kraken_Movement_16.png in Resources */,
 				DCBCE4471B12EB8100FCF4A5 /* Bling_Ring_1.png in Resources */,
