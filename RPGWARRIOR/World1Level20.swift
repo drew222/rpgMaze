@@ -183,7 +183,7 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
         self.timeSinceCrabAdded = self.timeSinceCrabAdded + currentTime - self.lastUpdatesTime
         
         
-        if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver) {
+        if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver && !droppedItem) {
             self.addChild(MiniCrab.crabDash(CGPointMake(xMatch, self.frame.maxY + 30), endPosition: CGPointMake(xMatch, self.frame.minY)))
             
             
@@ -223,7 +223,7 @@ class World1Level20: SKScene, SKPhysicsContactDelegate {
                     dropLoot("level1", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                     for node in self.children{
-                        if node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "crab" && node.name != "life" && node.name != "gold"{
+                        if node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "life" && node.name != "gold"{
                             node.removeFromParent()
                         }
                     }
