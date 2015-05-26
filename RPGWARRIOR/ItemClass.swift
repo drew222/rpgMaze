@@ -99,6 +99,16 @@ class ItemClass: SKSpriteNode {
         }else if picName == "Beach_Ball_Fragment_1"{
             price = 20
             return [("Life", CGFloat(1))]
+        }else if picName == "Water_Wing_1"{
+            price = 50
+            return [("Life", CGFloat(1))]
+        }else if picName == "Sweaty_Wristband_1"{
+            price = 50
+            return [("Life", CGFloat(1))]
+        }else if picName == "Bling_Ring_1"{
+            price = 50
+            return [("Life", CGFloat(50)), ("Regeneration", CGFloat(3))]
+
             
         //NOGGIN ITEMS
         }else if picName == "Crab_Claw_Cap_1"{
@@ -131,17 +141,6 @@ class ItemClass: SKSpriteNode {
         }else if picName == "Afro_Seaweed_1"{
             price = 50
             return [("Life", CGFloat(1))]
-        }else if picName == "Water_Wing_1"{
-            price = 50
-            return [("Life", CGFloat(1))]
-        }else if picName == "Sweaty_Wristband_1"{
-            price = 50
-            return [("Life", CGFloat(1))]
-        }else if picName == "Bling_Ring_1"{
-            price = 50
-            return [("Life", CGFloat(1))]
-        
-    
             
         
         //NECK ITEMS

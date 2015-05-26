@@ -48,7 +48,9 @@ class World1Level23: SKScene, SKPhysicsContactDelegate {
             CGPointMake(-20, 300),
             CGPointMake(self.frame.maxX + 20, 200),
             CGPointMake(-20, 400),
-            CGPointMake(self.frame.maxX + 20, 500)]
+            CGPointMake(self.frame.maxX + 20, 500),
+            CGPointMake(-20, 300),
+            CGPointMake(self.frame.maxX + 20, 450)]
         lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
         lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
         lifeNode!.fontColor = UIColor.redColor()

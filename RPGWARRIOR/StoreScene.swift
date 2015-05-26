@@ -265,15 +265,23 @@ class StoreScene: SKScene {
         //an item is being highlighted
         if currentItem != nil && self.childNodeWithName("buyButton") == nil{
             let buyNode = SKSpriteNode(imageNamed: "Buy_Text_1")
-            buyNode.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 40)
+            buyNode.position = CGPointMake(self.frame.midX + 120, self.frame.minY + 40)
             buyNode.setScale(0.5)
             buyNode.name = "buyButton"
             self.addChild(buyNode)
-            let priceText = SKSpriteNode(imageNamed: "Price_Text_1")
-            priceText.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 110)
-            priceText.setScale(0.5)
-            self.addChild(priceText)
-            
+            //stat symbols
+            let lifeSymbol = SKSpriteNode(imageNamed: "Life_Symbol_1")
+            lifeSymbol.setScale(0.2)
+            lifeSymbol.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 100)
+            self.addChild(lifeSymbol)
+            let speedSymbol = SKSpriteNode(imageNamed: "Speed_Symbol_1")
+            speedSymbol.setScale(0.2)
+            speedSymbol.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 70)
+            self.addChild(speedSymbol)
+            let regenerationSymbol = SKSpriteNode(imageNamed: "Regeneration_Symbol_1")
+            regenerationSymbol.setScale(0.2)
+            regenerationSymbol.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 40)
+            self.addChild(regenerationSymbol)
             
             
         }
