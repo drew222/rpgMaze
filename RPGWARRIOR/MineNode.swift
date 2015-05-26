@@ -12,10 +12,10 @@ import SpriteKit
 class MineNode: SKSpriteNode {
     
     let mineSpeed = CGFloat(300.0)
-    var isArmed = false
+    var isArmed = true
     
     class func mineAtPos(position: CGPoint) -> MineNode {
-        let mine = MineNode(imageNamed: "Seashell_3")
+        let mine = MineNode(imageNamed: "Seashell_1")
         mine.position = position
         mine.name = "Mine"
         mine.setupAnimation()
@@ -25,12 +25,14 @@ class MineNode: SKSpriteNode {
     }
     
     func setupAnimation() {
-        let textures = [SKTexture(imageNamed: "Seashell_3"),
+        let textures = [SKTexture(imageNamed: "Seashell_2"),
+            SKTexture(imageNamed: "Seashell_3"),
             SKTexture(imageNamed: "Seashell_2"),
-            SKTexture(imageNamed: "Seashell_1"),
-            SKTexture(imageNamed: "Seashell_2")]
-        let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-        let repeatAction = SKAction.repeatActionForever(animation)
+            SKTexture(imageNamed: "Seashell_1")]
+        let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.2)
+        let randomWait = SKAction.waitForDuration(0.5, withRange: 2)
+        let sequence = SKAction.sequence([randomWait, animation])
+        let repeatAction = SKAction.repeatActionForever(sequence)
         self.runAction(repeatAction)
     }
     func setupPhysicsBody() {
@@ -57,7 +59,10 @@ class MineNode: SKSpriteNode {
             //if distanceFromMine < 25{
             let theHero = self.parent!.childNodeWithName("hero")! as! HeroClass
             println("distance from bomb = \(distanceFromMine)")
-            theHero.takeDamage(3.0)
+            if self.isArmed{
+                theHero.takeDamage(3.0)
+            }
+            self.isArmed = false
             //}
         })
         let sequence = SKAction.sequence([explodeCode, damageBlock, SKAction.waitForDuration(1.0), SKAction.fadeOutWithDuration(1.0), removeBlock])

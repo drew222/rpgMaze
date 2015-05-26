@@ -23,7 +23,12 @@ class Inventory: SKScene {
     var backPackSpaces = 15
     var gold: CGFloat = 1500
     var goldNode: SKLabelNode?
-    var statLabel: SKLabelNode?
+    var statLabelLife: SKLabelNode?
+    var statLabelMovement: SKLabelNode?
+    var statLabelRegen: SKLabelNode?
+    var lifeSymbol2: SKSpriteNode?
+    var speedSymbol2: SKSpriteNode?
+    var regenerationSymbol2: SKSpriteNode?
     var weapon: ItemClass?
     var body: ItemClass?
     var feet: ItemClass?
@@ -40,7 +45,9 @@ class Inventory: SKScene {
             spaceToMove!.texture = SKTexture(imageNamed: "Inventory_Slot_1")
             spaceToMove = nil
             itemToMove = nil
-            statLabel!.text = ""
+            statLabelLife!.text = ""
+            statLabelMovement!.text = ""
+            statLabelRegen!.text = ""
             self.childNodeWithName("sellButton")?.removeFromParent()
         }
         
@@ -113,10 +120,39 @@ class Inventory: SKScene {
         backPack!.size = CGSizeMake(325,195)
         backPack!.name = "backpack"
         self.addChild(backPack!)
-        statLabel = SKLabelNode.init(text: "")
-        statLabel!.position = CGPointMake(self.frame.midX + 70, self.frame.maxY - 360)
-        resizeLabel(statLabel!)
-        self.addChild(statLabel!)
+            statLabelLife = SKLabelNode.init(text: "")
+            statLabelLife!.position = CGPointMake(self.frame.midX - 100, self.frame.minY + 260)
+            statLabelLife!.fontColor = UIColor.blueColor()
+            statLabelLife!.name = "lifeStat"
+            statLabelLife!.setScale(0.7)
+            self.addChild(statLabelLife!)
+            statLabelMovement = SKLabelNode.init(text: "")
+            statLabelMovement!.position = CGPointMake(self.frame.midX + 25, self.frame.minY + 260)
+            statLabelMovement!.fontColor = UIColor.blueColor()
+            statLabelMovement!.name = "movementStat"
+            statLabelMovement!.setScale(0.7)
+            self.addChild(statLabelMovement!)
+            statLabelRegen = SKLabelNode.init(text: "")
+            statLabelRegen!.position = CGPointMake(self.frame.midX + 150, self.frame.minY + 260)
+            statLabelRegen!.fontColor = UIColor.blueColor()
+            statLabelRegen!.name = "regenStat"
+            statLabelRegen!.setScale(0.7)
+            self.addChild(statLabelRegen!)
+            lifeSymbol2 = SKSpriteNode(imageNamed: "Life_Symbol_1")
+            lifeSymbol2!.position = CGPointMake(self.frame.midX - 125, self.frame.minY + 260)
+            lifeSymbol2!.zPosition = 2
+            lifeSymbol2!.setScale(0.2)
+            //self.addChild(lifeSymbol2)
+            speedSymbol2 = SKSpriteNode(imageNamed: "Speed_Symbol_1")
+            speedSymbol2!.position = CGPointMake(self.frame.midX, self.frame.minY + 260)
+            speedSymbol2!.zPosition = 2
+            speedSymbol2!.setScale(0.2)
+            //self.addChild(speedSymbol2)
+            regenerationSymbol2 = SKSpriteNode(imageNamed: "Regeneration_Symbol_1")
+            regenerationSymbol2!.position = CGPointMake(self.frame.midX + 125, self.frame.minY + 260)
+            regenerationSymbol2!.zPosition = 2
+            regenerationSymbol2!.setScale(0.2)
+            //self.addChild(regenerationSymbol2)
             
         let weaponLabel = SKSpriteNode(imageNamed: "Noggin_Text_1")
         weaponLabel.setScale(0.35)
@@ -331,13 +367,18 @@ class Inventory: SKScene {
         }
         spaceToMove = nil
         itemToMove = nil
-        statLabel!.text = ""
+        statLabelLife!.text = ""
+        statLabelMovement!.text = ""
+        statLabelRegen!.text = ""
+        lifeSymbol2?.removeFromParent()
+        speedSymbol2?.removeFromParent()
+        regenerationSymbol2?.removeFromParent()
         
     }
     
     func displayItem(item: ItemClass, spot: String) {
         println("got here!!!!\(spaceToMove!.item!.itemName!)")
-        if spot == "weapon" && spaceToMove!.item!.itemName! == "Sunhat_1" {
+        if spot == "weapon"{
             println("got here222@!!!!!!!")
             headDisplay!.texture = SKTexture(imageNamed: "\(item.itemName!)")
         }else if spot == "body" {
@@ -525,7 +566,21 @@ class Inventory: SKScene {
                         //self.itemToMove = space.item
                         if spaceToMove != nil{
                             spaceToMove!.color = UIColor.blueColor()
-                            statLabel!.text = itemToMove!.statString()
+                            statLabelLife!.text = "0"
+                            statLabelMovement!.text = "0"
+                            statLabelRegen!.text = "0"
+                            for tuple in itemToMove!.getStats(){
+                                if tuple.0 == "Life"{
+                                    statLabelLife!.text = "\(Int(tuple.1))"
+                                }else if tuple.0 == "Movement"{
+                                    statLabelMovement!.text = "\(Int(tuple.1))"
+                                }else if tuple.0 == "Regeneration"{
+                                    statLabelRegen!.text = "\(Int(tuple.1))"
+                                }
+                            }
+                            self.addChild(lifeSymbol2!)
+                            self.addChild(speedSymbol2!)
+                            self.addChild(regenerationSymbol2!)
                             if self.childNodeWithName("priceButton") != nil{
                                 self.childNodeWithName("priceButton")?.removeFromParent()
                             }
@@ -548,7 +603,12 @@ class Inventory: SKScene {
                             sellText.name = "sellButton"
                             self.addChild(sellText)
                         }else{
-                            statLabel!.text = ""
+                            statLabelLife!.text = ""
+                            statLabelMovement!.text = ""
+                            statLabelRegen!.text = ""
+                            lifeSymbol2?.removeFromParent()
+                            speedSymbol2?.removeFromParent()
+                            regenerationSymbol2?.removeFromParent()
                             self.childNodeWithName("sellButton")?.removeFromParent()
                             self.childNodeWithName("priceButton")?.removeFromParent()
                         }

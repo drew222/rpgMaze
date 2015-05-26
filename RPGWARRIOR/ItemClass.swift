@@ -25,13 +25,8 @@ class ItemClass: SKSpriteNode {
         return item
     }
     
-    func statString() -> String{
-        var myString = "\n"
-            for stat in itemStats!{
-                myString += ("\(stat.0): \(stat.1)")
-               
-            }
-        return myString
+    func getStats() -> [(String, CGFloat)]{
+        return itemStats!
     }
    
     

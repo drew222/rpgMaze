@@ -210,7 +210,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
         if myNum > 90{
-            let item = ItemClass.itemInSpace("Beachball_Fragment_1")
+            let item = ItemClass.itemInSpace("Beach_Ball_Fragment_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -244,7 +244,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 3
             scene.addChild(gold)
         } else {
-            let item = ItemClass.itemInSpace("Beachball_Fragment_1")
+            let item = ItemClass.itemInSpace("Beach_Ball_Fragment_1")
             item.position = position
             item.size = size
             scene.addChild(item)

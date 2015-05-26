@@ -18,7 +18,9 @@ class StoreScene: SKScene {
     var firstLoad = true
     var backPackSpaces = 15
     var goldNode: SKLabelNode?
-    var statLabel: SKLabelNode?
+    var statLabelLife: SKLabelNode?
+    var statLabelMovement: SKLabelNode?
+    var statLabelRegen: SKLabelNode?
     var currentItem: ItemClass?
     var goldCount: CGFloat = 0
     
@@ -55,12 +57,25 @@ class StoreScene: SKScene {
         self.addChild(storeTextNode)
         //shelf1.zPosition = -1
         //stats label
-        statLabel = SKLabelNode.init(text: "")
-        statLabel!.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 60)
-        statLabel!.fontColor = UIColor.blueColor()
-        statLabel!.name = "stats"
-        statLabel!.setScale(0.7)
-        self.addChild(statLabel!)
+        statLabelLife = SKLabelNode.init(text: "")
+        statLabelLife!.position = CGPointMake(self.frame.minX + 90, self.frame.minY + 100)
+        statLabelLife!.fontColor = UIColor.blueColor()
+        statLabelLife!.name = "lifeStat"
+        statLabelLife!.setScale(0.7)
+        self.addChild(statLabelLife!)
+        statLabelMovement = SKLabelNode.init(text: "")
+        statLabelMovement!.position = CGPointMake(self.frame.minX + 90, self.frame.minY + 70)
+        statLabelMovement!.fontColor = UIColor.blueColor()
+        statLabelMovement!.name = "movementStat"
+        statLabelMovement!.setScale(0.7)
+        self.addChild(statLabelMovement!)
+        statLabelRegen = SKLabelNode.init(text: "")
+        statLabelRegen!.position = CGPointMake(self.frame.minX + 90, self.frame.minY + 40)
+        statLabelRegen!.fontColor = UIColor.blueColor()
+        statLabelRegen!.name = "regenStat"
+        statLabelRegen!.setScale(0.7)
+        self.addChild(statLabelRegen!)
+        
         menu = SKSpriteNode(imageNamed: "Zones__Button_1")
         menu!.position = CGPointMake(self.frame.minX + 55, self.frame.maxY - 55)
         menu!.name = "menu"
@@ -253,8 +268,18 @@ class StoreScene: SKScene {
                 currentItem = ItemClass.itemInSpace(clickedItem((touch as! UITouch).locationInNode(self)))
                 currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
                 currentItem!.size = CGSizeMake(100, 100)
-                resizeLabel(statLabel!)
-                statLabel!.text = currentItem!.statString()
+                statLabelLife!.text = "0"
+                statLabelMovement!.text = "0"
+                statLabelRegen!.text = "0"
+                for tuple in currentItem!.getStats(){
+                    if tuple.0 == "Life"{
+                        statLabelLife!.text = "\(Int(tuple.1))"
+                    }else if tuple.0 == "Movement"{
+                        statLabelMovement!.text = "\(Int(tuple.1))"
+                    }else if tuple.0 == "Regeneration"{
+                        statLabelRegen!.text = "\(Int(tuple.1))"
+                    }
+                }
                 self.addChild(currentItem!)
                
                 
