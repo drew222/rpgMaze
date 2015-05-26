@@ -16,7 +16,7 @@ class StoreScene: SKScene {
     var itemSpaces: [ItemSpaceNode] = []
     var items: [ItemClass] = []
     var firstLoad = true
-    var backPackSpaces = 16
+    var backPackSpaces = 15
     var goldNode: SKLabelNode?
     var statLabel: SKLabelNode?
     var currentItem: ItemClass?
@@ -258,7 +258,6 @@ class StoreScene: SKScene {
                 self.addChild(currentItem!)
                
                 
-                
             }else if self.childNodeWithName("buyButton") != nil && self.childNodeWithName("buyButton")!.containsPoint((touch as! UITouch).locationInNode(self)){
                 buyItem()
             }
@@ -278,9 +277,13 @@ class StoreScene: SKScene {
             
             
         }
+        
+        
+        
         if currentItem != nil{
             if self.childNodeWithName("priceButton") != nil{
                 self.childNodeWithName("priceButton")?.removeFromParent()
+                
             }
             
             

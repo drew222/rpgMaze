@@ -20,7 +20,7 @@ class Inventory: SKScene {
     var itemToMove: ItemClass?
     var spaceToMove: ItemSpaceNode?
     var firstLoad = true
-    var backPackSpaces = 16
+    var backPackSpaces = 15
     var gold: CGFloat = 1500
     var goldNode: SKLabelNode?
     var statLabel: SKLabelNode?
@@ -52,10 +52,25 @@ class Inventory: SKScene {
         menu!.size = CGSizeMake(100, 100)
         self.addChild(menu!)
             let krakenNode = SKSpriteNode(imageNamed: "Fitting_Room_Kraken_1")
-            krakenNode.position = CGPointMake(self.frame.midX + 30, self.frame.maxY - 270)
+            krakenNode.position = CGPointMake(self.frame.minX + 170, self.frame.maxY - 230)
             krakenNode.name = "kraken"
             krakenNode.size = CGSizeMake(250, 250)
             self.addChild(krakenNode)
+            let lifeSymbol = SKSpriteNode(imageNamed: "Life_Symbol_1")
+            lifeSymbol.position = CGPointMake(self.frame.minX + 25, self.frame.maxY - 140)
+            lifeSymbol.zPosition = 2
+            lifeSymbol.setScale(0.2)
+            self.addChild(lifeSymbol)
+            let speedSymbol = SKSpriteNode(imageNamed: "Speed_Symbol_1")
+            speedSymbol.position = CGPointMake(self.frame.minX + 25, self.frame.maxY - 180)
+            speedSymbol.zPosition = 2
+            speedSymbol.setScale(0.2)
+            self.addChild(speedSymbol)
+            let regenerationSymbol = SKSpriteNode(imageNamed: "Regeneration_Symbol_1")
+            regenerationSymbol.position = CGPointMake(self.frame.minX + 25, self.frame.maxY - 220)
+            regenerationSymbol.zPosition = 2
+            regenerationSymbol.setScale(0.2)
+            self.addChild(regenerationSymbol)
             headDisplay = SKSpriteNode(imageNamed: "")
             headDisplay!.texture = nil
             headDisplay!.size = CGSizeMake(135, 80)
@@ -93,9 +108,9 @@ class Inventory: SKScene {
             storeText.name = "store"
             storeText.size = CGSizeMake(165, 60)
             self.addChild(storeText)
-            backPack = SKSpriteNode(imageNamed: "Inventory_Array_Background_1")
-        backPack!.position = CGPointMake(self.frame.maxX - 135, self.frame.minY + 135)
-        backPack!.size = CGSizeMake(260,260)
+        backPack = SKSpriteNode(imageNamed: "Inventory_Array_Background_1")
+        backPack!.position = CGPointMake(self.frame.midX, self.frame.minY + 115)
+        backPack!.size = CGSizeMake(325,195)
         backPack!.name = "backpack"
         self.addChild(backPack!)
         statLabel = SKLabelNode.init(text: "")
@@ -103,101 +118,120 @@ class Inventory: SKScene {
         resizeLabel(statLabel!)
         self.addChild(statLabel!)
             
-        let weaponLabel = SKLabelNode.init(text: "Noggin")
-        weaponLabel.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 140)
+        let weaponLabel = SKSpriteNode(imageNamed: "Noggin_Text_1")
+        weaponLabel.setScale(0.5)
+        weaponLabel.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 120)
         self.addChild(weaponLabel)
         let neckLabel = SKLabelNode.init(text: "Neck")
-            neckLabel.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 220)
+            
+            neckLabel.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 200)
             self.addChild(neckLabel)
         let bodyLabel = SKLabelNode.init(text: "Left")
-            bodyLabel.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 300)
+            
+            bodyLabel.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 280)
             self.addChild(bodyLabel)
         let feetLabel = SKLabelNode.init(text: "Right")
-        feetLabel.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 380)
+            
+        feetLabel.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 360)
         self.addChild(feetLabel)
         //create all the item spaces
+        //row 1
         let itemSpace1 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 40, backPack!.frame.maxY - 40))
+        itemSpace1.setScale(1.3)
         itemSpace1.zPosition = 1
         itemSpace1.name = "1"
         itemSpaces.append(itemSpace1)
         self.addChild(itemSpace1)
         let itemSpace2 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 100, backPack!.frame.maxY - 40))
+            itemSpace2.setScale(1.3)
         itemSpace2.zPosition = 1
-        itemSpace1.name = "2"
+        itemSpace2.name = "2"
         itemSpaces.append(itemSpace2)
         self.addChild(itemSpace2)
         let itemSpace3 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 160, backPack!.frame.maxY - 40))
+            itemSpace3.setScale(1.3)
         itemSpace3.zPosition = 1
-        itemSpace1.name = "3"
+        itemSpace3.name = "3"
         itemSpaces.append(itemSpace3)
         self.addChild(itemSpace3)
         let itemSpace4 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 220, backPack!.frame.maxY - 40))
+            itemSpace4.setScale(1.3)
         itemSpace4.zPosition = 1
-        itemSpace1.name = "4"
+        itemSpace4.name = "4"
         itemSpaces.append(itemSpace4)
         self.addChild(itemSpace4)
-        let itemSpace5 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 40, backPack!.frame.maxY - 100))
-        itemSpace5.zPosition = 1
-        itemSpace1.name = "5"
-        itemSpaces.append(itemSpace5)
-        self.addChild(itemSpace5)
-        let itemSpace6 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 100, backPack!.frame.maxY - 100))
+            let itemSpace5 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 280, backPack!.frame.maxY - 40))
+            itemSpace5.setScale(1.3)
+            itemSpace5.zPosition = 1
+            itemSpace5.name = "5"
+            itemSpaces.append(itemSpace5)
+            self.addChild(itemSpace5)
+        //row 2
+        let itemSpace6 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 40, backPack!.frame.maxY - 100))
+            itemSpace6.setScale(1.3)
         itemSpace6.zPosition = 1
-        itemSpace1.name = "6"
+        itemSpace6.name = "6"
         itemSpaces.append(itemSpace6)
         self.addChild(itemSpace6)
-        let itemSpace7 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 160, backPack!.frame.maxY - 100))
+        let itemSpace7 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 100, backPack!.frame.maxY - 100))
+            itemSpace7.setScale(1.3)
         itemSpace7.zPosition = 1
-        itemSpace1.name = "7"
+        itemSpace7.name = "7"
         itemSpaces.append(itemSpace7)
         self.addChild(itemSpace7)
-        let itemSpace8 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 220, backPack!.frame.maxY - 100))
+        let itemSpace8 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 160, backPack!.frame.maxY - 100))
+            itemSpace8.setScale(1.3)
         itemSpace8.zPosition = 1
-        itemSpace1.name = "8"
+        itemSpace8.name = "8"
         itemSpaces.append(itemSpace8)
         self.addChild(itemSpace8)
-        let itemSpace9 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 40, backPack!.frame.maxY - 160))
+        let itemSpace9 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 220, backPack!.frame.maxY - 100))
         itemSpace9.zPosition = 1
-        itemSpace1.name = "9"
+            itemSpace9.setScale(1.3)
+        itemSpace9.name = "9"
         itemSpaces.append(itemSpace9)
         self.addChild(itemSpace9)
-        let itemSpace10 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 100, backPack!.frame.maxY - 160))
-        itemSpace10.zPosition = 1
-        itemSpace1.name = "10"
-        itemSpaces.append(itemSpace10)
-        self.addChild(itemSpace10)
-        let itemSpace11 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 160, backPack!.frame.maxY - 160))
+            let itemSpace10 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 280, backPack!.frame.maxY - 100))
+            itemSpace10.zPosition = 1
+            itemSpace10.setScale(1.3)
+            itemSpace10.name = "10"
+            itemSpaces.append(itemSpace10)
+            self.addChild(itemSpace10)
+            
+        //row 3
+        let itemSpace11 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 40, backPack!.frame.maxY - 160))
+            itemSpace11.setScale(1.3)
         itemSpace11.zPosition = 1
-        itemSpace1.name = "11"
+        itemSpace11.name = "11"
         itemSpaces.append(itemSpace11)
         self.addChild(itemSpace11)
-        let itemSpace12 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 220, backPack!.frame.maxY - 160))
+        let itemSpace12 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 100, backPack!.frame.maxY - 160))
+            itemSpace12.setScale(1.3)
         itemSpace12.zPosition = 1
-        itemSpace1.name = "12"
+        itemSpace12.name = "12"
         itemSpaces.append(itemSpace12)
         self.addChild(itemSpace12)
-        let itemSpace13 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 40, backPack!.frame.maxY - 220))
+        let itemSpace13 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 160, backPack!.frame.maxY - 160))
+            itemSpace13.setScale(1.3)
         itemSpace13.zPosition = 1
-        itemSpace1.name = "13"
+        itemSpace13.name = "13"
         itemSpaces.append(itemSpace13)
         self.addChild(itemSpace13)
-        let itemSpace14 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 100, backPack!.frame.maxY - 220))
+        let itemSpace14 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 220, backPack!.frame.maxY - 160))
+            itemSpace14.setScale(1.3)
         itemSpace14.zPosition = 1
-        itemSpace1.name = "14"
+        itemSpace14.name = "14"
         itemSpaces.append(itemSpace14)
         self.addChild(itemSpace14)
-        let itemSpace15 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 160, backPack!.frame.maxY - 220))
-        itemSpace15.zPosition = 1
-        itemSpace1.name = "15"
-        itemSpaces.append(itemSpace15)
-        self.addChild(itemSpace15)
-        let itemSpace16 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 220, backPack!.frame.maxY - 220))
-        itemSpace16.zPosition = 1
-        itemSpace1.name = "16"
-        itemSpaces.append(itemSpace16)
-        self.addChild(itemSpace16)
+            let itemSpace15 = ItemSpaceNode.spaceAtPosition(CGPointMake(backPack!.frame.minX + 280, backPack!.frame.maxY - 160))
+            itemSpace15.setScale(1.3)
+            itemSpace15.zPosition = 1
+            itemSpace15.name = "15"
+            itemSpaces.append(itemSpace15)
+            self.addChild(itemSpace15)
             
-            //weaponspace holds noggin items
+            
+        //weaponspace holds noggin items
         let weaponSpace = ItemSpaceNode.spaceAtPosition(CGPointMake(weaponLabel.frame.midX, weaponLabel.frame.midY - 40))
         weaponSpace.zPosition = 1
         weaponSpace.name = "weapon"
@@ -223,12 +257,12 @@ class Inventory: SKScene {
         
         //booty coin image
         let booty = SKSpriteNode(imageNamed: "Booty_1.png")
-        booty.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 130)
+        booty.position = CGPointMake(self.frame.maxX - 40, self.frame.minY + 225)
         booty.setScale(0.08)
         self.addChild(booty)
         //gold node
         goldNode = SKLabelNode.init(text: "\(Int(gold))")
-        goldNode!.position = CGPointMake(self.frame.maxX - 80, self.frame.maxY - 140)
+        goldNode!.position = CGPointMake(self.frame.maxX - 100, self.frame.minY + 215)
         self.addChild(goldNode!)
         }
         
@@ -495,15 +529,28 @@ class Inventory: SKScene {
                             if self.childNodeWithName("priceButton") != nil{
                                 self.childNodeWithName("priceButton")?.removeFromParent()
                             }
-                            let sellNode = SKLabelNode.init(text: "Sell: \(round(itemToMove!.price! / 5))")
-                            sellNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 400)
+                            let sellNode = SKLabelNode.init(text: "\(round(itemToMove!.price! / 5))")
+                            sellNode.position = CGPointMake(self.frame.minX + 60, self.frame.minY + 215)
                             sellNode.fontSize = 30
-                            sellNode.name = "sellButton"
+                            //sellNode.name = "sellButton"
                             sellNode.fontColor = UIColor.blueColor()
                             self.addChild(sellNode)
+                            
+                            //booty coin image
+                            let booty = SKSpriteNode(imageNamed: "Booty_1.png")
+                            booty.position = CGPointMake(self.frame.minX + 120, self.frame.minY + 225)
+                            booty.setScale(0.08)
+                            self.addChild(booty)
+                            //sell text
+                            let sellText = SKSpriteNode(imageNamed: "Sell_Text_1.png")
+                            sellText.position = CGPointMake(self.frame.midX, self.frame.minY + 225)
+                            sellText.setScale(0.4)
+                            sellText.name = "sellButton"
+                            self.addChild(sellText)
                         }else{
                             statLabel!.text = ""
                             self.childNodeWithName("sellButton")?.removeFromParent()
+                            self.childNodeWithName("priceButton")?.removeFromParent()
                         }
                     }//else{
                         //space.wasClicked = false
