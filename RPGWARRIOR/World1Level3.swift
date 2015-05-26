@@ -59,42 +59,67 @@ class World1Level3: SKScene, SKPhysicsContactDelegate {
         maxLife = theHero!.life!
         //********************
         
+        if isPlus {
             //add bot horizontal row
             for (var i = 20; i < Int(self.frame.maxX - 50); i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i),  100)))
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i),  140)))
             }
             //add second row
-            for (var i = Int(self.frame.maxX - 20); i > 50; i -= 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), 180)))
+            for (var i = Int(self.frame.maxX - 20); i > 90; i -= 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), 240)))
             }
             //add top row
-            for (var i = 20; i < Int(self.frame.maxX - 50); i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 100)))
+            for (var i = 20; i < Int(self.frame.maxX - 90); i += 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), 580)))
             }
             //top right column
-            for (var i = Int(self.frame.maxY) - 135; i > 260; i -= 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 75, CGFloat(i))))
+            for (var i = Int(self.frame.maxY) - 200; i > 300; i -= 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 115, CGFloat(i))))
             }
             //bot left column
-            for (var i = 220; i < Int(self.frame.maxY) - 180; i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(75, CGFloat(i))))
+            for (var i = 240; i < Int(self.frame.maxY) - 220; i += 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(115, CGFloat(i))))
             }
             //middle top horizontal row
-            for (var i = 85; i < Int(self.frame.maxX - 155); i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 165)))
+            for (var i = 150; i < Int(self.frame.maxX - 155); i += 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), 480)))
             }
             //third row
-            for (var i = Int(self.frame.maxX - 85); i > 155; i -= 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), 250)))
+            for (var i = Int(self.frame.maxX - 150
+                ); i > 155; i -= 40){
+                    self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), 335)))
             }
-            //mid right column
-            for (var i = Int(self.frame.maxY) - 200; i > 310; i -= 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 150, CGFloat(i))))
+
+        } else {
+            //add bot horizontal row
+            for (var i = 20; i < Int(self.frame.maxX - 50); i += 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i),  140)))
             }
-            //mid left column
-            for (var i = 290; i < Int(self.frame.maxY) - 220; i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(150, CGFloat(i))))
-        
+            //add second row
+            for (var i = Int(self.frame.maxX - 20); i > 90; i -= 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), 240)))
+            }
+            //add top row
+            for (var i = 20; i < Int(self.frame.maxX - 90); i += 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), 540)))
+            }
+            //top right column
+            for (var i = Int(self.frame.maxY) - 160; i > 340; i -= 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 115, CGFloat(i))))
+            }
+            //bot left column
+            for (var i = 280; i < Int(self.frame.maxY) - 220; i += 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(115, CGFloat(i))))
+            }
+            //middle top horizontal row
+            for (var i = 150; i < Int(self.frame.maxX - 155); i += 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), 440)))
+            }
+            //third row
+            for (var i = Int(self.frame.maxX - 150
+                ); i > 155; i -= 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), 345)))
+            }
         }
         
     }

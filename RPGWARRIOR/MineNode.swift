@@ -60,7 +60,7 @@ class MineNode: SKSpriteNode {
             theHero.takeDamage(3.0)
             //}
         })
-        let sequence = SKAction.sequence([explodeCode, damageBlock, SKAction.waitForDuration(1.0),  removeBlock])
+        let sequence = SKAction.sequence([explodeCode, damageBlock, SKAction.waitForDuration(1.0), SKAction.fadeOutWithDuration(1.0), removeBlock])
         self.runAction(sequence)
         
     }

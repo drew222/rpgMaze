@@ -52,7 +52,7 @@ class Inventory: SKScene {
         menu!.size = CGSizeMake(100, 100)
         self.addChild(menu!)
             let krakenNode = SKSpriteNode(imageNamed: "Fitting_Room_Kraken_1")
-            krakenNode.position = CGPointMake(self.frame.minX + 170, self.frame.maxY - 230)
+            krakenNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 230)
             krakenNode.name = "kraken"
             krakenNode.size = CGSizeMake(250, 250)
             self.addChild(krakenNode)
@@ -119,20 +119,20 @@ class Inventory: SKScene {
         self.addChild(statLabel!)
             
         let weaponLabel = SKSpriteNode(imageNamed: "Noggin_Text_1")
-        weaponLabel.setScale(0.5)
-        weaponLabel.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 120)
+        weaponLabel.setScale(0.35)
+        weaponLabel.position = CGPointMake(self.frame.maxX - 40, self.frame.maxY - 120)
         self.addChild(weaponLabel)
-        let neckLabel = SKLabelNode.init(text: "Neck")
-            
-            neckLabel.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 200)
+        let neckLabel = SKSpriteNode(imageNamed: "Neck_Text_1")
+            neckLabel.setScale(0.35)
+            neckLabel.position = CGPointMake(self.frame.maxX - 40, self.frame.maxY - 195)
             self.addChild(neckLabel)
-        let bodyLabel = SKLabelNode.init(text: "Left")
-            
-            bodyLabel.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 280)
+        let bodyLabel = SKSpriteNode(imageNamed: "Left_Text_1")
+            bodyLabel.setScale(0.35)
+            bodyLabel.position = CGPointMake(self.frame.minX + 40, self.frame.maxY - 275)
             self.addChild(bodyLabel)
-        let feetLabel = SKLabelNode.init(text: "Right")
-            
-        feetLabel.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 360)
+        let feetLabel = SKSpriteNode(imageNamed: "Right_Text_1")
+            feetLabel.setScale(0.35)
+        feetLabel.position = CGPointMake(self.frame.maxX - 40, self.frame.maxY - 275)
         self.addChild(feetLabel)
         //create all the item spaces
         //row 1
@@ -337,7 +337,7 @@ class Inventory: SKScene {
     
     func displayItem(item: ItemClass, spot: String) {
         println("got here!!!!\(spaceToMove!.item!.itemName!)")
-        if spot == "weapon" {
+        if spot == "weapon" && spaceToMove!.item!.itemName! == "Sunhat_1" {
             println("got here222@!!!!!!!")
             headDisplay!.texture = SKTexture(imageNamed: "\(item.itemName!)")
         }else if spot == "body" {
