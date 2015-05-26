@@ -42,22 +42,15 @@ class MineNode: SKSpriteNode {
     }
     func explode(position: CGPoint){
         //var liteAttack: SKEmitterNode?
-        let explodeCode = SKAction.runBlock({//let litePath = NSBundle.mainBundle().pathForResource("LightParticle", ofType: "sks")
-            //liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as SKEmitterNode)
-            //liteAttack!.position = position
-            //liteAttack!.setScale(0.5)
-            //if (self.parent! as? SKScene != nil){
-                //self.parent!.addChild(liteAttack!)
-            //}
-            let textures: [SKTexture] = [SKTexture(imageNamed:"Seashell_1")]
-            let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-            let repeat = SKAction.repeatAction(animation, count: 1)
-            self.runAction(repeat)
+        let explodeCode = SKAction.runBlock({
+            let textures: [SKTexture] = [SKTexture(imageNamed:"Seashell_4")]
+            let animation = SKAction.animateWithTextures(textures, timePerFrame: 3.0)
+            self.runAction(animation)
             //self.removeActionForKey("fire")
             //self.texture = nil
         })
         
-        let removeBlock = SKAction.runBlock({//liteAttack!.removeFromParent()
+        let removeBlock = SKAction.runBlock({
             self.removeFromParent()})
         let damageBlock = SKAction.runBlock({
             let distanceFromMine = distanceBetween(self.parent!.childNodeWithName("hero")!.position, self.position)
@@ -67,7 +60,7 @@ class MineNode: SKSpriteNode {
             theHero.takeDamage(3.0)
             //}
         })
-        let sequence = SKAction.sequence([explodeCode, damageBlock, SKAction.waitForDuration(0.3), removeBlock])
+        let sequence = SKAction.sequence([explodeCode, damageBlock, SKAction.waitForDuration(1.0),  removeBlock])
         self.runAction(sequence)
         
     }
