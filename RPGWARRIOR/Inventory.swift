@@ -390,7 +390,15 @@ class Inventory: SKScene {
             itemName = itemName.stringByReplacingOccurrencesOfString("1", withString: "2", options: NSStringCompareOptions.LiteralSearch, range: nil)
             rightDisplay!.texture = SKTexture(imageNamed: "\(itemName)")
         }else {
-            neckDisplay!.texture = SKTexture(imageNamed: "\(item.itemName!)")
+            var itemName = item.itemName!
+            itemName = itemName.stringByReplacingOccurrencesOfString("1", withString: "2", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            //ZACH
+            if itemName == "Bow_Tie_2" {
+                itemName = "Bow_Tie_1"
+                neckDisplay!.size = CGSizeMake(200, 50)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            }
+            neckDisplay!.texture = SKTexture(imageNamed: "\(itemName)")
         }
     }
     
