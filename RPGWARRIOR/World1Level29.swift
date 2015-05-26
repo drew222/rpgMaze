@@ -58,86 +58,58 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
         self.addChild(background)
         theHero!.updateStats()
         //crabs
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 290, 100), endPosition: CGPointMake(self.frame.minX + 240, 150)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 190, 200), endPosition: CGPointMake(self.frame.minX + 140, 150)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 190, 300), endPosition: CGPointMake(self.frame.minX + 240, 250)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 290, 200), endPosition: CGPointMake(self.frame.minX + 340, 150)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 90, 200), endPosition: CGPointMake(self.frame.minX + 140, 250)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX - 10, 100), endPosition: CGPointMake(self.frame.minX + 40, 150)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 215, 375), endPosition: CGPointMake(self.frame.minX + 290, 300)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 165, 375), endPosition: CGPointMake(self.frame.minX + 90, 300)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX - 10, 200), endPosition: CGPointMake(self.frame.minX + 40, 250)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 340, 450), endPosition: CGPointMake(self.frame.minX + 290, 500)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 40, 450), endPosition: CGPointMake(self.frame.minX + 90, 500)))
+        //inside square
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 100, self.frame.midY + 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 100, self.frame.midY - 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 100, self.frame.midY - 100), endPosition: CGPointMake(self.frame.midX + 100, self.frame.midY - 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 100, self.frame.midY - 100), endPosition: CGPointMake(self.frame.midX + 100, self.frame.midY + 100)))
+        //outside square
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 150, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 150, self.frame.midY + 150)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 150, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 150, self.frame.midY - 150)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 150, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 150, self.frame.midY - 150)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 150, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 150, self.frame.midY + 150)))
         
         
         
         //shells i = y, k = x
+        //inside square
+        //right wall
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY - 30)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY - 60)))
+        //left wall
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY + 30)))
+        //bottom wall
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 60)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 30, self.frame.midY - 60)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 90, self.frame.midY - 60)))
+    
+        //top wall
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 60)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 30, self.frame.midY + 60)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY + 60)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 90, self.frame.midY + 60)))
         
-        //row 1
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 40, 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 140, 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 240, 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, 100)))
+        //top mid column
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 90)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 180)))
+        //bottom mid column
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 90)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 150)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 180)))
         
-        //row 2
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 90, 150)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 190, 150)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 290, 150)))
-        
-        //row 3
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 40, 200)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 140, 200)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 240, 200)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, 200)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 440, 200)))
-        
-        //row 4
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 90, 250)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 190, 250)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 290, 250)))
-        
-        //row 5
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 40, 300)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 140, 300)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 240, 300)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, 300)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 440, 300)))
-        
-        //row 6
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 90, 350)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 190, 350)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 290, 350)))
-        
-        //row 7
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 40, 400)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 140, 400)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 240, 400)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, 400)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 440, 400)))
-        
-        //row 8
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 90, 450)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 190, 450)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 290, 450)))
-        
-        //row 9
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 40, 500)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 140, 500)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 240, 500)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 340, 500)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 440, 500)))
-        
-        //row 10
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 90, 550)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 190, 550)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 290, 550)))
-        
-        //misc shells
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 265, 175)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 115, 175)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 165, 525)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 215, 525)))
+        //bottom big wall
+        for (var i = 20; i < Int(self.frame.maxX - 80); i += 30){
+            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i),  self.frame.midY - 205)))
+        }
+        //top big wall
+        for (var i = 90; i < Int(self.frame.maxX); i += 30){
+            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i),  self.frame.midY + 205)))
+        }
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -201,8 +173,8 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
         
         
         if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver) {
-            self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX + 390, 300), endPosition: CGPointMake(self.frame.minX - 10, 700)))
-            self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX - 10, 300), endPosition: CGPointMake(self.frame.minX + 390, 700)))
+            //self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX + 390, 300), endPosition: CGPointMake(self.frame.minX - 10, 700)))
+            //self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX - 10, 300), endPosition: CGPointMake(self.frame.minX + 390, 700)))
             
             
             
