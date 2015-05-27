@@ -13,7 +13,7 @@ import SpriteKit
 class WaveNode: SKSpriteNode {
     
     //create wave at point with size
-    class func waveAtPosition(position: CGPoint, length: CGFloat, distance: CGFloat) -> WaveNode{
+    class func waveAtPosition(position: CGPoint, length: CGFloat, distance: CGFloat, speed: Int) -> WaveNode{
         let wave = WaveNode(imageNamed: "Wave_1")
         wave.position = position
         wave.name = "wave"
@@ -37,7 +37,7 @@ class WaveNode: SKSpriteNode {
             xPosition = position.x - distance
         }
         //WAVESPEED IS 120***
-        let time = NSTimeInterval(distance / CGFloat(150))
+        var time = NSTimeInterval(distance / CGFloat(speed))
         let moveToAction = SKAction.moveTo(CGPointMake(xPosition, position.y), duration: time)
         let codeBlock = SKAction.runBlock({wave.removeFromParent()})
         let sequence = SKAction.sequence([moveToAction, codeBlock])

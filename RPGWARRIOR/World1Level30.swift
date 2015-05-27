@@ -23,16 +23,25 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var droppedItem = false
     //REGEN CODE******
     var lastHeal: Double = 0.0
-    let healSpeed = 35.0
+    let healSpeed = 5.0
     var lifeNode: SKLabelNode?
     var maxLife: CGFloat = 0.0
     //*****************
-    let krakenAttackSpeed = 5.0
-    let krakenAttackSpeedSpike = 1.5
+    var krakenAttackSpeed = 5.0
+    var krakenAttackSpeedSpike = 10.0
+    var whaleAttackSpeedWave = 20.0
+    var phase = 1
+    var lastWaterWave = 0.0
+    var spikeDamage = CGFloat(3)
+    var waterWaveDamage = CGFloat(3)
+    var oilWaveDamage = CGFloat(5)
+    var krillDamage = CGFloat(1)
+    var crabDamage = CGFloat(2)
     
     
     var theKraken: KrakenBoss?
     var theHero: HeroClass?
+    var theWhale: WhaleBoss?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -44,9 +53,12 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         lifeNode!.fontColor = UIColor.redColor()
         lifeNode!.fontSize = 20
         self.addChild(lifeNode!)
-        theKraken = KrakenBoss.makeKraken(CGPointMake(self.frame.midX, self.frame.maxY - 50))
+        theKraken = KrakenBoss.makeKraken(CGPointMake(self.frame.midX, self.frame.maxY + 200))
         theKraken!.size = CGSizeMake(150, 120)
         self.addChild(theKraken!)
+        theWhale = WhaleBoss.makeWhale(CGPointMake(self.frame.midX, self.frame.maxY + 200))
+        theWhale!.size = CGSizeMake(150, 120)
+        self.addChild(theWhale!)
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
         //ourHero.constraints = [distanceConstraint]
@@ -75,14 +87,25 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         }
         
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                theHero!.takeDamage(3)
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySpike.rawValue){
+                theHero!.takeDamage(spikeDamage)
+        }
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
+                theHero!.takeDamage(crabDamage)
+        }
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryKrill.rawValue){
+                theHero!.takeDamage(krillDamage)
         }
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
-                theHero!.takeDamage(3)
-                //println("died by tentalce")
+                if (secondBody.node as? WaveNode != nil){
+                    theHero!.takeDamage(waterWaveDamage)
+                }else{
+                    theHero!.takeDamage(oilWaveDamage)
+                }
         }
         
         
@@ -97,30 +120,50 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    
+    func updateLevel() {
+        
+    }
+    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
-            
+            self.lastWaterWave = currentTime
+            self.lastTentacle = currentTime
+            self.lastWave = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
-        if currentTime - lastWave  > krakenAttackSpeed * 1.15{
+        if currentTime - lastWave  > 45{
             for node in self.children{
                 if let aNode = node as? SKSpriteNode{
-                    if aNode.name == "safeSpot1" || aNode.name == "safeSpot2"{
+                    if aNode.name == "safeSpot1" || aNode.name == "safeSpot2" || aNode.name == "crab" || aNode.name == "krill" || aNode.name == "wave"{
                         aNode.removeFromParent()
                     }
                 }
             }
             self.lastWave = currentTime
             theKraken!.createSafeAndWave()
+            phase += 1
+            updateLevel()
         }
         
         if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver{
             self.lastTentacle = currentTime
             theKraken!.throwTentacle()
+        }
+        
+        if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver{
+            self.lastWaterWave = currentTime
+            let yValue = randomWithMin(Int(self.frame.minY + 30), Int(self.frame.maxY - 30))
+            let xBool = randomWithMin(0, 10)
+            var xValue = self.frame.maxX + 20
+            if xBool < 5 {
+                xValue = -20
+            }
+            theWhale!.throwWave(CGPointMake(xValue, CGFloat(yValue)))
         }
         
         

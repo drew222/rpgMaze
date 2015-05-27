@@ -84,9 +84,13 @@ class WhaleBoss: SKSpriteNode {
         self.runAction(finalSequence)
         var lengthOfTop = self.parent!.frame.maxY - gapPosition.y + 25
         var lengthOfBot = gapPosition.y - 25
-        
-        self.parent!.addChild(WaveNode.waveAtPosition(CGPointMake(gapPosition.x, gapPosition.y + (lengthOfTop)/2), length: lengthOfTop, distance: self.parent!.frame.maxX + 50))
-        self.parent!.addChild(WaveNode.waveAtPosition(CGPointMake(gapPosition.x, lengthOfBot/2), length: lengthOfBot, distance: self.parent!.frame.maxX + 50))
+        var theSpeed = 150
+        if (self.parent as? World1Level30 != nil) {
+            let extraSpeed = (self.parent as! World1Level30).phase * 2
+            theSpeed = 80 + extraSpeed
+        }
+        self.parent!.addChild(WaveNode.waveAtPosition(CGPointMake(gapPosition.x, gapPosition.y + (lengthOfTop)/2), length: lengthOfTop, distance: self.parent!.frame.maxX + 50, speed: theSpeed))
+        self.parent!.addChild(WaveNode.waveAtPosition(CGPointMake(gapPosition.x, lengthOfBot/2), length: lengthOfBot, distance: self.parent!.frame.maxX + 50, speed: theSpeed))
     }
     
     func shootKrill(){
