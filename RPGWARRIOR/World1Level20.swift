@@ -18,15 +18,21 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
     var levelOver = false
     let levelName = "world1level20"
     var theHero: HeroClass?
-    var bombthrower: BomberClass?
+    var theBomber: BomberClass?
     var droppedItem = false
     //REGEN CODE******
     var lastHeal: Double = 0.0
     let healSpeed = 5.0
-    var lifeNode: SKLabelNode?
     var maxLife: CGFloat = 0.0
     //*****************
     let bomberAttackSpeed = 1.5
+    
+    //Ink / Life / Chest Changes*****
+    var inkSplatted = false
+    var newLifeNode: SKSpriteNode?
+    var clickedChest = false
+    var droppedChest = false
+    //*******************************
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -41,18 +47,27 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
         theHero!.setScale(0.6)
         theHero!.name = "hero"
         self.addChild(theHero!)
-        lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
-        lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
-        lifeNode!.name = "life"
-        lifeNode!.fontColor = UIColor.redColor()
-        lifeNode!.fontSize = 20
-        self.addChild(lifeNode!)
-        bombthrower = BomberClass.makeBomber(CGPointMake(self.frame.midX, self.frame.maxY - 50))
-        self.addChild(bombthrower!)
+        theBomber = BomberClass.makeBomber(CGPointMake(self.frame.midX, self.frame.maxY - 50))
+        self.addChild(theBomber!)
         theHero!.updateStats()
         //*****REGENE CODE****
         maxLife = theHero!.life!
         //********************
+        
+        //Ink / Life / Chest Changes*****
+        newLifeNode = SKSpriteNode(imageNamed: "World_1_Level_\(Int(theHero!.life!))_Text")
+        newLifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
+        newLifeNode!.size = CGSizeMake(10, 10)
+        newLifeNode!.name = "lifeNumber"
+        newLifeNode!.zPosition = 3
+        self.addChild(newLifeNode!)
+        
+        let lifeHeart = SKSpriteNode(imageNamed: "Life_Symbol_1")
+        lifeHeart.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
+        lifeHeart.name = "lifeheart"
+        lifeHeart.setScale(0.15)
+        self.addChild(lifeHeart)
+        //************************************
         
         //lower strafing crabs
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 500, self.frame.midY - 100)))
@@ -165,9 +180,26 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        let aHero = self.childNodeWithName("hero") as! HeroClass
+        let aHero = self.childNodeWithName("hero") as? HeroClass
         for touch in touches{
-            aHero.moveHelper((touch as! UITouch).locationInNode(self))
+            if !inkSplatted{
+                aHero!.moveHelper((touch as! UITouch).locationInNode(self))
+            }else{
+                if self.childNodeWithName("yesText")!.containsPoint((touch as! UITouch).locationInNode(self)){
+                    let newLevel1 = World1Level20(size: self.frame.size)
+                    newLevel1.userData = NSMutableDictionary()
+                    newLevel1.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
+                    newLevel1.userData?.setObject(self.userData?.objectForKey("menu") as! MainMenuScene, forKey: "menu")
+                    //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                    let skTransition = SKTransition.fadeWithDuration(1.0)
+                    self.view?.presentScene(newLevel1, transition: skTransition)
+                    
+                }else if self.childNodeWithName("noText")!.containsPoint((touch as! UITouch).locationInNode(self)){
+                    let skTransition = SKTransition.fadeWithDuration(1.0)
+                    
+                    self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
+                }
+            }
         }
     }
     
@@ -208,30 +240,58 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
             }
         }
         self.lastUpdatesTime = currentTime
-        lifeNode!.text = "\(Int(floor(theHero!.life!)))"
-        //***************
-        
-        //win condition
-        //check for win condition
-        if (bombthrower!.isDead || theHero!.life <= 0) && !levelOver{
+        newLifeNode!.texture = SKTexture(imageNamed: "World_1_Level_\(Int(theHero!.life!))_Text")
+        if (theBomber!.isDead || theHero!.life <= 0) && !levelOver{
             
             if (self.childNodeWithName("gold") == nil && self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
                 
-                let skTransition = SKTransition.fadeWithDuration(1.0)
-                
-                self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
+                //INK SPLAT CODE
+                if theHero!.life <= 0 {
+                    let inkSplat = SKSpriteNode(imageNamed: "Ink_Splat_1")
+                    for node in self.children{
+                        if (node as? SKSpriteNode != nil) && node.name != "background"{
+                            node.removeFromParent()
+                        }
+                    }
+                    inkSplat.position = CGPointMake(self.frame.midX, self.frame.midY)
+                    inkSplat.size = CGSizeMake(50, 50)
+                    self.addChild(inkSplat)
+                    let stretchAction = SKAction.scaleXBy(7, y: 7, duration: 0.4)
+                    let codeBlock = SKAction.runBlock({
+                        let yesText = SKSpriteNode(imageNamed: "Yes_Text_1")
+                        let noText = SKSpriteNode(imageNamed: "No_Text_1")
+                        yesText.size = CGSizeMake(75, 40)
+                        noText.size = CGSizeMake(75, 40)
+                        yesText.position = CGPointMake(self.frame.midX - 60, self.frame.midY - 30)
+                        noText.position = CGPointMake(self.frame.midX + 60, self.frame.midY - 30)
+                        yesText.name = "yesText"
+                        noText.name = "noText"
+                        self.addChild(yesText)
+                        self.addChild(noText)
+                    })
+                    let sequence = SKAction.sequence([stretchAction, codeBlock])
+                    inkSplat.runAction(sequence)
+                    inkSplatted = true
+                }else{
+                    let skTransition = SKTransition.fadeWithDuration(1.0)
+                    
+                    self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
+                }
                 
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil){
-                if bombthrower!.isDead{
+                if theBomber!.isDead && droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
                     dropLoot("level20", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
+                }else if theBomber!.isDead && !droppedChest {
                     for node in self.children{
-                        if node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "life" && node.name != "gold"{
+                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "life" && node.name != "gold" && node.name != "chest"{
                             node.removeFromParent()
                         }
                     }
+                    self.addChild(TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY)))
+                    droppedChest = true
                 }
             }
         }
