@@ -273,6 +273,13 @@ class StoreScene: SKScene {
                 currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
                 currentItem!.setScale(0.25)
                 
+                //ZACH ITEMS HERE@@@
+                if currentItem?.itemName == "Whistle_1" {
+                    currentItem!.size == CGSizeMake(200, 200)
+                }else{
+                    currentItem!.size == CGSizeMake(100, 100)
+                }
+                
                 statLabelLife!.text = "0"
                 statLabelMovement!.text = "0"
                 statLabelRegen!.text = "0"
