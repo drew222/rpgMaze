@@ -17,6 +17,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var lastUpdatesTime = 0.0
     var lastTentacle = 0.0
     var lastWave = 0.0
+    var lastCrab = 0.0
     
     var levelOver = false
     let levelName = "world1level30"
@@ -30,6 +31,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var krakenAttackSpeed = 5.0
     var krakenAttackSpeedSpike = 10.0
     var whaleAttackSpeedWave = 20.0
+    var crabSpawnSpeed = 3.0
     var phase = 1
     var lastWaterWave = 0.0
     var spikeDamage = CGFloat(3)
@@ -164,6 +166,15 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 xValue = -20
             }
             theWhale!.throwWave(CGPointMake(xValue, CGFloat(yValue)))
+        }
+        
+        
+        if (currentTime - lastCrab > crabSpawnSpeed && !self.levelOver) {
+            var xMatch = CGFloat(randomWithMin(Int(self.frame.minX + 80), Int(self.frame.maxX - 80)))
+            self.addChild(MiniCrab.crabDash(CGPointMake(xMatch, self.frame.maxY + 30), endPosition: CGPointMake(xMatch, self.frame.minY)))
+            
+            
+            self.lastCrab = currentTime
         }
         
         

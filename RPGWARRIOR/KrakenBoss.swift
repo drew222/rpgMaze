@@ -53,7 +53,7 @@ class KrakenBoss: SKSpriteNode {
     }
     
     func setupWavePhysicsBody(node: SKSpriteNode) {
-        node.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.width * 0.96, self.frame.height * 0.8))
+        node.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.width * 0.96, self.frame.height * 0.6))
         node.physicsBody?.affectedByGravity = false
         node.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryWave.rawValue
         node.physicsBody?.collisionBitMask = 0
