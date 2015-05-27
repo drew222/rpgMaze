@@ -157,22 +157,25 @@ class Inventory: SKScene {
             regenerationSymbol2!.setScale(0.2)
             //self.addChild(regenerationSymbol2)
             statLabelLife2 = SKLabelNode.init(text: "0")
-            statLabelLife2!.position = CGPointMake(self.frame.minX + 80, self.frame.maxY - 140)
-            statLabelLife2!.fontColor = UIColor.blueColor()
+            statLabelLife2!.position = CGPointMake(self.frame.minX + 60, self.frame.maxY - 150)
+            statLabelLife2!.fontName = "ChalkboardSE-Bold"
+            statLabelLife2!.fontSize = 25
+            statLabelLife2!.fontColor = UIColor.blackColor()
             statLabelLife2!.name = "lifeStat"
-            statLabelLife2!.setScale(0.7)
             self.addChild(statLabelLife2!)
             statLabelMovement2 = SKLabelNode.init(text: "0")
-            statLabelMovement2!.position = CGPointMake(self.frame.minX + 80, self.frame.maxY - 180)
-            statLabelMovement2!.fontColor = UIColor.blueColor()
+            statLabelMovement2!.position = CGPointMake(self.frame.minX + 60, self.frame.maxY - 190)
+            statLabelMovement2!.fontName = "ChalkboardSE-Bold"
+            statLabelMovement2!.fontSize = 25
+            statLabelMovement2!.fontColor = UIColor.blackColor()
             statLabelMovement2!.name = "movementStat"
-            statLabelMovement2!.setScale(0.7)
             self.addChild(statLabelMovement2!)
             statLabelRegen2 = SKLabelNode.init(text: "0")
-            statLabelRegen2!.position = CGPointMake(self.frame.minX + 80, self.frame.maxY - 220)
-            statLabelRegen2!.fontColor = UIColor.blueColor()
+            statLabelRegen2!.position = CGPointMake(self.frame.minX + 60, self.frame.maxY - 230)
+            statLabelRegen2!.fontName = "ChalkboardSE-Bold"
+            statLabelRegen2!.fontSize = 25
+            statLabelRegen2!.fontColor = UIColor.blackColor()
             statLabelRegen2!.name = "regenStat"
-            statLabelRegen2!.setScale(0.7)
             self.addChild(statLabelRegen2!)
             
         let weaponLabel = SKSpriteNode(imageNamed: "Noggin_Text_1")
@@ -314,19 +317,22 @@ class Inventory: SKScene {
         
         //booty coin image
         let booty = SKSpriteNode(imageNamed: "Booty_1.png")
-        booty.position = CGPointMake(self.frame.maxX - 40, self.frame.minY + 225)
+        booty.position = CGPointMake(self.frame.maxX - 40, self.frame.minY + 230)
         booty.setScale(0.08)
         self.addChild(booty)
         //gold node
         goldNode = SKLabelNode.init(text: "\(Int(gold))")
-        goldNode!.position = CGPointMake(self.frame.maxX - 100, self.frame.minY + 215)
+        goldNode!.fontName = "ChalkboardSE-Bold"
+        goldNode!.fontSize = 30
+        goldNode!.fontColor = UIColor.blackColor()
+        goldNode!.position = CGPointMake(self.frame.maxX - 100, self.frame.minY + 220)
         self.addChild(goldNode!)
         }
         
         updateStats()
         
         goldNode!.text = "\(Int(gold))"
-        goldNode!.fontColor = UIColor.yellowColor()
+        goldNode!.fontColor = UIColor.blackColor()
         
         self.populateBags()
         if spaceToMove != nil{
@@ -796,7 +802,7 @@ class Inventory: SKScene {
                         //space.wasClicked = true
                         //self.itemToMove = space.item
                         if spaceToMove != nil{
-                            spaceToMove!.color = UIColor.blueColor()
+                            spaceToMove!.color = UIColor.blackColor()
                             statLabelLife!.text = "0"
                             statLabelMovement!.text = "0"
                             statLabelRegen!.text = "0"
@@ -817,9 +823,12 @@ class Inventory: SKScene {
                             }
                             let sellNode = SKLabelNode.init(text: "\(round(itemToMove!.price! / 5))")
                             sellNode.position = CGPointMake(self.frame.minX + 60, self.frame.minY + 215)
+                            
+                            //sellNode.position = CGPointMake(self.frame.midX - 110, self.frame.minY + 27)
+                            sellNode.fontName = "ChalkboardSE-Bold"
                             sellNode.fontSize = 30
+                            sellNode.fontColor = UIColor.blackColor()
                             sellNode.name = "priceButton"
-                            sellNode.fontColor = UIColor.blueColor()
                             self.addChild(sellNode)
                             
                             //booty coin image
