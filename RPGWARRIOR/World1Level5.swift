@@ -79,18 +79,7 @@ class World1Level5: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        //HERO VS FIRE
-        // if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-        //   secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
-        //       let aHero = self.childNodeWithName("hero") as HeroClass
-        //      aHero.takeDamage(1)
-        //}
-        //HERO VS WIZARD
-        //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-        //secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWizard.rawValue){
-        //let aHero = self.childNodeWithName("hero") as HeroClass
-        //aHero.attack()
-        //}
+       
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {

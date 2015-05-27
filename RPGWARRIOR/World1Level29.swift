@@ -16,7 +16,7 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
-    var lastFireball: Double = 0.0
+    var lastBomb: Double = 0.0
     var levelOver = false
     let levelName = "world1level29"
     var droppedItem = false
@@ -27,7 +27,7 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
     var maxLife: CGFloat = 0.0
     //*****************
     
-    let wizardAttackSpeed = 1.0
+    let bomberAttackSpeed = 9.0
     
     var theBomber: BomberClass?
     var theHero: HeroClass?
@@ -132,12 +132,7 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
                 let mine = secondBody.node as? MineNode
                 mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
         }
-        //HERO VS WIZARD
-        //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-        //secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWizard.rawValue){
-        //let aHero = self.childNodeWithName("hero") as HeroClass
-        //aHero.attack()
-        //}
+        
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -163,23 +158,11 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
-            self.lastFireball = currentTime
+            self.lastBomb = currentTime
         }
-        
-        
-        //CRAB STAMPEDE
-        
-        self.timeSinceCrabAdded = self.timeSinceCrabAdded + currentTime - self.lastUpdatesTime
-        
-        
-        if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver) {
-            //self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX + 390, 300), endPosition: CGPointMake(self.frame.minX - 10, 700)))
-            //self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX - 10, 300), endPosition: CGPointMake(self.frame.minX + 390, 700)))
-            
-            
-            
-            
-            self.timeSinceCrabAdded = 0
+        if currentTime - lastBomb  > bomberAttackSpeed{
+            self.lastBomb = currentTime
+            theBomber!.throwBomb()
         }
         
         self.lastUpdatesTime = currentTime
@@ -211,7 +194,7 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
             }
             else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil){
                 if theBomber!.isDead{
-                    dropLoot("level2", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    dropLoot("level29", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
                     for node in self.children{
                         if node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "life" && node.name != "gold"{
