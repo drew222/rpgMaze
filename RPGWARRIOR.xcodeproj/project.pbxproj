@@ -401,6 +401,7 @@
 		EEB809301B14C11600A221E2 /* Left_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB8092B1B14C11600A221E2 /* Left_Text_1.png */; };
 		EEB809311B14C11600A221E2 /* Neck_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB8092C1B14C11600A221E2 /* Neck_Text_1.png */; };
 		EEB809321B14C11600A221E2 /* Right_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB8092D1B14C11600A221E2 /* Right_Text_1.png */; };
+		EEB809341B15511900A221E2 /* TreasureChestSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = EEB809331B15511900A221E2 /* TreasureChestSpark.sks */; };
 		EEBBAFEC1AD5912600125105 /* World1Level18.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBBAFEB1AD5912600125105 /* World1Level18.swift */; };
 		EEF8559A1AD1D8F000112A59 /* World1Level28.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF855991AD1D8F000112A59 /* World1Level28.swift */; };
 		EEF8D9811AD2264200FC2A4F /* TreasureChest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF8D9801AD2264200FC2A4F /* TreasureChest.swift */; };
@@ -820,6 +821,7 @@
 		EEB8092B1B14C11600A221E2 /* Left_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Left_Text_1.png; sourceTree = "<group>"; };
 		EEB8092C1B14C11600A221E2 /* Neck_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Neck_Text_1.png; sourceTree = "<group>"; };
 		EEB8092D1B14C11600A221E2 /* Right_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Right_Text_1.png; sourceTree = "<group>"; };
+		EEB809331B15511900A221E2 /* TreasureChestSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TreasureChestSpark.sks; sourceTree = "<group>"; };
 		EEBBAFEB1AD5912600125105 /* World1Level18.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level18.swift; sourceTree = "<group>"; };
 		EEF855991AD1D8F000112A59 /* World1Level28.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level28.swift; sourceTree = "<group>"; };
 		EEF8D9801AD2264200FC2A4F /* TreasureChest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreasureChest.swift; sourceTree = "<group>"; };
@@ -940,6 +942,7 @@
 				DC2711171A85E11900986D2E /* Supporting Files */,
 				DC1F58181A88735300B5027B /* LightParticle.sks */,
 				2FC73DE01A912B690068A2FB /* BlizzParticle.sks */,
+				EEB809331B15511900A221E2 /* TreasureChestSpark.sks */,
 				DC1F58191A88735300B5027B /* spark.png */,
 			);
 			path = RPGWARRIOR;
@@ -1593,6 +1596,7 @@
 				DCFD748E1B0153300054E370 /* Kraken_Movement_14.png in Resources */,
 				DCFD74911B0153300054E370 /* Kraken_Movement_2.png in Resources */,
 				DCFD74981B0153300054E370 /* Kraken_Movement_9.png in Resources */,
+				EEB809341B15511900A221E2 /* TreasureChestSpark.sks in Resources */,
 				DCFD74991B0153300054E370 /* Krill_1.png in Resources */,
 				DCFD751B1B0153300054E370 /* World_1_Level_30_Text.png in Resources */,
 				DCFD74D21B0153300054E370 /* Tentacle_24.png in Resources */,

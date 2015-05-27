@@ -40,9 +40,26 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
         lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
         lifeNode!.name = "life"
-        lifeNode!.fontColor = UIColor.redColor()
+        lifeNode!.zPosition = 2
+        lifeNode!.fontColor = UIColor.whiteColor()
         lifeNode!.fontSize = 20
         self.addChild(lifeNode!)
+        
+        //add lifeheart to all levels!!!!!!
+        let lifeHeart = SKSpriteNode(imageNamed: "Life_Symbol_1")
+        lifeHeart.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
+        lifeHeart.setScale(0.15)
+        self.addChild(lifeHeart)
+        
+        let newlifeNode = SKSpriteNode(imageNamed: "World_1_Level_\(Int(theHero!.life!))_Text")
+        newlifeNode.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
+        newlifeNode.setScale(0.15)
+        newlifeNode.zPosition = 3
+        self.addChild(newlifeNode)
+        print(newlifeNode)
+        
+        
+        
         theWizard = WizardClass.makeWizard(CGPointMake(self.frame.midX, self.frame.maxY - 30))
         self.addChild(theWizard!)
         //the below constraints did nothing

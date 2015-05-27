@@ -31,7 +31,7 @@ class HeroClass: SKSpriteNode {
         hero.name = "hero"
         hero.currentAngle = pi / 2.0
         hero.setupPhysicsBody()
-        hero.life = 3.0
+        hero.life = 1.0
         hero.regeneration = 0
         hero.zPosition = 3
         hero.setScale(0.6)
