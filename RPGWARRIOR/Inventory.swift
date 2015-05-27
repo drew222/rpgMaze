@@ -29,6 +29,9 @@ class Inventory: SKScene {
     var lifeSymbol2: SKSpriteNode?
     var speedSymbol2: SKSpriteNode?
     var regenerationSymbol2: SKSpriteNode?
+    var statLabelLife2: SKLabelNode?
+    var statLabelMovement2: SKLabelNode?
+    var statLabelRegen2: SKLabelNode?
     var weapon: ItemClass?
     var body: ItemClass?
     var feet: ItemClass?
@@ -153,6 +156,24 @@ class Inventory: SKScene {
             regenerationSymbol2!.zPosition = 2
             regenerationSymbol2!.setScale(0.2)
             //self.addChild(regenerationSymbol2)
+            statLabelLife2 = SKLabelNode.init(text: "0")
+            statLabelLife2!.position = CGPointMake(self.frame.minX + 80, self.frame.maxY - 140)
+            statLabelLife2!.fontColor = UIColor.blueColor()
+            statLabelLife2!.name = "lifeStat"
+            statLabelLife2!.setScale(0.7)
+            self.addChild(statLabelLife2!)
+            statLabelMovement2 = SKLabelNode.init(text: "0")
+            statLabelMovement2!.position = CGPointMake(self.frame.minX + 80, self.frame.maxY - 180)
+            statLabelMovement2!.fontColor = UIColor.blueColor()
+            statLabelMovement2!.name = "movementStat"
+            statLabelMovement2!.setScale(0.7)
+            self.addChild(statLabelMovement2!)
+            statLabelRegen2 = SKLabelNode.init(text: "0")
+            statLabelRegen2!.position = CGPointMake(self.frame.minX + 80, self.frame.maxY - 220)
+            statLabelRegen2!.fontColor = UIColor.blueColor()
+            statLabelRegen2!.name = "regenStat"
+            statLabelRegen2!.setScale(0.7)
+            self.addChild(statLabelRegen2!)
             
         let weaponLabel = SKSpriteNode(imageNamed: "Noggin_Text_1")
         weaponLabel.setScale(0.35)
@@ -302,6 +323,8 @@ class Inventory: SKScene {
         self.addChild(goldNode!)
         }
         
+        updateStats()
+        
         goldNode!.text = "\(Int(gold))"
         goldNode!.fontColor = UIColor.yellowColor()
         
@@ -313,6 +336,64 @@ class Inventory: SKScene {
         spaceToMove = nil
         self.firstLoad = false
         
+    }
+    
+    func updateStats() {
+        var life = 1
+        var movement = 120
+        var regen = 0
+        let weaponSpace = self.childNodeWithName("weapon") as! ItemSpaceNode
+        let bodySpace = self.childNodeWithName("body") as! ItemSpaceNode
+        let neckSpace = self.childNodeWithName("neck") as! ItemSpaceNode
+        let feetSpace = self.childNodeWithName("feet") as! ItemSpaceNode
+        if (weaponSpace.item != nil){
+            for statTuple in weaponSpace.item!.getStats(){
+                if statTuple.0 == "Life" {
+                    life += Int(statTuple.1)
+                }else if statTuple.0 == "Movement" {
+                    movement += Int(statTuple.1)
+                }else if statTuple.0 == "Regeneration" {
+                    regen += Int(statTuple.1)
+                }
+            }
+        }
+        if (neckSpace.item != nil){
+            for statTuple in neckSpace.item!.getStats(){
+                if statTuple.0 == "Life" {
+                    life += Int(statTuple.1)
+                }else if statTuple.0 == "Movement" {
+                    movement += Int(statTuple.1)
+                }else if statTuple.0 == "Regeneration" {
+                    regen += Int(statTuple.1)
+                }
+            }
+        }
+        if (feetSpace.item != nil) {
+            for statTuple in feetSpace.item!.getStats(){
+                if statTuple.0 == "Life" {
+                    life += Int(statTuple.1)
+                }else if statTuple.0 == "Movement" {
+                    movement += Int(statTuple.1)
+                }else if statTuple.0 == "Regeneration" {
+                    regen += Int(statTuple.1)
+                }
+            }
+        }
+        if (bodySpace.item != nil) {
+            for statTuple in bodySpace.item!.getStats(){
+                if statTuple.0 == "Life" {
+                    life += Int(statTuple.1)
+                }else if statTuple.0 == "Movement" {
+                    movement += Int(statTuple.1)
+                }else if statTuple.0 == "Regeneration" {
+                    regen += Int(statTuple.1)
+                }
+            }
+        }
+        
+        statLabelLife2!.text = "\(life)"
+        statLabelMovement2!.text = "\(movement)"
+        statLabelRegen2!.text = "\(regen)"
     }
     
     func addItem(itemName: String){
@@ -377,9 +458,8 @@ class Inventory: SKScene {
     }
     
     func displayItem(item: ItemClass, spot: String) {
-        println("got here!!!!\(spaceToMove!.item!.itemName!)")
+        //println("got here!!!!\(spaceToMove!.item!.itemName!)")
         if spot == "weapon"{
-            println("got here222@!!!!!!!")
             headDisplay!.texture = SKTexture(imageNamed: "\(item.itemName!)")
         }else if spot == "body" {
             var itemName = item.itemName!
@@ -455,7 +535,6 @@ class Inventory: SKScene {
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
                                             displayItem(itemToMove!, spot: "body")
-                                                //body = space.item
                                         }else if space.name == "feet" && (itemToMove!.itemType == ItemType.feet || itemToMove!.itemType == ItemType.body){
                                                 //feet = space.item
                                             self.spaceToMove!.insertItem(space.item!)
@@ -496,6 +575,7 @@ class Inventory: SKScene {
                                     self.itemToMove = nil
                                     self.spaceToMove = nil
                                 }
+                                
                                 
                             }
                         }//clicked on space with no item in it
@@ -595,13 +675,14 @@ class Inventory: SKScene {
                             let sellNode = SKLabelNode.init(text: "\(round(itemToMove!.price! / 5))")
                             sellNode.position = CGPointMake(self.frame.minX + 60, self.frame.minY + 215)
                             sellNode.fontSize = 30
-                            //sellNode.name = "sellButton"
+                            sellNode.name = "priceButton"
                             sellNode.fontColor = UIColor.blueColor()
                             self.addChild(sellNode)
                             
                             //booty coin image
                             let booty = SKSpriteNode(imageNamed: "Booty_1.png")
                             booty.position = CGPointMake(self.frame.minX + 120, self.frame.minY + 225)
+                            booty.name = "sellBooty"
                             booty.setScale(0.08)
                             self.addChild(booty)
                             //sell text
@@ -610,6 +691,15 @@ class Inventory: SKScene {
                             sellText.setScale(0.4)
                             sellText.name = "sellButton"
                             self.addChild(sellText)
+                            //name of the item
+                            var itemPicName = spaceToMove!.item!.itemName!
+                            //println("\(itemPicName)")
+                            itemPicName = itemPicName.stringByReplacingOccurrencesOfString("1", withString: "Text", options: NSStringCompareOptions.LiteralSearch, range: nil)
+                            let itemText = SKSpriteNode(imageNamed: "\(itemPicName)")
+                            itemText.name = "itemName"
+                            itemText.size = CGSizeMake(150, 30)
+                            itemText.position = CGPointMake(self.frame.midX, self.frame.minY + 290)
+                            self.addChild(itemText)
                         }else{
                             statLabelLife!.text = ""
                             statLabelMovement!.text = ""
@@ -618,7 +708,9 @@ class Inventory: SKScene {
                             speedSymbol2?.removeFromParent()
                             regenerationSymbol2?.removeFromParent()
                             self.childNodeWithName("sellButton")?.removeFromParent()
+                            self.childNodeWithName("itemName")?.removeFromParent()
                             self.childNodeWithName("priceButton")?.removeFromParent()
+                            self.childNodeWithName("sellBooty")?.removeFromParent()
                         }
                     }//else{
                         //space.wasClicked = false
@@ -626,5 +718,6 @@ class Inventory: SKScene {
                 }
             }
         }
+        updateStats()
     }
 }
