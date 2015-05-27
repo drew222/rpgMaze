@@ -23,6 +23,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
     var lastHeal: Double = 0.0
     let healSpeed = 5.0
     var lifeNode: SKLabelNode?
+    var newLifeNode: SKSpriteNode?
     var maxLife: CGFloat = 0.0
     //*****************
     
@@ -51,12 +52,12 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         lifeHeart.setScale(0.15)
         self.addChild(lifeHeart)
         
-        let newlifeNode = SKSpriteNode(imageNamed: "World_1_Level_\(Int(theHero!.life!))_Text")
-        newlifeNode.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
-        newlifeNode.setScale(0.15)
-        newlifeNode.zPosition = 3
-        self.addChild(newlifeNode)
-        print(newlifeNode)
+        newLifeNode = SKSpriteNode(imageNamed: "World_1_Level_\(Int(theHero!.life!))_Text")
+        newLifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
+        newLifeNode!.setScale(0.15)
+        newLifeNode!.zPosition = 3
+        self.addChild(newLifeNode!)
+        //print(newLifeNode)
         
         
         
@@ -141,6 +142,8 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         }
         self.lastUpdatesTime = currentTime
         lifeNode!.text = "\(Int(floor(theHero!.life!)))"
+        //ZACH NEW LEVELS
+        newLifeNode!.texture = SKTexture(imageNamed: "World_1_Level_\(Int(theHero!.life!))_Text")
         //***************
         
         //win condition
