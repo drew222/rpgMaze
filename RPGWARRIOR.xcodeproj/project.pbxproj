@@ -355,7 +355,6 @@
 		EEB7AB061AD0E4DE00064D9C /* World1Level19.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB051AD0E4DE00064D9C /* World1Level19.swift */; };
 		EEB7AB081AD0F27600064D9C /* World1Level15.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB071AD0F27600064D9C /* World1Level15.swift */; };
 		EEB7AB0A1AD0FED000064D9C /* World1Level16.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB091AD0FED000064D9C /* World1Level16.swift */; };
-		EEB808D81B13970600A221E2 /* Afro_Seaweed_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB808D71B13970600A221E2 /* Afro_Seaweed_1.png */; };
 		EEB808DA1B13974600A221E2 /* Buy_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB808D91B13974600A221E2 /* Buy_Text_1.png */; };
 		EEB808DC1B13976100A221E2 /* Napsack_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB808DB1B13976100A221E2 /* Napsack_Text_1.png */; };
 		EEB809031B13981D00A221E2 /* Barnacles_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB808DD1B13981D00A221E2 /* Barnacles_Text.png */; };
@@ -1430,7 +1429,7 @@
 		DC27110C1A85E11800986D2E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Drew and Zach";
 				TargetAttributes = {
 					DC2711131A85E11900986D2E = {
@@ -1770,7 +1769,6 @@
 				DCFD745D1B0153300054E370 /* Clam_Boss_Rocking_6.png in Resources */,
 				DCFD74821B0153300054E370 /* Kraken_Boss_1.png in Resources */,
 				DCFD74631B0153300054E370 /* Crab_Boss_10.png in Resources */,
-				EEB808D81B13970600A221E2 /* Afro_Seaweed_1.png in Resources */,
 				DCFD74F81B0153300054E370 /* Whale_Boss_15.png in Resources */,
 				DCFD74971B0153300054E370 /* Kraken_Movement_8.png in Resources */,
 				DCFD74501B0153300054E370 /* Beach_Crab_2.png in Resources */,

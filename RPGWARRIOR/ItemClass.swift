@@ -51,10 +51,10 @@ class ItemClass: SKSpriteNode {
             return []
         }else if picName == "Mossy_Copper_Ring_1" {
             price = 10
-            return [("Movement", CGFloat(5))]
+            return [("Movement", CGFloat(4))]
         }else if picName == "Copper_Ring_1"{
             price = 20
-            return [("Movement", CGFloat(7))]
+            return [("Movement", CGFloat(6))]
         }else if picName == "Rusty_Silver_Ring_1"{
             price = 25
             return [("Movement", CGFloat(9))]
