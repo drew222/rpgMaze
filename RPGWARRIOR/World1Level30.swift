@@ -41,6 +41,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var oilWaveDamage = CGFloat(5)
     var krillDamage = CGFloat(1)
     var crabDamage = CGFloat(2)
+    var inking = false
+    var inkingTimer = 0.0
     
     
     var theKraken: KrakenBoss?
@@ -166,19 +168,32 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             theKraken!.createSafeAndWave()
             phase += 1
             updateLevel()
+            inking = true
+            inkingTimer = currentTime
         }
         
-        if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver{
+        if inking && currentTime - inkingTimer > 5{
+            inking = false
+            for node in self.children{
+                if let aNode = node as? SKSpriteNode{
+                    if aNode.name == "safeSpot1" || aNode.name == "safeSpot2" {
+                        aNode.removeFromParent()
+                    }
+                }
+            }
+        }
+        
+        if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver && !inking{
             self.lastTentacle = currentTime
             theKraken!.throwTentacle()
         }
         
-        if currentTime - lastKrill  > whaleAttackSpeedKrill && !levelOver{
+        if currentTime - lastKrill  > whaleAttackSpeedKrill && !levelOver && !inking{
             self.lastKrill = currentTime
             theWhale!.shootKrill()
         }
         
-        if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver{
+        if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver && !inking{
             self.lastWaterWave = currentTime
             let yValue = randomWithMin(Int(self.frame.minY + 100), Int(self.frame.maxY - 175))
             let xBool = randomWithMin(0, 10)
@@ -190,7 +205,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         }
         
         
-        if (currentTime - lastCrab > crabSpawnSpeed && !self.levelOver) {
+        if (currentTime - lastCrab > crabSpawnSpeed && !self.levelOver && !inking) {
             var xMatch = CGFloat(randomWithMin(Int(self.frame.minX + 80), Int(self.frame.maxX - 80)))
             self.addChild(MiniCrab.crabDash(CGPointMake(xMatch, self.frame.maxY + 30), endPosition: CGPointMake(xMatch, self.frame.minY)))
             
