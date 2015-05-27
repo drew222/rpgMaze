@@ -270,15 +270,51 @@ class StoreScene: SKScene {
                     currentItem!.removeFromParent()
                 }
                 currentItem = ItemClass.itemInSpace(clickedItem((touch as! UITouch).locationInNode(self)))
+                currentItem!.size == CGSizeMake(70, 70)
                 currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
-                currentItem!.setScale(0.25)
                 
                 //ZACH ITEMS HERE@@@
-                if currentItem?.itemName == "Whistle_1" {
-                    currentItem!.size == CGSizeMake(200, 200)
-                }else{
+                if currentItem?.itemName == "Copper_Ring_1" {
+                    currentItem!.size == CGSizeMake(70, 70)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                }else if currentItem?.itemName == "Sweaty_Wristband_1" {
+                    currentItem!.size == CGSizeMake(70, 100)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Silver_Ring_1" {
                     currentItem!.size == CGSizeMake(100, 100)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Gold_Ring_1" {
+                    currentItem!.size == CGSizeMake(100, 100)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Water_Wing_1" {
+                    currentItem!.size == CGSizeMake(220, 220)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Whistle_1" {
+                    currentItem!.size == CGSizeMake(75, 100)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Lifejacket_1" {
+                    currentItem!.size == CGSizeMake(200, 200)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Beach_Towel_1" {
+                    currentItem!.size == CGSizeMake(200, 200)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Floatie_1" {
+                    currentItem!.size == CGSizeMake(200, 200)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Sun_Screen_1" {
+                    currentItem!.size == CGSizeMake(100, 150)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Sweatband_1" {
+                    currentItem!.size == CGSizeMake(200, 200)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Visor_1" {
+                    currentItem!.size == CGSizeMake(200, 200)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Sand_Bucket_1" {
+                    currentItem!.size == CGSizeMake(200, 200)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
                 }
+                   
                 
                 statLabelLife!.text = "0"
                 statLabelMovement!.text = "0"
