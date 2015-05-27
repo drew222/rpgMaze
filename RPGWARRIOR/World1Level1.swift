@@ -28,6 +28,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
     //*****************
     var clickedChest = false
     var droppedChest = false
+    var inkSplatted = false
     
     let wizardAttackSpeed = 1.0
     
@@ -119,10 +120,27 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
-        let aHero = self.childNodeWithName("hero") as! HeroClass
-        let aWizard = self.childNodeWithName("wizard") as! WizardClass
+        let aHero = self.childNodeWithName("hero") as? HeroClass
+        let aWizard = self.childNodeWithName("wizard") as? WizardClass
         for touch in touches{
-            aHero.moveHelper((touch as! UITouch).locationInNode(self))
+            if !inkSplatted{
+                aHero!.moveHelper((touch as! UITouch).locationInNode(self))
+            }else{
+                if self.childNodeWithName("yesText")!.containsPoint((touch as! UITouch).locationInNode(self)){
+                    let newLevel1 = World1Level1(size: self.frame.size)
+                    newLevel1.userData = NSMutableDictionary()
+                    newLevel1.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
+                    newLevel1.userData?.setObject(self.userData?.objectForKey("menu") as! MainMenuScene, forKey: "menu")
+                    //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                    let skTransition = SKTransition.fadeWithDuration(1.0)
+                    self.view?.presentScene(newLevel1, transition: skTransition)
+                    
+                }else if self.childNodeWithName("noText")!.containsPoint((touch as! UITouch).locationInNode(self)){
+                    let skTransition = SKTransition.fadeWithDuration(1.0)
+                    
+                    self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
+                }
+            }
         }
     }
     
@@ -156,9 +174,38 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
             
             if (self.childNodeWithName("gold") == nil && self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
                 
-                let skTransition = SKTransition.fadeWithDuration(1.0)
-                
-                self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
+                //INK SPLAT CODE
+                if theHero!.life <= 0 {
+                    let inkSplat = SKSpriteNode(imageNamed: "Ink_Splat_1")
+                    for node in self.children{
+                        if (node as? SKSpriteNode != nil) && node.name != "background"{
+                            node.removeFromParent()
+                        }
+                    }
+                    inkSplat.position = CGPointMake(self.frame.midX, self.frame.midY)
+                    inkSplat.size = CGSizeMake(50, 50)
+                    self.addChild(inkSplat)
+                    let stretchAction = SKAction.scaleXBy(7, y: 7, duration: 0.4)
+                    let codeBlock = SKAction.runBlock({
+                        let yesText = SKSpriteNode(imageNamed: "Yes_Text_1")
+                        let noText = SKSpriteNode(imageNamed: "No_Text_1")
+                        yesText.size = CGSizeMake(75, 40)
+                        noText.size = CGSizeMake(75, 40)
+                        yesText.position = CGPointMake(self.frame.midX - 60, self.frame.midY - 30)
+                        noText.position = CGPointMake(self.frame.midX + 60, self.frame.midY - 30)
+                        yesText.name = "yesText"
+                        noText.name = "noText"
+                        self.addChild(yesText)
+                        self.addChild(noText)
+                    })
+                    let sequence = SKAction.sequence([stretchAction, codeBlock])
+                    inkSplat.runAction(sequence)
+                    inkSplatted = true
+                }else{
+                    let skTransition = SKTransition.fadeWithDuration(1.0)
+                    
+                    self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
+                }
                 
                 levelOver = true
             }
