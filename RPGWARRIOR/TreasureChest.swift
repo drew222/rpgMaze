@@ -40,7 +40,7 @@ class TreasureChest: SKSpriteNode {
             //self.texture = nil
         })
         let textures = [SKTexture (imageNamed: "Treasure_Chest_2.png"), SKTexture (imageNamed: "Treasure_Chest_3.png"), SKTexture (imageNamed: "Treasure_Chest_4.png"), SKTexture (imageNamed: "Treasure_Chest_5.png")]
-        let chestAnimation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+        let chestAnimation = SKAction.animateWithTextures(textures, timePerFrame: 0.15)
         let codeBlock = SKAction.runBlock({
             liteAttack!.removeFromParent()
             self.removeFromParent()})
