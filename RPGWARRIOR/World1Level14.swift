@@ -132,9 +132,8 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
             //HERO VS FIRE
         else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                let aHero = self.childNodeWithName("hero") as! HeroClass
-                aHero.takeDamage(3)
-                secondBody.node!.removeFromParent()
+                theHero!.takeDamage(3)
+                (secondBody.node as! MineNode).explode(secondBody.node!.position)
         }
     }
     

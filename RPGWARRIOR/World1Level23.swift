@@ -89,15 +89,18 @@ class World1Level23: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
                 let mine = secondBody.node as? MineNode
-                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+                mine!.explode(secondBody.node!.position)
+                theHero!.takeDamage(3)
         }
         
         //HERO VS KRILL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryKrill.rawValue){
-                let aHero = self.childNodeWithName("hero") as! HeroClass
-                aHero.takeDamage(1)
-                secondBody.node!.removeFromParent()
+                theHero!.takeDamage(3)
+                let fadeOut = SKAction.fadeOutWithDuration(0.6)
+                let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+                let sequence = SKAction.sequence([fadeOut, codeBlock])
+                secondBody.node?.runAction(sequence)
         }
 
         //HERO VS WAVE

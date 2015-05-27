@@ -69,12 +69,8 @@ class World1Level8: SKScene, SKPhysicsContactDelegate  {
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                let mine = secondBody.node as? MineNode
-                if mine!.isArmed{
-                    mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
-                    //let aHero = self.childNodeWithName("hero") as HeroClass
-                    //aHero.takeDamage(3)
-                }
+                (secondBody.node as! MineNode).explode(secondBody.node!.position)
+                theHero!.takeDamage(3)
         }
     }
     

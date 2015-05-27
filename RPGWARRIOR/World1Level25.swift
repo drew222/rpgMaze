@@ -97,14 +97,17 @@ class World1Level25: SKScene, SKPhysicsContactDelegate {
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                theHero!.takeDamage(2)
+                let mine = secondBody.node as? MineNode
+                mine!.explode(secondBody.node!.position)
+                theHero!.takeDamage(3)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySpike.rawValue){
-                //if (secondBody.node as! Tentacle).isArmed{
                 theHero!.takeDamage(3)
-                //}
-                //println("died by tentalce")
+                let fadeOut = SKAction.fadeOutWithDuration(0.6)
+                let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+                let sequence = SKAction.sequence([fadeOut, codeBlock])
+                secondBody.node?.runAction(sequence)
         }
         /*
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&

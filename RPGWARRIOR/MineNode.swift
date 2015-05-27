@@ -58,10 +58,6 @@ class MineNode: SKSpriteNode {
             let distanceFromMine = distanceBetween(self.parent!.childNodeWithName("hero")!.position, self.position)
             //if distanceFromMine < 25{
             let theHero = self.parent!.childNodeWithName("hero")! as! HeroClass
-            println("distance from bomb = \(distanceFromMine)")
-            if self.isArmed{
-                theHero.takeDamage(3.0)
-            }
             self.isArmed = false
             //}
         })
