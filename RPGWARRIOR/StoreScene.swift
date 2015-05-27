@@ -92,7 +92,9 @@ class StoreScene: SKScene {
         goldCount = (self.userData?.objectForKey("inventory") as! Inventory).gold
         goldNode = SKLabelNode.init(text: "\(Int(goldCount))")
         goldNode!.position = CGPointMake(self.frame.midX - 30, self.frame.maxY - 120)
-        goldNode!.fontColor = UIColor.redColor()
+        goldNode!.fontName = "ChalkboardSE-Bold"
+        goldNode!.fontSize = 30
+        goldNode!.fontColor = UIColor.whiteColor()
         self.addChild(goldNode!)
         //booty coin image
         let booty = SKSpriteNode(imageNamed: "Booty_1.png")
@@ -269,7 +271,8 @@ class StoreScene: SKScene {
                 }
                 currentItem = ItemClass.itemInSpace(clickedItem((touch as! UITouch).locationInNode(self)))
                 currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
-                currentItem!.size = CGSizeMake(100, 100)
+                currentItem!.setScale(0.25)
+                
                 statLabelLife!.text = "0"
                 statLabelMovement!.text = "0"
                 statLabelRegen!.text = "0"
@@ -322,9 +325,10 @@ class StoreScene: SKScene {
             
             let priceNode = SKLabelNode.init(text: "\(Int(currentItem!.price!))")
             priceNode.position = CGPointMake(self.frame.maxX - 80, self.frame.minY + 70)
+            priceNode.fontName = "ChalkboardSE-Bold"
             priceNode.fontSize = 25
             priceNode.name = "priceButton"
-            priceNode.fontColor = UIColor.redColor()
+            priceNode.fontColor = UIColor.blackColor()
             let booty = SKSpriteNode(imageNamed: "Booty_1.png")
             booty.position = CGPointMake(self.frame.maxX - 40, self.frame.minY + 75)
             booty.setScale(0.075)
@@ -338,8 +342,8 @@ class StoreScene: SKScene {
             itemName = itemName!.stringByReplacingOccurrencesOfString("1", withString: "Text", options: NSStringCompareOptions.LiteralSearch, range: nil)
             itemText = SKSpriteNode(imageNamed: "\(itemName!)")
             itemText!.name = "itemText"
-            itemText!.size = CGSizeMake(160, 30)
-            itemText!.position = CGPointMake(self.frame.midX, self.frame.minY + 130)
+            itemText!.setScale(0.7)
+            itemText!.position = CGPointMake(self.frame.midX, self.frame.minY + 140)
             //if firstClick{
                 self.addChild(itemText!)
             //}
