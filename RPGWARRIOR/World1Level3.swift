@@ -210,11 +210,9 @@ class World1Level3: SKScene, SKPhysicsContactDelegate {
             }
         }
         self.lastUpdatesTime = currentTime
-       newLifeNode!.texture = SKTexture(imageNamed: "World_1_Level_\(Int(theHero!.life!))_Text")
-        //***************
         
-        //win condition
-        //check for win condition
+        
+       newLifeNode!.texture = SKTexture(imageNamed: "World_1_Level_\(Int(theHero!.life!))_Text")
         if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
             
             if (self.childNodeWithName("gold") == nil && self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
