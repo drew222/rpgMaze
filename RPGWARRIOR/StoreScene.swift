@@ -21,8 +21,10 @@ class StoreScene: SKScene {
     var statLabelLife: SKLabelNode?
     var statLabelMovement: SKLabelNode?
     var statLabelRegen: SKLabelNode?
+    var itemText: SKSpriteNode?
     var currentItem: ItemClass?
     var goldCount: CGFloat = 0
+    var firstClick = true
     
     
     override func didMoveToView(view: SKView) {
@@ -307,8 +309,6 @@ class StoreScene: SKScene {
             regenerationSymbol.setScale(0.2)
             regenerationSymbol.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 40)
             self.addChild(regenerationSymbol)
-            
-            
         }
         
         
@@ -328,9 +328,22 @@ class StoreScene: SKScene {
             let booty = SKSpriteNode(imageNamed: "Booty_1.png")
             booty.position = CGPointMake(self.frame.maxX - 40, self.frame.minY + 75)
             booty.setScale(0.075)
-            self.addChild(booty)
+            if firstClick{
+                self.addChild(booty)
+            }
             self.addChild(priceNode)
-            
+            self.childNodeWithName("itemText")?.removeFromParent()
+            //text for item names
+            var itemName = currentItem?.itemName!
+            itemName = itemName!.stringByReplacingOccurrencesOfString("1", withString: "Text", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            itemText = SKSpriteNode(imageNamed: "\(itemName!)")
+            itemText!.name = "itemText"
+            itemText!.size = CGSizeMake(160, 30)
+            itemText!.position = CGPointMake(self.frame.midX, self.frame.minY + 130)
+            //if firstClick{
+                self.addChild(itemText!)
+            //}
+            firstClick = false
         }
     }
 }
