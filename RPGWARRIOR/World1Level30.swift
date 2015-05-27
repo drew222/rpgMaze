@@ -18,6 +18,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var lastTentacle = 0.0
     var lastWave = 0.0
     var lastCrab = 0.0
+    var lastKrill = 0.0
     
     var levelOver = false
     let levelName = "world1level30"
@@ -29,9 +30,10 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var maxLife: CGFloat = 0.0
     //*****************
     var krakenAttackSpeed = 5.0
-    var krakenAttackSpeedSpike = 10.0
+    var krakenAttackSpeedSpike = 15.0
     var whaleAttackSpeedWave = 20.0
-    var crabSpawnSpeed = 3.0
+    var whaleAttackSpeedKrill = 10.0
+    var crabSpawnSpeed = 5.0
     var phase = 1
     var lastWaterWave = 0.0
     var spikeDamage = CGFloat(3)
@@ -141,7 +143,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         if currentTime - lastWave  > 45{
             for node in self.children{
                 if let aNode = node as? SKSpriteNode{
-                    if aNode.name == "safeSpot1" || aNode.name == "safeSpot2" || aNode.name == "crab" || aNode.name == "krill" || aNode.name == "wave"{
+                    if aNode.name == "safeSpot1" || aNode.name == "safeSpot2" || aNode.name == "crab" || aNode.name == "krill" || aNode.name == "wave" || aNode.name == "tentacle"{
                         aNode.removeFromParent()
                     }
                 }
@@ -157,9 +159,14 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             theKraken!.throwTentacle()
         }
         
+        if currentTime - lastKrill  > whaleAttackSpeedKrill && !levelOver{
+            self.lastKrill = currentTime
+            theWhale!.shootKrill()
+        }
+        
         if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver{
             self.lastWaterWave = currentTime
-            let yValue = randomWithMin(Int(self.frame.minY + 30), Int(self.frame.maxY - 30))
+            let yValue = randomWithMin(Int(self.frame.minY + 100), Int(self.frame.maxY - 175))
             let xBool = randomWithMin(0, 10)
             var xValue = self.frame.maxX + 20
             if xBool < 5 {

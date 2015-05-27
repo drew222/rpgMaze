@@ -58,7 +58,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         
         newLifeNode = SKSpriteNode(imageNamed: "World_1_Level_\(Int(theHero!.life!))_Text")
         newLifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
-        newLifeNode!.setScale(0.15)
+        newLifeNode!.size = CGSizeMake(10, 10)
         newLifeNode!.name = "lifeNumber"
         newLifeNode!.zPosition = 3
         self.addChild(newLifeNode!)

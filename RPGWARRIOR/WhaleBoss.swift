@@ -87,7 +87,7 @@ class WhaleBoss: SKSpriteNode {
         var theSpeed = 150
         if (self.parent as? World1Level30 != nil) {
             let extraSpeed = (self.parent as! World1Level30).phase * 2
-            theSpeed = 80 + extraSpeed
+            theSpeed = 60 + extraSpeed
         }
         self.parent!.addChild(WaveNode.waveAtPosition(CGPointMake(gapPosition.x, gapPosition.y + (lengthOfTop)/2), length: lengthOfTop, distance: self.parent!.frame.maxX + 50, speed: theSpeed))
         self.parent!.addChild(WaveNode.waveAtPosition(CGPointMake(gapPosition.x, lengthOfBot/2), length: lengthOfBot, distance: self.parent!.frame.maxX + 50, speed: theSpeed))
@@ -133,28 +133,21 @@ class WhaleBoss: SKSpriteNode {
         let sequence = SKAction.sequence([codeBlock0, SKAction.waitForDuration(0.4), codeBlock])
         self.runAction(sequence)
         //shoot the krill
-        /*
-        let krill = Krill.krillAtPosition(CGPointMake(self.position.x, self.position.y + 45))
-        self.parent!.addChild(krill)
-        krill.moveTowardsPosition()
         
-        let krill2 = Krill.krillAtPosition(CGPointMake(self.position.x - 50, self.position.y - 45))
-        self.parent!.addChild(krill2)
-        krill2.moveTowardsPosition()
-        
-        let krill3 = Krill.krillAtPosition(CGPointMake(self.position.x + 50, self.position.y - 45))
-        self.parent!.addChild(krill3)
-        krill3.moveTowardsPosition()
-        
-        let krill4 = Krill.krillAtPosition(CGPointMake(self.position.x - 100, self.position.y))
-        self.parent!.addChild(krill4)
-        krill4.moveTowardsPosition()
-        
-        let krill5 = Krill.krillAtPosition(CGPointMake(self.position.x + 100, self.position.y))
-        self.parent!.addChild(krill5)
-        krill5.moveTowardsPosition()
-        */
-        
+        if ((self.parent as? World1Level30) != nil) {
+            let krill = Krill.krillAtPosition(CGPointMake(self.parent!.frame.midX, self.parent!.frame.maxY + 20))
+            self.parent!.addChild(krill)
+            krill.moveTowardsPosition()
+            
+            let krill2 = Krill.krillAtPosition(CGPointMake(self.parent!.frame.midX + 100, self.parent!.frame.maxY + 20))
+            self.parent!.addChild(krill2)
+            krill2.moveTowardsPosition()
+            
+            let krill3 = Krill.krillAtPosition(CGPointMake(self.parent!.frame.midX - 100, self.parent!.frame.maxY + 20))
+            self.parent!.addChild(krill3)
+            krill3.moveTowardsPosition()
+        }
+        else{
         let krill = Krill.krillAtPosition(CGPointMake(self.position.x, self.position.y + 45))
         self.parent!.addChild(krill)
         krill.moveTowardsPosition()
@@ -174,6 +167,7 @@ class WhaleBoss: SKSpriteNode {
         let krill5 = Krill.krillAtPosition(CGPointMake(self.position.x + 120, self.position.y + 60))
         self.parent!.addChild(krill5)
         krill5.moveTowardsPosition()
+        }
     }
 
     
