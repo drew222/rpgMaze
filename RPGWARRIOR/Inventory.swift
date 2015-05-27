@@ -454,6 +454,9 @@ class Inventory: SKScene {
         lifeSymbol2?.removeFromParent()
         speedSymbol2?.removeFromParent()
         regenerationSymbol2?.removeFromParent()
+        self.childNodeWithName("itemName")?.removeFromParent()
+        self.childNodeWithName("priceButton")?.removeFromParent()
+        self.childNodeWithName("sellBooty")?.removeFromParent()
         
     }
     
