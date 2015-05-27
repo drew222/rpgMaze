@@ -99,7 +99,9 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
-                theHero!.takeDamage(3)
+                if !self.childNodeWithName("safeSpot1")!.containsPoint(theHero!.position){
+                    theHero!.takeDamage(3)
+                }
                 //println("died by tentalce")
         }
         
