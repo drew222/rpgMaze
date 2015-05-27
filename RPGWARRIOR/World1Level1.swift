@@ -26,6 +26,8 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
     var newLifeNode: SKSpriteNode?
     var maxLife: CGFloat = 0.0
     //*****************
+    var clickedChest = false
+    var droppedChest = false
     
     let wizardAttackSpeed = 1.0
     
@@ -49,12 +51,14 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         //add lifeheart to all levels!!!!!!
         let lifeHeart = SKSpriteNode(imageNamed: "Life_Symbol_1")
         lifeHeart.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
+        lifeHeart.name = "lifeheart"
         lifeHeart.setScale(0.15)
         self.addChild(lifeHeart)
         
         newLifeNode = SKSpriteNode(imageNamed: "World_1_Level_\(Int(theHero!.life!))_Text")
         newLifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
         newLifeNode!.setScale(0.15)
+        newLifeNode!.name = "lifeNumber"
         newLifeNode!.zPosition = 3
         self.addChild(newLifeNode!)
         //print(newLifeNode)
@@ -159,14 +163,17 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil){
-                if theWizard!.isDead{
+                if theWizard!.isDead && droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
                     dropLoot("level1", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
+                }else if theWizard!.isDead && !droppedChest {
                     for node in self.children{
-                        if node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "wizard" && node.name != "life" && node.name != "gold"{
+                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "wizard" && node.name != "life" && node.name != "gold" && node.name != "chest"{
                             node.removeFromParent()
                         }
                     }
+                    self.addChild(TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY)))
+                    droppedChest = true
                 }
             }
         }

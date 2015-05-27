@@ -287,7 +287,7 @@ class HeroClass: SKSpriteNode {
             }
         }else if let treasureChest = self.parent!.childNodeWithName("chest") as? TreasureChest{
             if distanceBetween(self.position, treasureChest.position) < 110{
-                treasureChest.takeDamage(1)
+                treasureChest.openChest()
             }
         
         }

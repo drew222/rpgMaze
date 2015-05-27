@@ -872,6 +872,9 @@ func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAtta
                     myNode.pickupItem(nodeToAttack as! ItemClass)
                 }else if nodeToAttack.name == "gold" {
                     nodeToAttack.removeFromParent()
+                }else if nodeToAttack.name == "chest" {
+                    myNode.isAttacking = false
+                    (nodeToAttack as! TreasureChest).openChest()
                 }else{
                     myNode.attack()
                     myNode.isAttacking = true
@@ -881,7 +884,7 @@ func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAtta
     })
     var sequence: SKAction?
     let moveAction = moveTo(nodeToMove, nodeToMove.position, spotInfront)
-    if (wasAttacking && nodeToAttack.name != "item" && nodeToAttack.name != "gold"){
+    if (wasAttacking && nodeToAttack.name != "item" && nodeToAttack.name != "gold" && nodeToAttack.name != "chest"){
         sequence = SKAction.sequence([completionBlock])
     }else{
         sequence = SKAction.sequence([moveAction, completionBlock])
