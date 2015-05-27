@@ -480,7 +480,13 @@ class Inventory: SKScene {
                 itemName = "Bow_Tie_1"
                 neckDisplay!.size = CGSizeMake(200, 50)
                 neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Copper_Ring_2" {
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
             }
+            
+            
+            
             neckDisplay!.texture = SKTexture(imageNamed: "\(itemName)")
         }
     }
