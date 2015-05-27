@@ -588,10 +588,10 @@ class Inventory: SKScene {
             
             if itemName == "Bow_Tie_2" {
                 itemName = "Bow_Tie_1"
-                neckDisplay!.size = CGSizeMake(150,110)
+                neckDisplay!.size = CGSizeMake(20, 20)
                 neckDisplay!.position = CGPointMake(self.frame.midX - 5, self.frame.maxY - 270)
             } else if itemName == "Whistle_2" {
-                neckDisplay!.size = CGSizeMake(149,100)
+                neckDisplay!.size = CGSizeMake(500,100)
                 neckDisplay!.position = CGPointMake(self.frame.midX - 10, self.frame.maxY - 250)
             } else if itemName == "Lifejacket_2" {
                 neckDisplay!.size = CGSizeMake(203,120)
@@ -620,9 +620,6 @@ class Inventory: SKScene {
                 neckDisplay!.size = CGSizeMake(250, 250)
                 neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 230)
             }
-
-
-
 
             neckDisplay!.texture = SKTexture(imageNamed: "\(itemName)")
         }

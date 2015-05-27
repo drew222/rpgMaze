@@ -59,21 +59,30 @@ class StoreScene: SKScene {
         self.addChild(storeTextNode)
         //shelf1.zPosition = -1
         //stats label
+        
         statLabelLife = SKLabelNode.init(text: "")
-        statLabelLife!.position = CGPointMake(self.frame.minX + 90, self.frame.minY + 100)
+        statLabelLife!.position = CGPointMake(self.frame.midX - 110, self.frame.minY + 87)
         statLabelLife!.fontColor = UIColor.blueColor()
+        statLabelLife!.fontName = "ChalkboardSE-Bold"
+        statLabelLife!.fontSize = 30
+        statLabelLife!.fontColor = UIColor.blackColor()
         statLabelLife!.name = "lifeStat"
         statLabelLife!.setScale(0.7)
         self.addChild(statLabelLife!)
         statLabelMovement = SKLabelNode.init(text: "")
-        statLabelMovement!.position = CGPointMake(self.frame.minX + 90, self.frame.minY + 70)
-        statLabelMovement!.fontColor = UIColor.blueColor()
+        statLabelMovement!.position = CGPointMake(self.frame.midX - 110, self.frame.minY + 57)
+        statLabelMovement!.fontName = "ChalkboardSE-Bold"
+        statLabelMovement!.fontSize = 30
+        statLabelMovement!.fontColor = UIColor.blackColor()
         statLabelMovement!.name = "movementStat"
         statLabelMovement!.setScale(0.7)
         self.addChild(statLabelMovement!)
         statLabelRegen = SKLabelNode.init(text: "")
-        statLabelRegen!.position = CGPointMake(self.frame.minX + 90, self.frame.minY + 40)
+        statLabelRegen!.position = CGPointMake(self.frame.midX - 110, self.frame.minY + 27)
         statLabelRegen!.fontColor = UIColor.blueColor()
+        statLabelRegen!.fontName = "ChalkboardSE-Bold"
+        statLabelRegen!.fontSize = 30
+        statLabelRegen!.fontColor = UIColor.blackColor()
         statLabelRegen!.name = "regenStat"
         statLabelRegen!.setScale(0.7)
         self.addChild(statLabelRegen!)
@@ -94,7 +103,7 @@ class StoreScene: SKScene {
         goldNode!.position = CGPointMake(self.frame.midX - 30, self.frame.maxY - 120)
         goldNode!.fontName = "ChalkboardSE-Bold"
         goldNode!.fontSize = 30
-        goldNode!.fontColor = UIColor.whiteColor()
+        goldNode!.fontColor = UIColor.blackColor()
         self.addChild(goldNode!)
         //booty coin image
         let booty = SKSpriteNode(imageNamed: "Booty_1.png")
@@ -278,41 +287,62 @@ class StoreScene: SKScene {
                     currentItem!.size = CGSizeMake(70, 70)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
                 }else if currentItem?.itemName == "Sweaty_Wristband_1" {
-                    currentItem!.size = CGSizeMake(70, 100)
+                    currentItem!.size = CGSizeMake(70, 90)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
                 } else if currentItem?.itemName == "Silver_Ring_1" {
-                    currentItem!.size = CGSizeMake(100, 100)
+                    currentItem!.size = CGSizeMake(70, 70)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
                 } else if currentItem?.itemName == "Gold_Ring_1" {
-                    currentItem!.size = CGSizeMake(100, 100)
+                    currentItem!.size = CGSizeMake(70, 70)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
                 } else if currentItem?.itemName == "Water_Wing_1" {
-                    currentItem!.size = CGSizeMake(220, 220)
+                    currentItem!.size = CGSizeMake(120, 120)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
                 } else if currentItem?.itemName == "Whistle_1" {
-                    currentItem!.size = CGSizeMake(20, 10)
+                    currentItem!.size = CGSizeMake(160, 100)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
                 } else if currentItem?.itemName == "Lifejacket_1" {
-                    currentItem!.size = CGSizeMake(200, 200)
-                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    currentItem!.size = CGSizeMake(170, 150)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 60)
                 } else if currentItem?.itemName == "Beach_Towel_1" {
-                    currentItem!.size = CGSizeMake(200, 200)
-                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    currentItem!.size = CGSizeMake(180, 120)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 60)
                 } else if currentItem?.itemName == "Floatie_1" {
-                    currentItem!.size = CGSizeMake(200, 200)
-                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    currentItem!.size = CGSizeMake(160, 110)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 60)
                 } else if currentItem?.itemName == "Sun_Screen_1" {
-                    currentItem!.size = CGSizeMake(100, 150)
-                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    currentItem!.size = CGSizeMake(75, 120)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 60)
                 } else if currentItem?.itemName == "Sweatband_1" {
-                    currentItem!.size = CGSizeMake(200, 200)
+                    currentItem!.size = CGSizeMake(170, 170)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
                 } else if currentItem?.itemName == "Visor_1" {
-                    currentItem!.size = CGSizeMake(200, 200)
+                    currentItem!.size = CGSizeMake(170, 170)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
                 } else if currentItem?.itemName == "Sand_Bucket_1" {
-                    currentItem!.size = CGSizeMake(200, 200)
+                    currentItem!.size = CGSizeMake(120, 120)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 60)
+                } else if currentItem?.itemName == "Sunhat_1" {
+                    currentItem!.size = CGSizeMake(190, 190)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Shades_1" {
+                    currentItem!.size = CGSizeMake(160, 110)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Bling_Ring_1" {
+                    currentItem!.size = CGSizeMake(70, 70)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Monocle_1" {
+                    currentItem!.size = CGSizeMake(130, 130)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Bow_Tie_1" {
+                    currentItem!.size = CGSizeMake(200, 150)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Watch_1" {
+                    currentItem!.size = CGSizeMake(100, 100)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                } else if currentItem?.itemName == "Top_Hat_1" {
+                    currentItem!.size = CGSizeMake(115, 115)
+                    currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 60)
                 }
                    
                 
@@ -338,22 +368,22 @@ class StoreScene: SKScene {
         //an item is being highlighted
         if currentItem != nil && self.childNodeWithName("buyButton") == nil{
             let buyNode = SKSpriteNode(imageNamed: "Buy_Text_1")
-            buyNode.position = CGPointMake(self.frame.midX + 120, self.frame.minY + 40)
+            buyNode.position = CGPointMake(self.frame.midX + 135, self.frame.minY + 55)
             buyNode.setScale(0.5)
             buyNode.name = "buyButton"
             self.addChild(buyNode)
             //stat symbols
             let lifeSymbol = SKSpriteNode(imageNamed: "Life_Symbol_1")
-            lifeSymbol.setScale(0.2)
-            lifeSymbol.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 100)
+            lifeSymbol.setScale(0.15)
+            lifeSymbol.position = CGPointMake(self.frame.midX - 145, self.frame.minY + 95)
             self.addChild(lifeSymbol)
             let speedSymbol = SKSpriteNode(imageNamed: "Speed_Symbol_1")
-            speedSymbol.setScale(0.2)
-            speedSymbol.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 70)
+            speedSymbol.setScale(0.15)
+            speedSymbol.position = CGPointMake(self.frame.midX - 145, self.frame.minY + 65)
             self.addChild(speedSymbol)
             let regenerationSymbol = SKSpriteNode(imageNamed: "Regeneration_Symbol_1")
-            regenerationSymbol.setScale(0.2)
-            regenerationSymbol.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 40)
+            regenerationSymbol.setScale(0.15)
+            regenerationSymbol.position = CGPointMake(self.frame.midX - 145, self.frame.minY + 35)
             self.addChild(regenerationSymbol)
         }
         
@@ -367,13 +397,13 @@ class StoreScene: SKScene {
             
             
             let priceNode = SKLabelNode.init(text: "\(Int(currentItem!.price!))")
-            priceNode.position = CGPointMake(self.frame.maxX - 80, self.frame.minY + 70)
+            priceNode.position = CGPointMake(self.frame.midX + 110, self.frame.minY + 80)
             priceNode.fontName = "ChalkboardSE-Bold"
-            priceNode.fontSize = 25
+            priceNode.fontSize = 30
             priceNode.name = "priceButton"
             priceNode.fontColor = UIColor.blackColor()
             let booty = SKSpriteNode(imageNamed: "Booty_1.png")
-            booty.position = CGPointMake(self.frame.maxX - 40, self.frame.minY + 75)
+            booty.position = CGPointMake(self.frame.midX + 160, self.frame.minY + 90)
             booty.setScale(0.075)
             if firstClick{
                 self.addChild(booty)
@@ -386,7 +416,7 @@ class StoreScene: SKScene {
             itemText = SKSpriteNode(imageNamed: "\(itemName!)")
             itemText!.name = "itemText"
             itemText!.setScale(0.7)
-            itemText!.position = CGPointMake(self.frame.midX, self.frame.minY + 140)
+            itemText!.position = CGPointMake(self.frame.midX, self.frame.minY + 135)
             //if firstClick{
                 self.addChild(itemText!)
             //}
