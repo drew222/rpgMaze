@@ -22,7 +22,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
     //REGEN CODE******
     var lastHeal: Double = 0.0
     let healSpeed = 5.0
-    var lifeNode: SKLabelNode?
+    //var lifeNode: SKLabelNode?
     var newLifeNode: SKSpriteNode?
     var maxLife: CGFloat = 0.0
     //*****************
@@ -41,13 +41,13 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         theHero!.setScale(0.6)
         theHero!.name = "hero"
         self.addChild(theHero!)
-        lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
-        lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
-        lifeNode!.name = "life"
-        lifeNode!.zPosition = 2
-        lifeNode!.fontColor = UIColor.whiteColor()
-        lifeNode!.fontSize = 20
-        self.addChild(lifeNode!)
+        //lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
+        //lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
+        //lifeNode!.name = "life"
+        //lifeNode!.zPosition = 2
+        //lifeNode!.fontColor = UIColor.whiteColor()
+        //lifeNode!.fontSize = 20
+        //self.addChild(lifeNode!)
         
         //add lifeheart to all levels!!!!!!
         let lifeHeart = SKSpriteNode(imageNamed: "Life_Symbol_1")
@@ -158,7 +158,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
             }
         }
         self.lastUpdatesTime = currentTime
-        lifeNode!.text = "\(Int(floor(theHero!.life!)))"
+        //lifeNode!.text = "\(Int(floor(theHero!.life!)))"
         //ZACH NEW LEVELS
         newLifeNode!.texture = SKTexture(imageNamed: "World_1_Level_\(Int(theHero!.life!))_Text")
         //***************

@@ -17,7 +17,7 @@ class TreasureChest: SKSpriteNode {
         chest.position = position
         chest.name = "chest"
         chest.size = CGSizeMake(65, 65)
-        chest.zPosition = 2
+        chest.zPosition = 3
         //chest.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         //chest.setScale(0.1)
         //chest.setupPhysicsBody()
@@ -33,7 +33,7 @@ class TreasureChest: SKSpriteNode {
         let explodeCode = SKAction.runBlock({let litePath = NSBundle.mainBundle().pathForResource("TreasureChestSpark", ofType: "sks")
             liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
             liteAttack!.position = self.position
-            liteAttack!.zPosition = 3
+            liteAttack!.zPosition = 4
             liteAttack!.setScale(0.5)
             self.parent!.addChild(liteAttack!)
             //self.removeActionForKey("fire")
