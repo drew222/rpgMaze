@@ -346,7 +346,7 @@ class Inventory: SKScene {
     
     func updateStats() {
         var life = 1
-        var movement = 120
+        var movement = 0
         var regen = 0
         let weaponSpace = self.childNodeWithName("weapon") as! ItemSpaceNode
         let bodySpace = self.childNodeWithName("body") as! ItemSpaceNode
@@ -821,7 +821,7 @@ class Inventory: SKScene {
                             if self.childNodeWithName("priceButton") != nil{
                                 self.childNodeWithName("priceButton")?.removeFromParent()
                             }
-                            let sellNode = SKLabelNode.init(text: "\(round(itemToMove!.price! / 5))")
+                            let sellNode = SKLabelNode.init(text: "\(Int(round(itemToMove!.price! / 5)))")
                             sellNode.position = CGPointMake(self.frame.minX + 60, self.frame.minY + 215)
                             
                             //sellNode.position = CGPointMake(self.frame.midX - 110, self.frame.minY + 27)
