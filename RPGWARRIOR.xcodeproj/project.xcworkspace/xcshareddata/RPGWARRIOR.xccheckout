@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>3F9BB673-B3DA-4A92-8907-BA137FDC5092</string>
 	<key>IDESourceControlProjectName</key>
-	<string>RPGWARRIOR</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>EFF80B3A31091BAB568D3E50AEDA8A01FEFE1149</key>
 		<string>https://github.com/drew222/rpgMaze.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>RPGWARRIOR.xcodeproj</string>
+	<string>RPGWARRIOR.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>EFF80B3A31091BAB568D3E50AEDA8A01FEFE1149</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>EFF80B3A31091BAB568D3E50AEDA8A01FEFE1149</string>
 			<key>IDESourceControlWCCName</key>
-			<string>rpgMaze</string>
+			<string>RPGWARRIOR</string>
 		</dict>
 	</array>
 </dict>
