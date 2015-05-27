@@ -252,7 +252,7 @@ class MainMenuScene: SKScene {
             }
             world1level13node = SKSpriteNode(imageNamed: "World_1_Level_13_Text")
             if let Node = world1level13node {
-                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX, self.frame.midY - 120)
                 self.addChild(levelIcon)
@@ -263,7 +263,7 @@ class MainMenuScene: SKScene {
             }
             world1level14node = SKSpriteNode(imageNamed: "World_1_Level_14_Text")
             if let Node = world1level14node {
-                let levelIcon = SKSpriteNode(imageNamed: "Whale_Level_Icon_1")
+                let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 35, self.frame.midY - 210)
                 self.addChild(levelIcon)
@@ -285,7 +285,7 @@ class MainMenuScene: SKScene {
             }
             world1level16node = SKSpriteNode(imageNamed: "World_1_Level_16_Text")
             if let Node = world1level16node {
-                let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
+                let levelIcon = SKSpriteNode(imageNamed: "Whale_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 150)
                 self.addChild(levelIcon)
