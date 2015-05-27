@@ -184,7 +184,7 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
         for touch in touches{
             if !inkSplatted{
                 aHero!.moveHelper((touch as! UITouch).locationInNode(self))
-            }else{
+            }else if self.childNodeWithName("yesText") != nil{
                 if self.childNodeWithName("yesText")!.containsPoint((touch as! UITouch).locationInNode(self)){
                     let newLevel1 = World1Level20(size: self.frame.size)
                     newLevel1.userData = NSMutableDictionary()
