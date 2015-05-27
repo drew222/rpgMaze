@@ -26,7 +26,7 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
     var maxLife: CGFloat = 0.0
     //*****************
     
-    let bomberAttackSpeed = 0.75
+    let bomberAttackSpeed = 1.0
     
     var theBomber: BomberClass?
     var theHero: HeroClass?
