@@ -92,15 +92,20 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySpike.rawValue){
+                println("got here")
                 theHero!.takeDamage(spikeDamage)
+                secondBody.node?.removeFromParent()
+                println("got here2")
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
                 theHero!.takeDamage(crabDamage)
+                secondBody.node?.removeFromParent()
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryKrill.rawValue){
                 theHero!.takeDamage(krillDamage)
+                secondBody.node?.removeFromParent()
         }
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
@@ -108,7 +113,9 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 if (secondBody.node as? WaveNode != nil){
                     theHero!.takeDamage(waterWaveDamage)
                 }else{
-                    theHero!.takeDamage(oilWaveDamage)
+                    if !self.childNodeWithName("safeSpot1")!.containsPoint(theHero!.position){
+                        theHero!.takeDamage(oilWaveDamage)
+                    }
                 }
         }
         

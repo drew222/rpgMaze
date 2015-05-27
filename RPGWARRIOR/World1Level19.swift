@@ -96,11 +96,11 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
                 theHero!.takeDamage(2)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySpike.rawValue){
                 //if (secondBody.node as! Tentacle).isArmed{
                     theHero!.takeDamage(3)
                 //}
-                println("died by tentalce")
+               // println("died by tentalce")
         }
         /*
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&

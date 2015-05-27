@@ -43,7 +43,7 @@ class Tentacle: SKSpriteNode {
     func setupPhysicsBody() {
         self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.width * 0.80, self.frame.height * 0.80))
         self.physicsBody?.affectedByGravity = false
-        self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryWave.rawValue
+        self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategorySpike.rawValue
         self.physicsBody?.collisionBitMask = 0
         self.physicsBody?.contactTestBitMask = CollisionBitMasks.collisionCategoryHero.rawValue
     }
