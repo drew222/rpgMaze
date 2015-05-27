@@ -481,6 +481,68 @@ class Inventory: SKScene {
                 neckDisplay!.size = CGSizeMake(200, 50)
                 neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
             } else if itemName == "Copper_Ring_2" {
+                neckDisplay!.size = CGSizeMake(100, 200)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Silver_Ring_2" {
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Gold_Ring_2" {
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Water_Wing_2" {
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Sweaty_Wristband_2" {
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Whistle_2" {
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Lifejacket_2" {
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Beach_Towel_2" {
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Floatie_2" {
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Sun_Screen_2" {
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Sweatband_2" {
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Visor_2" {
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Sand_Bucket_2" {
+                itemName = "Sand_Bucket_1"
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Sun_Hat_2" {
+                itemName = "Sun_Hat_1"
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Shades_2" {
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Bling_Ring_2" {
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Bow_Tie_2" {
+                itemName = "Bow_Tie_1"
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Monocle_2" {
+                itemName = "Monocle_1"
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Watch_2" {
+                neckDisplay!.size = CGSizeMake(60, 60)
+                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            } else if itemName == "Top_Hat_2" {
+                itemName = "Top_Hat_1"
                 neckDisplay!.size = CGSizeMake(60, 60)
                 neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
             }
