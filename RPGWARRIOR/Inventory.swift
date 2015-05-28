@@ -98,7 +98,7 @@ class Inventory: SKScene {
             self.addChild(leftDisplay!)
             rightDisplay = SKSpriteNode(imageNamed: "")
             rightDisplay!.size = CGSizeMake(40, 40)
-            rightDisplay!.zRotation = pi/3
+            rightDisplay!.zRotation = pi/2
             rightDisplay!.texture = nil
             rightDisplay!.position = CGPointMake(krakenNode.position.x + 65, krakenNode.position.y - 28)
             rightDisplay!.zPosition = 2
@@ -505,9 +505,9 @@ class Inventory: SKScene {
                 headDisplay!.size = CGSizeMake(225, 225)
                 headDisplay!.position = CGPointMake(self.frame.midX - 10, self.frame.maxY - 150)
             } else if itemName == "Shades_2" {
-             
+                headDisplay!.zPosition = 3
                 headDisplay!.size = CGSizeMake(120, 80)
-                headDisplay!.position = CGPointMake(self.frame.midX - 10, self.frame.maxY - 220)
+                headDisplay!.position = CGPointMake(self.frame.midX - 7, self.frame.maxY - 220)
             } else if itemName == "Monocle_2" {
                 itemName = "Monocle_1"
                 headDisplay!.size = CGSizeMake(96, 107)
@@ -523,9 +523,8 @@ class Inventory: SKScene {
             } else if itemName == "Afro_Seaweed_2" {
                 itemName = "Afro_Seaweed_1"
                 headDisplay!.size = CGSizeMake(200, 200)
-                headDisplay!.position = CGPointMake(self.frame.midX - 20, self.frame.maxY - 140)
+                headDisplay!.position = CGPointMake(self.frame.midX - 10, self.frame.maxY - 135)
             }
-            headDisplay!.zRotation = 0
             headDisplay!.texture = SKTexture(imageNamed: "\(item.itemName!)")
             //LEFT
         }else if spot == "body" {
@@ -533,58 +532,58 @@ class Inventory: SKScene {
             itemName = itemName.stringByReplacingOccurrencesOfString("1", withString: "2", options: NSStringCompareOptions.LiteralSearch, range: nil)
            if itemName == "Copper_Ring_2" {
                 leftDisplay!.size = CGSizeMake(50, 50)
-                leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+                leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
             } else if itemName == "Silver_Ring_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
             } else if itemName == "Gold_Ring_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
             } else if itemName == "Water_Wing_2" {
             leftDisplay!.size = CGSizeMake(80, 80)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 80, self.frame.midY + 60)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 80, self.frame.maxY - 274)
             } else if itemName == "Sweaty_Wristband_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
             }  else if itemName == "Bling_Ring_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
             }   else if itemName == "Watch_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
            } else if itemName == "Rusty_Copper_Ring_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
            } else if itemName == "Mossy_Copper_Ring_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
            } else if itemName == "Rusty_Silver_Ring_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
            } else if itemName == "Mossy_Silver_Ring_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
            } else if itemName == "Rusty_Gold_Ring_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
            } else if itemName == "Mossy_Gold_Ring_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
            } else if itemName == "Beach_Ball_Fragment_Ring_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
            } else if itemName == "Seashell_Charm_Bracelet_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
            } else if itemName == "Pearl_Snap_Ring_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
            } else if itemName == "Inky_Ring_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
            } else if itemName == "King_Kraken_Tentacle_Ring_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
-            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
             }
             
             
@@ -595,27 +594,60 @@ class Inventory: SKScene {
             var itemName = item.itemName!
             itemName = itemName.stringByReplacingOccurrencesOfString("1", withString: "2", options: NSStringCompareOptions.LiteralSearch, range: nil)
             if itemName == "Copper_Ring_2" {
-                rightDisplay!.size = CGSizeMake(100, 200)
-                rightDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
             } else if itemName == "Silver_Ring_2" {
-                rightDisplay!.size = CGSizeMake(60, 60)
-                rightDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
             } else if itemName == "Gold_Ring_2" {
-                rightDisplay!.size = CGSizeMake(60, 60)
-                rightDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
             } else if itemName == "Water_Wing_2" {
-                rightDisplay!.size = CGSizeMake(60, 60)
+                rightDisplay!.size = CGSizeMake(80, 80)
                 rightDisplay!.zPosition = 2
-                rightDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 72, self.frame.maxY - 257)
             } else if itemName == "Sweaty_Wristband_2" {
-                rightDisplay!.size = CGSizeMake(60, 60)
-                rightDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
             }  else if itemName == "Bling_Ring_2" {
-                rightDisplay!.size = CGSizeMake(60, 60)
-                rightDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
             }   else if itemName == "Watch_2" {
-                rightDisplay!.size = CGSizeMake(60, 60)
-                rightDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+            } else if itemName == "Rusty_Copper_Ring_2" {
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+            } else if itemName == "Mossy_Copper_Ring_2" {
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+            } else if itemName == "Rusty_Silver_Ring_2" {
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+            } else if itemName == "Mossy_Silver_Ring_2" {
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+            } else if itemName == "Rusty_Gold_Ring_2" {
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+            } else if itemName == "Mossy_Gold_Ring_2" {
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+            } else if itemName == "Beach_Ball_Fragment_Ring_2" {
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+            } else if itemName == "Seashell_Charm_Bracelet_2" {
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+            } else if itemName == "Pearl_Snap_Ring_2" {
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+            } else if itemName == "Inky_Ring_2" {
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+            } else if itemName == "King_Kraken_Tentacle_Ring_2" {
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
             }
             rightDisplay!.texture = SKTexture(imageNamed: "\(itemName)")
             //NECK
@@ -628,7 +660,7 @@ class Inventory: SKScene {
                 neckDisplay!.size = CGSizeMake(20, 20)
                 neckDisplay!.position = CGPointMake(self.frame.midX - 5, self.frame.maxY - 270)
             } else if itemName == "Whistle_2" {
-                neckDisplay!.size = CGSizeMake(500,100)
+                neckDisplay!.size = CGSizeMake(150,95)
                 neckDisplay!.position = CGPointMake(self.frame.midX - 10, self.frame.maxY - 250)
             } else if itemName == "Lifejacket_2" {
                 neckDisplay!.size = CGSizeMake(203,120)
@@ -644,19 +676,20 @@ class Inventory: SKScene {
                 neckDisplay!.size = CGSizeMake(250, 250)
                 neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 230)
             } else if itemName == "Pearl_Necklace_2" {
-                neckDisplay!.size = CGSizeMake(250, 250)
-                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 230)
+                itemName = "Pearl_Necklace_1"
+                neckDisplay!.size = CGSizeMake(154, 77)
+                neckDisplay!.position = CGPointMake(self.frame.midX - 7, self.frame.maxY - 250)
             } else if itemName == "Seashell_Necklace_2" {
-                neckDisplay!.size = CGSizeMake(250, 250)
-                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 230)
+                neckDisplay!.size = CGSizeMake(150, 75)
+                neckDisplay!.position = CGPointMake(self.frame.midX - 8, self.frame.maxY - 249)
             }else if itemName == "Seaweed_Mustache_2" {
                 itemName = "Seaweed_Mustache_1"
-                neckDisplay!.size = CGSizeMake(250, 250)
-                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 230)
+                neckDisplay!.size = CGSizeMake(165, 120)
+                neckDisplay!.position = CGPointMake(self.frame.midX - 7, self.frame.maxY - 257)
             } else if itemName == "Barnacles_2" {
                 itemName = "Barnacles_1"
-                neckDisplay!.size = CGSizeMake(250, 250)
-                neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 230)
+                neckDisplay!.size = CGSizeMake(160, 80)
+                neckDisplay!.position = CGPointMake(self.frame.midX - 7, self.frame.maxY - 255)
             }
 
             neckDisplay!.texture = SKTexture(imageNamed: "\(itemName)")
