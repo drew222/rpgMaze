@@ -48,7 +48,7 @@ var heroSpeed: CGFloat = 150
 
 let allStoreItems = ["Copper_Ring_1","Sweaty_Wristband_1", "Silver_Ring_1","Water_Wing_1", "Gold_Ring_1", "Whistle_1", "Lifejacket_1", "Beach_Towel_1", "Floatie_1", "Sun_Screen_1",
     "Sweatband_1", "Visor_1", "Sand_Bucket_1", "Sunhat_1", "Shades_1", "Bling_Ring_1",
-    "Watch_1", "Bow_Tie_1", "Top_Hat_1", "Monocle_1", "Seashell_Charm_Bracelet_1"]
+    "Watch_1", "Bow_Tie_1", "Top_Hat_1", "Monocle_1"]
 
 
 func randomWithMin(min: Int, max: Int) -> NSInteger{
@@ -238,7 +238,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(item)
         }
     }else if level == "level9"{
-        //25% crab claw cap, 10% beach ball fragment, 65% 3 booty
+        //25% crab claw cap, 15% beach ball fragment, 60% 3 booty
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
         if myNum > 75{
@@ -246,7 +246,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             item.position = position
             item.size = size
             scene.addChild(item)
-        } else if (myNum <= 75) && (myNum > 10){
+        } else if (myNum <= 75) && (myNum > 15){
             let gold = SKSpriteNode(imageNamed: "Booty_1")
             gold.name = "gold"
             gold.position = position
