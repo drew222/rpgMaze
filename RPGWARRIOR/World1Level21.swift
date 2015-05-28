@@ -53,6 +53,7 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
+        background.name = "background"
         background.zPosition = -1
         self.addChild(background)
         self.physicsWorld.contactDelegate = self
