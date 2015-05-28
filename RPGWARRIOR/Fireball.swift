@@ -59,24 +59,22 @@ class Fireball: SKSpriteNode {
         }
         let offScreenY = position.y + slope * offScreenX - slope * position.x
         
-        let pointOffScreen = CGPointMake(offScreenX, offScreenY)
+        var pointOffScreen = CGPointMake(offScreenX, offScreenY)
+        if (position.x - self.position.x == 0){
+            pointOffScreen = CGPointMake(position.x, -20)
+        }
         //println("Offscreen Position is at (\(pointOffScreen.x), \(pointOffScreen.y))")
-        let xDistance = self.position.x - offScreenX
+        let xDistance = self.position.x - pointOffScreen.x
         
-        let yDistance = self.position.y - offScreenY
+        let yDistance = self.position.y - pointOffScreen.y
         
         let distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
         
         
         let time = NSTimeInterval(distance / CGFloat(fireballSpeed))
-        //println("time = \(time)")
-        if time > 300{
-            self.removeFromParent()
-        }else{
+
             let moveProjectile = SKAction.moveTo(pointOffScreen, duration: time)
         
             self.runAction(moveProjectile)
-        }
-        
     }
-    }
+}

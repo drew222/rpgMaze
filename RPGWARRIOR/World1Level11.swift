@@ -147,11 +147,11 @@ class World1Level11: SKScene, SKPhysicsContactDelegate {
             self.lastBlizz = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastFireball  > wizardAttackSpeed{
+        if currentTime - lastFireball  > wizardAttackSpeed && !inkSplatted{
             self.lastFireball = currentTime
             theWizard!.shootFireball(theHero!.position)
         }
-        if currentTime - lastBlizz > (3 * wizardAttackSpeed) {
+        if currentTime - lastBlizz > (3 * wizardAttackSpeed) && !inkSplatted{
             theWizard!.createBlizz(theWizard!.getBlizzLocation(theHero!.position))
             self.lastBlizz = currentTime
         }
