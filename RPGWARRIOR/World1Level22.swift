@@ -143,7 +143,7 @@ class World1Level22: SKScene, SKPhysicsContactDelegate {
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
         //BEACH BALL BOMBS
-        if currentTime - lastBomb  > bomberAttackSpeed{
+        if currentTime - lastBomb  > bomberAttackSpeed && !inkSplatted && !droppedChest{
             self.lastBomb = currentTime
             theBomber!.throwBomb()
         }
@@ -154,7 +154,7 @@ class World1Level22: SKScene, SKPhysicsContactDelegate {
         self.timeSinceCrabAdded = self.timeSinceCrabAdded + currentTime - self.lastUpdatesTime
         
         
-        if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver && !self.droppedItem) {
+        if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver && !self.droppedItem && !inkSplatted && !droppedChest) {
             self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX, yMatch), endPosition: CGPointMake(self.frame.maxX, yMatch)))
             
             

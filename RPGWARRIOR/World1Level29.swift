@@ -187,7 +187,7 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
             self.lastUpdatesTime = currentTime
             self.lastBomb = currentTime
         }
-        if currentTime - lastBomb  > bomberAttackSpeed{
+        if currentTime - lastBomb  > bomberAttackSpeed && !inkSplatted && !droppedChest{
             self.lastBomb = currentTime
             theBomber!.throwBomb()
         }

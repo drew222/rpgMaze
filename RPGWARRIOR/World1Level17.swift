@@ -53,6 +53,7 @@ class World1Level17: SKScene, SKPhysicsContactDelegate {
         let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
+        background.name = "background"
         background.zPosition = -1
         self.addChild(background)
         self.physicsWorld.contactDelegate = self
@@ -158,7 +159,7 @@ class World1Level17: SKScene, SKPhysicsContactDelegate {
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
-        if currentTime - lastWave  > krakenAttackSpeed * 1.15{
+        if currentTime - lastWave  > krakenAttackSpeed * 1.15 && !inkSplatted && !droppedChest && !droppedItem{
             for node in self.children{
                 if let aNode = node as? SKSpriteNode{
                     if aNode.name == "safeSpot1" || aNode.name == "safeSpot2"{

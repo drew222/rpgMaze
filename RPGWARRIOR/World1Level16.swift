@@ -180,6 +180,15 @@ class World1Level16: SKScene, SKPhysicsContactDelegate {
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
+        if currentTime - lastWave  > whaleAttackSpeed && !levelOver && !droppedItem && !droppedChest{
+            self.lastWave = currentTime
+            if whichWave == wavePositions!.count {
+                whichWave = 0
+            }
+            theWhale!.throwWave(wavePositions![whichWave])
+            whichWave += 1
+        }
+        
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
             self.lastHeal = currentTime

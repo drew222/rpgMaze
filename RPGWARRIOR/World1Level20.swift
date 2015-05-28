@@ -219,7 +219,7 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
         self.timeSinceCrabAdded = self.timeSinceCrabAdded + currentTime - self.lastUpdatesTime
         
         
-        if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver) {
+        if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver && !inkSplatted && !droppedChest) {
             self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX, self.frame.midY ), endPosition: CGPointMake(self.frame.maxX, self.frame.midY)))
             self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.maxX, self.frame.midY - 200 ), endPosition: CGPointMake(self.frame.minX, self.frame.midY - 200)))
             self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX, self.frame.midY - 400), endPosition: CGPointMake(self.frame.maxX, self.frame.midY - 400)))

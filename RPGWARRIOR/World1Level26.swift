@@ -170,7 +170,7 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
             self.lastFireball = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastFireball  > wizardAttackSpeed{
+        if currentTime - lastFireball  > wizardAttackSpeed && !droppedChest && !inkSplatted{
             self.lastFireball = currentTime
             theWizard!.shootFireball(theHero!.position)
         }

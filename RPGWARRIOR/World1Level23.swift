@@ -160,7 +160,7 @@ class World1Level23: SKScene, SKPhysicsContactDelegate {
             self.lastWave = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastKrill  > whaleAttackSpeed || lastUpdatesTime == 0.0{
+        if (currentTime - lastKrill  > whaleAttackSpeed || lastUpdatesTime == 0.0) && !droppedChest && !inkSplatted{
             self.lastKrill = currentTime
             theWhale!.shootKrill()
         }

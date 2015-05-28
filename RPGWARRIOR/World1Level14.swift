@@ -188,7 +188,7 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
             self.lastFireball = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastFireball  > wizardAttackSpeed{
+        if currentTime - lastFireball  > wizardAttackSpeed && !inkSplatted && !droppedChest && !droppedItem{
             self.lastFireball = currentTime
             if whichSpot < attackSpots.count {
                 if !(attackSpots[whichSpot].x == 0 && attackSpots[whichSpot].y == 0){

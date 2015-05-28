@@ -167,7 +167,7 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
-        if currentTime - lastWave  > krakenAttackSpeed * 1.15{
+        if currentTime - lastWave  > krakenAttackSpeed * 1.15 && !droppedChest && !inkSplatted{
             for node in self.children{
                 if let aNode = node as? SKSpriteNode{
                     if aNode.name == "safeSpot1" || aNode.name == "safeSpot2"{

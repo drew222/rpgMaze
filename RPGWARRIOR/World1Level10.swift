@@ -156,7 +156,7 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
             }
         }
 
-        if currentTime - lastWave  > whaleAttackSpeed && !levelOver && !droppedItem{
+        if currentTime - lastWave  > whaleAttackSpeed && !levelOver && !droppedItem && !droppedChest{
             self.lastWave = currentTime
             if whichWave == wavePositions!.count {
                 whichWave = 0
