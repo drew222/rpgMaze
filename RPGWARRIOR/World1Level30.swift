@@ -143,6 +143,35 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     
     
     func updateLevel() {
+        phase += 1
+        
+        //Phase Transition
+        let phaseText = SKLabelNode(fontNamed: "ChalkboardSE-Bold")
+        phaseText.text = ""
+        phaseText.fontSize = 30
+        phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
+        let runBlock = SKAction.runBlock({phaseText.removeFromParent()})
+        let runBlock2 = SKAction.runBlock({phaseText.text = "Phase : \(self.phase)"})
+        let waitAction = SKAction.waitForDuration(3)
+        let waitAction2 = SKAction.waitForDuration(5)
+        let sequence = SKAction.sequence([waitAction2, runBlock2, waitAction, runBlock])
+        self.addChild(phaseText)
+        phaseText.runAction(sequence)
+        
+        
+        //Balance Stuff
+        krakenAttackSpeed -= 0.5
+        krakenAttackSpeedSpike -= 0.5
+        whaleAttackSpeedKrill -= 0.5
+        whaleAttackSpeedWave -= 0.5
+        crabSpawnSpeed -= 0.5
+        if phase % 5 == 0{
+            spikeDamage += 3
+            waterWaveDamage += 3
+            oilWaveDamage += 5
+            krillDamage += 1
+            crabDamage += 1
+        }
         
     }
     
@@ -167,7 +196,6 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             }
             self.lastWave = currentTime
             theKraken!.createSafeAndWave()
-            phase += 1
             updateLevel()
             inking = true
             inkingTimer = currentTime
