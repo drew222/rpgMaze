@@ -489,9 +489,9 @@ class Inventory: SKScene {
                 headDisplay!.size = CGSizeMake(150, 150)
                 headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 150)
             } else if itemName == "Visor_2" {
-                itemName = "Visor_1"
                 headDisplay!.size = CGSizeMake(150, 150)
                 headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 150)
+
             } else if itemName == "Sand_Bucket_2" {
                 itemName = "Sand_Bucket_1"
                 headDisplay!.size = CGSizeMake(150, 150)
@@ -499,10 +499,10 @@ class Inventory: SKScene {
                 headDisplay!.position = CGPointMake(self.frame.midX - 10, self.frame.maxY - 90)
             } else if itemName == "Sun_Hat_2" {
                 itemName = "Sun_Hat_1"
-                headDisplay!.setScale(0.5)
-                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY - 150)
+                headDisplay!.setScale(0.8)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY - 200)
             } else if itemName == "Shades_2" {
-                itemName = "Shades_1"
+             
                 headDisplay!.setScale(0.5)
                 headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY - 150)
             } else if itemName == "Monocle_2" {
