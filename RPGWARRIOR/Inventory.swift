@@ -111,12 +111,14 @@ class Inventory: SKScene {
             self.addChild(neckDisplay!)
         store = SKSpriteNode(imageNamed: "Store_Button_1")
         store!.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 55)
+        store!.zPosition = 4
         store!.name = "store"
         store!.size = CGSizeMake(100, 100)
         self.addChild(store!)
             let storeText = SKSpriteNode(imageNamed: "Fitting_Room_Text_1")
             storeText.position = CGPointMake(self.frame.midX, self.frame.maxY - 50)
             storeText.name = "store"
+            storeText.zPosition = 4
             storeText.size = CGSizeMake(165, 60)
             self.addChild(storeText)
         backPack = SKSpriteNode(imageNamed: "Inventory_Array_Background_1")
@@ -484,40 +486,39 @@ class Inventory: SKScene {
                 headDisplay!.size = CGSizeMake(182, 125)
                 headDisplay!.position = CGPointMake(self.frame.midX - 12, self.frame.maxY - 150)
             } else if itemName == "Sweatband_2" {
-                itemName = "Sweatband_1"
                 headDisplay!.size = CGSizeMake(150, 150)
-                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 150)
             } else if itemName == "Visor_2" {
                 headDisplay!.size = CGSizeMake(150, 150)
-                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 150)
             } else if itemName == "Sand_Bucket_2" {
                 itemName = "Sand_Bucket_1"
-                headDisplay!.size = CGSizeMake(100, 100)
-                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY)
+                headDisplay!.size = CGSizeMake(150, 150)
+                headDisplay!.zRotation = -pi/9
+                headDisplay!.position = CGPointMake(self.frame.midX + 25, self.frame.maxY - 110)
             } else if itemName == "Sun_Hat_2" {
                 itemName = "Sun_Hat_1"
                 headDisplay!.setScale(0.5)
-                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY - 150)
             } else if itemName == "Shades_2" {
-                itemName = "Shades_1"
                 headDisplay!.setScale(0.5)
-                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY - 150)
             } else if itemName == "Monocle_2" {
                 itemName = "Monocle_1"
                 headDisplay!.size = CGSizeMake(60, 60)
-                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY - 150)
             } else if itemName == "Crab_Claw_Cap_2" {
                 itemName = "Crab_Claw_Cap_1"
                 headDisplay!.size = CGSizeMake(60, 60)
-                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY - 150)
             } else if itemName == "Coral_Crown_2" {
                 itemName = "Coral_Crown_1"
                 headDisplay!.size = CGSizeMake(60, 60)
-                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY - 150)
             } else if itemName == "Afro_Seaweed_2" {
                 itemName = "Afro_Seaweed_1"
                 headDisplay!.size = CGSizeMake(60, 60)
-                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY - 150)
             }
 
             headDisplay!.texture = SKTexture(imageNamed: "\(item.itemName!)")
