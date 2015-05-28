@@ -523,7 +523,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(item)
         }
         else if (myNum <= 65) && (myNum > 55){
-            let item = ItemClass.itemInSpace("King_Kraken_Tentacle_1")
+            let item = ItemClass.itemInSpace("King_Kraken_Tentacle_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
