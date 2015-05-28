@@ -62,10 +62,17 @@ class Inventory: SKScene {
         menu!.size = CGSizeMake(100, 100)
         self.addChild(menu!)
             let krakenNode = SKSpriteNode(imageNamed: "Fitting_Room_Kraken_1")
+            if isPlus{
+                krakenNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 265)
+                krakenNode.name = "kraken"
+                krakenNode.size = CGSizeMake(250, 250)
+                self.addChild(krakenNode)
+            } else{
             krakenNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 230)
             krakenNode.name = "kraken"
             krakenNode.size = CGSizeMake(250, 250)
             self.addChild(krakenNode)
+            }
             let lifeSymbol = SKSpriteNode(imageNamed: "Life_Symbol_1")
             lifeSymbol.position = CGPointMake(self.frame.minX + 25, self.frame.maxY - 140)
             lifeSymbol.zPosition = 2
@@ -124,37 +131,43 @@ class Inventory: SKScene {
         backPack!.name = "backpack"
         self.addChild(backPack!)
             statLabelLife = SKLabelNode.init(text: "")
-            statLabelLife!.position = CGPointMake(self.frame.midX - 100, self.frame.minY + 260)
-            statLabelLife!.fontColor = UIColor.blueColor()
+            statLabelLife!.position = CGPointMake(self.frame.midX - 40, self.frame.minY + 253)
+            statLabelLife!.fontName = "ChalkboardSE-Bold"
+            statLabelLife!.fontSize = 22
+            statLabelLife!.fontColor = UIColor.blackColor()
             statLabelLife!.name = "lifeStat"
             statLabelLife!.setScale(0.7)
             self.addChild(statLabelLife!)
             statLabelMovement = SKLabelNode.init(text: "")
-            statLabelMovement!.position = CGPointMake(self.frame.midX + 25, self.frame.minY + 260)
-            statLabelMovement!.fontColor = UIColor.blueColor()
+            statLabelMovement!.position = CGPointMake(self.frame.midX + 25, self.frame.minY + 253)
+            statLabelMovement!.fontName = "ChalkboardSE-Bold"
+            statLabelMovement!.fontSize = 22
+            statLabelMovement!.fontColor = UIColor.blackColor()
             statLabelMovement!.name = "movementStat"
             statLabelMovement!.setScale(0.7)
             self.addChild(statLabelMovement!)
             statLabelRegen = SKLabelNode.init(text: "")
-            statLabelRegen!.position = CGPointMake(self.frame.midX + 150, self.frame.minY + 260)
-            statLabelRegen!.fontColor = UIColor.blueColor()
+            statLabelRegen!.position = CGPointMake(self.frame.midX + 90, self.frame.minY + 253)
+            statLabelRegen!.fontName = "ChalkboardSE-Bold"
+            statLabelRegen!.fontSize = 22
+            statLabelRegen!.fontColor = UIColor.blackColor()
             statLabelRegen!.name = "regenStat"
             statLabelRegen!.setScale(0.7)
             self.addChild(statLabelRegen!)
             lifeSymbol2 = SKSpriteNode(imageNamed: "Life_Symbol_1")
-            lifeSymbol2!.position = CGPointMake(self.frame.midX - 125, self.frame.minY + 260)
+            lifeSymbol2!.position = CGPointMake(self.frame.midX - 65, self.frame.minY + 260)
             lifeSymbol2!.zPosition = 2
-            lifeSymbol2!.setScale(0.2)
+            lifeSymbol2!.setScale(0.15)
             //self.addChild(lifeSymbol2)
             speedSymbol2 = SKSpriteNode(imageNamed: "Speed_Symbol_1")
             speedSymbol2!.position = CGPointMake(self.frame.midX, self.frame.minY + 260)
             speedSymbol2!.zPosition = 2
-            speedSymbol2!.setScale(0.2)
+            speedSymbol2!.setScale(0.15)
             //self.addChild(speedSymbol2)
             regenerationSymbol2 = SKSpriteNode(imageNamed: "Regeneration_Symbol_1")
-            regenerationSymbol2!.position = CGPointMake(self.frame.midX + 125, self.frame.minY + 260)
+            regenerationSymbol2!.position = CGPointMake(self.frame.midX + 65, self.frame.minY + 260)
             regenerationSymbol2!.zPosition = 2
-            regenerationSymbol2!.setScale(0.2)
+            regenerationSymbol2!.setScale(0.15)
             //self.addChild(regenerationSymbol2)
             statLabelLife2 = SKLabelNode.init(text: "0")
             statLabelLife2!.position = CGPointMake(self.frame.minX + 60, self.frame.maxY - 150)
@@ -471,20 +484,22 @@ class Inventory: SKScene {
         if spot == "weapon"{
             var itemName = item.itemName!
             itemName = itemName.stringByReplacingOccurrencesOfString("1", withString: "2", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            //USE MIDX and MAXY FOR SPACING ON BOTH IPHONE 6 and PLUS PURPOSES
             if itemName == "Top_Hat_2" {
                 itemName = "Top_Hat_1"
-                headDisplay!.size = CGSizeMake(60, 60)
-                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                headDisplay!.size = CGSizeMake(200, 150)
+                headDisplay!.position = CGPointMake(self.frame.midX - 20, self.frame.maxY - 120)
             } else if itemName == "Sweatband_2" {
-                headDisplay!.size = CGSizeMake(60, 60)
-                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                itemName = "Sweatband_1"
+                headDisplay!.size = CGSizeMake(150, 150)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY)
             } else if itemName == "Visor_2" {
-                headDisplay!.size = CGSizeMake(60, 60)
-                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                headDisplay!.size = CGSizeMake(150, 150)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY)
             } else if itemName == "Sand_Bucket_2" {
                 itemName = "Sand_Bucket_1"
-                headDisplay!.size = CGSizeMake(60, 60)
-                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                headDisplay!.size = CGSizeMake(100, 100)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY)
             } else if itemName == "Sun_Hat_2" {
                 itemName = "Sun_Hat_1"
                 headDisplay!.setScale(0.5)
@@ -517,44 +532,59 @@ class Inventory: SKScene {
             var itemName = item.itemName!
             itemName = itemName.stringByReplacingOccurrencesOfString("1", withString: "2", options: NSStringCompareOptions.LiteralSearch, range: nil)
            if itemName == "Copper_Ring_2" {
-                leftDisplay!.size = CGSizeMake(100, 200)
-                leftDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+                leftDisplay!.size = CGSizeMake(50, 50)
+                leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
             } else if itemName == "Silver_Ring_2" {
-                leftDisplay!.size = CGSizeMake(60, 60)
-                leftDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
             } else if itemName == "Gold_Ring_2" {
-                leftDisplay!.size = CGSizeMake(60, 60)
-                leftDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
             } else if itemName == "Water_Wing_2" {
-                leftDisplay!.size = CGSizeMake(60, 60)
-                leftDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            leftDisplay!.size = CGSizeMake(80, 80)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 80, self.frame.midY + 60)
             } else if itemName == "Sweaty_Wristband_2" {
-                leftDisplay!.size = CGSizeMake(60, 60)
-                leftDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
             }  else if itemName == "Bling_Ring_2" {
-                leftDisplay!.size = CGSizeMake(60, 60)
-                leftDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
             }   else if itemName == "Watch_2" {
-                leftDisplay!.size = CGSizeMake(60, 60)
-                leftDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
            } else if itemName == "Rusty_Copper_Ring_2" {
-            leftDisplay!.size = CGSizeMake(60, 60)
-            leftDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
            } else if itemName == "Mossy_Copper_Ring_2" {
-            leftDisplay!.size = CGSizeMake(60, 60)
-            leftDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
            } else if itemName == "Rusty_Silver_Ring_2" {
-            leftDisplay!.size = CGSizeMake(60, 60)
-            leftDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
            } else if itemName == "Mossy_Silver_Ring_2" {
-            leftDisplay!.size = CGSizeMake(60, 60)
-            leftDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
            } else if itemName == "Rusty_Gold_Ring_2" {
-            leftDisplay!.size = CGSizeMake(60, 60)
-            leftDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
            } else if itemName == "Mossy_Gold_Ring_2" {
-            leftDisplay!.size = CGSizeMake(60, 60)
-            leftDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+           } else if itemName == "Beach_Ball_Fragment_Ring_2" {
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+           } else if itemName == "Seashell_Charm_Bracelet_2" {
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+           } else if itemName == "Pearl_Snap_Ring_2" {
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+           } else if itemName == "Inky_Ring_2" {
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
+           } else if itemName == "King_Kraken_Tentacle_Ring_2" {
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.midY + 55)
             }
             
             
@@ -575,6 +605,7 @@ class Inventory: SKScene {
                 rightDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
             } else if itemName == "Water_Wing_2" {
                 rightDisplay!.size = CGSizeMake(60, 60)
+                rightDisplay!.zPosition = 2
                 rightDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY)
             } else if itemName == "Sweaty_Wristband_2" {
                 rightDisplay!.size = CGSizeMake(60, 60)
@@ -604,6 +635,7 @@ class Inventory: SKScene {
                 neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 245)
             } else if itemName == "Beach_Towel_2" {
                 neckDisplay!.size = CGSizeMake(177,100)
+                neckDisplay!.zPosition = 3
                 neckDisplay!.position = CGPointMake(self.frame.midX - 13, self.frame.maxY - 250)
             } else if itemName == "Floatie_2" {
                 neckDisplay!.size = CGSizeMake(180,140)
@@ -822,9 +854,7 @@ class Inventory: SKScene {
                                 self.childNodeWithName("priceButton")?.removeFromParent()
                             }
                             let sellNode = SKLabelNode.init(text: "\(Int(round(itemToMove!.price! / 5)))")
-                            sellNode.position = CGPointMake(self.frame.minX + 60, self.frame.minY + 215)
-                            
-                            //sellNode.position = CGPointMake(self.frame.midX - 110, self.frame.minY + 27)
+                            sellNode.position = CGPointMake(self.frame.minX + 50, self.frame.minY + 220)
                             sellNode.fontName = "ChalkboardSE-Bold"
                             sellNode.fontSize = 30
                             sellNode.fontColor = UIColor.blackColor()
@@ -833,14 +863,14 @@ class Inventory: SKScene {
                             
                             //booty coin image
                             let booty = SKSpriteNode(imageNamed: "Booty_1.png")
-                            booty.position = CGPointMake(self.frame.minX + 120, self.frame.minY + 225)
+                            booty.position = CGPointMake(self.frame.minX + 95, self.frame.minY + 230)
                             booty.name = "sellBooty"
                             booty.setScale(0.08)
                             self.addChild(booty)
                             //sell text
                             let sellText = SKSpriteNode(imageNamed: "Sell_Text_1.png")
-                            sellText.position = CGPointMake(self.frame.midX, self.frame.minY + 225)
-                            sellText.setScale(0.4)
+                            sellText.position = CGPointMake(self.frame.midX - 10, self.frame.minY + 230)
+                            sellText.setScale(0.45)
                             sellText.name = "sellButton"
                             self.addChild(sellText)
                             //name of the item
@@ -849,8 +879,8 @@ class Inventory: SKScene {
                             itemPicName = itemPicName.stringByReplacingOccurrencesOfString("1", withString: "Text", options: NSStringCompareOptions.LiteralSearch, range: nil)
                             let itemText = SKSpriteNode(imageNamed: "\(itemPicName)")
                             itemText.name = "itemName"
-                            itemText.size = CGSizeMake(150, 30)
-                            itemText.position = CGPointMake(self.frame.midX, self.frame.minY + 290)
+                            itemText.setScale(0.7)
+                            itemText.position = CGPointMake(self.frame.midX, self.frame.minY + 295)
                             self.addChild(itemText)
                         }else{
                             statLabelLife!.text = ""
