@@ -483,24 +483,26 @@ class Inventory: SKScene {
             //USE MIDX and MAXY FOR SPACING ON BOTH IPHONE 6 and PLUS PURPOSES
             if itemName == "Top_Hat_2" {
                 itemName = "Top_Hat_1"
-                headDisplay!.size = CGSizeMake(182, 125)
-                headDisplay!.position = CGPointMake(self.frame.midX - 12, self.frame.maxY - 150)
+                headDisplay!.size = CGSizeMake(150, 150)
+                headDisplay!.position = CGPointMake(self.frame.midX - 12, self.frame.maxY - 90)
             } else if itemName == "Sweatband_2" {
                 headDisplay!.size = CGSizeMake(150, 150)
                 headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 150)
             } else if itemName == "Visor_2" {
+                itemName = "Visor_1"
                 headDisplay!.size = CGSizeMake(150, 150)
                 headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 150)
             } else if itemName == "Sand_Bucket_2" {
                 itemName = "Sand_Bucket_1"
                 headDisplay!.size = CGSizeMake(150, 150)
                 headDisplay!.zRotation = -pi/9
-                headDisplay!.position = CGPointMake(self.frame.midX + 25, self.frame.maxY - 110)
+                headDisplay!.position = CGPointMake(self.frame.midX - 10, self.frame.maxY - 90)
             } else if itemName == "Sun_Hat_2" {
                 itemName = "Sun_Hat_1"
                 headDisplay!.setScale(0.5)
                 headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY - 150)
             } else if itemName == "Shades_2" {
+                itemName = "Shades_1"
                 headDisplay!.setScale(0.5)
                 headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY - 150)
             } else if itemName == "Monocle_2" {
@@ -520,7 +522,7 @@ class Inventory: SKScene {
                 headDisplay!.size = CGSizeMake(60, 60)
                 headDisplay!.position = CGPointMake(self.frame.midX, self.frame.midY - 150)
             }
-
+            headDisplay!.zRotation = 0
             headDisplay!.texture = SKTexture(imageNamed: "\(item.itemName!)")
             //LEFT
         }else if spot == "body" {
