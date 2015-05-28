@@ -62,17 +62,11 @@ class Inventory: SKScene {
         menu!.size = CGSizeMake(100, 100)
         self.addChild(menu!)
             let krakenNode = SKSpriteNode(imageNamed: "Fitting_Room_Kraken_1")
-            if isPlus{
-                krakenNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 265)
-                krakenNode.name = "kraken"
-                krakenNode.size = CGSizeMake(250, 250)
-                self.addChild(krakenNode)
-            } else{
             krakenNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 230)
             krakenNode.name = "kraken"
             krakenNode.size = CGSizeMake(250, 250)
             self.addChild(krakenNode)
-            }
+            
             let lifeSymbol = SKSpriteNode(imageNamed: "Life_Symbol_1")
             lifeSymbol.position = CGPointMake(self.frame.minX + 25, self.frame.maxY - 140)
             lifeSymbol.zPosition = 2
@@ -487,8 +481,8 @@ class Inventory: SKScene {
             //USE MIDX and MAXY FOR SPACING ON BOTH IPHONE 6 and PLUS PURPOSES
             if itemName == "Top_Hat_2" {
                 itemName = "Top_Hat_1"
-                headDisplay!.size = CGSizeMake(200, 150)
-                headDisplay!.position = CGPointMake(self.frame.midX - 20, self.frame.maxY - 120)
+                headDisplay!.size = CGSizeMake(182, 125)
+                headDisplay!.position = CGPointMake(self.frame.midX - 12, self.frame.maxY - 150)
             } else if itemName == "Sweatband_2" {
                 itemName = "Sweatband_1"
                 headDisplay!.size = CGSizeMake(150, 150)
