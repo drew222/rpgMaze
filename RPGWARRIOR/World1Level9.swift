@@ -32,7 +32,7 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
     var droppedChest = false
     //*******************************
     
-    let bomberAttackSpeed = 1.0
+    let bomberAttackSpeed = 1.2
     
     var theBomber: BomberClass?
     var theHero: HeroClass?
