@@ -74,6 +74,9 @@ class HeroClass: SKSpriteNode {
         isMoving = true
         var clickedNode = false
         var theClickedNode: SKSpriteNode?
+        if self.parent == nil {
+            return
+        }
         for node in self.parent!.children{
             if node is SKSpriteNode && node.containsPoint(position) && node.zPosition > -1 && node.position != self.position && interactableNode(node as! SKSpriteNode){
                 clickedNode = true

@@ -202,6 +202,9 @@ class World1Level11: SKScene, SKPhysicsContactDelegate {
                 if theHero!.life <= 0 {
                     let inkSplat = SKSpriteNode(imageNamed: "Ink_Splat_1")
                     for node in self.children{
+                        if (node as? SKEmitterNode != nil){
+                            node.removeFromParent()
+                        }
                         if (node as? SKSpriteNode != nil) && node.name != "background"{
                             node.removeFromParent()
                         }
@@ -240,6 +243,9 @@ class World1Level11: SKScene, SKPhysicsContactDelegate {
                     droppedItem = true
                 }else if theWizard!.isDead && !droppedChest {
                     for node in self.children{
+                        if (node as? SKEmitterNode != nil){
+                            node.removeFromParent()
+                        }
                         if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "wizard" && node.name != "life" && node.name != "gold" && node.name != "chest"{
                             node.removeFromParent()
                         }
