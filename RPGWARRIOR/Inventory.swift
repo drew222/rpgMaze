@@ -444,7 +444,7 @@ class Inventory: SKScene {
     }
     
     func sellItem(){
-        gold += round(itemToMove!.price! / 10)
+        gold += round(itemToMove!.price! / 5)
         goldNode!.text = "\(Int(gold))"
         spaceToMove!.texture = SKTexture(imageNamed: "Inventory_Slot_1")
         spaceToMove!.item = nil
@@ -589,7 +589,7 @@ class Inventory: SKScene {
             leftDisplay!.size = CGSizeMake(50, 50)
             leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
             leftDisplay!.zPosition = 2
-           } else if itemName == "Beach_Ball_Fragment_Ring_2" {
+           } else if itemName == "Beach_Ball_Fragment_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
             leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
             leftDisplay!.zPosition = 2
@@ -670,7 +670,7 @@ class Inventory: SKScene {
                 rightDisplay!.size = CGSizeMake(50, 50)
                 rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
                 rightDisplay!.zPosition = 2
-            } else if itemName == "Beach_Ball_Fragment_Ring_2" {
+            } else if itemName == "Beach_Ball_Fragment_2" {
                 rightDisplay!.size = CGSizeMake(50, 50)
                 rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
                 rightDisplay!.zPosition = 2
