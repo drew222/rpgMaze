@@ -263,6 +263,7 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
                             node.removeFromParent()
                         }
                     }
+                    self.childNodeWithName("lifeNumber")?.removeFromParent()
                     self.addChild(TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY)))
                     droppedChest = true
                 }

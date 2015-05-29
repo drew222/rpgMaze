@@ -238,8 +238,10 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
                     for node in self.children{
                         if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "wizard" && node.name != "life" && node.name != "gold" && node.name != "chest"{
                             node.removeFromParent()
+                      
                         }
                     }
+                    self.childNodeWithName("lifeNumber")?.removeFromParent()
                     self.addChild(TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY)))
                     droppedChest = true
                 }
