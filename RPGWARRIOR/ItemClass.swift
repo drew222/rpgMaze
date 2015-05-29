@@ -86,10 +86,10 @@ class ItemClass: SKSpriteNode {
             price = 50
             return [("Movement", CGFloat(10)), ("Life", CGFloat(1))]
         }else if picName == "King_Kraken_Tentacle_Ring_1"{
-            price = 20
+            price = 50
             return [("Life", CGFloat(2)), ("Regeneration", CGFloat(1))]
         }else if picName == "Inky_Ring_1"{
-            price = 20
+            price = 50
             return [("Movement", CGFloat(10)), ("Life", CGFloat(2))]
         }else if picName == "Pearl_Snap_Ring_1"{
             price = 50
@@ -110,29 +110,29 @@ class ItemClass: SKSpriteNode {
             price = 5
             return [("Movement", CGFloat(1))]
         }else if picName == "Top_Hat_1"{
-            price = 50
-            return [("Life", CGFloat(1))]
+            price = 200
+            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(1)), ("Movement", CGFloat(10))]
         }else if picName == "Sunhat_1"{
-            price = 50
-            return [("Life", CGFloat(1))]
+            price = 70
+            return [("Life", CGFloat(1)), ("Regeneration", CGFloat(1)), ("Movement", CGFloat(5))]
         }else if picName == "Sand_Bucket_1"{
-            price = 50
-            return [("Life", CGFloat(1))]
+            price = 40
+            return [("Life", CGFloat(1)), ("Movement", CGFloat(10))]
         }else if picName == "Monocle_1"{
-            price = 50
-            return [("Life", CGFloat(1))]
+            price = 200
+            return [("Life", CGFloat(2)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(10))]
         }else if picName == "Coral_Crown_1"{
             price = 25
             return [("Life", CGFloat(1)), ("Movement", CGFloat(5))]
         }else if picName == "Shades_1"{
-            price = 50
-            return [("Life", CGFloat(1))]
+            price = 100
+            return [("Life", CGFloat(2)), ("Movement", CGFloat(7))]
         }else if picName == "Sweatband_1"{
             price = 10
             return [("Movement", CGFloat(5))]
         }else if picName == "Visor_1"{
             price = 20
-            return [("Life", CGFloat(1)), ("Movement", CGFloat(4))]
+            return [("Life", CGFloat(1))]
         }else if picName == "Afro_Seaweed_1"{
             price = 25
             return [("Life", CGFloat(1)), ("Regeneration", CGFloat(2))]
@@ -152,8 +152,8 @@ class ItemClass: SKSpriteNode {
             price = 10
             return [("Movement", CGFloat(5))]
         }else if picName == "Seaweed_Mustache_1"{
-            price = 5
-            return [("Regeneration", CGFloat(1))]
+            price = 25
+            return [("Regeneration", CGFloat(2)), ("Life", CGFloat(1))]
         }else if picName == "Bow_Tie_1"{
             price = 200
             return [("Movement", CGFloat(10)), ("Regeneration", CGFloat(2)), ("Life", CGFloat(3))]
