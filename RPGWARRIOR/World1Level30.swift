@@ -19,6 +19,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var lastWave = 0.0
     var lastCrab = 0.0
     var lastKrill = 0.0
+    var lastBuff = 0.0
     
     var levelOver = false
     let levelName = "world1level30"
@@ -28,6 +29,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     let healSpeed = 5.0
     var lifeNode: SKLabelNode?
     var maxLife: CGFloat = 0.0
+    var maxSpeed: CGFloat = 0.0
     //*****************
     var krakenAttackSpeed = 5.0
     var krakenAttackSpeedSpike = 15.0
@@ -41,8 +43,11 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var oilWaveDamage = CGFloat(5)
     var krillDamage = CGFloat(1)
     var crabDamage = CGFloat(2)
+    var lifeBuff = CGFloat(3)
+    var speedBuff = CGFloat(25)
     var inking = false
     var inkingTimer = 0.0
+    var buffSpawnSpeed = 30.0
     
     
     var theKraken: KrakenBoss?
@@ -86,6 +91,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         theHero!.updateStats()
         //*****REGENE CODE****
         maxLife = theHero!.life!
+        maxSpeed = heroSpeed
         //********************
         
     }
@@ -124,6 +130,41 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
                 secondBody.node?.runAction(sequence)
+        }
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryBuff.rawValue){
+                if (secondBody.node as! BuffSpawn).buffType == 1 {
+                    //life
+                    theHero!.life! += lifeBuff
+                    if theHero!.life! > maxLife {
+                        theHero!.life = maxLife
+                    }
+                    let fadeOut = SKAction.fadeOutWithDuration(1)
+                    let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+                    let sequence = SKAction.sequence([fadeOut, codeBlock])
+                    secondBody.node?.runAction(sequence)
+                } else if (secondBody.node as! BuffSpawn).buffType == 1 {
+                    //movespeed
+                    
+                    
+                    let fadeOut = SKAction.fadeOutWithDuration(1)
+                    let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+                    let sequence = SKAction.sequence([fadeOut, codeBlock])
+                    secondBody.node?.runAction(sequence)
+                } else {
+                    //killAll
+                    
+                    for node in self.children {
+                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "whale" && node.name != "kraken" && node.name != "life" && node.name != "gold" && node.name != "chest"{
+                            node.removeFromParent()
+                        }
+                    }
+                    let fadeOut = SKAction.fadeOutWithDuration(1)
+                    let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+                    let sequence = SKAction.sequence([fadeOut, codeBlock])
+                    secondBody.node?.runAction(sequence)
+                }
+                secondBody.node?.removeFromParent()
         }
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
@@ -179,9 +220,25 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             oilWaveDamage += 5
             krillDamage += 1
             crabDamage += 1
+            buffSpawnSpeed -= 1
         }
         
     }
+    
+    func addRandomBuff(){
+        //generate random position and type
+        let randX = randomWithMin(40, Int(self.frame.maxX - 40))
+        let randY = randomWithMin(40, Int(self.frame.maxY - 140))
+        let type = randomWithMin(1, 3)
+        let buff = BuffSpawn.buffAtPos(CGPointMake(CGFloat(randX), CGFloat(randY)), type: type)
+        let fadeInAction = SKAction.fadeInWithDuration(1)
+        let waitAction = SKAction.waitForDuration(5)
+        let removeBlock = SKAction.runBlock({buff.removeFromParent()})
+        self.addChild(buff)
+        let sequence = SKAction.sequence([fadeInAction, waitAction, removeBlock])
+        buff.runAction(sequence)
+    }
+    
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
@@ -223,6 +280,13 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver && !inking{
             self.lastTentacle = currentTime
             theKraken!.throwTentacle()
+        }
+        
+        if currentTime - lastBuff  > buffSpawnSpeed && !levelOver && !inking{
+            self.lastBuff = currentTime
+            if phase > 4{
+                addRandomBuff()
+            }
         }
         
         if currentTime - lastKrill  > whaleAttackSpeedKrill && !levelOver && !inking{

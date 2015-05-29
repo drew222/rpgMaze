@@ -65,6 +65,7 @@
 		DCC4E30A1A8DB082000E5E89 /* level5Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3091A8DB082000E5E89 /* level5Scene.swift */; };
 		DCC4E3791A8EEE59000E5E89 /* StoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3781A8EEE59000E5E89 /* StoreScene.swift */; };
 		DCC4E37B1A94EDED000E5E89 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E37A1A94EDED000E5E89 /* Block.swift */; };
+		DCE1101A1B190A940011B4AF /* BuffSpawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE110191B190A940011B4AF /* BuffSpawn.swift */; };
 		DCE69C4A1AB4813A003561E6 /* World1Level4.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C491AB4813A003561E6 /* World1Level4.swift */; };
 		DCE69C4E1AB4A04C003561E6 /* World1Level6.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C4D1AB4A04C003561E6 /* World1Level6.swift */; };
 		DCE69C501AB507CB003561E6 /* World1Level7.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C4F1AB507CB003561E6 /* World1Level7.swift */; };
@@ -509,6 +510,7 @@
 		DCC4E3091A8DB082000E5E89 /* level5Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = level5Scene.swift; path = Rpg7/level5Scene.swift; sourceTree = "<group>"; };
 		DCC4E3781A8EEE59000E5E89 /* StoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreScene.swift; sourceTree = "<group>"; };
 		DCC4E37A1A94EDED000E5E89 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Block.swift; path = Rpg8/Block.swift; sourceTree = "<group>"; };
+		DCE110191B190A940011B4AF /* BuffSpawn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuffSpawn.swift; sourceTree = "<group>"; };
 		DCE69C491AB4813A003561E6 /* World1Level4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level4.swift; sourceTree = "<group>"; };
 		DCE69C4D1AB4A04C003561E6 /* World1Level6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level6.swift; sourceTree = "<group>"; };
 		DCE69C4F1AB507CB003561E6 /* World1Level7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level7.swift; sourceTree = "<group>"; };
@@ -927,6 +929,7 @@
 				DCC4E3031A897671000E5E89 /* ItemSpaceNode.swift */,
 				DC1F58121A88703500B5027B /* Bomb.swift */,
 				DC1F58101A886EFC00B5027B /* BomberClass.swift */,
+				DCE110191B190A940011B4AF /* BuffSpawn.swift */,
 				DC4A442B1ACDE6CF00BE81D8 /* WhaleBoss.swift */,
 				EEF8D9841AD397AD00FC2A4F /* KrakenBoss.swift */,
 				DCFD75421B01CA210054E370 /* Tentacle.swift */,
@@ -1899,6 +1902,7 @@
 				EE60A9F01AE86CF300A56313 /* World1Level30.swift in Sources */,
 				DC4A442C1ACDE6CF00BE81D8 /* WhaleBoss.swift in Sources */,
 				EEBBAFEC1AD5912600125105 /* World1Level18.swift in Sources */,
+				DCE1101A1B190A940011B4AF /* BuffSpawn.swift in Sources */,
 				DC2711441A85E1DE00986D2E /* WizardClass.swift in Sources */,
 				DC1F58131A88703500B5027B /* Bomb.swift in Sources */,
 				DCF8C7231AD9E69500DAE15A /* World1Level10.swift in Sources */,

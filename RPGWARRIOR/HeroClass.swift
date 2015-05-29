@@ -52,7 +52,7 @@ class HeroClass: SKSpriteNode {
     
     func interactableNode(node: SKSpriteNode) -> Bool{
         if node.name != nil{
-            if node.name! == "bomb" || node.name! == "Fireball" || node.name! == "krill" || node.name! == "Mine" || node.name! == "hero" || node.name! == "spike" || node.name! == "crab" || node.name! == "tentacle" || node.name! == "safeSpot1" || node.name! == "safeSpot2" || node.name! == "wave" {
+            if node.name! == "bomb" || node.name! == "Fireball" || node.name! == "krill" || node.name! == "Mine" || node.name! == "hero" || node.name! == "spike" || node.name! == "crab" || node.name! == "tentacle" || node.name! == "safeSpot1" || node.name! == "safeSpot2" || node.name! == "wave" || node.name! == "buff"{
                 return false
             }else{
                 return true
@@ -220,7 +220,7 @@ class HeroClass: SKSpriteNode {
     }
     
     func updateStats(){
-        heroSpeed = 150
+        heroSpeed = 120
         self.damage = CGFloat(baseDamage)
         self.life = CGFloat(baseLife)
         heroSpeed = CGFloat(baseSpeed)

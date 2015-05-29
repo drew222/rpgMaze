@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RPGWARRIOR/World1Level30.swift"
-            timestampString = "454566310.488411"
+            timestampString = "454633421.662148"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "didMoveToView(_:)"
             landmarkType = "5">
          </BreakpointContent>
