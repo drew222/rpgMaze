@@ -29,7 +29,7 @@ class World1Level12: SKScene, SKPhysicsContactDelegate {
     
     //Ink / Life / Chest Changes*****
     var inkSplatted = false
-    var newLifeNode: SKSpriteNode?
+    var lifeNode: SKLabelNode?
     var clickedChest = false
     var droppedChest = false
     //*******************************
@@ -74,12 +74,13 @@ class World1Level12: SKScene, SKPhysicsContactDelegate {
         maxLife = theHero!.life!
         //********************
         //Ink / Life / Chest Changes*****
-        newLifeNode = SKSpriteNode(imageNamed: "World_1_Level_\(Int(theHero!.life!))_Text")
-        newLifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
-        newLifeNode!.size = CGSizeMake(10, 10)
-        newLifeNode!.name = "lifeNumber"
-        newLifeNode!.zPosition = 3
-        self.addChild(newLifeNode!)
+        lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
+        lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 25)
+        lifeNode!.fontName = "ChalkboardSE-Bold"
+        lifeNode!.name = "lifeNumber"
+        lifeNode!.zPosition = 3
+        lifeNode!.fontSize = 16
+        self.addChild(lifeNode!)
         
         let lifeHeart = SKSpriteNode(imageNamed: "Life_Symbol_1")
         lifeHeart.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
@@ -172,7 +173,7 @@ class World1Level12: SKScene, SKPhysicsContactDelegate {
             }
         }
         self.lastUpdatesTime = currentTime
-        newLifeNode!.texture = SKTexture(imageNamed: "World_1_Level_\(Int(theHero!.life!))_Text")
+        lifeNode!.text = "\(Int(theHero!.life!))"
         if (theWhale!.isDead || theHero!.life <= 0) && !levelOver{
             
             if (self.childNodeWithName("gold") == nil && self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
@@ -185,6 +186,7 @@ class World1Level12: SKScene, SKPhysicsContactDelegate {
                             node.removeFromParent()
                         }
                     }
+                    self.childNodeWithName("lifeNumber")?.removeFromParent()
                     inkSplat.position = CGPointMake(self.frame.midX, self.frame.midY)
                     inkSplat.size = CGSizeMake(50, 50)
                     self.addChild(inkSplat)

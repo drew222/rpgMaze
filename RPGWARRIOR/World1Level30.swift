@@ -54,11 +54,19 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
+        
+        let lifeHeart = SKSpriteNode(imageNamed: "Life_Symbol_1")
+        lifeHeart.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
+        lifeHeart.name = "lifeheart"
+        lifeHeart.setScale(0.15)
+        self.addChild(lifeHeart)
+        
         lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
-        lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
-        lifeNode!.fontColor = UIColor.redColor()
-        lifeNode!.fontSize = 20
+        lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 25)
+        lifeNode!.fontName = "ChalkboardSE-Bold"
+        lifeNode!.fontSize = 16
         self.addChild(lifeNode!)
+        
         theKraken = KrakenBoss.makeKraken(CGPointMake(self.frame.midX, self.frame.maxY + 200))
         theKraken!.size = CGSizeMake(150, 120)
         self.addChild(theKraken!)

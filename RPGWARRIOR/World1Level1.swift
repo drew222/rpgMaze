@@ -23,7 +23,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
     var lastHeal: Double = 0.0
     let healSpeed = 5.0
     //var lifeNode: SKLabelNode?
-    var newLifeNode: SKSpriteNode?
+    var lifeNode: SKLabelNode?
     var maxLife: CGFloat = 0.0
     //*****************
     var clickedChest = false
@@ -56,12 +56,13 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         lifeHeart.setScale(0.15)
         self.addChild(lifeHeart)
         
-        newLifeNode = SKSpriteNode(imageNamed: "World_1_Level_\(Int(theHero!.life!))_Text")
-        newLifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
-        newLifeNode!.size = CGSizeMake(10, 10)
-        newLifeNode!.name = "lifeNumber"
-        newLifeNode!.zPosition = 3
-        self.addChild(newLifeNode!)
+        lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
+        lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 25)
+        lifeNode!.fontName = "ChalkboardSE-Bold"
+        lifeNode!.name = "lifeNumber"
+        lifeNode!.zPosition = 3
+        lifeNode!.fontSize = 16
+        self.addChild(lifeNode!)
         //print(newLifeNode)
         
         
@@ -160,7 +161,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         self.lastUpdatesTime = currentTime
         //lifeNode!.text = "\(Int(floor(theHero!.life!)))"
         //ZACH NEW LEVELS
-        newLifeNode!.texture = SKTexture(imageNamed: "World_1_Level_\(Int(theHero!.life!))_Text")
+        lifeNode!.text = "\(Int(theHero!.life!))"
         //***************
         
         //win condition
@@ -177,6 +178,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
                             node.removeFromParent()
                         }
                     }
+                    self.childNodeWithName("lifeNumber")?.removeFromParent()
                     inkSplat.position = CGPointMake(self.frame.midX, self.frame.midY)
                     inkSplat.size = CGSizeMake(50, 50)
                     self.addChild(inkSplat)
