@@ -161,7 +161,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 2
             scene.addChild(gold)
         } else if (myNum <= 40) && (myNum > 30){
-            let item = ItemClass.itemInSpace("Crap_Claw_Cap_1")
+            let item = ItemClass.itemInSpace("Crab_Claw_Cap_1")
             item.position = position
             item.size = size
             scene.addChild(item)
