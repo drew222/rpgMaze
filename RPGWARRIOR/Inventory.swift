@@ -657,7 +657,7 @@ class Inventory: SKScene {
             
             if itemName == "Bow_Tie_2" {
                 itemName = "Bow_Tie_1"
-                neckDisplay!.size = CGSizeMake(20, 20)
+                neckDisplay!.size = CGSizeMake(100, 80)
                 neckDisplay!.position = CGPointMake(self.frame.midX - 5, self.frame.maxY - 270)
             } else if itemName == "Whistle_2" {
                 neckDisplay!.size = CGSizeMake(150,95)
