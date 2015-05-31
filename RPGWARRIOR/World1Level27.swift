@@ -112,12 +112,12 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
         
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                theHero!.takeDamage(3)
+                theHero!.takeDamage(2)
                 (secondBody.node as! MineNode).explode(secondBody.node!.position)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySpike.rawValue){
-                theHero!.takeDamage(3)
+                theHero!.takeDamage(5)
                 let fadeOut = SKAction.fadeOutWithDuration(0.6)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
@@ -127,7 +127,7 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
                 if !self.childNodeWithName("safeSpot1")!.containsPoint(theHero!.position){
-                    theHero!.takeDamage(3)
+                    theHero!.takeDamage(10)
                 }
                 //println("died by tentalce")
         }

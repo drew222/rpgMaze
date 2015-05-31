@@ -102,7 +102,7 @@ class World1Level2: SKScene, SKPhysicsContactDelegate {
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
                 let mine = secondBody.node as? MiniCrab
                 mine!.explode(secondBody.node!.position)
-                theHero!.takeDamage(3)
+                theHero!.takeDamage(1)
         }
         //HERO VS WIZARD
         //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&

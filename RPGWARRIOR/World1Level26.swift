@@ -125,7 +125,7 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
                 let aHero = self.childNodeWithName("hero") as! HeroClass
-                aHero.takeDamage(1)
+                aHero.takeDamage(5)
                 secondBody.node!.removeFromParent()
         }
         //HERO VS SEASHELL
@@ -133,7 +133,7 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
                 let mine = secondBody.node as? MineNode
                 mine!.explode(secondBody.node!.position)
-                theHero!.takeDamage(3)
+                theHero!.takeDamage(1)
         }
         
     }

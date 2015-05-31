@@ -113,7 +113,7 @@ class World1Level23: SKScene, SKPhysicsContactDelegate {
         //HERO VS KRILL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryKrill.rawValue){
-                theHero!.takeDamage(3)
+                theHero!.takeDamage(1)
                 let fadeOut = SKAction.fadeOutWithDuration(0.6)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
@@ -123,7 +123,7 @@ class World1Level23: SKScene, SKPhysicsContactDelegate {
         //HERO VS WAVE
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
-                theHero!.takeDamage(5)
+                theHero!.takeDamage(10)
         }
     }
     

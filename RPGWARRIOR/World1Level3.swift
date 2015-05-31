@@ -155,7 +155,7 @@ class World1Level3: SKScene, SKPhysicsContactDelegate {
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
                 let mine = secondBody.node as? MineNode
                 mine!.explode(secondBody.node!.position)
-                theHero!.takeDamage(3)
+                theHero!.takeDamage(1)
         }
         //HERO VS WIZARD
         //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
