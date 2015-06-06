@@ -6,24 +6,29 @@
 //  Copyright (c) 2015 Drew Zoellner. All rights reserved.
 //
 
-import Foundation
+
 import SpriteKit
 
-class World1Level8: SKScene, SKPhysicsContactDelegate  {
+//import AVFoundation
+
+class World1Level8: SKScene, SKPhysicsContactDelegate {
     
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
+    var lastWave: Double = 0.0
     var levelOver = false
     let levelName = "world1level8"
-    var theHero: HeroClass?
-    var theBomber: BomberClass?
     var droppedItem = false
     //REGEN CODE******
     var lastHeal: Double = 0.0
     let healSpeed = 5.0
     var maxLife: CGFloat = 0.0
     //*****************
+    let whaleAttackSpeed = 2.0
+    var whichWave = 0
+    var wavePositions: [CGPoint]?
+    
     //Ink / Life / Chest Changes*****
     var inkSplatted = false
     var lifeNode: SKLabelNode?
@@ -31,28 +36,42 @@ class World1Level8: SKScene, SKPhysicsContactDelegate  {
     var droppedChest = false
     //*******************************
     
-    let bomberAttackSpeed = 1.5
-    var lastBomb: Double = 0.0
+    
+    var theWhale: WhaleBoss?
+    var theHero: HeroClass?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
-        background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
-        background.size = CGSize(width: self.frame.width, height: self.frame.height)
-        background.zPosition = -1
-        background.name = "background"
-        self.physicsWorld.contactDelegate = self
-        self.addChild(background)
-        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.04))
+        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
         theHero!.name = "hero"
         self.addChild(theHero!)
-        theBomber = BomberClass.makeBomber(CGPointMake(self.frame.midX, self.frame.maxY - 50))
-        self.addChild(theBomber!)
+        wavePositions = [
+            CGPointMake(-20, 300),
+            CGPointMake(self.frame.maxX + 20, 200),
+            CGPointMake(-20, 350),
+            CGPointMake(self.frame.maxX + 20, 150),
+            CGPointMake(-20, 200),
+            CGPointMake(self.frame.maxX + 20, 300),
+            CGPointMake(-20, 400),
+            CGPointMake(self.frame.maxX + 20, 500)]
+        theWhale = WhaleBoss.makeWhale(CGPointMake(self.frame.midX, self.frame.maxY - 50))
+        self.addChild(theWhale!)
+        //the below constraints did nothing
+        //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
+        //ourHero.constraints = [distanceConstraint]
+        let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
+        background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        background.name = "background"
+        background.size = CGSize(width: self.frame.width, height: self.frame.height)
+        background.zPosition = -1
+        self.addChild(background)
+        self.physicsWorld.contactDelegate = self
         theHero!.updateStats()
         //*****REGENE CODE****
         maxLife = theHero!.life!
         //********************
+        
         //Ink / Life / Chest Changes*****
         lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
         lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 25)
@@ -69,25 +88,8 @@ class World1Level8: SKScene, SKPhysicsContactDelegate  {
         self.addChild(lifeHeart)
         //************************************
         
-        //shells
-        //mid diagnol
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 80, self.frame.midY + 80)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 160, self.frame.midY + 160)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.midY - 80)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 160, self.frame.midY - 160)))
-        //top diag
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 20, self.frame.midY + 200)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.midY + 280)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY + 120)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 140, self.frame.midY + 40)))
-        //bot diag
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 20, self.frame.midY - 200)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY - 120)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 140, self.frame.midY - 40)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY - 280)))
-      
     }
+    
     func didBeginContact(contact: SKPhysicsContact) {
         var firstBody: SKPhysicsBody!
         var secondBody: SKPhysicsBody!
@@ -98,10 +100,17 @@ class World1Level8: SKScene, SKPhysicsContactDelegate  {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
+        //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                (secondBody.node as! MineNode).explode(secondBody.node!.position)
+                let mine = secondBody.node as? MineNode
+                mine!.explode(secondBody.node!.position)
                 theHero!.takeDamage(3)
+        }
+        //HERO VS WAVE
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
+                theHero!.takeDamage(10)
         }
     }
     
@@ -130,22 +139,34 @@ class World1Level8: SKScene, SKPhysicsContactDelegate  {
         }
     }
     
-    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
-        //println("current time: \(currentTime)")
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
-            self.lastBomb = currentTime
+            self.lastWave = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastBomb  > bomberAttackSpeed{
-            self.lastBomb = currentTime
-            theBomber!.throwBomb()
+        
+        //******REGEN CODE
+        if currentTime - lastHeal  > healSpeed{
+            self.lastHeal = currentTime
+            if theHero!.life < maxLife{
+                theHero!.life! += theHero!.regeneration!
+            }
+        }
+        
+        if currentTime - lastWave  > whaleAttackSpeed && !levelOver && !droppedItem && !droppedChest{
+            self.lastWave = currentTime
+            if whichWave == wavePositions!.count {
+                whichWave = 0
+            }
+            theWhale!.throwWave(wavePositions![whichWave])
+            whichWave += 1
         }
         
         self.totalGameTime += currentTime - self.lastUpdatesTime
+        
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
             self.lastHeal = currentTime
@@ -158,7 +179,7 @@ class World1Level8: SKScene, SKPhysicsContactDelegate  {
         }
         self.lastUpdatesTime = currentTime
         lifeNode!.text = "\(Int(theHero!.life!))"
-        if (theBomber!.isDead || theHero!.life <= 0) && !levelOver{
+        if (theWhale!.isDead || theHero!.life <= 0) && !levelOver{
             
             if (self.childNodeWithName("gold") == nil && self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
                 
@@ -166,9 +187,6 @@ class World1Level8: SKScene, SKPhysicsContactDelegate  {
                 if theHero!.life <= 0 {
                     let inkSplat = SKSpriteNode(imageNamed: "Ink_Splat_1")
                     for node in self.children{
-                        if (node as? SKEmitterNode != nil){
-                            node.removeFromParent()
-                        }
                         if (node as? SKSpriteNode != nil) && node.name != "background"{
                             node.removeFromParent()
                         }
@@ -202,15 +220,12 @@ class World1Level8: SKScene, SKPhysicsContactDelegate  {
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil){
-                if theBomber!.isDead && droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
+                if theWhale!.isDead && droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
                     dropLoot("level8", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
-                }else if theBomber!.isDead && !droppedChest {
+                }else if theWhale!.isDead && !droppedChest {
                     for node in self.children{
-                        if (node as? SKEmitterNode != nil){
-                            node.removeFromParent()
-                        }
-                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "life" && node.name != "gold" && node.name != "chest"{
+                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "whale" && node.name != "life" && node.name != "gold" && node.name != "chest"{
                             node.removeFromParent()
                         }
                     }
@@ -222,3 +237,4 @@ class World1Level8: SKScene, SKPhysicsContactDelegate  {
         }
     }
 }
+

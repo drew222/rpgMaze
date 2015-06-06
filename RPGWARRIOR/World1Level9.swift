@@ -6,25 +6,25 @@
 //  Copyright (c) 2015 Drew Zoellner. All rights reserved.
 //
 
+
+import Foundation
 import SpriteKit
 
-//import AVFoundation
-
-class World1Level9: SKScene, SKPhysicsContactDelegate {
+class World1Level9: SKScene, SKPhysicsContactDelegate  {
     
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
-    var lastBomb: Double = 0.0
     var levelOver = false
     let levelName = "world1level9"
+    var theHero: HeroClass?
+    var theBomber: BomberClass?
     var droppedItem = false
     //REGEN CODE******
     var lastHeal: Double = 0.0
     let healSpeed = 5.0
     var maxLife: CGFloat = 0.0
     //*****************
-    
     //Ink / Life / Chest Changes*****
     var inkSplatted = false
     var lifeNode: SKLabelNode?
@@ -32,39 +32,24 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
     var droppedChest = false
     //*******************************
     
-    let bomberAttackSpeed = 1.2
-    
-    var theBomber: BomberClass?
-    var theHero: HeroClass?
+    let bomberAttackSpeed = 1.5
+    var lastBomb: Double = 0.0
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
+        let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
+        background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        background.size = CGSize(width: self.frame.width, height: self.frame.height)
+        background.zPosition = -1
+        background.name = "background"
+        self.physicsWorld.contactDelegate = self
+        self.addChild(background)
+        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.04))
         theHero!.setScale(0.6)
         theHero!.name = "hero"
         self.addChild(theHero!)
         theBomber = BomberClass.makeBomber(CGPointMake(self.frame.midX, self.frame.maxY - 50))
-        theBomber!.attackSpeed = 1.5
         self.addChild(theBomber!)
-        //the below constraints did nothing
-        //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
-        //ourHero.constraints = [distanceConstraint]
-        let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
-        background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
-        background.name = "background"
-        background.size = CGSize(width: self.frame.width, height: self.frame.height)
-        background.zPosition = -1
-        self.physicsWorld.contactDelegate = self
-        self.addChild(background)
-        
-        //left crabs
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 100), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 250)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 250), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 400)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 400), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 550)))
-        //right crabs
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.minY + 175), endPosition: CGPointMake(self.frame.minX + 30, self.frame.minY + 325)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.minY + 325), endPosition: CGPointMake(self.frame.minX + 30, self.frame.minY + 475)))
-        
         theHero!.updateStats()
         //*****REGENE CODE****
         maxLife = theHero!.life!
@@ -85,8 +70,25 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
         self.addChild(lifeHeart)
         //************************************
         
+        //shells
+        //mid diagnol
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 80, self.frame.midY + 80)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 160, self.frame.midY + 160)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.midY - 80)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 160, self.frame.midY - 160)))
+        //top diag
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 20, self.frame.midY + 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.midY + 280)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY + 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 140, self.frame.midY + 40)))
+        //bot diag
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 20, self.frame.midY - 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY - 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 140, self.frame.midY - 40)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY - 280)))
+        
     }
-    
     func didBeginContact(contact: SKPhysicsContact) {
         var firstBody: SKPhysicsBody!
         var secondBody: SKPhysicsBody!
@@ -97,16 +99,11 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
+                (secondBody.node as! MineNode).explode(secondBody.node!.position)
                 theHero!.takeDamage(3)
-                let fadeOut = SKAction.fadeOutWithDuration(0.6)
-                let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
-                let sequence = SKAction.sequence([fadeOut, codeBlock])
-                secondBody.node?.runAction(sequence)
         }
-
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -134,6 +131,7 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         //println("current time: \(currentTime)")
@@ -149,7 +147,6 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
         }
         
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
             self.lastHeal = currentTime
@@ -226,4 +223,3 @@ class World1Level9: SKScene, SKPhysicsContactDelegate {
         }
     }
 }
-

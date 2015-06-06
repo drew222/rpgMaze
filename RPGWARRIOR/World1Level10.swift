@@ -7,28 +7,25 @@
 //
 
 
-
+import Foundation
 import SpriteKit
 
-//import AVFoundation
-
 class World1Level10: SKScene, SKPhysicsContactDelegate {
+    
     
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
-    var lastWave: Double = 0.0
+    var lastFireball: Double = 0.0
     var levelOver = false
     let levelName = "world1level10"
     var droppedItem = false
+    var lastBlizz = 0.0
     //REGEN CODE******
     var lastHeal: Double = 0.0
     let healSpeed = 5.0
     var maxLife: CGFloat = 0.0
     //*****************
-    let whaleAttackSpeed = 2.0
-    var whichWave = 0
-    var wavePositions: [CGPoint]?
     
     //Ink / Life / Chest Changes*****
     var inkSplatted = false
@@ -37,27 +34,22 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
     var droppedChest = false
     //*******************************
     
+    let wizardAttackSpeed = 1.0
     
-    var theWhale: WhaleBoss?
+    var theWizard: WizardClass?
     var theHero: HeroClass?
+    
+    var blizzInContact: BlizzNode?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
-        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
+        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.1))
         theHero!.setScale(0.6)
         theHero!.name = "hero"
         self.addChild(theHero!)
-        wavePositions = [
-            CGPointMake(-20, 300),
-            CGPointMake(self.frame.maxX + 20, 200),
-            CGPointMake(-20, 350),
-            CGPointMake(self.frame.maxX + 20, 150),
-            CGPointMake(-20, 200),
-            CGPointMake(self.frame.maxX + 20, 300),
-            CGPointMake(-20, 400),
-            CGPointMake(self.frame.maxX + 20, 500)]
-        theWhale = WhaleBoss.makeWhale(CGPointMake(self.frame.midX, self.frame.maxY - 50))
-        self.addChild(theWhale!)
+        
+        theWizard = WizardClass.makeWizard(CGPointMake(self.frame.midX, self.frame.maxY - 50))
+        self.addChild(theWizard!)
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
         //ourHero.constraints = [distanceConstraint]
@@ -66,8 +58,8 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
         background.name = "background"
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         background.zPosition = -1
-        self.addChild(background)
         self.physicsWorld.contactDelegate = self
+        self.addChild(background)
         theHero!.updateStats()
         //*****REGENE CODE****
         maxLife = theHero!.life!
@@ -101,18 +93,24 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        //HERO VS SEASHELL
+        //HERO VS FIRE
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                let mine = secondBody.node as? MineNode
-                mine!.explode(secondBody.node!.position)
-                theHero!.takeDamage(3)
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
+                let aHero = self.childNodeWithName("hero") as! HeroClass
+                aHero.takeDamage(1)
+                secondBody.node!.removeFromParent()
+        }/* else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+        secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryBlizzard.rawValue){
+        let aHero = self.childNodeWithName("hero") as HeroClass
+        if (blizzInContact == nil) {
+        if heroSpeed >= theHero!.baseSpeed{
+        println("slowing!!!!!!")
+        (secondBody.node as BlizzNode).slow()
+        blizzInContact = secondBody.node as BlizzNode?
         }
-        //HERO VS WAVE
-        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
-                theHero!.takeDamage(10)
         }
+        }
+        */
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -142,28 +140,45 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        let hero = self.childNodeWithName("hero")
+        
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
-            self.lastWave = currentTime
+            self.lastFireball = currentTime
+            self.lastBlizz = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        
-        //******REGEN CODE
-        if currentTime - lastHeal  > healSpeed{
-            self.lastHeal = currentTime
-            if theHero!.life < maxLife{
-                theHero!.life! += theHero!.regeneration!
+        if currentTime - lastFireball  > wizardAttackSpeed && !inkSplatted{
+            self.lastFireball = currentTime
+            theWizard!.shootFireball(theHero!.position)
+        }
+        if currentTime - lastBlizz > (3 * wizardAttackSpeed) && !inkSplatted{
+            theWizard!.createBlizz(theWizard!.getBlizzLocation(theHero!.position))
+            self.lastBlizz = currentTime
+        }
+        //loop through all the blizzards and check if position is in them
+        var blizzFound = false
+        for node in self.children{
+            if (node as? BlizzNode != nil){
+                //println("found blizzNode")
+                if node.name == "blizz"{
+                    if node.containsPoint(hero!.position){
+                        blizzFound = true
+                        if !theHero!.isSlowed{
+                            theHero!.changeSpeed(-60)
+                            theHero!.isSlowed = true
+                        }
+                        blizzInContact = node as? BlizzNode
+                    }
+                }
             }
         }
-
-        if currentTime - lastWave  > whaleAttackSpeed && !levelOver && !droppedItem && !droppedChest{
-            self.lastWave = currentTime
-            if whichWave == wavePositions!.count {
-                whichWave = 0
+        if !blizzFound && blizzInContact != nil{
+            if theHero!.isSlowed{
+                theHero!.changeSpeed(60)
+                theHero!.isSlowed = false
             }
-            theWhale!.throwWave(wavePositions![whichWave])
-            whichWave += 1
         }
         
         self.totalGameTime += currentTime - self.lastUpdatesTime
@@ -180,7 +195,7 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
         }
         self.lastUpdatesTime = currentTime
         lifeNode!.text = "\(Int(theHero!.life!))"
-        if (theWhale!.isDead || theHero!.life <= 0) && !levelOver{
+        if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
             
             if (self.childNodeWithName("gold") == nil && self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
                 
@@ -188,6 +203,9 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
                 if theHero!.life <= 0 {
                     let inkSplat = SKSpriteNode(imageNamed: "Ink_Splat_1")
                     for node in self.children{
+                        if (node as? SKEmitterNode != nil){
+                            node.removeFromParent()
+                        }
                         if (node as? SKSpriteNode != nil) && node.name != "background"{
                             node.removeFromParent()
                         }
@@ -221,12 +239,15 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil){
-                if theWhale!.isDead && droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
+                if theWizard!.isDead && droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
                     dropLoot("level10", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
-                }else if theWhale!.isDead && !droppedChest {
+                }else if theWizard!.isDead && !droppedChest {
                     for node in self.children{
-                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "whale" && node.name != "life" && node.name != "gold" && node.name != "chest"{
+                        if (node as? SKEmitterNode != nil){
+                            node.removeFromParent()
+                        }
+                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "wizard" && node.name != "life" && node.name != "gold" && node.name != "chest"{
                             node.removeFromParent()
                         }
                     }
@@ -238,3 +259,4 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
         }
     }
 }
+
