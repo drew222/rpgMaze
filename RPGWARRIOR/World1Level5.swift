@@ -32,7 +32,7 @@ class World1Level5: SKScene, SKPhysicsContactDelegate {
     let healSpeed = 5.0
     var maxLife: CGFloat = 0.0
     //*****************
-    let bomberAttackSpeed = 1.0
+    let bomberAttackSpeed = 1.5
     
     //Ink / Life / Chest Changes*****
     var inkSplatted = false

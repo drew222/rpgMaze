@@ -40,7 +40,7 @@ class World1Level7: SKScene, SKPhysicsContactDelegate {
     //*******************************
     
     //larger attack speed, slower attack
-    let wizardAttackSpeed = 1.0
+    let wizardAttackSpeed = 1.5
     
     var theWizard: WizardClass?
     var theHero: HeroClass?

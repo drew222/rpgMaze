@@ -48,9 +48,6 @@ class World1Level8: SKScene, SKPhysicsContactDelegate  {
         theHero!.name = "hero"
         self.addChild(theHero!)
         theBomber = BomberClass.makeBomber(CGPointMake(self.frame.midX, self.frame.maxY - 50))
-        for spot in generateMinePoints(){
-            placeMine(spot)
-        }
         self.addChild(theBomber!)
         theHero!.updateStats()
         //*****REGENE CODE****
@@ -71,6 +68,25 @@ class World1Level8: SKScene, SKPhysicsContactDelegate  {
         lifeHeart.setScale(0.15)
         self.addChild(lifeHeart)
         //************************************
+        
+        //shells
+        //mid diagnol
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 80, self.frame.midY + 80)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 160, self.frame.midY + 160)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.midY - 80)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 160, self.frame.midY - 160)))
+        //top diag
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 20, self.frame.midY + 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.midY + 280)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY + 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 140, self.frame.midY + 40)))
+        //bot diag
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 20, self.frame.midY - 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY - 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 140, self.frame.midY - 40)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY - 280)))
+      
     }
     func didBeginContact(contact: SKPhysicsContact) {
         var firstBody: SKPhysicsBody!
@@ -114,57 +130,7 @@ class World1Level8: SKScene, SKPhysicsContactDelegate  {
         }
     }
     
-    func generateMinePoints() -> [CGPoint]{
-        //generate line from mid x to c
-        var points: [CGPoint] = []
-        var startY = self.frame.midY - 90
-        while startY > self.frame.minY + 90{
-            points.append(CGPointMake(self.frame.midX, startY))
-            startY -= 25
-        }
-        var startX = self.frame.midX
-        while startX > self.frame.minX{
-            points.append(CGPointMake(startX, self.frame.minY + 90))
-            startX -= 25
-        }
-        startX = self.frame.midX
-        while startX > 0{
-            points.append(CGPointMake(startX, self.frame.midY - 90))
-            startX -= 25
-        }
-        startY = self.frame.minY + 90
-        while startY < self.frame.midY{
-            points.append(CGPointMake(self.frame.midX + 90, startY))
-            startY += 25
-        }
-        startX = self.frame.midX + 90
-        while startX < self.frame.maxX{
-            points.append(CGPointMake(startX, self.frame.minY + 90))
-            startX += 25
-        }
-        startX = self.frame.midX + 90
-        while startX > 90{
-            points.append(CGPointMake(startX, self.frame.midY))
-            startX -= 25
-        }
-        startX = self.frame.minX + 10
-        while startX < self.frame.maxX - 90{
-            points.append(CGPointMake(startX, self.frame.midY + 90))
-            startX += 25
-        }
-        startY = self.frame.midY + 120
-        while startY < self.frame.maxY - 100{
-            points.append(CGPointMake(self.frame.maxX - 105, startY))
-            startY += 25
-        }
-        return points
-    }
-    func placeMine(position: CGPoint) {
-        let theMinethrower = (self.childNodeWithName("MineThrower")) as? MineThrowerNode
-        let mine = MineNode.mineAtPos(position) as MineNode
-        mine.isArmed = true
-        self.addChild(mine)
-    }
+    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         //println("current time: \(currentTime)")
