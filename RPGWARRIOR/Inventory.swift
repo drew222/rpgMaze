@@ -128,7 +128,7 @@ class Inventory: SKScene {
         backPack!.name = "backpack"
         self.addChild(backPack!)
             statLabelLife = SKLabelNode.init(text: "")
-            statLabelLife!.position = CGPointMake(self.frame.midX - 40, self.frame.minY + 253)
+            statLabelLife!.position = CGPointMake(self.frame.midX - 30, self.frame.minY + 253)
             statLabelLife!.fontName = "ChalkboardSE-Bold"
             statLabelLife!.fontSize = 22
             statLabelLife!.fontColor = UIColor.blackColor()
@@ -144,28 +144,29 @@ class Inventory: SKScene {
             statLabelMovement!.setScale(0.7)
             self.addChild(statLabelMovement!)
             statLabelRegen = SKLabelNode.init(text: "")
-            statLabelRegen!.position = CGPointMake(self.frame.midX + 90, self.frame.minY + 253)
+            statLabelRegen!.position = CGPointMake(self.frame.midX + 75, self.frame.minY + 253)
             statLabelRegen!.fontName = "ChalkboardSE-Bold"
             statLabelRegen!.fontSize = 22
             statLabelRegen!.fontColor = UIColor.blackColor()
             statLabelRegen!.name = "regenStat"
             statLabelRegen!.setScale(0.7)
             self.addChild(statLabelRegen!)
+            
             lifeSymbol2 = SKSpriteNode(imageNamed: "Life_Symbol_1")
-            lifeSymbol2!.position = CGPointMake(self.frame.midX - 65, self.frame.minY + 260)
+            lifeSymbol2!.position = CGPointMake(self.frame.midX - 55, self.frame.minY + 260)
             lifeSymbol2!.zPosition = 2
             lifeSymbol2!.setScale(0.15)
-            //self.addChild(lifeSymbol2)
+           
             speedSymbol2 = SKSpriteNode(imageNamed: "Speed_Symbol_1")
             speedSymbol2!.position = CGPointMake(self.frame.midX, self.frame.minY + 260)
             speedSymbol2!.zPosition = 2
             speedSymbol2!.setScale(0.15)
-            //self.addChild(speedSymbol2)
+          
             regenerationSymbol2 = SKSpriteNode(imageNamed: "Regeneration_Symbol_1")
-            regenerationSymbol2!.position = CGPointMake(self.frame.midX + 65, self.frame.minY + 260)
+            regenerationSymbol2!.position = CGPointMake(self.frame.midX + 55, self.frame.minY + 260)
             regenerationSymbol2!.zPosition = 2
             regenerationSymbol2!.setScale(0.15)
-            //self.addChild(regenerationSymbol2)
+           
             statLabelLife2 = SKLabelNode.init(text: "0")
             statLabelLife2!.position = CGPointMake(self.frame.minX + 60, self.frame.maxY - 150)
             statLabelLife2!.fontName = "ChalkboardSE-Bold"
@@ -475,7 +476,6 @@ class Inventory: SKScene {
         self.childNodeWithName("itemName")?.removeFromParent()
         self.childNodeWithName("priceButton")?.removeFromParent()
         self.childNodeWithName("sellBooty")?.removeFromParent()
-        
     }
     
     func displayItem(item: ItemClass, spot: String) {

@@ -277,6 +277,7 @@ class StoreScene: SKScene {
             }else if clickedItem((touch as! UITouch).locationInNode(self)) != ""{
                 if currentItem != nil{
                     currentItem!.removeFromParent()
+                    self.childNodeWithName("slotLabel")?.removeFromParent()
                 }
                 currentItem = ItemClass.itemInSpace(clickedItem((touch as! UITouch).locationInNode(self)))
                 currentItem!.size == CGSizeMake(70, 70)
@@ -286,63 +287,163 @@ class StoreScene: SKScene {
                 if currentItem?.itemName == "Copper_Ring_1" {
                     currentItem!.size = CGSizeMake(70, 70)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    let slotLabel = SKSpriteNode(imageNamed: "Tentacles_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 }else if currentItem?.itemName == "Sweaty_Wristband_1" {
                     currentItem!.size = CGSizeMake(70, 90)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    let slotLabel = SKSpriteNode(imageNamed: "Tentacles_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Silver_Ring_1" {
                     currentItem!.size = CGSizeMake(70, 70)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    let slotLabel = SKSpriteNode(imageNamed: "Tentacles_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Gold_Ring_1" {
                     currentItem!.size = CGSizeMake(70, 70)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    let slotLabel = SKSpriteNode(imageNamed: "Tentacles_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Water_Wing_1" {
                     currentItem!.size = CGSizeMake(120, 120)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    let slotLabel = SKSpriteNode(imageNamed: "Tentacles_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Whistle_1" {
                     currentItem!.size = CGSizeMake(160, 100)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    let slotLabel = SKSpriteNode(imageNamed: "Neck_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Lifejacket_1" {
                     currentItem!.size = CGSizeMake(170, 150)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 60)
+                    let slotLabel = SKSpriteNode(imageNamed: "Neck_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Beach_Towel_1" {
                     currentItem!.size = CGSizeMake(180, 120)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 60)
+                    let slotLabel = SKSpriteNode(imageNamed: "Neck_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Floatie_1" {
                     currentItem!.size = CGSizeMake(160, 110)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 60)
+                    let slotLabel = SKSpriteNode(imageNamed: "Neck_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Sun_Screen_1" {
                     currentItem!.size = CGSizeMake(75, 120)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 60)
+                    let slotLabel = SKSpriteNode(imageNamed: "Neck_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Sweatband_1" {
                     currentItem!.size = CGSizeMake(170, 170)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    let slotLabel = SKSpriteNode(imageNamed: "Noggin_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Visor_1" {
                     currentItem!.size = CGSizeMake(170, 170)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    let slotLabel = SKSpriteNode(imageNamed: "Noggin_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Sand_Bucket_1" {
                     currentItem!.size = CGSizeMake(120, 120)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 60)
+                    let slotLabel = SKSpriteNode(imageNamed: "Noggin_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Sunhat_1" {
                     currentItem!.size = CGSizeMake(190, 190)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    let slotLabel = SKSpriteNode(imageNamed: "Noggin_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Shades_1" {
                     currentItem!.size = CGSizeMake(160, 110)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    let slotLabel = SKSpriteNode(imageNamed: "Noggin_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Bling_Ring_1" {
                     currentItem!.size = CGSizeMake(70, 70)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    let slotLabel = SKSpriteNode(imageNamed: "Tentacles_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Monocle_1" {
                     currentItem!.size = CGSizeMake(130, 130)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    let slotLabel = SKSpriteNode(imageNamed: "Noggin_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Bow_Tie_1" {
                     currentItem!.size = CGSizeMake(200, 150)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    let slotLabel = SKSpriteNode(imageNamed: "Neck_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Watch_1" {
                     currentItem!.size = CGSizeMake(100, 100)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
+                    let slotLabel = SKSpriteNode(imageNamed: "Tentacles_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Top_Hat_1" {
                     currentItem!.size = CGSizeMake(115, 115)
                     currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 60)
+                    let slotLabel = SKSpriteNode(imageNamed: "Noggin_Text_1")
+                    slotLabel.name = "slotLabel"
+                    slotLabel.setScale(0.35)
+                    slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                    self.addChild(slotLabel)
                 }
                    
                 
@@ -368,7 +469,7 @@ class StoreScene: SKScene {
         //an item is being highlighted
         if currentItem != nil && self.childNodeWithName("buyButton") == nil{
             let buyNode = SKSpriteNode(imageNamed: "Buy_Text_1")
-            buyNode.position = CGPointMake(self.frame.midX + 135, self.frame.minY + 55)
+            buyNode.position = CGPointMake(self.frame.midX + 135, self.frame.minY + 35)
             buyNode.setScale(0.5)
             buyNode.name = "buyButton"
             self.addChild(buyNode)
@@ -395,15 +496,14 @@ class StoreScene: SKScene {
                 
             }
             
-            
             let priceNode = SKLabelNode.init(text: "\(Int(currentItem!.price!))")
-            priceNode.position = CGPointMake(self.frame.midX + 110, self.frame.minY + 80)
+            priceNode.position = CGPointMake(self.frame.midX + 110, self.frame.minY + 60)
             priceNode.fontName = "ChalkboardSE-Bold"
             priceNode.fontSize = 30
             priceNode.name = "priceButton"
             priceNode.fontColor = UIColor.blackColor()
             let booty = SKSpriteNode(imageNamed: "Booty_1.png")
-            booty.position = CGPointMake(self.frame.midX + 160, self.frame.minY + 90)
+            booty.position = CGPointMake(self.frame.midX + 160, self.frame.minY + 70)
             booty.setScale(0.075)
             if firstClick{
                 self.addChild(booty)
