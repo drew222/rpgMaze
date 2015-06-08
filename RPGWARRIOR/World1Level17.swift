@@ -23,7 +23,7 @@ class World1Level17: SKScene, SKPhysicsContactDelegate {
     var droppedItem = false
     //REGEN CODE******
     var lastHeal: Double = 0.0
-    let healSpeed = 5.0
+    let healSpeed = 25.0
     var maxLife: CGFloat = 0.0
     //*****************
     let krakenAttackSpeed = 5.0
@@ -160,7 +160,7 @@ class World1Level17: SKScene, SKPhysicsContactDelegate {
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
-        if currentTime - lastWave  > krakenAttackSpeed * 1.15 && !inkSplatted && !droppedChest && !droppedItem{
+        if currentTime - lastWave  > krakenAttackSpeed * 1.15 && !inkSplatted && !droppedChest && !droppedItem && self.totalGameTime > 4{
             for node in self.children{
                 if let aNode = node as? SKSpriteNode{
                     if aNode.name == "safeSpot1" || aNode.name == "safeSpot2"{
