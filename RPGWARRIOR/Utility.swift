@@ -371,7 +371,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(gold)
         }
     }else if level == "level15"{
-        //15% mossy silver ring, 25% 5 booty, 50% coral crown, 5% seaweed mustache, 5% afro seaweed
+        //15% mossy silver ring, 25% 5 booty, 60% coral crown
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
         if (myNum > 40){
@@ -384,13 +384,11 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             item.position = position
             item.size = size
             scene.addChild(item)
-        }else {
-            let gold = SKSpriteNode(imageNamed: "Booty_1")
-            gold.name = "gold"
-            gold.position = position
-            gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 5
-            scene.addChild(gold)
+        }else{
+            let item = ItemClass.itemInSpace("Whale_Flesh_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
         }
     }else if level == "level16"{
         //75% 5 booty, 25% mossy silver ring
@@ -398,6 +396,11 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         println("myNum: \(myNum)")
         if myNum > 75{
             let item = ItemClass.itemInSpace("Mossy_Silver_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }else if (myNum <= 75) && (myNum > 50){
+            let item = ItemClass.itemInSpace("Whale_Flesh_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -410,16 +413,11 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(gold)
         }
     }else if level == "level17"{
-        //40% 6 booty, 50% mossy silver ring, 10% inky ring
+        //50% 6 booty, 50% mossy silver ring
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
         if myNum > 50{
             let item = ItemClass.itemInSpace("Mossy_Silver_Ring_1")
-            item.position = position
-            item.size = size
-            scene.addChild(item)
-        }else if (myNum <= 50) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Inky_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -454,7 +452,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(gold)
         }
     }else if level == "level19"{
-        //65% 6 booty, 25% silver ring, 10% king kraken tentacle ring
+        //35% 6 booty, 25% silver ring, 40% king kraken tentacle ring
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
         if myNum > 75{
@@ -462,7 +460,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             item.position = position
             item.size = size
             scene.addChild(item)
-        } else if (myNum <= 75) && (myNum > 65){
+        } else if (myNum <= 75) && (myNum > 35){
             let item = ItemClass.itemInSpace("King_Kraken_Tentacle_Ring_1")
             item.position = position
             item.size = size
@@ -476,15 +474,15 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(gold)
         }
     }else if level == "level20"{
-        //40% 7 booty, 50% silver ring, 10% seashell charm bracelet
+        //35% 7 booty, 25% silver ring, 40% seashell charm bracelet
         let myNum = randomWithMin(0, 100)
         println("myNum: \(myNum)")
-        if myNum > 50{
+        if myNum > 75{
             let item = ItemClass.itemInSpace("Silver_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
-        } else if (myNum <= 50) && (myNum > 40){
+        } else if (myNum <= 75) && (myNum > 35){
             let item = ItemClass.itemInSpace("Seashell_Charm_Bracelet_1")
             item.position = position
             item.size = size
