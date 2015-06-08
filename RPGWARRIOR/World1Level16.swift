@@ -89,26 +89,46 @@ class World1Level16: SKScene, SKPhysicsContactDelegate {
         //************************************
         
         //middle
-        for (var i = 20; i < Int(self.frame.maxX) - 20; i += 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY)))
-        }
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.midY + 10)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.midY - 10)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 150, self.frame.midY + 10)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 200, self.frame.midY - 10)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 250, self.frame.midY + 10)))
         
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, 20)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, 20)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, 70)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.midY + 10)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY - 10)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 150, self.frame.midY + 10)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 200, self.frame.midY - 10)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 250, self.frame.midY + 10)))
+        //bot
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.minY + 70)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.minY + 80)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.minY + 60)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 150, self.frame.minY + 80)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 200, self.frame.minY + 60)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 250, self.frame.minY + 80)))
         
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.maxY - 20)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.maxY - 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 80, self.frame.maxY - 20)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 80, self.frame.maxY - 50)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.minY + 80)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.minY + 60)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 150, self.frame.minY + 80)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 200, self.frame.minY + 60)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 250, self.frame.minY + 80)))
+        //top
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.maxY - 110)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.maxY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.maxY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 80, self.frame.maxY - 80)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.maxY - 80)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.maxY - 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 150, self.frame.maxY - 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 200, self.frame.maxY - 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 250, self.frame.maxY - 100)))
         
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.maxY - 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 150, self.frame.maxY - 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 200, self.frame.maxY - 100)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 250, self.frame.maxY - 120)))
+        
+        //crabs
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(50, 200), endPosition: CGPointMake(self.frame.maxX - 50, 200)))
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(50, 450), endPosition: CGPointMake(self.frame.maxX - 50, 450)))
         
