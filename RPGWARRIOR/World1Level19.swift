@@ -112,7 +112,7 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                theHero!.takeDamage(2)
+                theHero!.takeDamage(1)
                 (secondBody.node as! MineNode).explode(secondBody.node!.position)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
