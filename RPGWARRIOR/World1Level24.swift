@@ -120,13 +120,6 @@ class World1Level24: SKScene, SKPhysicsContactDelegate {
                 aHero.takeDamage(3)
                 secondBody.node!.removeFromParent()
         }
-        //HERO VS SEASHELL
-        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                let mine = secondBody.node as? MineNode
-                mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
-                theHero!.takeDamage(10)
-        }
         //HERO VS MINI CRAB
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){

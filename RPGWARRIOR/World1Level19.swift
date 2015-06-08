@@ -167,7 +167,7 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
             
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastTentacle  > krakenAttackSpeed && !levelOver && !droppedChest && !inkSplatted{
+        if currentTime - lastTentacle  > krakenAttackSpeed && !levelOver && !droppedChest && !inkSplatted && self.totalGameTime > 4{
             self.lastTentacle = currentTime
             theKraken!.throwTentacle()
         }

@@ -117,7 +117,7 @@ class World1Level25: SKScene, SKPhysicsContactDelegate {
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
                 let mine = secondBody.node as? MineNode
                 mine!.explode(secondBody.node!.position)
-                theHero!.takeDamage(2)
+                theHero!.takeDamage(3)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySpike.rawValue){
@@ -171,7 +171,7 @@ class World1Level25: SKScene, SKPhysicsContactDelegate {
             
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastTentacle  > krakenAttackSpeed && !levelOver && !inkSplatted && !droppedChest{
+        if currentTime - lastTentacle  > krakenAttackSpeed && !levelOver && !inkSplatted && !droppedChest && self.totalGameTime > 4{
             self.lastTentacle = currentTime
             theKraken!.throwTentacle()
         }

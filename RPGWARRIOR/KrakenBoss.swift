@@ -125,8 +125,6 @@ class KrakenBoss: SKSpriteNode {
         textures.append(SKTexture(imageNamed: "Kraken_Boss_10"))
         textures.append(SKTexture(imageNamed: "Kraken_Boss_11"))
         textures.append(SKTexture(imageNamed: "Kraken_Boss_12"))
-        textures.append(SKTexture(imageNamed: "Kraken_Boss_13"))
-        textures.append(SKTexture(imageNamed: "Kraken_Boss_12"))
         textures.append(SKTexture(imageNamed: "Kraken_Boss_11"))
         textures.append(SKTexture(imageNamed: "Kraken_Boss_10"))
         textures.append(SKTexture(imageNamed: "Kraken_Boss_9"))

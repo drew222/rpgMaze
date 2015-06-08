@@ -112,7 +112,7 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
         
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                theHero!.takeDamage(2)
+                theHero!.takeDamage(3)
                 (secondBody.node as! MineNode).explode(secondBody.node!.position)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
@@ -169,7 +169,7 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
-        if currentTime - lastWave  > krakenAttackSpeed * 1.15 && !inkSplatted && !droppedChest{
+        if currentTime - lastWave  > krakenAttackSpeed * 1.15 && !inkSplatted && !droppedChest && self.totalGameTime > 4{
             for node in self.children{
                 if let aNode = node as? SKSpriteNode{
                     if aNode.name == "safeSpot1" || aNode.name == "safeSpot2"{
@@ -181,7 +181,7 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
             theKraken!.createSafeAndWave()
         }
         
-        if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver && !inkSplatted && !droppedChest{
+        if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver && !inkSplatted && !droppedChest && self.totalGameTime > 4{
             self.lastTentacle = currentTime
             theKraken!.throwTentacle()
         }

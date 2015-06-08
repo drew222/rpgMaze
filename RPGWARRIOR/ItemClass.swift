@@ -135,7 +135,7 @@ class ItemClass: SKSpriteNode {
             return [("Life", CGFloat(1))]
         }else if picName == "Afro_Seaweed_1"{
             price = 25
-            return [("Life", CGFloat(1)), ("Regeneration", CGFloat(2))]
+            return [("Life", CGFloat(1)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(5))]
             
         
         //NECK ITEMS
@@ -143,7 +143,7 @@ class ItemClass: SKSpriteNode {
             price = 20
             return [("Movement", CGFloat(5)), ("Regeneration", CGFloat(1))]
         }else if picName == "Pearl_Necklace_1"{
-            price = 50
+            price = 25
             return [("Movement", CGFloat(15))]
         }else if picName == "Seashell_Necklace_1"{
             price = 50
@@ -153,7 +153,7 @@ class ItemClass: SKSpriteNode {
             return [("Movement", CGFloat(5))]
         }else if picName == "Seaweed_Mustache_1"{
             price = 25
-            return [("Regeneration", CGFloat(2)), ("Life", CGFloat(1))]
+            return [("Regeneration", CGFloat(2)), ("Life", CGFloat(1)), ("Movement", CGFloat(5))]
         }else if picName == "Bow_Tie_1"{
             price = 200
             return [("Movement", CGFloat(10)), ("Regeneration", CGFloat(2)), ("Life", CGFloat(3))]

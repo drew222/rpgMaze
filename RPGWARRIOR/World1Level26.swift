@@ -76,7 +76,7 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
         
         //shells i = y, k = x
         //right column
-        for (var i = 20; i < Int(self.frame.maxY); i += 30){
+        for (var i = 20; i < Int(self.frame.maxY) - 100; i += 30){
             for (var k = 260.0; k < Double(self.frame.maxX); k += 30){
                 self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(k), CGFloat(i))))
                 if Double(self.frame.maxX) - k > 40 && Double(self.frame.maxX) - k < 30 {
@@ -85,7 +85,7 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
             }
         }
         //left column a = x b = y
-        for (var b = 20; b < Int(self.frame.maxY); b += 30){
+        for (var b = 20; b < Int(self.frame.maxY) - 100; b += 30){
             for (var a = 20.0; a < Double(self.frame.maxX - 255); a += 30){
                 self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(a), CGFloat(b))))
                 if Double(self.frame.maxX) - a > 40 && Double(self.frame.maxX) - a < 30 {
@@ -125,7 +125,7 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
                 let aHero = self.childNodeWithName("hero") as! HeroClass
-                aHero.takeDamage(5)
+                aHero.takeDamage(3)
                 secondBody.node!.removeFromParent()
         }
         //HERO VS SEASHELL
