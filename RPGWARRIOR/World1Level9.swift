@@ -71,23 +71,31 @@ class World1Level9: SKScene, SKPhysicsContactDelegate  {
         //************************************
         
         //shells
+        //top diagnol
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 40, self.frame.midY + 320)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 120, self.frame.midY + 240)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 200, self.frame.midY + 160)))
+        //2nd from top diag
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 20, self.frame.midY + 200)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.midY + 280)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY + 120)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 140, self.frame.midY + 40)))
         //mid diagnol
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 80, self.frame.midY + 80)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 160, self.frame.midY + 160)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.midY - 80)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 160, self.frame.midY - 160)))
-        //top diag
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 20, self.frame.midY + 200)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.midY + 280)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY + 120)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 140, self.frame.midY + 40)))
-        //bot diag
+        
+        //2nd from bot diag
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 20, self.frame.midY - 200)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY - 120)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 140, self.frame.midY - 40)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY - 280)))
-        
+        //bot diag
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 40, self.frame.midY - 320)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 120, self.frame.midY - 240)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 200, self.frame.midY - 160)))
     }
     func didBeginContact(contact: SKPhysicsContact) {
         var firstBody: SKPhysicsBody!
