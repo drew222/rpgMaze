@@ -141,7 +141,7 @@ class ItemClass: SKSpriteNode {
         //NECK ITEMS
         }else if picName == "Lifejacket_1"{
             price = 20
-            return [("Life", CGFloat(1))]
+            return [("Movement", CGFloat(5)), ("Regeneration", CGFloat(1))]
         }else if picName == "Pearl_Necklace_1"{
             price = 50
             return [("Movement", CGFloat(10)), ("Life", CGFloat(1))]
