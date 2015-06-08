@@ -43,6 +43,7 @@
 		DC4A443E1ACFA47400BE81D8 /* World1Level8.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A443D1ACFA47400BE81D8 /* World1Level8.swift */; };
 		DC4A44401AD064A800BE81D8 /* World1Level13.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A443F1AD064A800BE81D8 /* World1Level13.swift */; };
 		DC4A44421AD071EE00BE81D8 /* World1Level14.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A44411AD071EE00BE81D8 /* World1Level14.swift */; };
+		DC5925571B26436800244578 /* Whale_Flesh_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925561B26436800244578 /* Whale_Flesh_Ring_Text.png */; };
 		DCBCE4371B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */; };
 		DCBCE4391B12EB4800FCF4A5 /* Sweaty_Wristband_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */; };
 		DCBCE43B1B12EB5400FCF4A5 /* Regeneration_Symbol_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */; };
@@ -395,7 +396,6 @@
 		EEB809251B13981D00A221E2 /* Visor_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB808FF1B13981D00A221E2 /* Visor_Text.png */; };
 		EEB809261B13981D00A221E2 /* Watch_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB809001B13981D00A221E2 /* Watch_Text.png */; };
 		EEB809271B13981D00A221E2 /* Water_Wing_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB809011B13981D00A221E2 /* Water_Wing_Text.png */; };
-		EEB809281B13981D00A221E2 /* Whale_Flesh_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB809021B13981D00A221E2 /* Whale_Flesh_Ring_Text.png */; };
 		EEB8092E1B14C11600A221E2 /* Kraken_Boss_14.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB809291B14C11600A221E2 /* Kraken_Boss_14.png */; };
 		EEB8092F1B14C11600A221E2 /* Kraken_Boss_15.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB8092A1B14C11600A221E2 /* Kraken_Boss_15.png */; };
 		EEB809301B14C11600A221E2 /* Left_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEB8092B1B14C11600A221E2 /* Left_Text_1.png */; };
@@ -489,6 +489,7 @@
 		DC4A443D1ACFA47400BE81D8 /* World1Level8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level8.swift; sourceTree = "<group>"; };
 		DC4A443F1AD064A800BE81D8 /* World1Level13.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level13.swift; sourceTree = "<group>"; };
 		DC4A44411AD071EE00BE81D8 /* World1Level14.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level14.swift; sourceTree = "<group>"; };
+		DC5925561B26436800244578 /* Whale_Flesh_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Whale_Flesh_Ring_Text.png; sourceTree = "<group>"; };
 		DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_2.png; sourceTree = "<group>"; };
 		DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_1.png; sourceTree = "<group>"; };
 		DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regeneration_Symbol_1.png; sourceTree = "<group>"; };
@@ -842,7 +843,6 @@
 		EEB808FF1B13981D00A221E2 /* Visor_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Visor_Text.png; sourceTree = "<group>"; };
 		EEB809001B13981D00A221E2 /* Watch_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Watch_Text.png; sourceTree = "<group>"; };
 		EEB809011B13981D00A221E2 /* Water_Wing_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Water_Wing_Text.png; sourceTree = "<group>"; };
-		EEB809021B13981D00A221E2 /* Whale_Flesh_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Whale_Flesh_Ring_Text.png; sourceTree = "<group>"; };
 		EEB809291B14C11600A221E2 /* Kraken_Boss_14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Boss_14.png; sourceTree = "<group>"; };
 		EEB8092A1B14C11600A221E2 /* Kraken_Boss_15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Boss_15.png; sourceTree = "<group>"; };
 		EEB8092B1B14C11600A221E2 /* Left_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Left_Text_1.png; sourceTree = "<group>"; };
@@ -1347,7 +1347,7 @@
 				DCFD741B1B01532F0054E370 /* Whale_Boss_18.png */,
 				DCF23E261B0BABE900484040 /* Whale_Flesh_Ring_1.png */,
 				DCF23E281B0BABEE00484040 /* Whale_Flesh_Ring_2.png */,
-				EEB809021B13981D00A221E2 /* Whale_Flesh_Ring_Text.png */,
+				DC5925561B26436800244578 /* Whale_Flesh_Ring_Text.png */,
 				DCFD74241B0153300054E370 /* Whale_Level_Icon_1.png */,
 				DCF23E241B0BABCF00484040 /* Whistle_1.png */,
 				DCF23E061B0BAA0500484040 /* Whistle_2.png */,
@@ -1559,7 +1559,6 @@
 				EEB809151B13981D00A221E2 /* Pearl_Necklace_Text.png in Resources */,
 				DCFD75231B0153300054E370 /* Yes_Text_1.png in Resources */,
 				DCFD74A31B0153300054E370 /* Mossy_Silver_Ring_2.png in Resources */,
-				EEB809281B13981D00A221E2 /* Whale_Flesh_Ring_Text.png in Resources */,
 				DCFD74CE1B0153300054E370 /* Tentacle_20.png in Resources */,
 				DCFD74921B0153300054E370 /* Kraken_Movement_3.png in Resources */,
 				DCF23E2F1B0BAC0100484040 /* Visor_2.png in Resources */,
@@ -1829,6 +1828,7 @@
 				DCF23E151B0BAB7F00484040 /* Beach_Towel_2.png in Resources */,
 				DCFD75311B01C5CC0054E370 /* Kraken_Boss_6.png in Resources */,
 				DCF23E1B1B0BAB9600484040 /* Inky_Ring_1.png in Resources */,
+				DC5925571B26436800244578 /* Whale_Flesh_Ring_Text.png in Resources */,
 				DCFD74521B0153300054E370 /* Booty_1.png in Resources */,
 				EEB8090A1B13981D00A221E2 /* Crab_Claw_Cap_Text.png in Resources */,
 				DCFD74A51B0153300054E370 /* Noggin_Text_1.png in Resources */,
