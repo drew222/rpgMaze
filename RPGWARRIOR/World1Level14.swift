@@ -84,12 +84,12 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
         //seashells
         //outter = rows
         for (var i = 80; i < Int(self.frame.maxY - 140); i += 160){
-            for (var k = 20; k < Int(self.frame.maxX) - 60; k += 40){
+            for (var k = 20; k < Int(self.frame.maxX) - 60; k += 30){
                 self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(k), CGFloat(i))))
             }
         }
         for (var i = 160; i < Int(self.frame.maxY - 140); i += 160){
-            for (var k = 60; k < Int(self.frame.maxX) - 20; k += 40){
+            for (var k = 60; k < Int(self.frame.maxX) - 0; k += 30){
                 self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(k), CGFloat(i))))
             }
         }
@@ -142,7 +142,7 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
                 let aHero = self.childNodeWithName("hero") as! HeroClass
-                aHero.takeDamage(5)
+                aHero.takeDamage(3)
                 secondBody.node!.removeFromParent()
         }
             //HERO VS FIRE

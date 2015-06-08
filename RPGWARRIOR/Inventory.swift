@@ -503,7 +503,7 @@ class Inventory: SKScene {
                 headDisplay!.zPosition = 2
                 headDisplay!.position = CGPointMake(self.frame.midX - 10, self.frame.maxY - 85)
             } else if itemName == "Sunhat_2" {
-                itemName = "Sun_Hat_1"
+                itemName = "Sunhat_1"
                 headDisplay!.size = CGSizeMake(225, 225)
                 headDisplay!.position = CGPointMake(self.frame.midX - 10, self.frame.maxY - 150)
                 headDisplay!.zPosition = 3
@@ -532,7 +532,7 @@ class Inventory: SKScene {
                 headDisplay!.position = CGPointMake(self.frame.midX - 10, self.frame.maxY - 135)
                 headDisplay!.zPosition = 2
             }
-            headDisplay!.texture = SKTexture(imageNamed: "\(item.itemName!)")
+            headDisplay!.texture = SKTexture(imageNamed: "\(itemName)")
             //LEFT
         }else if spot == "body" {
             var itemName = item.itemName!

@@ -231,6 +231,10 @@ class HeroClass: SKSpriteNode {
                 for stat in theInventory.weapon!.itemStats!{
                     if stat.0 == "Life"{
                         self.life! += stat.1
+                    }else if stat.0 == "Movement"{
+                        heroSpeed += stat.1
+                    }else if stat.0 == "Regeneration"{
+                        self.regeneration! += stat.1
                     }
                 }
                 }}
@@ -241,6 +245,8 @@ class HeroClass: SKSpriteNode {
                         self.life! += stat.1
                     }else if stat.0 == "Movement"{
                         heroSpeed += stat.1
+                    }else if stat.0 == "Regeneration"{
+                        self.regeneration! += stat.1
                     }
                 }
                 }}
@@ -251,6 +257,8 @@ class HeroClass: SKSpriteNode {
                         heroSpeed += stat.1
                     }else if stat.0 == "Life"{
                         self.life! += stat.1
+                    }else if stat.0 == "Regeneration"{
+                        self.regeneration! += stat.1
                     }
                 }
                 }}
@@ -259,6 +267,10 @@ class HeroClass: SKSpriteNode {
                     for stat in theInventory.neck!.itemStats!{
                         if stat.0 == "Regeneration"{
                             self.regeneration! += stat.1
+                        }else if stat.0 == "Movement"{
+                            heroSpeed += stat.1
+                        }else if stat.0 == "Life"{
+                            self.life! += stat.1
                         }
                     }
                 }}

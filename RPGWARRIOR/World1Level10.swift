@@ -34,7 +34,8 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
     var droppedChest = false
     //*******************************
     
-    let wizardAttackSpeed = 1.0
+    let wizardAttackSpeed = 1.5
+    let wizardAttackSpeedBlizz = 4.0
     
     var theWizard: WizardClass?
     var theHero: HeroClass?
@@ -149,11 +150,11 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
             self.lastBlizz = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
-        if currentTime - lastFireball  > wizardAttackSpeed && !inkSplatted && !levelOver{
+        if currentTime - lastFireball  > wizardAttackSpeed && !inkSplatted && !droppedChest{
             self.lastFireball = currentTime
             theWizard!.shootFireball(theHero!.position)
         }
-        if currentTime - lastBlizz > (3 * wizardAttackSpeed) && !inkSplatted && !levelOver{
+        if currentTime - lastBlizz > wizardAttackSpeedBlizz && !inkSplatted && !droppedChest{
             theWizard!.createBlizz(theWizard!.getBlizzLocation(theHero!.position))
             self.lastBlizz = currentTime
         }
