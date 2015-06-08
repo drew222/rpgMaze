@@ -87,47 +87,26 @@ class World1Level16: SKScene, SKPhysicsContactDelegate {
         lifeHeart.setScale(0.15)
         self.addChild(lifeHeart)
         //************************************
-        /*
-        //middle
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.midY + 10)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.midY - 10)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 150, self.frame.midY + 10)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 200, self.frame.midY - 10)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 250, self.frame.midY + 10)))
         
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.midY + 10)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY - 10)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 150, self.frame.midY + 10)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 200, self.frame.midY - 10)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 250, self.frame.midY + 10)))
-        //bot
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.minY + 70)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.minY + 80)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.minY + 60)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 150, self.frame.minY + 80)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 200, self.frame.minY + 60)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 250, self.frame.minY + 80)))
-        
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.minY + 80)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.minY + 60)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 150, self.frame.minY + 80)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 200, self.frame.minY + 60)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 250, self.frame.minY + 80)))
-        //top
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.maxY - 110)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.maxY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 120)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 150, self.frame.maxY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 200, self.frame.maxY - 120)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 250, self.frame.maxY - 100)))
-        
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.maxY - 120)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 150, self.frame.maxY - 120)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 200, self.frame.maxY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 250, self.frame.maxY - 120)))
-        */
+        //regen spinning clock
+        let backTimer = SKSpriteNode(imageNamed: "Regen_Timer_1")
+        backTimer.size = CGSizeMake(30, 30)
+        backTimer.position = CGPointMake(self.frame.maxX - 60, self.frame.maxY - 20)
+        backTimer.name = "backTimer"
+        backTimer.zPosition = 2
+        self.addChild(backTimer)
+        let clockNode = SKSpriteNode(imageNamed: "Regen_Timer_2")
+        clockNode.position = CGPointMake(self.frame.maxX - 60, self.frame.maxY - 20)
+        clockNode.size = CGSizeMake(30, 30)
+        clockNode.name = "regenClock"
+        clockNode.zPosition = 3
+        let spinAction = SKAction.rotateByAngle(2 * pi, duration: healSpeed)
+        let repeatAction = SKAction.repeatActionForever(spinAction)
+        clockNode.runAction(repeatAction)
+        clockNode.zRotation = pi / 1.25
+        self.addChild(clockNode)
+        //********************
+
         
         for (var i = 20; CGFloat(i) < self.frame.maxX - 20; i += 40){
             self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY)))

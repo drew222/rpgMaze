@@ -44,6 +44,8 @@
 		DC4A44401AD064A800BE81D8 /* World1Level13.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A443F1AD064A800BE81D8 /* World1Level13.swift */; };
 		DC4A44421AD071EE00BE81D8 /* World1Level14.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A44411AD071EE00BE81D8 /* World1Level14.swift */; };
 		DC5925571B26436800244578 /* Whale_Flesh_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925561B26436800244578 /* Whale_Flesh_Ring_Text.png */; };
+		DC59255D1B265F7700244578 /* Regen_Timer_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59255C1B265F7700244578 /* Regen_Timer_2.png */; };
+		DC59255F1B265F7F00244578 /* Regen_Timer_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59255E1B265F7F00244578 /* Regen_Timer_1.png */; };
 		DCBCE4371B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */; };
 		DCBCE4391B12EB4800FCF4A5 /* Sweaty_Wristband_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */; };
 		DCBCE43B1B12EB5400FCF4A5 /* Regeneration_Symbol_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */; };
@@ -490,6 +492,8 @@
 		DC4A443F1AD064A800BE81D8 /* World1Level13.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level13.swift; sourceTree = "<group>"; };
 		DC4A44411AD071EE00BE81D8 /* World1Level14.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level14.swift; sourceTree = "<group>"; };
 		DC5925561B26436800244578 /* Whale_Flesh_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Whale_Flesh_Ring_Text.png; sourceTree = "<group>"; };
+		DC59255C1B265F7700244578 /* Regen_Timer_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regen_Timer_2.png; sourceTree = "<group>"; };
+		DC59255E1B265F7F00244578 /* Regen_Timer_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regen_Timer_1.png; sourceTree = "<group>"; };
 		DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_2.png; sourceTree = "<group>"; };
 		DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_1.png; sourceTree = "<group>"; };
 		DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regeneration_Symbol_1.png; sourceTree = "<group>"; };
@@ -1381,6 +1385,8 @@
 				DCFD74381B0153300054E370 /* World_1_Level_28_Text.png */,
 				DCFD74391B0153300054E370 /* World_1_Level_29_Text.png */,
 				DCFD743B1B0153300054E370 /* World_1_Level_30_Text.png */,
+				DC59255E1B265F7F00244578 /* Regen_Timer_1.png */,
+				DC59255C1B265F7700244578 /* Regen_Timer_2.png */,
 				DCFD74431B0153300054E370 /* Yes_Text_1.png */,
 				DCFD74441B0153300054E370 /* Zone_Screen_1.png */,
 				DCFD74451B0153300054E370 /* Zone_Screen_2.png */,
@@ -1653,6 +1659,7 @@
 				EEB809621B15674700A221E2 /* World_1_Level_44_Text.png in Resources */,
 				DCF23E271B0BABE900484040 /* Whale_Flesh_Ring_1.png in Resources */,
 				EEB809261B13981D00A221E2 /* Watch_Text.png in Resources */,
+				DC59255D1B265F7700244578 /* Regen_Timer_2.png in Resources */,
 				EEB8091C1B13981D00A221E2 /* Seashell_Necklace_Text.png in Resources */,
 				DCFD74801B0153300054E370 /* Inventory_Slot_3.png in Resources */,
 				DCFD74DB1B0153300054E370 /* Tentacle_33.png in Resources */,
@@ -1707,6 +1714,7 @@
 				DCFD74D31B0153300054E370 /* Tentacle_25.png in Resources */,
 				DCF23DFB1B0BA9CD00484040 /* Lifejacket_2.png in Resources */,
 				DCFD74C01B0153300054E370 /* Store_Button_1.png in Resources */,
+				DC59255F1B265F7F00244578 /* Regen_Timer_1.png in Resources */,
 				DCFD75051B0153300054E370 /* World_1_Level_10_Text.png in Resources */,
 				EEB809061B13981D00A221E2 /* Bling_Ring_Text.png in Resources */,
 				EEB809041B13981D00A221E2 /* Beach_Ball_Fragment_Text.png in Resources */,

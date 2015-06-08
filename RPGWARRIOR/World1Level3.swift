@@ -75,6 +75,25 @@ class World1Level3: SKScene, SKPhysicsContactDelegate {
         self.addChild(lifeHeart)
         //************************************
         
+        //regen spinning clock
+        let backTimer = SKSpriteNode(imageNamed: "Regen_Timer_1")
+        backTimer.size = CGSizeMake(30, 30)
+        backTimer.position = CGPointMake(self.frame.maxX - 60, self.frame.maxY - 20)
+        backTimer.name = "backTimer"
+        backTimer.zPosition = 2
+        self.addChild(backTimer)
+        let clockNode = SKSpriteNode(imageNamed: "Regen_Timer_2")
+        clockNode.position = CGPointMake(self.frame.maxX - 60, self.frame.maxY - 20)
+        clockNode.size = CGSizeMake(30, 30)
+        clockNode.name = "regenClock"
+        clockNode.zPosition = 3
+        let spinAction = SKAction.rotateByAngle(2 * pi, duration: healSpeed)
+        let repeatAction = SKAction.repeatActionForever(spinAction)
+        clockNode.runAction(repeatAction)
+        clockNode.zRotation = pi / 1.25
+        self.addChild(clockNode)
+        //********************
+        
         if isPlus {
             //add second row
             for (var i = Int(self.frame.maxX - 20); i > 90; i -= 40){

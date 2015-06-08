@@ -25,6 +25,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
     //var lifeNode: SKLabelNode?
     var lifeNode: SKLabelNode?
     var maxLife: CGFloat = 0.0
+    var clockNode: SKSpriteNode?
     //*****************
     var clickedChest = false
     var droppedChest = false
@@ -63,6 +64,26 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         lifeNode!.zPosition = 3
         lifeNode!.fontSize = 16
         self.addChild(lifeNode!)
+        
+        //regen spinning clock
+        let backTimer = SKSpriteNode(imageNamed: "Regen_Timer_1")
+        backTimer.size = CGSizeMake(30, 30)
+        backTimer.position = CGPointMake(self.frame.maxX - 60, self.frame.maxY - 20)
+        backTimer.name = "backTimer"
+        backTimer.zPosition = 2
+        self.addChild(backTimer)
+        let clockNode = SKSpriteNode(imageNamed: "Regen_Timer_2")
+        clockNode.position = CGPointMake(self.frame.maxX - 60, self.frame.maxY - 20)
+        clockNode.size = CGSizeMake(30, 30)
+        clockNode.name = "regenClock"
+        clockNode.zPosition = 3
+        let spinAction = SKAction.rotateByAngle(2 * pi, duration: healSpeed)
+        let repeatAction = SKAction.repeatActionForever(spinAction)
+        clockNode.runAction(repeatAction)
+        clockNode.zRotation = pi / 1.25
+        self.addChild(clockNode)
+        //********************
+        
         //print(newLifeNode)
         
         
@@ -144,10 +165,12 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
             self.lastFireball = currentTime
+            self.lastHeal = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
+            println("got here")
             self.lastHeal = currentTime
             if theHero!.life < maxLife{
                 theHero!.life! += theHero!.regeneration!
