@@ -33,7 +33,7 @@ class ZoneScene: SKScene {
             world1Menu = MainMenuScene(size: self.frame.size)
             world1Menu!.userData = NSMutableDictionary()
             world1Menu!.userData?.setObject(self, forKey: "worldscene")
-            inventory = Inventory(size: self.frame.size)
+            inventory = Inventory.createInventory(self.frame.size)
             world1Menu!.userData?.setObject(inventory!, forKey: "inventory")
             inventory!.userData = NSMutableDictionary()
             inventory!.userData?.setObject(world1Menu!, forKey: "menu")
@@ -42,6 +42,43 @@ class ZoneScene: SKScene {
             //******SETUP SAVED DATA FOR INVENTORY AND MainMenuScene HERE********
             if let bestLevel = defaults.objectForKey("highestLevel") as? Int{
                 world1Menu!.highestLevel = bestLevel
+            }
+            if let gold = defaults.objectForKey("gold") as? CGFloat{
+                inventory!.gold = gold
+            }
+            if let head = defaults.objectForKey("headSpace") as? String{
+                if head != "" {
+                    let item = ItemClass.itemInSpace("\(head)")
+                    (inventory!.childNodeWithName("weapon") as! ItemSpaceNode).insertItem(item)
+                    inventory!.displayItem(item, spot: "weapon")
+                }
+            }
+            if let neck = defaults.objectForKey("neckSpace") as? String{
+                if neck != "" {
+                    let item = ItemClass.itemInSpace("\(neck)")
+                    (inventory!.childNodeWithName("neck") as! ItemSpaceNode).insertItem(item)
+                    inventory!.displayItem(item, spot: "neck")
+                }
+            }
+            if let left = defaults.objectForKey("leftSpace") as? String{
+                if left != "" {
+                    let item = ItemClass.itemInSpace("\(left)")
+                    (inventory!.childNodeWithName("body") as! ItemSpaceNode).insertItem(item)
+                    inventory!.displayItem(item, spot: "body")
+                }
+            }
+            if let right = defaults.objectForKey("rightSpace") as? String{
+                if right != "" {
+                    let item = ItemClass.itemInSpace("\(right)")
+                    (inventory!.childNodeWithName("feet") as! ItemSpaceNode).insertItem(item)
+                    inventory!.displayItem(item, spot: "feet")
+                }
+            }
+            if let spot1 = defaults.objectForKey("packSpace1") as? String{
+                if spot1 != "" {
+                    let item = ItemClass.itemInSpace("\(spot1)")
+                    (inventory!.childNodeWithName("1") as! ItemSpaceNode).insertItem(item)
+                }
             }
             
             
