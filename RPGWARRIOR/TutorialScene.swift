@@ -32,9 +32,14 @@ class TutorialScene: SKScene {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         count++
         if count == allImages.count {
-            let gameplayScene = ZoneScene(size: self.frame.size)
+            var zoneScene: ZoneScene?
+            if let aZoneScene = self.userData?.objectForKey("zoneScene") as? ZoneScene{
+                zoneScene = aZoneScene
+            }else{
+                zoneScene = ZoneScene(size: self.frame.size)
+            }
             let skTransition = SKTransition.fadeWithDuration(1.0)
-            self.view?.presentScene(gameplayScene, transition: skTransition)
+            self.view?.presentScene(zoneScene, transition: skTransition)
         }else{
             theImage!.texture = allImages[count]
         }

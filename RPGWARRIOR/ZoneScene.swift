@@ -19,6 +19,7 @@ class ZoneScene: SKScene {
     var inventoryNode: SKSpriteNode?
     var storeNode: SKSpriteNode?
     var zonesTextNode: SKSpriteNode?
+    var tutorialButton: SKSpriteNode?
     let defaults = NSUserDefaults.standardUserDefaults()
     
     override func didMoveToView(view: SKView) {
@@ -178,6 +179,24 @@ class ZoneScene: SKScene {
             world1Node!.size = CGSizeMake(350, 80)
             world1Node!.position = CGPointMake(self.frame.midX, self.frame.maxY - 150)
             self.addChild(world1Node!)
+            let comingSoon = SKSpriteNode(imageNamed: "World_Coming_Soon_Button_1")
+            comingSoon.size = CGSizeMake(350, 80)
+            comingSoon.position = CGPointMake(self.frame.midX, self.frame.maxY - 250)
+            self.addChild(comingSoon)
+            let comingSoon2 = SKSpriteNode(imageNamed: "World_Coming_Soon_Button_1")
+            comingSoon2.size = CGSizeMake(350, 80)
+            comingSoon2.position = CGPointMake(self.frame.midX, self.frame.maxY - 350)
+            self.addChild(comingSoon2)
+            let revealingTide = SKSpriteNode(imageNamed: "Level_Revealing_Tide_1")
+            revealingTide.size = CGSizeMake(self.frame.maxX, self.frame.maxY - 170)
+            revealingTide.anchorPoint = CGPointMake(0.5, 0)
+            revealingTide.position = CGPointMake(self.frame.midX, 0)
+            self.addChild(revealingTide)
+            tutorialButton = SKSpriteNode(imageNamed: "Tutorial_Button_1")
+            tutorialButton!.size = CGSizeMake(70, 70)
+            tutorialButton!.position = CGPointMake(self.frame.maxX - 50, 50)
+            tutorialButton!.name = "tutorial"
+            self.addChild(tutorialButton!)
             inventoryNode = SKSpriteNode(imageNamed: "Fitting_Room__Button_1")
             //inventoryNode!.zPosition = -2
             inventoryNode!.size = CGSizeMake(100, 100)
@@ -212,6 +231,11 @@ class ZoneScene: SKScene {
                 //aStoreScene.userData?.setObject(world1Menu!, forKey: "menu")
                 aStoreScene.userData?.setObject(self, forKey: "worldscene")
                 self.view?.presentScene(aStoreScene, transition: skTransition)
+            }else if tutorialButton!.containsPoint((touch as! UITouch).locationInNode(self)){
+                let aTutorialScene = TutorialScene(size: self.frame.size)
+                aTutorialScene.userData = NSMutableDictionary()
+                aTutorialScene.userData?.setObject(self, forKey: "zoneScene")
+                self.view?.presentScene(aTutorialScene, transition: skTransition)
             }
         }
     }
