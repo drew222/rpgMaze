@@ -339,6 +339,9 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             self.lastHeal = currentTime
             if theHero!.life < maxLife{
                 theHero!.life! += theHero!.regeneration!
+                if theHero!.life > maxLife{
+                    theHero!.life = maxLife
+                }
             }
         }
         

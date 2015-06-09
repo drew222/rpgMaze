@@ -57,13 +57,17 @@ class MainMenuScene: SKScene {
     var world1level29node: SKSpriteNode?
     var world1level30node: SKSpriteNode?
     
+    
     // ##### change this for new level#####
     
     var firstTimeLoaded = true
     
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        
         if firstTimeLoaded{
+            
             let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
             background.size = self.frame.size
             background.position = CGPointMake(self.frame.midX, self.frame.midY)

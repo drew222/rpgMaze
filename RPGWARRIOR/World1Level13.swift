@@ -276,6 +276,12 @@ class World1Level13: SKScene, SKPhysicsContactDelegate {
                     inkSplat.runAction(sequence)
                     inkSplatted = true
                 }else{
+                    
+                    //&&
+                    let persistentData = NSUserDefaults.standardUserDefaults()
+                    persistentData.setObject(13, forKey: "highestLevel")
+                    //&&
+                    
                     let skTransition = SKTransition.fadeWithDuration(1.0)
                     
                     self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)

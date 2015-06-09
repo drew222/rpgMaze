@@ -26,9 +26,12 @@ class StoreScene: SKScene {
     var goldCount: CGFloat = 0
     var firstClick = true
     
+    var persistentData: NSUserDefaults?
+    
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        persistentData = NSUserDefaults.standardUserDefaults()
        //add menu option node here
         self.backgroundColor = UIColor.grayColor()
         let background = SKSpriteNode(imageNamed: "Store_2.png")
@@ -260,6 +263,7 @@ class StoreScene: SKScene {
             (self.userData?.objectForKey("inventory") as! Inventory).gold -= currentItem!.price!
             (self.userData?.objectForKey("inventory") as! Inventory).addItem(currentItem!.itemName!)
             goldCount -= currentItem!.price!
+            persistentData!.setObject((self.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             goldNode!.text = "\(Int(goldCount))"
         }
     }

@@ -41,9 +41,14 @@ class Inventory: SKScene {
     var rightDisplay: SKSpriteNode?
     var neckDisplay: SKSpriteNode?
     
+    var persistentData: NSUserDefaults?
+    
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        persistentData = NSUserDefaults.standardUserDefaults()
+        
+        
         if spaceToMove != nil{
             spaceToMove!.texture = SKTexture(imageNamed: "Inventory_Slot_1")
             spaceToMove = nil
@@ -420,6 +425,10 @@ class Inventory: SKScene {
         if backPackSpaces == 0 {
             println("YOUR PACK IS FULL")
         }else{
+            //&&DATA
+            let packIndex = 15 - backPackSpaces
+            persistentData!.setObject(itemName, forKey: "packSpace\(packIndex)")
+            //&&
             let anItem = ItemClass.itemInSpace(itemName)
             anItem.size = CGSizeMake(37, 37)
             items.append(anItem)
@@ -446,6 +455,9 @@ class Inventory: SKScene {
     
     func sellItem(){
         gold += round(itemToMove!.price! / 5)
+        //&&
+        persistentData!.setObject(gold, forKey: "gold")
+        //&&
         goldNode!.text = "\(Int(gold))"
         spaceToMove!.texture = SKTexture(imageNamed: "Inventory_Slot_1")
         spaceToMove!.item = nil
@@ -454,15 +466,30 @@ class Inventory: SKScene {
         self.childNodeWithName("sellButton")?.removeFromParent()
         if !(spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "neck"){
             backPackSpaces++
+            //&&
+            persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name)")
+            //&&
         }else{
             if spaceToMove!.name == "weapon"{
                 headDisplay!.texture = nil
+                //&&
+                persistentData!.setObject("", forKey: "headSpace")
+                //&&
             }else if spaceToMove!.name == "body" {
                 leftDisplay!.texture = nil
+                //&&
+                persistentData!.setObject("", forKey: "leftSpace")
+                //&&
             }else if spaceToMove!.name == "feet"{
                 rightDisplay!.texture = nil
+                //&&
+                persistentData!.setObject("", forKey: "rightSpace")
+                //&&
             }else{
                 neckDisplay!.texture = nil
+                //&&
+                persistentData!.setObject("", forKey: "neckSpace")
+                //&&
             }
         }
         spaceToMove = nil
@@ -792,20 +819,57 @@ class Inventory: SKScene {
                                 }else{
                                     if space.name == "weapon" || space.name == "body" || space.name == "feet" || space.name == "neck"{
                                         if space.name == "weapon" && itemToMove!.itemType == ItemType.weapon{
-                                                //weapon = space.item
+                                            //SWAPPING HEAD FOR HEAD HIGHLIGHTED = packspace
+                                            //&&
+                                            persistentData!.setObject("\(itemToMove!.itemName)", forKey: "headSpace")
+                                            //&&
+                                            
+                                            //&&
+                                            persistentData!.setObject("\(space.item!.itemName)", forKey: "packSpace\(space.name)")
+                                            //&&
+                                            
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
                                             displayItem(itemToMove!, spot: "weapon")
                                         }else if space.name == "body" && (itemToMove!.itemType == ItemType.body || itemToMove!.itemType == ItemType.feet){
+                                            //SWAPPING LEFT FOR LEFT HIGHLIGHTED = packspace
+                                            
+                                            //&&
+                                            persistentData!.setObject("\(itemToMove!.itemName)", forKey: "leftSpace")
+                                            //&&
+                                            
+                                            //&&
+                                            persistentData!.setObject("\(space.item!.itemName)", forKey: "packSpace\(space.name)")
+                                            //&&
+                                            
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
                                             displayItem(itemToMove!, spot: "body")
                                         }else if space.name == "feet" && (itemToMove!.itemType == ItemType.feet || itemToMove!.itemType == ItemType.body){
-                                                //feet = space.item
+                                            //SWAPPING RIGHT FOR RIGHT HIGHLIGHTED = packspace
+                                            
+                                            //&&
+                                            persistentData!.setObject("\(itemToMove!.itemName)", forKey: "rightSpace")
+                                            //&&
+                                            
+                                            //&&
+                                            persistentData!.setObject("\(space.item!.itemName)", forKey: "packSpace\(space.name)")
+                                            //&&
+                                            
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
                                             displayItem(itemToMove!, spot: "feet")
                                         }else if space.name == "neck" && itemToMove!.itemType == ItemType.neck{
+                                            //SWAPPING NECK FOR NECK HIGHLIGHTED = packspace
+                                            
+                                            //&&
+                                            persistentData!.setObject("\(itemToMove!.itemName)", forKey: "neckSpace")
+                                            //&&
+                                            
+                                            //&&
+                                            persistentData!.setObject("\(space.item!.itemName)", forKey: "packSpace\(space.name)")
+                                            //&&
+                                            
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
                                             displayItem(itemToMove!, spot: "neck")
@@ -813,27 +877,74 @@ class Inventory: SKScene {
                                     }else if spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "neck"{
                                         //CHECK IF SPACETOMOVE IS WEP,BODY,FEET AND THEN CHECK SPACE'S ITEMTYPE
                                         if spaceToMove!.name == "weapon" && space.item!.itemType == ItemType.weapon{
-                                            //weapon = space.item
+                                            //SWAPPING HEAD FOR HEAD HIGHLIGHTED = HEAD
+                                            
+                                            //&&
+                                            persistentData!.setObject("\(space.item!.itemName)", forKey: "headSpace")
+                                            //&&
+                                            
+                                            //&&
+                                            persistentData!.setObject("\(itemToMove!.itemName)", forKey: "packSpace\(space.name)")
+                                            //&&
+                                            
                                             self.spaceToMove!.insertItem(space.item!)
                                             displayItem(space.item!, spot: "weapon")
                                             space.insertItem(self.itemToMove!)
                                         }else if spaceToMove!.name == "body" && space.item!.itemType == ItemType.body{
+                                            //SWAPPING Left FOR Left HIGHLIGHTED = Left
+                                            
+                                            //&&
+                                            persistentData!.setObject("\(space.item!.itemName)", forKey: "leftSpace")
+                                            //&&
+                                            
+                                            //&&
+                                            persistentData!.setObject("\(itemToMove!.itemName)", forKey: "packSpace\(space.name)")
+                                            //&&
+                                            
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
                                             displayItem(space.item!, spot: "body")
-                                            //body = space.item
                                         }else if spaceToMove!.name == "feet" && space.item!.itemType == ItemType.feet{
-                                            //feet = space.item
+                                            //SWAPPING Right FOR Right HIGHLIGHTED = Right
+                                            
+                                            //&&
+                                            persistentData!.setObject("\(space.item!.itemName)", forKey: "rightSpace")
+                                            //&&
+                                            
+                                            //&&
+                                            persistentData!.setObject("\(itemToMove!.itemName)", forKey: "packSpace\(space.name)")
+                                            //&&
+                                            
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
                                             displayItem(space.item!, spot: "feet")
                                         }else if spaceToMove!.name == "neck" && space.item!.itemType == ItemType.neck{
+                                            //SWAPPING Neck FOR Neck HIGHLIGHTED = Neck
+                                            
+                                            //&&
+                                            persistentData!.setObject("\(space.item!.itemName)", forKey: "neckSpace")
+                                            //&&
+                                            
+                                            //&&
+                                            persistentData!.setObject("\(itemToMove!.itemName)", forKey: "packSpace\(space.name)")
+                                            //&&
+                                            
                                             self.spaceToMove!.insertItem(space.item!)
                                             displayItem(space.item!, spot: "neck")
                                             space.insertItem(self.itemToMove!)
                                         }
                                     }
                                     else{
+                                        //SWAPPING TWO ITEMS IN THE BACKPACK!!!
+                                        
+                                        //&&
+                                        persistentData!.setObject("\(space.item!.itemName)", forKey: "packSpace\(spaceToMove!.name)")
+                                        //&&
+                                        
+                                        //&&
+                                        persistentData!.setObject("\(itemToMove!.itemName)", forKey: "packSpace\(space.name)")
+                                        //&&
+                                        
                                         self.spaceToMove!.insertItem(space.item!)
                                         space.insertItem(self.itemToMove!)
                                     }
@@ -848,44 +959,104 @@ class Inventory: SKScene {
                             //add item to new space if have item to move
                             if self.itemToMove != nil{
                                 if spaceToMove!.name == "weapon"{
+                                    
+                                    //&&
+                                    persistentData!.setObject("", forKey: "headSpace")
+                                    //&&
+                                    
                                     weapon = nil
                                 }else if spaceToMove!.name == "body"{
+                                    
+                                    //&&
+                                    persistentData!.setObject("", forKey: "leftSpace")
+                                    //&&
+                                    
                                     body = nil
                                 }else if spaceToMove!.name == "feet"{
+                                    
+                                    //&&
+                                    persistentData!.setObject("", forKey: "rightSpace")
+                                    //&&
+                                    
                                     feet = nil
                                 }else if spaceToMove!.name == "neck"{
+                                    
+                                    //&&
+                                    persistentData!.setObject("", forKey: "neckSpace")
+                                    //&&
+                                    
                                     neck = nil
                                 }
                                 var moved = false
                                 if space.name == "weapon" || space.name == "body" || space.name == "feet" || space.name == "neck"{
                                     if space.name == "weapon" && itemToMove!.itemType == ItemType.weapon{
+                                        //MOVING ITEM FROM PACK TO HEAD
                                         backPackSpaces++
                                         weapon = itemToMove
                                         displayItem(itemToMove!, spot: "weapon")
+                                        
+                                        //&&
+                                        persistentData!.setObject("\(itemToMove!.itemName)", forKey: "headSpace")
+                                        //&&
+                                        
+                                        //&&
+                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name)")
+                                        //&&
+                                        
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
                                         moved = true
                                         
                                     }else if space.name == "body" && (itemToMove!.itemType == ItemType.body || itemToMove!.itemType == ItemType.feet){
+                                        //MOVING ITEM FROM PACK TO RIGHT
                                         backPackSpaces++
                                         body = itemToMove
                                         displayItem(itemToMove!, spot: "body")
+                                        
+                                        //&&
+                                        persistentData!.setObject("\(itemToMove!.itemName)", forKey: "rightSpace")
+                                        //&&
+                                        
+                                        //&&
+                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name)")
+                                        //&&
+                                        
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
                                         moved = true
                                         
                                     }else if space.name == "feet" && (itemToMove!.itemType == ItemType.feet || itemToMove!.itemType == ItemType.body){
+                                        //MOVING ITEM FROM PACK TO LEFT
                                         backPackSpaces++
                                         feet = itemToMove
                                         displayItem(itemToMove!, spot: "feet")
+                                        
+                                        //&&
+                                        persistentData!.setObject("\(itemToMove!.itemName)", forKey: "leftSpace")
+                                        //&&
+                                        
+                                        //&&
+                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name)")
+                                        //&&
+                                        
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
                                         moved = true
                                         
                                     }else if space.name == "neck" && itemToMove!.itemType == ItemType.neck{
+                                        //MOVING ITEM FROM PACK TO NECK
                                         backPackSpaces++
                                         neck = itemToMove
                                         displayItem(itemToMove!, spot: "neck")
+                                        
+                                        //&&
+                                        persistentData!.setObject("\(itemToMove!.itemName)", forKey: "neckSpace")
+                                        //&&
+                                        
+                                        //&&
+                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name)")
+                                        //&&
+                                        
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
                                         moved = true

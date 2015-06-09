@@ -38,6 +38,12 @@ class ZoneScene: SKScene {
             inventory!.userData?.setObject(world1Menu!, forKey: "menu")
             inventory!.userData?.setObject(self, forKey: "worldscene")
             
+            //******SETUP SAVED DATA FOR INVENTORY AND MainMenuScene HERE********
+            
+            
+            
+            //*******************************************************************
+            
             world1Node = SKSpriteNode(imageNamed: "The_Beach_Zone_Button_1")
             //world1Node!.zPosition = -2
             world1Node!.size = CGSizeMake(350, 80)

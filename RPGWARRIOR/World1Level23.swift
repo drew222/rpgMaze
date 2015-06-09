@@ -184,6 +184,9 @@ class World1Level23: SKScene, SKPhysicsContactDelegate {
             self.lastHeal = currentTime
             if theHero!.life < maxLife{
                 theHero!.life! += theHero!.regeneration!
+                if theHero!.life > maxLife{
+                    theHero!.life = maxLife
+                }
             }
         }
         
@@ -243,6 +246,12 @@ class World1Level23: SKScene, SKPhysicsContactDelegate {
                     inkSplat.runAction(sequence)
                     inkSplatted = true
                 }else{
+                    
+                    //&&
+                    let persistentData = NSUserDefaults.standardUserDefaults()
+                    persistentData.setObject(23, forKey: "highestLevel")
+                    //&&
+                    
                     let skTransition = SKTransition.fadeWithDuration(1.0)
                     
                     self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
