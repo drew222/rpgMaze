@@ -49,6 +49,60 @@
 		DC5925631B26BCE700244578 /* Level_Revealing_Tide_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925621B26BCE700244578 /* Level_Revealing_Tide_1.png */; };
 		DC5925651B26BCEF00244578 /* Tutorial_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925641B26BCEF00244578 /* Tutorial_Button_1.png */; };
 		DC5925671B26BCF800244578 /* World_Coming_Soon_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925661B26BCF800244578 /* World_Coming_Soon_Button_1.png */; };
+		DC59259E1B26BED000244578 /* Clam_Boss_Dead_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925681B26BED000244578 /* Clam_Boss_Dead_1.png */; };
+		DC59259F1B26BED000244578 /* Crab_Boss_Dead_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925691B26BED000244578 /* Crab_Boss_Dead_1.png */; };
+		DC5925A01B26BED000244578 /* Kraken_Boss_Dead_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59256A1B26BED000244578 /* Kraken_Boss_Dead_1.png */; };
+		DC5925A11B26BED000244578 /* Whale_Boss_Dead_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59256B1B26BED000244578 /* Whale_Boss_Dead_1.png */; };
+		DC5925A21B26BED000244578 /* Dusk_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59256C1B26BED000244578 /* Dusk_Text.png */; };
+		DC5925A31B26BED000244578 /* Enter_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59256D1B26BED000244578 /* Enter_Text_1.png */; };
+		DC5925A41B26BED000244578 /* Fear_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59256E1B26BED000244578 /* Fear_Text.png */; };
+		DC5925A51B26BED000244578 /* Gauntlet_Background_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59256F1B26BED000244578 /* Gauntlet_Background_1.png */; };
+		DC5925A61B26BED000244578 /* Gauntlet_Level_Icon_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925701B26BED000244578 /* Gauntlet_Level_Icon_1.png */; };
+		DC5925A71B26BED000244578 /* Insidious_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925711B26BED000244578 /* Insidious_Text.png */; };
+		DC5925A81B26BED000244578 /* Insomnia_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925721B26BED000244578 /* Insomnia_Text.png */; };
+		DC5925A91B26BED000244578 /* Lust_Of_Lucifer_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925731B26BED000244578 /* Lust_Of_Lucifer_Text.png */; };
+		DC5925AA1B26BED000244578 /* Nightfall_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925741B26BED000244578 /* Nightfall_Text.png */; };
+		DC5925AB1B26BED000244578 /* Nightmare_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925751B26BED000244578 /* Nightmare_Text.png */; };
+		DC5925AC1B26BED000244578 /* Phase_1_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925761B26BED000244578 /* Phase_1_Text.png */; };
+		DC5925AD1B26BED000244578 /* Phase_2_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925771B26BED000244578 /* Phase_2_Text.png */; };
+		DC5925AE1B26BED000244578 /* Phase_3_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925781B26BED000244578 /* Phase_3_Text.png */; };
+		DC5925AF1B26BED000244578 /* Phase_4_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925791B26BED000244578 /* Phase_4_Text.png */; };
+		DC5925B01B26BED000244578 /* Phase_5_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59257A1B26BED000244578 /* Phase_5_Text.png */; };
+		DC5925B11B26BED000244578 /* Phase_6_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59257B1B26BED000244578 /* Phase_6_Text.png */; };
+		DC5925B21B26BED000244578 /* Phase_7_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59257C1B26BED000244578 /* Phase_7_Text.png */; };
+		DC5925B31B26BED000244578 /* Phase_8_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59257D1B26BED000244578 /* Phase_8_Text.png */; };
+		DC5925B41B26BED000244578 /* Phase_9_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59257E1B26BED000244578 /* Phase_9_Text.png */; };
+		DC5925B51B26BED000244578 /* Phase_10_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59257F1B26BED000244578 /* Phase_10_Text.png */; };
+		DC5925B61B26BED000244578 /* Run_The_Gauntlet_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925801B26BED000244578 /* Run_The_Gauntlet_Text.png */; };
+		DC5925B71B26BED000244578 /* Sinister_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925811B26BED000244578 /* Sinister_Text.png */; };
+		DC5925B81B26BED000244578 /* The_Jitters_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925821B26BED000244578 /* The_Jitters_Text.png */; };
+		DC5925B91B26BED000244578 /* Tomorrows_End_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925831B26BED000244578 /* Tomorrows_End_Text.png */; };
+		DC5925BA1B26BED000244578 /* Twilight_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925841B26BED000244578 /* Twilight_Text.png */; };
+		DC5925BB1B26BED000244578 /* Wicked_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925851B26BED000244578 /* Wicked_Text.png */; };
+		DC5925BC1B26BED000244578 /* Dusk_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925861B26BED000244578 /* Dusk_1.png */; };
+		DC5925BD1B26BED000244578 /* Dusk_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925871B26BED000244578 /* Dusk_2.png */; };
+		DC5925BE1B26BED000244578 /* Fear_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925881B26BED000244578 /* Fear_1.png */; };
+		DC5925BF1B26BED000244578 /* Fear_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925891B26BED000244578 /* Fear_2.png */; };
+		DC5925C01B26BED000244578 /* Insidious_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59258A1B26BED000244578 /* Insidious_1.png */; };
+		DC5925C11B26BED000244578 /* Insidious_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59258B1B26BED000244578 /* Insidious_2.png */; };
+		DC5925C21B26BED000244578 /* Insomnia_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59258C1B26BED000244578 /* Insomnia_1.png */; };
+		DC5925C31B26BED000244578 /* Insomnia_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59258D1B26BED000244578 /* Insomnia_2.png */; };
+		DC5925C41B26BED000244578 /* Lust_Of_Lucifer_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59258E1B26BED000244578 /* Lust_Of_Lucifer_1.png */; };
+		DC5925C51B26BED000244578 /* Lust_Of_Lucifer_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59258F1B26BED000244578 /* Lust_Of_Lucifer_2.png */; };
+		DC5925C61B26BED000244578 /* Nightfall_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925901B26BED000244578 /* Nightfall_1.png */; };
+		DC5925C71B26BED000244578 /* Nightfall_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925911B26BED000244578 /* Nightfall_2.png */; };
+		DC5925C81B26BED000244578 /* Nightmare_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925921B26BED000244578 /* Nightmare_1.png */; };
+		DC5925C91B26BED000244578 /* Nightmare_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925931B26BED000244578 /* Nightmare_2.png */; };
+		DC5925CA1B26BED000244578 /* Sinister_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925941B26BED000244578 /* Sinister_1.png */; };
+		DC5925CB1B26BED000244578 /* Sinister_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925951B26BED000244578 /* Sinister_2.png */; };
+		DC5925CC1B26BED000244578 /* The_Jitters_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925961B26BED000244578 /* The_Jitters_1.png */; };
+		DC5925CD1B26BED000244578 /* The_Jitters_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925971B26BED000244578 /* The_Jitters_2.png */; };
+		DC5925CE1B26BED000244578 /* Tomorrows_End_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925981B26BED000244578 /* Tomorrows_End_1.png */; };
+		DC5925CF1B26BED000244578 /* Tomorrows_End_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925991B26BED000244578 /* Tomorrows_End_2.png */; };
+		DC5925D01B26BED000244578 /* Twilight_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59259A1B26BED000244578 /* Twilight_1.png */; };
+		DC5925D11B26BED000244578 /* Twilight_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59259B1B26BED000244578 /* Twilight_2.png */; };
+		DC5925D21B26BED000244578 /* Wicked_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59259C1B26BED000244578 /* Wicked_1.png */; };
+		DC5925D31B26BED000244578 /* Wicked_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59259D1B26BED000244578 /* Wicked_2.png */; };
 		DCBCE4371B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */; };
 		DCBCE4391B12EB4800FCF4A5 /* Sweaty_Wristband_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */; };
 		DCBCE43B1B12EB5400FCF4A5 /* Regeneration_Symbol_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */; };
@@ -499,6 +553,60 @@
 		DC5925621B26BCE700244578 /* Level_Revealing_Tide_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Level_Revealing_Tide_1.png; sourceTree = "<group>"; };
 		DC5925641B26BCEF00244578 /* Tutorial_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Button_1.png; sourceTree = "<group>"; };
 		DC5925661B26BCF800244578 /* World_Coming_Soon_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = World_Coming_Soon_Button_1.png; sourceTree = "<group>"; };
+		DC5925681B26BED000244578 /* Clam_Boss_Dead_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clam_Boss_Dead_1.png; sourceTree = "<group>"; };
+		DC5925691B26BED000244578 /* Crab_Boss_Dead_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crab_Boss_Dead_1.png; sourceTree = "<group>"; };
+		DC59256A1B26BED000244578 /* Kraken_Boss_Dead_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Kraken_Boss_Dead_1.png; sourceTree = "<group>"; };
+		DC59256B1B26BED000244578 /* Whale_Boss_Dead_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Whale_Boss_Dead_1.png; sourceTree = "<group>"; };
+		DC59256C1B26BED000244578 /* Dusk_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dusk_Text.png; sourceTree = "<group>"; };
+		DC59256D1B26BED000244578 /* Enter_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Enter_Text_1.png; sourceTree = "<group>"; };
+		DC59256E1B26BED000244578 /* Fear_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fear_Text.png; sourceTree = "<group>"; };
+		DC59256F1B26BED000244578 /* Gauntlet_Background_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gauntlet_Background_1.png; sourceTree = "<group>"; };
+		DC5925701B26BED000244578 /* Gauntlet_Level_Icon_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gauntlet_Level_Icon_1.png; sourceTree = "<group>"; };
+		DC5925711B26BED000244578 /* Insidious_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Insidious_Text.png; sourceTree = "<group>"; };
+		DC5925721B26BED000244578 /* Insomnia_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Insomnia_Text.png; sourceTree = "<group>"; };
+		DC5925731B26BED000244578 /* Lust_Of_Lucifer_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lust_Of_Lucifer_Text.png; sourceTree = "<group>"; };
+		DC5925741B26BED000244578 /* Nightfall_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nightfall_Text.png; sourceTree = "<group>"; };
+		DC5925751B26BED000244578 /* Nightmare_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nightmare_Text.png; sourceTree = "<group>"; };
+		DC5925761B26BED000244578 /* Phase_1_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_1_Text.png; sourceTree = "<group>"; };
+		DC5925771B26BED000244578 /* Phase_2_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_2_Text.png; sourceTree = "<group>"; };
+		DC5925781B26BED000244578 /* Phase_3_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_3_Text.png; sourceTree = "<group>"; };
+		DC5925791B26BED000244578 /* Phase_4_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_4_Text.png; sourceTree = "<group>"; };
+		DC59257A1B26BED000244578 /* Phase_5_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_5_Text.png; sourceTree = "<group>"; };
+		DC59257B1B26BED000244578 /* Phase_6_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_6_Text.png; sourceTree = "<group>"; };
+		DC59257C1B26BED000244578 /* Phase_7_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_7_Text.png; sourceTree = "<group>"; };
+		DC59257D1B26BED000244578 /* Phase_8_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_8_Text.png; sourceTree = "<group>"; };
+		DC59257E1B26BED000244578 /* Phase_9_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_9_Text.png; sourceTree = "<group>"; };
+		DC59257F1B26BED000244578 /* Phase_10_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_10_Text.png; sourceTree = "<group>"; };
+		DC5925801B26BED000244578 /* Run_The_Gauntlet_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Run_The_Gauntlet_Text.png; sourceTree = "<group>"; };
+		DC5925811B26BED000244578 /* Sinister_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sinister_Text.png; sourceTree = "<group>"; };
+		DC5925821B26BED000244578 /* The_Jitters_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = The_Jitters_Text.png; sourceTree = "<group>"; };
+		DC5925831B26BED000244578 /* Tomorrows_End_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tomorrows_End_Text.png; sourceTree = "<group>"; };
+		DC5925841B26BED000244578 /* Twilight_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twilight_Text.png; sourceTree = "<group>"; };
+		DC5925851B26BED000244578 /* Wicked_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wicked_Text.png; sourceTree = "<group>"; };
+		DC5925861B26BED000244578 /* Dusk_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dusk_1.png; sourceTree = "<group>"; };
+		DC5925871B26BED000244578 /* Dusk_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dusk_2.png; sourceTree = "<group>"; };
+		DC5925881B26BED000244578 /* Fear_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fear_1.png; sourceTree = "<group>"; };
+		DC5925891B26BED000244578 /* Fear_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fear_2.png; sourceTree = "<group>"; };
+		DC59258A1B26BED000244578 /* Insidious_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Insidious_1.png; sourceTree = "<group>"; };
+		DC59258B1B26BED000244578 /* Insidious_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Insidious_2.png; sourceTree = "<group>"; };
+		DC59258C1B26BED000244578 /* Insomnia_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Insomnia_1.png; sourceTree = "<group>"; };
+		DC59258D1B26BED000244578 /* Insomnia_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Insomnia_2.png; sourceTree = "<group>"; };
+		DC59258E1B26BED000244578 /* Lust_Of_Lucifer_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lust_Of_Lucifer_1.png; sourceTree = "<group>"; };
+		DC59258F1B26BED000244578 /* Lust_Of_Lucifer_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lust_Of_Lucifer_2.png; sourceTree = "<group>"; };
+		DC5925901B26BED000244578 /* Nightfall_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nightfall_1.png; sourceTree = "<group>"; };
+		DC5925911B26BED000244578 /* Nightfall_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nightfall_2.png; sourceTree = "<group>"; };
+		DC5925921B26BED000244578 /* Nightmare_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nightmare_1.png; sourceTree = "<group>"; };
+		DC5925931B26BED000244578 /* Nightmare_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Nightmare_2.png; sourceTree = "<group>"; };
+		DC5925941B26BED000244578 /* Sinister_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sinister_1.png; sourceTree = "<group>"; };
+		DC5925951B26BED000244578 /* Sinister_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sinister_2.png; sourceTree = "<group>"; };
+		DC5925961B26BED000244578 /* The_Jitters_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = The_Jitters_1.png; sourceTree = "<group>"; };
+		DC5925971B26BED000244578 /* The_Jitters_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = The_Jitters_2.png; sourceTree = "<group>"; };
+		DC5925981B26BED000244578 /* Tomorrows_End_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tomorrows_End_1.png; sourceTree = "<group>"; };
+		DC5925991B26BED000244578 /* Tomorrows_End_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tomorrows_End_2.png; sourceTree = "<group>"; };
+		DC59259A1B26BED000244578 /* Twilight_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twilight_1.png; sourceTree = "<group>"; };
+		DC59259B1B26BED000244578 /* Twilight_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twilight_2.png; sourceTree = "<group>"; };
+		DC59259C1B26BED000244578 /* Wicked_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wicked_1.png; sourceTree = "<group>"; };
+		DC59259D1B26BED000244578 /* Wicked_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wicked_2.png; sourceTree = "<group>"; };
 		DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_2.png; sourceTree = "<group>"; };
 		DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_1.png; sourceTree = "<group>"; };
 		DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regeneration_Symbol_1.png; sourceTree = "<group>"; };
@@ -1185,6 +1293,60 @@
 				DCFD73AE1B01532F0054E370 /* Kraken_Movement_14.png */,
 				DCFD73AF1B01532F0054E370 /* Kraken_Movement_15.png */,
 				DCFD73B01B01532F0054E370 /* Kraken_Movement_16.png */,
+				DC5925681B26BED000244578 /* Clam_Boss_Dead_1.png */,
+				DC5925691B26BED000244578 /* Crab_Boss_Dead_1.png */,
+				DC59256A1B26BED000244578 /* Kraken_Boss_Dead_1.png */,
+				DC59256B1B26BED000244578 /* Whale_Boss_Dead_1.png */,
+				DC59256C1B26BED000244578 /* Dusk_Text.png */,
+				DC59256D1B26BED000244578 /* Enter_Text_1.png */,
+				DC59256E1B26BED000244578 /* Fear_Text.png */,
+				DC59256F1B26BED000244578 /* Gauntlet_Background_1.png */,
+				DC5925701B26BED000244578 /* Gauntlet_Level_Icon_1.png */,
+				DC5925711B26BED000244578 /* Insidious_Text.png */,
+				DC5925721B26BED000244578 /* Insomnia_Text.png */,
+				DC5925731B26BED000244578 /* Lust_Of_Lucifer_Text.png */,
+				DC5925741B26BED000244578 /* Nightfall_Text.png */,
+				DC5925751B26BED000244578 /* Nightmare_Text.png */,
+				DC5925761B26BED000244578 /* Phase_1_Text.png */,
+				DC5925771B26BED000244578 /* Phase_2_Text.png */,
+				DC5925781B26BED000244578 /* Phase_3_Text.png */,
+				DC5925791B26BED000244578 /* Phase_4_Text.png */,
+				DC59257A1B26BED000244578 /* Phase_5_Text.png */,
+				DC59257B1B26BED000244578 /* Phase_6_Text.png */,
+				DC59257C1B26BED000244578 /* Phase_7_Text.png */,
+				DC59257D1B26BED000244578 /* Phase_8_Text.png */,
+				DC59257E1B26BED000244578 /* Phase_9_Text.png */,
+				DC59257F1B26BED000244578 /* Phase_10_Text.png */,
+				DC5925801B26BED000244578 /* Run_The_Gauntlet_Text.png */,
+				DC5925811B26BED000244578 /* Sinister_Text.png */,
+				DC5925821B26BED000244578 /* The_Jitters_Text.png */,
+				DC5925831B26BED000244578 /* Tomorrows_End_Text.png */,
+				DC5925841B26BED000244578 /* Twilight_Text.png */,
+				DC5925851B26BED000244578 /* Wicked_Text.png */,
+				DC5925861B26BED000244578 /* Dusk_1.png */,
+				DC5925871B26BED000244578 /* Dusk_2.png */,
+				DC5925881B26BED000244578 /* Fear_1.png */,
+				DC5925891B26BED000244578 /* Fear_2.png */,
+				DC59258A1B26BED000244578 /* Insidious_1.png */,
+				DC59258B1B26BED000244578 /* Insidious_2.png */,
+				DC59258C1B26BED000244578 /* Insomnia_1.png */,
+				DC59258D1B26BED000244578 /* Insomnia_2.png */,
+				DC59258E1B26BED000244578 /* Lust_Of_Lucifer_1.png */,
+				DC59258F1B26BED000244578 /* Lust_Of_Lucifer_2.png */,
+				DC5925901B26BED000244578 /* Nightfall_1.png */,
+				DC5925911B26BED000244578 /* Nightfall_2.png */,
+				DC5925921B26BED000244578 /* Nightmare_1.png */,
+				DC5925931B26BED000244578 /* Nightmare_2.png */,
+				DC5925941B26BED000244578 /* Sinister_1.png */,
+				DC5925951B26BED000244578 /* Sinister_2.png */,
+				DC5925961B26BED000244578 /* The_Jitters_1.png */,
+				DC5925971B26BED000244578 /* The_Jitters_2.png */,
+				DC5925981B26BED000244578 /* Tomorrows_End_1.png */,
+				DC5925991B26BED000244578 /* Tomorrows_End_2.png */,
+				DC59259A1B26BED000244578 /* Twilight_1.png */,
+				DC59259B1B26BED000244578 /* Twilight_2.png */,
+				DC59259C1B26BED000244578 /* Wicked_1.png */,
+				DC59259D1B26BED000244578 /* Wicked_2.png */,
 				DC5925621B26BCE700244578 /* Level_Revealing_Tide_1.png */,
 				DCFD73B91B01532F0054E370 /* Krill_1.png */,
 				DC5925661B26BCF800244578 /* World_Coming_Soon_Button_1.png */,
@@ -1483,12 +1645,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC5925BF1B26BED000244578 /* Fear_2.png in Resources */,
 				DCFD75391B01C5D90054E370 /* Kraken_Boss_7.png in Resources */,
+				DC5925C11B26BED000244578 /* Insidious_2.png in Resources */,
 				DCFD74A41B0153300054E370 /* No_Text_1.png in Resources */,
 				DCFD74E61B0153300054E370 /* Top_Hat_1.png in Resources */,
 				DCFD754F1B01D9100054E370 /* Shades_1.png in Resources */,
+				DC5925A91B26BED000244578 /* Lust_Of_Lucifer_Text.png in Resources */,
 				DCFD74F11B0153300054E370 /* Wave_3.png in Resources */,
 				DCFD751C1B0153300054E370 /* World_1_Level_3_Text.png in Resources */,
+				DC5925BE1B26BED000244578 /* Fear_1.png in Resources */,
 				DCFD74EF1B0153300054E370 /* Wave_1.png in Resources */,
 				EEB8092E1B14C11600A221E2 /* Kraken_Boss_14.png in Resources */,
 				DCFD74B41B0153300054E370 /* Sand_Castle_1.png in Resources */,
@@ -1503,6 +1669,7 @@
 				EEB8090F1B13981D00A221E2 /* Life_Jacket_Text.png in Resources */,
 				DCFD746C1B0153300054E370 /* Crab_Boss_8.png in Resources */,
 				DCFD74DA1B0153300054E370 /* Tentacle_32.png in Resources */,
+				DC5925CA1B26BED000244578 /* Sinister_1.png in Resources */,
 				DCFD750E1B0153300054E370 /* World_1_Level_19_Text.png in Resources */,
 				DCFD75041B0153300054E370 /* Whale_Level_Icon_1.png in Resources */,
 				DCFD74D41B0153300054E370 /* Tentacle_26.png in Resources */,
@@ -1539,6 +1706,7 @@
 				DCFD75131B0153300054E370 /* World_1_Level_23_Text.png in Resources */,
 				DCFD751F1B0153300054E370 /* World_1_Level_6_Text.png in Resources */,
 				DCFD75021B0153300054E370 /* Whale_Boss_8.png in Resources */,
+				DC5925B51B26BED000244578 /* Phase_10_Text.png in Resources */,
 				DCFD74BC1B0153300054E370 /* Silver_Ring_1.png in Resources */,
 				DCFD74BD1B0153300054E370 /* Silver_Ring_2.png in Resources */,
 				EEB8091F1B13981D00A221E2 /* Silver_Ring_Text.png in Resources */,
@@ -1563,10 +1731,13 @@
 				EEB809051B13981D00A221E2 /* Beach_Towel_Text.png in Resources */,
 				DCFD74731B0153300054E370 /* Fitting_Room_2.png in Resources */,
 				DCBCE44B1B12EB9900FCF4A5 /* Sun_Screen_1.png in Resources */,
+				DC5925D11B26BED000244578 /* Twilight_2.png in Resources */,
 				EEB809661B15674700A221E2 /* World_1_Level_48_Text.png in Resources */,
+				DC5925A61B26BED000244578 /* Gauntlet_Level_Icon_1.png in Resources */,
 				DCFD74721B0153300054E370 /* Fitting_Room_1.png in Resources */,
 				2FC73DE11A912B690068A2FB /* BlizzParticle.sks in Resources */,
 				DCFD74E31B0153300054E370 /* Tentacle_9.png in Resources */,
+				DC5925D01B26BED000244578 /* Twilight_1.png in Resources */,
 				EEB809151B13981D00A221E2 /* Pearl_Necklace_Text.png in Resources */,
 				DCFD75231B0153300054E370 /* Yes_Text_1.png in Resources */,
 				DCFD74A31B0153300054E370 /* Mossy_Silver_Ring_2.png in Resources */,
@@ -1577,13 +1748,18 @@
 				DCFD746B1B0153300054E370 /* Crab_Boss_7.png in Resources */,
 				DCF23E211B0BABB500484040 /* King_Kraken_Tentacle_Ring_2.png in Resources */,
 				DCFD747D1B0153300054E370 /* Inventory_Array_Background_1.png in Resources */,
+				DC5925C71B26BED000244578 /* Nightfall_2.png in Resources */,
 				DCFD74F51B0153300054E370 /* Whale_Boss_12.png in Resources */,
 				DCF23E291B0BABEE00484040 /* Whale_Flesh_Ring_2.png in Resources */,
+				DC5925A11B26BED000244578 /* Whale_Boss_Dead_1.png in Resources */,
 				DCFD74551B0153300054E370 /* Clam_Boss_2.png in Resources */,
 				DCFD74561B0153300054E370 /* Clam_Boss_3.png in Resources */,
+				DC5925A41B26BED000244578 /* Fear_Text.png in Resources */,
 				DCFD74C61B0153300054E370 /* Tentacle_12.png in Resources */,
+				DC5925AC1B26BED000244578 /* Phase_1_Text.png in Resources */,
 				DCFD748F1B0153300054E370 /* Kraken_Movement_15.png in Resources */,
 				DCFD74AA1B0153300054E370 /* Pearl_Projectile_2.png in Resources */,
+				DC5925B01B26BED000244578 /* Phase_5_Text.png in Resources */,
 				DCFD753A1B01C5D90054E370 /* Kraken_Boss_8.png in Resources */,
 				DCFD74FC1B0153300054E370 /* Whale_Boss_2.png in Resources */,
 				DCFD748A1B0153300054E370 /* Kraken_Movement_10.png in Resources */,
@@ -1592,9 +1768,11 @@
 				EEB8095C1B15674700A221E2 /* World_1_Level_38_Text.png in Resources */,
 				DCFD75521B01D9100054E370 /* Tentacle_15.png in Resources */,
 				DCFD74B51B0153300054E370 /* Seashell_1.png in Resources */,
+				DC5925CF1B26BED000244578 /* Tomorrows_End_2.png in Resources */,
 				DCF23E171B0BAB8700484040 /* Floatie_1.png in Resources */,
 				DCFD745A1B0153300054E370 /* Clam_Boss_Rocking_3.png in Resources */,
 				DCFD74941B0153300054E370 /* Kraken_Movement_5.png in Resources */,
+				DC5925BB1B26BED000244578 /* Wicked_Text.png in Resources */,
 				DCF23E0D1B0BAA0500484040 /* Tentacle_Swing_7.png in Resources */,
 				DCFD74FB1B0153300054E370 /* Whale_Boss_18.png in Resources */,
 				DCFD75101B0153300054E370 /* World_1_Level_20_Text.png in Resources */,
@@ -1605,6 +1783,7 @@
 				DCFD74E81B0153300054E370 /* Treasure_Chest_2.png in Resources */,
 				DCFD75251B0153300054E370 /* Zone_Screen_2.png in Resources */,
 				DCFD74C31B0153300054E370 /* Tentacle_1.png in Resources */,
+				DC5925B21B26BED000244578 /* Phase_7_Text.png in Resources */,
 				DCFD750D1B0153300054E370 /* World_1_Level_18_Text.png in Resources */,
 				EEB809141B13981D00A221E2 /* Mossy_Silver_Ring_Text.png in Resources */,
 				DCFD74FA1B0153300054E370 /* Whale_Boss_17.png in Resources */,
@@ -1615,19 +1794,25 @@
 				DCFD74B01B0153300054E370 /* Rusty_Silver_Ring_2.png in Resources */,
 				DCFD75501B01D9100054E370 /* Seashell_Necklace_2.png in Resources */,
 				EEB809171B13981D00A221E2 /* Rusty_Copper_Ring_Text.png in Resources */,
+				DC5925AD1B26BED000244578 /* Phase_2_Text.png in Resources */,
 				DCFD74D91B0153300054E370 /* Tentacle_31.png in Resources */,
 				EEB809571B15674700A221E2 /* World_1_Level_33_Text.png in Resources */,
 				EEB809611B15674700A221E2 /* World_1_Level_43_Text.png in Resources */,
 				DCFD74841B0153300054E370 /* Kraken_Boss_3.png in Resources */,
+				DC5925C21B26BED000244578 /* Insomnia_1.png in Resources */,
 				DCFD74E71B0153300054E370 /* Treasure_Chest_1.png in Resources */,
+				DC5925D21B26BED000244578 /* Wicked_1.png in Resources */,
 				DCFD74AC1B0153300054E370 /* Rusty_Copper_Ring_2.png in Resources */,
 				DCFD74691B0153300054E370 /* Crab_Boss_5.png in Resources */,
+				DC5925BD1B26BED000244578 /* Dusk_2.png in Resources */,
 				EEB809271B13981D00A221E2 /* Water_Wing_Text.png in Resources */,
 				DCFD74FE1B0153300054E370 /* Whale_Boss_4.png in Resources */,
 				DCFD74F91B0153300054E370 /* Whale_Boss_16.png in Resources */,
 				DC1F581A1A88735300B5027B /* LightParticle.sks in Resources */,
+				DC5925B81B26BED000244578 /* The_Jitters_Text.png in Resources */,
 				DCFD74D61B0153300054E370 /* Tentacle_28.png in Resources */,
 				DCF23E0C1B0BAA0500484040 /* Tentacle_Swing_5.png in Resources */,
+				DC5925BA1B26BED000244578 /* Twilight_Text.png in Resources */,
 				DCFD751E1B0153300054E370 /* World_1_Level_5_Text.png in Resources */,
 				EEB8095E1B15674700A221E2 /* World_1_Level_40_Text.png in Resources */,
 				DCFD74591B0153300054E370 /* Clam_Boss_Rocking_2.png in Resources */,
@@ -1637,17 +1822,21 @@
 				DCFD74B21B0153300054E370 /* Safety_Pillar_2.png in Resources */,
 				DCFD74D51B0153300054E370 /* Tentacle_27.png in Resources */,
 				DCFD75241B0153300054E370 /* Zone_Screen_1.png in Resources */,
+				DC5925B71B26BED000244578 /* Sinister_Text.png in Resources */,
+				DC5925B61B26BED000244578 /* Run_The_Gauntlet_Text.png in Resources */,
 				DCF23E371B0BAEB600484040 /* Beach_Ball_Fragment_2.png in Resources */,
 				EEB809511B15674700A221E2 /* Sun_Screen_Text.png in Resources */,
 				DCF23E071B0BAA0500484040 /* Sand_Bucket_1.png in Resources */,
 				DCFD74711B0153300054E370 /* Cracked_Ground_2.png in Resources */,
 				DCFD74C21B0153300054E370 /* Store_Text_1.png in Resources */,
+				DC5925A71B26BED000244578 /* Insidious_Text.png in Resources */,
 				DCFD74DF1B0153300054E370 /* Tentacle_5.png in Resources */,
 				DCBCE4491B12EB8700FCF4A5 /* Sell_Text_1.png in Resources */,
 				DCFD74F31B0153300054E370 /* Whale_Boss_10.png in Resources */,
 				DCFD75141B0153300054E370 /* World_1_Level_24_Text.png in Resources */,
 				DCFD74611B0153300054E370 /* Coral_Crown_1.png in Resources */,
 				DCFD74621B0153300054E370 /* Crab_Boss_1.png in Resources */,
+				DC5925A51B26BED000244578 /* Gauntlet_Background_1.png in Resources */,
 				DCF23E1F1B0BABB000484040 /* King_Kraken_Tentacle_Ring_1.png in Resources */,
 				DCFD74601B0153300054E370 /* Copper_Ring_2.png in Resources */,
 				DCFD74AE1B0153300054E370 /* Rusty_Gold_Ring_2.png in Resources */,
@@ -1657,12 +1846,15 @@
 				DCF23E331B0BAC5C00484040 /* Afro_Seaweed_1.png in Resources */,
 				DCFD75551B01D9100054E370 /* Pearl_Snap_Ring_1.png in Resources */,
 				DCFD74571B0153300054E370 /* Clam_Boss_4.png in Resources */,
+				DC5925C01B26BED000244578 /* Insidious_1.png in Resources */,
 				DCF23DF91B0BA9C100484040 /* Lifejacket_1.png in Resources */,
 				DCBCE4371B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png in Resources */,
+				DC5925BC1B26BED000244578 /* Dusk_1.png in Resources */,
 				DCBCE4531B12EC3E00FCF4A5 /* Price_Text_1.png in Resources */,
 				EEB8092F1B14C11600A221E2 /* Kraken_Boss_15.png in Resources */,
 				EEB809621B15674700A221E2 /* World_1_Level_44_Text.png in Resources */,
 				DCF23E271B0BABE900484040 /* Whale_Flesh_Ring_1.png in Resources */,
+				DC5925B11B26BED000244578 /* Phase_6_Text.png in Resources */,
 				EEB809261B13981D00A221E2 /* Watch_Text.png in Resources */,
 				DC59255D1B265F7700244578 /* Regen_Timer_2.png in Resources */,
 				EEB8091C1B13981D00A221E2 /* Seashell_Necklace_Text.png in Resources */,
@@ -1675,12 +1867,14 @@
 				DCFD74871B0153300054E370 /* Kraken_Gets_Hurt_1.png in Resources */,
 				DCFD75541B01D9100054E370 /* Pearl_Snap_Ring_2.png in Resources */,
 				EEB809091B13981D00A221E2 /* Coral_Crown_Text.png in Resources */,
+				DC5925B91B26BED000244578 /* Tomorrows_End_Text.png in Resources */,
 				EEB8090C1B13981D00A221E2 /* Gold_Ring_Text.png in Resources */,
 				EEB809031B13981D00A221E2 /* Barnacles_Text.png in Resources */,
 				EEB809671B15674700A221E2 /* World_1_Level_49_Text.png in Resources */,
 				DCFD75531B01D9100054E370 /* Seashell_Charm_Bracelet_1.png in Resources */,
 				DCFD74BF1B0153300054E370 /* Store_2.png in Resources */,
 				DCFD75171B0153300054E370 /* World_1_Level_27_Text.png in Resources */,
+				DC59259F1B26BED000244578 /* Crab_Boss_Dead_1.png in Resources */,
 				DCFD74B61B0153300054E370 /* Seashell_2.png in Resources */,
 				DCFD75191B0153300054E370 /* World_1_Level_29_Text.png in Resources */,
 				DCFD75211B0153300054E370 /* World_1_Level_8_Text.png in Resources */,
@@ -1689,6 +1883,7 @@
 				DCFD74581B0153300054E370 /* Clam_Boss_Rocking_1.png in Resources */,
 				EEB809321B14C11600A221E2 /* Right_Text_1.png in Resources */,
 				DCFD74681B0153300054E370 /* Crab_Boss_4.png in Resources */,
+				DC5925C61B26BED000244578 /* Nightfall_1.png in Resources */,
 				DCFD747E1B0153300054E370 /* Inventory_Slot_1.png in Resources */,
 				EEB809581B15674700A221E2 /* World_1_Level_34_Text.png in Resources */,
 				DCBCE43F1B12EB6500FCF4A5 /* Sweatband_1.png in Resources */,
@@ -1701,8 +1896,10 @@
 				DCFD74B31B0153300054E370 /* Safety_Pillar_3.png in Resources */,
 				DCFD75411B01C5ED0054E370 /* Sand_Castle_2.png in Resources */,
 				DCFD74A91B0153300054E370 /* Pearl_Projectile_1.png in Resources */,
+				DC59259E1B26BED000244578 /* Clam_Boss_Dead_1.png in Resources */,
 				DCFD74DD1B0153300054E370 /* Tentacle_35.png in Resources */,
 				DCFD745F1B0153300054E370 /* Copper_Ring_1.png in Resources */,
+				DC5925A31B26BED000244578 /* Enter_Text_1.png in Resources */,
 				DCFD748E1B0153300054E370 /* Kraken_Movement_14.png in Resources */,
 				DCFD74911B0153300054E370 /* Kraken_Movement_2.png in Resources */,
 				DCFD74981B0153300054E370 /* Kraken_Movement_9.png in Resources */,
@@ -1713,7 +1910,9 @@
 				DCFD74771B0153300054E370 /* Gold_Ring_1.png in Resources */,
 				DCFD74FD1B0153300054E370 /* Whale_Boss_3.png in Resources */,
 				DCFD74AF1B0153300054E370 /* Rusty_Silver_Ring_1.png in Resources */,
+				DC5925CC1B26BED000244578 /* The_Jitters_1.png in Resources */,
 				DC2711251A85E11900986D2E /* Images.xcassets in Resources */,
+				DC5925B31B26BED000244578 /* Phase_8_Text.png in Resources */,
 				DCFD74CC1B0153300054E370 /* Tentacle_19.png in Resources */,
 				DCFD75151B0153300054E370 /* World_1_Level_25_Text.png in Resources */,
 				DCFD74D31B0153300054E370 /* Tentacle_25.png in Resources */,
@@ -1722,12 +1921,16 @@
 				DC59255F1B265F7F00244578 /* Regen_Timer_1.png in Resources */,
 				DCFD75051B0153300054E370 /* World_1_Level_10_Text.png in Resources */,
 				EEB809061B13981D00A221E2 /* Bling_Ring_Text.png in Resources */,
+				DC5925B41B26BED000244578 /* Phase_9_Text.png in Resources */,
 				EEB809041B13981D00A221E2 /* Beach_Ball_Fragment_Text.png in Resources */,
+				DC5925C81B26BED000244578 /* Nightmare_1.png in Resources */,
+				DC5925C51B26BED000244578 /* Lust_Of_Lucifer_2.png in Resources */,
 				DCFD75031B0153300054E370 /* Whale_Boss_9.png in Resources */,
 				EEB8095D1B15674700A221E2 /* World_1_Level_39_Text.png in Resources */,
 				DCFD75201B0153300054E370 /* World_1_Level_7_Text.png in Resources */,
 				DCFD745B1B0153300054E370 /* Clam_Boss_Rocking_4.png in Resources */,
 				DCFD74811B0153300054E370 /* Inventory_Text_1.png in Resources */,
+				DC5925A21B26BED000244578 /* Dusk_Text.png in Resources */,
 				EEB809241B13981D00A221E2 /* Top_Hat_Text.png in Resources */,
 				DCF23E091B0BAA0500484040 /* Tentacle_Swing_2.png in Resources */,
 				DCFD74E21B0153300054E370 /* Tentacle_8.png in Resources */,
@@ -1735,6 +1938,7 @@
 				DCFD74B11B0153300054E370 /* Safety_Pillar_1.png in Resources */,
 				DCFD744A1B0153300054E370 /* Beach_Ball_2.png in Resources */,
 				DCFD74761B0153300054E370 /* Fitting_Room_Text_1.png in Resources */,
+				DC5925D31B26BED000244578 /* Wicked_2.png in Resources */,
 				EEB809131B13981D00A221E2 /* Mossy_Gold_Ring_Text.png in Resources */,
 				EEB809251B13981D00A221E2 /* Visor_Text.png in Resources */,
 				DCBCE43B1B12EB5400FCF4A5 /* Regeneration_Symbol_1.png in Resources */,
@@ -1745,6 +1949,7 @@
 				DCBCE4431B12EB7500FCF4A5 /* Life_Symbol_1.png in Resources */,
 				DCFD74E91B0153300054E370 /* Treasure_Chest_3.png in Resources */,
 				DCFD74931B0153300054E370 /* Kraken_Movement_4.png in Resources */,
+				DC5925CE1B26BED000244578 /* Tomorrows_End_1.png in Resources */,
 				DCFD753D1B01C5D90054E370 /* Kraken_Boss_11.png in Resources */,
 				EEB809081B13981D00A221E2 /* Copper_Ring_Text.png in Resources */,
 				DCFD74B71B0153300054E370 /* Seashell_3.png in Resources */,
@@ -1760,11 +1965,14 @@
 				DCFD74641B0153300054E370 /* Crab_Boss_11.png in Resources */,
 				DCFD74CA1B0153300054E370 /* Tentacle_17.png in Resources */,
 				DCFD74851B0153300054E370 /* Kraken_Boss_4.png in Resources */,
+				DC5925C31B26BED000244578 /* Insomnia_2.png in Resources */,
+				DC5925C41B26BED000244578 /* Lust_Of_Lucifer_1.png in Resources */,
 				DCBCE4591B12EC7D00FCF4A5 /* Sun_Screen_2.png in Resources */,
 				DCFD746E1B0153300054E370 /* Crab_Claw_Cap_1.png in Resources */,
 				DCF23E081B0BAA0500484040 /* Tentacle_Swing_1.png in Resources */,
 				DCFD74A61B0153300054E370 /* Opening_Screen_1.png in Resources */,
 				DC2711231A85E11900986D2E /* Main.storyboard in Resources */,
+				DC5925AA1B26BED000244578 /* Nightfall_Text.png in Resources */,
 				DCFD74F01B0153300054E370 /* Wave_2.png in Resources */,
 				EEB809521B15674700A221E2 /* Sunhat_Text.png in Resources */,
 				EEB809181B13981D00A221E2 /* Rusty_Gold_Ring_Text.png in Resources */,
@@ -1775,16 +1983,21 @@
 				EEB808DA1B13974600A221E2 /* Buy_Text_1.png in Resources */,
 				DCFD74951B0153300054E370 /* Kraken_Movement_6.png in Resources */,
 				DCF23E0B1B0BAA0500484040 /* Tentacle_Swing_4.png in Resources */,
+				DC5925C91B26BED000244578 /* Nightmare_2.png in Resources */,
 				EEB809231B13981D00A221E2 /* Sweaty_Wristband_Text.png in Resources */,
 				DCFD74891B0153300054E370 /* Kraken_Movement_1.png in Resources */,
 				EEB809161B13981D00A221E2 /* Pearl_Snap_Ring_Text.png in Resources */,
 				DCFD754D1B01D9100054E370 /* Seashell_Charm_Bracelet_2.png in Resources */,
 				DC1F581B1A88735300B5027B /* spark.png in Resources */,
+				DC5925CB1B26BED000244578 /* Sinister_2.png in Resources */,
 				DCFD74CD1B0153300054E370 /* Tentacle_2.png in Resources */,
 				DCFD74A11B0153300054E370 /* Mossy_Gold_Ring_2.png in Resources */,
 				DCFD74CB1B0153300054E370 /* Tentacle_18.png in Resources */,
+				DC5925AF1B26BED000244578 /* Phase_4_Text.png in Resources */,
 				DCFD748C1B0153300054E370 /* Kraken_Movement_12.png in Resources */,
+				DC5925AB1B26BED000244578 /* Nightmare_Text.png in Resources */,
 				EEB809641B15674700A221E2 /* World_1_Level_46_Text.png in Resources */,
+				DC5925CD1B26BED000244578 /* The_Jitters_2.png in Resources */,
 				DCFD74AB1B0153300054E370 /* Rusty_Copper_Ring_1.png in Resources */,
 				DCFD745D1B0153300054E370 /* Clam_Boss_Rocking_6.png in Resources */,
 				DCFD74821B0153300054E370 /* Kraken_Boss_1.png in Resources */,
@@ -1800,6 +2013,7 @@
 				DC5925631B26BCE700244578 /* Level_Revealing_Tide_1.png in Resources */,
 				DCFD74A81B0153300054E370 /* Pearl_Necklace_2.png in Resources */,
 				DCFD74751B0153300054E370 /* Fitting_Room_Kraken_1.png in Resources */,
+				DC5925A01B26BED000244578 /* Kraken_Boss_Dead_1.png in Resources */,
 				DCFD744F1B0153300054E370 /* Beach_Crab_1.png in Resources */,
 				EEB8090D1B13981D00A221E2 /* Inky_Ring_Text.png in Resources */,
 				DCFD74671B0153300054E370 /* Crab_Boss_3.png in Resources */,
@@ -1844,7 +2058,9 @@
 				DCF23E151B0BAB7F00484040 /* Beach_Towel_2.png in Resources */,
 				DCFD75311B01C5CC0054E370 /* Kraken_Boss_6.png in Resources */,
 				DCF23E1B1B0BAB9600484040 /* Inky_Ring_1.png in Resources */,
+				DC5925A81B26BED000244578 /* Insomnia_Text.png in Resources */,
 				DC5925571B26436800244578 /* Whale_Flesh_Ring_Text.png in Resources */,
+				DC5925AE1B26BED000244578 /* Phase_3_Text.png in Resources */,
 				DCFD74521B0153300054E370 /* Booty_1.png in Resources */,
 				EEB8090A1B13981D00A221E2 /* Crab_Claw_Cap_Text.png in Resources */,
 				DCFD74A51B0153300054E370 /* Noggin_Text_1.png in Resources */,
