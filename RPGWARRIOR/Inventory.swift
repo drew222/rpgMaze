@@ -720,7 +720,7 @@ class Inventory: SKScene {
             println("YOUR PACK IS FULL")
         }else{
             //&&DATA
-            let packIndex = 15 - backPackSpaces
+            let packIndex = 16 - backPackSpaces
             persistentData = NSUserDefaults.standardUserDefaults()
             persistentData!.setObject(itemName, forKey: "packSpace\(packIndex)")
             //&&
@@ -1120,7 +1120,7 @@ class Inventory: SKScene {
                                             //&&
                                             
                                             //&&
-                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(space.name)")
+                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(space.name!)")
                                             //&&
                                             
                                             self.spaceToMove!.insertItem(space.item!)
@@ -1134,7 +1134,7 @@ class Inventory: SKScene {
                                             //&&
                                             
                                             //&&
-                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(space.name)")
+                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(space.name!)")
                                             //&&
                                             
                                             self.spaceToMove!.insertItem(space.item!)
@@ -1148,7 +1148,7 @@ class Inventory: SKScene {
                                             //&&
                                             
                                             //&&
-                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(space.name)")
+                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(space.name!)")
                                             //&&
                                             
                                             self.spaceToMove!.insertItem(space.item!)
@@ -1162,7 +1162,7 @@ class Inventory: SKScene {
                                             //&&
                                             
                                             //&&
-                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(space.name)")
+                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(space.name!)")
                                             //&&
                                             
                                             self.spaceToMove!.insertItem(space.item!)
@@ -1179,7 +1179,7 @@ class Inventory: SKScene {
                                             //&&
                                             
                                             //&&
-                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name)")
+                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
                                             //&&
                                             
                                             self.spaceToMove!.insertItem(space.item!)
@@ -1193,7 +1193,7 @@ class Inventory: SKScene {
                                             //&&
                                             
                                             //&&
-                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name)")
+                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
                                             //&&
                                             
                                             self.spaceToMove!.insertItem(space.item!)
@@ -1207,7 +1207,7 @@ class Inventory: SKScene {
                                             //&&
                                             
                                             //&&
-                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name)")
+                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
                                             //&&
                                             
                                             self.spaceToMove!.insertItem(space.item!)
@@ -1221,7 +1221,7 @@ class Inventory: SKScene {
                                             //&&
                                             
                                             //&&
-                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name)")
+                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
                                             //&&
                                             
                                             self.spaceToMove!.insertItem(space.item!)
@@ -1233,11 +1233,11 @@ class Inventory: SKScene {
                                         //SWAPPING TWO ITEMS IN THE BACKPACK!!!
                                         
                                         //&&
-                                        persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(spaceToMove!.name)")
+                                        persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(spaceToMove!.name!)")
                                         //&&
                                         
                                         //&&
-                                        persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name)")
+                                        persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
                                         //&&
                                         
                                         self.spaceToMove!.insertItem(space.item!)
@@ -1259,11 +1259,19 @@ class Inventory: SKScene {
                                     persistentData!.setObject("", forKey: "headSpace")
                                     //&&
                                     
+                                    //&&
+                                    //persistentData!.setObject("\(itemToMove!.name!)", forKey: "packSpace\(space.name)")
+                                    //&&
+                                    
                                     weapon = nil
                                 }else if spaceToMove!.name == "body"{
                                     
                                     //&&
                                     persistentData!.setObject("", forKey: "leftSpace")
+                                    //&&
+                                    
+                                    //&&
+                                    //persistentData!.setObject("\(itemToMove!.name!)", forKey: "packSpace\(space.name)")
                                     //&&
                                     
                                     body = nil
@@ -1273,11 +1281,19 @@ class Inventory: SKScene {
                                     persistentData!.setObject("", forKey: "rightSpace")
                                     //&&
                                     
+                                    //&&
+                                    //persistentData!.setObject("\(itemToMove!.name!)", forKey: "packSpace\(space.name)")
+                                    //&&
+                                    
                                     feet = nil
                                 }else if spaceToMove!.name == "neck"{
                                     
                                     //&&
                                     persistentData!.setObject("", forKey: "neckSpace")
+                                    //&&
+                                    
+                                    //&&
+                                    //persistentData!.setObject("\(itemToMove!.name!)", forKey: "packSpace\(space.name)")
                                     //&&
                                     
                                     neck = nil
@@ -1295,7 +1311,8 @@ class Inventory: SKScene {
                                         //&&
                                         
                                         //&&
-                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name)")
+                                        //println("spaceToMove name is \(spaceToMove!.name!)")
+                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name!)")
                                         //&&
                                         
                                         spaceToMove!.removeItem()
@@ -1313,7 +1330,7 @@ class Inventory: SKScene {
                                         //&&
                                         
                                         //&&
-                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name)")
+                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name!)")
                                         //&&
                                         
                                         spaceToMove!.removeItem()
@@ -1331,7 +1348,7 @@ class Inventory: SKScene {
                                         //&&
                                         
                                         //&&
-                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name)")
+                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name!)")
                                         //&&
                                         
                                         spaceToMove!.removeItem()
@@ -1349,7 +1366,7 @@ class Inventory: SKScene {
                                         //&&
                                         
                                         //&&
-                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name)")
+                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name!)")
                                         //&&
                                         
                                         spaceToMove!.removeItem()
@@ -1359,6 +1376,15 @@ class Inventory: SKScene {
                                         println("trying to move item into wrong typed slot dumbass")
                                     }
                                 }else{
+                                    //println("space to space!")
+                                    //&&
+                                    persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
+                                    //&&
+                                    
+                                    //&&
+                                    persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name!)")
+                                    //&&
+                                    
                                     spaceToMove!.removeItem()
                                     space.insertItem(self.itemToMove!)
                                     moved = true
