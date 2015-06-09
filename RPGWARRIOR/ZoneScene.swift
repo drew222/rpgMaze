@@ -83,90 +83,105 @@ class ZoneScene: SKScene {
                 if spot1 != "" {
                     let item = ItemClass.itemInSpace("\(spot1)")
                     (inventory!.childNodeWithName("1") as! ItemSpaceNode).insertItem(item)
+                    inventory!.backPackSpaces--
                 }
             }
             if let spot2 = defaults.objectForKey("packSpace2") as? String{
                 if spot2 != "" {
                     let item = ItemClass.itemInSpace("\(spot2)")
                     (inventory!.childNodeWithName("2") as! ItemSpaceNode).insertItem(item)
+                    inventory!.backPackSpaces--
                 }
             }
             if let spot3 = defaults.objectForKey("packSpace3") as? String{
                 if spot3 != "" {
                     let item = ItemClass.itemInSpace("\(spot3)")
                     (inventory!.childNodeWithName("3") as! ItemSpaceNode).insertItem(item)
+                    inventory!.backPackSpaces--
                 }
             }
             if let spot4 = defaults.objectForKey("packSpace4") as? String{
                 if spot4 != "" {
                     let item = ItemClass.itemInSpace("\(spot4)")
                     (inventory!.childNodeWithName("4") as! ItemSpaceNode).insertItem(item)
+                    inventory!.backPackSpaces--
                 }
             }
             if let spot5 = defaults.objectForKey("packSpace5") as? String{
                 if spot5 != "" {
                     let item = ItemClass.itemInSpace("\(spot5)")
                     (inventory!.childNodeWithName("5") as! ItemSpaceNode).insertItem(item)
+                    inventory!.backPackSpaces--
                 }
             }
             if let spot6 = defaults.objectForKey("packSpace6") as? String{
                 if spot6 != "" {
                     let item = ItemClass.itemInSpace("\(spot6)")
                     (inventory!.childNodeWithName("6") as! ItemSpaceNode).insertItem(item)
+                    inventory!.backPackSpaces--
                 }
             }
             if let spot7 = defaults.objectForKey("packSpace7") as? String{
                 if spot7 != "" {
                     let item = ItemClass.itemInSpace("\(spot7)")
                     (inventory!.childNodeWithName("7") as! ItemSpaceNode).insertItem(item)
+                    inventory!.backPackSpaces--
                 }
             }
             if let spot8 = defaults.objectForKey("packSpace8") as? String{
                 if spot8 != "" {
                     let item = ItemClass.itemInSpace("\(spot8)")
                     (inventory!.childNodeWithName("8") as! ItemSpaceNode).insertItem(item)
+                    inventory!.backPackSpaces--
                 }
             }
             if let spot9 = defaults.objectForKey("packSpace9") as? String{
                 if spot9 != "" {
                     let item = ItemClass.itemInSpace("\(spot9)")
                     (inventory!.childNodeWithName("9") as! ItemSpaceNode).insertItem(item)
+                    inventory!.backPackSpaces--
                 }
             }
             if let spot10 = defaults.objectForKey("packSpace10") as? String{
                 if spot10 != "" {
                     let item = ItemClass.itemInSpace("\(spot10)")
                     (inventory!.childNodeWithName("10") as! ItemSpaceNode).insertItem(item)
+                    inventory!.backPackSpaces--
                 }
             }
             if let spot11 = defaults.objectForKey("packSpace11") as? String{
                 if spot11 != "" {
                     let item = ItemClass.itemInSpace("\(spot11)")
                     (inventory!.childNodeWithName("11") as! ItemSpaceNode).insertItem(item)
+                    inventory!.backPackSpaces--
                 }
             }
             if let spot12 = defaults.objectForKey("packSpace12") as? String{
                 if spot12 != "" {
                     let item = ItemClass.itemInSpace("\(spot12)")
                     (inventory!.childNodeWithName("12") as! ItemSpaceNode).insertItem(item)
+                    inventory!.backPackSpaces--
                 }
             }
             if let spot13 = defaults.objectForKey("packSpace13") as? String{
                 if spot13 != "" {
                     let item = ItemClass.itemInSpace("\(spot13)")
                     (inventory!.childNodeWithName("13") as! ItemSpaceNode).insertItem(item)
+                    inventory!.backPackSpaces--
                 }
             }
             if let spot14 = defaults.objectForKey("packSpace14") as? String{
                 if spot14 != "" {
                     let item = ItemClass.itemInSpace("\(spot14)")
                     (inventory!.childNodeWithName("14") as! ItemSpaceNode).insertItem(item)
+                    inventory!.backPackSpaces--
                 }
             }
             if let spot15 = defaults.objectForKey("packSpace15") as? String{
                 if spot15 != "" {
                     let item = ItemClass.itemInSpace("\(spot15)")
                     (inventory!.childNodeWithName("15") as! ItemSpaceNode).insertItem(item)
+                    inventory!.backPackSpaces--
                 }
             }
             

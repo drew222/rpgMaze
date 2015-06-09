@@ -278,6 +278,19 @@ class StoreScene: SKScene {
                 self.view?.presentScene(self.userData?.objectForKey("inventory") as! Inventory, transition: skTransition)
             }else if self.childNodeWithName("buyButton") != nil && self.childNodeWithName("buyButton")!.containsPoint((touch as! UITouch).locationInNode(self)){
                 buyItem()
+                self.childNodeWithName("buyButton")?.removeFromParent()
+                self.childNodeWithName("life")?.removeFromParent()
+                self.childNodeWithName("speed")?.removeFromParent()
+                self.childNodeWithName("regen")?.removeFromParent()
+                self.childNodeWithName("priceButton")?.removeFromParent()
+                self.childNodeWithName("itemText")?.removeFromParent()
+                self.childNodeWithName("booty")?.removeFromParent()
+                self.childNodeWithName("slotLabel")?.removeFromParent()
+                statLabelLife!.text = ""
+                statLabelMovement!.text = ""
+                statLabelRegen!.text = ""
+                currentItem?.texture = nil
+                currentItem = nil
             }else if clickedItem((touch as! UITouch).locationInNode(self)) != ""{
                 if currentItem != nil{
                     currentItem!.removeFromParent()
@@ -466,8 +479,6 @@ class StoreScene: SKScene {
                 self.addChild(currentItem!)
                
                 
-            }else if self.childNodeWithName("buyButton") != nil && self.childNodeWithName("buyButton")!.containsPoint((touch as! UITouch).locationInNode(self)){
-                buyItem()
             }
         }
         //an item is being highlighted
@@ -480,14 +491,17 @@ class StoreScene: SKScene {
             //stat symbols
             let lifeSymbol = SKSpriteNode(imageNamed: "Life_Symbol_1")
             lifeSymbol.setScale(0.15)
+            lifeSymbol.name = "life"
             lifeSymbol.position = CGPointMake(self.frame.midX - 145, self.frame.minY + 95)
             self.addChild(lifeSymbol)
             let speedSymbol = SKSpriteNode(imageNamed: "Speed_Symbol_1")
             speedSymbol.setScale(0.15)
+            speedSymbol.name = "speed"
             speedSymbol.position = CGPointMake(self.frame.midX - 145, self.frame.minY + 65)
             self.addChild(speedSymbol)
             let regenerationSymbol = SKSpriteNode(imageNamed: "Regeneration_Symbol_1")
             regenerationSymbol.setScale(0.15)
+            regenerationSymbol.name = "regen"
             regenerationSymbol.position = CGPointMake(self.frame.midX - 145, self.frame.minY + 35)
             self.addChild(regenerationSymbol)
         }
@@ -508,6 +522,7 @@ class StoreScene: SKScene {
             priceNode.fontColor = UIColor.blackColor()
             let booty = SKSpriteNode(imageNamed: "Booty_1.png")
             booty.position = CGPointMake(self.frame.midX + 160, self.frame.minY + 70)
+            booty.name = "booty"
             booty.setScale(0.075)
             if firstClick{
                 self.addChild(booty)
