@@ -118,7 +118,9 @@ class WizardClass: SKSpriteNode {
         if (self.life <= 0){
             self.isDead = true
             self.removeAllActions()
-            self.texture = nil
+            self.yScale -= 0.09
+            self.xScale -= 0.04
+            self.texture = SKTexture(imageNamed: "Clam_Boss_Dead_1")
         }
     }
     func getBlizzLocation(heroPosition: CGPoint)->CGPoint{

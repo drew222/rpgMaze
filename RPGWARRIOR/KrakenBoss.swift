@@ -185,7 +185,7 @@ class KrakenBoss: SKSpriteNode {
         if (self.life <= 0){
             self.isDead = true
             self.removeAllActions()
-            self.texture = nil
+            self.texture = SKTexture(imageNamed: "Kraken_Boss_Dead_1")
         }
     }
 }

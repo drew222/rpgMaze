@@ -176,7 +176,7 @@ class WhaleBoss: SKSpriteNode {
         if (self.life <= 0){
             self.isDead = true
             self.removeAllActions()
-            self.texture = nil
+            self.texture = SKTexture(imageNamed: "Whale_Boss_Dead_1")
         }
     }
 }

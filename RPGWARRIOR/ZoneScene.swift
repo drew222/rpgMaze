@@ -51,6 +51,7 @@ class ZoneScene: SKScene {
                     let item = ItemClass.itemInSpace("\(head)")
                     (inventory!.childNodeWithName("weapon") as! ItemSpaceNode).insertItem(item)
                     inventory!.displayItem(item, spot: "weapon")
+                    inventory!.weapon = item
                 }
             }
             if let neck = defaults.objectForKey("neckSpace") as? String{
@@ -58,6 +59,7 @@ class ZoneScene: SKScene {
                     let item = ItemClass.itemInSpace("\(neck)")
                     (inventory!.childNodeWithName("neck") as! ItemSpaceNode).insertItem(item)
                     inventory!.displayItem(item, spot: "neck")
+                    inventory!.neck = item
                 }
             }
             if let left = defaults.objectForKey("leftSpace") as? String{
@@ -65,6 +67,7 @@ class ZoneScene: SKScene {
                     let item = ItemClass.itemInSpace("\(left)")
                     (inventory!.childNodeWithName("body") as! ItemSpaceNode).insertItem(item)
                     inventory!.displayItem(item, spot: "body")
+                    inventory!.body = item
                 }
             }
             if let right = defaults.objectForKey("rightSpace") as? String{
@@ -72,6 +75,7 @@ class ZoneScene: SKScene {
                     let item = ItemClass.itemInSpace("\(right)")
                     (inventory!.childNodeWithName("feet") as! ItemSpaceNode).insertItem(item)
                     inventory!.displayItem(item, spot: "feet")
+                    inventory!.feet = item
                 }
             }
             if let spot1 = defaults.objectForKey("packSpace1") as? String{

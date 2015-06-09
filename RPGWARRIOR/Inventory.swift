@@ -762,7 +762,7 @@ class Inventory: SKScene {
         if !(spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "neck"){
             backPackSpaces++
             //&&
-            persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name)")
+            persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name!)")
             //&&
         }else{
             if spaceToMove!.name == "weapon"{
@@ -1185,7 +1185,7 @@ class Inventory: SKScene {
                                             self.spaceToMove!.insertItem(space.item!)
                                             displayItem(space.item!, spot: "weapon")
                                             space.insertItem(self.itemToMove!)
-                                        }else if spaceToMove!.name == "body" && space.item!.itemType == ItemType.body{
+                                        }else if spaceToMove!.name == "body" && (space.item!.itemType == ItemType.body || space.item!.itemType == ItemType.feet){
                                             //SWAPPING Left FOR Left HIGHLIGHTED = Left
                                             
                                             //&&
@@ -1195,11 +1195,11 @@ class Inventory: SKScene {
                                             //&&
                                             persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
                                             //&&
-                                            
+                                            displayItem(space.item!, spot: "body")
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
-                                            displayItem(space.item!, spot: "body")
-                                        }else if spaceToMove!.name == "feet" && space.item!.itemType == ItemType.feet{
+
+                                        }else if spaceToMove!.name == "feet" && (space.item!.itemType == ItemType.feet || space.item!.itemType == ItemType.body){
                                             //SWAPPING Right FOR Right HIGHLIGHTED = Right
                                             
                                             //&&
@@ -1209,10 +1209,9 @@ class Inventory: SKScene {
                                             //&&
                                             persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
                                             //&&
-                                            
+                                            displayItem(space.item!, spot: "feet")
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
-                                            displayItem(space.item!, spot: "feet")
                                         }else if spaceToMove!.name == "neck" && space.item!.itemType == ItemType.neck{
                                             //SWAPPING Neck FOR Neck HIGHLIGHTED = Neck
                                             
@@ -1320,13 +1319,13 @@ class Inventory: SKScene {
                                         moved = true
                                         
                                     }else if space.name == "body" && (itemToMove!.itemType == ItemType.body || itemToMove!.itemType == ItemType.feet){
-                                        //MOVING ITEM FROM PACK TO RIGHT
+                                        //MOVING ITEM FROM PACK TO LEFT
                                         backPackSpaces++
                                         body = itemToMove
                                         displayItem(itemToMove!, spot: "body")
                                         
                                         //&&
-                                        persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "rightSpace")
+                                        persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "leftSpace")
                                         //&&
                                         
                                         //&&
@@ -1338,13 +1337,13 @@ class Inventory: SKScene {
                                         moved = true
                                         
                                     }else if space.name == "feet" && (itemToMove!.itemType == ItemType.feet || itemToMove!.itemType == ItemType.body){
-                                        //MOVING ITEM FROM PACK TO LEFT
+                                        //MOVING ITEM FROM PACK TO RIGHT
                                         backPackSpaces++
                                         feet = itemToMove
                                         displayItem(itemToMove!, spot: "feet")
                                         
                                         //&&
-                                        persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "leftSpace")
+                                        persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "rightSpace")
                                         //&&
                                         
                                         //&&
