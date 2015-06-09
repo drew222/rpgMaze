@@ -95,6 +95,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }
@@ -113,6 +115,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level3"{
@@ -130,6 +134,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }
@@ -148,6 +154,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level5"{
@@ -165,6 +173,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 2
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         } else if (myNum <= 45) && (myNum > 30){
             let item = ItemClass.itemInSpace("Crab_Claw_Cap_1")
@@ -192,6 +202,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 2
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         } else {
             let item = ItemClass.itemInSpace("Mossy_Copper_Ring_1")
@@ -214,6 +226,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 3
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         } else{
             let item = ItemClass.itemInSpace("Pearl_Necklace_1")
@@ -236,6 +250,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 3
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         } else{
             let item = ItemClass.itemInSpace("Barnacles_1")
@@ -258,6 +274,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 3
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         } else {
             let item = ItemClass.itemInSpace("Crab_Claw_Cap_1")
@@ -285,6 +303,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 3
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level11"{
@@ -302,6 +322,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 4
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         } else {
             let item = ItemClass.itemInSpace("Beach_Ball_Fragment_1")
@@ -334,6 +356,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 4
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level13"{
@@ -356,6 +380,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 5
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level14"{
@@ -378,6 +404,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 5
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level15"{
@@ -420,6 +448,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 5
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level17"{
@@ -437,6 +467,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 6
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level18"{
@@ -459,6 +491,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 6
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level19"{
@@ -481,6 +515,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 6
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level20"{
@@ -503,6 +539,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 7
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level21"{
@@ -532,6 +570,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 8
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level22"{
@@ -559,6 +599,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 10
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level23"{
@@ -591,6 +633,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 10
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level24"{
@@ -613,6 +657,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 10
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level25"{
@@ -640,6 +686,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 10
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level26"{
@@ -672,6 +720,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 10
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level27"{
@@ -694,6 +744,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 10
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level28"{
@@ -770,6 +822,8 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.position = position
             gold.size = size
             (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }
