@@ -130,6 +130,7 @@ class WizardClass: SKSpriteNode {
             let removeBlock = SKAction.runBlock({
                 self.yScale -= 0.09
                 self.xScale -= 0.04
+                self.position = CGPointMake(self.position.x, self.position.y - 5)
                 self.texture = SKTexture(imageNamed: "Clam_Boss_Dead_1")
                 inkAttack?.removeFromParent()})
             let sequence = SKAction.sequence([explodeCode, waitAction, removeBlock])
