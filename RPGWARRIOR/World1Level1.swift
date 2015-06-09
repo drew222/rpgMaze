@@ -221,7 +221,9 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
                 }else{
                     //&&
                     let persistentData = NSUserDefaults.standardUserDefaults()
-                    persistentData.setObject(1, forKey: "highestLevel")
+                    if (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel < 1{
+                        persistentData.setObject(1, forKey: "highestLevel")
+                    }
                     //&&
                     
                     let skTransition = SKTransition.fadeWithDuration(1.0)

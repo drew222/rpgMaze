@@ -19,6 +19,7 @@ class ZoneScene: SKScene {
     var inventoryNode: SKSpriteNode?
     var storeNode: SKSpriteNode?
     var zonesTextNode: SKSpriteNode?
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -39,6 +40,7 @@ class ZoneScene: SKScene {
             inventory!.userData?.setObject(self, forKey: "worldscene")
             
             //******SETUP SAVED DATA FOR INVENTORY AND MainMenuScene HERE********
+            world1Menu!.highestLevel = defaults.objectForKey("highestLevel") as! Int
             
             
             

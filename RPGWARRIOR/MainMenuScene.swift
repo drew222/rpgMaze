@@ -57,6 +57,8 @@ class MainMenuScene: SKScene {
     var world1level29node: SKSpriteNode?
     var world1level30node: SKSpriteNode?
     
+    var highestLevel = 0
+    
     
     // ##### change this for new level#####
     
@@ -472,43 +474,6 @@ class MainMenuScene: SKScene {
                 //gameplayScene.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(gameplayScene, transition: skTransition)
-               /*
-            }else if level2Node!.containsPoint(touch.locationInNode(self)){
-                let level2 = Level2Scene(size: self.frame.size)
-                level2.userData = NSMutableDictionary()
-                level2.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
-                level2.userData?.setObject(self, forKey: "menu")
-                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
-                let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(level2, transition: skTransition)
-                
-            }else if level3Node!.containsPoint(touch.locationInNode(self)){
-                let level3 = Level3Scene(size: self.frame.size)
-                level3.userData = NSMutableDictionary()
-                level3.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
-                level3.userData?.setObject(self, forKey: "menu")
-                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
-                let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(level3, transition: skTransition)
-                
-            }else if level4Node!.containsPoint(touch.locationInNode(self)){
-                let level4 = Level4Scene(size: self.frame.size)
-                level4.userData = NSMutableDictionary()
-                level4.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
-                level4.userData?.setObject(self, forKey: "menu")
-                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
-                let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(level4, transition: skTransition)
-                
-            }else if level5Node!.containsPoint(touch.locationInNode(self)){
-                let level5 = Level5Scene(size: self.frame.size)
-                level5.userData = NSMutableDictionary()
-                level5.userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
-                level5.userData?.setObject(self, forKey: "menu")
-                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
-                let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(level5, transition: skTransition)
-                */
                 
             }else if world1level1node!.containsPoint((touch as! UITouch).locationInNode(self)){
                 let world1level1scene = World1Level1(size: self.frame.size)
