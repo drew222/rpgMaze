@@ -445,7 +445,7 @@ class MainMenuScene: SKScene {
             }
             world1level30node = SKSpriteNode(imageNamed: "World_1_Level_30_Text")
             if let Node = world1level30node {
-                let levelIcon = SKSpriteNode(imageNamed: "Kraken_Level_Icon_1")
+                let levelIcon = SKSpriteNode(imageNamed: "Gauntlet_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 210)
                 self.addChild(levelIcon)

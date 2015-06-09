@@ -52,7 +52,7 @@ class HeroClass: SKSpriteNode {
     
     func interactableNode(node: SKSpriteNode) -> Bool{
         if node.name != nil{
-            if node.name! == "bomb" || node.name! == "Fireball" || node.name! == "krill" || node.name! == "Mine" || node.name! == "hero" || node.name! == "spike" || node.name! == "crab" || node.name! == "tentacle" || node.name! == "safeSpot1" || node.name! == "safeSpot2" || node.name! == "wave" || node.name! == "buff"{
+            if node.name! == "bomb" || node.name! == "Fireball" || node.name! == "krill" || node.name! == "Mine" || node.name! == "hero" || node.name! == "spike" || node.name! == "crab" || node.name! == "tentacle" || node.name! == "safeSpot1" || node.name! == "safeSpot2" || node.name! == "wave" || node.name! == "buff" || node.name! == "phaseText"{
                 return false
             }else{
                 return true

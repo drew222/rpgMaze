@@ -81,7 +81,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
         //ourHero.constraints = [distanceConstraint]
-        let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
+        let background = SKSpriteNode(imageNamed: "Gauntlet_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         background.name = "background"
@@ -214,12 +214,12 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         phase += 1
         
         //Phase Transition
-        let phaseText = SKLabelNode(fontNamed: "ChalkboardSE-Bold")
-        phaseText.text = ""
-        phaseText.fontSize = 30
+        var phaseText = SKSpriteNode()
+        phaseText.size = CGSizeMake(200, 70)
         phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
+        phaseText.name = "phaseText"
         let runBlock = SKAction.runBlock({phaseText.removeFromParent()})
-        let runBlock2 = SKAction.runBlock({phaseText.text = "Phase : \(self.phase)"})
+        let runBlock2 = SKAction.runBlock({phaseText.texture = SKTexture(imageNamed: "Phase_\(self.phase)_Text")})
         let waitAction = SKAction.waitForDuration(3)
         let waitAction2 = SKAction.waitForDuration(5)
         let sequence = SKAction.sequence([waitAction2, runBlock2, waitAction, runBlock])
