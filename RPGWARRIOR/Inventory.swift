@@ -427,6 +427,7 @@ class Inventory: SKScene {
         }else{
             //&&DATA
             let packIndex = 15 - backPackSpaces
+            persistentData = NSUserDefaults.standardUserDefaults()
             persistentData!.setObject(itemName, forKey: "packSpace\(packIndex)")
             //&&
             let anItem = ItemClass.itemInSpace(itemName)
