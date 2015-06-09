@@ -38,7 +38,8 @@ class IntroScene: SKScene {
             defaults.setBool(true, forKey: "firstOpen")
             //present tutorial here instead
             let skTransition = SKTransition.fadeWithDuration(1.0)
-            self.view?.presentScene(gameplayScene, transition: skTransition)
+            let tutorial = TutorialScene(size: self.frame.size)
+            self.view?.presentScene(tutorial, transition: skTransition)
         }
     }
 }
