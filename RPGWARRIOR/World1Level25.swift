@@ -23,7 +23,7 @@ class World1Level25: SKScene, SKPhysicsContactDelegate {
     var droppedItem = false
     //REGEN CODE******
     var lastHeal: Double = 0.0
-    let healSpeed = 25.0
+    let healSpeed = 20.0
     var maxLife: CGFloat = 0.0
     //*****************
     let krakenAttackSpeed = 1.5
@@ -93,7 +93,7 @@ class World1Level25: SKScene, SKPhysicsContactDelegate {
         let spinAction = SKAction.rotateByAngle(2 * pi, duration: healSpeed)
         let repeatAction = SKAction.repeatActionForever(spinAction)
         clockNode.runAction(repeatAction)
-        clockNode.zRotation = pi / 1.25
+        clockNode.zRotation = pi / 1.55
         self.addChild(clockNode)
         //********************
         

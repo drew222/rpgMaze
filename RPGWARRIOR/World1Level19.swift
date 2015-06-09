@@ -93,7 +93,7 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
         let spinAction = SKAction.rotateByAngle(2 * pi, duration: healSpeed)
         let repeatAction = SKAction.repeatActionForever(spinAction)
         clockNode.runAction(repeatAction)
-        clockNode.zRotation = pi / 1.25
+        clockNode.zRotation = pi / 1.7
         self.addChild(clockNode)
         //********************
         
