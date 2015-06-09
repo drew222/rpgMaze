@@ -40,7 +40,9 @@ class ZoneScene: SKScene {
             inventory!.userData?.setObject(self, forKey: "worldscene")
             
             //******SETUP SAVED DATA FOR INVENTORY AND MainMenuScene HERE********
-            world1Menu!.highestLevel = defaults.objectForKey("highestLevel") as! Int
+            if let bestLevel = defaults.objectForKey("highestLevel") as? Int{
+                world1Menu!.highestLevel = bestLevel
+            }
             
             
             
