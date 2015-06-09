@@ -22,7 +22,7 @@ class KrakenBoss: SKSpriteNode {
         kraken.zPosition = 2
         kraken.anchorPoint = CGPointMake(0.5, 0.5)
         kraken.name = "kraken"
-        kraken.setScale(0.15)
+        kraken.setScale(0.12)
         //whale.currentAngle = 3 * pi / 2.0
         var textures: [SKTexture] = []
         //for var i = 1; i <= 24; i=i+1{
@@ -185,7 +185,20 @@ class KrakenBoss: SKSpriteNode {
         if (self.life <= 0){
             self.isDead = true
             self.removeAllActions()
-            self.texture = SKTexture(imageNamed: "Kraken_Boss_Dead_1")
+            var inkAttack: SKEmitterNode?
+            let explodeCode = SKAction.runBlock({let litePath = NSBundle.mainBundle().pathForResource("SmokeParticle", ofType: "sks")
+                inkAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
+                inkAttack!.position = CGPointMake(self.position.x, self.position.y - 10)
+                inkAttack!.zPosition = 4
+                inkAttack!.setScale(1.2)
+                self.parent!.addChild(inkAttack!)
+            })
+            let waitAction = SKAction.waitForDuration(1)
+            let removeBlock = SKAction.runBlock({
+                self.texture = SKTexture(imageNamed: "Kraken_Boss_Dead_1")
+                inkAttack?.removeFromParent()})
+            let sequence = SKAction.sequence([explodeCode, waitAction, removeBlock])
+            self.runAction(sequence)
         }
     }
 }

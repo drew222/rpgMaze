@@ -104,6 +104,8 @@
 		DC5925D21B26BED000244578 /* Wicked_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59259C1B26BED000244578 /* Wicked_1.png */; };
 		DC5925D31B26BED000244578 /* Wicked_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59259D1B26BED000244578 /* Wicked_2.png */; };
 		DC5925D51B276BA600244578 /* King_Kraken_Tentacle_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925D41B276BA600244578 /* King_Kraken_Tentacle_Ring_Text.png */; };
+		DC5925D71B276EE900244578 /* SmokeParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = DC5925D61B276EE900244578 /* SmokeParticle.sks */; };
+		DC5925D91B27746800244578 /* TutorialScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5925D81B27746800244578 /* TutorialScene.swift */; };
 		DCBCE4371B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */; };
 		DCBCE4391B12EB4800FCF4A5 /* Sweaty_Wristband_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */; };
 		DCBCE43B1B12EB5400FCF4A5 /* Regeneration_Symbol_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */; };
@@ -608,6 +610,8 @@
 		DC59259C1B26BED000244578 /* Wicked_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wicked_1.png; sourceTree = "<group>"; };
 		DC59259D1B26BED000244578 /* Wicked_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Wicked_2.png; sourceTree = "<group>"; };
 		DC5925D41B276BA600244578 /* King_Kraken_Tentacle_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = King_Kraken_Tentacle_Ring_Text.png; sourceTree = "<group>"; };
+		DC5925D61B276EE900244578 /* SmokeParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SmokeParticle.sks; sourceTree = "<group>"; };
+		DC5925D81B27746800244578 /* TutorialScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialScene.swift; sourceTree = "<group>"; };
 		DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_2.png; sourceTree = "<group>"; };
 		DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_1.png; sourceTree = "<group>"; };
 		DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regeneration_Symbol_1.png; sourceTree = "<group>"; };
@@ -1063,6 +1067,7 @@
 				DC4A44291ACDDCED00BE81D8 /* WaveNode.swift */,
 				DC321BDE1AACCDBE006E3F2B /* IntroScene.swift */,
 				DC321D721AAE3A0E006E3F2B /* ZoneScene.swift */,
+				DC5925D81B27746800244578 /* TutorialScene.swift */,
 				DC1F580C1A882D3200B5027B /* MainMenuScene.swift */,
 				DCC4E3011A89760E000E5E89 /* Inventory.swift */,
 				DCC4E3051A8976AB000E5E89 /* ItemClass.swift */,
@@ -1115,6 +1120,7 @@
 				2FC73DE01A912B690068A2FB /* BlizzParticle.sks */,
 				EEB809331B15511900A221E2 /* TreasureChestSpark.sks */,
 				DC1F58191A88735300B5027B /* spark.png */,
+				DC5925D61B276EE900244578 /* SmokeParticle.sks */,
 			);
 			path = RPGWARRIOR;
 			sourceTree = "<group>";
@@ -1652,6 +1658,7 @@
 				DCFD74E61B0153300054E370 /* Top_Hat_1.png in Resources */,
 				DCFD754F1B01D9100054E370 /* Shades_1.png in Resources */,
 				DC5925A91B26BED000244578 /* Lust_Of_Lucifer_Text.png in Resources */,
+				DC5925D71B276EE900244578 /* SmokeParticle.sks in Resources */,
 				DCFD74F11B0153300054E370 /* Wave_3.png in Resources */,
 				DCFD751C1B0153300054E370 /* World_1_Level_3_Text.png in Resources */,
 				DC5925BE1B26BED000244578 /* Fear_1.png in Resources */,
@@ -2093,6 +2100,7 @@
 				DC4A44421AD071EE00BE81D8 /* World1Level14.swift in Sources */,
 				2F62CE561A89C21000046DA7 /* MineNode.swift in Sources */,
 				DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */,
+				DC5925D91B27746800244578 /* TutorialScene.swift in Sources */,
 				EE60A9EA1AE86ACF00A56313 /* World1Level24.swift in Sources */,
 				2FC73DE31A912CAA0068A2FB /* BlizzNode.swift in Sources */,
 				DC2711461A85E1F500986D2E /* HeroClass.swift in Sources */,

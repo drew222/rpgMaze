@@ -145,7 +145,20 @@ class BomberClass: SKSpriteNode {
         if (self.life <= 0){
             self.isDead = true
             self.removeAllActions()
-            self.texture = SKTexture(imageNamed: "Crab_Boss_Dead_1")
+            var inkAttack: SKEmitterNode?
+            let explodeCode = SKAction.runBlock({let litePath = NSBundle.mainBundle().pathForResource("SmokeParticle", ofType: "sks")
+                inkAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
+                inkAttack!.position = CGPointMake(self.position.x, self.position.y - 10)
+                inkAttack!.zPosition = 4
+                inkAttack!.setScale(1)
+                self.parent!.addChild(inkAttack!)
+            })
+            let waitAction = SKAction.waitForDuration(1)
+            let removeBlock = SKAction.runBlock({
+                self.texture = SKTexture(imageNamed: "Crab_Boss_Dead_1")
+                inkAttack?.removeFromParent()})
+            let sequence = SKAction.sequence([explodeCode, waitAction, removeBlock])
+            self.runAction(sequence)
         }
     }
 }
