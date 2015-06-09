@@ -107,22 +107,11 @@ class HeroClass: SKSpriteNode {
     
     func pickupItem(theItem: ItemClass){
         if let theInventory = self.parent!.userData?.objectForKey("inventory") as? Inventory{
-            println("about to pic it up!!!")
             theInventory.addItem(theItem.itemName!)
         }
         theItem.removeFromParent()
 
     }
-
-
-
-
-
-    func pickupItem(){
-        let theItem = self.parent?.childNodeWithName("item") as! ItemClass
-        println("picking up item!\(theItem.texture)")
-
-        }
 
 
     //push point out from a node, based on heros shoulder
@@ -211,7 +200,6 @@ class HeroClass: SKSpriteNode {
         //damage
         self.life! -= damage
         if (self.life! <= 0){
-            println("THE HERO HAS DIED!")
             self.life! = 0
             return true
         }else{

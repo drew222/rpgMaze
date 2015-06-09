@@ -251,7 +251,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         let type = randomWithMin(1, 3)
         let buff = BuffSpawn.buffAtPos(CGPointMake(CGFloat(randX), CGFloat(randY)), type: type)
         let fadeInAction = SKAction.fadeInWithDuration(1)
-        let waitAction = SKAction.waitForDuration(5)
+        let waitAction = SKAction.waitForDuration(10)
         let removeBlock = SKAction.runBlock({buff.removeFromParent()})
         self.addChild(buff)
         let sequence = SKAction.sequence([fadeInAction, waitAction, removeBlock])

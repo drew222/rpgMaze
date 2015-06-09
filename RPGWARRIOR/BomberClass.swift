@@ -142,7 +142,7 @@ class BomberClass: SKSpriteNode {
     
     func takeDamage(howMuch: CGFloat){
         self.life -= howMuch
-        if (self.life <= 0){
+        if (self.life <= 0) && !self.isDead{
             self.isDead = true
             self.removeAllActions()
             var inkAttack: SKEmitterNode?

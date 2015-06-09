@@ -426,9 +426,7 @@ class Inventory: SKScene {
     }
     
     func addItem(itemName: String){
-        println("adding item to items array")
         if backPackSpaces == 0 {
-            println("YOUR PACK IS FULL")
         }else{
             //&&DATA
             let packIndex = 16 - backPackSpaces
@@ -819,7 +817,6 @@ class Inventory: SKScene {
                                 space.texture = SKTexture(imageNamed: "Inventory_Slot_1")
                                 //check if both are equipped, item and space to move to nil and put everything else in an else
                                 if (spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "weapon" || spaceToMove!.name == "neck") && (space.name == "body" || space.name == "feet" || space.name == "weapon" || space.name == "neck"){
-                                    println("both item slots!!")
                                     self.itemToMove = nil
                                     self.spaceToMove = nil
                                 }else{
@@ -1083,7 +1080,6 @@ class Inventory: SKScene {
                                         space.insertItem(self.itemToMove!)
                                         moved = true
                                     }else{
-                                        println("trying to move item into wrong typed slot dumbass")
                                     }
                                 }else{
                                     //println("space to space!")
