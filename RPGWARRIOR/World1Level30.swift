@@ -162,7 +162,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                     let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                     let sequence = SKAction.sequence([fadeOut, codeBlock])
                     secondBody.node?.runAction(sequence)
-                } else if (secondBody.node as! BuffSpawn).buffType == 1 {
+                } else if (secondBody.node as! BuffSpawn).buffType == 2 {
                     //movespeed
                     
                     
@@ -174,8 +174,11 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                     //killAll
                     
                     for node in self.children {
-                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "whale" && node.name != "kraken" && node.name != "life" && node.name != "gold" && node.name != "chest"{
-                            node.removeFromParent()
+                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "whale" && node.name != "kraken" && node.name != "life" && node.name != "gold" && node.name != "chest" && node.name != "lifeheart" && node.name != "regenClock"{
+                            let fadeOut = SKAction.fadeOutWithDuration(1)
+                            let codeBlock = SKAction.runBlock({node.removeFromParent()})
+                            let sequence = SKAction.sequence([fadeOut, codeBlock])
+                            node.runAction(sequence)
                         }
                     }
                     let fadeOut = SKAction.fadeOutWithDuration(1)

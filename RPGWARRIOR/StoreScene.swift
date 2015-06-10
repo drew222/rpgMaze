@@ -524,9 +524,9 @@ class StoreScene: SKScene {
             booty.position = CGPointMake(self.frame.midX + 160, self.frame.minY + 70)
             booty.name = "booty"
             booty.setScale(0.075)
-            if firstClick{
-                self.addChild(booty)
-            }
+            //if firstClick{
+            self.addChild(booty)
+            //}
             self.addChild(priceNode)
             self.childNodeWithName("itemText")?.removeFromParent()
             //text for item names

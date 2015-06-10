@@ -443,14 +443,14 @@ class MainMenuScene: SKScene {
                 Node.name = "world1level29"
                 self.addChild(Node)
             }
-            world1level30node = SKSpriteNode(imageNamed: "World_1_Level_30_Text")
+            world1level30node = SKSpriteNode(imageNamed: "World_1_Gauntlet_Level_Text_1")
             if let Node = world1level30node {
                 let levelIcon = SKSpriteNode(imageNamed: "Gauntlet_Level_Icon_1")
-                levelIcon.setScale(0.25)
-                levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 210)
+                levelIcon.setScale(0.35)
+                levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 215)
                 self.addChild(levelIcon)
                 Node.setScale(0.25)
-                Node.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 210)
+                Node.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 215)
                 Node.name = "world1level30"
                 self.addChild(Node)
             }

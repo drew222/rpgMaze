@@ -98,7 +98,10 @@ class KrakenBoss: SKSpriteNode {
         let moveDownAction = SKAction.moveTo(CGPointMake(self.parent!.frame.midX, self.parent!.frame.minY - 70), duration: 2)
         let moveUpAction = SKAction.fadeOutWithDuration(1)
         let remBlock = SKAction.runBlock({oilWave.removeFromParent()})
-        let waitToWave = SKAction.waitForDuration(1.75)
+        var waitToWave = SKAction.waitForDuration(1.75)
+        if let aLevel = self.parent as? World1Level30 {
+            waitToWave = SKAction.waitForDuration(3)
+        }
         let sequence = SKAction.sequence([waitToWave, moveDownAction, moveUpAction, remBlock])
         oilWave.runAction(sequence)
         self.parent?.addChild(oilWave)
