@@ -457,18 +457,8 @@ class MainMenuScene: SKScene {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         let skTransition = SKTransition.fadeWithDuration(1.0)
         for touch in touches{
-            
-            
-            if level1Node!.containsPoint((touch as! UITouch).locationInNode(self)){
-                let gameplayScene = GameScene(size: self.frame.size)
-                gameplayScene.userData = NSMutableDictionary()
-                gameplayScene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
-                gameplayScene.userData?.setObject(self, forKey: "menu")
-                //gameplayScene.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
-                let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(gameplayScene, transition: skTransition)
                 
-            }else if world1level1node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            if world1level1node!.containsPoint((touch as! UITouch).locationInNode(self)){
                 let world1level1scene = World1Level1(size: self.frame.size)
                 world1level1scene.userData = NSMutableDictionary()
                 world1level1scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
