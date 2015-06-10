@@ -272,7 +272,7 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
                     droppedItem = true
                 }else if theWizard!.isDead && !droppedChest {
                     for node in self.children{
-                        if (node as? SKEmitterNode != nil){
+                        if (node as? SKEmitterNode != nil) && node.name != "inkAttack"{
                             node.removeFromParent()
                         }
                         if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "wizard" && node.name != "life" && node.name != "gold" && node.name != "chest"{

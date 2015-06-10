@@ -181,6 +181,7 @@ class WhaleBoss: SKSpriteNode {
                 inkAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
                 inkAttack!.position = CGPointMake(self.position.x, self.position.y - 10)
                 inkAttack!.zPosition = 4
+                inkAttack!.name = "inkAttack"
                 inkAttack!.setScale(1.2)
                 self.parent!.addChild(inkAttack!)
             })
