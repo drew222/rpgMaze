@@ -215,8 +215,8 @@ class HeroClass: SKSpriteNode {
         if let theInventory = self.parent!.userData?.objectForKey("inventory") as? Inventory{
             //check that its holding a weapon
             if let weaponSpot = theInventory.childNodeWithName("weapon") as? ItemSpaceNode{
-            if (theInventory.weapon != nil){
-                for stat in theInventory.weapon!.itemStats!{
+            if (weaponSpot.item != nil){
+                for stat in weaponSpot.item!.itemStats!{
                     if stat.0 == "Life"{
                         self.life! += stat.1
                     }else if stat.0 == "Movement"{
@@ -227,8 +227,8 @@ class HeroClass: SKSpriteNode {
                 }
                 }}
             if let bodySpot = theInventory.childNodeWithName("body") as? ItemSpaceNode{
-            if (theInventory.body != nil){
-                for stat in theInventory.body!.itemStats!{
+            if (bodySpot.item != nil){
+                for stat in bodySpot.item!.itemStats!{
                     if stat.0 == "Life"{
                         self.life! += stat.1
                     }else if stat.0 == "Movement"{
@@ -239,8 +239,8 @@ class HeroClass: SKSpriteNode {
                 }
                 }}
             if let feetSpot = theInventory.childNodeWithName("feet") as? ItemSpaceNode{
-            if (theInventory.feet != nil){
-                for stat in theInventory.feet!.itemStats!{
+            if (feetSpot.item != nil){
+                for stat in feetSpot.item!.itemStats!{
                     if stat.0 == "Movement"{
                         heroSpeed += stat.1
                     }else if stat.0 == "Life"{
@@ -251,8 +251,8 @@ class HeroClass: SKSpriteNode {
                 }
                 }}
             if let neckSpot = theInventory.childNodeWithName("neck") as? ItemSpaceNode{
-                if (theInventory.neck != nil){
-                    for stat in theInventory.neck!.itemStats!{
+                if (neckSpot.item != nil){
+                    for stat in neckSpot.item!.itemStats!{
                         if stat.0 == "Regeneration"{
                             self.regeneration! += stat.1
                         }else if stat.0 == "Movement"{
