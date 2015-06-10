@@ -46,6 +46,18 @@ class World1Level8: SKScene, SKPhysicsContactDelegate {
         theHero!.setScale(0.6)
         theHero!.name = "hero"
         self.addChild(theHero!)
+        if isPlus{
+            wavePositions = [
+                CGPointMake(-20, 300),
+                CGPointMake(self.frame.maxX + 20, 200),
+                CGPointMake(-20, 350),
+                CGPointMake(self.frame.maxX + 20, 150),
+                CGPointMake(-20, 200),
+                CGPointMake(self.frame.maxX + 20, 300),
+                CGPointMake(-20, 400),
+                CGPointMake(self.frame.maxX + 20, 500),
+                CGPointMake(-20, 600)]
+        } else{
         wavePositions = [
             CGPointMake(-20, 300),
             CGPointMake(self.frame.maxX + 20, 200),
@@ -55,6 +67,7 @@ class World1Level8: SKScene, SKPhysicsContactDelegate {
             CGPointMake(self.frame.maxX + 20, 300),
             CGPointMake(-20, 400),
             CGPointMake(self.frame.maxX + 20, 500)]
+        }
         theWhale = WhaleBoss.makeWhale(CGPointMake(self.frame.midX, self.frame.maxY - 50))
         self.addChild(theWhale!)
         //the below constraints did nothing
