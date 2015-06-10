@@ -527,7 +527,7 @@ class Inventory: SKScene {
             } else if itemName == "Visor_2" {
                 headDisplay!.size = CGSizeMake(160, 160)
                 headDisplay!.position = CGPointMake(self.frame.midX - 13, self.frame.maxY - 178)
-                headDisplay!.zPosition = 2
+                headDisplay!.zPosition = 5
             } else if itemName == "Sand_Bucket_2" {
                 itemName = "Sand_Bucket_1"
                 headDisplay!.size = CGSizeMake(150, 150)

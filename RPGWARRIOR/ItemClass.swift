@@ -32,12 +32,12 @@ class ItemClass: SKSpriteNode {
     
     
     func getItemType(picName: String)->ItemType{
-        if  picName == "Shades_1" || picName == "Crab_Claw_Cap_1" || picName == "Coral_Crown_1" || picName == "Top_Hat_1" || picName == "Sunhat_1" || picName == "Sand_Bucket_1" || picName == "Monocle_1" || picName == "Sweatband_1" || picName == "Visor_1" || picName == "Afro_Seaweed_1"{
+        if  picName == "Shades_1" || picName == "Crab_Claw_Cap_1" || picName == "Coral_Crown_1" || picName == "Top_Hat_1" || picName == "Sunhat_1" || picName == "Sand_Bucket_1" || picName == "Monocle_1" || picName == "Sweatband_1" || picName == "Visor_1" || picName == "Afro_Seaweed_1" || picName == "Insidious_1" || picName == "Sinister_1" || picName == "Wicked_1" || picName == "Lust_Of_Lucifer_1"{
             return ItemType.weapon
-        }else if picName == "Copper_Ring_1" || picName == "Gold_Ring_1" || picName == "Mossy_Copper_Ring_1" || picName == "Mossy_Gold_Ring_1" || picName == "Mossy_Silver_Ring_1" || picName == "Rusty_Copper_Ring_1" || picName == "Rusty_Gold_Ring_1" || picName == "Rusty_Silver_Ring_1" || picName == "Silver_Ring_1" || picName == "Beach_Ball_Fragment_1" || picName == "Seashell_Charm_Bracelet_1" || picName == "Inky_Ring_1" || picName == "Pearl_Snap_Ring_1" || picName == "Watch_1" || picName == "Sweaty_Wristband_1" || picName == "Water_Wing_1" || picName == "Bling_Ring_1" || picName == "Whale_Flesh_Ring_1" || picName == "King_Kraken_Tentacle_Ring_1"
+        }else if picName == "Copper_Ring_1" || picName == "Gold_Ring_1" || picName == "Mossy_Copper_Ring_1" || picName == "Mossy_Gold_Ring_1" || picName == "Mossy_Silver_Ring_1" || picName == "Rusty_Copper_Ring_1" || picName == "Rusty_Gold_Ring_1" || picName == "Rusty_Silver_Ring_1" || picName == "Silver_Ring_1" || picName == "Beach_Ball_Fragment_1" || picName == "Seashell_Charm_Bracelet_1" || picName == "Inky_Ring_1" || picName == "Pearl_Snap_Ring_1" || picName == "Watch_1" || picName == "Sweaty_Wristband_1" || picName == "Water_Wing_1" || picName == "Bling_Ring_1" || picName == "Whale_Flesh_Ring_1" || picName == "King_Kraken_Tentacle_Ring_1" || picName == "Dusk_1" || picName == "Nightfall_1" || picName == "Twilight_1" || picName == "Tomorrows_End_1"
         {
             return ItemType.body
-        }else if picName == "Bow_Tie_1" || picName == "Lifejacket_1" || picName == "Pearl_Necklace_1" || picName == "Seashell_Necklace_1" || picName == "Seaweed_Mustache_1" || picName == "Whistle_1" || picName == "Beach_Towel_1" || picName == "Floatie_1" || picName == "Sun_Screen_1" || picName == "Barnacles_1"{
+        }else if picName == "Bow_Tie_1" || picName == "Lifejacket_1" || picName == "Pearl_Necklace_1" || picName == "Seashell_Necklace_1" || picName == "Seaweed_Mustache_1" || picName == "Whistle_1" || picName == "Beach_Towel_1" || picName == "Floatie_1" || picName == "Sun_Screen_1" || picName == "Barnacles_1" || picName == "Fear_1" || picName == "Nightmare_1" || picName == "Insomnia_1" || picName == "The_Jitters_1"{
             //This is a placeholder type
             return ItemType.neck
         }
@@ -102,6 +102,19 @@ class ItemClass: SKSpriteNode {
             return [("Movement", CGFloat(15))]
         }else if picName == "Bling_Ring_1"{
             price = 200
+            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(10))]
+            //gauntlet rings
+        }else if picName == "Dusk_1"{
+            price = 200
+            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+        }else if picName == "Nightfall_1"{
+            price = 200
+            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+        }else if picName == "Twilight_1"{
+            price = 200
+            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+        }else if picName == "Tomorrows_End_1"{
+            price = 200
             return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
 
             
@@ -136,7 +149,19 @@ class ItemClass: SKSpriteNode {
         }else if picName == "Afro_Seaweed_1"{
             price = 25
             return [("Life", CGFloat(1)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(5))]
-            
+            //gauntlet noggin
+        }else if picName == "Wicked_1"{
+            price = 200
+            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+        }else if picName == "Sinister_1"{
+            price = 200
+            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+        }else if picName == "Insidious_1"{
+            price = 200
+            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+        }else if picName == "Lust_Of_Lucifer_1"{
+            price = 200
+            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
         
         //NECK ITEMS
         }else if picName == "Lifejacket_1"{
@@ -169,6 +194,19 @@ class ItemClass: SKSpriteNode {
         }else if picName == "Barnacles_1"{
             price = 5
             return [("Regeneration", CGFloat(1))]
+            //gauntlet neck
+        }else if picName == "Fear_1"{
+            price = 200
+            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+        }else if picName == "Nightmare_1"{
+            price = 200
+            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+        }else if picName == "Insomnia_1"{
+            price = 200
+            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+        }else if picName == "The_Jitters_1"{
+            price = 200
+            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
     }
             return []
     }

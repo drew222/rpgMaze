@@ -111,13 +111,6 @@ class MainMenuScene: SKScene {
            
             
         
-        level1Node = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
-        level1Node!.size = CGSizeMake(40, 40)
-        level1Node!.position = CGPointMake(self.frame.midX + 120, self.frame.minY + 30)
-        level1Node!.name = "level1"
-        self.addChild(level1Node!)
-        
-        
         world1level1node = SKSpriteNode(imageNamed: "World_1_Level_1_Text")
         if let Node = world1level1node {
             let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
