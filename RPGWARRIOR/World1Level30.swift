@@ -303,7 +303,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver && !inking{
+        if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver && !inking && (phase % 5 == 0) && (phase % 6 == 0) && (phase % 7 == 0) && (phase % 8 == 0) && (phase % 9 == 0) && (phase % 10 == 0){
             self.lastTentacle = currentTime
             theKraken!.throwTentacle()
         }
@@ -315,12 +315,12 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             //}
         }
         
-        if currentTime - lastKrill  > whaleAttackSpeedKrill && !levelOver && !inking{
+        if currentTime - lastKrill  > whaleAttackSpeedKrill && !levelOver && !inking && (phase % 2 == 0) && (phase % 3 == 0)  && (phase % 4 == 0) && (phase % 5 == 0) && (phase % 6 == 0)  && (phase % 7 == 0) && (phase % 8 == 0) && (phase % 9 == 0)  && (phase % 10 == 0){
             self.lastKrill = currentTime
             theWhale!.shootKrill()
         }
         
-        if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver && !inking{
+        if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver && !inking  && (phase % 3 == 0) && (phase % 4 == 0) && (phase % 5 == 0)  && (phase % 6 == 0) && (phase % 7 == 0) && (phase % 8 == 0)  && (phase % 9 == 0) && (phase % 10 == 0){
             self.lastWaterWave = currentTime
             let yValue = randomWithMin(Int(self.frame.minY + 100), Int(self.frame.maxY - 175))
             let xBool = randomWithMin(0, 10)
