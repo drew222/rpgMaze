@@ -136,13 +136,13 @@ class World1Level24: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
                 let aHero = self.childNodeWithName("hero") as! HeroClass
-                aHero.takeDamage(3)
+                aHero.takeDamage(2)
                 secondBody.node!.removeFromParent()
         }
         //HERO VS MINI CRAB
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
-                theHero!.takeDamage(10)
+                theHero!.takeDamage(4)
                 let fadeOut = SKAction.fadeOutWithDuration(0.6)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
