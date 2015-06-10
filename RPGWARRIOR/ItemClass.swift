@@ -105,17 +105,17 @@ class ItemClass: SKSpriteNode {
             return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(10))]
             //gauntlet rings
         }else if picName == "Dusk_1"{
-            price = 200
-            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+            price = 100
+            return [("Life", CGFloat(4)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(10))]
         }else if picName == "Nightfall_1"{
             price = 200
-            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+            return [("Life", CGFloat(8)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(12))]
         }else if picName == "Twilight_1"{
-            price = 200
-            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+            price = 350
+            return [("Life", CGFloat(16)), ("Regeneration", CGFloat(3)), ("Movement", CGFloat(15))]
         }else if picName == "Tomorrows_End_1"{
-            price = 200
-            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+            price = 500
+            return [("Life", CGFloat(32)), ("Regeneration", CGFloat(4)), ("Movement", CGFloat(20))]
 
             
         //NOGGIN ITEMS
@@ -151,17 +151,17 @@ class ItemClass: SKSpriteNode {
             return [("Life", CGFloat(1)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(5))]
             //gauntlet noggin
         }else if picName == "Wicked_1"{
-            price = 200
-            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+            price = 100
+            return [("Life", CGFloat(4)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(10))]
         }else if picName == "Sinister_1"{
             price = 200
-            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+            return [("Life", CGFloat(8)), ("Regeneration", CGFloat(3)), ("Movement", CGFloat(12))]
         }else if picName == "Insidious_1"{
-            price = 200
-            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+            price = 350
+            return [("Life", CGFloat(16)), ("Regeneration", CGFloat(5)), ("Movement", CGFloat(15))]
         }else if picName == "Lust_Of_Lucifer_1"{
-            price = 200
-            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+            price = 500
+            return [("Life", CGFloat(33)), ("Regeneration", CGFloat(8)), ("Movement", CGFloat(20))]
         
         //NECK ITEMS
         }else if picName == "Lifejacket_1"{
@@ -196,17 +196,17 @@ class ItemClass: SKSpriteNode {
             return [("Regeneration", CGFloat(1))]
             //gauntlet neck
         }else if picName == "Fear_1"{
-            price = 200
-            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+            price = 100
+            return [("Life", CGFloat(4)), ("Regeneration", CGFloat(3)), ("Movement", CGFloat(10))]
         }else if picName == "Nightmare_1"{
             price = 200
-            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+            return [("Life", CGFloat(8)), ("Regeneration", CGFloat(3)), ("Movement", CGFloat(12))]
         }else if picName == "Insomnia_1"{
-            price = 200
-            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+            price = 350
+            return [("Life", CGFloat(16)), ("Regeneration", CGFloat(5)), ("Movement", CGFloat(15))]
         }else if picName == "The_Jitters_1"{
-            price = 200
-            return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(15))]
+            price = 500
+            return [("Life", CGFloat(32)), ("Regeneration", CGFloat(9)), ("Movement", CGFloat(20))]
     }
             return []
     }
