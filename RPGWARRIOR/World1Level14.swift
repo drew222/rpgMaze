@@ -24,7 +24,7 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
     let healSpeed = 5.0
     var maxLife: CGFloat = 0.0
     //*****************
-    let wizardAttackSpeed = 0.5
+    let wizardAttackSpeed = 0.6
     var attackSpots: [CGPoint] = []
     var whichSpot = 0
     
