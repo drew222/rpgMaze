@@ -255,7 +255,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         //generate random position and type
         let randX = randomWithMin(40, Int(self.frame.maxX - 40))
         let randY = randomWithMin(40, Int(self.frame.maxY - 140))
-        let type = randomWithMin(1, 3)
+        let type = randomWithMin(1, 4)
         let buff = BuffSpawn.buffAtPos(CGPointMake(CGFloat(randX), CGFloat(randY)), type: type)
         let fadeInAction = SKAction.fadeInWithDuration(1)
         let waitAction = SKAction.waitForDuration(10)
@@ -310,9 +310,9 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         if currentTime - lastBuff  > buffSpawnSpeed && !levelOver && !inking{
             self.lastBuff = currentTime
-            if phase > 4{
+            //if phase > 4{
                 addRandomBuff()
-            }
+            //}
         }
         
         if currentTime - lastKrill  > whaleAttackSpeedKrill && !levelOver && !inking{

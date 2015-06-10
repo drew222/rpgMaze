@@ -19,7 +19,7 @@ class BuffSpawn: SKSpriteNode {
         }else if type == 2{
             buffer = BuffSpawn(imageNamed: "Speed_Symbol_1")
         }else{
-            buffer = BuffSpawn(imageNamed: "World_1_Gauntlet_Level_Text_1")
+            buffer = BuffSpawn(imageNamed: "Gauntlet_Level_Icon_1")
         }
         buffer!.buffType = type
         buffer!.position = position
