@@ -837,8 +837,8 @@ class Inventory: SKScene {
                 neckDisplay!.position = CGPointMake(self.frame.midX - 7, self.frame.maxY - 255)
                 neckDisplay!.zPosition = 2
             } else if itemName == "The_Jitters_2" {
-                neckDisplay!.size = CGSizeMake(160, 80)
-                neckDisplay!.position = CGPointMake(self.frame.midX - 7, self.frame.maxY - 255)
+                neckDisplay!.size = CGSizeMake(160, 160)
+                neckDisplay!.position = CGPointMake(self.frame.midX - 7, self.frame.maxY - 257)
                 neckDisplay!.zPosition = 2
             }
 
