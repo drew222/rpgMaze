@@ -51,6 +51,7 @@ class Bomb: SKSpriteNode {
         let explodeCode = SKAction.runBlock({let litePath = NSBundle.mainBundle().pathForResource("LightParticle", ofType: "sks")
             liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
             liteAttack!.position = position
+            liteAttack!.name = "ballfrags"
             liteAttack!.setScale(0.5)
             self.parent!.addChild(liteAttack!)
             self.removeActionForKey("fire")
