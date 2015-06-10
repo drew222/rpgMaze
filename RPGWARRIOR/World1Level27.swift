@@ -27,7 +27,7 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
     var maxLife: CGFloat = 0.0
     //*****************
     let krakenAttackSpeed = 5.0
-    let krakenAttackSpeedSpike = 1.5
+    let krakenAttackSpeedSpike = 6.0
     
     //Ink / Life / Chest Changes*****
     var inkSplatted = false
@@ -193,7 +193,7 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
-        if currentTime - lastWave  > krakenAttackSpeed * 1.15 && !inkSplatted && !droppedChest && self.totalGameTime > 4{
+        if currentTime - lastWave  > krakenAttackSpeed * 1.15 && !inkSplatted && !droppedChest && self.totalGameTime > 6{
             for node in self.children{
                 if let aNode = node as? SKSpriteNode{
                     if aNode.name == "safeSpot1" || aNode.name == "safeSpot2"{

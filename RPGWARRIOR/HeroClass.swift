@@ -33,7 +33,7 @@ class HeroClass: SKSpriteNode {
         hero.setupPhysicsBody()
         hero.life = 1.0
         hero.regeneration = 0
-        hero.zPosition = 3
+        hero.zPosition = 4
         hero.setScale(0.6)
         hero.damage = 1
         return hero

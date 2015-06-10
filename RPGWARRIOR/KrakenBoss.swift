@@ -154,30 +154,14 @@ class KrakenBoss: SKSpriteNode {
         self.runAction(finalSequence)
         
         //create tentacle
-        self.parent!.addChild(Tentacle.tentacleAtPosition(getTentaclePoint()))
+        let tentacle = Tentacle.tentacleAtPosition(getTentaclePoint())
+        tentacle.zPosition = 3
+        self.parent!.addChild(tentacle)
         //self.parent!.addChild(Tentacle.tentacleAtPosition(getTentaclePoint()))
     }
     
     func getTentaclePoint() -> CGPoint {
         let heroPosition = self.parent!.childNodeWithName("hero")!.position
-        
-        /*
-        let xPos = CGFloat(heroPosition.x)
-        let yPos = CGFloat(heroPosition.y)
-        var trapSpots: [CGPoint] = []
-        let distance = CGFloat(70)
-        trapSpots.append(CGPointMake(xPos + distance, yPos + distance))
-        trapSpots.append(CGPointMake(xPos - distance, yPos - distance))
-        trapSpots.append(CGPointMake(xPos + distance, yPos - distance))
-        trapSpots.append(CGPointMake(xPos - distance, yPos + distance))
-        trapSpots.append(CGPointMake(xPos + distance, yPos))
-        trapSpots.append(CGPointMake(xPos - distance, yPos))
-        trapSpots.append(CGPointMake(xPos, yPos + distance))
-        trapSpots.append(CGPointMake(xPos, yPos - distance))
-        let aSpot = Int(randomWithMin(0, 8))
-        println("aSpot = \(aSpot)")
-        return trapSpots[aSpot]
-        */
         
         return heroPosition
     }
