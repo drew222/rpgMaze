@@ -68,6 +68,19 @@ class Bomb: SKSpriteNode {
                     theHero.takeDamage(3.0)
                 }else if (theHero.parent as? World1Level22 != nil) {
                     theHero.takeDamage(4.0)
+                }else if let gauntletLevel = theHero.parent as? World1Level30 {
+                    var damage = CGFloat(2)
+                    if gauntletLevel.phase > 10 {
+                        damage = 4
+                    }else if gauntletLevel.phase > 20{
+                        damage = 8
+                    }else if gauntletLevel.phase > 30{
+                        damage = 16
+                    }else if gauntletLevel.phase > 40{
+                        damage = 32
+                    }
+                    damage = CGFloat(gauntletLevel.phase) * 2.0
+                    theHero.takeDamage(damage)
                 }else{
                     theHero.takeDamage(1.0)
                 }

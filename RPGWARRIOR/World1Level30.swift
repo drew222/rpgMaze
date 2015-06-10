@@ -20,6 +20,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var lastCrab = 0.0
     var lastKrill = 0.0
     var lastBuff = 0.0
+    var lastBeachball = 0.0
     
     var levelOver = false
     let levelName = "world1level30"
@@ -35,8 +36,9 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var krakenAttackSpeedSpike = 15.0
     var whaleAttackSpeedWave = 20.0
     var whaleAttackSpeedKrill = 10.0
+    var crabAttackSpeed = 11.0
     var crabSpawnSpeed = 5.0
-    var phase = 1
+    var phase = 0
     var lastWaterWave = 0.0
     var spikeDamage = CGFloat(3)
     var waterWaveDamage = CGFloat(3)
@@ -53,6 +55,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var theKraken: KrakenBoss?
     var theHero: HeroClass?
     var theWhale: WhaleBoss?
+    var theCrab: BomberClass?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
@@ -78,6 +81,9 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         theWhale = WhaleBoss.makeWhale(CGPointMake(self.frame.midX, self.frame.maxY + 200))
         theWhale!.size = CGSizeMake(150, 120)
         self.addChild(theWhale!)
+        theCrab = BomberClass.makeBomber(CGPointMake(self.frame.midX, self.frame.maxY + 200))
+        theCrab!.size = CGSizeMake(150, 120)
+        self.addChild(theCrab!)
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
         //ourHero.constraints = [distanceConstraint]
@@ -113,6 +119,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         self.addChild(clockNode)
         //********************
         
+        updateLevel()
+        
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -132,6 +140,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 let fadeOut = SKAction.fadeOutWithDuration(1)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
+                //secondBody.node?.physicsBody = nil
                 secondBody.node?.runAction(sequence)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
@@ -140,6 +149,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 let fadeOut = SKAction.fadeOutWithDuration(1)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
+                //secondBody.node?.physicsBody = nil
                 secondBody.node?.runAction(sequence)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
@@ -148,6 +158,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 let fadeOut = SKAction.fadeOutWithDuration(1)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
+                //secondBody.node?.physicsBody = nil
                 secondBody.node?.runAction(sequence)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
@@ -218,7 +229,9 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     
     
     func updateLevel() {
-        phase += 1
+        if phase < 50{
+            phase += 1
+        }
         
         //Phase Transition
         var phaseText = SKSpriteNode()
@@ -234,20 +247,137 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         phaseText.runAction(sequence)
         
         
-        //Balance Stuff
-        krakenAttackSpeed -= 0.5
-        krakenAttackSpeedSpike -= 0.5
-        whaleAttackSpeedKrill -= 0.5
-        whaleAttackSpeedWave -= 0.5
-        crabSpawnSpeed -= 0.5
-        if phase % 5 == 0{
-            spikeDamage += 3
-            waterWaveDamage += 3
-            oilWaveDamage += 5
-            krillDamage += 1
-            crabDamage += 1
-            buffSpawnSpeed -= 1
+        //Balance Speed Stuff
+        if phase % 10 == 1{
+            crabSpawnSpeed = 0.2
+            buffSpawnSpeed = 10
+        }else if phase % 10 == 2{
+            whaleAttackSpeedKrill = 2
+            crabSpawnSpeed = 0.4
+            buffSpawnSpeed = 10
+        }else if phase % 10 == 3{
+            whaleAttackSpeedKrill = 2.3
+            whaleAttackSpeedWave = 15
+            crabSpawnSpeed = 0.6
+            buffSpawnSpeed = 10
+        }else if phase % 10 == 4{
+            whaleAttackSpeedKrill = 2.8
+            whaleAttackSpeedWave = 15
+            crabSpawnSpeed = 0.7
+            crabAttackSpeed = 1.5
+            buffSpawnSpeed = 10
+        }else if phase % 10 == 5{
+            krakenAttackSpeedSpike = 10.0
+            whaleAttackSpeedKrill = 3.1
+            whaleAttackSpeedWave = 15
+            crabSpawnSpeed = 0.9
+            crabAttackSpeed = 2.0
+            buffSpawnSpeed = 10
+        }else if phase % 10 == 6{
+            krakenAttackSpeedSpike = 9.5
+            whaleAttackSpeedKrill = 3.0
+            whaleAttackSpeedWave = 13
+            crabSpawnSpeed = 0.8
+            crabAttackSpeed = 1.9
+            buffSpawnSpeed = 9
+        }else if phase % 10 == 7{
+            krakenAttackSpeedSpike = 9.0
+            whaleAttackSpeedKrill = 2.8
+            whaleAttackSpeedWave = 12
+            crabSpawnSpeed = 0.8
+            crabAttackSpeed = 1.8
+            buffSpawnSpeed = 8
+        }else if phase % 10 == 8{
+            krakenAttackSpeedSpike = 8.5
+            whaleAttackSpeedKrill = 2.5
+            whaleAttackSpeedWave = 11
+            crabSpawnSpeed = 0.7
+            crabAttackSpeed = 1.7
+            buffSpawnSpeed = 8
+        }else if phase % 10 == 9{
+            krakenAttackSpeedSpike = 8.0
+            whaleAttackSpeedKrill = 2.3
+            whaleAttackSpeedWave = 10
+            crabSpawnSpeed = 0.7
+            crabAttackSpeed = 1.6
+            buffSpawnSpeed = 7
+        }else if phase % 10 == 0{
+            krakenAttackSpeedSpike = 8.0
+            whaleAttackSpeedKrill = 2.3
+            whaleAttackSpeedWave = 9
+            crabSpawnSpeed = 0.6
+            crabAttackSpeed = 1.5
+            buffSpawnSpeed = 7
         }
+        
+        
+        //Damages
+        spikeDamage = CGFloat(8)
+        waterWaveDamage = CGFloat(10)
+        oilWaveDamage = CGFloat(150)
+        krillDamage = CGFloat(2)
+        crabDamage = CGFloat(3)
+        lifeBuff = CGFloat(13)
+        speedBuff = CGFloat(40)
+        let test = true
+        if phase > 10 {
+            if test{
+                theHero!.life = 16
+                maxLife = 16
+                theHero!.regeneration = 9
+                heroSpeed = 160
+            }
+            spikeDamage = CGFloat(9)
+            waterWaveDamage = CGFloat(12)
+            oilWaveDamage = CGFloat(150)
+            krillDamage = CGFloat(3)
+            crabDamage = CGFloat(4)
+            lifeBuff = CGFloat(16)
+            speedBuff = CGFloat(50)
+        }else if phase > 20 {
+            if test{
+                theHero!.life = 32
+                maxLife = 32
+                theHero!.regeneration = 10
+                heroSpeed = 168
+            }
+            spikeDamage = CGFloat(18)
+            waterWaveDamage = CGFloat(24)
+            oilWaveDamage = CGFloat(150)
+            krillDamage = CGFloat(6)
+            crabDamage = CGFloat(8)
+            lifeBuff = CGFloat(32)
+            speedBuff = CGFloat(60)
+        }else if phase > 30 {
+            if test{
+                theHero!.life = 64
+                maxLife = 64
+                theHero!.regeneration = 16
+                heroSpeed = 180
+            }
+            spikeDamage = CGFloat(36)
+            waterWaveDamage = CGFloat(48)
+            oilWaveDamage = CGFloat(150)
+            krillDamage = CGFloat(12)
+            crabDamage = CGFloat(16)
+            lifeBuff = CGFloat(64)
+            speedBuff = CGFloat(70)
+        }else if phase > 40 {
+            if test{
+                theHero!.life = 130
+                maxLife = 130
+                theHero!.regeneration = 25
+                heroSpeed = 200
+            }
+            spikeDamage = CGFloat(72)
+            waterWaveDamage = CGFloat(96)
+            oilWaveDamage = CGFloat(150)
+            krillDamage = CGFloat(24)
+            crabDamage = CGFloat(32)
+            lifeBuff = CGFloat(150)
+            speedBuff = CGFloat(80)
+        }
+
         
     }
     
@@ -303,7 +433,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver && !inking && (phase % 5 == 0) && (phase % 6 == 0) && (phase % 7 == 0) && (phase % 8 == 0) && (phase % 9 == 0) && (phase % 10 == 0){
+        if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver && !inking && ((phase % 10 == 5) || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9) || (phase % 10 == 0)){
             self.lastTentacle = currentTime
             theKraken!.throwTentacle()
         }
@@ -315,12 +445,17 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             //}
         }
         
-        if currentTime - lastKrill  > whaleAttackSpeedKrill && !levelOver && !inking && (phase % 2 == 0) && (phase % 3 == 0)  && (phase % 4 == 0) && (phase % 5 == 0) && (phase % 6 == 0)  && (phase % 7 == 0) && (phase % 8 == 0) && (phase % 9 == 0)  && (phase % 10 == 0){
+        if currentTime - lastKrill  > whaleAttackSpeedKrill && !levelOver && !inking && ((phase % 10 == 2) || (phase % 10 == 3)  || (phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0)){
             self.lastKrill = currentTime
             theWhale!.shootKrill()
         }
         
-        if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver && !inking  && (phase % 3 == 0) && (phase % 4 == 0) && (phase % 5 == 0)  && (phase % 6 == 0) && (phase % 7 == 0) && (phase % 8 == 0)  && (phase % 9 == 0) && (phase % 10 == 0){
+        if currentTime - lastBeachball  > crabAttackSpeed && !levelOver && !inking && ((phase % 10 == 3)  || (phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0)){
+            self.lastBeachball = currentTime
+            theCrab!.throwBomb()
+        }
+        
+        if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver && !inking  && ((phase % 10 == 3) || (phase % 10 == 4) || (phase % 10 == 5)  || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8)  || (phase % 10 == 9) || (phase % 10 == 0)){
             self.lastWaterWave = currentTime
             let yValue = randomWithMin(Int(self.frame.minY + 100), Int(self.frame.maxY - 175))
             let xBool = randomWithMin(0, 10)
@@ -333,7 +468,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         
         if (currentTime - lastCrab > crabSpawnSpeed && !self.levelOver && !inking) {
-            var xMatch = CGFloat(randomWithMin(Int(self.frame.minX + 80), Int(self.frame.maxX - 80)))
+            var xMatch = CGFloat(randomWithMin(Int(self.frame.minX + 10), Int(self.frame.maxX - 10)))
             self.addChild(MiniCrab.crabDash(CGPointMake(xMatch, self.frame.maxY + 30), endPosition: CGPointMake(xMatch, self.frame.minY)))
             
             

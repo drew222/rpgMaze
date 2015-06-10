@@ -75,6 +75,13 @@ class BomberClass: SKSpriteNode {
         }else{
             yPosition = CGFloat(self.position.y + yDiff)
         }
+        
+        //Gauntlet sends bombs around the hero
+        if let level30 = self.parent as? World1Level30 {
+            xPosition = CGFloat(randomWithMin(Int(heroPosition.x - 150), Int(heroPosition.x + 150)))
+            yPosition = CGFloat(randomWithMin(Int(heroPosition.y - 150), Int(heroPosition.y + 150)))
+        }
+        
         return CGPointMake(xPosition!, yPosition!)
     }
     

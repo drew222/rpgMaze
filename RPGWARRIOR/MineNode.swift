@@ -63,6 +63,7 @@ class MineNode: SKSpriteNode {
         })
         let sequence = SKAction.sequence([explodeCode, damageBlock, SKAction.waitForDuration(1.0), SKAction.fadeOutWithDuration(1.0), removeBlock])
         self.runAction(sequence)
+        self.physicsBody = nil
         
     }
     func throwMineToPos(position: CGPoint) {
