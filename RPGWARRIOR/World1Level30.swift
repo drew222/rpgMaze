@@ -164,7 +164,11 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                     secondBody.node?.runAction(sequence)
                 } else if (secondBody.node as! BuffSpawn).buffType == 2 {
                     //movespeed
-                    
+                    heroSpeed += 30
+                    let waitAction = SKAction.waitForDuration(4)
+                    let runBlock = SKAction.runBlock({heroSpeed -= 30})
+                    let asequence = SKAction.sequence([waitAction, runBlock])
+                    self.runAction(asequence)
                     
                     let fadeOut = SKAction.fadeOutWithDuration(1)
                     let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
