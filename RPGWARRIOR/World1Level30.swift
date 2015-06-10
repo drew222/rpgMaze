@@ -61,13 +61,13 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         self.addChild(theHero!)
         
         let lifeHeart = SKSpriteNode(imageNamed: "Life_Symbol_1")
-        lifeHeart.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
+        lifeHeart.position = CGPointMake(self.frame.maxX - 30, self.frame.maxY - 30)
         lifeHeart.name = "lifeheart"
         lifeHeart.setScale(0.15)
         self.addChild(lifeHeart)
         
         lifeNode = SKLabelNode(text: "\(Int(floor(theHero!.life!)))")
-        lifeNode!.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 25)
+        lifeNode!.position = CGPointMake(self.frame.maxX - 30, self.frame.maxY - 35)
         lifeNode!.fontName = "ChalkboardSE-Bold"
         lifeNode!.fontSize = 16
         self.addChild(lifeNode!)
@@ -97,12 +97,12 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         //regen spinning clock
         let backTimer = SKSpriteNode(imageNamed: "Regen_Timer_1")
         backTimer.size = CGSizeMake(30, 30)
-        backTimer.position = CGPointMake(self.frame.maxX - 60, self.frame.maxY - 20)
+        backTimer.position = CGPointMake(self.frame.maxX - 70, self.frame.maxY - 30)
         backTimer.name = "backTimer"
         backTimer.zPosition = 2
         self.addChild(backTimer)
         let clockNode = SKSpriteNode(imageNamed: "Regen_Timer_2")
-        clockNode.position = CGPointMake(self.frame.maxX - 60, self.frame.maxY - 20)
+        clockNode.position = CGPointMake(self.frame.maxX - 70, self.frame.maxY - 30)
         clockNode.size = CGSizeMake(30, 30)
         clockNode.name = "regenClock"
         clockNode.zPosition = 3

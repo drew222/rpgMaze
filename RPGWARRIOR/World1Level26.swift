@@ -121,12 +121,7 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
                 }
             }
         }
-        //4 shells surrounding kraken at bottom
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 40, self.frame.minY + 20)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 40, self.frame.minY + 20)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 40, self.frame.minY + 50)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 40, self.frame.minY + 50)))
-        
+                
         
     }
     

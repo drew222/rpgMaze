@@ -94,7 +94,45 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
         
         //### Seashell Maze ###
         
-        
+        if isPlus{
+            //add bot right corner
+            self.addChild(MineNode.mineAtPos(CGPointMake(290, 120)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(320, 150)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(340, 180)))
+            //add top right corner
+            self.addChild(MineNode.mineAtPos(CGPointMake(210, 560)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(250, 560)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(290, 540)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(320, 510)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(340, 480)))
+            //add top left corner
+            self.addChild(MineNode.mineAtPos(CGPointMake(70, 560)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(90, 590)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(120, 620)))
+            //add bottom left corner
+            self.addChild(MineNode.mineAtPos(CGPointMake(70, 260)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(90, 230)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(120, 200)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(160, 180)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(200, 180)))
+            
+            //add bot horizontal row
+            for (var i = 20; i < Int(self.frame.maxX - 130); i += 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i),  100)))
+            }
+            //add top row
+            for (var i = 155; i < Int(self.frame.maxX); i += 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 100)))
+            }
+            //right column
+            for (var i = Int(self.frame.maxY) - 290; i > 180; i -= 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 60, CGFloat(i))))
+            }
+            //left column
+            for (var i = 290; i < Int(self.frame.maxY) - 180; i += 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(60, CGFloat(i))))
+            }
+        } else {
         //add bot right corner
         self.addChild(MineNode.mineAtPos(CGPointMake(260, 120)))
         self.addChild(MineNode.mineAtPos(CGPointMake(290, 150)))
@@ -132,7 +170,7 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
         for (var i = 290; i < Int(self.frame.maxY) - 180; i += 40){
             self.addChild(MineNode.mineAtPos(CGPointMake(60, CGFloat(i))))
         }
-        
+        }
         
         // ### Crabs ###
         
