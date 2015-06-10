@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Drew Zoellner. All rights reserved.
 //
 
+
 import SpriteKit
 
 //import AVFoundation
@@ -15,16 +16,16 @@ class World1Level4: SKScene, SKPhysicsContactDelegate {
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
-    var lastFireball: Double = 0.0
+    var lastBomb: Double = 0.0
     var levelOver = false
-    let levelName = "world1level4"
+    let levelName = "World1Level4"
     var droppedItem = false
     //REGEN CODE******
     var lastHeal: Double = 0.0
     let healSpeed = 5.0
     var maxLife: CGFloat = 0.0
     //*****************
-    let wizardAttackSpeed = 1.0
+    let bomberAttackSpeed = 1.5
     
     //Ink / Life / Chest Changes*****
     var inkSplatted = false
@@ -94,16 +95,6 @@ class World1Level4: SKScene, SKPhysicsContactDelegate {
         self.addChild(clockNode)
         //********************
         
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 140), endPosition: CGPointMake(10, 140)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 190), endPosition: CGPointMake(self.frame.maxX - 10, 190)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 240), endPosition: CGPointMake(10, 240)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 290), endPosition: CGPointMake(self.frame.maxX - 10, 290)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 340), endPosition: CGPointMake(10, 340)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 390), endPosition: CGPointMake(self.frame.maxX - 10, 390)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 440), endPosition: CGPointMake(10, 440)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 490), endPosition: CGPointMake(self.frame.maxX - 10, 490)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 540), endPosition: CGPointMake(10, 540)))
-        
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -116,21 +107,7 @@ class World1Level4: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        //HERO VS SEASHELL
-        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
-                theHero!.takeDamage(1)
-                let fadeOut = SKAction.fadeOutWithDuration(0.6)
-                let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
-                let sequence = SKAction.sequence([fadeOut, codeBlock])
-                secondBody.node?.runAction(sequence)
-        }
-        //HERO VS WIZARD
-        //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-        //secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWizard.rawValue){
-        //let aHero = self.childNodeWithName("hero") as HeroClass
-        //aHero.attack()
-        //}
+        
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -160,11 +137,18 @@ class World1Level4: SKScene, SKPhysicsContactDelegate {
     
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        //println("current time: \(currentTime)")
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
             self.lastUpdatesTime = currentTime
-            self.lastFireball = currentTime
+            self.lastBomb = currentTime
         }
+        self.totalGameTime += currentTime - self.lastUpdatesTime
+        if currentTime - lastBomb  > bomberAttackSpeed{
+            self.lastBomb = currentTime
+            theBomber!.throwBomb()
+        }
+        
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
         //******REGEN CODE
@@ -178,11 +162,6 @@ class World1Level4: SKScene, SKPhysicsContactDelegate {
             }
         }
         self.lastUpdatesTime = currentTime
-        
-        //***************
-        
-        //win condition
-        //check for win condition
         lifeNode!.text = "\(Int(theHero!.life!))"
         if (theBomber!.isDead || theHero!.life <= 0) && !levelOver{
             
@@ -192,6 +171,9 @@ class World1Level4: SKScene, SKPhysicsContactDelegate {
                 if theHero!.life <= 0 {
                     let inkSplat = SKSpriteNode(imageNamed: "Ink_Splat_1")
                     for node in self.children{
+                        if (node as? SKEmitterNode != nil){
+                            node.removeFromParent()
+                        }
                         if (node as? SKSpriteNode != nil) && node.name != "background"{
                             node.removeFromParent()
                         }
@@ -220,8 +202,8 @@ class World1Level4: SKScene, SKPhysicsContactDelegate {
                     
                     //&&
                     let persistentData = NSUserDefaults.standardUserDefaults()
-                    if (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel < 4{
-                    persistentData.setObject(4, forKey: "highestLevel")
+                    if (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel < 5{
+                        persistentData.setObject(5, forKey: "highestLevel")
                     }
                     //&&
                     
@@ -238,6 +220,9 @@ class World1Level4: SKScene, SKPhysicsContactDelegate {
                     droppedItem = true
                 }else if theBomber!.isDead && !droppedChest {
                     for node in self.children{
+                        if (node as? SKEmitterNode != nil) && node.name != "inkAttack"{
+                            node.removeFromParent()
+                        }
                         if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "life" && node.name != "gold" && node.name != "chest"{
                             node.removeFromParent()
                         }

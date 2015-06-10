@@ -137,14 +137,25 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }
     else if level == "level4"{
-        //50% mossy copper ring, 50% 1 booty
+        //25% mossy copper ring, 50% 2 booty, 15% crab claw cap, 10% beachball fragment
         let myNum = randomWithMin(0, 100)
-        if myNum < 50{
+        if myNum < 75{
             let item = ItemClass.itemInSpace("Mossy_Copper_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
-        } else {
+        } else if (myNum <= 75) && (myNum > 65){
+            let item = ItemClass.itemInSpace("Beach_Ball_Fragment_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 65) && (myNum > 50){
+            let item = ItemClass.itemInSpace("Crab_Claw_Cap_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        else {
             let gold = SKSpriteNode(imageNamed: "Booty_1")
             gold.name = "gold"
             gold.position = position
@@ -155,14 +166,14 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(gold)
         }
     }else if level == "level5"{
-        //5% beachball fragment ring, 30% mossy copper ring, 50% 2 booty, 15% crab claw cap
+        //50% 2 booty, 25% mossy copper ring, 25% Crab claw cap
         let myNum = randomWithMin(0, 100)
-        if myNum > 95{
-            let item = ItemClass.itemInSpace("Beach_Ball_Fragment_1")
+        if myNum > 75{
+            let item = ItemClass.itemInSpace("Mossy_Copper_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
-        } else if (myNum <= 95) && (myNum > 45){
+        } else if (myNum <= 75) && (myNum > 50){
             let gold = SKSpriteNode(imageNamed: "Booty_1")
             gold.name = "gold"
             gold.position = position
@@ -171,11 +182,6 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
-        } else if (myNum <= 45) && (myNum > 30){
-            let item = ItemClass.itemInSpace("Crab_Claw_Cap_1")
-            item.position = position
-            item.size = size
-            scene.addChild(item)
         } else {
             let item = ItemClass.itemInSpace("Mossy_Copper_Ring_1")
             item.position = position
@@ -183,14 +189,14 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(item)
         }
     }else if level == "level6"{
-        //25% crab claw cap, 25% mossy copper ring, 50% 2 booty
+        //25% crab claw cap, 50% mossy copper ring, 25% 2 booty
         let myNum = randomWithMin(0, 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Crab_Claw_Cap_1")
             item.position = position
             item.size = size
             scene.addChild(item)
-        } else if (myNum <= 75) && (myNum > 25){
+        } else if (myNum <= 75) && (myNum > 50){
             let gold = SKSpriteNode(imageNamed: "Booty_1")
             gold.name = "gold"
             gold.position = position
