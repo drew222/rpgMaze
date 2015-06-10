@@ -93,35 +93,36 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
         self.addChild(clockNode)
         //********************
         
-        //shells i = y, k = x
-        //right column
-        for (var i = 20; i < Int(self.frame.maxY) - 100; i += 30){
-            for (var k = 260.0; k < Double(self.frame.maxX); k += 30){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(k), CGFloat(i))))
-                if Double(self.frame.maxX) - k > 40 && Double(self.frame.maxX) - k < 30 {
-                    self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(k + 30), CGFloat(i))))
+        if isPlus{
+            //crabs
+            self.addChild(MiniCrab.crabAtPosition(CGPointMake(25, 140), endPosition: CGPointMake(self.frame.maxX - 25, 140)))
+            self.addChild(MiniCrab.crabAtPosition(CGPointMake(25, self.frame.maxY - 160), endPosition: CGPointMake(self.frame.maxX - 25, self.frame.maxY - 160)))
+            //shells
+            //mid column c = x d = y
+            for (var d = 180; d < Int(self.frame.maxY - 180); d += 40){
+                for (var c = 10.0; c < Double(self.frame.maxX); c += 40){
+                    self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(c), CGFloat(d))))
+                    if Double(self.frame.maxX) - c > 150 && Double(self.frame.maxX) - c < 150 {
+                        self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(c + 30), CGFloat(d))))
+                    }
                 }
             }
-        }
-        //left column a = x b = y
-        for (var b = 20; b < Int(self.frame.maxY) - 100; b += 30){
-            for (var a = 20.0; a < Double(self.frame.maxX - 255); a += 30){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(a), CGFloat(b))))
-                if Double(self.frame.maxX) - a > 40 && Double(self.frame.maxX) - a < 30 {
-                    self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(a + 30), CGFloat(b))))
-                }
-            }
-        }
+
+        } else{
+        //crabs
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(25, 100), endPosition: CGPointMake(self.frame.maxX - 25, 100)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(25, self.frame.maxY - 130), endPosition: CGPointMake(self.frame.maxX - 25, self.frame.maxY - 130)))
+        //shells
         //mid column c = x d = y
-        for (var d = 80; d < Int(self.frame.maxY - 100); d += 30){
-            for (var c = 140.0; c < Double(self.frame.maxX - 140); c += 30){
+        for (var d = 140; d < Int(self.frame.maxY - 140); d += 40){
+            for (var c = 10.0; c < Double(self.frame.maxX); c += 40){
                 self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(c), CGFloat(d))))
                 if Double(self.frame.maxX) - c > 150 && Double(self.frame.maxX) - c < 150 {
                     self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(c + 30), CGFloat(d))))
                 }
             }
         }
-                
+    }
         
     }
     
@@ -148,6 +149,15 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
                 let mine = secondBody.node as? MineNode
                 mine!.explode(secondBody.node!.position)
                 theHero!.takeDamage(1)
+        }
+        //HERO VS CRAB
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
+                theHero!.takeDamage(5)
+                let fadeOut = SKAction.fadeOutWithDuration(0.6)
+                let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+                let sequence = SKAction.sequence([fadeOut, codeBlock])
+                secondBody.node?.runAction(sequence)
         }
         
     }
