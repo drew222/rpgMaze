@@ -437,9 +437,9 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(gold)
         }
     }else if level == "level17"{
-        //50% 6 booty, 50% mossy silver ring
+        //75% 1 booty, 25% mossy silver ring
         let myNum = randomWithMin(0, 100)
-        if myNum > 50{
+        if myNum > 75{
             let item = ItemClass.itemInSpace("Mossy_Silver_Ring_1")
             item.position = position
             item.size = size
@@ -449,7 +449,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 6
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
@@ -478,29 +478,14 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(gold)
         }
     }else if level == "level19"{
-        //35% 6 booty, 25% silver ring, 40% king kraken tentacle ring
+        //100% king kraken tentacle ring
         let myNum = randomWithMin(0, 100)
-        if myNum > 75{
-            let item = ItemClass.itemInSpace("Silver_Ring_1")
-            item.position = position
-            item.size = size
-            scene.addChild(item)
-        } else if (myNum <= 75) && (myNum > 35){
+        if myNum > -1{
             let item = ItemClass.itemInSpace("King_Kraken_Tentacle_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
-        }else {
-            let gold = SKSpriteNode(imageNamed: "Booty_1")
-            gold.name = "gold"
-            gold.position = position
-            gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 6
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
-            scene.addChild(gold)
-        }
-    }else if level == "level20"{
+        }     }else if level == "level20"{
         //35% 7 booty, 25% silver ring, 40% seashell charm bracelet
         let myNum = randomWithMin(0, 100)
         if myNum > 75{
@@ -524,7 +509,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(gold)
         }
     }else if level == "level21"{
-        //40% 8 booty, 10% inky ring, 25 % king kraken tentacle, 25% rusty gold ring
+        //50% 1 booty, 25 % king kraken tentacle, 25% rusty gold ring
         let myNum = randomWithMin(0, 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
@@ -532,13 +517,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             item.size = size
             scene.addChild(item)
         }
-        else if (myNum <= 75) && (myNum > 65){
-            let item = ItemClass.itemInSpace("Inky_Ring_1")
-            item.position = position
-            item.size = size
-            scene.addChild(item)
-        }
-        else if (myNum <= 65) && (myNum > 40){
+        else if (myNum <= 75) && (myNum > 50){
             let item = ItemClass.itemInSpace("King_Kraken_Tentacle_Ring_1")
             item.position = position
             item.size = size
@@ -548,7 +527,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 8
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
