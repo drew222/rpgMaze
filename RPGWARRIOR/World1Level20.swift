@@ -11,7 +11,7 @@ import SpriteKit
 class World1Level20: SKScene, SKPhysicsContactDelegate  {
     
     var timeSinceCrabAdded : NSTimeInterval = 0
-    var addCrabTimeInterval : NSTimeInterval = 1.0
+    var addCrabTimeInterval : NSTimeInterval = 1.1
     var gameStartTime = 0.0
     var totalGameTime = 0.0
     var lastUpdatesTime = 0.0
@@ -151,7 +151,6 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 100, self.frame.midY + 150)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 130, self.frame.midY + 150)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 160, self.frame.midY + 150)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 230, self.frame.midY + 150)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.minX + 260, self.frame.midY + 150)))
         
         //3rd from top
