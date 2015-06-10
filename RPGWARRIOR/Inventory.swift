@@ -562,6 +562,22 @@ class Inventory: SKScene {
                 headDisplay!.size = CGSizeMake(200, 200)
                 headDisplay!.position = CGPointMake(self.frame.midX - 10, self.frame.maxY - 135)
                 headDisplay!.zPosition = 2
+            } else if itemName == "Wicked_2" {
+                headDisplay!.size = CGSizeMake(170, 170)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 175)
+                headDisplay!.zPosition = 5
+            } else if itemName == "Sinister_2" {
+                headDisplay!.size = CGSizeMake(170, 170)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 175)
+                headDisplay!.zPosition = 5
+            } else if itemName == "Insidious_2" {
+                headDisplay!.size = CGSizeMake(170, 170)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 175)
+                headDisplay!.zPosition = 5
+            } else if itemName == "Lust_Of_Lucifer_2" {
+                headDisplay!.size = CGSizeMake(170, 170)
+                headDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 175)
+                headDisplay!.zPosition = 5
             }
             headDisplay!.texture = SKTexture(imageNamed: "\(itemName)")
             //LEFT
@@ -637,6 +653,26 @@ class Inventory: SKScene {
             leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
             leftDisplay!.zPosition = 2
            } else if itemName == "King_Kraken_Tentacle_Ring_2" {
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
+            leftDisplay!.zPosition = 2
+           } else if itemName == "Whale_Flesh_Ring_2" {
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
+            leftDisplay!.zPosition = 2
+           } else if itemName == "Dusk_2" {
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
+            leftDisplay!.zPosition = 2
+           } else if itemName == "Nightfall_2" {
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
+            leftDisplay!.zPosition = 2
+           } else if itemName == "Twilight_2" {
+            leftDisplay!.size = CGSizeMake(50, 50)
+            leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
+            leftDisplay!.zPosition = 2
+           } else if itemName == "Tomorrows_End_2" {
             leftDisplay!.size = CGSizeMake(50, 50)
             leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
             leftDisplay!.zPosition = 2
@@ -721,6 +757,22 @@ class Inventory: SKScene {
                 rightDisplay!.size = CGSizeMake(50, 50)
                 rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
                 rightDisplay!.zPosition = 2
+            } else if itemName == "Dusk_2" {
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+                rightDisplay!.zPosition = 2
+            } else if itemName == "Nightfall_2" {
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+                rightDisplay!.zPosition = 2
+            } else if itemName == "Twilight_2" {
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+                rightDisplay!.zPosition = 2
+            } else if itemName == "Tomorrows_End_2" {
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+                rightDisplay!.zPosition = 2
             }
             rightDisplay!.texture = SKTexture(imageNamed: "\(itemName)")
             //NECK
@@ -772,6 +824,22 @@ class Inventory: SKScene {
                 neckDisplay!.size = CGSizeMake(160, 80)
                 neckDisplay!.position = CGPointMake(self.frame.midX - 7, self.frame.maxY - 255)
                 neckDisplay!.zPosition = 3
+            } else if itemName == "Fear_2" {
+                neckDisplay!.size = CGSizeMake(160, 80)
+                neckDisplay!.position = CGPointMake(self.frame.midX - 7, self.frame.maxY - 255)
+                neckDisplay!.zPosition = 2
+            } else if itemName == "Nightmare_2" {
+                neckDisplay!.size = CGSizeMake(160, 80)
+                neckDisplay!.position = CGPointMake(self.frame.midX - 7, self.frame.maxY - 255)
+                neckDisplay!.zPosition = 2
+            } else if itemName == "Insomnia_2" {
+                neckDisplay!.size = CGSizeMake(160, 80)
+                neckDisplay!.position = CGPointMake(self.frame.midX - 7, self.frame.maxY - 255)
+                neckDisplay!.zPosition = 2
+            } else if itemName == "The_Jitters_2" {
+                neckDisplay!.size = CGSizeMake(160, 80)
+                neckDisplay!.position = CGPointMake(self.frame.midX - 7, self.frame.maxY - 255)
+                neckDisplay!.zPosition = 2
             }
 
             neckDisplay!.texture = SKTexture(imageNamed: "\(itemName)")
