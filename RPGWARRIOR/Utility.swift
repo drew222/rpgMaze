@@ -765,7 +765,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             item.size = size
             scene.addChild(item)
         }
-    }else if level == "level30"{
+    }else if level == "phase1"{
         let myNum = randomWithMin(0, 100)
         if myNum > 50{
             let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")

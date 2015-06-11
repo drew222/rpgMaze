@@ -26,6 +26,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var levelOver = false
     let levelName = "world1level30"
     var droppedItem = false
+    var droppedChest = false
+    var splatted = false
     //REGEN CODE******
     var lastHeal: Double = 0.0
     let healSpeed = 5.0
@@ -262,7 +264,6 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as! HeroClass
-        let aKraken = self.childNodeWithName("kraken") as! KrakenBoss
         for touch in touches{
             aHero.moveHelper((touch as! UITouch).locationInNode(self))
         }
@@ -478,7 +479,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
-        if currentTime - lastWave  > 45{
+        if currentTime - lastWave  > 45 && !droppedChest{
             for node in self.children{
                 if node as? SKEmitterNode != nil {
                     node.removeFromParent()
@@ -496,7 +497,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             inkingTimer = currentTime
         }
         
-        if inking && currentTime - inkingTimer > 5{
+        if inking && currentTime - inkingTimer > 5 && !droppedChest{
             inking = false
             for node in self.children{
                 if let aNode = node as? SKSpriteNode{
@@ -507,29 +508,29 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver && !inking && ((phase % 10 == 5) || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9) || (phase % 10 == 0)){
+        if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver && !inking && ((phase % 10 == 5) || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9) || (phase % 10 == 0) && !droppedChest){
             self.lastTentacle = currentTime
             theKraken!.throwTentacle()
         }
         
-        if currentTime - lastBuff  > buffSpawnSpeed && !levelOver && !inking{
+        if currentTime - lastBuff  > buffSpawnSpeed && !levelOver && !inking && !droppedChest{
             self.lastBuff = currentTime
             //if phase > 4{
                 addRandomBuff()
             //}
         }
         
-        if currentTime - lastKrill  > whaleAttackSpeedKrill && !levelOver && !inking && ((phase % 10 == 2) || (phase % 10 == 3)  || (phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0)){
+        if currentTime - lastKrill  > whaleAttackSpeedKrill && !levelOver && !inking && ((phase % 10 == 2) || (phase % 10 == 3)  || (phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0) && !droppedChest){
             self.lastKrill = currentTime
             theWhale!.shootKrill()
         }
         
-        if currentTime - lastBeachball  > crabAttackSpeed && !levelOver && !inking && ((phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0)){
+        if currentTime - lastBeachball  > crabAttackSpeed && !levelOver && !inking && ((phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0) && !droppedChest){
             self.lastBeachball = currentTime
             theCrab!.throwBomb()
         }
         
-        if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver && !inking  && ((phase % 10 == 3) || (phase % 10 == 4) || (phase % 10 == 5)  || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8)  || (phase % 10 == 9) || (phase % 10 == 0)){
+        if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver && !inking  && ((phase % 10 == 3) || (phase % 10 == 4) || (phase % 10 == 5)  || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8)  || (phase % 10 == 9) || (phase % 10 == 0) && !droppedChest){
             self.lastWaterWave = currentTime
             let yValue = randomWithMin(Int(self.frame.minY + 100), Int(self.frame.maxY - 175))
             let xBool = randomWithMin(0, 10)
@@ -541,7 +542,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         }
         
         
-        if (currentTime - lastCrab > crabSpawnSpeed && !self.levelOver && !inking) {
+        if (currentTime - lastCrab > crabSpawnSpeed && !self.levelOver && !inking && !droppedChest) {
             var xMatch = CGFloat(randomWithMin(Int(10), Int(self.frame.maxX - 10)))
             self.addChild(MiniCrab.crabDash(CGPointMake(xMatch, self.frame.maxY + 30), endPosition: CGPointMake(xMatch, self.frame.minY)))
             
@@ -549,7 +550,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             self.lastCrab = currentTime
         }
         
-        if (currentTime - lastCoin > coinSpawnSpeed && !self.levelOver && !inking) {
+        if (currentTime - lastCoin > coinSpawnSpeed && !self.levelOver && !inking && !droppedChest) {
             let xCoin = CGFloat(randomWithMin(Int(20), Int(self.frame.maxX - 20)))
             let yCoin = CGFloat(randomWithMin(Int(20), Int(self.frame.maxY - 50)))
             self.addChild(CoinNode.coinAtPos(CGPointMake(xCoin, yCoin)))
@@ -560,7 +561,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         
         //******REGEN CODE
-        if currentTime - lastHeal  > healSpeed && !levelOver{
+        if currentTime - lastHeal  > healSpeed && theHero!.life > 0{
             self.lastHeal = currentTime
             if theHero!.life < maxLife{
                 theHero!.life! += theHero!.regeneration!
@@ -575,17 +576,42 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         //***************
         
         //check for win condition
-        if (theKraken!.isDead || theHero!.life <= 0) && !levelOver{
-            if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
-                let skTransition = SKTransition.fadeWithDuration(5.0)
+        if (theHero!.life <= 0){
+            if !splatted {
+                splatted = true
+                let splat = SKSpriteNode(imageNamed: "Ink_Splat_2")
+                splat.size = CGSizeMake(70, 70)
+                splat.name = "deathSplat"
+                splat.position = theHero!.position
+                self.addChild(splat)
+                theHero!.removeAllActions()
+                theHero!.runAction(SKAction.fadeOutWithDuration(0))
+                theHero!.position = CGPointMake(self.frame.midX, 100)
+                theHero!.runAction(SKAction.fadeInWithDuration(2))
+            }
+            if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil && droppedItem && !levelOver){
+                let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
                 levelOver = true
             }
-            else if (self.childNodeWithName("item") == nil){
-                if theKraken!.isDead{
-                    dropLoot("world1level30", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+            else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil && !levelOver){
+                if droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
+                    dropLoot("phase\(phase)", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
+                }else if !droppedChest {
+                    for node in self.children{
+                        if (node as? SKEmitterNode != nil) && node.name != "inkAttack"{
+                            node.removeFromParent()
+                        }
+                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "life" && node.name != "gold" && node.name != "chest" && node.name != "lifeheart" && node.name != "regenClock" && node.name != "deathSplat"{
+                            node.removeFromParent()
+                        }
+                    }
+                    self.childNodeWithName("lifeNumber")?.removeFromParent()
+                    self.addChild(TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY)))
+                    droppedChest = true
                 }
+            
             }
         }
     }

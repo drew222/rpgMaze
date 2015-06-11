@@ -26,7 +26,7 @@ class MiniCrab: SKSpriteNode {
         crab.setScale(0.07)
         //rotate
         var angle = angleFromPoints(startPos, endPosition)
-        println(angle)
+        //println(angle)
         //if angle > pi + pi / 2{
           //  angle += pi
         //}
@@ -63,7 +63,7 @@ class MiniCrab: SKSpriteNode {
         crab.setScale(0.07)
         //rotate
         var angle = angleFromPoints(startPos, endPosition)
-        println(angle)
+        //println(angle)
         //if angle > pi + pi / 2{
         //  angle += pi
         //}
@@ -120,7 +120,7 @@ class MiniCrab: SKSpriteNode {
             let distanceFromMine = distanceBetween(self.parent!.childNodeWithName("hero")!.position, self.position)
             //if distanceFromMine < 25{
             let theHero = self.parent!.childNodeWithName("hero")! as! HeroClass
-            println("distance from bomb = \(distanceFromMine)")
+            //println("distance from bomb = \(distanceFromMine)")
             theHero.takeDamage(1.0)
             //}
         })
