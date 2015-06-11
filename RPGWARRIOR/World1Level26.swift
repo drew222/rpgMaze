@@ -122,7 +122,7 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
                 }
             }
         }
-    }
+        }
         
     }
     
