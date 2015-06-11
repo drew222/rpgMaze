@@ -1181,17 +1181,1352 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             item.size = size
             scene.addChild(item)
         }//***************************************************************************
+    
+    }
+    
+    else if level == "phase11"{
+        //10% T1 item, 45% selected store item, 45% 30 booty
+        let myNum = randomWithMin(0, 100)
         
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 91{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 91) && (myNum > 82){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 82) && (myNum > 73){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 73) && (myNum > 64){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 64) && (myNum > 55){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+         
+        //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 55) && (myNum > 52){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 52) && (myNum > 49){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 49) && (myNum > 45){
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+    }
+    else if level == "phase12"{
+        //20% T1 item, 40% selected store item, 40% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 92{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 92) && (myNum > 84){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 84) && (myNum > 76){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 76) && (myNum > 68){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 68) && (myNum > 60){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+        //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 60) && (myNum > 53){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 53) && (myNum > 46){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 46) && (myNum > 40){
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //****************************************************************************
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+    }
+    else if level == "phase13"{
+        //30% T1 item, 35% selected store item, 35% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 93{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 93) && (myNum > 86){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 86) && (myNum > 79){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 79) && (myNum > 72){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 72) && (myNum > 65){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 65) && (myNum > 55){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 55) && (myNum > 45){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 45) && (myNum > 35){
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //****************************************************************************
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+    }
+    else if level == "phase14"{
+        //40% T1 item, 30% selected store item, 30% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 94{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 94) && (myNum > 88){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 88) && (myNum > 82){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 82) && (myNum > 76){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 76) && (myNum > 70){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 70) && (myNum > 57){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 57) && (myNum > 44){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 44) && (myNum > 30){
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //****************************************************************************
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+    }
+    else if level == "phase15"{
+        //50% T1 item, 25% selected store item, 25% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 95{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 95) && (myNum > 90){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 90) && (myNum > 85){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 85) && (myNum > 80){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 80) && (myNum > 75){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 75) && (myNum > 58){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 58) && (myNum > 41){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 41) && (myNum > 25){
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //****************************************************************************
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+    }
+    else if level == "phase16"{
+        //60% T1 item, 20% selected store item, 20% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 96{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 96) && (myNum > 92){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 92) && (myNum > 88){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 88) && (myNum > 84){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 84) && (myNum > 80){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 80) && (myNum > 60){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 60) && (myNum > 40){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 40) && (myNum > 20){
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //****************************************************************************
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+    }
+    else if level == "phase17"{
+        //70% T1 item, 15% selected store item, 15% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 97{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 97) && (myNum > 94){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 94) && (myNum > 91){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 91) && (myNum > 88){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 88) && (myNum > 85){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 85) && (myNum > 62){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 62) && (myNum > 39){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 39) && (myNum > 15){
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //****************************************************************************
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+    }
+    else if level == "phase18"{
+        //80% T1 item, 10% selected store item, 10% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 98{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 98) && (myNum > 96){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 96) && (myNum > 94){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 94) && (myNum > 92){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 92) && (myNum > 90){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 90) && (myNum > 63){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 63) && (myNum > 36){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 36) && (myNum > 10){
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //****************************************************************************
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+    }
+    else if level == "phase19"{
+        //90% T1 item, 5% selected store item, 5% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 99{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 99) && (myNum > 98){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 98) && (myNum > 97){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 97) && (myNum > 96){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 96) && (myNum > 95){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 95) && (myNum > 65){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 65) && (myNum > 35){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 35) && (myNum > 5){
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //****************************************************************************
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+    }
+    else if level == "phase20"{
+        //100% T1 item
+        let myNum = randomWithMin(0, 100)
+            
+            //*****TIER 1 ITEMS***************************************************************
+        if (myNum > 67) {
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 67) && (myNum > 34){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //****************************************************************************
+    }
+    else if level == "phase21"{
+        //10% T2 item, 90% T1 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 2 ITEMS***************************************************************
+        if (myNum > 97) {
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 97) && (myNum > 94){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 94) && (myNum > 90){
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 90) && (myNum > 60){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 60) && (myNum > 30){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //****************************************************************************
+    }
+    else if level == "phase22"{
+        //20% T2 item, 80% T1 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 2 ITEMS***************************************************************
+        if (myNum > 93) {
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 93) && (myNum > 86){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 86) && (myNum > 80){
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 80) && (myNum > 53){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 53) && (myNum > 26){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase23"{
+        //30% T2 item, 70% T1 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 2 ITEMS***************************************************************
+        if (myNum > 90) {
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 90) && (myNum > 80){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 80) && (myNum > 70){
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 70) && (myNum > 47){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 47) && (myNum > 24){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase24"{
+        //40% T2 item, 60% T1 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 2 ITEMS***************************************************************
+        if (myNum > 87) {
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 87) && (myNum > 74){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 74) && (myNum > 60){
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 60) && (myNum > 40){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 40) && (myNum > 20){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase25"{
+        //50% T2 item, 50% T1 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 2 ITEMS***************************************************************
+        if (myNum > 83) {
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 83) && (myNum > 66){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 66) && (myNum > 50){
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 50) && (myNum > 33){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 33) && (myNum > 16){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase26"{
+        //60% T2 item, 40% T1 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 2 ITEMS***************************************************************
+        if (myNum > 80) {
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 80) && (myNum > 60){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 60) && (myNum > 40){
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 40) && (myNum > 27){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 27) && (myNum > 14){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase27"{
+        //70% T2 item, 30% T1 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 2 ITEMS***************************************************************
+        if (myNum > 77) {
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 77) && (myNum > 54){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 54) && (myNum > 30){
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 30) && (myNum > 20){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 20) && (myNum > 10){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase28"{
+        //80% T2 item, 20% T1 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 2 ITEMS***************************************************************
+        if (myNum > 73) {
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 73) && (myNum > 46){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 46) && (myNum > 20){
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 20) && (myNum > 13){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 13) && (myNum > 6){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase29"{
+        //90% T2 item, 10% T1 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 2 ITEMS***************************************************************
+        if (myNum > 70) {
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 70) && (myNum > 40){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 40) && (myNum > 10){
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 10) && (myNum > 7){
+            let item = ItemClass.itemInSpace("Wicked_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 7) && (myNum > 4){
+            let item = ItemClass.itemInSpace("Fear_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Dusk_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase30"{
+        //100% T2 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 2 ITEMS***************************************************************
+        if (myNum > 67) {
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 67) && (myNum > 34){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
     }
 
+    
+    
+    
+    else if level == "phase31"{
+        //10% T3 item, 90% T2 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 3 ITEMS***************************************************************
+        if (myNum > 97) {
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 97) && (myNum > 94){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 94) && (myNum > 90){
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 2 ITEMS***************************************************************
+        else if (myNum <= 90) && (myNum > 60){
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 60) && (myNum > 30){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase32"{
+        //20% T3 item, 80% T2 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 3 ITEMS***************************************************************
+        if (myNum > 93) {
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 93) && (myNum > 86){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 86) && (myNum > 80){
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 2 ITEMS***************************************************************
+        else if (myNum <= 80) && (myNum > 53){
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 53) && (myNum > 26){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase33"{
+        //30% T3 item, 70% T2 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 3 ITEMS***************************************************************
+        if (myNum > 90) {
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 90) && (myNum > 80){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 80) && (myNum > 70){
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 2 ITEMS***************************************************************
+        else if (myNum <= 70) && (myNum > 47){
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 47) && (myNum > 24){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase34"{
+        //40% T3 item, 60% T2 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 3 ITEMS***************************************************************
+        if (myNum > 87) {
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 87) && (myNum > 74){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 74) && (myNum > 60){
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 2 ITEMS***************************************************************
+        else if (myNum <= 60) && (myNum > 40){
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 40) && (myNum > 20){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase35"{
+        //50% T3 item, 50% T2 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 3 ITEMS***************************************************************
+        if (myNum > 83) {
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 83) && (myNum > 66){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 66) && (myNum > 50){
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 2 ITEMS***************************************************************
+        else if (myNum <= 50) && (myNum > 33){
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 33) && (myNum > 16){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase36"{
+        //60% T3 item, 40% T2 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 3 ITEMS***************************************************************
+        if (myNum > 80) {
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 80) && (myNum > 60){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 60) && (myNum > 40){
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 2 ITEMS***************************************************************
+        else if (myNum <= 40) && (myNum > 27){
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 27) && (myNum > 14){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase27"{
+        //70% T2 item, 30% T1 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 2 ITEMS***************************************************************
+        if (myNum > 77) {
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 77) && (myNum > 54){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 54) && (myNum > 30){
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 1 ITEMS***************************************************************
+        else if (myNum <= 30) && (myNum > 20){
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 20) && (myNum > 10){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase38"{
+        //80% T3 item, 20% T2 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 3 ITEMS***************************************************************
+        if (myNum > 73) {
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 73) && (myNum > 46){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 46) && (myNum > 20){
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 2 ITEMS***************************************************************
+        else if (myNum <= 20) && (myNum > 13){
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 13) && (myNum > 6){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase39"{
+        //90% T3 item, 10% T2 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 3 ITEMS***************************************************************
+        if (myNum > 70) {
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 70) && (myNum > 40){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 40) && (myNum > 10){
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 2 ITEMS***************************************************************
+        else if (myNum <= 10) && (myNum > 7){
+            let item = ItemClass.itemInSpace("Sinister_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 7) && (myNum > 4){
+            let item = ItemClass.itemInSpace("Nightmare_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Nightfall_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase40"{
+        //100% T3 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 3 ITEMS***************************************************************
+        if (myNum > 67) {
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 67) && (myNum > 34){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+    }
 
-
-
-
-
-
-
-
+    
+    
 }
 
 
