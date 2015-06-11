@@ -21,6 +21,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var lastKrill = 0.0
     var lastBuff = 0.0
     var lastBeachball = 0.0
+    var lastCoin = 0.0
     
     var levelOver = false
     let levelName = "world1level30"
@@ -50,6 +51,9 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var inking = false
     var inkingTimer = 0.0
     var buffSpawnSpeed = 30.0
+    var coinSpawnSpeed = 14.0
+    var coinAmount = 1.0
+    
     
     
     var theKraken: KrakenBoss?
@@ -57,7 +61,10 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var theWhale: WhaleBoss?
     var theCrab: BomberClass?
     
+    var persistentData: NSUserDefaults?
+    
     override func didMoveToView(view: SKView) {
+        persistentData = NSUserDefaults.standardUserDefaults()
         /* Setup your scene here */
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
@@ -140,7 +147,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 let fadeOut = SKAction.fadeOutWithDuration(1)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
-                //secondBody.node?.physicsBody = nil
+                secondBody.categoryBitMask = 99999
                 secondBody.node?.runAction(sequence)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
@@ -149,7 +156,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 let fadeOut = SKAction.fadeOutWithDuration(1)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
-                //secondBody.node?.physicsBody = nil
+                secondBody.categoryBitMask = 99999
                 secondBody.node?.runAction(sequence)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
@@ -158,7 +165,18 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 let fadeOut = SKAction.fadeOutWithDuration(1)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
-                //secondBody.node?.physicsBody = nil
+                secondBody.categoryBitMask = 99999
+                secondBody.node?.runAction(sequence)
+        }
+        
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryCoin.rawValue){
+                (self.userData?.objectForKey("inventory") as! Inventory).gold += CGFloat(coinAmount)
+                persistentData!.setObject((self.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+                let fadeOut = SKAction.fadeOutWithDuration(1)
+                let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+                let sequence = SKAction.sequence([fadeOut, codeBlock])
+                secondBody.categoryBitMask = 99999
                 secondBody.node?.runAction(sequence)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
@@ -189,8 +207,11 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                     //killAll
                     
                     for node in self.children {
+                        if (node as? SKEmitterNode != nil){
+                            node.removeFromParent()
+                        }
                         if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "whale" && node.name != "kraken" && node.name != "life" && node.name != "gold" && node.name != "chest" && node.name != "lifeheart" && node.name != "regenClock"{
-                            let fadeOut = SKAction.fadeOutWithDuration(1)
+                            let fadeOut = SKAction.fadeOutWithDuration(0.3)
                             let codeBlock = SKAction.runBlock({node.removeFromParent()})
                             let sequence = SKAction.sequence([fadeOut, codeBlock])
                             node.runAction(sequence)
@@ -208,6 +229,11 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
                 if (secondBody.node as? WaveNode != nil){
                     theHero!.takeDamage(waterWaveDamage)
+                    let fadeOut = SKAction.fadeOutWithDuration(1)
+                    let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+                    let sequence = SKAction.sequence([fadeOut, codeBlock])
+                    secondBody.categoryBitMask = 99999
+                    secondBody.node?.runAction(sequence)
                 }else{
                     if !self.childNodeWithName("safeSpot1")!.containsPoint(theHero!.position){
                         theHero!.takeDamage(oilWaveDamage)
@@ -245,6 +271,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         let sequence = SKAction.sequence([waitAction2, runBlock2, waitAction, runBlock])
         self.addChild(phaseText)
         phaseText.runAction(sequence)
+        
         
         
         //Balance Speed Stuff
@@ -319,6 +346,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         crabDamage = CGFloat(3)
         lifeBuff = CGFloat(13)
         speedBuff = CGFloat(40)
+        coinAmount = 1
         let test = true
         if phase > 10 {
             if test{
@@ -334,6 +362,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             crabDamage = CGFloat(4)
             lifeBuff = CGFloat(16)
             speedBuff = CGFloat(50)
+            coinAmount = 2
         }else if phase > 20 {
             if test{
                 theHero!.life = 32
@@ -348,6 +377,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             crabDamage = CGFloat(8)
             lifeBuff = CGFloat(32)
             speedBuff = CGFloat(60)
+            coinAmount = 3
         }else if phase > 30 {
             if test{
                 theHero!.life = 64
@@ -362,12 +392,14 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             crabDamage = CGFloat(16)
             lifeBuff = CGFloat(64)
             speedBuff = CGFloat(70)
+            coinAmount = 4
         }else if phase > 40 {
             if test{
                 theHero!.life = 130
                 maxLife = 130
                 theHero!.regeneration = 25
                 heroSpeed = 200
+                coinAmount = 5
             }
             spikeDamage = CGFloat(72)
             waterWaveDamage = CGFloat(96)
@@ -388,7 +420,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         let type = randomWithMin(1, 4)
         let buff = BuffSpawn.buffAtPos(CGPointMake(CGFloat(randX), CGFloat(randY)), type: type)
         let fadeInAction = SKAction.fadeInWithDuration(1)
-        let waitAction = SKAction.waitForDuration(10)
+        let waitAction = SKAction.waitForDuration(5)
         let removeBlock = SKAction.runBlock({buff.removeFromParent()})
         self.addChild(buff)
         let sequence = SKAction.sequence([fadeInAction, waitAction, removeBlock])
@@ -404,13 +436,18 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             self.lastWaterWave = currentTime
             self.lastTentacle = currentTime
             self.lastWave = currentTime
+            self.lastCoin = currentTime
+            self.lastBuff = currentTime
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
         if currentTime - lastWave  > 45{
             for node in self.children{
+                if node as? SKEmitterNode != nil {
+                    node.removeFromParent()
+                }
                 if let aNode = node as? SKSpriteNode{
-                    if aNode.name == "safeSpot1" || aNode.name == "safeSpot2" || aNode.name == "crab" || aNode.name == "krill" || aNode.name == "wave" || aNode.name == "tentacle"{
+                    if aNode.name == "safeSpot1" || aNode.name == "safeSpot2" || aNode.name == "crab" || aNode.name == "krill" || aNode.name == "wave" || aNode.name == "tentacle" || aNode.name == "bomb" || aNode.name == "coin" || aNode.name == "buff"{
                         aNode.removeFromParent()
                     }
                 }
@@ -450,7 +487,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             theWhale!.shootKrill()
         }
         
-        if currentTime - lastBeachball  > crabAttackSpeed && !levelOver && !inking && ((phase % 10 == 3)  || (phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0)){
+        if currentTime - lastBeachball  > crabAttackSpeed && !levelOver && !inking && ((phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0)){
             self.lastBeachball = currentTime
             theCrab!.throwBomb()
         }
@@ -468,16 +505,25 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         
         if (currentTime - lastCrab > crabSpawnSpeed && !self.levelOver && !inking) {
-            var xMatch = CGFloat(randomWithMin(Int(self.frame.minX + 10), Int(self.frame.maxX - 10)))
+            var xMatch = CGFloat(randomWithMin(Int(10), Int(self.frame.maxX - 10)))
             self.addChild(MiniCrab.crabDash(CGPointMake(xMatch, self.frame.maxY + 30), endPosition: CGPointMake(xMatch, self.frame.minY)))
             
             
             self.lastCrab = currentTime
         }
         
+        if (currentTime - lastCoin > coinSpawnSpeed && !self.levelOver && !inking) {
+            let xCoin = CGFloat(randomWithMin(Int(20), Int(self.frame.maxX - 20)))
+            let yCoin = CGFloat(randomWithMin(Int(20), Int(self.frame.maxY - 50)))
+            self.addChild(CoinNode.coinAtPos(CGPointMake(xCoin, yCoin)))
+            
+            
+            self.lastCoin = currentTime
+        }
+        
         
         //******REGEN CODE
-        if currentTime - lastHeal  > healSpeed{
+        if currentTime - lastHeal  > healSpeed && !levelOver{
             self.lastHeal = currentTime
             if theHero!.life < maxLife{
                 theHero!.life! += theHero!.regeneration!

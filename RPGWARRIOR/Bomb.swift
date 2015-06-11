@@ -79,7 +79,6 @@ class Bomb: SKSpriteNode {
                     }else if gauntletLevel.phase > 40{
                         damage = 32
                     }
-                    damage = CGFloat(gauntletLevel.phase) * 2.0
                     theHero.takeDamage(damage)
                 }else{
                     theHero.takeDamage(1.0)
