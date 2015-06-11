@@ -109,7 +109,7 @@ class KrakenBoss: SKSpriteNode {
     
     func getSafePosition() -> CGPoint {
         let xPos = randomWithMin(25, Int(self.parent!.frame.width) - 25)
-        let yPos = randomWithMin(115, Int(self.parent!.frame.height) - 155)
+        let yPos = randomWithMin(115, Int(self.parent!.frame.height) - 185)
         return CGPointMake(CGFloat(xPos), CGFloat(yPos))
     }
     
