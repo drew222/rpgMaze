@@ -106,9 +106,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         runGauntlet.name = "runGauntlet"
         runGauntlet.zPosition = 3
         self.addChild(runGauntlet)
-        runGauntlet.runAction(SKAction.fadeInWithDuration(1))
         let waitAction = SKAction.waitForDuration(2)
-        let waitToFadeOut = SKAction.waitForDuration(1)
+        let waitToFadeOut = SKAction.waitForDuration(1.5)
         let fadeOut = SKAction.fadeOutWithDuration(3)
         let runBlock = SKAction.runBlock({runGauntlet.removeFromParent()})
         let sequence = SKAction.sequence([waitToFadeOut, fadeOut, waitAction, runBlock])
