@@ -105,8 +105,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         runGauntlet.size = CGSizeMake(300, 50)
         runGauntlet.name = "runGauntlet"
         runGauntlet.zPosition = 3
-        runGauntlet.runAction(SKAction.fadeInWithDuration(1))
         self.addChild(runGauntlet)
+        runGauntlet.runAction(SKAction.fadeInWithDuration(1))
         let waitAction = SKAction.waitForDuration(2)
         let waitToFadeOut = SKAction.waitForDuration(1)
         let fadeOut = SKAction.fadeOutWithDuration(3)
