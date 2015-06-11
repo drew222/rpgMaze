@@ -103,8 +103,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         background.zPosition = -1
         self.addChild(background)
         let runGauntlet = SKSpriteNode(imageNamed: "Run_The_Gauntlet_Text.png")
-        runGauntlet.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
-        runGauntlet.size = CGSizeMake(300, 50)
+        runGauntlet.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame) + 75)
+        runGauntlet.size = CGSizeMake(280, 40)
         runGauntlet.name = "runGauntlet"
         runGauntlet.zPosition = 3
         self.addChild(runGauntlet)
@@ -277,7 +277,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         //Phase Transition
         var phaseText = SKSpriteNode()
-        phaseText.size = CGSizeMake(200, 70)
+        phaseText.size = CGSizeMake(240, 60)
         phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
         phaseText.name = "phaseText"
         let runBlock = SKAction.runBlock({phaseText.removeFromParent()})
