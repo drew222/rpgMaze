@@ -100,6 +100,19 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         background.name = "background"
         background.zPosition = -1
         self.addChild(background)
+        let runGauntlet = SKSpriteNode(imageNamed: "Run_The_Gauntlet_Text.png")
+        runGauntlet.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        runGauntlet.size = CGSizeMake(300, 50)
+        runGauntlet.name = "runGauntlet"
+        runGauntlet.zPosition = 3
+        runGauntlet.runAction(SKAction.fadeInWithDuration(1))
+        self.addChild(runGauntlet)
+        let waitAction = SKAction.waitForDuration(2)
+        let waitToFadeOut = SKAction.waitForDuration(1)
+        let fadeOut = SKAction.fadeOutWithDuration(3)
+        let runBlock = SKAction.runBlock({runGauntlet.removeFromParent()})
+        let sequence = SKAction.sequence([waitToFadeOut, fadeOut, waitAction, runBlock])
+        runGauntlet.runAction(sequence)
         self.physicsWorld.contactDelegate = self
         theHero!.updateStats()
         //*****REGENE CODE****
