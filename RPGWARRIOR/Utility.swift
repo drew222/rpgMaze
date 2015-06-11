@@ -765,6 +765,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             item.size = size
             scene.addChild(item)
         }
+    //ZACH LOOT DROP**********************
     }else if level == "phase1"{
         let myNum = randomWithMin(0, 100)
         if myNum > 50{
