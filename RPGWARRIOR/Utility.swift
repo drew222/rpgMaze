@@ -766,24 +766,432 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(item)
         }
     //ZACH LOOT DROP**********************
+    //GAUNTLET PHASES
     }else if level == "phase1"{
+        //10% selected store item, 90% 30 booty
         let myNum = randomWithMin(0, 100)
-        if myNum > 50{
-            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 98{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
-        } else {
+        } else if (myNum <= 98) && (myNum > 96){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 96) && (myNum > 94){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 94) && (myNum > 92){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 92) && (myNum > 90){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+        else {
             let gold = SKSpriteNode(imageNamed: "Booty_1")
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
+        
+    } else if level == "phase2"{
+        //20% selected store item, 80% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 96{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 96) && (myNum > 92){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 92) && (myNum > 88){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 88) && (myNum > 84){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 84) && (myNum > 80){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+        
+    } else if level == "phase3"{
+        //30% selected store item, 70% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 94{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 94) && (myNum > 88){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 88) && (myNum > 82){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 82) && (myNum > 76){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 76) && (myNum > 70){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+        
+    } else if level == "phase4"{
+        //40% selected store item, 60% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 92{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 92) && (myNum > 84){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 84) && (myNum > 76){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 76) && (myNum > 68){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 68) && (myNum > 60){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+    } else if level == "phase5"{
+        //50% selected store item, 50% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 90{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 90) && (myNum > 80){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 80) && (myNum > 70){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 70) && (myNum > 60){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 60) && (myNum > 50){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+    } else if level == "phase6"{
+        //60% selected store item, 40% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 88{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 88) && (myNum > 76){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 76) && (myNum > 64){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 64) && (myNum > 52){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 52) && (myNum > 40){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+    } else if level == "phase7"{
+        //70% selected store item, 30% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 86{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 86) && (myNum > 72){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 72) && (myNum > 58){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 58) && (myNum > 44){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 44) && (myNum > 30){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+    } else if level == "phase8"{
+        //80% selected store item, 20% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 84{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 84) && (myNum > 68){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 68) && (myNum > 52){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 52) && (myNum > 36){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 36) && (myNum > 20){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+        
+    } else if level == "phase9"{
+        //90% selected store item, 10% 30 booty
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 82{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 82) && (myNum > 64){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 64) && (myNum > 46){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 46) && (myNum > 28){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 28) && (myNum > 10){
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+            
+        else {
+            let gold = SKSpriteNode(imageNamed: "Booty_1")
+            gold.name = "gold"
+            gold.position = position
+            gold.size = size
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            scene.addChild(gold)
+        }
+        
+    } else if level == "phase10"{
+        //100% selected store item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
+        if myNum > 80{
+            let item = ItemClass.itemInSpace("Top_Hat_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 80) && (myNum > 60){
+            let item = ItemClass.itemInSpace("Monocle_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 60) && (myNum > 40){
+            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 40) && (myNum > 20){
+            let item = ItemClass.itemInSpace("Watch_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }//***************************************************************************
+        
     }
+
+
+
+
+
+
+
+
+
 }
 
 

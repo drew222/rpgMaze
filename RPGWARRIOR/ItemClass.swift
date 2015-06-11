@@ -127,7 +127,7 @@ class ItemClass: SKSpriteNode {
             return [("Life", CGFloat(3)), ("Regeneration", CGFloat(1)), ("Movement", CGFloat(10))]
         }else if picName == "Sunhat_1"{
             price = 70
-            return [("Life", CGFloat(1)), ("Regeneration", CGFloat(1)), ("Movement", CGFloat(5))]
+            return [("Life", CGFloat(1)), ("Regeneration", CGFloat(1)), ("Movement", CGFloat(8))]
         }else if picName == "Sand_Bucket_1"{
             price = 40
             return [("Life", CGFloat(1)), ("Movement", CGFloat(10))]
@@ -139,7 +139,7 @@ class ItemClass: SKSpriteNode {
             return [("Life", CGFloat(1)), ("Movement", CGFloat(5))]
         }else if picName == "Shades_1"{
             price = 100
-            return [("Life", CGFloat(2)), ("Movement", CGFloat(7))]
+            return [("Life", CGFloat(2)), ("Movement", CGFloat(10))]
         }else if picName == "Sweatband_1"{
             price = 10
             return [("Movement", CGFloat(5))]
