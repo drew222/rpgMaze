@@ -105,16 +105,16 @@ class ItemClass: SKSpriteNode {
             return [("Life", CGFloat(3)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(10))]
             //gauntlet rings
         }else if picName == "Dusk_1"{
-            price = 100
+            price = 200
             return [("Life", CGFloat(4)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(10))]
         }else if picName == "Nightfall_1"{
-            price = 200
+            price = 225
             return [("Life", CGFloat(8)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(12))]
         }else if picName == "Twilight_1"{
-            price = 350
+            price = 250
             return [("Life", CGFloat(16)), ("Regeneration", CGFloat(3)), ("Movement", CGFloat(15))]
         }else if picName == "Tomorrows_End_1"{
-            price = 500
+            price = 275
             return [("Life", CGFloat(32)), ("Regeneration", CGFloat(4)), ("Movement", CGFloat(20))]
 
             
@@ -151,16 +151,16 @@ class ItemClass: SKSpriteNode {
             return [("Life", CGFloat(1)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(5))]
             //gauntlet noggin
         }else if picName == "Wicked_1"{
-            price = 100
+            price = 200
             return [("Life", CGFloat(4)), ("Regeneration", CGFloat(2)), ("Movement", CGFloat(10))]
         }else if picName == "Sinister_1"{
-            price = 200
+            price = 225
             return [("Life", CGFloat(8)), ("Regeneration", CGFloat(3)), ("Movement", CGFloat(12))]
         }else if picName == "Insidious_1"{
-            price = 350
+            price = 250
             return [("Life", CGFloat(16)), ("Regeneration", CGFloat(5)), ("Movement", CGFloat(15))]
         }else if picName == "Lust_Of_Lucifer_1"{
-            price = 500
+            price = 275
             return [("Life", CGFloat(33)), ("Regeneration", CGFloat(8)), ("Movement", CGFloat(20))]
         
         //NECK ITEMS
@@ -190,22 +190,22 @@ class ItemClass: SKSpriteNode {
             return [("Life", CGFloat(1)), ("Regeneration", CGFloat(2))]
         }else if picName == "Sun_Screen_1"{
             price = 100
-            return [("Movement", CGFloat(5)), ("Regeneration", CGFloat(1)), ("Life", CGFloat(2))]
+            return [("Movement", CGFloat(10)), ("Regeneration", CGFloat(1)), ("Life", CGFloat(2))]
         }else if picName == "Barnacles_1"{
             price = 5
             return [("Regeneration", CGFloat(1))]
             //gauntlet neck
         }else if picName == "Fear_1"{
-            price = 100
+            price = 200
             return [("Life", CGFloat(4)), ("Regeneration", CGFloat(3)), ("Movement", CGFloat(10))]
         }else if picName == "Nightmare_1"{
-            price = 200
+            price = 225
             return [("Life", CGFloat(8)), ("Regeneration", CGFloat(3)), ("Movement", CGFloat(12))]
         }else if picName == "Insomnia_1"{
-            price = 350
+            price = 250
             return [("Life", CGFloat(16)), ("Regeneration", CGFloat(5)), ("Movement", CGFloat(15))]
         }else if picName == "The_Jitters_1"{
-            price = 500
+            price = 275
             return [("Life", CGFloat(32)), ("Regeneration", CGFloat(9)), ("Movement", CGFloat(20))]
     }
             return []

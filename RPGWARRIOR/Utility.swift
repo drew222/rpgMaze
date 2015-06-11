@@ -2382,11 +2382,11 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
         //****************************************************************************
     }
-    else if level == "phase27"{
-        //70% T2 item, 30% T1 item
+    else if level == "phase37"{
+        //70% T3 item, 30% T2 item
         let myNum = randomWithMin(0, 100)
         
-        //*****TIER 2 ITEMS***************************************************************
+        //*****TIER 3 ITEMS***************************************************************
         if (myNum > 77) {
             let item = ItemClass.itemInSpace("Insidious_1")
             item.position = position
@@ -2403,7 +2403,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             item.size = size
             scene.addChild(item)
         }
-            //*****TIER 1 ITEMS***************************************************************
+            //*****TIER 2 ITEMS***************************************************************
         else if (myNum <= 30) && (myNum > 20){
             let item = ItemClass.itemInSpace("Sinister_1")
             item.position = position
@@ -2524,6 +2524,411 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(item)
         }
     }
+    else if level == "phase41"{
+        //10% T4 item, 90% T3 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 4 ITEMS***************************************************************
+        if (myNum > 97) {
+            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 97) && (myNum > 94){
+            let item = ItemClass.itemInSpace("The_Jitters_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 94) && (myNum > 90){
+            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 3 ITEMS***************************************************************
+        else if (myNum <= 90) && (myNum > 60){
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 60) && (myNum > 30){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase42"{
+        //20% T4 item, 80% T3 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 3 ITEMS***************************************************************
+        if (myNum > 93) {
+            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 93) && (myNum > 86){
+            let item = ItemClass.itemInSpace("The_Jitters_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 86) && (myNum > 80){
+            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 2 ITEMS***************************************************************
+        else if (myNum <= 80) && (myNum > 53){
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 53) && (myNum > 26){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase43"{
+        //30% T4 item, 70% T3 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 4 ITEMS***************************************************************
+        if (myNum > 90) {
+            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 90) && (myNum > 80){
+            let item = ItemClass.itemInSpace("The_Jitters_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 80) && (myNum > 70){
+            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 3 ITEMS***************************************************************
+        else if (myNum <= 70) && (myNum > 47){
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 47) && (myNum > 24){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase44"{
+        //40% T4 item, 60% T3 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 4 ITEMS***************************************************************
+        if (myNum > 87) {
+            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 87) && (myNum > 74){
+            let item = ItemClass.itemInSpace("The_Jitters_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 74) && (myNum > 60){
+            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 3 ITEMS***************************************************************
+        else if (myNum <= 60) && (myNum > 40){
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 40) && (myNum > 20){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase45"{
+        //50% T4 item, 50% T3 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 4 ITEMS***************************************************************
+        if (myNum > 83) {
+            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 83) && (myNum > 66){
+            let item = ItemClass.itemInSpace("The_Jitters_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 66) && (myNum > 50){
+            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 3 ITEMS***************************************************************
+        else if (myNum <= 50) && (myNum > 33){
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 33) && (myNum > 16){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase46"{
+        //60% T4 item, 40% T3 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 4 ITEMS***************************************************************
+        if (myNum > 80) {
+            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 80) && (myNum > 60){
+            let item = ItemClass.itemInSpace("The_Jitters_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 60) && (myNum > 40){
+            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 3 ITEMS***************************************************************
+        else if (myNum <= 40) && (myNum > 27){
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 27) && (myNum > 14){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase47"{
+        //70% T4 item, 30% T3 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 4 ITEMS***************************************************************
+        if (myNum > 77) {
+            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 77) && (myNum > 54){
+            let item = ItemClass.itemInSpace("The_Jitters_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 54) && (myNum > 30){
+            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 3 ITEMS***************************************************************
+        else if (myNum <= 30) && (myNum > 20){
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 20) && (myNum > 10){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase48"{
+        //80% T4 item, 20% T3 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 4 ITEMS***************************************************************
+        if (myNum > 73) {
+            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 73) && (myNum > 46){
+            let item = ItemClass.itemInSpace("The_Jitters_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 46) && (myNum > 20){
+            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 3 ITEMS***************************************************************
+        else if (myNum <= 20) && (myNum > 13){
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 13) && (myNum > 6){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase49"{
+        //90% T4 item, 10% T3 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 4 ITEMS***************************************************************
+        if (myNum > 70) {
+            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 70) && (myNum > 40){
+            let item = ItemClass.itemInSpace("The_Jitters_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 40) && (myNum > 10){
+            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+            //*****TIER 3 ITEMS***************************************************************
+        else if (myNum <= 10) && (myNum > 7){
+            let item = ItemClass.itemInSpace("Insidious_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 7) && (myNum > 4){
+            let item = ItemClass.itemInSpace("Insomnia_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Twilight_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+        //****************************************************************************
+    }
+    else if level == "phase50"{
+        //100% T4 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 4 ITEMS***************************************************************
+        if (myNum > 67) {
+            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 67) && (myNum > 34){
+            let item = ItemClass.itemInSpace("The_Jitters_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+    }
+    else if level == "phase51"{
+        //100% T4 item
+        let myNum = randomWithMin(0, 100)
+        
+        //*****TIER 4 ITEMS***************************************************************
+        if (myNum > 67) {
+            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else if (myNum <= 67) && (myNum > 34){
+            let item = ItemClass.itemInSpace("The_Jitters_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        } else {
+            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            item.position = position
+            item.size = size
+            scene.addChild(item)
+        }
+    }
+
 
     
     
