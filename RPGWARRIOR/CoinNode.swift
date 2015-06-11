@@ -17,6 +17,10 @@ class CoinNode: SKSpriteNode {
         coin.name = "coin"
         coin.size = CGSizeMake(30, 30)
         coin.setupPhysicsBody()
+        let waitDuration = SKAction.waitForDuration(5)
+        let runBlock = SKAction.runBlock({coin.removeFromParent()})
+        let sequence = SKAction.sequence([waitDuration, runBlock])
+        coin.runAction(sequence)
         return coin
     }
     

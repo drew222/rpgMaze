@@ -44,8 +44,6 @@
 		DC4A44401AD064A800BE81D8 /* World1Level13.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A443F1AD064A800BE81D8 /* World1Level13.swift */; };
 		DC4A44421AD071EE00BE81D8 /* World1Level14.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A44411AD071EE00BE81D8 /* World1Level14.swift */; };
 		DC5925571B26436800244578 /* Whale_Flesh_Ring_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925561B26436800244578 /* Whale_Flesh_Ring_Text.png */; };
-		DC59255D1B265F7700244578 /* Regen_Timer_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59255C1B265F7700244578 /* Regen_Timer_2.png */; };
-		DC59255F1B265F7F00244578 /* Regen_Timer_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59255E1B265F7F00244578 /* Regen_Timer_1.png */; };
 		DC5925631B26BCE700244578 /* Level_Revealing_Tide_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925621B26BCE700244578 /* Level_Revealing_Tide_1.png */; };
 		DC5925651B26BCEF00244578 /* Tutorial_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925641B26BCEF00244578 /* Tutorial_Button_1.png */; };
 		DC5925671B26BCF800244578 /* World_Coming_Soon_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5925661B26BCF800244578 /* World_Coming_Soon_Button_1.png */; };
@@ -161,6 +159,8 @@
 		DC59267F1B2911BF00244578 /* Tutorial_Screen_5.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59267A1B2911BF00244578 /* Tutorial_Screen_5.png */; };
 		DC5926801B2911BF00244578 /* Tutorial_Screen_7.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59267B1B2911BF00244578 /* Tutorial_Screen_7.png */; };
 		DC5926811B2911BF00244578 /* Tutorial_Screen_8.png in Resources */ = {isa = PBXBuildFile; fileRef = DC59267C1B2911BF00244578 /* Tutorial_Screen_8.png */; };
+		DC5926831B29278100244578 /* Regen_Timer_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5926821B29278100244578 /* Regen_Timer_1.png */; };
+		DC5926851B29278800244578 /* Regen_Timer_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5926841B29278800244578 /* Regen_Timer_2.png */; };
 		DCBCE4371B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */; };
 		DCBCE4391B12EB4800FCF4A5 /* Sweaty_Wristband_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */; };
 		DCBCE43B1B12EB5400FCF4A5 /* Regeneration_Symbol_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */; };
@@ -605,8 +605,6 @@
 		DC4A443F1AD064A800BE81D8 /* World1Level13.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level13.swift; sourceTree = "<group>"; };
 		DC4A44411AD071EE00BE81D8 /* World1Level14.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level14.swift; sourceTree = "<group>"; };
 		DC5925561B26436800244578 /* Whale_Flesh_Ring_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Whale_Flesh_Ring_Text.png; sourceTree = "<group>"; };
-		DC59255C1B265F7700244578 /* Regen_Timer_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regen_Timer_2.png; sourceTree = "<group>"; };
-		DC59255E1B265F7F00244578 /* Regen_Timer_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regen_Timer_1.png; sourceTree = "<group>"; };
 		DC5925621B26BCE700244578 /* Level_Revealing_Tide_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Level_Revealing_Tide_1.png; sourceTree = "<group>"; };
 		DC5925641B26BCEF00244578 /* Tutorial_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Button_1.png; sourceTree = "<group>"; };
 		DC5925661B26BCF800244578 /* World_Coming_Soon_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = World_Coming_Soon_Button_1.png; sourceTree = "<group>"; };
@@ -722,6 +720,8 @@
 		DC59267A1B2911BF00244578 /* Tutorial_Screen_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_5.png; sourceTree = "<group>"; };
 		DC59267B1B2911BF00244578 /* Tutorial_Screen_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_7.png; sourceTree = "<group>"; };
 		DC59267C1B2911BF00244578 /* Tutorial_Screen_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_8.png; sourceTree = "<group>"; };
+		DC5926821B29278100244578 /* Regen_Timer_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regen_Timer_1.png; sourceTree = "<group>"; };
+		DC5926841B29278800244578 /* Regen_Timer_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regen_Timer_2.png; sourceTree = "<group>"; };
 		DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_2.png; sourceTree = "<group>"; };
 		DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_1.png; sourceTree = "<group>"; };
 		DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regeneration_Symbol_1.png; sourceTree = "<group>"; };
@@ -1723,8 +1723,8 @@
 				DCFD74381B0153300054E370 /* World_1_Level_28_Text.png */,
 				DCFD74391B0153300054E370 /* World_1_Level_29_Text.png */,
 				DCFD743B1B0153300054E370 /* World_1_Level_30_Text.png */,
-				DC59255E1B265F7F00244578 /* Regen_Timer_1.png */,
-				DC59255C1B265F7700244578 /* Regen_Timer_2.png */,
+				DC5926821B29278100244578 /* Regen_Timer_1.png */,
+				DC5926841B29278800244578 /* Regen_Timer_2.png */,
 				DCFD74431B0153300054E370 /* Yes_Text_1.png */,
 				DCFD74441B0153300054E370 /* Zone_Screen_1.png */,
 				DCFD74451B0153300054E370 /* Zone_Screen_2.png */,
@@ -1985,6 +1985,7 @@
 				DCFD74EE1B0153300054E370 /* Watch_2.png in Resources */,
 				DC5926131B27A2CA00244578 /* Phase_19_Text.png in Resources */,
 				DCFD75511B01D9100054E370 /* Seashell_Necklace_1.png in Resources */,
+				DC5926851B29278800244578 /* Regen_Timer_2.png in Resources */,
 				DC5926681B290E3800244578 /* Phase_39_Text.png in Resources */,
 				DCFD748D1B0153300054E370 /* Kraken_Movement_13.png in Resources */,
 				DCFD74B01B0153300054E370 /* Rusty_Silver_Ring_2.png in Resources */,
@@ -2060,7 +2061,6 @@
 				DC5926601B290E3800244578 /* Phase_31_Text.png in Resources */,
 				DC5925B11B26BED000244578 /* Phase_6_Text.png in Resources */,
 				EEB809261B13981D00A221E2 /* Watch_Text.png in Resources */,
-				DC59255D1B265F7700244578 /* Regen_Timer_2.png in Resources */,
 				EEB8091C1B13981D00A221E2 /* Seashell_Necklace_Text.png in Resources */,
 				DCFD74801B0153300054E370 /* Inventory_Slot_3.png in Resources */,
 				DCFD74DB1B0153300054E370 /* Tentacle_33.png in Resources */,
@@ -2122,7 +2122,6 @@
 				DCFD74D31B0153300054E370 /* Tentacle_25.png in Resources */,
 				DCF23DFB1B0BA9CD00484040 /* Lifejacket_2.png in Resources */,
 				DCFD74C01B0153300054E370 /* Store_Button_1.png in Resources */,
-				DC59255F1B265F7F00244578 /* Regen_Timer_1.png in Resources */,
 				DCFD75051B0153300054E370 /* World_1_Level_10_Text.png in Resources */,
 				EEB809061B13981D00A221E2 /* Bling_Ring_Text.png in Resources */,
 				DC5925B41B26BED000244578 /* Phase_9_Text.png in Resources */,
@@ -2225,6 +2224,7 @@
 				DCFD74501B0153300054E370 /* Beach_Crab_2.png in Resources */,
 				DCF23E231B0BABC300484040 /* Sunhat_1.png in Resources */,
 				DCFD74A21B0153300054E370 /* Mossy_Silver_Ring_1.png in Resources */,
+				DC5926831B29278100244578 /* Regen_Timer_1.png in Resources */,
 				DCBCE4391B12EB4800FCF4A5 /* Sweaty_Wristband_1.png in Resources */,
 				DCFD746D1B0153300054E370 /* Crab_Boss_9.png in Resources */,
 				DCFD74EA1B0153300054E370 /* Treasure_Chest_4.png in Resources */,

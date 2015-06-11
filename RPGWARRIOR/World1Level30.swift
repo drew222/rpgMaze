@@ -128,6 +128,9 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         updateLevel()
         
+        //maxLife = 100000
+        //theHero!.life! = 100000
+        
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -210,7 +213,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                         if (node as? SKEmitterNode != nil){
                             node.removeFromParent()
                         }
-                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "whale" && node.name != "kraken" && node.name != "life" && node.name != "gold" && node.name != "chest" && node.name != "lifeheart" && node.name != "regenClock"{
+                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "whale" && node.name != "kraken" && node.name != "life" && node.name != "gold" && node.name != "chest" && node.name != "lifeheart" && node.name != "regenClock" && node.name != "coin"{
                             let fadeOut = SKAction.fadeOutWithDuration(0.3)
                             let codeBlock = SKAction.runBlock({node.removeFromParent()})
                             let sequence = SKAction.sequence([fadeOut, codeBlock])
@@ -255,7 +258,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     
     
     func updateLevel() {
-        if phase < 50{
+        if phase < 51{
             phase += 1
         }
         
@@ -269,12 +272,15 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         let waitAction = SKAction.waitForDuration(3)
         let waitAction2 = SKAction.waitForDuration(5)
         let sequence = SKAction.sequence([waitAction2, runBlock2, waitAction, runBlock])
-        self.addChild(phaseText)
+        if phase < 51{
+            self.addChild(phaseText)
+        }
         phaseText.runAction(sequence)
         
         
         
         //Balance Speed Stuff
+        if phase < 51 {
         if phase % 10 == 1{
             crabSpawnSpeed = 0.2
             buffSpawnSpeed = 10
@@ -336,6 +342,25 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             crabAttackSpeed = 1.5
             buffSpawnSpeed = 7
         }
+        }else{
+            //if level 51, say infinite level
+            let infText = SKSpriteNode(imageNamed: "Endless_Mode_Text")
+            infText.position = CGPointMake(self.frame.midX, self.frame.midY)
+            infText.size = self.frame.size
+            infText.name == "infText"
+            let wait = SKAction.waitForDuration(3)
+            let runBlock = SKAction.runBlock({infText.removeFromParent()})
+            let sequence = SKAction.sequence([wait, runBlock])
+            infText.runAction(sequence)
+            self.addChild(infText)
+            //infinit level here
+            krakenAttackSpeedSpike -= 0.1
+            whaleAttackSpeedKrill -= 0.1
+            whaleAttackSpeedWave -= 0.1
+            crabSpawnSpeed -= 0.01
+            crabAttackSpeed -= 0.02
+            buffSpawnSpeed = 7
+        }
         
         
         //Damages
@@ -347,7 +372,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         lifeBuff = CGFloat(13)
         speedBuff = CGFloat(40)
         coinAmount = 1
-        let test = true
+        let test = false
         if phase > 10 {
             if test{
                 theHero!.life = 16
