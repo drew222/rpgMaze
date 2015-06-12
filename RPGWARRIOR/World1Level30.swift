@@ -42,7 +42,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var whaleAttackSpeedKrill = 10.0
     var crabAttackSpeed = 11.0
     var crabSpawnSpeed = 5.0
-    var phase = 50
+    var phase = 0
     var lastWaterWave = 0.0
     var spikeDamage = CGFloat(3)
     var waterWaveDamage = CGFloat(3)
@@ -211,8 +211,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         updateLevel()
         
-        maxLife = 100000
-        theHero!.life! = 100000
+        //maxLife = 100000
+        //theHero!.life! = 100000
         
     }
     
