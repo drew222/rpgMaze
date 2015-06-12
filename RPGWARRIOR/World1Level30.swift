@@ -141,6 +141,10 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         self.addChild(clockNode)
         //********************
         
+        
+        maxLife = 100000
+        theHero!.life! = 100000
+        
         //******CHECKPOINT FROM GEAR CHECK*****
         let checkPoint = SKSpriteNode(imageNamed: "Checkpoint_Text_1")
         checkPoint.position = CGPointMake(self.frame.midX, self.frame.midY + 150)
@@ -211,8 +215,6 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         updateLevel()
         
-        //maxLife = 100000
-        //theHero!.life! = 100000
         
     }
     
@@ -431,7 +433,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 let infText = SKSpriteNode(imageNamed: "Endless_Mode_Text")
                 infText.position = CGPointMake(self.frame.midX, self.frame.midY)
                 infText.size = self.frame.size
-                infText.name == "infText"
+                infText.name = "infText"
                 let wait = SKAction.waitForDuration(3)
                 let runBlock = SKAction.runBlock({infText.removeFromParent()})
                 let sequence = SKAction.sequence([wait, runBlock])
