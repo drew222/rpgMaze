@@ -374,54 +374,54 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         }else if phase % 10 == 3{
             whaleAttackSpeedKrill = 2.3
             whaleAttackSpeedWave = 15
-            crabSpawnSpeed = 0.6
+            crabSpawnSpeed = 0.4
             buffSpawnSpeed = 10
         }else if phase % 10 == 4{
             whaleAttackSpeedKrill = 2.8
             whaleAttackSpeedWave = 15
-            crabSpawnSpeed = 0.7
+            crabSpawnSpeed = 0.5
             crabAttackSpeed = 1.5
             buffSpawnSpeed = 10
         }else if phase % 10 == 5{
             krakenAttackSpeedSpike = 10.0
             whaleAttackSpeedKrill = 3.1
             whaleAttackSpeedWave = 15
-            crabSpawnSpeed = 0.9
+            crabSpawnSpeed = 0.5
             crabAttackSpeed = 2.0
             buffSpawnSpeed = 10
         }else if phase % 10 == 6{
             krakenAttackSpeedSpike = 9.5
             whaleAttackSpeedKrill = 3.0
             whaleAttackSpeedWave = 13
-            crabSpawnSpeed = 0.8
+            crabSpawnSpeed = 0.5
             crabAttackSpeed = 1.9
             buffSpawnSpeed = 9
         }else if phase % 10 == 7{
             krakenAttackSpeedSpike = 9.0
             whaleAttackSpeedKrill = 2.8
             whaleAttackSpeedWave = 12
-            crabSpawnSpeed = 0.8
+            crabSpawnSpeed = 0.4
             crabAttackSpeed = 1.8
             buffSpawnSpeed = 8
         }else if phase % 10 == 8{
             krakenAttackSpeedSpike = 8.5
             whaleAttackSpeedKrill = 2.5
             whaleAttackSpeedWave = 11
-            crabSpawnSpeed = 0.7
+            crabSpawnSpeed = 0.4
             crabAttackSpeed = 1.7
             buffSpawnSpeed = 8
         }else if phase % 10 == 9{
             krakenAttackSpeedSpike = 8.0
             whaleAttackSpeedKrill = 2.3
             whaleAttackSpeedWave = 10
-            crabSpawnSpeed = 0.7
+            crabSpawnSpeed = 0.4
             crabAttackSpeed = 1.6
             buffSpawnSpeed = 7
         }else if phase % 10 == 0{
             krakenAttackSpeedSpike = 8.0
             whaleAttackSpeedKrill = 2.3
             whaleAttackSpeedWave = 9
-            crabSpawnSpeed = 0.6
+            crabSpawnSpeed = 0.3
             crabAttackSpeed = 1.5
             buffSpawnSpeed = 7
         }
@@ -584,7 +584,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver && !inking && ((phase % 10 == 5) || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9) || (phase % 10 == 0) || (phase == 51) && !droppedChest){
+        if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver && !inking && ((phase % 10 == 5) || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9) || (phase % 10 == 0) || (phase == 51)) && !droppedChest{
             self.lastTentacle = currentTime
             theKraken!.throwTentacle()
         }
@@ -596,17 +596,17 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             //}
         }
         
-        if currentTime - lastKrill  > whaleAttackSpeedKrill && !levelOver && !inking && ((phase % 10 == 2) || (phase % 10 == 3)  || (phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0) || (phase == 51) && !droppedChest){
+        if currentTime - lastKrill  > whaleAttackSpeedKrill && !levelOver && !inking && ((phase % 10 == 2) || (phase % 10 == 3)  || (phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0) || (phase == 51)) && !droppedChest{
             self.lastKrill = currentTime
             theWhale!.shootKrill()
         }
         
-        if currentTime - lastBeachball  > crabAttackSpeed && !levelOver && !inking && ((phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0) || (phase == 51) && !droppedChest){
+        if currentTime - lastBeachball  > crabAttackSpeed && !levelOver && !inking && ((phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0) || (phase == 51)) && !droppedChest{
             self.lastBeachball = currentTime
             theCrab!.throwBomb()
         }
         
-        if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver && !inking  && ((phase % 10 == 3) || (phase % 10 == 4) || (phase % 10 == 5)  || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8)  || (phase % 10 == 9) || (phase % 10 == 0) || (phase == 51) && !droppedChest){
+        if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver && !inking  && ((phase % 10 == 3) || (phase % 10 == 4) || (phase % 10 == 5)  || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8)  || (phase % 10 == 9) || (phase % 10 == 0) || (phase == 51)) && !droppedChest{
             self.lastWaterWave = currentTime
             let yValue = randomWithMin(Int(self.frame.minY + 100), Int(self.frame.maxY - 175))
             let xBool = randomWithMin(0, 10)
@@ -691,7 +691,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                         if (node as? SKEmitterNode != nil) && node.name != "inkAttack"{
                             node.removeFromParent()
                         }
-                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "life" && node.name != "gold" && node.name != "chest" && node.name != "lifeheart" && node.name != "regenClock" && node.name != "deathSplat"{
+                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "kraken" && node.name != "wizard" && node.name != "whale" && node.name != "life" && node.name != "gold" && node.name != "chest" && node.name != "lifeheart" && node.name != "regenClock" && node.name != "deathSplat"{
                             node.removeFromParent()
                         }
                     }
