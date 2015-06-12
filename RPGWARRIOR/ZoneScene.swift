@@ -44,6 +44,9 @@ class ZoneScene: SKScene {
             if let bestLevel = defaults.objectForKey("highestLevel") as? Int{
                 world1Menu!.highestLevel = bestLevel
             }
+            if let bestTime = defaults.objectForKey("highestTime") as? Double{
+                world1Menu!.highestTime = bestTime
+            }
             if let gold = defaults.objectForKey("gold") as? CGFloat{
                 inventory!.gold = gold
             }
