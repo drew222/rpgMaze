@@ -174,7 +174,7 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
         
         // ### Crabs ###
         //mid crabs
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX - 200, self.frame.midY + 20)))
+        //self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX - 200, self.frame.midY + 20)))
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX + 200, self.frame.midY + 20)))
         //top 2
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX + 141, self.frame.midY + 161)))
@@ -199,7 +199,7 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
                 let aHero = self.childNodeWithName("hero") as! HeroClass
-                aHero.takeDamage(1)
+                aHero.takeDamage(2)
                 secondBody.node!.removeFromParent()
         }
         //HERO VS SEASHELL

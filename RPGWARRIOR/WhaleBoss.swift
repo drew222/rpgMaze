@@ -86,8 +86,8 @@ class WhaleBoss: SKSpriteNode {
         var lengthOfBot = gapPosition.y - 25
         var theSpeed = 150
         if (self.parent as? World1Level30 != nil) {
-            let extraSpeed = (self.parent as! World1Level30).phase * 2
-            theSpeed = 60 + extraSpeed
+            //let extraSpeed = (self.parent as! World1Level30).phase * 2
+            theSpeed = 65
         }
         self.parent!.addChild(WaveNode.waveAtPosition(CGPointMake(gapPosition.x, gapPosition.y + (lengthOfTop)/2), length: lengthOfTop, distance: self.parent!.frame.maxX + 50, speed: theSpeed))
         self.parent!.addChild(WaveNode.waveAtPosition(CGPointMake(gapPosition.x, lengthOfBot/2), length: lengthOfBot, distance: self.parent!.frame.maxX + 50, speed: theSpeed))

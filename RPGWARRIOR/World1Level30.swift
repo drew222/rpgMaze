@@ -28,6 +28,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var droppedItem = false
     var droppedChest = false
     var splatted = false
+    var firstEndless = true
     //REGEN CODE******
     var lastHeal: Double = 0.0
     let healSpeed = 5.0
@@ -140,10 +141,80 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         self.addChild(clockNode)
         //********************
         
+        
+        maxLife = 100000
+        theHero!.life! = 100000
+        
+        //******CHECKPOINT FROM GEAR CHECK*****
+        let checkPoint = SKSpriteNode(imageNamed: "Checkpoint_Text_1")
+        checkPoint.position = CGPointMake(self.frame.midX, self.frame.midY + 150)
+        checkPoint.size = CGSizeMake(300, 75)
+        let afadeOut = SKAction.fadeOutWithDuration(1)
+        let aRunBlock = SKAction.runBlock({checkPoint.removeFromParent()})
+        let aSequence = SKAction.sequence([afadeOut, aRunBlock])
+        checkPoint.runAction(aSequence)
+        if theHero!.life > 128 {
+            var phaseText = SKSpriteNode()
+            phaseText.size = CGSizeMake(240, 60)
+            phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
+            phaseText.name = "phaseText"
+            let runBlock = SKAction.runBlock({phaseText.removeFromParent()})
+            let runBlock2 = SKAction.runBlock({phaseText.texture = SKTexture(imageNamed: "Phase_\(self.phase)_Text")})
+            let waitAction = SKAction.waitForDuration(3)
+            let waitAction2 = SKAction.waitForDuration(5)
+            let sequence = SKAction.sequence([waitAction2, runBlock2, waitAction, runBlock])
+            self.addChild(phaseText)
+            phaseText.runAction(sequence)
+            self.addChild(checkPoint)
+            phase = 40
+        }else if theHero!.life > 63{
+            var phaseText = SKSpriteNode()
+            phaseText.size = CGSizeMake(240, 60)
+            phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
+            phaseText.name = "phaseText"
+            let runBlock = SKAction.runBlock({phaseText.removeFromParent()})
+            let runBlock2 = SKAction.runBlock({phaseText.texture = SKTexture(imageNamed: "Phase_\(self.phase)_Text")})
+            let waitAction = SKAction.waitForDuration(3)
+            let waitAction2 = SKAction.waitForDuration(5)
+            let sequence = SKAction.sequence([waitAction2, runBlock2, waitAction, runBlock])
+            self.addChild(phaseText)
+            phaseText.runAction(sequence)
+            self.addChild(checkPoint)
+            phase = 30
+        }else if theHero!.life > 31{
+            var phaseText = SKSpriteNode()
+            phaseText.size = CGSizeMake(240, 60)
+            phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
+            phaseText.name = "phaseText"
+            let runBlock = SKAction.runBlock({phaseText.removeFromParent()})
+            let runBlock2 = SKAction.runBlock({phaseText.texture = SKTexture(imageNamed: "Phase_\(self.phase)_Text")})
+            let waitAction = SKAction.waitForDuration(3)
+            let waitAction2 = SKAction.waitForDuration(5)
+            let sequence = SKAction.sequence([waitAction2, runBlock2, waitAction, runBlock])
+            self.addChild(phaseText)
+            phaseText.runAction(sequence)
+            self.addChild(checkPoint)
+            phase = 20
+        }else if theHero!.life > 15{
+            var phaseText = SKSpriteNode()
+            phaseText.size = CGSizeMake(240, 60)
+            phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
+            phaseText.name = "phaseText"
+            let runBlock = SKAction.runBlock({phaseText.removeFromParent()})
+            let runBlock2 = SKAction.runBlock({phaseText.texture = SKTexture(imageNamed: "Phase_\(self.phase)_Text")})
+            let waitAction = SKAction.waitForDuration(3)
+            let waitAction2 = SKAction.waitForDuration(5)
+            let sequence = SKAction.sequence([waitAction2, runBlock2, waitAction, runBlock])
+            self.addChild(phaseText)
+            phaseText.runAction(sequence)
+            self.addChild(checkPoint)
+            phase = 10
+        }
+        
+        //*************************************
+        
         updateLevel()
         
-        //maxLife = 100000
-        //theHero!.life! = 100000
         
     }
     
@@ -274,6 +345,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         if phase < 51{
             phase += 1
         }
+    
         
         //Phase Transition
         var phaseText = SKSpriteNode()
@@ -304,68 +376,71 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         }else if phase % 10 == 3{
             whaleAttackSpeedKrill = 2.3
             whaleAttackSpeedWave = 15
-            crabSpawnSpeed = 0.6
+            crabSpawnSpeed = 0.4
             buffSpawnSpeed = 10
         }else if phase % 10 == 4{
             whaleAttackSpeedKrill = 2.8
             whaleAttackSpeedWave = 15
-            crabSpawnSpeed = 0.7
+            crabSpawnSpeed = 0.5
             crabAttackSpeed = 1.5
             buffSpawnSpeed = 10
         }else if phase % 10 == 5{
             krakenAttackSpeedSpike = 10.0
             whaleAttackSpeedKrill = 3.1
             whaleAttackSpeedWave = 15
-            crabSpawnSpeed = 0.9
+            crabSpawnSpeed = 0.5
             crabAttackSpeed = 2.0
             buffSpawnSpeed = 10
         }else if phase % 10 == 6{
             krakenAttackSpeedSpike = 9.5
             whaleAttackSpeedKrill = 3.0
             whaleAttackSpeedWave = 13
-            crabSpawnSpeed = 0.8
+            crabSpawnSpeed = 0.5
             crabAttackSpeed = 1.9
             buffSpawnSpeed = 9
         }else if phase % 10 == 7{
             krakenAttackSpeedSpike = 9.0
             whaleAttackSpeedKrill = 2.8
             whaleAttackSpeedWave = 12
-            crabSpawnSpeed = 0.8
+            crabSpawnSpeed = 0.4
             crabAttackSpeed = 1.8
             buffSpawnSpeed = 8
         }else if phase % 10 == 8{
             krakenAttackSpeedSpike = 8.5
             whaleAttackSpeedKrill = 2.5
             whaleAttackSpeedWave = 11
-            crabSpawnSpeed = 0.7
+            crabSpawnSpeed = 0.4
             crabAttackSpeed = 1.7
             buffSpawnSpeed = 8
         }else if phase % 10 == 9{
             krakenAttackSpeedSpike = 8.0
             whaleAttackSpeedKrill = 2.3
             whaleAttackSpeedWave = 10
-            crabSpawnSpeed = 0.7
+            crabSpawnSpeed = 0.4
             crabAttackSpeed = 1.6
             buffSpawnSpeed = 7
         }else if phase % 10 == 0{
             krakenAttackSpeedSpike = 8.0
             whaleAttackSpeedKrill = 2.3
             whaleAttackSpeedWave = 9
-            crabSpawnSpeed = 0.6
+            crabSpawnSpeed = 0.3
             crabAttackSpeed = 1.5
             buffSpawnSpeed = 7
         }
         }else{
-            //if level 51, say infinite level
-            let infText = SKSpriteNode(imageNamed: "Endless_Mode_Text")
-            infText.position = CGPointMake(self.frame.midX, self.frame.midY)
-            infText.size = self.frame.size
-            infText.name == "infText"
-            let wait = SKAction.waitForDuration(3)
-            let runBlock = SKAction.runBlock({infText.removeFromParent()})
-            let sequence = SKAction.sequence([wait, runBlock])
-            infText.runAction(sequence)
-            self.addChild(infText)
+            //if first level 51, say infinite level
+            if firstEndless {
+                let infText = SKSpriteNode(imageNamed: "Endless_Mode_Text")
+                infText.position = CGPointMake(self.frame.midX, self.frame.midY)
+                infText.size = self.frame.size
+                infText.name = "infText"
+                let wait = SKAction.waitForDuration(3)
+                let runBlock = SKAction.runBlock({infText.removeFromParent()})
+                let sequence = SKAction.sequence([wait, runBlock])
+                infText.runAction(sequence)
+                self.addChild(infText)
+                firstEndless = false
+            }
             //infinit level here
             krakenAttackSpeedSpike -= 0.1
             whaleAttackSpeedKrill -= 0.1
@@ -401,7 +476,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             lifeBuff = CGFloat(16)
             speedBuff = CGFloat(50)
             coinAmount = 2
-        }else if phase > 20 {
+        }
+        if phase > 20 {
             if test{
                 theHero!.life = 32
                 maxLife = 32
@@ -416,7 +492,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             lifeBuff = CGFloat(32)
             speedBuff = CGFloat(60)
             coinAmount = 3
-        }else if phase > 30 {
+        }
+        if phase > 30 {
             if test{
                 theHero!.life = 64
                 maxLife = 64
@@ -431,7 +508,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             lifeBuff = CGFloat(64)
             speedBuff = CGFloat(70)
             coinAmount = 4
-        }else if phase > 40 {
+        }
+        if phase > 40 {
             if test{
                 theHero!.life = 130
                 maxLife = 130
@@ -508,7 +586,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver && !inking && ((phase % 10 == 5) || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9) || (phase % 10 == 0) && !droppedChest){
+        if currentTime - lastTentacle  > krakenAttackSpeedSpike && !levelOver && !inking && ((phase % 10 == 5) || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9) || (phase % 10 == 0) || (phase == 51)) && !droppedChest{
             self.lastTentacle = currentTime
             theKraken!.throwTentacle()
         }
@@ -520,17 +598,17 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             //}
         }
         
-        if currentTime - lastKrill  > whaleAttackSpeedKrill && !levelOver && !inking && ((phase % 10 == 2) || (phase % 10 == 3)  || (phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0) && !droppedChest){
+        if currentTime - lastKrill  > whaleAttackSpeedKrill && !levelOver && !inking && ((phase % 10 == 2) || (phase % 10 == 3)  || (phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0) || (phase == 51)) && !droppedChest{
             self.lastKrill = currentTime
             theWhale!.shootKrill()
         }
         
-        if currentTime - lastBeachball  > crabAttackSpeed && !levelOver && !inking && ((phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0) && !droppedChest){
+        if currentTime - lastBeachball  > crabAttackSpeed && !levelOver && !inking && ((phase % 10 == 4) || (phase % 10 == 5) || (phase % 10 == 6)  || (phase % 10 == 7) || (phase % 10 == 8) || (phase % 10 == 9)  || (phase % 10 == 0) || (phase == 51)) && !droppedChest{
             self.lastBeachball = currentTime
             theCrab!.throwBomb()
         }
         
-        if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver && !inking  && ((phase % 10 == 3) || (phase % 10 == 4) || (phase % 10 == 5)  || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8)  || (phase % 10 == 9) || (phase % 10 == 0) && !droppedChest){
+        if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver && !inking  && ((phase % 10 == 3) || (phase % 10 == 4) || (phase % 10 == 5)  || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8)  || (phase % 10 == 9) || (phase % 10 == 0) || (phase == 51)) && !droppedChest{
             self.lastWaterWave = currentTime
             let yValue = randomWithMin(Int(self.frame.minY + 100), Int(self.frame.maxY - 175))
             let xBool = randomWithMin(0, 10)
@@ -559,6 +637,18 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             self.lastCoin = currentTime
         }
         
+        //add Timer if above level 50
+        if phase == 51{
+            if let timer = self.childNodeWithName("timer") as? SKLabelNode{
+                timer.text = "\(self.totalGameTime)"
+            }else{
+                self.totalGameTime = 0.0
+                let aTimer = SKLabelNode(fontNamed: "ChalkboardSE-Bold")
+                aTimer.text = "\(self.totalGameTime)"
+                aTimer.name = "timer"
+            }
+        }
+        
         
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed && theHero!.life > 0{
@@ -584,7 +674,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 splat.name = "deathSplat"
                 splat.position = theHero!.position
                 self.addChild(splat)
-                theHero!.removeAllActions()
+                theHero!.removeActionForKey("runAction")
                 theHero!.runAction(SKAction.fadeOutWithDuration(0))
                 theHero!.position = CGPointMake(self.frame.midX, 100)
                 theHero!.runAction(SKAction.fadeInWithDuration(2))
@@ -603,13 +693,27 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                         if (node as? SKEmitterNode != nil) && node.name != "inkAttack"{
                             node.removeFromParent()
                         }
-                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "life" && node.name != "gold" && node.name != "chest" && node.name != "lifeheart" && node.name != "regenClock" && node.name != "deathSplat"{
+                        if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "kraken" && node.name != "wizard" && node.name != "whale" && node.name != "life" && node.name != "gold" && node.name != "chest" && node.name != "lifeheart" && node.name != "regenClock" && node.name != "deathSplat"{
                             node.removeFromParent()
                         }
                     }
                     self.childNodeWithName("lifeNumber")?.removeFromParent()
                     self.addChild(TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY)))
                     droppedChest = true
+                    
+                    //set the highest phase in data and main menu
+                    if (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel < (30 + phase)  && phase < 51{
+                        (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel = 30 + phase
+                        let persistentData = NSUserDefaults.standardUserDefaults()
+                        persistentData.setObject(30 + phase, forKey: "highestLevel")
+                    }
+                    if phase == 51 {
+                        if (self.userData?.objectForKey("menu") as! MainMenuScene).highestTime < totalGameTime{
+                            (self.userData?.objectForKey("menu") as! MainMenuScene).highestTime = totalGameTime
+                            let persistentData = NSUserDefaults.standardUserDefaults()
+                            persistentData.setObject(totalGameTime, forKey: "highestTime")
+                        }
+                    }
                 }
             
             }
