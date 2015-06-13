@@ -142,8 +142,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         //********************
         
         
-        maxLife = 100000
-        theHero!.life! = 100000
+        maxLife = 3000
+        theHero!.life! = 3000
         
         //******CHECKPOINT FROM GEAR CHECK*****
         let checkPoint = SKSpriteNode(imageNamed: "Checkpoint_Text_1")
@@ -212,7 +212,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         }
         
         //*************************************
-        
+        phase = 49
         updateLevel()
         
         
@@ -302,6 +302,9 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                             let fadeOut = SKAction.fadeOutWithDuration(0.3)
                             let codeBlock = SKAction.runBlock({node.removeFromParent()})
                             let sequence = SKAction.sequence([fadeOut, codeBlock])
+                            if node.name == "bomb" {
+                                node.removeAllActions()
+                            }
                             node.runAction(sequence)
                         }
                     }
@@ -434,9 +437,13 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 infText.position = CGPointMake(self.frame.midX, self.frame.midY)
                 infText.size = self.frame.size
                 infText.name = "infText"
+                infText.runAction(SKAction.fadeOutWithDuration(0))
                 let wait = SKAction.waitForDuration(3)
+                let wait2 = SKAction.waitForDuration(4)
+                let fadeInAction = SKAction.fadeInWithDuration(1)
+                let runBlock2 = SKAction.runBlock({infText.removeFromParent()})
                 let runBlock = SKAction.runBlock({infText.removeFromParent()})
-                let sequence = SKAction.sequence([wait, runBlock])
+                let sequence = SKAction.sequence([wait2, fadeInAction, wait, runBlock])
                 infText.runAction(sequence)
                 self.addChild(infText)
                 firstEndless = false
