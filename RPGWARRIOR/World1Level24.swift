@@ -94,29 +94,29 @@ class World1Level24: SKScene, SKPhysicsContactDelegate {
         
         // ### Crabs ###
         //middle three vertical crabs
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 50, self.frame.maxY - 150), endPosition: CGPointMake(self.frame.midX + 50, self.frame.minY + 50)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 50, self.frame.maxY - 150), endPosition: CGPointMake(self.frame.midX - 50, self.frame.minY + 50)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.maxY - 150), endPosition: CGPointMake(self.frame.midX, self.frame.minY + 50)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 50, self.frame.maxY - 150), endPosition: CGPointMake(self.frame.midX + 50, self.frame.minY + 50)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 50, self.frame.maxY - 150), endPosition: CGPointMake(self.frame.midX - 50, self.frame.minY + 50)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.maxY - 150), endPosition: CGPointMake(self.frame.midX, self.frame.minY + 50)))
         //top left two vertical crabs
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.midY + 20), endPosition: CGPointMake(self.frame.minX + 30, self.frame.maxY - 50)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 80, self.frame.midY + 20), endPosition: CGPointMake(self.frame.minX + 80, self.frame.maxY - 50)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.midY + 20), endPosition: CGPointMake(self.frame.minX + 30, self.frame.maxY - 50)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 80, self.frame.midY + 20), endPosition: CGPointMake(self.frame.minX + 80, self.frame.maxY - 50)))
         //top right two vertical crabs
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.midY + 20), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.maxY - 50)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 80, self.frame.midY + 20), endPosition: CGPointMake(self.frame.maxX - 80, self.frame.maxY - 50)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.midY + 20), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.maxY - 50)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.maxX - 80, self.frame.midY + 20), endPosition: CGPointMake(self.frame.maxX - 80, self.frame.maxY - 50)))
         //bottom left two vertical crabs
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.midY - 20), endPosition: CGPointMake(self.frame.minX + 30, self.frame.minY + 50)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 80, self.frame.midY - 20), endPosition: CGPointMake(self.frame.minX + 80, self.frame.minY + 50)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.midY - 20), endPosition: CGPointMake(self.frame.minX + 30, self.frame.minY + 50)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 80, self.frame.midY - 20), endPosition: CGPointMake(self.frame.minX + 80, self.frame.minY + 50)))
         //bottom right two vertical crabs
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.midY - 20), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 50)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 80, self.frame.midY - 20), endPosition: CGPointMake(self.frame.maxX - 80, self.frame.minY + 50)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.midY - 20), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 50)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.maxX - 80, self.frame.midY - 20), endPosition: CGPointMake(self.frame.maxX - 80, self.frame.minY + 50)))
         //horizontal crabs (bottom to top)
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 30), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 30)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.minY + 180),
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 30), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 30)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.minY + 180),
             endPosition: CGPointMake(self.frame.minX + 30, self.frame.minY + 180)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 330), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 330)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.minY + 480),
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 330), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 330)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.minY + 480),
             endPosition: CGPointMake(self.frame.minX + 30, self.frame.minY + 480)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 630), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 630)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 630), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 630)))
         
         
         
@@ -139,10 +139,10 @@ class World1Level24: SKScene, SKPhysicsContactDelegate {
                 aHero.takeDamage(1)
                 secondBody.node!.removeFromParent()
         }
-        //HERO VS MINI CRAB
+        //HERO VS MUD CRAB
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
-                theHero!.takeDamage(3)
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMudCrab.rawValue){
+                theHero!.takeDamage(5)
                 let fadeOut = SKAction.fadeOutWithDuration(0.6)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])

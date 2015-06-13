@@ -38,6 +38,10 @@ enum CollisionBitMasks: UInt32{
     case collisionCategorySpike = 4096
     case collisionCategoryBuff = 8192
     case collisionCategoryCoin = 16384
+    case collisionCategoryMudCrab = 32768
+    case collisionCategoryWhiteShell = 65536
+    case collisionCategoryGreyShell = 131072
+    case collisionCategoryBeachBall = 262144
 }
 
 

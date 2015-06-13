@@ -111,10 +111,10 @@ class World1Level22: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        //HERO VS BEACH CRAB
+        //HERO VS MUD CRAB
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
-                theHero!.takeDamage(3)
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMudCrab.rawValue){
+                theHero!.takeDamage(5)
                 let fadeOut = SKAction.fadeOutWithDuration(0.6)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
@@ -162,10 +162,10 @@ class World1Level22: SKScene, SKPhysicsContactDelegate {
         }
         self.totalGameTime += currentTime - self.lastUpdatesTime
         
-        //BEACH BALL BOMBS
+        //BEACH BALLS
         if currentTime - lastBomb  > bomberAttackSpeed && !inkSplatted && !droppedChest{
             self.lastBomb = currentTime
-            theBomber!.throwBomb()
+            theBomber!.throwBeachBall()
         }
         
         //CRAB STAMPEDE
@@ -175,7 +175,7 @@ class World1Level22: SKScene, SKPhysicsContactDelegate {
         
         
         if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver && !self.droppedItem && !inkSplatted && !droppedChest) {
-            self.addChild(MiniCrab.crabDash(CGPointMake(self.frame.minX, yMatch), endPosition: CGPointMake(self.frame.maxX, yMatch)))
+            self.addChild(MudCrab.crabDash(CGPointMake(self.frame.minX, yMatch), endPosition: CGPointMake(self.frame.maxX, yMatch)))
             
             
             self.timeSinceCrabAdded = 0

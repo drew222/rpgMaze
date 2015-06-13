@@ -105,7 +105,35 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 45, 25)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 45, 25)))
         
+        //bot whites
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 25, 85)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 65, 85)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 25, 85)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 65, 85)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 70, 55)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 70, 55)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 70, 25)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 70, 25)))
+        
+        
+        
+        
         //top shells
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 25)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 25)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 65)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 65)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 105)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 105)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 145)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 145)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 145)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.maxY - 145)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 20, self.frame.maxY - 145)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.maxY - 145)))
+        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 20, self.frame.maxY - 145)))
+        
+        //top whites
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 25)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 25)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 65)))
@@ -133,12 +161,21 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        
+        //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                theHero!.takeDamage(3)
+                theHero!.takeDamage(1)
                 (secondBody.node as! MineNode).explode(secondBody.node!.position)
         }
+        //HERO VS WHITESHELL
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWhiteShell.rawValue){
+                theHero!.takeDamage(2)
+                (secondBody.node as! WhiteShell).explode(secondBody.node!.position)
+        }
+        
+        
+        
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySpike.rawValue){
                 theHero!.takeDamage(10)
@@ -147,7 +184,7 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
                 secondBody.node?.runAction(sequence)
         }
-        //HERO VS SEASHELL
+        //HERO VS INK
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
                 if !self.childNodeWithName("safeSpot1")!.containsPoint(theHero!.position){

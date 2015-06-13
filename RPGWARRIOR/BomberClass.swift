@@ -146,6 +146,60 @@ class BomberClass: SKSpriteNode {
        // self.parent!.addChild(bomb)
         //bomb.explode(bomb.position)
     }
+    func throwBeachBall(){
+        if self.isDead{
+            return
+        }
+        
+        let codeBlock0 = SKAction.runBlock({
+            var textures: [SKTexture] = []
+            //for var i = 1; i <= 4; i=i+1{
+            // textures.append(SKTexture(imageNamed:"Clam_Boss_\(i)"))
+            //}
+            textures.append(SKTexture(imageNamed:"Crab_Boss_2"))
+            textures.append(SKTexture(imageNamed:"Crab_Boss_3"))
+            textures.append(SKTexture(imageNamed:"Crab_Boss_4"))
+            textures.append(SKTexture(imageNamed:"Crab_Boss_6"))
+            textures.append(SKTexture(imageNamed:"Crab_Boss_7"))
+            textures.append(SKTexture(imageNamed:"Crab_Boss_8"))
+            textures.append(SKTexture(imageNamed:"Crab_Boss_9"))
+            textures.append(SKTexture(imageNamed:"Crab_Boss_10"))
+            textures.append(SKTexture(imageNamed:"Crab_Boss_11"))
+            textures.append(SKTexture(imageNamed:"Crab_Boss_10"))
+            textures.append(SKTexture(imageNamed:"Crab_Boss_9"))
+            textures.append(SKTexture(imageNamed:"Crab_Boss_8"))
+            textures.append(SKTexture(imageNamed:"Crab_Boss_7"))
+            textures.append(SKTexture(imageNamed:"Crab_Boss_6"))
+            textures.append(SKTexture(imageNamed:"Crab_Boss_4"))
+            textures.append(SKTexture(imageNamed:"Crab_Boss_3"))
+            let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.05)
+            let repeatAction0 = SKAction.repeatActionForever(animation)
+            self.runAction(repeatAction0, withKey: "repeatAction")
+        })
+        let codeBlock = SKAction.runBlock({
+            var textures: [SKTexture] = []
+            textures.append(SKTexture(imageNamed: "Crab_Boss_12"))
+            textures.append(SKTexture(imageNamed: "Crab_Boss_5"))
+            textures.append(SKTexture(imageNamed: "Crab_Boss_1"))
+            textures.append(SKTexture(imageNamed: "Crab_Boss_2"))
+            textures.append(SKTexture(imageNamed: "Crab_Boss_1"))
+            textures.append(SKTexture(imageNamed: "Crab_Boss_5"))
+            let animation2 = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+            let sequenceRepeat = SKAction.sequence([animation2])
+            let repeatAction = SKAction.repeatActionForever(sequenceRepeat)
+            self.runAction(repeatAction , withKey: "repeatAction")
+            let hero = self.parent!.childNodeWithName("hero") as! HeroClass
+            let shootAtPoint = self.getBombLocation(hero.position)
+            //shoot the fireball
+            let beachBall = BeachBall.bombAtPosition(self.getBombLocation(hero.position))
+            self.parent!.addChild(beachBall)
+            beachBall.explode(beachBall.position)
+        })
+        let sequence = SKAction.sequence([codeBlock0, SKAction.waitForDuration(0.9), codeBlock])
+        self.runAction(sequence)
+       
+    }
+
     
     func takeDamage(howMuch: CGFloat){
         self.life -= howMuch

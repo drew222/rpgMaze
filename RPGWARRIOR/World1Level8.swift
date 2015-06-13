@@ -135,7 +135,7 @@ class World1Level8: SKScene, SKPhysicsContactDelegate {
         //HERO VS WAVE
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
-                theHero!.takeDamage(2)
+                theHero!.takeDamage(10)
         }
     }
     

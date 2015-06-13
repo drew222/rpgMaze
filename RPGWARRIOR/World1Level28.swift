@@ -96,9 +96,9 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
         
         if isPlus{
             //add bot right corner
-            self.addChild(MineNode.mineAtPos(CGPointMake(290, 120)))
-            self.addChild(MineNode.mineAtPos(CGPointMake(320, 150)))
-            self.addChild(MineNode.mineAtPos(CGPointMake(340, 180)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(290, 120)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(320, 150)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(340, 180)))
             //add top right corner
             self.addChild(MineNode.mineAtPos(CGPointMake(210, 560)))
             self.addChild(MineNode.mineAtPos(CGPointMake(250, 560)))
@@ -134,9 +134,9 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
             }
         } else {
         //add bot right corner
-        self.addChild(MineNode.mineAtPos(CGPointMake(260, 120)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(290, 150)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(310, 180)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(260, 120)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(290, 150)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(310, 180)))
         //add top right corner
         self.addChild(MineNode.mineAtPos(CGPointMake(180, 490)))
         self.addChild(MineNode.mineAtPos(CGPointMake(220, 490)))
@@ -202,10 +202,10 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
                 aHero.takeDamage(2)
                 secondBody.node!.removeFromParent()
         }
-        //HERO VS SEASHELL
+        //HERO VS GREYSHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                let mine = secondBody.node as? MineNode
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryGreyShell.rawValue){
+                let mine = secondBody.node as? GreyShell
                 mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
                 theHero!.takeDamage(10)
         }

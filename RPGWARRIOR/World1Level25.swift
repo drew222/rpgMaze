@@ -98,37 +98,37 @@ class World1Level25: SKScene, SKPhysicsContactDelegate {
         //********************
         
         //bot shells
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, 65)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 45, 65)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 45, 65)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 45, 25)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 45, 25)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX, 65)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 45, 65)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 45, 65)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 45, 25)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 45, 25)))
         
         //top shells
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 25)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 25)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 65)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 65)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 105)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 105)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 145)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 145)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 145)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.maxY - 145)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 20, self.frame.maxY - 145)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.maxY - 145)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 20, self.frame.maxY - 145)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 25)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 25)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 65)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 65)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 105)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 105)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 145)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 145)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 145)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.maxY - 145)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 20, self.frame.maxY - 145)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.maxY - 145)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 20, self.frame.maxY - 145)))
 
         for (var i = 30; CGFloat(i) < (self.frame.maxX - CGFloat(10)); i += 40) {
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY)))
         }
         if isPlus{
-            self.addChild(MiniCrab.crabAtPosition(CGPointMake(50, 200), endPosition: CGPointMake(self.frame.maxX - 50, 200)))
-            self.addChild(MiniCrab.crabAtPosition(CGPointMake(50, 500), endPosition: CGPointMake(self.frame.maxX - 50, 500)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(50, 200), endPosition: CGPointMake(self.frame.maxX - 50, 200)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(50, 500), endPosition: CGPointMake(self.frame.maxX - 50, 500)))
         } else{
         //crabs
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(50, 200), endPosition: CGPointMake(self.frame.maxX - 50, 200)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(50, 450), endPosition: CGPointMake(self.frame.maxX - 50, 450)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(50, 200), endPosition: CGPointMake(self.frame.maxX - 50, 200)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(50, 450), endPosition: CGPointMake(self.frame.maxX - 50, 450)))
         }
     }
     
@@ -144,8 +144,8 @@ class World1Level25: SKScene, SKPhysicsContactDelegate {
         }
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                let mine = secondBody.node as? MineNode
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWhiteShell.rawValue){
+                let mine = secondBody.node as? WhiteShell
                 mine!.explode(secondBody.node!.position)
                 theHero!.takeDamage(2)
         }
@@ -159,8 +159,8 @@ class World1Level25: SKScene, SKPhysicsContactDelegate {
         }
         //HERO VS CRAB
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
-                theHero!.takeDamage(3)
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMudCrab.rawValue){
+                theHero!.takeDamage(5)
                 let fadeOut = SKAction.fadeOutWithDuration(0.6)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])

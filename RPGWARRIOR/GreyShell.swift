@@ -1,21 +1,25 @@
 //
-//  MineNode.swift
-//  ThrowMine
+//  GreyShell.swift
+//  RPGWARRIOR
+//
+//  Created by Cody Witt on 6/13/15.
+//  Copyright (c) 2015 Drew and Zach. All rights reserved.
 //
 
+import Foundation
 
 import Foundation
 import SpriteKit
 
-class MineNode: SKSpriteNode {
+class GreyShell: SKSpriteNode {
     
     let mineSpeed = CGFloat(300.0)
     var isArmed = true
     
-    class func mineAtPos(position: CGPoint) -> MineNode {
-        let mine = MineNode(imageNamed: "Seashell_1")
+    class func mineAtPos(position: CGPoint) -> GreyShell {
+        let mine = GreyShell(imageNamed: "Greyshell_1")
         mine.position = position
-        mine.name = "Mine"
+        mine.name = "greyshell"
         mine.setupAnimation()
         mine.setupPhysicsBody()
         mine.setScale(0.5)
@@ -23,10 +27,10 @@ class MineNode: SKSpriteNode {
     }
     
     func setupAnimation() {
-        let textures = [SKTexture(imageNamed: "Seashell_2"),
-            SKTexture(imageNamed: "Seashell_3"),
-            SKTexture(imageNamed: "Seashell_2"),
-            SKTexture(imageNamed: "Seashell_1")]
+        let textures = [SKTexture(imageNamed: "Greyshell_2"),
+            SKTexture(imageNamed: "Greyshell_3"),
+            SKTexture(imageNamed: "Greyshell_2"),
+            SKTexture(imageNamed: "Greyshell_1")]
         let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.2)
         let randomWait = SKAction.waitForDuration(0.5, withRange: 2)
         let sequence = SKAction.sequence([randomWait, animation])
@@ -36,14 +40,14 @@ class MineNode: SKSpriteNode {
     func setupPhysicsBody() {
         self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.width * 0.80, self.frame.height * 0.80))
         self.physicsBody?.affectedByGravity = false
-        self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategorySeashell.rawValue
+        self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryGreyShell.rawValue
         self.physicsBody?.collisionBitMask = 0
         self.physicsBody?.contactTestBitMask = CollisionBitMasks.collisionCategoryHero.rawValue
     }
     func explode(position: CGPoint){
         //var liteAttack: SKEmitterNode?
         let explodeCode = SKAction.runBlock({
-            let textures: [SKTexture] = [SKTexture(imageNamed:"Seashell_4")]
+            let textures: [SKTexture] = [SKTexture(imageNamed:"Greyshell_4")]
             let animation = SKAction.animateWithTextures(textures, timePerFrame: 3.0)
             self.runAction(animation)
             //self.removeActionForKey("fire")

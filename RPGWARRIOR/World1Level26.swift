@@ -110,8 +110,8 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
 
         } else{
         //crabs
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(25, 100), endPosition: CGPointMake(self.frame.maxX - 25, 100)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(25, self.frame.maxY - 130), endPosition: CGPointMake(self.frame.maxX - 25, self.frame.maxY - 130)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(25, 100), endPosition: CGPointMake(self.frame.maxX - 25, 100)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(25, self.frame.maxY - 130), endPosition: CGPointMake(self.frame.maxX - 25, self.frame.maxY - 130)))
         //shells
         //mid column c = x d = y
         for (var d = 140; d < Int(self.frame.maxY - 140); d += 40){
@@ -150,10 +150,10 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
                 mine!.explode(secondBody.node!.position)
                 theHero!.takeDamage(1)
         }
-        //HERO VS CRAB
+        //HERO VS MUDCRAB
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
-                theHero!.takeDamage(3)
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMudCrab.rawValue){
+                theHero!.takeDamage(5)
                 let fadeOut = SKAction.fadeOutWithDuration(0.6)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
