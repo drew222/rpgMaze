@@ -132,17 +132,10 @@ class World1Level8: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
-        //HERO VS SEASHELL
-        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                let mine = secondBody.node as? MineNode
-                mine!.explode(secondBody.node!.position)
-                theHero!.takeDamage(3)
-        }
         //HERO VS WAVE
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
-                theHero!.takeDamage(10)
+                theHero!.takeDamage(2)
         }
     }
     

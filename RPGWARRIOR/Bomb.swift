@@ -66,8 +66,6 @@ class Bomb: SKSpriteNode {
                 println("distance from bomb = \(distanceFromBomb)")
                 if (theHero.parent as? World1Level22 != nil){
                     theHero.takeDamage(3.0)
-                }else if (theHero.parent as? World1Level22 != nil) {
-                    theHero.takeDamage(4.0)
                 }else if let gauntletLevel = theHero.parent as? World1Level30 {
                     var damage = CGFloat(2)
                     if gauntletLevel.phase > 10 {
