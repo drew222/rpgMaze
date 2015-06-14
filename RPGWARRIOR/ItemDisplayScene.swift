@@ -47,6 +47,7 @@ class ItemDisplayScene: SKScene {
         theBackground.zPosition = -1
         self.addChild(theBackground)
         
+        
         /*
         var liteAttack: SKEmitterNode?
         let litePath = NSBundle.mainBundle().pathForResource("TreasureChestSpark", ofType: "sks")
@@ -64,15 +65,23 @@ class ItemDisplayScene: SKScene {
         continueButton!.size = CGSizeMake(350, 100)
         continueButton!.zPosition = 3
         self.addChild(continueButton!)
-
         
-        let sellNode = SKLabelNode.init(text: "\(Int(round(theItem!.price! / 5)))")
-        sellNode.position = CGPointMake(self.frame.minX + 50, self.frame.minY + 220)
+        
+        let sellNode = SKLabelNode.init(text: "BLAH\(Int(round(theItem!.price! / 5)))")
+        sellNode.position = CGPointMake(self.frame.midX + 50, self.frame.minY + 220)
         sellNode.fontName = "ChalkboardSE-Bold"
         sellNode.fontSize = 30
         sellNode.fontColor = UIColor.blackColor()
         sellNode.name = "priceButton"
+        sellNode.zPosition = 3
         self.addChild(sellNode)
+        
+        let theBackground2 = SKSpriteNode(imageNamed: "Beac_Background_1")
+        theBackground2.position = CGPointMake(self.frame.midX, self.frame.midY)
+        theBackground2.name = "background"
+        theBackground2.size = self.frame.size
+        theBackground2.zPosition = 2
+        self.addChild(theBackground2)
         
 
         let itemText = SKSpriteNode(imageNamed: "\(theItem!.itemName!)")
