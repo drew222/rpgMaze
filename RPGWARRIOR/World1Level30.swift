@@ -455,6 +455,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             crabSpawnSpeed -= 0.01
             crabAttackSpeed -= 0.02
             buffSpawnSpeed = 7
+            
         }
         
         
@@ -562,7 +563,9 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             self.lastCoin = currentTime
             self.lastBuff = currentTime
         }
-        self.totalGameTime += currentTime - self.lastUpdatesTime
+        if !droppedChest{
+            self.totalGameTime += currentTime - self.lastUpdatesTime
+        }
         
         if currentTime - lastWave  > 45 && !droppedChest{
             for node in self.children{
@@ -647,12 +650,18 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         //add Timer if above level 50
         if phase == 51{
             if let timer = self.childNodeWithName("timer") as? SKLabelNode{
-                timer.text = "\(self.totalGameTime)"
+                if !droppedChest{
+                    timer.text = "Time: \(Int(round(self.totalGameTime)))"
+                }
             }else{
                 self.totalGameTime = 0.0
                 let aTimer = SKLabelNode(fontNamed: "ChalkboardSE-Bold")
-                aTimer.text = "\(self.totalGameTime)"
+                aTimer.text = "Time: \(Int(round(self.totalGameTime)))"
                 aTimer.name = "timer"
+                aTimer.position = CGPointMake(self.frame.maxX - 70, 15)
+                aTimer.fontSize = 20
+                aTimer.fontColor = UIColor.blackColor()
+                self.addChild(aTimer)
             }
         }
         
@@ -682,6 +691,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 splat.position = theHero!.position
                 self.addChild(splat)
                 theHero!.removeActionForKey("runAction")
+                theHero!.removeActionForKey("repeatAction")
                 theHero!.runAction(SKAction.fadeOutWithDuration(0))
                 theHero!.position = CGPointMake(self.frame.midX, 100)
                 theHero!.runAction(SKAction.fadeInWithDuration(2))
@@ -709,16 +719,16 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                     droppedChest = true
                     
                     //set the highest phase in data and main menu
-                    if (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel < (30 + phase)  && phase < 51{
+                    if (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel < (30 + phase){
                         (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel = 30 + phase
                         let persistentData = NSUserDefaults.standardUserDefaults()
                         persistentData.setObject(30 + phase, forKey: "highestLevel")
                     }
                     if phase == 51 {
-                        if (self.userData?.objectForKey("menu") as! MainMenuScene).highestTime < totalGameTime{
-                            (self.userData?.objectForKey("menu") as! MainMenuScene).highestTime = totalGameTime
+                        if (self.userData?.objectForKey("menu") as! MainMenuScene).highestTime < round(totalGameTime){
+                            (self.userData?.objectForKey("menu") as! MainMenuScene).highestTime = round(totalGameTime)
                             let persistentData = NSUserDefaults.standardUserDefaults()
-                            persistentData.setObject(totalGameTime, forKey: "highestTime")
+                            persistentData.setObject(round(totalGameTime), forKey: "highestTime")
                         }
                     }
                 }

@@ -453,6 +453,8 @@ class MainMenuScene: SKScene {
         
         
         }
+        println("highestLevel = \(highestLevel)")
+        println("highestTime = \(highestTime)")
         //ADD HIGHEST LEVEL - 30 IF IN GAUNTLET AND TIMER
         if let highLevel = self.childNodeWithName("highestLevel") as? SKSpriteNode{
             highLevel.removeFromParent()
@@ -461,11 +463,16 @@ class MainMenuScene: SKScene {
             highLevel.removeFromParent()
         }
         if highestLevel > 30 {
-            let highestLevelText = SKSpriteNode(imageNamed: "Phase_\(highestLevel - 30)_Text")
-            highestLevelText.position = CGPointMake(self.frame.midX, self.frame.midY - 250)
-            highestLevelText.name = "highestLevel"
-            highestLevelText.size = CGSizeMake(250, 50)
-            self.addChild(highestLevelText)
+            var highestLevelText: SKSpriteNode?
+            if highestLevel - 30 < 51{
+                highestLevelText = SKSpriteNode(imageNamed: "Phase_\(highestLevel - 30)_Text")
+            }else{
+                highestLevelText = SKSpriteNode(imageNamed: "Phase_\(highestLevel - 31)_Text")
+            }
+            highestLevelText!.position = CGPointMake(self.frame.midX, self.frame.midY - 250)
+            highestLevelText!.name = "highestLevel"
+            highestLevelText!.size = CGSizeMake(250, 50)
+            self.addChild(highestLevelText!)
             
             if highestLevel == 81 {
                 let highestTimeText = SKLabelNode(fontNamed: "ChalkboardSE-Bold")

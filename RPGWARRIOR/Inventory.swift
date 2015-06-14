@@ -429,6 +429,8 @@ class Inventory: SKScene {
         if backPackSpaces == 0 {
         }else{
             //&&DATA
+            
+            //***********^^^^^^^^^^^^^^^^^CHANGE THIS packSPace NOT SET CORRECTLY!!!!!!^^^^^^^^^^^^^^^*************&&&&&
             let packIndex = 16 - backPackSpaces
             persistentData = NSUserDefaults.standardUserDefaults()
             persistentData!.setObject(itemName, forKey: "packSpace\(packIndex)")
