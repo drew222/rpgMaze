@@ -101,14 +101,13 @@ class World1Level5: SKScene, SKPhysicsContactDelegate {
         self.addChild(clockNode)
         //********************
         
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 140), endPosition: CGPointMake(10, 140)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 200), endPosition: CGPointMake(self.frame.maxX - 10, 200)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 250), endPosition: CGPointMake(10, 250)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 300), endPosition: CGPointMake(self.frame.maxX - 10, 300)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 350), endPosition: CGPointMake(10, 350)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 400), endPosition: CGPointMake(self.frame.maxX - 10, 400)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 130), endPosition: CGPointMake(10, 130)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 210), endPosition: CGPointMake(self.frame.maxX - 10, 210)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 290), endPosition: CGPointMake(10, 290)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 370), endPosition: CGPointMake(self.frame.maxX - 10, 370)))
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 450), endPosition: CGPointMake(10, 450)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 500), endPosition: CGPointMake(self.frame.maxX - 10, 500)))
+        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 530), endPosition: CGPointMake(self.frame.maxX - 10, 530)))
+        
         
         
     }
