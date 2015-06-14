@@ -52,7 +52,7 @@ class HeroClass: SKSpriteNode {
     
     func interactableNode(node: SKSpriteNode) -> Bool{
         if node.name != nil{
-            if node.name! == "bomb" || node.name! == "beachball" || node.name! == "Fireball" || node.name! == "krill" || node.name! == "Mine" || node.name! == "whiteshell" || node.name! == "greyshell" || node.name! == "hero" || node.name! == "spike" || node.name! == "crab" || node.name! == "mudcrab" || node.name! == "tentacle" || node.name! == "safeSpot1" || node.name! == "safeSpot2" || node.name! == "wave" || node.name! == "buff" || node.name! == "phaseText" || node.name! == "coin" || node.name! == "infText" || node.name! == "runGauntlet" || node.name! == "deathSplat" || node.name! == "timer"{
+            if node.name! == "bomb" || node.name! == "beachball" || node.name! == "Fireball" || node.name! == "krill" || node.name! == "Mine" || node.name! == "whiteshell" || node.name! == "greyshell" || node.name! == "hero" || node.name! == "spike" || node.name! == "crab" || node.name! == "mudcrab" || node.name! == "tentacle" || node.name! == "safeSpot1" || node.name! == "safeSpot2" || node.name! == "wave" || node.name! == "buff" || node.name! == "phaseText" || node.name! == "coin" || node.name! == "infText" || node.name! == "runGauntlet" || node.name! == "deathSplat" || node.name! == "timer" || node.name! == "inkBlood"{
                 return false
             }else{
                 return true
@@ -174,6 +174,19 @@ class HeroClass: SKSpriteNode {
     }
     
     func takeDamage(damage: CGFloat) -> Bool{
+        //add inkBlood
+        let inkBlood = SKSpriteNode(imageNamed: "Ink_Splat_2")
+        inkBlood.position = self.position
+        inkBlood.size = CGSizeMake(20, 20)
+        inkBlood.name = "inkBlood"
+        let waitAction = SKAction.waitForDuration(2)
+        let runBlock = SKAction.runBlock({inkBlood.runAction(SKAction.fadeOutWithDuration(1))})
+        let waitAction2 = SKAction.waitForDuration(1)
+        let runBlock2 = SKAction.runBlock({inkBlood.removeFromParent()})
+        let sequence0 = SKAction.sequence([waitAction, runBlock, waitAction2, runBlock2])
+        inkBlood.runAction(sequence0)
+        self.parent?.addChild(inkBlood)
+        
         //animate damage stuff
         let codeBlock0 = SKAction.runBlock({
             var textures: [SKTexture] = []
