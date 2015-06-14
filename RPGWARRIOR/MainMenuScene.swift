@@ -469,15 +469,15 @@ class MainMenuScene: SKScene {
             }else{
                 highestLevelText = SKSpriteNode(imageNamed: "Phase_\(highestLevel - 31)_Text")
             }
-            highestLevelText!.position = CGPointMake(self.frame.midX, self.frame.midY - 250)
+            highestLevelText!.position = CGPointMake(self.frame.midX, self.frame.midY - 300)
             highestLevelText!.name = "highestLevel"
-            highestLevelText!.size = CGSizeMake(250, 50)
+            highestLevelText!.size = CGSizeMake(150, 40)
             self.addChild(highestLevelText!)
             
             if highestLevel == 81 {
                 let highestTimeText = SKLabelNode(fontNamed: "ChalkboardSE-Bold")
                 highestTimeText.text = "\(highestTime)"
-                highestTimeText.position = CGPointMake(self.frame.midX - 50, self.frame.midY - 200)
+                highestTimeText.position = CGPointMake(self.frame.midX + 150, self.frame.midY - 300)
                 highestTimeText.name = "highestTime"
                 highestTimeText.fontSize = 20
                 self.addChild(highestTimeText)
