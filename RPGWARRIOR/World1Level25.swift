@@ -128,7 +128,7 @@ class World1Level25: SKScene, SKPhysicsContactDelegate {
         } else{
         //crabs
         self.addChild(MudCrab.crabAtPosition(CGPointMake(50, 200), endPosition: CGPointMake(self.frame.maxX - 50, 200)))
-        self.addChild(MudCrab.crabAtPosition(CGPointMake(50, 450), endPosition: CGPointMake(self.frame.maxX - 50, 450)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(50, 440), endPosition: CGPointMake(self.frame.maxX - 50, 440)))
         }
     }
     
