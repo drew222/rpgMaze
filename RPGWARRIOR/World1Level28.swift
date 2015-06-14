@@ -100,37 +100,37 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
             self.addChild(GreyShell.mineAtPos(CGPointMake(320, 150)))
             self.addChild(GreyShell.mineAtPos(CGPointMake(340, 180)))
             //add top right corner
-            self.addChild(MineNode.mineAtPos(CGPointMake(210, 560)))
-            self.addChild(MineNode.mineAtPos(CGPointMake(250, 560)))
-            self.addChild(MineNode.mineAtPos(CGPointMake(290, 540)))
-            self.addChild(MineNode.mineAtPos(CGPointMake(320, 510)))
-            self.addChild(MineNode.mineAtPos(CGPointMake(340, 480)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(210, 560)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(250, 560)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(290, 540)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(320, 510)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(340, 480)))
             //add top left corner
-            self.addChild(MineNode.mineAtPos(CGPointMake(70, 560)))
-            self.addChild(MineNode.mineAtPos(CGPointMake(90, 590)))
-            self.addChild(MineNode.mineAtPos(CGPointMake(120, 620)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(70, 560)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(90, 590)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(120, 620)))
             //add bottom left corner
-            self.addChild(MineNode.mineAtPos(CGPointMake(70, 260)))
-            self.addChild(MineNode.mineAtPos(CGPointMake(90, 230)))
-            self.addChild(MineNode.mineAtPos(CGPointMake(120, 200)))
-            self.addChild(MineNode.mineAtPos(CGPointMake(160, 180)))
-            self.addChild(MineNode.mineAtPos(CGPointMake(200, 180)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(70, 260)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(90, 230)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(120, 200)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(160, 180)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(200, 180)))
             
             //add bot horizontal row
             for (var i = 20; i < Int(self.frame.maxX - 130); i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i),  100)))
+                self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  100)))
             }
             //add top row
             for (var i = 155; i < Int(self.frame.maxX); i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 100)))
+                self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 100)))
             }
             //right column
             for (var i = Int(self.frame.maxY) - 290; i > 180; i -= 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 60, CGFloat(i))))
+                self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.maxX - 60, CGFloat(i))))
             }
             //left column
             for (var i = 290; i < Int(self.frame.maxY) - 180; i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(60, CGFloat(i))))
+                self.addChild(GreyShell.mineAtPos(CGPointMake(60, CGFloat(i))))
             }
         } else {
         //add bot right corner
@@ -138,50 +138,50 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
         self.addChild(GreyShell.mineAtPos(CGPointMake(290, 150)))
         self.addChild(GreyShell.mineAtPos(CGPointMake(310, 180)))
         //add top right corner
-        self.addChild(MineNode.mineAtPos(CGPointMake(180, 490)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(220, 490)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(260, 470)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(290, 440)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(310, 410)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(180, 490)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(220, 490)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(260, 470)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(290, 440)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(310, 410)))
         //add top left corner
-        self.addChild(MineNode.mineAtPos(CGPointMake(70, 490)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(90, 520)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(120, 550)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(70, 490)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(90, 520)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(120, 550)))
         //add bottom left corner
-        self.addChild(MineNode.mineAtPos(CGPointMake(70, 260)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(90, 230)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(120, 200)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(160, 180)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(200, 180)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(70, 260)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(90, 230)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(120, 200)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(160, 180)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(200, 180)))
         
         //add bot horizontal row
         for (var i = 20; i < Int(self.frame.maxX - 130); i += 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i),  100)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  100)))
         }
         //add top row
         for (var i = 155; i < Int(self.frame.maxX); i += 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 100)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 100)))
         }
         //right column
         for (var i = Int(self.frame.maxY) - 290; i > 180; i -= 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 60, CGFloat(i))))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.maxX - 60, CGFloat(i))))
         }
         //left column
         for (var i = 290; i < Int(self.frame.maxY) - 180; i += 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(60, CGFloat(i))))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(60, CGFloat(i))))
         }
         }
         
-        // ### Crabs ###
-        //mid crabs
-        //self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX - 200, self.frame.midY + 20)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX + 200, self.frame.midY + 20)))
+        // ### Mud Crabs ###
+       //mid
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX - 200, self.frame.midY + 20)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX + 200, self.frame.midY + 20)))
         //top 2
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX + 141, self.frame.midY + 161)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX - 141, self.frame.midY + 161)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX + 141, self.frame.midY + 161)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX - 141, self.frame.midY + 161)))
         //bot 2
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX + 141, self.frame.midY - 121)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX - 141, self.frame.midY - 121)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX + 141, self.frame.midY - 121)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX, self.frame.midY + 20), endPosition: CGPointMake(self.frame.midX - 141, self.frame.midY - 121)))
         
     }
     
@@ -199,7 +199,7 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
                 let aHero = self.childNodeWithName("hero") as! HeroClass
-                aHero.takeDamage(2)
+                aHero.takeDamage(1)
                 secondBody.node!.removeFromParent()
         }
         //HERO VS GREYSHELL
@@ -211,8 +211,8 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
         }
         //HERO VS MINI CRAB
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
-                theHero!.takeDamage(10)
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMudCrab.rawValue){
+                theHero!.takeDamage(5)
                 let fadeOut = SKAction.fadeOutWithDuration(0.6)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])

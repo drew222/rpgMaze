@@ -97,68 +97,68 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
         //crabs
         if isPlus{
             //inside square
-            self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 100, self.frame.midY + 100)))
-            self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 130, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 130, self.frame.midY - 100)))
-            self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 100, self.frame.midY - 100), endPosition: CGPointMake(self.frame.midX + 100, self.frame.midY - 100)))
-            self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 140, self.frame.midY - 100), endPosition: CGPointMake(self.frame.midX + 140, self.frame.midY + 100)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 100, self.frame.midY + 100)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 130, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 130, self.frame.midY - 100)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 100, self.frame.midY - 100), endPosition: CGPointMake(self.frame.midX + 100, self.frame.midY - 100)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 140, self.frame.midY - 100), endPosition: CGPointMake(self.frame.midX + 140, self.frame.midY + 100)))
             //outside square
-            self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 150, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 150, self.frame.midY + 150)))
-            self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 180, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 180, self.frame.midY - 150)))
-            self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 150, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 150, self.frame.midY - 150)))
-            self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 180, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 180, self.frame.midY + 150)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 150, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 150, self.frame.midY + 150)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 180, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 180, self.frame.midY - 150)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 150, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 150, self.frame.midY - 150)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 180, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 180, self.frame.midY + 150)))
 
         } else {
         //inside square
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 100, self.frame.midY + 100)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 100, self.frame.midY - 100)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 100, self.frame.midY - 100), endPosition: CGPointMake(self.frame.midX + 100, self.frame.midY - 100)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 100, self.frame.midY - 100), endPosition: CGPointMake(self.frame.midX + 100, self.frame.midY + 100)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 100, self.frame.midY + 100)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 100, self.frame.midY - 100)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 100, self.frame.midY - 100), endPosition: CGPointMake(self.frame.midX + 100, self.frame.midY - 100)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 100, self.frame.midY - 100), endPosition: CGPointMake(self.frame.midX + 100, self.frame.midY + 100)))
         //outside square
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 150, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 150, self.frame.midY + 150)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 150, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 150, self.frame.midY - 150)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 150, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 150, self.frame.midY - 150)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 150, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 150, self.frame.midY + 150)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 150, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 150, self.frame.midY + 150)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 150, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 150, self.frame.midY - 150)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 150, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 150, self.frame.midY - 150)))
+        self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 150, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 150, self.frame.midY + 150)))
         }
         
         
         //shells i = y, k = x
         //inside square
         //right wall
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY - 30)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY - 60)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY - 30)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY - 60)))
         //left wall
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY + 30)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY + 30)))
         //bottom wall
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 60)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 30, self.frame.midY - 60)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 90, self.frame.midY - 60)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 60)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX + 30, self.frame.midY - 60)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX + 90, self.frame.midY - 60)))
     
         //top wall
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 60)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 30, self.frame.midY + 60)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY + 60)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 90, self.frame.midY + 60)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 60)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX - 30, self.frame.midY + 60)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY + 60)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX - 90, self.frame.midY + 60)))
         
         //top mid column
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 90)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 120)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 150)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 180)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 90)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 120)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 150)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 180)))
         //bottom mid column
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 90)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 120)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 150)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 180)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 90)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 120)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 150)))
+        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 180)))
         
         //bottom big wall
         for (var i = 20; i < Int(self.frame.maxX - 80); i += 30){
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i),  self.frame.midY - 205)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  self.frame.midY - 205)))
         }
         //top big wall
         for (var i = 90; i < Int(self.frame.maxX); i += 30){
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i),  self.frame.midY + 205)))
+            self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  self.frame.midY + 205)))
         }
     }
     
@@ -174,17 +174,17 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
         }
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
-                theHero!.takeDamage(20)
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMudCrab.rawValue){
+                theHero!.takeDamage(5)
                 let fadeOut = SKAction.fadeOutWithDuration(0.6)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
                 secondBody.node?.runAction(sequence)
         }else  if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
-            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                let mine = secondBody.node as? MineNode
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryGreyShell.rawValue){
+                let mine = secondBody.node as? GreyShell
                 mine!.explode(secondBody.node!.position)
-                theHero!.takeDamage(20)
+                theHero!.takeDamage(10)
         }
         
     }
@@ -223,7 +223,7 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
         }
         if currentTime - lastBomb  > bomberAttackSpeed && !inkSplatted && !droppedChest{
             self.lastBomb = currentTime
-            theBomber!.throwBomb()
+            theBomber!.throwBeachBall()
         }
         
         self.lastUpdatesTime = currentTime
