@@ -111,7 +111,6 @@ class StoreScene: SKScene {
         //booty coin image
         let booty = SKSpriteNode(imageNamed: "Booty_1.png")
         booty.position = CGPointMake(self.frame.midX + 30, self.frame.maxY - 110)
-        booty.name = "booty"
         booty.setScale(0.10)
         self.addChild(booty)
         addItems()
@@ -285,7 +284,9 @@ class StoreScene: SKScene {
                 self.childNodeWithName("regen")?.removeFromParent()
                 self.childNodeWithName("priceButton")?.removeFromParent()
                 self.childNodeWithName("itemText")?.removeFromParent()
-                self.childNodeWithName("booty")?.removeFromParent()
+                while (self.childNodeWithName("booty") as? SKSpriteNode != nil) {
+                    self.childNodeWithName("booty")?.removeFromParent()
+                }
                 self.childNodeWithName("slotLabel")?.removeFromParent()
                 statLabelLife!.text = ""
                 statLabelMovement!.text = ""
