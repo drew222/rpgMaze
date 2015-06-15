@@ -290,6 +290,7 @@ class World1Level17: SKScene, SKPhysicsContactDelegate {
                 if theKraken!.isDead && droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
                     dropLoot("level17", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
+                    itemDropped = self.childNodeWithName("item") as? ItemClass
                 }else if theKraken!.isDead && !droppedChest {
                     for node in self.children{
                         if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "kraken" && node.name != "life" && node.name != "gold" && node.name != "chest"{

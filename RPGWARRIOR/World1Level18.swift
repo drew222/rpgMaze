@@ -393,6 +393,7 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
                 if theWizard!.isDead && droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
                     dropLoot("level18", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
+                    itemDropped = self.childNodeWithName("item") as? ItemClass
                 }else if theWizard!.isDead && !droppedChest {
                     for node in self.children{
                         if (node as? SKEmitterNode != nil) && node.name != "inkAttack"{
