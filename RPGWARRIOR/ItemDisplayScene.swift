@@ -43,7 +43,7 @@ class ItemDisplayScene: SKScene {
         let theBackground = SKSpriteNode(imageNamed: "Beach_Background_1")
         theBackground.position = CGPointMake(self.frame.midX, self.frame.midY)
         theBackground.name = "background"
-        theBackground.size = self.frame.size
+        theBackground.size = CGSizeMake(self.frame.maxX, self.frame.maxY)
         theBackground.zPosition = -1
         self.addChild(theBackground)
         
@@ -59,15 +59,16 @@ class ItemDisplayScene: SKScene {
         */
         
         
-        continueButton = SKSpriteNode(imageNamed: "Continue_Button_Text")
-        continueButton!.position = CGPointMake(self.frame.midX, self.frame.midY - 150)
+        continueButton = SKSpriteNode(imageNamed: "Skip_Tutorial_Button_1")
+        continueButton!.position = CGPointMake(self.frame.midX, self.frame.midY - 100)
         continueButton!.name = "continue"
-        continueButton!.size = CGSizeMake(350, 100)
+        continueButton!.size = CGSizeMake(100, 100)
         continueButton!.zPosition = 3
         self.addChild(continueButton!)
         
         
-        let sellNode = SKLabelNode.init(text: "BLAH\(Int(round(theItem!.price! / 5)))")
+        
+        let sellNode = SKLabelNode.init(text: "\(Int(round(theItem!.price! / 5)))")
         sellNode.position = CGPointMake(self.frame.midX + 50, self.frame.minY + 220)
         sellNode.fontName = "ChalkboardSE-Bold"
         sellNode.fontSize = 30
@@ -76,18 +77,13 @@ class ItemDisplayScene: SKScene {
         sellNode.zPosition = 3
         self.addChild(sellNode)
         
-        let theBackground2 = SKSpriteNode(imageNamed: "Beac_Background_1")
-        theBackground2.position = CGPointMake(self.frame.midX, self.frame.midY)
-        theBackground2.name = "background"
-        theBackground2.size = self.frame.size
-        theBackground2.zPosition = 2
-        self.addChild(theBackground2)
+        
         
 
-        let itemText = SKSpriteNode(imageNamed: "\(theItem!.itemName!)")
+        let itemText = SKSpriteNode(imageNamed: theItem!.itemName!.stringByReplacingOccurrencesOfString("1", withString: "Text", options: NSStringCompareOptions.LiteralSearch, range: nil))
         itemText.name = "itemName"
         itemText.setScale(0.7)
-        itemText.position = CGPointMake(self.frame.midX, self.frame.minY + 295)
+        itemText.position = CGPointMake(self.frame.midX, self.frame.minY + 150)
         self.addChild(itemText)
         
         //gold node
@@ -105,7 +101,7 @@ class ItemDisplayScene: SKScene {
         self.addChild(booty)
         
         
-        let statLabelLife = SKLabelNode.init(text: "\(life)")
+        let statLabelLife = SKLabelNode.init(text: "\(life!)")
         statLabelLife.position = CGPointMake(self.frame.midX - 110, self.frame.minY + 87)
         statLabelLife.fontName = "ChalkboardSE-Bold"
         statLabelLife.fontSize = 30
@@ -113,7 +109,7 @@ class ItemDisplayScene: SKScene {
         statLabelLife.name = "lifeStat"
         statLabelLife.setScale(0.7)
         self.addChild(statLabelLife)
-        let statLabelMovement = SKLabelNode.init(text: "\(movement)")
+        let statLabelMovement = SKLabelNode.init(text: "\(movement!)")
         statLabelMovement.position = CGPointMake(self.frame.midX - 110, self.frame.minY + 57)
         statLabelMovement.fontName = "ChalkboardSE-Bold"
         statLabelMovement.fontSize = 30
@@ -121,7 +117,7 @@ class ItemDisplayScene: SKScene {
         statLabelMovement.name = "movementStat"
         statLabelMovement.setScale(0.7)
         self.addChild(statLabelMovement)
-        let statLabelRegen = SKLabelNode.init(text: "\(regen)")
+        let statLabelRegen = SKLabelNode.init(text: "\(regen!)")
         statLabelRegen.position = CGPointMake(self.frame.midX - 110, self.frame.minY + 27)
         statLabelRegen.fontName = "ChalkboardSE-Bold"
         statLabelRegen.fontSize = 30
@@ -157,6 +153,18 @@ class ItemDisplayScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 let mainMenu = self.userData?.objectForKey("menu") as! MainMenuScene
                 self.view?.presentScene(mainMenu, transition: skTransition)
+            }else{
+                var liteAttack: SKEmitterNode?
+                let litePath = NSBundle.mainBundle().pathForResource("TreasureChestSpark", ofType: "sks")
+                liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
+                liteAttack!.position = (touch as! UITouch).locationInNode(self)
+                liteAttack!.zPosition = 2
+                liteAttack!.setScale(0.3)
+                let waitDuration = SKAction.waitForDuration(1)
+                let runBlock = SKAction.runBlock({liteAttack!.removeFromParent()})
+                let sequence = SKAction.sequence([waitDuration, runBlock])
+                liteAttack!.runAction(sequence)
+                self.addChild(liteAttack!)
             }
         }
     }

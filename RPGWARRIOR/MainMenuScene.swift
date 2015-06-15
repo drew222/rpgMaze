@@ -18,6 +18,7 @@ class MainMenuScene: SKScene {
    //var inventory: Inventory?
     var storeNode: SKSpriteNode?
     var inventoryNode: SKSpriteNode?
+    var guideNode: SKSpriteNode?
     var level1Node: SKSpriteNode?
     var level2Node: SKLabelNode?
     var level3Node: SKLabelNode?
@@ -109,6 +110,12 @@ class MainMenuScene: SKScene {
             menu!.name = "zones"
             menu!.size = CGSizeMake(100, 100)
             self.addChild(menu!)
+            
+            guideNode = SKSpriteNode(imageNamed: "Guide_Button_1")
+            guideNode!.position = CGPointMake(self.frame.maxX - 30, 30)
+            guideNode!.size = CGSizeMake(50, 50)
+            self.addChild(guideNode!)
+            
            
             
         
@@ -463,10 +470,22 @@ class MainMenuScene: SKScene {
             highLevel.removeFromParent()
         }
         if highestLevel > 30 {
+            //highscore text
+            let highscoreText = SKSpriteNode(imageNamed: "High_Score_Text")
+            highscoreText.size = CGSizeMake(100, 50)
+            highscoreText.position = CGPointMake(self.frame.midX - 10, 50)
+            self.addChild(highscoreText)
+            
+            //endless text
+            let endlessText = SKSpriteNode(imageNamed: "Endless_Mode_Text_2")
+            endlessText.size = CGSizeMake(120, 70)
+            endlessText.position = CGPointMake(self.frame.midX + 70, 50)
+            self.addChild(endlessText)
+            
             //highscore frame
             let highscoreFrame = SKSpriteNode(imageNamed: "High_Score_Frame")
             highscoreFrame.size = CGSizeMake(200, 80)
-            highscoreFrame.position = CGPointMake(self.frame.midX + 40, self.frame.midY - 280)
+            highscoreFrame.position = CGPointMake(self.frame.midX + 30, 80)
             self.addChild(highscoreFrame)
             var highestLevelText: SKSpriteNode?
             if highestLevel - 30 < 51{
@@ -474,7 +493,7 @@ class MainMenuScene: SKScene {
             }else{
                 highestLevelText = SKSpriteNode(imageNamed: "Phase_\(highestLevel - 31)_Text")
             }
-            highestLevelText!.position = CGPointMake(self.frame.midX, self.frame.midY - 300)
+            highestLevelText!.position = CGPointMake(self.frame.midX - 10, 100)
             highestLevelText!.name = "highestLevel"
             highestLevelText!.size = CGSizeMake(150, 40)
             self.addChild(highestLevelText!)
@@ -483,7 +502,15 @@ class MainMenuScene: SKScene {
                 let highestTimeText = SKLabelNode(fontNamed: "ChalkboardSE-Bold")
                 highestTimeText.text = "\(Int(highestTime))"
                 highestTimeText.fontColor = UIColor.blackColor()
-                highestTimeText.position = CGPointMake(self.frame.midX + 110, self.frame.midY - 305)
+                highestTimeText.position = CGPointMake(self.frame.midX + 100, 105)
+                highestTimeText.name = "highestTime"
+                highestTimeText.fontSize = 20
+                self.addChild(highestTimeText)
+            }else {
+                let highestTimeText = SKLabelNode(fontNamed: "ChalkboardSE-Bold")
+                highestTimeText.text = "0"
+                highestTimeText.fontColor = UIColor.blackColor()
+                highestTimeText.position = CGPointMake(self.frame.midX + 100, 105)
                 highestTimeText.name = "highestTime"
                 highestTimeText.fontSize = 20
                 self.addChild(highestTimeText)
@@ -777,6 +804,13 @@ class MainMenuScene: SKScene {
             }else if inventoryNode!.containsPoint((touch as! UITouch).locationInNode(self)){
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(self.userData?.objectForKey("inventory") as! Inventory, transition: skTransition)
+                
+            }else if guideNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+                let skTransition = SKTransition.fadeWithDuration(1.0)
+                let guideScene = GuideScene(size: self.frame.size)
+                guideScene.userData = NSMutableDictionary()
+                guideScene.userData?.setObject(self, forKey: "menu")
+                self.view?.presentScene(guideScene, transition: skTransition)
                 
             }else if storeNode!.containsPoint((touch as! UITouch).locationInNode(self)){
                 let aStoreScene = StoreScene(size: self.frame.size)
