@@ -114,12 +114,20 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
         if isPlus{
             //inside square
             self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 100, self.frame.midY + 100)))
+            if isPlus {
             self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 130, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 130, self.frame.midY - 100)))
+            }else{
+               self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 130, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 130, self.frame.midY - 140)))
+            }
             self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 100, self.frame.midY - 100), endPosition: CGPointMake(self.frame.midX + 100, self.frame.midY - 100)))
             self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 140, self.frame.midY - 100), endPosition: CGPointMake(self.frame.midX + 140, self.frame.midY + 100)))
             //outside square
             self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 150, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 150, self.frame.midY + 150)))
+            if isPlus{
             self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 180, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 180, self.frame.midY - 150)))
+            }else{
+                self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 180, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 180, self.frame.midY - 160)))
+            }
             self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 150, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 150, self.frame.midY - 150)))
             self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 180, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 180, self.frame.midY + 150)))
 

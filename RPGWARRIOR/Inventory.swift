@@ -768,9 +768,9 @@ class Inventory: SKScene {
                 rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
                 rightDisplay!.zPosition = 2
             } else if itemName == "Whale_Flesh_Ring_2" {
-                leftDisplay!.size = CGSizeMake(50, 50)
-                leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
-                leftDisplay!.zPosition = 2
+                rightDisplay!.size = CGSizeMake(50, 50)
+                rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
+                rightDisplay!.zPosition = 2
             } else if itemName == "Dusk_2" {
                 rightDisplay!.size = CGSizeMake(50, 50)
                 rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
