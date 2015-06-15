@@ -94,6 +94,7 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
         //********************
         
         theHero!.updateStats()
+        maxLife = theHero!.life!
         //crabs
         if isPlus{
             //inside square
@@ -276,13 +277,6 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
                     inkSplatted = true
                 }else{
                     
-                    //&&
-                    let persistentData = NSUserDefaults.standardUserDefaults()
-                    if (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel < 29{
-                    persistentData.setObject(29, forKey: "highestLevel")
-                    }
-                    //&&
-                    
                     let skTransition = SKTransition.fadeWithDuration(1.0)
                     
                     self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
@@ -306,6 +300,23 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
                     self.childNodeWithName("lifeNumber")?.removeFromParent()
                     self.addChild(TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY)))
                     droppedChest = true
+                    if (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel < 29{
+                        let gameCompleteNode = SKSpriteNode(imageNamed: "Congrats_1")
+                        gameCompleteNode.name = "gameComplete"
+                        gameCompleteNode.size = CGSizeMake(200, 200)
+                        gameCompleteNode.position = CGPointMake(self.frame.midX, self.frame.midY + 150)
+                        let waitAction = SKAction.waitForDuration(5)
+                        let runBlock = SKAction.runBlock({gameCompleteNode.removeFromParent()})
+                        let fadeOutAction = SKAction.fadeOutWithDuration(2)
+                        let sequence = SKAction.sequence([waitAction, fadeOutAction, runBlock])
+                        gameCompleteNode.runAction(sequence)
+                        self.addChild(gameCompleteNode)
+                        (self.userData?.objectForKey("inventory") as! Inventory).gold += 300
+                        let persistentData = NSUserDefaults.standardUserDefaults()
+                        persistentData.setObject((self.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+                        persistentData.setObject(29, forKey: "highestLevel")
+                        (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel = 29
+                    }
                 }
             }
         }

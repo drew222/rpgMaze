@@ -222,6 +222,7 @@ class World1Level11: SKScene, SKPhysicsContactDelegate {
                     let persistentData = NSUserDefaults.standardUserDefaults()
                     if (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel < 11{
                     persistentData.setObject(11, forKey: "highestLevel")
+                        (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel = 11
                     }
                     //&&
                     

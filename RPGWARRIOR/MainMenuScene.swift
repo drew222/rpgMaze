@@ -472,8 +472,8 @@ class MainMenuScene: SKScene {
         if highestLevel > 30 {
             //highscore text
             let highscoreText = SKSpriteNode(imageNamed: "High_Score_Text")
-            highscoreText.size = CGSizeMake(90, 25)
-            highscoreText.position = CGPointMake(self.frame.midX - 10, 60)
+            highscoreText.size = CGSizeMake(90, 20)
+            highscoreText.position = CGPointMake(self.frame.midX - 10, 57)
             self.addChild(highscoreText)
             
             //endless text
@@ -484,7 +484,7 @@ class MainMenuScene: SKScene {
             
             //highscore frame
             let highscoreFrame = SKSpriteNode(imageNamed: "High_Score_Frame")
-            highscoreFrame.size = CGSizeMake(200, 80)
+            highscoreFrame.size = CGSizeMake(200, 60)
             highscoreFrame.position = CGPointMake(self.frame.midX + 30, 45)
             self.addChild(highscoreFrame)
             var highestLevelText: SKSpriteNode?

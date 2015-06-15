@@ -168,6 +168,7 @@
 		DC64A2D31B2E60F900C73BD3 /* GuideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64A2D21B2E60F900C73BD3 /* GuideScene.swift */; };
 		DC64A2D61B2E63FB00C73BD3 /* Endless_Mode_Text_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC64A2D41B2E63FB00C73BD3 /* Endless_Mode_Text_2.png */; };
 		DC64A2D71B2E63FB00C73BD3 /* High_Score_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC64A2D51B2E63FB00C73BD3 /* High_Score_Text.png */; };
+		DCA8F2161B2E846E007A6B52 /* Guide_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */; };
 		DCBCE4371B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */; };
 		DCBCE4391B12EB4800FCF4A5 /* Sweaty_Wristband_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */; };
 		DCBCE43B1B12EB5400FCF4A5 /* Regeneration_Symbol_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */; };
@@ -762,6 +763,7 @@
 		DC64A2D21B2E60F900C73BD3 /* GuideScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideScene.swift; sourceTree = "<group>"; };
 		DC64A2D41B2E63FB00C73BD3 /* Endless_Mode_Text_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Endless_Mode_Text_2.png; sourceTree = "<group>"; };
 		DC64A2D51B2E63FB00C73BD3 /* High_Score_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = High_Score_Text.png; sourceTree = "<group>"; };
+		DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide_Button_1.png; sourceTree = "<group>"; };
 		DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_2.png; sourceTree = "<group>"; };
 		DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_1.png; sourceTree = "<group>"; };
 		DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regeneration_Symbol_1.png; sourceTree = "<group>"; };
@@ -1335,6 +1337,7 @@
 		DCFD73671B01532F0054E370 /* Rpg14 */ = {
 			isa = PBXGroup;
 			children = (
+				DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */,
 				DC64A2CE1B2E353400C73BD3 /* Congrats_1.png */,
 				DC64A2CF1B2E353400C73BD3 /* Skip_Tutorial_Button_1.png */,
 				EEDD7FD71B2CBD45007EFE12 /* Bomb_Ball_1.png */,
@@ -2327,6 +2330,7 @@
 				DC1F581B1A88735300B5027B /* spark.png in Resources */,
 				DC5925CB1B26BED000244578 /* Sinister_2.png in Resources */,
 				DCFD74CD1B0153300054E370 /* Tentacle_2.png in Resources */,
+				DCA8F2161B2E846E007A6B52 /* Guide_Button_1.png in Resources */,
 				DCFD74A11B0153300054E370 /* Mossy_Gold_Ring_2.png in Resources */,
 				DC5925FE1B27908300244578 /* Tutorial_Screen_17.png in Resources */,
 				DCFD74CB1B0153300054E370 /* Tentacle_18.png in Resources */,

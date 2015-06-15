@@ -44,6 +44,20 @@ class ItemDisplayScene: SKScene {
             }
         }
         
+        var liteAttack: SKEmitterNode?
+        let litePath = NSBundle.mainBundle().pathForResource("TreasureChestSpark", ofType: "sks")
+        liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
+        liteAttack!.position = CGPointMake(self.frame.midX, self.frame.midY + 150)
+        liteAttack!.zPosition = 2
+        liteAttack!.particleColorBlueRange = 100
+        liteAttack!.setScale(0.9)
+        let waitDuration = SKAction.waitForDuration(1)
+        let runBlock = SKAction.runBlock({liteAttack!.removeFromParent()})
+        let sequence = SKAction.sequence([waitDuration, runBlock])
+        liteAttack!.runAction(sequence)
+        self.addChild(liteAttack!)
+        
+        
         let theBackground = SKSpriteNode(imageNamed: "Beach_Background_1")
         theBackground.position = CGPointMake(self.frame.midX, self.frame.midY)
         theBackground.name = "background"

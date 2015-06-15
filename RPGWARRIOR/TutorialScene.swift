@@ -41,7 +41,13 @@ class TutorialScene: SKScene {
         for touch in touches{
             if skipButton!.containsPoint((touch as! UITouch).locationInNode(self)){
                 let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(self.userData?.objectForKey("zoneScene") as? ZoneScene, transition: skTransition)
+                var zoneScene: ZoneScene?
+                if let aZoneScene = self.userData?.objectForKey("zoneScene") as? ZoneScene{
+                    zoneScene = aZoneScene
+                }else{
+                    zoneScene = ZoneScene(size: self.frame.size)
+                }
+                self.view?.presentScene(zoneScene!, transition: skTransition)
             }else{
                 count++
                 if count == allImages.count {
