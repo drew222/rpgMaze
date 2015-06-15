@@ -1247,7 +1247,7 @@ class Inventory: SKScene {
                             }
                             let typeText = SKLabelNode(text: "\(typeString!)")
                             typeText.position = CGPointMake(self.frame.midX - 125, self.frame.midY - 82)
-                            typeText.fontSize = 20
+                            typeText.fontSize = 18
                             typeText.zPosition = 3
                             typeText.name = "typeText"
                             typeText.fontName = "ChalkboardSE-Bold"
