@@ -323,6 +323,9 @@ class World1Level16: SKScene, SKPhysicsContactDelegate {
                     itemDropped = self.childNodeWithName("item") as? ItemClass
                 }else if theWhale!.isDead && !droppedChest {
                     for node in self.children{
+                        if node as? SKLabelNode != nil {
+                            node.removeFromParent()
+                        }
                         if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "whale" && node.name != "life" && node.name != "gold" && node.name != "chest"{
                             node.removeFromParent()
                         }
