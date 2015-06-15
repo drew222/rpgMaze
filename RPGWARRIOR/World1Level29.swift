@@ -305,7 +305,7 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
                         gameCompleteNode.name = "gameComplete"
                         gameCompleteNode.size = CGSizeMake(200, 200)
                         gameCompleteNode.position = CGPointMake(self.frame.midX, self.frame.midY + 150)
-                        let waitAction = SKAction.waitForDuration(5)
+                        let waitAction = SKAction.waitForDuration(10)
                         let runBlock = SKAction.runBlock({gameCompleteNode.removeFromParent()})
                         let fadeOutAction = SKAction.fadeOutWithDuration(2)
                         let sequence = SKAction.sequence([waitAction, fadeOutAction, runBlock])

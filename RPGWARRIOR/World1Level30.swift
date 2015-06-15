@@ -142,8 +142,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         //********************
         
         
-        maxLife = 3000
-        theHero!.life! = 3000
+        //maxLife = 3000
+        //theHero!.life! = 3000
         
         //******CHECKPOINT FROM GEAR CHECK*****
         let checkPoint = SKSpriteNode(imageNamed: "Checkpoint_Text_1")
@@ -212,7 +212,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         }
         
         //*************************************
-        phase = 49
+        //phase = 49
         updateLevel()
         
         
