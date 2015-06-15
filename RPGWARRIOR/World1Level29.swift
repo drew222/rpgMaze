@@ -93,9 +93,23 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
         clockNode.zRotation = pi / 1.25
         self.addChild(clockNode)
         //********************
-        
         theHero!.updateStats()
         maxLife = theHero!.life!
+        //Regen Amount behind clock
+        let regenAmount = SKLabelNode(text: "\(Int(theHero!.regeneration!))")
+        regenAmount.position = CGPointMake(self.frame.maxX - 60, self.frame.maxY - 25)
+        if theHero!.regeneration! < 10 {
+            regenAmount.fontSize = 16
+        }else{
+            regenAmount.fontSize = 13
+        }
+        regenAmount.fontColor = UIColor.blackColor()
+        regenAmount.zPosition = 2
+        regenAmount.fontName = "ChalkboardSE-Bold"
+        self.addChild(regenAmount)
+        //*************************
+        
+        
         //crabs
         if isPlus{
             //inside square

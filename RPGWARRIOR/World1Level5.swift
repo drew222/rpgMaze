@@ -102,6 +102,20 @@ class World1Level5: SKScene, SKPhysicsContactDelegate {
         self.addChild(clockNode)
         //********************
         
+        //Regen Amount behind clock
+        let regenAmount = SKLabelNode(text: "\(Int(theHero!.regeneration!))")
+        regenAmount.position = CGPointMake(self.frame.maxX - 60, self.frame.maxY - 25)
+        if theHero!.regeneration! < 10 {
+            regenAmount.fontSize = 16
+        }else{
+            regenAmount.fontSize = 13
+        }
+        regenAmount.fontColor = UIColor.blackColor()
+        regenAmount.zPosition = 2
+        regenAmount.fontName = "ChalkboardSE-Bold"
+        self.addChild(regenAmount)
+        //*************************
+        
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 130), endPosition: CGPointMake(10, 130)))
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 210), endPosition: CGPointMake(self.frame.maxX - 10, 210)))
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 290), endPosition: CGPointMake(10, 290)))
