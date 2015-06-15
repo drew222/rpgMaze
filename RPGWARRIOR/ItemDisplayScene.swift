@@ -33,6 +33,11 @@ class ItemDisplayScene: SKScene {
         theImage.zPosition = 1
         self.addChild(theImage)
         
+        //backpack spaces
+        let backpackSpaces = (self.userData?.objectForKey("inventory") as! Inventory).backPackSpaces
+        if backpackSpaces == 0 && itemName != "Booty_1"{
+            theImage.texture = SKTexture(imageNamed: "Backpack_Full_Text")
+        }
         //setup the life speed and regen of the item
         for stat in theItem!.itemStats! {
             if stat.0 == "Life"{
@@ -44,6 +49,7 @@ class ItemDisplayScene: SKScene {
             }
         }
         
+        if backpackSpaces != 0 {
         var liteAttack: SKEmitterNode?
         let litePath = NSBundle.mainBundle().pathForResource("TreasureChestSpark", ofType: "sks")
         liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
@@ -56,6 +62,7 @@ class ItemDisplayScene: SKScene {
         let sequence = SKAction.sequence([waitDuration, runBlock])
         liteAttack!.runAction(sequence)
         self.addChild(liteAttack!)
+        }
         
         
         let theBackground = SKSpriteNode(imageNamed: "Beach_Background_1")
@@ -85,7 +92,7 @@ class ItemDisplayScene: SKScene {
         self.addChild(continueButton!)
         
         
-        if itemName != "Booty_1"{
+        if itemName != "Booty_1" && backpackSpaces != 0{
             
             //Add item type***********
             let itemType = theItem!.itemType
@@ -132,7 +139,7 @@ class ItemDisplayScene: SKScene {
         booty2.setScale(0.05)
         self.addChild(booty2)
         //myBooty node
-        if itemName != "Booty_1" {
+        if itemName != "Booty_1"  && backpackSpaces != 0{
         let myBootyText2 = SKLabelNode.init(text: "Sell Price :")
         myBootyText2.position = CGPointMake(self.frame.midX + 50, 285)
         myBootyText2.fontName = "ChalkboardSE-Bold"
@@ -153,7 +160,7 @@ class ItemDisplayScene: SKScene {
         }
         
         
-        if itemName != "Booty_1"{
+        if itemName != "Booty_1" && backpackSpaces != 0{
         let itemText = SKSpriteNode(imageNamed: theItem!.itemName!.stringByReplacingOccurrencesOfString("1", withString: "Text", options: NSStringCompareOptions.LiteralSearch, range: nil))
         itemText.name = "itemName"
         itemText.setScale(0.7)
@@ -183,7 +190,7 @@ class ItemDisplayScene: SKScene {
         myBootyText.name = "bootyText"
         myBootyText.zPosition = 3
         self.addChild(myBootyText)
-        if itemName != "Booty_1" {
+        if itemName != "Booty_1"  && backpackSpaces != 0{
         let statLabelLife = SKLabelNode.init(text: "\(life!)")
         statLabelLife.position = CGPointMake(self.frame.midX - 70, self.frame.minY + 327)
         statLabelLife.fontName = "ChalkboardSE-Bold"
@@ -210,7 +217,7 @@ class ItemDisplayScene: SKScene {
         self.addChild(statLabelRegen)
         }
         
-        if itemName != "Booty_1"{
+        if itemName != "Booty_1" && backpackSpaces != 0{
         let lifeSymbol = SKSpriteNode(imageNamed: "Life_Symbol_1")
         lifeSymbol.setScale(0.15)
         lifeSymbol.name = "life"

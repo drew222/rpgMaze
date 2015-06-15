@@ -111,6 +111,7 @@ class StoreScene: SKScene {
         //booty coin image
         let booty = SKSpriteNode(imageNamed: "Booty_1.png")
         booty.position = CGPointMake(self.frame.midX + 30, self.frame.maxY - 110)
+        booty.name = "booty"
         booty.setScale(0.10)
         self.addChild(booty)
         addItems()
