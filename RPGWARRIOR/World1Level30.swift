@@ -144,7 +144,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         //Regen Amount behind clock
         let regenAmount = SKLabelNode(text: "\(Int(theHero!.regeneration!))")
-        regenAmount.position = CGPointMake(self.frame.maxX - 60, self.frame.maxY - 25)
+        regenAmount.position = CGPointMake(self.frame.maxX - 70, self.frame.maxY - 35)
         if theHero!.regeneration! < 10 {
             regenAmount.fontSize = 16
         }else{
