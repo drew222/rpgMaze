@@ -86,6 +86,27 @@ class ItemDisplayScene: SKScene {
         
         
         if itemName != "Booty_1"{
+            
+            //Add item type***********
+            let itemType = theItem!.itemType
+            var typeString: String?
+            if itemType == ItemType.weapon{
+                typeString = "Noggin"
+            }else if itemType == ItemType.neck {
+                typeString = "Neck"
+            }else {
+                typeString = "Tentacle"
+            }
+            let typeText = SKLabelNode(text: "\(typeString!)")
+            typeText.position = CGPointMake(self.frame.midX, self.frame.midY + 10)
+            typeText.fontSize = 20
+            typeText.zPosition = 3
+            typeText.fontColor = UIColor.blackColor()
+            self.addChild(typeText)
+            //************************
+            
+            
+            
         let sellNode = SKLabelNode.init(text: "\(Int(round(theItem!.price! / 5)))")
         sellNode.position = CGPointMake(self.frame.midX + 155, 285)
         sellNode.fontName = "ChalkboardSE-Bold"
