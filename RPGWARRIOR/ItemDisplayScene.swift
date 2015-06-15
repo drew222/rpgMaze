@@ -91,15 +91,15 @@ class ItemDisplayScene: SKScene {
             let itemType = theItem!.itemType
             var typeString: String?
             if itemType == ItemType.weapon{
-                typeString = "Noggin"
+                typeString = "Noggin Slot"
             }else if itemType == ItemType.neck {
-                typeString = "Neck"
+                typeString = "Neck Slot"
             }else {
-                typeString = "Tentacle"
+                typeString = "Tentacle Slot"
             }
             let typeText = SKLabelNode(text: "\(typeString!)")
             typeText.position = CGPointMake(self.frame.midX, self.frame.midY + 15)
-            typeText.fontSize = 20
+            typeText.fontSize = 23
             typeText.zPosition = 3
             typeText.fontName = "ChalkboardSE-Bold"
             typeText.fontColor = UIColor.blackColor()

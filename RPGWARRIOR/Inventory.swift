@@ -1234,6 +1234,26 @@ class Inventory: SKScene {
                             itemText.setScale(0.7)
                             itemText.position = CGPointMake(self.frame.midX, self.frame.minY + 295)
                             self.addChild(itemText)
+                            
+                            //Add item type***********
+                            let itemType = itemToMove!.itemType
+                            var typeString: String?
+                            if itemType == ItemType.weapon{
+                                typeString = "Noggin Slot"
+                            }else if itemType == ItemType.neck {
+                                typeString = "Neck Slot"
+                            }else {
+                                typeString = "Tentacle Slot"
+                            }
+                            let typeText = SKLabelNode(text: "\(typeString!)")
+                            typeText.position = CGPointMake(self.frame.midX - 125, self.frame.midY - 90)
+                            typeText.fontSize = 20
+                            typeText.zPosition = 3
+                            typeText.name = "typeText"
+                            typeText.fontName = "ChalkboardSE-Bold"
+                            typeText.fontColor = UIColor.blackColor()
+                            self.addChild(typeText)
+                            //************************
                         }else{
                             statLabelLife!.text = ""
                             statLabelMovement!.text = ""
@@ -1242,6 +1262,7 @@ class Inventory: SKScene {
                             speedSymbol2?.removeFromParent()
                             regenerationSymbol2?.removeFromParent()
                             self.childNodeWithName("sellButton")?.removeFromParent()
+                            self.childNodeWithName("typeText")?.removeFromParent()
                             self.childNodeWithName("itemName")?.removeFromParent()
                             self.childNodeWithName("priceButton")?.removeFromParent()
                             self.childNodeWithName("sellBooty")?.removeFromParent()
