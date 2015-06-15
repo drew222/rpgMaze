@@ -98,9 +98,10 @@ class ItemDisplayScene: SKScene {
                 typeString = "Tentacle"
             }
             let typeText = SKLabelNode(text: "\(typeString!)")
-            typeText.position = CGPointMake(self.frame.midX, self.frame.midY + 10)
+            typeText.position = CGPointMake(self.frame.midX, self.frame.midY + 15)
             typeText.fontSize = 20
             typeText.zPosition = 3
+            typeText.fontName = "ChalkboardSE-Bold"
             typeText.fontColor = UIColor.blackColor()
             self.addChild(typeText)
             //************************
