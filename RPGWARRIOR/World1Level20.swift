@@ -193,7 +193,7 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
         //HERO VS BEACH CRAB
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMudCrab.rawValue){
-                theHero!.takeDamage(2)
+                theHero!.takeDamage(5)
                 let fadeOut = SKAction.fadeOutWithDuration(0.6)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])

@@ -60,6 +60,18 @@ class World1Level12: SKScene, SKPhysicsContactDelegate {
             CGPointMake(self.frame.maxX + 20, 600)]
         theWhale = WhaleBoss.makeWhale(CGPointMake(self.frame.midX, self.frame.maxY - 50))
         self.addChild(theWhale!)
+        
+        //add seashells blocking hero
+        let seashell1 = MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.maxY - 100))
+        self.addChild(seashell1)
+        let seashell2 = MineNode.mineAtPos(CGPointMake(self.frame.midX + 40, self.frame.maxY - 100))
+        self.addChild(seashell2)
+        let seashell3 = MineNode.mineAtPos(CGPointMake(self.frame.midX - 40, self.frame.maxY - 100))
+        self.addChild(seashell3)
+        let seashell4 = MineNode.mineAtPos(CGPointMake(self.frame.midX + 80, self.frame.maxY - 100))
+        self.addChild(seashell4)
+        let seashell5 = MineNode.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.maxY - 100))
+        self.addChild(seashell5)
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
         //ourHero.constraints = [distanceConstraint]
@@ -139,6 +151,10 @@ class World1Level12: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
                 theHero!.takeDamage(10)
+        }
+        if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
+            secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
+                theHero!.takeDamage(1)
         }
     }
     

@@ -54,6 +54,9 @@ class ItemDisplayScene: SKScene {
         let litePath = NSBundle.mainBundle().pathForResource("TreasureChestSpark", ofType: "sks")
         liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
         liteAttack!.position = CGPointMake(self.frame.midX, self.frame.midY + 150)
+            if itemName == "Booty_1" {
+                liteAttack!.position = CGPointMake(self.frame.midX, self.frame.midY + 130)
+            }
         liteAttack!.zPosition = 2
         liteAttack!.particleColorBlueRange = 100
         liteAttack!.setScale(0.9)
