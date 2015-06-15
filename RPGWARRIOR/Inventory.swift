@@ -1246,7 +1246,7 @@ class Inventory: SKScene {
                                 typeString = "Tentacle Slot"
                             }
                             let typeText = SKLabelNode(text: "\(typeString!)")
-                            typeText.position = CGPointMake(self.frame.midX - 125, self.frame.midY - 85)
+                            typeText.position = CGPointMake(self.frame.midX - 125, self.frame.midY - 82)
                             typeText.fontSize = 20
                             typeText.zPosition = 3
                             typeText.name = "typeText"
