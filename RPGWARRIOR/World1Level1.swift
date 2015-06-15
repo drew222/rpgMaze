@@ -229,6 +229,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
                     //&&
                     
                     //ITEM DISPLAY***************
+                    let skTransition = SKTransition.fadeWithDuration(1.0)
                     let itemDisplayScene = ItemDisplayScene(size: self.frame.size)
                     if itemDropped != nil{
                         itemDisplayScene.itemName = itemDropped!.itemName!
@@ -239,7 +240,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
                     itemDisplayScene.userData = NSMutableDictionary()
                     itemDisplayScene.userData?.setObject(self.userData?.objectForKey("menu") as! MainMenuScene, forKey: "menu")
                     itemDisplayScene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
-                    self.view?.presentScene(itemDisplayScene)//, transition: skTransition)
+                    self.view?.presentScene(itemDisplayScene, transition: skTransition)
                     //***************************
                 }
                 levelOver = true

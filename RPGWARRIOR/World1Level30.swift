@@ -697,8 +697,20 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 theHero!.runAction(SKAction.fadeInWithDuration(2))
             }
             if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil && droppedItem && !levelOver){
+                //ITEM DISPLAY***************
                 let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
+                let itemDisplayScene = ItemDisplayScene(size: self.frame.size)
+                if itemDropped != nil{
+                    itemDisplayScene.itemName = itemDropped!.itemName!
+                }else{
+                    itemDisplayScene.itemName = "Booty_1"
+                    itemDisplayScene.numBooty = 1
+                }
+                itemDisplayScene.userData = NSMutableDictionary()
+                itemDisplayScene.userData?.setObject(self.userData?.objectForKey("menu") as! MainMenuScene, forKey: "menu")
+                itemDisplayScene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
+                self.view?.presentScene(itemDisplayScene, transition: skTransition)
+                //***************************
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil && !levelOver){
