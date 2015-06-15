@@ -430,8 +430,15 @@ class Inventory: SKScene {
         }else{
             //&&DATA
             
-            //***********^^^^^^^^^^^^^^^^^CHANGE THIS packSPace NOT SET CORRECTLY!!!!!!^^^^^^^^^^^^^^^*************&&&&&
-            let packIndex = 16 - backPackSpaces
+            //get correct packSpace
+            var packIndex = 1
+            while (self.childNodeWithName("\(packIndex)") as? ItemSpaceNode != nil) {
+                if (self.childNodeWithName("\(packIndex)") as! ItemSpaceNode).item != nil {
+                    packIndex += 1
+                }else {
+                    break
+                }
+            }
             persistentData = NSUserDefaults.standardUserDefaults()
             persistentData!.setObject(itemName, forKey: "packSpace\(packIndex)")
             //&&

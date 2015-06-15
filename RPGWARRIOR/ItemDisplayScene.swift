@@ -191,6 +191,15 @@ class ItemDisplayScene: SKScene {
         myBootyText.zPosition = 3
         self.addChild(myBootyText)
         if itemName != "Booty_1"  && backpackSpaces != 0{
+            if life! == -1 {
+                life! = 0
+            }
+            if movement! == -1 {
+                movement! = 0
+            }
+            if regen! == -1 {
+                regen! = 0
+            }
         let statLabelLife = SKLabelNode.init(text: "\(life!)")
         statLabelLife.position = CGPointMake(self.frame.midX - 70, self.frame.minY + 327)
         statLabelLife.fontName = "ChalkboardSE-Bold"
