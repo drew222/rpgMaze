@@ -509,6 +509,7 @@ class Inventory: SKScene {
         self.childNodeWithName("itemName")?.removeFromParent()
         self.childNodeWithName("priceButton")?.removeFromParent()
         self.childNodeWithName("sellBooty")?.removeFromParent()
+        self.childNodeWithName("typeText")?.removeFromParent()
     }
     
     func displayItem(item: ItemClass, spot: String) {
