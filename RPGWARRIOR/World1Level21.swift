@@ -147,7 +147,13 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 210, self.frame.midY)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 250, self.frame.midY)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 250, self.frame.midY)))
-        
+        for node in self.children {
+            if let aNode = node as? SKSpriteNode {
+                if aNode.name == "whiteshell" {
+                    (node as! SKSpriteNode).zPosition = 3
+                }
+            }
+        }
         /*
         var yValue = self.frame.midY - 160
         for (var i = self.frame.midX - 160; CGFloat(i) < self.frame.midX + 160; i+=40){
