@@ -472,20 +472,20 @@ class MainMenuScene: SKScene {
         if highestLevel > 30 {
             //highscore text
             let highscoreText = SKSpriteNode(imageNamed: "High_Score_Text")
-            highscoreText.size = CGSizeMake(100, 50)
+            highscoreText.size = CGSizeMake(90, 25)
             highscoreText.position = CGPointMake(self.frame.midX - 10, 60)
             self.addChild(highscoreText)
             
             //endless text
             let endlessText = SKSpriteNode(imageNamed: "Endless_Mode_Text_2")
-            endlessText.size = CGSizeMake(80, 40)
-            endlessText.position = CGPointMake(self.frame.midX + 70, 60)
+            endlessText.size = CGSizeMake(80, 30)
+            endlessText.position = CGPointMake(self.frame.midX + 80, 55)
             self.addChild(endlessText)
             
             //highscore frame
             let highscoreFrame = SKSpriteNode(imageNamed: "High_Score_Frame")
             highscoreFrame.size = CGSizeMake(200, 80)
-            highscoreFrame.position = CGPointMake(self.frame.midX + 30, 40)
+            highscoreFrame.position = CGPointMake(self.frame.midX + 30, 45)
             self.addChild(highscoreFrame)
             var highestLevelText: SKSpriteNode?
             if highestLevel - 30 < 51{
@@ -502,7 +502,7 @@ class MainMenuScene: SKScene {
                 let highestTimeText = SKLabelNode(fontNamed: "ChalkboardSE-Bold")
                 highestTimeText.text = "\(Int(highestTime))"
                 highestTimeText.fontColor = UIColor.blackColor()
-                highestTimeText.position = CGPointMake(self.frame.midX + 100, 35)
+                highestTimeText.position = CGPointMake(self.frame.midX + 90, 20)
                 highestTimeText.name = "highestTime"
                 highestTimeText.fontSize = 20
                 self.addChild(highestTimeText)
@@ -510,7 +510,7 @@ class MainMenuScene: SKScene {
                 let highestTimeText = SKLabelNode(fontNamed: "ChalkboardSE-Bold")
                 highestTimeText.text = "0"
                 highestTimeText.fontColor = UIColor.blackColor()
-                highestTimeText.position = CGPointMake(self.frame.midX + 100, 35)
+                highestTimeText.position = CGPointMake(self.frame.midX + 90, 20)
                 highestTimeText.name = "highestTime"
                 highestTimeText.fontSize = 20
                 self.addChild(highestTimeText)

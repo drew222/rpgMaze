@@ -30,6 +30,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
     var clickedChest = false
     var droppedChest = false
     var inkSplatted = false
+    var itemDropped: ItemClass?
     
     let wizardAttackSpeed = 1.0
     
@@ -228,6 +229,12 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
                     
                     //ITEM DISPLAY***************
                     let itemDisplayScene = ItemDisplayScene(size: self.frame.size)
+                    if itemDropped != nil{
+                        itemDisplayScene.itemName = itemDropped!.itemName!
+                    }else{
+                        itemDisplayScene.itemName = "Booty_1"
+                        itemDisplayScene.numBooty = 1
+                    }
                     itemDisplayScene.userData = NSMutableDictionary()
                     itemDisplayScene.userData?.setObject(self.userData?.objectForKey("menu") as! MainMenuScene, forKey: "menu")
                     itemDisplayScene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -240,6 +247,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
                 if theWizard!.isDead && droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
                     dropLoot("level1", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
                     droppedItem = true
+                    itemDropped = self.childNodeWithName("item") as? ItemClass
                 }else if theWizard!.isDead && !droppedChest {
                     for node in self.children{
                         if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "wizard" && node.name != "life" && node.name != "gold" && node.name != "chest"{
