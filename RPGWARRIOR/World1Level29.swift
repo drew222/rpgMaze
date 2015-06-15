@@ -32,6 +32,7 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
     var clickedChest = false
     var droppedChest = false
     //*******************************
+    var itemDropped: ItemClass?
     
     let bomberAttackSpeed = 5.0
     

@@ -33,6 +33,7 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
     var clickedChest = false
     var droppedChest = false
     //*******************************
+    var itemDropped: ItemClass?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */

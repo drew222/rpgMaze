@@ -34,6 +34,7 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
     var clickedChest = false
     var droppedChest = false
     //*******************************
+    var itemDropped: ItemClass?
     
     
     var theKraken: KrakenBoss?

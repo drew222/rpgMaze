@@ -32,6 +32,7 @@ class World1Level2: SKScene, SKPhysicsContactDelegate {
     var clickedChest = false
     var droppedChest = false
     //*******************************
+    var itemDropped: ItemClass?
     
     var theBomber: BomberClass?
     var theHero: HeroClass?

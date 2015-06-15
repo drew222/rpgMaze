@@ -34,6 +34,7 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
     var clickedChest = false
     var droppedChest = false
     //*******************************
+    var itemDropped: ItemClass?
     
     //larger attack speed, slower attack
     

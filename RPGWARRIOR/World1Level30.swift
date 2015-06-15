@@ -56,6 +56,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var buffSpawnSpeed = 30.0
     var coinSpawnSpeed = 14.0
     var coinAmount = 1.0
+    var itemDropped: ItemClass?
     
     
     

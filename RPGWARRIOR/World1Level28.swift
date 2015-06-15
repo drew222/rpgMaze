@@ -30,6 +30,7 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
     var clickedChest = false
     var droppedChest = false
     //*******************************
+    var itemDropped: ItemClass?
     
     //larger attack speed, slower attack
     let wizardAttackSpeed = 1.4

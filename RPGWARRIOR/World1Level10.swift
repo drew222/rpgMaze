@@ -33,6 +33,7 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
     var clickedChest = false
     var droppedChest = false
     //*******************************
+    var itemDropped: ItemClass?
     
     let wizardAttackSpeed = 1.5
     let wizardAttackSpeedBlizz = 4.0

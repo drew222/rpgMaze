@@ -31,6 +31,7 @@ class World1Level9: SKScene, SKPhysicsContactDelegate  {
     var clickedChest = false
     var droppedChest = false
     //*******************************
+    var itemDropped: ItemClass?
     
     let bomberAttackSpeed = 1.5
     var lastBomb: Double = 0.0

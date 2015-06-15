@@ -35,6 +35,7 @@ class World1Level16: SKScene, SKPhysicsContactDelegate {
     var clickedChest = false
     var droppedChest = false
     //*******************************
+    var itemDropped: ItemClass?
     
     
     var theWhale: WhaleBoss?
