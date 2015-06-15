@@ -282,6 +282,9 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
                 if theHero!.life <= 0 {
                     let inkSplat = SKSpriteNode(imageNamed: "Ink_Splat_1")
                     for node in self.children{
+                        if node as? SKLabelNode != nil {
+                            node.removeFromParent()
+                        }
                         if (node as? SKSpriteNode != nil) && node.name != "background"{
                             node.removeFromParent()
                         }

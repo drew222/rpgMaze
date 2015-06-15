@@ -186,6 +186,9 @@ class World1Level4: SKScene, SKPhysicsContactDelegate {
                 if theHero!.life <= 0 {
                     let inkSplat = SKSpriteNode(imageNamed: "Ink_Splat_1")
                     for node in self.children{
+                        if node as? SKLabelNode != nil {
+                            node.removeFromParent()
+                        }
                         if (node as? SKEmitterNode != nil){
                             node.removeFromParent()
                         }

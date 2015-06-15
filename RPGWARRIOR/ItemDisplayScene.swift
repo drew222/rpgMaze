@@ -200,7 +200,7 @@ class ItemDisplayScene: SKScene {
             if regen! == -1 {
                 regen! = 0
             }
-        let statLabelLife = SKLabelNode.init(text: "\(life!)")
+        let statLabelLife = SKLabelNode.init(text: "\(Int(life!))")
         statLabelLife.position = CGPointMake(self.frame.midX - 70, self.frame.minY + 327)
         statLabelLife.fontName = "ChalkboardSE-Bold"
         statLabelLife.fontSize = 25
@@ -208,7 +208,7 @@ class ItemDisplayScene: SKScene {
         statLabelLife.name = "lifeStat"
         statLabelLife.setScale(0.7)
         self.addChild(statLabelLife)
-        let statLabelMovement = SKLabelNode.init(text: "\(movement!)")
+        let statLabelMovement = SKLabelNode.init(text: "\(Int(movement!))")
         statLabelMovement.position = CGPointMake(self.frame.midX + 30, self.frame.minY + 327)
         statLabelMovement.fontName = "ChalkboardSE-Bold"
         statLabelMovement.fontSize = 30
@@ -216,7 +216,7 @@ class ItemDisplayScene: SKScene {
         statLabelMovement.name = "movementStat"
         statLabelMovement.setScale(0.7)
         self.addChild(statLabelMovement)
-        let statLabelRegen = SKLabelNode.init(text: "\(regen!)")
+        let statLabelRegen = SKLabelNode.init(text: "\(Int(regen!))")
         statLabelRegen.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 327)
         statLabelRegen.fontName = "ChalkboardSE-Bold"
         statLabelRegen.fontSize = 30
