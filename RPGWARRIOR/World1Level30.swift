@@ -735,9 +735,6 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                     itemDropped = self.childNodeWithName("item") as? ItemClass
                 }else if !droppedChest {
                     for node in self.children{
-                        if node as? SKLabelNode != nil && node.name != "timer"{
-                            node.removeFromParent()
-                        }
                         if (node as? SKEmitterNode != nil) && node.name != "inkAttack"{
                             node.removeFromParent()
                         }
