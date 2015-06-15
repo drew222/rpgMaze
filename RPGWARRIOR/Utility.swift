@@ -425,7 +425,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(item)
         }
     }else if level == "level16"{
-        //75% 5 booty, 25% mossy silver ring
+        //50% 5 booty, 25% mossy silver ring,  25% whale flesh
         let myNum = randomWithMin(0, 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Mossy_Silver_Ring_1")
