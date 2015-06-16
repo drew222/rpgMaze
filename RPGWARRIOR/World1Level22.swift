@@ -240,6 +240,8 @@ class World1Level22: SKScene, SKPhysicsContactDelegate {
                         noText.position = CGPointMake(self.frame.midX + 60, self.frame.midY - 30)
                         yesText.name = "yesText"
                         noText.name = "noText"
+                        yesText.zPosition = 3
+                        noText.zPosition = 3
                         self.addChild(yesText)
                         self.addChild(noText)
                     })
