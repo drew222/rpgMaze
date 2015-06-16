@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import AVFoundation
 
 
 
@@ -43,6 +44,12 @@ enum CollisionBitMasks: UInt32{
     case collisionCategoryGreyShell = 131072
     case collisionCategoryBeachBall = 262144
 }
+
+let damageSound = SKAction.playSoundFileNamed("Ink_Squirt_Sound_1.mp3", waitForCompletion: false)
+let splatterSound = SKAction.playSoundFileNamed("Ink_Splatter_Sound_1.mp3", waitForCompletion: false)
+let url = NSBundle.mainBundle().URLForResource("Happy_Background_Sound_1", withExtension: "mp3")
+let happyMusic = AVAudioPlayer(contentsOfURL: url, error: nil)
+let bootySound = SKAction.playSoundFileNamed("Kraken_Booty_Sound_1.mp3", waitForCompletion: false)
 
 
 enum ItemType{

@@ -132,9 +132,11 @@ class World1Level2: SKScene, SKPhysicsContactDelegate {
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
-                let mine = secondBody.node as? MiniCrab
-                mine!.explode(secondBody.node!.position)
                 theHero!.takeDamage(1)
+                let fadeOut = SKAction.fadeOutWithDuration(0.6)
+                let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+                let sequence = SKAction.sequence([fadeOut, codeBlock])
+                secondBody.node?.runAction(sequence)
         }
         //HERO VS WIZARD
         //else if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
@@ -230,6 +232,7 @@ class World1Level2: SKScene, SKPhysicsContactDelegate {
                     let sequence = SKAction.sequence([stretchAction, codeBlock])
                     inkSplat.runAction(sequence)
                     inkSplatted = true
+                    self.runAction(splatterSound)
                 }else{
                     
                     //&&

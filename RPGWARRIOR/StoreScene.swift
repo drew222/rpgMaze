@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 //import AVFoundation
 
@@ -260,6 +261,8 @@ class StoreScene: SKScene {
     
     func buyItem(){
         if (self.userData?.objectForKey("inventory") as! Inventory).gold >= currentItem!.price && (self.userData?.objectForKey("inventory") as! Inventory).backPackSpaces > 0{
+            //sound
+            self.runAction(bootySound)
             (self.userData?.objectForKey("inventory") as! Inventory).gold -= currentItem!.price!
             (self.userData?.objectForKey("inventory") as! Inventory).addItem(currentItem!.itemName!)
             goldCount -= currentItem!.price!

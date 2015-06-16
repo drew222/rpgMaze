@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import AVFoundation
 
 
 class HeroClass: SKSpriteNode {
@@ -174,6 +175,17 @@ class HeroClass: SKSpriteNode {
     }
     
     func takeDamage(damage: CGFloat) -> Bool{
+        //play damage sound
+        //find the url within the package
+        //let url = NSBundle.mainBundle().URLForResource("Ink_Squirt_Sound_1", withExtension: "mp3")
+        //sets background music using a NSURL
+        //let backgroundMusic = AVAudioPlayer(contentsOfURL: url, error: nil)
+        //-1 sets loops to infinity
+        //backgroundMusic.numberOfLoops = 1
+        //backgroundMusic.prepareToPlay()
+        //backgroundMusic.play()
+        (self.parent as! SKScene).runAction(damageSound)
+        
         //add inkBlood
         let inkBlood = SKSpriteNode(imageNamed: "Ink_Splat_2")
         inkBlood.position = self.position

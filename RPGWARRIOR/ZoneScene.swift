@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import AVFoundation
 
 
 class ZoneScene: SKScene {
@@ -21,9 +22,17 @@ class ZoneScene: SKScene {
     var zonesTextNode: SKSpriteNode?
     var tutorialButton: SKSpriteNode?
     let defaults = NSUserDefaults.standardUserDefaults()
+    var backgroundMusic: AVAudioPlayer?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        //MUSIC
+        if !(happyMusic.playing){
+            happyMusic.numberOfLoops = -1
+            happyMusic.prepareToPlay()
+            happyMusic.play()
+        }
+        
         let background = SKSpriteNode(imageNamed: "Zone_Screen_2")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)

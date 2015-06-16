@@ -8,6 +8,7 @@
 
 import SpriteKit
 import Foundation
+import AVFoundation
 
 //import AVFoundation
 
@@ -467,6 +468,8 @@ class Inventory: SKScene {
     }
     
     func sellItem(){
+        //sound
+        self.runAction(bootySound)
         gold += round(itemToMove!.price! / 5)
         //&&
         persistentData!.setObject(gold, forKey: "gold")

@@ -169,6 +169,10 @@
 		DC64A2D61B2E63FB00C73BD3 /* Endless_Mode_Text_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC64A2D41B2E63FB00C73BD3 /* Endless_Mode_Text_2.png */; };
 		DC64A2D71B2E63FB00C73BD3 /* High_Score_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC64A2D51B2E63FB00C73BD3 /* High_Score_Text.png */; };
 		DCA8F2161B2E846E007A6B52 /* Guide_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */; };
+		DCA8F21E1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */; };
+		DCA8F21F1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */; };
+		DCA8F2201B2FDDC4007A6B52 /* Ink_Squirt_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21C1B2FDDC4007A6B52 /* Ink_Squirt_Sound_1.mp3 */; };
+		DCA8F2211B2FDDC4007A6B52 /* Kraken_Booty_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21D1B2FDDC4007A6B52 /* Kraken_Booty_Sound_1.mp3 */; };
 		DCBCE4371B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */; };
 		DCBCE4391B12EB4800FCF4A5 /* Sweaty_Wristband_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */; };
 		DCBCE43B1B12EB5400FCF4A5 /* Regeneration_Symbol_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */; };
@@ -764,6 +768,10 @@
 		DC64A2D41B2E63FB00C73BD3 /* Endless_Mode_Text_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Endless_Mode_Text_2.png; sourceTree = "<group>"; };
 		DC64A2D51B2E63FB00C73BD3 /* High_Score_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = High_Score_Text.png; sourceTree = "<group>"; };
 		DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide_Button_1.png; sourceTree = "<group>"; };
+		DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Happy_Background_Sound_1.mp3; sourceTree = "<group>"; };
+		DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ink_Splatter_Sound_1.mp3; sourceTree = "<group>"; };
+		DCA8F21C1B2FDDC4007A6B52 /* Ink_Squirt_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ink_Squirt_Sound_1.mp3; sourceTree = "<group>"; };
+		DCA8F21D1B2FDDC4007A6B52 /* Kraken_Booty_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Kraken_Booty_Sound_1.mp3; sourceTree = "<group>"; };
 		DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_2.png; sourceTree = "<group>"; };
 		DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_1.png; sourceTree = "<group>"; };
 		DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regeneration_Symbol_1.png; sourceTree = "<group>"; };
@@ -1221,6 +1229,7 @@
 		DC2711161A85E11900986D2E /* RPGWARRIOR */ = {
 			isa = PBXGroup;
 			children = (
+				DCA8F2171B2FCBCB007A6B52 /* Sounds */,
 				DCFD73671B01532F0054E370 /* Rpg14 */,
 				DC2711491A85E26C00986D2E /* Fireball.swift */,
 				2FC73DE21A912CAA0068A2FB /* BlizzNode.swift */,
@@ -1332,6 +1341,17 @@
 				DC2711321A85E11900986D2E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCA8F2171B2FCBCB007A6B52 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */,
+				DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */,
+				DCA8F21C1B2FDDC4007A6B52 /* Ink_Squirt_Sound_1.mp3 */,
+				DCA8F21D1B2FDDC4007A6B52 /* Kraken_Booty_Sound_1.mp3 */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 		DCFD73671B01532F0054E370 /* Rpg14 */ = {
@@ -2010,6 +2030,7 @@
 				DC59260E1B27A2CA00244578 /* Phase_13_Text.png in Resources */,
 				EEB809561B15674700A221E2 /* World_1_Level_32_Text.png in Resources */,
 				EEB809501B15674700A221E2 /* Lifejacket_Text.png in Resources */,
+				DCA8F2211B2FDDC4007A6B52 /* Kraken_Booty_Sound_1.mp3 in Resources */,
 				DCF23E311B0BAC5600484040 /* Barnacles_1.png in Resources */,
 				DCFD74E01B0153300054E370 /* Tentacle_6.png in Resources */,
 				DCFD747F1B0153300054E370 /* Inventory_Slot_2.png in Resources */,
@@ -2048,6 +2069,7 @@
 				DC5925C71B26BED000244578 /* Nightfall_2.png in Resources */,
 				DCFD74F51B0153300054E370 /* Whale_Boss_12.png in Resources */,
 				DCF23E291B0BABEE00484040 /* Whale_Flesh_Ring_2.png in Resources */,
+				DCA8F2201B2FDDC4007A6B52 /* Ink_Squirt_Sound_1.mp3 in Resources */,
 				DC5925A11B26BED000244578 /* Whale_Boss_Dead_1.png in Resources */,
 				DCFD74551B0153300054E370 /* Clam_Boss_2.png in Resources */,
 				DC5925F71B27908300244578 /* Tutorial_Screen_10.png in Resources */,
@@ -2078,6 +2100,7 @@
 				DC5925BB1B26BED000244578 /* Wicked_Text.png in Resources */,
 				DCF23E0D1B0BAA0500484040 /* Tentacle_Swing_7.png in Resources */,
 				DCFD74FB1B0153300054E370 /* Whale_Boss_18.png in Resources */,
+				DCA8F21E1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 in Resources */,
 				DCFD75101B0153300054E370 /* World_1_Level_20_Text.png in Resources */,
 				EEB8095B1B15674700A221E2 /* World_1_Level_37_Text.png in Resources */,
 				DCFD75011B0153300054E370 /* Whale_Boss_7.png in Resources */,
@@ -2105,6 +2128,7 @@
 				DCFD74D91B0153300054E370 /* Tentacle_31.png in Resources */,
 				EEB809571B15674700A221E2 /* World_1_Level_33_Text.png in Resources */,
 				EEB809611B15674700A221E2 /* World_1_Level_43_Text.png in Resources */,
+				DCA8F21F1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 in Resources */,
 				DCFD74841B0153300054E370 /* Kraken_Boss_3.png in Resources */,
 				DC5925C21B26BED000244578 /* Insomnia_1.png in Resources */,
 				DC59260F1B27A2CA00244578 /* Phase_14_Text.png in Resources */,

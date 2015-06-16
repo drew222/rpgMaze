@@ -263,6 +263,7 @@ class World1Level23: SKScene, SKPhysicsContactDelegate {
                     let sequence = SKAction.sequence([stretchAction, codeBlock])
                     inkSplat.runAction(sequence)
                     inkSplatted = true
+                    self.runAction(splatterSound)
                 }else{
                     
                     //&&
