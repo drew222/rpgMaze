@@ -184,7 +184,9 @@ class HeroClass: SKSpriteNode {
         //backgroundMusic.numberOfLoops = 1
         //backgroundMusic.prepareToPlay()
         //backgroundMusic.play()
+        if soundOn {
         (self.parent as! SKScene).runAction(damageSound)
+        }
         
         //add inkBlood
         let inkBlood = SKSpriteNode(imageNamed: "Ink_Splat_2")

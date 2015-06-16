@@ -21,13 +21,29 @@ class ZoneScene: SKScene {
     var storeNode: SKSpriteNode?
     var zonesTextNode: SKSpriteNode?
     var tutorialButton: SKSpriteNode?
+    var soundOnButton: SKSpriteNode?
     let defaults = NSUserDefaults.standardUserDefaults()
     var backgroundMusic: AVAudioPlayer?
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         //MUSIC
-        if !(happyMusic.playing){
+        //check for saved data on sound off/on, set spritenode to this and set soundOn
+        if firstLoad{
+        if (defaults.objectForKey("sound") as! Bool) {
+            soundOn = true
+            soundOnButton = SKSpriteNode(imageNamed: "Booty_1")
+        }else {
+            soundOn = false
+            soundOnButton = SKSpriteNode(imageNamed: "Sound_Off_1")
+        }
+        soundOnButton!.size = CGSizeMake(70, 70)
+        soundOnButton!.position = CGPointMake(50, 50)
+        soundOnButton!.name = "soundButton"
+        soundOnButton!.zPosition = 3
+        self.addChild(soundOnButton!)
+        }
+        if (!happyMusic.playing) && soundOn{
             happyMusic.numberOfLoops = -1
             happyMusic.prepareToPlay()
             happyMusic.play()
@@ -39,6 +55,7 @@ class ZoneScene: SKScene {
         background.zPosition = -1
         self.addChild(background)
         if firstLoad{
+            
             
             world1Menu = MainMenuScene(size: self.frame.size)
             world1Menu!.userData = NSMutableDictionary()
@@ -201,6 +218,7 @@ class ZoneScene: SKScene {
             
             //*******************************************************************
             
+            
             world1Node = SKSpriteNode(imageNamed: "The_Beach_Zone_Button_1")
             //world1Node!.zPosition = -2
             world1Node!.size = CGSizeMake(350, 80)
@@ -263,6 +281,18 @@ class ZoneScene: SKScene {
                 aTutorialScene.userData = NSMutableDictionary()
                 aTutorialScene.userData?.setObject(self, forKey: "zoneScene")
                 self.view?.presentScene(aTutorialScene, transition: skTransition)
+            }else if soundOnButton!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    soundOnButton!.texture = SKTexture(imageNamed: "Sound_Off_1")
+                    soundOn = false
+                    defaults.setBool(false, forKey: "sound")
+                    happyMusic.stop()
+                }else {
+                    soundOnButton!.texture = SKTexture(imageNamed: "Booty_1")
+                    soundOn = true
+                    defaults.setBool(true, forKey: "sound")
+                    happyMusic.play()
+                }
             }
         }
     }

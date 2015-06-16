@@ -236,7 +236,9 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
                     let sequence = SKAction.sequence([stretchAction, codeBlock])
                     inkSplat.runAction(sequence)
                     inkSplatted = true
+                    if soundOn {
                     self.runAction(splatterSound)
+                    }
                 }else{
                     //&&
                     let persistentData = NSUserDefaults.standardUserDefaults()

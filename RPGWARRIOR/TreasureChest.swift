@@ -27,6 +27,13 @@ class TreasureChest: SKSpriteNode {
     }
     
     func openChest() {
+        //sound
+        if soundOn {
+            let waitAction = SKAction.waitForDuration(0.2)
+            let sequence = SKAction.sequence([bootySound, waitAction, bootySound, waitAction, bootySound, waitAction, bootySound, waitAction, bootySound])
+            (self.parent as! SKScene).runAction(sequence)
+        }
+        
         open = true
         
         var liteAttack: SKEmitterNode?

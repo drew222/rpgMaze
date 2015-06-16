@@ -25,13 +25,21 @@ class ItemDisplayScene: SKScene {
         
         theItem = ItemClass.itemInSpace("\(itemName!)")
         let theImage = SKSpriteNode(imageNamed: "\(itemName!)")
-        theImage.position = CGPointMake(self.frame.midX, self.frame.midY + 150)
+        theImage.position = CGPointMake(self.frame.midX, self.frame.midY + 130)
         if itemName == "Booty_1" {
             theImage.position = CGPointMake(self.frame.midX, self.frame.midY + 100)
         }
         theImage.size = CGSizeMake(100, 100)
         theImage.zPosition = 1
         self.addChild(theImage)
+        
+        
+        let levelComplete = SKSpriteNode(imageNamed: "Level_Complete_Text")
+        levelComplete.position = CGPointMake(self.frame.midX, self.frame.maxY - 80)
+        levelComplete.name = "levelComplete"
+        levelComplete.size = CGSizeMake(320, 65)
+        levelComplete.zPosition = 1
+        self.addChild(levelComplete)
         
         //backpack spaces
         let backpackSpaces = (self.userData?.objectForKey("inventory") as! Inventory).backPackSpaces
@@ -87,15 +95,37 @@ class ItemDisplayScene: SKScene {
         */
         
         
-        continueButton = SKSpriteNode(imageNamed: "Skip_Tutorial_Button_1")
+        continueButton = SKSpriteNode(imageNamed: "Tap_To_Continue_Text_1")
         continueButton!.position = CGPointMake(self.frame.midX, 80)
         continueButton!.name = "continue"
         continueButton!.size = CGSizeMake(300, 100)
         continueButton!.zPosition = 3
         self.addChild(continueButton!)
         
+        let buttonBackground = SKSpriteNode(imageNamed: "Inventory_Slot_1")
+        buttonBackground.position = CGPointMake(self.frame.midX, 80)
+        buttonBackground.name = "buttonBackground"
+        buttonBackground.size = CGSizeMake(320, 80)
+        levelComplete.zPosition = 1
+        self.addChild(buttonBackground)
+        
+        
+        let received = SKSpriteNode(imageNamed: "You_Received_Text")
+        received.position = CGPointMake(self.frame.midX, self.frame.maxY - 150)
+        received.name = "received"
+        received.size = CGSizeMake(200, 40)
+        received.zPosition = 1
+        self.addChild(received)
+        
         
         if itemName != "Booty_1" && backpackSpaces != 0{
+            
+            let checkIt = SKSpriteNode(imageNamed: "Check_It_Text_1")
+            checkIt.position = CGPointMake(self.frame.midX, 180)
+            checkIt.name = "checkIt"
+            checkIt.size = CGSizeMake(400, 130)
+            checkIt.zPosition = 1
+            self.addChild(checkIt)
             
             //Add item type***********
             let itemType = theItem!.itemType

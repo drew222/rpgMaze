@@ -36,6 +36,7 @@ class IntroScene: SKScene {
             self.view?.presentScene(gameplayScene, transition: skTransition)
         }else {
             defaults.setBool(true, forKey: "firstOpen")
+            defaults.setBool(true, forKey: "sound")
             //present tutorial here instead
             let skTransition = SKTransition.fadeWithDuration(1.0)
             let tutorial = TutorialScene(size: self.frame.size)

@@ -469,7 +469,9 @@ class Inventory: SKScene {
     
     func sellItem(){
         //sound
+        if soundOn {
         self.runAction(bootySound)
+        }
         gold += round(itemToMove!.price! / 5)
         //&&
         persistentData!.setObject(gold, forKey: "gold")

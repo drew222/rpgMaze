@@ -70,7 +70,7 @@ class MainMenuScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         //MUSIC
-        if !happyMusic.playing{
+        if !happyMusic.playing && soundOn{
             happyMusic.numberOfLoops = -1
             happyMusic.prepareToPlay()
             happyMusic.play()
