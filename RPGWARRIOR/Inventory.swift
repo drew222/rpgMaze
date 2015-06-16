@@ -443,9 +443,10 @@ class Inventory: SKScene {
             persistentData = NSUserDefaults.standardUserDefaults()
             persistentData!.setObject(itemName, forKey: "packSpace\(packIndex)")
             //&&
-            let anItem = ItemClass.itemInSpace(itemName)
-            anItem.size = CGSizeMake(37, 37)
-            items.append(anItem)
+            (self.childNodeWithName("\(packIndex)") as! ItemSpaceNode).insertItem(ItemClass.itemInSpace(itemName))
+            //let anItem = ItemClass.itemInSpace(itemName)
+            //anItem.size = CGSizeMake(37, 37)
+            //items.append(anItem)
             backPackSpaces--
         }
     }
