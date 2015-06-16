@@ -90,7 +90,7 @@ class ItemClass: SKSpriteNode {
             return [("Life", CGFloat(1)), ("Movement", CGFloat(5))]
         }else if picName == "Inky_Ring_1"{
             price = 50
-            return [("Movement", CGFloat(10)), ("Life", CGFloat(2))]
+            return [("Movement", CGFloat(8)), ("Life", CGFloat(2))]
         }else if picName == "Pearl_Snap_Ring_1"{
             price = 50
             return [("Movement", CGFloat(17)), ("Life", CGFloat(1)), ("Regeneration", CGFloat(1))]

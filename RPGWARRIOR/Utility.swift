@@ -628,19 +628,19 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(gold)
         }
     }else if level == "level25"{
-        //30% 10 booty, 50% mossy gold ring, 10% inky ring, 10% king kraken tentacle ring
+        //20% 10 booty, 50% mossy gold ring, 10% inky ring, 20% king kraken tentacle ring
         let myNum = randomWithMin(0, 100)
         if myNum > 50{
             let item = ItemClass.itemInSpace("Mossy_Gold_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
-        } else if (myNum <= 50) && (myNum > 40){
+        } else if (myNum <= 50) && (myNum > 30){
             let item = ItemClass.itemInSpace("King_Kraken_Tentacle_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
-        }else if (myNum <= 40) && (myNum > 30){
+        }else if (myNum <= 30) && (myNum > 20){
             let item = ItemClass.itemInSpace("Inky_Ring_1")
             item.position = position
             item.size = size
