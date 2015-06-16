@@ -65,6 +65,10 @@ class MainMenuScene: SKScene {
     // ##### change this for new level#####
     
     var firstTimeLoaded = true
+    var beatGame = false
+    
+    let persistentData = NSUserDefaults.standardUserDefaults()
+    
     
     
     override func didMoveToView(view: SKView) {
@@ -75,6 +79,23 @@ class MainMenuScene: SKScene {
             happyMusic.prepareToPlay()
             happyMusic.play()
         }
+        
+        if highestLevel  == 29 && beatGame == false {
+            let gameCompleteNode = SKSpriteNode(imageNamed: "Congrats_1")
+            gameCompleteNode.name = "gameComplete"
+            gameCompleteNode.size = CGSizeMake(300, 300)
+            gameCompleteNode.zPosition = 3
+            gameCompleteNode.position = CGPointMake(self.frame.midX, self.frame.midY)
+            let waitAction = SKAction.waitForDuration(10)
+            let runBlock = SKAction.runBlock({gameCompleteNode.removeFromParent()})
+            let fadeOutAction = SKAction.fadeOutWithDuration(2)
+            let sequence = SKAction.sequence([waitAction, fadeOutAction, runBlock])
+            gameCompleteNode.runAction(sequence)
+            self.addChild(gameCompleteNode)
+            beatGame = true
+            persistentData.setBool(true, forKey: "beatgame")
+        }
+        
         if firstTimeLoaded{
             
             let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")

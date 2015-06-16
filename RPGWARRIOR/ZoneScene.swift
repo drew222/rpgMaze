@@ -56,8 +56,15 @@ class ZoneScene: SKScene {
         self.addChild(background)
         if firstLoad{
             
+            var beatGame2: Bool?
+            if defaults.objectForKey("beatgame") as! Bool {
+                beatGame2 = true
+            }else{
+                beatGame2 = false
+            }
             
             world1Menu = MainMenuScene(size: self.frame.size)
+            world1Menu!.beatGame = beatGame2!
             world1Menu!.userData = NSMutableDictionary()
             world1Menu!.userData?.setObject(self, forKey: "worldscene")
             inventory = Inventory.createInventory(self.frame.size)

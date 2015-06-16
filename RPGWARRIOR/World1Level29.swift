@@ -337,16 +337,6 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
                     self.addChild(TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY)))
                     droppedChest = true
                     if (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel < 29{
-                        let gameCompleteNode = SKSpriteNode(imageNamed: "Congrats_1")
-                        gameCompleteNode.name = "gameComplete"
-                        gameCompleteNode.size = CGSizeMake(200, 200)
-                        gameCompleteNode.position = CGPointMake(self.frame.midX, self.frame.midY + 150)
-                        let waitAction = SKAction.waitForDuration(10)
-                        let runBlock = SKAction.runBlock({gameCompleteNode.removeFromParent()})
-                        let fadeOutAction = SKAction.fadeOutWithDuration(2)
-                        let sequence = SKAction.sequence([waitAction, fadeOutAction, runBlock])
-                        gameCompleteNode.runAction(sequence)
-                        self.addChild(gameCompleteNode)
                         (self.userData?.objectForKey("inventory") as! Inventory).gold += 300
                         let persistentData = NSUserDefaults.standardUserDefaults()
                         persistentData.setObject((self.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")

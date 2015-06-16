@@ -25,7 +25,7 @@ class ItemDisplayScene: SKScene {
         
         theItem = ItemClass.itemInSpace("\(itemName!)")
         let theImage = SKSpriteNode(imageNamed: "\(itemName!)")
-        theImage.position = CGPointMake(self.frame.midX, self.frame.midY + 130)
+        theImage.position = CGPointMake(self.frame.midX, self.frame.midY + 125)
         if itemName == "Booty_1" {
             theImage.position = CGPointMake(self.frame.midX, self.frame.midY + 100)
         }
