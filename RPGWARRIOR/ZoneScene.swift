@@ -32,10 +32,10 @@ class ZoneScene: SKScene {
         if firstLoad{
         if (defaults.objectForKey("sound") as! Bool) {
             soundOn = true
-            soundOnButton = SKSpriteNode(imageNamed: "Booty_1")
+            soundOnButton = SKSpriteNode(imageNamed: "Sound_On_Button_1")
         }else {
             soundOn = false
-            soundOnButton = SKSpriteNode(imageNamed: "Sound_Off_1")
+            soundOnButton = SKSpriteNode(imageNamed: "Sound_Off_Button_1")
         }
         soundOnButton!.size = CGSizeMake(70, 70)
         soundOnButton!.position = CGPointMake(50, 50)
@@ -290,12 +290,12 @@ class ZoneScene: SKScene {
                 self.view?.presentScene(aTutorialScene, transition: skTransition)
             }else if soundOnButton!.containsPoint((touch as! UITouch).locationInNode(self)){
                 if soundOn {
-                    soundOnButton!.texture = SKTexture(imageNamed: "Sound_Off_1")
+                    soundOnButton!.texture = SKTexture(imageNamed: "Sound_Off_Button_1")
                     soundOn = false
                     defaults.setBool(false, forKey: "sound")
                     happyMusic.stop()
                 }else {
-                    soundOnButton!.texture = SKTexture(imageNamed: "Booty_1")
+                    soundOnButton!.texture = SKTexture(imageNamed: "Sound_On_Button_1")
                     soundOn = true
                     defaults.setBool(true, forKey: "sound")
                     happyMusic.play()

@@ -177,6 +177,8 @@
 		DCA8F2271B2FFBDE007A6B52 /* Level_Complete_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F2231B2FFBDD007A6B52 /* Level_Complete_Text.png */; };
 		DCA8F2281B2FFBDE007A6B52 /* Tap_To_Continue_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F2241B2FFBDD007A6B52 /* Tap_To_Continue_Text_1.png */; };
 		DCA8F2291B2FFBDE007A6B52 /* You_Received_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F2251B2FFBDD007A6B52 /* You_Received_Text.png */; };
+		DCA8F22C1B3234F2007A6B52 /* Sound_Off_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F22A1B3234F2007A6B52 /* Sound_Off_Button_1.png */; };
+		DCA8F22D1B3234F2007A6B52 /* Sound_On_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F22B1B3234F2007A6B52 /* Sound_On_Button_1.png */; };
 		DCBCE4371B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */; };
 		DCBCE4391B12EB4800FCF4A5 /* Sweaty_Wristband_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */; };
 		DCBCE43B1B12EB5400FCF4A5 /* Regeneration_Symbol_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */; };
@@ -780,6 +782,8 @@
 		DCA8F2231B2FFBDD007A6B52 /* Level_Complete_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Level_Complete_Text.png; sourceTree = "<group>"; };
 		DCA8F2241B2FFBDD007A6B52 /* Tap_To_Continue_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tap_To_Continue_Text_1.png; sourceTree = "<group>"; };
 		DCA8F2251B2FFBDD007A6B52 /* You_Received_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = You_Received_Text.png; sourceTree = "<group>"; };
+		DCA8F22A1B3234F2007A6B52 /* Sound_Off_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Sound_Off_Button_1.png; path = ../Sound_Off_Button_1.png; sourceTree = "<group>"; };
+		DCA8F22B1B3234F2007A6B52 /* Sound_On_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Sound_On_Button_1.png; path = ../Sound_On_Button_1.png; sourceTree = "<group>"; };
 		DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_2.png; sourceTree = "<group>"; };
 		DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sweaty_Wristband_1.png; sourceTree = "<group>"; };
 		DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Regeneration_Symbol_1.png; sourceTree = "<group>"; };
@@ -1863,6 +1867,8 @@
 				DCFD74441B0153300054E370 /* Zone_Screen_1.png */,
 				DCFD74451B0153300054E370 /* Zone_Screen_2.png */,
 				DCFD74461B0153300054E370 /* Zones__Button_1.png */,
+				DCA8F22A1B3234F2007A6B52 /* Sound_Off_Button_1.png */,
+				DCA8F22B1B3234F2007A6B52 /* Sound_On_Button_1.png */,
 				DCFD74471B0153300054E370 /* Zones_Text_1.png */,
 			);
 			path = Rpg14;
@@ -2185,6 +2191,7 @@
 				DCFD74F31B0153300054E370 /* Whale_Boss_10.png in Resources */,
 				DCFD75141B0153300054E370 /* World_1_Level_24_Text.png in Resources */,
 				DCFD74611B0153300054E370 /* Coral_Crown_1.png in Resources */,
+				DCA8F22D1B3234F2007A6B52 /* Sound_On_Button_1.png in Resources */,
 				EEDD7FF91B2CBD45007EFE12 /* Guide_Screen_5.png in Resources */,
 				DCFD74621B0153300054E370 /* Crab_Boss_1.png in Resources */,
 				DC5925A51B26BED000244578 /* Gauntlet_Background_1.png in Resources */,
@@ -2255,6 +2262,7 @@
 				DCFD75411B01C5ED0054E370 /* Sand_Castle_2.png in Resources */,
 				DCFD74A91B0153300054E370 /* Pearl_Projectile_1.png in Resources */,
 				DC59259E1B26BED000244578 /* Clam_Boss_Dead_1.png in Resources */,
+				DCA8F22C1B3234F2007A6B52 /* Sound_Off_Button_1.png in Resources */,
 				DCFD74DD1B0153300054E370 /* Tentacle_35.png in Resources */,
 				DCFD745F1B0153300054E370 /* Copper_Ring_1.png in Resources */,
 				DC5925A31B26BED000244578 /* Enter_Text_1.png in Resources */,

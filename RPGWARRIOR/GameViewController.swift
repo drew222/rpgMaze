@@ -36,7 +36,14 @@ class GameViewController: UIViewController {
         //set isPlus if its an iPhone 6+
         if self.view.frame.maxX == 414.0{
             isPlus = true
+        }else if self.view.frame.maxY == 480.0{
+            isPad = true
         }
+        else if self.view.frame.maxY == 568.0{
+            is5 = true
+        }
+        println("maxX = \(self.view.frame.maxX)")
+        println("maxY = \(self.view.frame.maxY)")
 
       //  if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             titleScene = IntroScene(size: self.view.frame.size)
