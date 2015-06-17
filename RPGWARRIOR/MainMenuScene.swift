@@ -138,8 +138,8 @@ class MainMenuScene: SKScene {
             self.addChild(menu!)
             
             guideNode = SKSpriteNode(imageNamed: "Guide_Button_1")
-            guideNode!.position = CGPointMake(self.frame.maxX - 30, 30)
-            guideNode!.size = CGSizeMake(50, 50)
+            guideNode!.position = CGPointMake(self.frame.maxX - 55, self.frame.minX + 55)
+            guideNode!.size = CGSizeMake(100, 100)
             self.addChild(guideNode!)
             
            

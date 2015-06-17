@@ -110,8 +110,8 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
         
         if isPlus{
             //crabs
-            self.addChild(MiniCrab.crabAtPosition(CGPointMake(25, 140), endPosition: CGPointMake(self.frame.maxX - 25, 140)))
-            self.addChild(MiniCrab.crabAtPosition(CGPointMake(25, self.frame.maxY - 160), endPosition: CGPointMake(self.frame.maxX - 25, self.frame.maxY - 160)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(25, 140), endPosition: CGPointMake(self.frame.maxX - 25, 140)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(25, self.frame.maxY - 160), endPosition: CGPointMake(self.frame.maxX - 25, self.frame.maxY - 160)))
             //shells
             //mid column c = x d = y
             for (var d = 180; d < Int(self.frame.maxY - 180); d += 40){

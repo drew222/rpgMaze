@@ -27,8 +27,8 @@ class TutorialScene: SKScene {
         self.addChild(theImage!)
         
         skipButton = SKSpriteNode(imageNamed: "Skip_Tutorial_Button_1")
-        skipButton!.size = CGSizeMake(70, 70)
-        skipButton!.position = CGPointMake(35, self.frame.maxY - 35)
+        skipButton!.size = CGSizeMake(100, 100)
+        skipButton!.position = CGPointMake(self.frame.minX + 55, self.frame.maxY - 55)
         skipButton!.zPosition = 2
         self.addChild(skipButton!)
         
