@@ -2197,11 +2197,7 @@
 				DCFD74F31B0153300054E370 /* Whale_Boss_10.png in Resources */,
 				DCFD75141B0153300054E370 /* World_1_Level_24_Text.png in Resources */,
 				DCFD74611B0153300054E370 /* Coral_Crown_1.png in Resources */,
-<<<<<<< HEAD
 				EEACC0681B32360000708BA2 /* Sound_On_Button_1.png in Resources */,
-=======
-				DCA8F22D1B3234F2007A6B52 /* Sound_On_Button_1.png in Resources */,
->>>>>>> origin/master
 				EEDD7FF91B2CBD45007EFE12 /* Guide_Screen_5.png in Resources */,
 				DCFD74621B0153300054E370 /* Crab_Boss_1.png in Resources */,
 				DC5925A51B26BED000244578 /* Gauntlet_Background_1.png in Resources */,
@@ -2272,11 +2268,7 @@
 				DCFD75411B01C5ED0054E370 /* Sand_Castle_2.png in Resources */,
 				DCFD74A91B0153300054E370 /* Pearl_Projectile_1.png in Resources */,
 				DC59259E1B26BED000244578 /* Clam_Boss_Dead_1.png in Resources */,
-<<<<<<< HEAD
 				EEACC0671B32360000708BA2 /* Sound_Off_Button_1.png in Resources */,
-=======
-				DCA8F22C1B3234F2007A6B52 /* Sound_Off_Button_1.png in Resources */,
->>>>>>> origin/master
 				DCFD74DD1B0153300054E370 /* Tentacle_35.png in Resources */,
 				DCFD745F1B0153300054E370 /* Copper_Ring_1.png in Resources */,
 				DC5925A31B26BED000244578 /* Enter_Text_1.png in Resources */,
