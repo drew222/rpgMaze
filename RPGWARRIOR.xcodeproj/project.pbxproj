@@ -177,8 +177,6 @@
 		DCA8F2271B2FFBDE007A6B52 /* Level_Complete_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F2231B2FFBDD007A6B52 /* Level_Complete_Text.png */; };
 		DCA8F2281B2FFBDE007A6B52 /* Tap_To_Continue_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F2241B2FFBDD007A6B52 /* Tap_To_Continue_Text_1.png */; };
 		DCA8F2291B2FFBDE007A6B52 /* You_Received_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F2251B2FFBDD007A6B52 /* You_Received_Text.png */; };
-		DCA8F22C1B3234F2007A6B52 /* Sound_Off_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F22A1B3234F2007A6B52 /* Sound_Off_Button_1.png */; };
-		DCA8F22D1B3234F2007A6B52 /* Sound_On_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F22B1B3234F2007A6B52 /* Sound_On_Button_1.png */; };
 		DCBCE4371B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4361B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png */; };
 		DCBCE4391B12EB4800FCF4A5 /* Sweaty_Wristband_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE4381B12EB4800FCF4A5 /* Sweaty_Wristband_1.png */; };
 		DCBCE43B1B12EB5400FCF4A5 /* Regeneration_Symbol_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCBCE43A1B12EB5300FCF4A5 /* Regeneration_Symbol_1.png */; };
@@ -490,6 +488,8 @@
 		EE60A9F01AE86CF300A56313 /* World1Level30.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE60A9EF1AE86CF300A56313 /* World1Level30.swift */; };
 		EEACC0671B32360000708BA2 /* Sound_Off_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEACC0651B32360000708BA2 /* Sound_Off_Button_1.png */; };
 		EEACC0681B32360000708BA2 /* Sound_On_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEACC0661B32360000708BA2 /* Sound_On_Button_1.png */; };
+		EEACC06B1B35BC0700708BA2 /* Dont_Forget_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEACC0691B35BC0600708BA2 /* Dont_Forget_Text_1.png */; };
+		EEACC06C1B35BC0700708BA2 /* Total_Stats_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEACC06A1B35BC0700708BA2 /* Total_Stats_Text_1.png */; };
 		EEB7AB061AD0E4DE00064D9C /* World1Level19.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB051AD0E4DE00064D9C /* World1Level19.swift */; };
 		EEB7AB081AD0F27600064D9C /* World1Level15.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB071AD0F27600064D9C /* World1Level15.swift */; };
 		EEB7AB0A1AD0FED000064D9C /* World1Level16.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB7AB091AD0FED000064D9C /* World1Level16.swift */; };
@@ -1097,6 +1097,8 @@
 		EE60A9EF1AE86CF300A56313 /* World1Level30.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level30.swift; sourceTree = "<group>"; };
 		EEACC0651B32360000708BA2 /* Sound_Off_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sound_Off_Button_1.png; sourceTree = "<group>"; };
 		EEACC0661B32360000708BA2 /* Sound_On_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sound_On_Button_1.png; sourceTree = "<group>"; };
+		EEACC0691B35BC0600708BA2 /* Dont_Forget_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dont_Forget_Text_1.png; sourceTree = "<group>"; };
+		EEACC06A1B35BC0700708BA2 /* Total_Stats_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Total_Stats_Text_1.png; sourceTree = "<group>"; };
 		EEB7AB051AD0E4DE00064D9C /* World1Level19.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level19.swift; sourceTree = "<group>"; };
 		EEB7AB071AD0F27600064D9C /* World1Level15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level15.swift; sourceTree = "<group>"; };
 		EEB7AB091AD0FED000064D9C /* World1Level16.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level16.swift; sourceTree = "<group>"; };
@@ -1373,6 +1375,8 @@
 		DCFD73671B01532F0054E370 /* Rpg14 */ = {
 			isa = PBXGroup;
 			children = (
+				EEACC0691B35BC0600708BA2 /* Dont_Forget_Text_1.png */,
+				EEACC06A1B35BC0700708BA2 /* Total_Stats_Text_1.png */,
 				EEACC0651B32360000708BA2 /* Sound_Off_Button_1.png */,
 				EEACC0661B32360000708BA2 /* Sound_On_Button_1.png */,
 				DCA8F2221B2FFBDD007A6B52 /* Check_It_Text_1.png */,
@@ -1996,6 +2000,7 @@
 				DC5925CA1B26BED000244578 /* Sinister_1.png in Resources */,
 				DCFD750E1B0153300054E370 /* World_1_Level_19_Text.png in Resources */,
 				DCFD75041B0153300054E370 /* Whale_Level_Icon_1.png in Resources */,
+				EEACC06C1B35BC0700708BA2 /* Total_Stats_Text_1.png in Resources */,
 				DCFD74D41B0153300054E370 /* Tentacle_26.png in Resources */,
 				DCF23E0A1B0BAA0500484040 /* Tentacle_Swing_3.png in Resources */,
 				DCFD74EB1B0153300054E370 /* Treasure_Chest_5.png in Resources */,
@@ -2252,6 +2257,7 @@
 				DCFD74D11B0153300054E370 /* Tentacle_23.png in Resources */,
 				DCFD750F1B0153300054E370 /* World_1_Level_1_Text.png in Resources */,
 				DCFD74581B0153300054E370 /* Clam_Boss_Rocking_1.png in Resources */,
+				EEACC06B1B35BC0700708BA2 /* Dont_Forget_Text_1.png in Resources */,
 				EEB809321B14C11600A221E2 /* Right_Text_1.png in Resources */,
 				DCFD74681B0153300054E370 /* Crab_Boss_4.png in Resources */,
 				DC5925C61B26BED000244578 /* Nightfall_1.png in Resources */,

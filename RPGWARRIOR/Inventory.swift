@@ -1255,22 +1255,20 @@ class Inventory: SKScene {
                             
                             //Add item type***********
                             let itemType = itemToMove!.itemType
-                            var typeString: String?
+                            var typeString: SKSpriteNode?
+                            //var typeString: String?
                             if itemType == ItemType.weapon{
-                                typeString = "Noggin Slot"
+                                typeString = SKSpriteNode(imageNamed: "Noggin_Text_1")
                             }else if itemType == ItemType.neck {
-                                typeString = "Neck Slot"
+                                typeString = SKSpriteNode(imageNamed: "Neck_Text_1")
                             }else {
-                                typeString = "Tentacle Slot"
+                                typeString = SKSpriteNode(imageNamed: "Tentacles_Text_1")
                             }
-                            let typeText = SKLabelNode(text: "\(typeString!)")
-                            typeText.position = CGPointMake(self.frame.midX - 125, self.frame.midY - 82)
-                            typeText.fontSize = 18
-                            typeText.zPosition = 3
-                            typeText.name = "typeText"
-                            typeText.fontName = "ChalkboardSE-Bold"
-                            typeText.fontColor = UIColor.blackColor()
-                            self.addChild(typeText)
+                           
+                            typeString!.position = CGPointMake(self.frame.midX - 125, self.frame.midY - 82)
+                            typeString?.setScale(0.4)
+                           typeString!.name = "typeString"
+                            self.addChild(typeString!)
                             //************************
                         }else{
                             statLabelLife!.text = ""
@@ -1280,7 +1278,7 @@ class Inventory: SKScene {
                             speedSymbol2?.removeFromParent()
                             regenerationSymbol2?.removeFromParent()
                             self.childNodeWithName("sellButton")?.removeFromParent()
-                            self.childNodeWithName("typeText")?.removeFromParent()
+                            self.childNodeWithName("typeString")?.removeFromParent()
                             self.childNodeWithName("itemName")?.removeFromParent()
                             self.childNodeWithName("priceButton")?.removeFromParent()
                             self.childNodeWithName("sellBooty")?.removeFromParent()

@@ -25,19 +25,18 @@ class ItemDisplayScene: SKScene {
         
         theItem = ItemClass.itemInSpace("\(itemName!)")
         let theImage = SKSpriteNode(imageNamed: "\(itemName!)")
-        theImage.position = CGPointMake(self.frame.midX, self.frame.midY + 125)
+        theImage.position = CGPointMake(self.frame.midX, self.frame.midY + 50)
         if itemName == "Booty_1" {
-            theImage.position = CGPointMake(self.frame.midX, self.frame.midY + 100)
+            theImage.position = CGPointMake(self.frame.midX, self.frame.midY + 50)
         }
         theImage.size = CGSizeMake(100, 100)
         theImage.zPosition = 1
         self.addChild(theImage)
         
-        
         let levelComplete = SKSpriteNode(imageNamed: "Level_Complete_Text")
-        levelComplete.position = CGPointMake(self.frame.midX, self.frame.maxY - 80)
+        levelComplete.position = CGPointMake(self.frame.midX, self.frame.midY + 250)
         levelComplete.name = "levelComplete"
-        levelComplete.size = CGSizeMake(320, 65)
+        levelComplete.setScale(0.35)
         levelComplete.zPosition = 1
         self.addChild(levelComplete)
         
@@ -96,24 +95,19 @@ class ItemDisplayScene: SKScene {
         
         
         continueButton = SKSpriteNode(imageNamed: "Tap_To_Continue_Text_1")
-        continueButton!.position = CGPointMake(self.frame.midX, 80)
+        continueButton!.position = CGPointMake(self.frame.midX, self.frame.midY - 250)
         continueButton!.name = "continue"
-        continueButton!.size = CGSizeMake(300, 100)
+        continueButton!.setScale(0.35)
         continueButton!.zPosition = 3
         self.addChild(continueButton!)
         
-        let buttonBackground = SKSpriteNode(imageNamed: "Inventory_Slot_1")
-        buttonBackground.position = CGPointMake(self.frame.midX, 80)
-        buttonBackground.name = "buttonBackground"
-        buttonBackground.size = CGSizeMake(320, 80)
-        levelComplete.zPosition = 1
-        self.addChild(buttonBackground)
+        
         
         
         let received = SKSpriteNode(imageNamed: "You_Received_Text")
-        received.position = CGPointMake(self.frame.midX, self.frame.maxY - 150)
+        received.position = CGPointMake(self.frame.midX, self.frame.midY + 150)
         received.name = "received"
-        received.size = CGSizeMake(200, 40)
+        received.setScale(0.4)
         received.zPosition = 1
         self.addChild(received)
         
@@ -121,30 +115,30 @@ class ItemDisplayScene: SKScene {
         if itemName != "Booty_1" && backpackSpaces != 0{
             
             let checkIt = SKSpriteNode(imageNamed: "Check_It_Text_1")
-            checkIt.position = CGPointMake(self.frame.midX, 180)
+            checkIt.position = CGPointMake(self.frame.midX, self.frame.midY - 125)
             checkIt.name = "checkIt"
-            checkIt.size = CGSizeMake(400, 130)
+            checkIt.setScale(0.4)
             checkIt.zPosition = 1
             self.addChild(checkIt)
             
             //Add item type***********
             let itemType = theItem!.itemType
-            var typeString: String?
+            var typeString: SKSpriteNode?
+            //var typeString: String?
             if itemType == ItemType.weapon{
-                typeString = "Noggin Slot"
+                typeString = SKSpriteNode(imageNamed: "Noggin_Text_1")
             }else if itemType == ItemType.neck {
-                typeString = "Neck Slot"
+                typeString = SKSpriteNode(imageNamed: "Neck_Text_1")
             }else {
-                typeString = "Tentacle Slot"
+                typeString = SKSpriteNode(imageNamed: "Tentacles_Text_1")
             }
-            let typeText = SKLabelNode(text: "\(typeString!)")
-            typeText.position = CGPointMake(self.frame.midX, self.frame.midY + 15)
-            typeText.fontSize = 23
-            typeText.zPosition = 3
-            typeText.fontName = "ChalkboardSE-Bold"
-            typeText.fontColor = UIColor.blackColor()
-            self.addChild(typeText)
+            
+            typeString!.position = CGPointMake(self.frame.midX - 125, self.frame.midY - 82)
+            typeString?.setScale(0.4)
+            typeString!.name = "typeString"
+            //self.addChild(typeString!)
             //************************
+
             
             
             
@@ -155,10 +149,44 @@ class ItemDisplayScene: SKScene {
         sellNode.fontColor = UIColor.blackColor()
         sellNode.name = "priceButton"
         sellNode.zPosition = 3
-        self.addChild(sellNode)
+        //self.addChild(sellNode)
         }else {
+            
+            let dontForget = SKSpriteNode(imageNamed: "Dont_Forget_Text_1")
+            dontForget.position = CGPointMake(self.frame.midX, self.frame.midY - 125)
+            dontForget.name = "checkIt"
+            dontForget.setScale(0.4)
+            dontForget.zPosition = 1
+            self.addChild(dontForget)
+            
+            
+            //gold node
+            let goldCount = (self.userData?.objectForKey("inventory") as! Inventory).gold
+            let goldNode = SKLabelNode.init(text: "\(Int(goldCount))")
+            goldNode.position = CGPointMake(self.frame.midX + 50, self.frame.midY - 180)
+            goldNode.fontName = "ChalkboardSE-Bold"
+            goldNode.fontSize = 20
+            goldNode.fontColor = UIColor.blackColor()
+            self.addChild(goldNode)
+            //booty coin image
+            let booty = SKSpriteNode(imageNamed: "Booty_1.png")
+            booty.position = CGPointMake(self.frame.midX, self.frame.midY - 172)
+            booty.setScale(0.07)
+            self.addChild(booty)
+            //total booty node
+            let myBootyText = SKLabelNode.init(text: "TOTAL")
+            myBootyText.position = CGPointMake(self.frame.midX - 50, self.frame.midY - 180)
+            myBootyText.fontName = "ChalkboardSE-Bold"
+            myBootyText.fontSize = 20
+            myBootyText.fontColor = UIColor.blackColor()
+            myBootyText.name = "bootyText"
+            myBootyText.zPosition = 3
+            self.addChild(myBootyText)
+            
+            
+            
             let sellNode2 = SKLabelNode.init(text: "\(Int(numBooty))")
-            sellNode2.position = CGPointMake(self.frame.midX + 155, 285)
+            sellNode2.position = CGPointMake(self.frame.midX + 80, self.frame.midY - 51)
             sellNode2.fontName = "ChalkboardSE-Bold"
             sellNode2.fontSize = 20
             sellNode2.fontColor = UIColor.blackColor()
@@ -166,26 +194,22 @@ class ItemDisplayScene: SKScene {
             sellNode2.zPosition = 3
             self.addChild(sellNode2)
         }
-        //booty coin image
-        let booty2 = SKSpriteNode(imageNamed: "Booty_1.png")
-        booty2.position = CGPointMake(self.frame.midX + 125, 290)
-        booty2.setScale(0.05)
-        self.addChild(booty2)
+        
         //myBooty node
         if itemName != "Booty_1"  && backpackSpaces != 0{
-        let myBootyText2 = SKLabelNode.init(text: "Sell Price :")
+        let myBootyText2 = SKLabelNode.init(text: "Sells for")
         myBootyText2.position = CGPointMake(self.frame.midX + 50, 285)
         myBootyText2.fontName = "ChalkboardSE-Bold"
-        myBootyText2.fontSize = 15
+        myBootyText2.fontSize = 20
         myBootyText2.fontColor = UIColor.blackColor()
         myBootyText2.name = "sellText"
         myBootyText2.zPosition = 3
-        self.addChild(myBootyText2)
+        //self.addChild(myBootyText2)
         }else {
-            let myBootyText3 = SKLabelNode.init(text: "Booty Found :")
-            myBootyText3.position = CGPointMake(self.frame.midX + 50, 285)
+            let myBootyText3 = SKLabelNode.init(text: "Kraken Booty  x")
+            myBootyText3.position = CGPointMake(self.frame.midX - 20, self.frame.midY - 50)
             myBootyText3.fontName = "ChalkboardSE-Bold"
-            myBootyText3.fontSize = 15
+            myBootyText3.fontSize = 20
             myBootyText3.fontColor = UIColor.blackColor()
             myBootyText3.name = "sellText"
             myBootyText3.zPosition = 3
@@ -196,33 +220,12 @@ class ItemDisplayScene: SKScene {
         if itemName != "Booty_1" && backpackSpaces != 0{
         let itemText = SKSpriteNode(imageNamed: theItem!.itemName!.stringByReplacingOccurrencesOfString("1", withString: "Text", options: NSStringCompareOptions.LiteralSearch, range: nil))
         itemText.name = "itemName"
-        itemText.setScale(0.7)
-        itemText.position = CGPointMake(self.frame.midX, 400)
+        itemText.setScale(0.5)
+        itemText.position = CGPointMake(self.frame.midX, self.frame.midY - 15)
         self.addChild(itemText)
         }
         
-        //gold node
-        let goldCount = (self.userData?.objectForKey("inventory") as! Inventory).gold
-        let goldNode = SKLabelNode.init(text: "\(Int(goldCount))")
-        goldNode.position = CGPointMake(self.frame.midX - 40, 285)
-        goldNode.fontName = "ChalkboardSE-Bold"
-        goldNode.fontSize = 20
-        goldNode.fontColor = UIColor.blackColor()
-        self.addChild(goldNode)
-        //booty coin image
-        let booty = SKSpriteNode(imageNamed: "Booty_1.png")
-        booty.position = CGPointMake(self.frame.midX - 80, 290)
-        booty.setScale(0.05)
-        self.addChild(booty)
-        //myBooty node
-        let myBootyText = SKLabelNode.init(text: "My Booty :")
-        myBootyText.position = CGPointMake(self.frame.midX - 135, 285)
-        myBootyText.fontName = "ChalkboardSE-Bold"
-        myBootyText.fontSize = 15
-        myBootyText.fontColor = UIColor.blackColor()
-        myBootyText.name = "bootyText"
-        myBootyText.zPosition = 3
-        self.addChild(myBootyText)
+        
         if itemName != "Booty_1"  && backpackSpaces != 0{
             if life! == -1 {
                 life! = 0
@@ -233,6 +236,7 @@ class ItemDisplayScene: SKScene {
             if regen! == -1 {
                 regen! = 0
             }
+        
         let statLabelLife = SKLabelNode.init(text: "\(Int(life!))")
         statLabelLife.position = CGPointMake(self.frame.midX - 70, self.frame.minY + 327)
         statLabelLife.fontName = "ChalkboardSE-Bold"
@@ -240,7 +244,7 @@ class ItemDisplayScene: SKScene {
         statLabelLife.fontColor = UIColor.blackColor()
         statLabelLife.name = "lifeStat"
         statLabelLife.setScale(0.7)
-        self.addChild(statLabelLife)
+        //self.addChild(statLabelLife)
         let statLabelMovement = SKLabelNode.init(text: "\(Int(movement!))")
         statLabelMovement.position = CGPointMake(self.frame.midX + 30, self.frame.minY + 327)
         statLabelMovement.fontName = "ChalkboardSE-Bold"
@@ -248,7 +252,7 @@ class ItemDisplayScene: SKScene {
         statLabelMovement.fontColor = UIColor.blackColor()
         statLabelMovement.name = "movementStat"
         statLabelMovement.setScale(0.7)
-        self.addChild(statLabelMovement)
+        //self.addChild(statLabelMovement)
         let statLabelRegen = SKLabelNode.init(text: "\(Int(regen!))")
         statLabelRegen.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 327)
         statLabelRegen.fontName = "ChalkboardSE-Bold"
@@ -256,7 +260,7 @@ class ItemDisplayScene: SKScene {
         statLabelRegen.fontColor = UIColor.blackColor()
         statLabelRegen.name = "regenStat"
         statLabelRegen.setScale(0.7)
-        self.addChild(statLabelRegen)
+        //self.addChild(statLabelRegen)
         }
         
         if itemName != "Booty_1" && backpackSpaces != 0{
@@ -264,17 +268,17 @@ class ItemDisplayScene: SKScene {
         lifeSymbol.setScale(0.15)
         lifeSymbol.name = "life"
         lifeSymbol.position = CGPointMake(self.frame.midX - 110, self.frame.minY + 335)
-        self.addChild(lifeSymbol)
+        //self.addChild(lifeSymbol)
         let speedSymbol = SKSpriteNode(imageNamed: "Speed_Symbol_1")
         speedSymbol.setScale(0.15)
         speedSymbol.name = "speed"
         speedSymbol.position = CGPointMake(self.frame.midX - 10, self.frame.minY + 335)
-        self.addChild(speedSymbol)
+        //self.addChild(speedSymbol)
         let regenerationSymbol = SKSpriteNode(imageNamed: "Regeneration_Symbol_1")
         regenerationSymbol.setScale(0.15)
         regenerationSymbol.name = "regen"
         regenerationSymbol.position = CGPointMake(self.frame.midX + 90, self.frame.minY + 335)
-        self.addChild(regenerationSymbol)
+        //self.addChild(regenerationSymbol)
         }
         
         
