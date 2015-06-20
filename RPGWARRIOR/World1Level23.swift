@@ -118,7 +118,7 @@ class World1Level23: SKScene, SKPhysicsContactDelegate {
         }else{
             regenAmount.fontSize = 13
         }
-        regenAmount.fontColor = UIColor.blackColor()
+        regenAmount.fontColor = UIColor.whiteColor()
         regenAmount.zPosition = 2
         regenAmount.fontName = "ChalkboardSE-Bold"
         self.addChild(regenAmount)

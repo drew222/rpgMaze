@@ -498,20 +498,21 @@ class MainMenuScene: SKScene {
         if highestLevel > 30 {
             //highscore text
             let highscoreText = SKSpriteNode(imageNamed: "High_Score_Text")
-            highscoreText.size = CGSizeMake(90, 20)
-            highscoreText.position = CGPointMake(self.frame.midX - 10, 57)
+            highscoreText.setScale(0.35)
+            highscoreText.position = CGPointMake(self.frame.midX - 5, self.frame.midY - 250)
+            highscoreText.zPosition = 4
             self.addChild(highscoreText)
             
             //endless text
             let endlessText = SKSpriteNode(imageNamed: "Endless_Mode_Text_2")
-            endlessText.size = CGSizeMake(80, 30)
-            endlessText.position = CGPointMake(self.frame.midX + 80, 55)
+            endlessText.setScale(0.5)
+            endlessText.position = CGPointMake(self.frame.midX + 35, self.frame.midY - 283)
             self.addChild(endlessText)
             
             //highscore frame
             let highscoreFrame = SKSpriteNode(imageNamed: "High_Score_Frame")
-            highscoreFrame.size = CGSizeMake(200, 60)
-            highscoreFrame.position = CGPointMake(self.frame.midX + 30, 45)
+            highscoreFrame.size = CGSizeMake(160, 60)
+            highscoreFrame.position = CGPointMake(self.frame.midX - 5, self.frame.midY - 290)
             self.addChild(highscoreFrame)
             var highestLevelText: SKSpriteNode?
             if highestLevel - 30 < 51{
@@ -519,16 +520,16 @@ class MainMenuScene: SKScene {
             }else{
                 highestLevelText = SKSpriteNode(imageNamed: "Phase_\(highestLevel - 31)_Text")
             }
-            highestLevelText!.position = CGPointMake(self.frame.midX - 10, 30)
+            highestLevelText!.position = CGPointMake(self.frame.midX - 40, self.frame.midY - 290)
             highestLevelText!.name = "highestLevel"
-            highestLevelText!.size = CGSizeMake(150, 40)
+            highestLevelText!.setScale(0.125)
             self.addChild(highestLevelText!)
             
             if highestLevel == 81 {
                 let highestTimeText = SKLabelNode(fontNamed: "ChalkboardSE-Bold")
                 highestTimeText.text = "\(Int(highestTime))"
                 highestTimeText.fontColor = UIColor.blackColor()
-                highestTimeText.position = CGPointMake(self.frame.midX + 90, 20)
+                highestTimeText.position = CGPointMake(self.frame.midX + 40, self.frame.midY - 315)
                 highestTimeText.name = "highestTime"
                 highestTimeText.fontSize = 20
                 self.addChild(highestTimeText)
@@ -536,7 +537,7 @@ class MainMenuScene: SKScene {
                 let highestTimeText = SKLabelNode(fontNamed: "ChalkboardSE-Bold")
                 highestTimeText.text = "0"
                 highestTimeText.fontColor = UIColor.blackColor()
-                highestTimeText.position = CGPointMake(self.frame.midX + 90, 20)
+                highestTimeText.position = CGPointMake(self.frame.midX + 40, self.frame.midY - 315)
                 highestTimeText.name = "highestTime"
                 highestTimeText.fontSize = 20
                 self.addChild(highestTimeText)
@@ -891,30 +892,7 @@ class MainMenuScene: SKScene {
                     self.view?.presentScene(self.userData?.objectForKey("worldscene") as! ZoneScene, transition: skTransition)
                 
                 }
-             /*
             
-            }else if inventoryNode!.containsPoint(touch.locationInNode(self)){
-            self.view?.presentScene(inventory, transition: skTransition)
-            }else if storeNode!.containsPoint(touch.locationInNode(self)){
-            let aStoreScene = StoreScene(size: self.frame.size)
-            aStoreScene.userData = NSMutableDictionary()
-            aStoreScene.userData?.setObject(inventory!, forKey: "inventory")
-            //aStoreScene.userData?.setObject(world1Menu!, forKey: "menu")
-            aStoreScene.userData?.setObject(self, forKey: "worldscene")
-            self.view?.presentScene(aStoreScene, transition: skTransition)
-            
-            
-            
-            
-            
-            
-            }else if mainScreen!.containsPoint(touch.locationInNode(self)){
-                //let inventoryScene = Inventory(size: self.frame.size)
-                let skTransition = SKTransition.fadeWithDuration(1.0)
-                //(self.userData?.objectForKey("worldScene") as Inventory).userData?.setObject(self, forKey: "worldScene")
-                self.view?.presentScene(self.userData?.objectForKey("worldscene") as ZoneScene, transition: skTransition)
-            }
-                        */
         }
     }
 }

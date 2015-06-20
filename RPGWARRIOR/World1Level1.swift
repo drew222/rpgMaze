@@ -66,6 +66,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         lifeNode!.fontSize = 16
         self.addChild(lifeNode!)
         
+       
         //regen spinning clock
         let backTimer = SKSpriteNode(imageNamed: "Regen_Timer_1")
         backTimer.size = CGSizeMake(30, 30)
@@ -93,13 +94,13 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         }else{
             regenAmount.fontSize = 13
         }
-        regenAmount.fontColor = UIColor.blackColor()
+        regenAmount.fontColor = UIColor.whiteColor()
         regenAmount.zPosition = 2
         regenAmount.fontName = "ChalkboardSE-Bold"
         self.addChild(regenAmount)
         //*************************
         
-        //print(newLifeNode)
+        
         
         
         

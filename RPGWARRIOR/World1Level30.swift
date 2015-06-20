@@ -150,7 +150,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         }else{
             regenAmount.fontSize = 13
         }
-        regenAmount.fontColor = UIColor.blackColor()
+        regenAmount.fontColor = UIColor.whiteColor()
         regenAmount.zPosition = 2
         regenAmount.fontName = "ChalkboardSE-Bold"
         self.addChild(regenAmount)
@@ -450,7 +450,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             if firstEndless {
                 let infText = SKSpriteNode(imageNamed: "Endless_Mode_Text")
                 infText.position = CGPointMake(self.frame.midX, self.frame.midY)
-                infText.size = self.frame.size
+                infText.setScale(0.5)
                 infText.name = "infText"
                 infText.runAction(SKAction.fadeOutWithDuration(0))
                 let wait = SKAction.waitForDuration(3)
@@ -666,7 +666,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         if phase == 51{
             if let timer = self.childNodeWithName("timer") as? SKLabelNode{
                 if !droppedChest{
-                    timer.text = "Time: \(Int(round(self.totalGameTime)))"
+                    timer.text = "Time  \(Int(round(self.totalGameTime)))"
                 }
             }else{
                 self.totalGameTime = 0.0
