@@ -60,7 +60,7 @@ class ItemDisplayScene: SKScene {
         var liteAttack: SKEmitterNode?
         let litePath = NSBundle.mainBundle().pathForResource("TreasureChestSpark", ofType: "sks")
         liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
-        liteAttack!.position = CGPointMake(self.frame.midX, self.frame.midY + 150)
+        liteAttack!.position = CGPointMake(self.frame.midX, self.frame.midY + 50)
             if itemName == "Booty_1" {
                 liteAttack!.position = CGPointMake(self.frame.midX, self.frame.midY + 130)
             }

@@ -59,19 +59,32 @@ class Inventory: SKScene {
         krakenNode.name = "kraken"
         krakenNode.size = CGSizeMake(250, 250)
         inv.addChild(krakenNode)
+        //napsack text
+        let napsackText = SKSpriteNode(imageNamed: "Napsack_Text_1")
+        napsackText.position = CGPointMake(inv.frame.midX, inv.frame.minY + 213)
+        napsackText.zPosition = 2
+        napsackText.setScale(0.45)
+        inv.addChild(napsackText)
+        
+        //overall stats
+        let Totaltext = SKSpriteNode(imageNamed: "Total_Stats_Text_1")
+        Totaltext.position = CGPointMake(inv.frame.minX + 40, inv.frame.maxY - 123)
+        Totaltext.zPosition = 2
+        Totaltext.setScale(0.3)
+        inv.addChild(Totaltext)
         
         let lifeSymbol = SKSpriteNode(imageNamed: "Life_Symbol_1")
-        lifeSymbol.position = CGPointMake(inv.frame.minX + 25, inv.frame.maxY - 140)
+        lifeSymbol.position = CGPointMake(inv.frame.minX + 25, inv.frame.maxY - 155)
         lifeSymbol.zPosition = 2
         lifeSymbol.setScale(0.2)
         inv.addChild(lifeSymbol)
         let speedSymbol = SKSpriteNode(imageNamed: "Speed_Symbol_1")
-        speedSymbol.position = CGPointMake(inv.frame.minX + 25, inv.frame.maxY - 180)
+        speedSymbol.position = CGPointMake(inv.frame.minX + 25, inv.frame.maxY - 195)
         speedSymbol.zPosition = 2
         speedSymbol.setScale(0.2)
         inv.addChild(speedSymbol)
         let regenerationSymbol = SKSpriteNode(imageNamed: "Regeneration_Symbol_1")
-        regenerationSymbol.position = CGPointMake(inv.frame.minX + 25, inv.frame.maxY - 220)
+        regenerationSymbol.position = CGPointMake(inv.frame.minX + 25, inv.frame.maxY - 235)
         regenerationSymbol.zPosition = 2
         regenerationSymbol.setScale(0.2)
         inv.addChild(regenerationSymbol)
@@ -160,21 +173,21 @@ class Inventory: SKScene {
         inv.regenerationSymbol2!.setScale(0.15)
         
         inv.statLabelLife2 = SKLabelNode.init(text: "0")
-        inv.statLabelLife2!.position = CGPointMake(inv.frame.minX + 60, inv.frame.maxY - 150)
+        inv.statLabelLife2!.position = CGPointMake(inv.frame.minX + 60, inv.frame.maxY - 165)
         inv.statLabelLife2!.fontName = "ChalkboardSE-Bold"
         inv.statLabelLife2!.fontSize = 25
         inv.statLabelLife2!.fontColor = UIColor.blackColor()
         inv.statLabelLife2!.name = "lifeStat"
         inv.addChild(inv.statLabelLife2!)
         inv.statLabelMovement2 = SKLabelNode.init(text: "0")
-        inv.statLabelMovement2!.position = CGPointMake(inv.frame.minX + 60, inv.frame.maxY - 190)
+        inv.statLabelMovement2!.position = CGPointMake(inv.frame.minX + 60, inv.frame.maxY - 205)
         inv.statLabelMovement2!.fontName = "ChalkboardSE-Bold"
         inv.statLabelMovement2!.fontSize = 25
         inv.statLabelMovement2!.fontColor = UIColor.blackColor()
         inv.statLabelMovement2!.name = "movementStat"
         inv.addChild(inv.statLabelMovement2!)
         inv.statLabelRegen2 = SKLabelNode.init(text: "0")
-        inv.statLabelRegen2!.position = CGPointMake(inv.frame.minX + 60, inv.frame.maxY - 230)
+        inv.statLabelRegen2!.position = CGPointMake(inv.frame.minX + 60, inv.frame.maxY - 245)
         inv.statLabelRegen2!.fontName = "ChalkboardSE-Bold"
         inv.statLabelRegen2!.fontSize = 25
         inv.statLabelRegen2!.fontColor = UIColor.blackColor()
@@ -522,7 +535,7 @@ class Inventory: SKScene {
         self.childNodeWithName("itemName")?.removeFromParent()
         self.childNodeWithName("priceButton")?.removeFromParent()
         self.childNodeWithName("sellBooty")?.removeFromParent()
-        self.childNodeWithName("typeText")?.removeFromParent()
+        self.childNodeWithName("typeString")?.removeFromParent()
     }
     
     func displayItem(item: ItemClass, spot: String) {
@@ -1224,22 +1237,22 @@ class Inventory: SKScene {
                                 self.childNodeWithName("priceButton")?.removeFromParent()
                             }
                             let sellNode = SKLabelNode.init(text: "\(Int(round(itemToMove!.price! / 5)))")
-                            sellNode.position = CGPointMake(self.frame.minX + 50, self.frame.minY + 220)
+                            sellNode.position = CGPointMake(self.frame.minX + 48, self.frame.minY + 252)
                             sellNode.fontName = "ChalkboardSE-Bold"
-                            sellNode.fontSize = 30
+                            sellNode.fontSize = 22
                             sellNode.fontColor = UIColor.blackColor()
                             sellNode.name = "priceButton"
                             self.addChild(sellNode)
                             
                             //booty coin image
                             let booty = SKSpriteNode(imageNamed: "Booty_1.png")
-                            booty.position = CGPointMake(self.frame.minX + 95, self.frame.minY + 230)
+                            booty.position = CGPointMake(self.frame.minX + 80, self.frame.minY + 260)
                             booty.name = "sellBooty"
-                            booty.setScale(0.08)
+                            booty.setScale(0.06)
                             self.addChild(booty)
                             //sell text
                             let sellText = SKSpriteNode(imageNamed: "Sell_Text_1.png")
-                            sellText.position = CGPointMake(self.frame.midX - 10, self.frame.minY + 230)
+                            sellText.position = CGPointMake(self.frame.midX - 120, self.frame.minY + 230)
                             sellText.setScale(0.45)
                             sellText.name = "sellButton"
                             self.addChild(sellText)
@@ -1256,7 +1269,7 @@ class Inventory: SKScene {
                             //Add item type***********
                             let itemType = itemToMove!.itemType
                             var typeString: SKSpriteNode?
-                            //var typeString: String?
+                            
                             if itemType == ItemType.weapon{
                                 typeString = SKSpriteNode(imageNamed: "Noggin_Text_1")
                             }else if itemType == ItemType.neck {
@@ -1265,9 +1278,9 @@ class Inventory: SKScene {
                                 typeString = SKSpriteNode(imageNamed: "Tentacles_Text_1")
                             }
                            
-                            typeString!.position = CGPointMake(self.frame.midX - 125, self.frame.midY - 82)
-                            typeString?.setScale(0.4)
-                           typeString!.name = "typeString"
+                            typeString!.position = CGPointMake(self.frame.midX + 135, self.frame.midY - 75)
+                            typeString?.setScale(0.3)
+                            typeString!.name = "typeString"
                             self.addChild(typeString!)
                             //************************
                         }else{
