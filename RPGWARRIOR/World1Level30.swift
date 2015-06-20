@@ -74,7 +74,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         theHero!.setScale(0.6)
         self.addChild(theHero!)
         
-        let lifeHeart = SKSpriteNode(imageNamed: "Life_Symbol_1")
+        let lifeHeart = SKSpriteNode(imageNamed: "Regeneration_Symbol_1")
         lifeHeart.position = CGPointMake(self.frame.maxX - 30, self.frame.maxY - 30)
         lifeHeart.name = "lifeheart"
         lifeHeart.setScale(0.15)
