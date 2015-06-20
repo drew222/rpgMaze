@@ -469,7 +469,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 6
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
@@ -547,13 +547,13 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 8
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level22"{
-        //30% 10 booty, 50% rusty gold ring, 10% afro seaweed, 10% seaweed mustache
+        //30% 9 booty, 50% rusty gold ring, 10% afro seaweed, 10% seaweed mustache
         let myNum = randomWithMin(0, 100)
         if myNum > 50{
             let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
@@ -575,7 +575,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 10
+            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 9
             let defaults = NSUserDefaults.standardUserDefaults()
             defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
