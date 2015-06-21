@@ -285,7 +285,7 @@ class ItemDisplayScene: SKScene {
         if soundOn {
             self.runAction(hornSound)
             let wait = SKAction.waitForDuration(0.1)
-            let sequence = SKAction.sequence([fireworksSound, wait, fireworksSound, wait, fireworksSound, wait, fireworksSound])
+            let sequence = SKAction.sequence([wait, fireworksSound, wait, fireworksSound, wait, fireworksSound, wait, fireworksSound])
             self.runAction(sequence)
         }
         
@@ -303,6 +303,9 @@ class ItemDisplayScene: SKScene {
                 let mainMenu = self.userData?.objectForKey("menu") as! MainMenuScene
                 self.view?.presentScene(mainMenu, transition: skTransition)
             }else{
+                if soundOn{
+                    self.runAction(fireworksSound)
+                }
                 var liteAttack: SKEmitterNode?
                 let litePath = NSBundle.mainBundle().pathForResource("TreasureChestSpark", ofType: "sks")
                 liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
