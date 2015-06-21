@@ -69,6 +69,10 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         persistentData = NSUserDefaults.standardUserDefaults()
+        
+        if soundOn{
+            gauntletMusic.play()
+        }
         /* Setup your scene here */
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
@@ -699,6 +703,15 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         //check for win condition
         if (theHero!.life <= 0){
             if !splatted {
+                
+                if soundOn{
+                    gauntletMusic.stop()
+                    let waitDuration = SKAction.waitForDuration(1)
+                    let runBlock = SKAction.runBlock({beachMusic.play()})
+                    let sequence = SKAction.sequence([waitDuration, runBlock])
+                    self.runAction(sequence)
+                }
+                
                 splatted = true
                 let splat = SKSpriteNode(imageNamed: "Ink_Splat_2")
                 splat.size = CGSizeMake(70, 70)

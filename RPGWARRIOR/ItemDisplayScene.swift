@@ -282,11 +282,22 @@ class ItemDisplayScene: SKScene {
         }
         
         
+        if soundOn {
+            self.runAction(hornSound)
+            let wait = SKAction.waitForDuration(0.1)
+            let sequence = SKAction.sequence([fireworksSound, wait, fireworksSound, wait, fireworksSound, wait, fireworksSound])
+            self.runAction(sequence)
+        }
+        
+        
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         for touch in touches {
             if continueButton!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn{
+                    beachMusic.stop()
+                }
                 //go to mainmenuscene
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 let mainMenu = self.userData?.objectForKey("menu") as! MainMenuScene

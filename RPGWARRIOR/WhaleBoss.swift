@@ -172,6 +172,13 @@ class WhaleBoss: SKSpriteNode {
 
     
     func takeDamage(howMuch: CGFloat){
+        if soundOn {
+            (self.parent as! SKScene).runAction(poofSound)
+            let waitDuration = SKAction.waitForDuration(1)
+            let runBlock = SKAction.runBlock({beachMusic.play()})
+            let sequence = SKAction.sequence([waitDuration, runBlock])
+            (self.parent as! SKScene).runAction(sequence)
+        }
         self.life -= howMuch
         if (self.life <= 0) && !self.isDead{
             self.isDead = true

@@ -18,6 +18,9 @@ class GuideScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        if soundOn{
+            happyMusic.stop()
+        }
         theImage = SKSpriteNode()
         theImage!.texture = allImages[count]
         theImage!.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
@@ -41,6 +44,9 @@ class GuideScene: SKScene {
                     let skTransition = SKTransition.fadeWithDuration(1.0)
                     self.view?.presentScene(zoneScene, transition: skTransition)
                 }else{
+                    if soundOn {
+                        self.runAction(pageSound)
+                    }
                     theImage!.texture = allImages[count]
                 }
         }

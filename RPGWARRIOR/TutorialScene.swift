@@ -18,6 +18,9 @@ class TutorialScene: SKScene {
     var skipButton: SKSpriteNode?
     
     override func didMoveToView(view: SKView) {
+        if soundOn{
+            happyMusic.stop()
+        }
         /* Setup your scene here */
         theImage = SKSpriteNode()
         theImage!.texture = allImages[count]
@@ -40,6 +43,9 @@ class TutorialScene: SKScene {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         for touch in touches{
             if skipButton!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 var zoneScene: ZoneScene?
                 if let aZoneScene = self.userData?.objectForKey("zoneScene") as? ZoneScene{
@@ -60,6 +66,9 @@ class TutorialScene: SKScene {
                     let skTransition = SKTransition.fadeWithDuration(1.0)
                     self.view?.presentScene(zoneScene, transition: skTransition)
                 }else{
+                    if soundOn {
+                        self.runAction(pageSound)
+                    }
                     theImage!.texture = allImages[count]
                 }
             }

@@ -200,6 +200,17 @@
 		DCC4E3791A8EEE59000E5E89 /* StoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E3781A8EEE59000E5E89 /* StoreScene.swift */; };
 		DCC4E37B1A94EDED000E5E89 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC4E37A1A94EDED000E5E89 /* Block.swift */; };
 		DCE1101A1B190A940011B4AF /* BuffSpawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE110191B190A940011B4AF /* BuffSpawn.swift */; };
+		DCE585A51B364F3E00F58449 /* Button_Click_Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCE5859A1B364F3E00F58449 /* Button_Click_Sound.mp3 */; };
+		DCE585A61B364F3E00F58449 /* Chest_Opening_Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCE5859B1B364F3E00F58449 /* Chest_Opening_Sound.mp3 */; };
+		DCE585A71B364F3E00F58449 /* Fireworks_Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCE5859C1B364F3E00F58449 /* Fireworks_Sound.mp3 */; };
+		DCE585A81B364F3E00F58449 /* Splat_Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCE5859D1B364F3E00F58449 /* Splat_Sound.mp3 */; };
+		DCE585A91B364F3E00F58449 /* Gauntlet_Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCE5859E1B364F3E00F58449 /* Gauntlet_Music.mp3 */; };
+		DCE585AA1B364F3E00F58449 /* Horn_Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCE5859F1B364F3E00F58449 /* Horn_Sound.mp3 */; };
+		DCE585AB1B364F3E00F58449 /* Page_Turn_Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCE585A01B364F3E00F58449 /* Page_Turn_Sound.mp3 */; };
+		DCE585AC1B364F3E00F58449 /* Smoke_Poof_Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCE585A11B364F3E00F58449 /* Smoke_Poof_Sound.mp3 */; };
+		DCE585AD1B364F3E00F58449 /* Rap_Funk_Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCE585A21B364F3E00F58449 /* Rap_Funk_Music.mp3 */; };
+		DCE585AE1B364F3E00F58449 /* Swish_Noise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCE585A31B364F3E00F58449 /* Swish_Noise.mp3 */; };
+		DCE585AF1B364F3E00F58449 /* Beach_Noise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCE585A41B364F3E00F58449 /* Beach_Noise.mp3 */; };
 		DCE69C4A1AB4813A003561E6 /* World1Level4.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C491AB4813A003561E6 /* World1Level4.swift */; };
 		DCE69C4E1AB4A04C003561E6 /* World1Level6.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C4D1AB4A04C003561E6 /* World1Level6.swift */; };
 		DCE69C501AB507CB003561E6 /* World1Level7.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C4F1AB507CB003561E6 /* World1Level7.swift */; };
@@ -809,6 +820,17 @@
 		DCC4E3781A8EEE59000E5E89 /* StoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreScene.swift; sourceTree = "<group>"; };
 		DCC4E37A1A94EDED000E5E89 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Block.swift; path = Rpg8/Block.swift; sourceTree = "<group>"; };
 		DCE110191B190A940011B4AF /* BuffSpawn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuffSpawn.swift; sourceTree = "<group>"; };
+		DCE5859A1B364F3E00F58449 /* Button_Click_Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Button_Click_Sound.mp3; sourceTree = "<group>"; };
+		DCE5859B1B364F3E00F58449 /* Chest_Opening_Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Chest_Opening_Sound.mp3; sourceTree = "<group>"; };
+		DCE5859C1B364F3E00F58449 /* Fireworks_Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fireworks_Sound.mp3; sourceTree = "<group>"; };
+		DCE5859D1B364F3E00F58449 /* Splat_Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Splat_Sound.mp3; sourceTree = "<group>"; };
+		DCE5859E1B364F3E00F58449 /* Gauntlet_Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Gauntlet_Music.mp3; sourceTree = "<group>"; };
+		DCE5859F1B364F3E00F58449 /* Horn_Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Horn_Sound.mp3; sourceTree = "<group>"; };
+		DCE585A01B364F3E00F58449 /* Page_Turn_Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Page_Turn_Sound.mp3; sourceTree = "<group>"; };
+		DCE585A11B364F3E00F58449 /* Smoke_Poof_Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Smoke_Poof_Sound.mp3; sourceTree = "<group>"; };
+		DCE585A21B364F3E00F58449 /* Rap_Funk_Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rap_Funk_Music.mp3; sourceTree = "<group>"; };
+		DCE585A31B364F3E00F58449 /* Swish_Noise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Swish_Noise.mp3; sourceTree = "<group>"; };
+		DCE585A41B364F3E00F58449 /* Beach_Noise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beach_Noise.mp3; sourceTree = "<group>"; };
 		DCE69C491AB4813A003561E6 /* World1Level4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level4.swift; sourceTree = "<group>"; };
 		DCE69C4D1AB4A04C003561E6 /* World1Level6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level6.swift; sourceTree = "<group>"; };
 		DCE69C4F1AB507CB003561E6 /* World1Level7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level7.swift; sourceTree = "<group>"; };
@@ -1365,6 +1387,17 @@
 			isa = PBXGroup;
 			children = (
 				DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */,
+				DCE5859A1B364F3E00F58449 /* Button_Click_Sound.mp3 */,
+				DCE5859B1B364F3E00F58449 /* Chest_Opening_Sound.mp3 */,
+				DCE5859C1B364F3E00F58449 /* Fireworks_Sound.mp3 */,
+				DCE5859D1B364F3E00F58449 /* Splat_Sound.mp3 */,
+				DCE5859E1B364F3E00F58449 /* Gauntlet_Music.mp3 */,
+				DCE5859F1B364F3E00F58449 /* Horn_Sound.mp3 */,
+				DCE585A01B364F3E00F58449 /* Page_Turn_Sound.mp3 */,
+				DCE585A11B364F3E00F58449 /* Smoke_Poof_Sound.mp3 */,
+				DCE585A21B364F3E00F58449 /* Rap_Funk_Music.mp3 */,
+				DCE585A31B364F3E00F58449 /* Swish_Noise.mp3 */,
+				DCE585A41B364F3E00F58449 /* Beach_Noise.mp3 */,
 				DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */,
 				DCA8F21C1B2FDDC4007A6B52 /* Ink_Squirt_Sound_1.mp3 */,
 				DCA8F21D1B2FDDC4007A6B52 /* Kraken_Booty_Sound_1.mp3 */,
@@ -1993,7 +2026,9 @@
 				DC59260D1B27A2CA00244578 /* Phase_12_Text.png in Resources */,
 				DCFD74CF1B0153300054E370 /* Tentacle_21.png in Resources */,
 				DCFD747B1B0153300054E370 /* Ink_Flood_3.png in Resources */,
+				DCE585AF1B364F3E00F58449 /* Beach_Noise.mp3 in Resources */,
 				EEDD7FFD1B2CBD45007EFE12 /* Mud_Crab_2.png in Resources */,
+				DCE585A91B364F3E00F58449 /* Gauntlet_Music.mp3 in Resources */,
 				EEB8090F1B13981D00A221E2 /* Life_Jacket_Text.png in Resources */,
 				DCFD746C1B0153300054E370 /* Crab_Boss_8.png in Resources */,
 				DCFD74DA1B0153300054E370 /* Tentacle_32.png in Resources */,
@@ -2087,6 +2122,7 @@
 				DCFD74E31B0153300054E370 /* Tentacle_9.png in Resources */,
 				DC5925D01B26BED000244578 /* Twilight_1.png in Resources */,
 				EEB809151B13981D00A221E2 /* Pearl_Necklace_Text.png in Resources */,
+				DCE585AD1B364F3E00F58449 /* Rap_Funk_Music.mp3 in Resources */,
 				DCFD75231B0153300054E370 /* Yes_Text_1.png in Resources */,
 				DCFD74A31B0153300054E370 /* Mossy_Silver_Ring_2.png in Resources */,
 				DCFD74CE1B0153300054E370 /* Tentacle_20.png in Resources */,
@@ -2212,8 +2248,10 @@
 				DCFD750B1B0153300054E370 /* World_1_Level_16_Text.png in Resources */,
 				DC5926141B27A2CA00244578 /* Phase_20_Text.png in Resources */,
 				DC5926191B28259D00244578 /* Tutorial_Screen_20.png in Resources */,
+				DCE585A61B364F3E00F58449 /* Chest_Opening_Sound.mp3 in Resources */,
 				DCFD75271B0153300054E370 /* Zones_Text_1.png in Resources */,
 				DCFD74E11B0153300054E370 /* Tentacle_7.png in Resources */,
+				DCE585AA1B364F3E00F58449 /* Horn_Sound.mp3 in Resources */,
 				DCF23E331B0BAC5C00484040 /* Afro_Seaweed_1.png in Resources */,
 				DCFD75551B01D9100054E370 /* Pearl_Snap_Ring_1.png in Resources */,
 				DCFD74571B0153300054E370 /* Clam_Boss_4.png in Resources */,
@@ -2293,6 +2331,7 @@
 				EEDD7FF61B2CBD45007EFE12 /* Guide_Screen_1.png in Resources */,
 				EEDD7FFF1B2CBD45007EFE12 /* Whiteshell_1.png in Resources */,
 				DC2711251A85E11900986D2E /* Images.xcassets in Resources */,
+				DCE585A51B364F3E00F58449 /* Button_Click_Sound.mp3 in Resources */,
 				DC5925B31B26BED000244578 /* Phase_8_Text.png in Resources */,
 				DCFD74CC1B0153300054E370 /* Tentacle_19.png in Resources */,
 				DCFD75151B0153300054E370 /* World_1_Level_25_Text.png in Resources */,
@@ -2346,6 +2385,8 @@
 				DCFD75121B0153300054E370 /* World_1_Level_22_Text.png in Resources */,
 				DCFD74DC1B0153300054E370 /* Tentacle_34.png in Resources */,
 				DCFD74B81B0153300054E370 /* Seashell_4.png in Resources */,
+				DCE585AB1B364F3E00F58449 /* Page_Turn_Sound.mp3 in Resources */,
+				DCE585AE1B364F3E00F58449 /* Swish_Noise.mp3 in Resources */,
 				DC59266B1B290E3800244578 /* Phase_42_Text.png in Resources */,
 				DC59267F1B2911BF00244578 /* Tutorial_Screen_5.png in Resources */,
 				DCFD749C1B0153300054E370 /* Levels_Text_1.png in Resources */,
@@ -2369,6 +2410,7 @@
 				DCFD74F01B0153300054E370 /* Wave_2.png in Resources */,
 				EEB809521B15674700A221E2 /* Sunhat_Text.png in Resources */,
 				EEB809181B13981D00A221E2 /* Rusty_Gold_Ring_Text.png in Resources */,
+				DCE585AC1B364F3E00F58449 /* Smoke_Poof_Sound.mp3 in Resources */,
 				DC5925651B26BCEF00244578 /* Tutorial_Button_1.png in Resources */,
 				DC5925671B26BCF800244578 /* World_Coming_Soon_Button_1.png in Resources */,
 				DCFD74B91B0153300054E370 /* Seaweed_Mustache_1.png in Resources */,
@@ -2399,6 +2441,7 @@
 				DC5925AB1B26BED000244578 /* Nightmare_Text.png in Resources */,
 				EEB809641B15674700A221E2 /* World_1_Level_46_Text.png in Resources */,
 				DC5925CD1B26BED000244578 /* The_Jitters_2.png in Resources */,
+				DCE585A71B364F3E00F58449 /* Fireworks_Sound.mp3 in Resources */,
 				DCFD74AB1B0153300054E370 /* Rusty_Copper_Ring_1.png in Resources */,
 				DCFD745D1B0153300054E370 /* Clam_Boss_Rocking_6.png in Resources */,
 				DCFD74821B0153300054E370 /* Kraken_Boss_1.png in Resources */,
@@ -2466,6 +2509,7 @@
 				DCFD749D1B0153300054E370 /* Monocle_1.png in Resources */,
 				DC5926151B27A2CA00244578 /* World_1_Gauntlet_Level_Text_1.png in Resources */,
 				DC5926661B290E3800244578 /* Phase_37_Text.png in Resources */,
+				DCE585A81B364F3E00F58449 /* Splat_Sound.mp3 in Resources */,
 				DCF23E151B0BAB7F00484040 /* Beach_Towel_2.png in Resources */,
 				DCFD75311B01C5CC0054E370 /* Kraken_Boss_6.png in Resources */,
 				DCF23E1B1B0BAB9600484040 /* Inky_Ring_1.png in Resources */,
