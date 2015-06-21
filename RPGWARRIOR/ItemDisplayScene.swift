@@ -44,6 +44,9 @@ class ItemDisplayScene: SKScene {
         let backpackSpaces = (self.userData?.objectForKey("inventory") as! Inventory).backPackSpaces
         if backpackSpaces == 0 && itemName != "Booty_1"{
             theImage.texture = SKTexture(imageNamed: "Backpack_Full_Text")
+            theImage.size = CGSizeMake(300, 250)
+            theImage.position = CGPointMake(self.frame.midX, self.frame.midY - 20)
+            
         }
         //setup the life speed and regen of the item
         for stat in theItem!.itemStats! {
@@ -150,7 +153,7 @@ class ItemDisplayScene: SKScene {
         sellNode.name = "priceButton"
         sellNode.zPosition = 3
         //self.addChild(sellNode)
-        }else {
+        }else if itemName == "Booty_1" {
             
             let dontForget = SKSpriteNode(imageNamed: "Dont_Forget_Text_1")
             dontForget.position = CGPointMake(self.frame.midX, self.frame.midY - 125)
@@ -193,6 +196,8 @@ class ItemDisplayScene: SKScene {
             sellNode2.name = "priceButton"
             sellNode2.zPosition = 3
             self.addChild(sellNode2)
+        } else {
+            
         }
         
         //myBooty node
@@ -205,7 +210,7 @@ class ItemDisplayScene: SKScene {
         myBootyText2.name = "sellText"
         myBootyText2.zPosition = 3
         //self.addChild(myBootyText2)
-        }else {
+        }else if itemName == "Booty_1" {
             let myBootyText3 = SKLabelNode.init(text: "Kraken Booty  x")
             myBootyText3.position = CGPointMake(self.frame.midX - 20, self.frame.midY - 50)
             myBootyText3.fontName = "ChalkboardSE-Bold"
@@ -214,6 +219,8 @@ class ItemDisplayScene: SKScene {
             myBootyText3.name = "sellText"
             myBootyText3.zPosition = 3
             self.addChild(myBootyText3)
+        } else {
+            
         }
         
         

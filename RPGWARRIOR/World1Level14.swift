@@ -302,7 +302,7 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
                         itemDisplayScene.itemName = itemDropped!.itemName!
                     }else{
                         itemDisplayScene.itemName = "Booty_1"
-                        itemDisplayScene.numBooty = 1
+                        itemDisplayScene.numBooty = 5
                     }
                     itemDisplayScene.userData = NSMutableDictionary()
                     itemDisplayScene.userData?.setObject(self.userData?.objectForKey("menu") as! MainMenuScene, forKey: "menu")
