@@ -273,10 +273,19 @@ class ZoneScene: SKScene {
         let skTransition = SKTransition.fadeWithDuration(1.0)
         for touch in touches{
             if world1Node!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 self.view?.presentScene(world1Menu, transition: skTransition)
             }else if inventoryNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 self.view?.presentScene(inventory, transition: skTransition)
             }else if storeNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 let aStoreScene = StoreScene(size: self.frame.size)
                 aStoreScene.userData = NSMutableDictionary()
                 aStoreScene.userData?.setObject(inventory!, forKey: "inventory")
@@ -284,6 +293,9 @@ class ZoneScene: SKScene {
                 aStoreScene.userData?.setObject(self, forKey: "worldscene")
                 self.view?.presentScene(aStoreScene, transition: skTransition)
             }else if tutorialButton!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 let aTutorialScene = TutorialScene(size: self.frame.size)
                 aTutorialScene.userData = NSMutableDictionary()
                 aTutorialScene.userData?.setObject(self, forKey: "zoneScene")
@@ -295,6 +307,7 @@ class ZoneScene: SKScene {
                     defaults.setBool(false, forKey: "sound")
                     happyMusic.stop()
                 }else {
+                    self.runAction(clickSound)
                     soundOnButton!.texture = SKTexture(imageNamed: "Sound_On_Button_1")
                     soundOn = true
                     defaults.setBool(true, forKey: "sound")

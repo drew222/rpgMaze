@@ -276,9 +276,15 @@ class StoreScene: SKScene {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         for touch in touches{
             if menu!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(self.userData?.objectForKey("worldscene") as! ZoneScene, transition: skTransition)
             }else if inv!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(self.userData?.objectForKey("inventory") as! Inventory, transition: skTransition)
             }else if self.childNodeWithName("buyButton") != nil && self.childNodeWithName("buyButton")!.containsPoint((touch as! UITouch).locationInNode(self)){
@@ -299,6 +305,9 @@ class StoreScene: SKScene {
                 currentItem?.texture = nil
                 currentItem = nil
             }else if clickedItem((touch as! UITouch).locationInNode(self)) != ""{
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 if currentItem != nil{
                     currentItem!.removeFromParent()
                     self.childNodeWithName("slotLabel")?.removeFromParent()

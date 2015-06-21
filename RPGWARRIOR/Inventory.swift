@@ -929,6 +929,9 @@ class Inventory: SKScene {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         for touch in touches{
             if menu!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 //let menuScene = MainMenuScene(size: self.frame.size)
                 //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
                 (self.userData?.objectForKey("menu") as! MainMenuScene).userData?.setObject(self, forKey: "inventory")
@@ -936,6 +939,9 @@ class Inventory: SKScene {
                 //self.view?.presentScene(menuScene, transition: skTransition)
                 self.view?.presentScene(self.userData?.objectForKey("worldscene") as! ZoneScene, transition: skTransition)
             }else if store!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 let storeScene = StoreScene(size: self.frame.size)
                 storeScene.userData = NSMutableDictionary()
                 storeScene.userData?.setObject(self, forKey: "inventory")
@@ -954,6 +960,9 @@ class Inventory: SKScene {
                         }
                         //clicked on space with item in it
                         if space.item != nil{
+                            if soundOn {
+                                self.runAction(clickSound)
+                            }
                             if self.itemToMove == nil{
                                 self.itemToMove = space.item
                                 self.spaceToMove = space

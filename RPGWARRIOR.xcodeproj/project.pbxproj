@@ -171,6 +171,8 @@
 		DC9435C71B3746AF00231FE9 /* Tutorial_Screen_20.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435C51B3746AF00231FE9 /* Tutorial_Screen_20.png */; };
 		DC9435C81B3746AF00231FE9 /* Tutorial_Screen_21.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435C61B3746AF00231FE9 /* Tutorial_Screen_21.png */; };
 		DC9435CA1B375D7B00231FE9 /* Intro_Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435C91B375D7B00231FE9 /* Intro_Music.mp3 */; };
+		DC9435CC1B376D3B00231FE9 /* Level_Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435CB1B376D3B00231FE9 /* Level_Music.mp3 */; };
+		DC9435CE1B37711F00231FE9 /* Button_Click_Sound2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435CD1B37711F00231FE9 /* Button_Click_Sound2.mp3 */; };
 		DCA8F2161B2E846E007A6B52 /* Guide_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */; };
 		DCA8F21E1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */; };
 		DCA8F21F1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */; };
@@ -796,6 +798,8 @@
 		DC9435C51B3746AF00231FE9 /* Tutorial_Screen_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_20.png; sourceTree = "<group>"; };
 		DC9435C61B3746AF00231FE9 /* Tutorial_Screen_21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_21.png; sourceTree = "<group>"; };
 		DC9435C91B375D7B00231FE9 /* Intro_Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Intro_Music.mp3; sourceTree = "<group>"; };
+		DC9435CB1B376D3B00231FE9 /* Level_Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Level_Music.mp3; sourceTree = "<group>"; };
+		DC9435CD1B37711F00231FE9 /* Button_Click_Sound2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Button_Click_Sound2.mp3; sourceTree = "<group>"; };
 		DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide_Button_1.png; sourceTree = "<group>"; };
 		DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Happy_Background_Sound_1.mp3; sourceTree = "<group>"; };
 		DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ink_Splatter_Sound_1.mp3; sourceTree = "<group>"; };
@@ -1398,9 +1402,11 @@
 		DCA8F2171B2FCBCB007A6B52 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				DC9435CB1B376D3B00231FE9 /* Level_Music.mp3 */,
 				DC9435C91B375D7B00231FE9 /* Intro_Music.mp3 */,
 				DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */,
 				DCE5859A1B364F3E00F58449 /* Button_Click_Sound.mp3 */,
+				DC9435CD1B37711F00231FE9 /* Button_Click_Sound2.mp3 */,
 				DCE5859B1B364F3E00F58449 /* Chest_Opening_Sound.mp3 */,
 				DCE5859C1B364F3E00F58449 /* Fireworks_Sound.mp3 */,
 				DCE5859D1B364F3E00F58449 /* Splat_Sound.mp3 */,
@@ -2131,6 +2137,7 @@
 				DCBCE44B1B12EB9900FCF4A5 /* Sun_Screen_1.png in Resources */,
 				DC5925D11B26BED000244578 /* Twilight_2.png in Resources */,
 				EEB809661B15674700A221E2 /* World_1_Level_48_Text.png in Resources */,
+				DC9435CC1B376D3B00231FE9 /* Level_Music.mp3 in Resources */,
 				DC5925A61B26BED000244578 /* Gauntlet_Level_Icon_1.png in Resources */,
 				DC9435C41B37469800231FE9 /* Tutorial_Screen_18.png in Resources */,
 				DCFD74721B0153300054E370 /* Fitting_Room_1.png in Resources */,
@@ -2211,6 +2218,7 @@
 				EEB809571B15674700A221E2 /* World_1_Level_33_Text.png in Resources */,
 				EEB809611B15674700A221E2 /* World_1_Level_43_Text.png in Resources */,
 				DCA8F21F1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 in Resources */,
+				DC9435CE1B37711F00231FE9 /* Button_Click_Sound2.mp3 in Resources */,
 				DCFD74841B0153300054E370 /* Kraken_Boss_3.png in Resources */,
 				DC5925C21B26BED000244578 /* Insomnia_1.png in Resources */,
 				DCE585B11B36968400F58449 /* Guide_Screen_6.png in Resources */,

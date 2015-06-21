@@ -53,7 +53,7 @@ let pageSound = SKAction.playSoundFileNamed("Page_Turn_Sound.mp3", waitForComple
 let hornSound = SKAction.playSoundFileNamed("Horn_Sound.mp3", waitForCompletion: false)
 let poofSound = SKAction.playSoundFileNamed("Smoke_Poof_Sound.mp3", waitForCompletion: false)
 let fireworksSound = SKAction.playSoundFileNamed("Fireworks_Sound.mp3", waitForCompletion: false)
-let clickSound = SKAction.playSoundFileNamed("Button_Click_Sound.mp3", waitForCompletion: false)
+let clickSound = SKAction.playSoundFileNamed("Button_Click_Sound2.mp3", waitForCompletion: false)
 let chestSound = SKAction.playSoundFileNamed("Chest_Opening_Sound.mp3", waitForCompletion: false)
 let itemSound = SKAction.playSoundFileNamed("Swish_Noise.mp3", waitForCompletion: false)
 let url = NSBundle.mainBundle().URLForResource("Gauntlet_Music", withExtension: "mp3")
@@ -64,6 +64,8 @@ let url3 = NSBundle.mainBundle().URLForResource("Beach_Noise", withExtension: "m
 let beachMusic = AVAudioPlayer(contentsOfURL: url3, error: nil)
 let url4 = NSBundle.mainBundle().URLForResource("Intro_Music", withExtension: "mp3")
 let introMusic = AVAudioPlayer(contentsOfURL: url4, error: nil)
+let url5 = NSBundle.mainBundle().URLForResource("Level_Music", withExtension: "mp3")
+let levelMusic = AVAudioPlayer(contentsOfURL: url5, error: nil)
 let bootySound = SKAction.playSoundFileNamed("Kraken_Booty_Sound_1.mp3", waitForCompletion: false)
 
 

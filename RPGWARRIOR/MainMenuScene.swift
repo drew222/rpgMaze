@@ -143,7 +143,10 @@ class MainMenuScene: SKScene {
             self.addChild(guideNode!)
             
            
+            firstTimeLoaded = false
             
+            
+        }
         
         world1level1node = SKSpriteNode(imageNamed: "World_1_Level_1_Text")
         if let Node = world1level1node {
@@ -154,7 +157,9 @@ class MainMenuScene: SKScene {
             Node.setScale(0.25)
             Node.position = CGPointMake(self.frame.midX + 3, self.frame.midY - 5)
             Node.name = "world1level1"
-            self.addChild(Node)
+            if self.childNodeWithName("world1level1") == nil{
+                self.addChild(Node)
+            }
         }
 
         world1level2node = SKSpriteNode(imageNamed: "World_1_Level_2_Text")
@@ -162,11 +167,13 @@ class MainMenuScene: SKScene {
             let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
             levelIcon.setScale(0.25)
             levelIcon.position = CGPointMake(self.frame.midX - 55, self.frame.midY - 25)
-            self.addChild(levelIcon)
             Node.setScale(0.25)
             Node.position = CGPointMake(self.frame.midX - 55, self.frame.midY - 25)
             Node.name = "world1level2"
-            self.addChild(Node)
+            if self.childNodeWithName("world1level2") == nil && highestLevel >= 1{
+                self.addChild(levelIcon)
+                self.addChild(Node)
+            }
         }
       
             world1level3node = SKSpriteNode(imageNamed: "World_1_Level_3_Text")
@@ -174,11 +181,13 @@ class MainMenuScene: SKScene {
             let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
             levelIcon.setScale(0.25)
             levelIcon.position = CGPointMake(self.frame.midX - 75, self.frame.midY - 115)
-            self.addChild(levelIcon)
             Node.setScale(0.25)
             Node.position = CGPointMake(self.frame.midX - 75, self.frame.midY - 115)
             Node.name = "world1level3"
-            self.addChild(Node)
+                if self.childNodeWithName("world1level3") == nil && highestLevel >= 2{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
         }
             
             world1level4node = SKSpriteNode(imageNamed: "World_1_Level_4_Text")
@@ -186,11 +195,13 @@ class MainMenuScene: SKScene {
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 55)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 55)
                 Node.name = "world1level4"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level4") == nil && highestLevel >= 3{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             
             world1level5node = SKSpriteNode(imageNamed: "World_1_Level_5_Text")
@@ -198,11 +209,13 @@ class MainMenuScene: SKScene {
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY + 15)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 110, self.frame.midY + 15)
                 Node.name = "world1level5"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level5") == nil && highestLevel >= 4{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             
             world1level6node = SKSpriteNode(imageNamed: "World_1_Level_6_Text")
@@ -210,11 +223,13 @@ class MainMenuScene: SKScene {
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY + 85)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 110, self.frame.midY + 85)
                 Node.name = "world1level6"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level6") == nil && highestLevel >= 5{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             
             world1level7node = SKSpriteNode(imageNamed: "World_1_Level_7_Text")
@@ -222,270 +237,314 @@ class MainMenuScene: SKScene {
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 50, self.frame.midY + 130)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 50, self.frame.midY + 130)
                 Node.name = "world1level7"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level7") == nil && highestLevel >= 6{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level8node = SKSpriteNode(imageNamed: "World_1_Level_8_Text")
             if let Node = world1level8node {
                 let levelIcon = SKSpriteNode(imageNamed: "Whale_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 50, self.frame.midY + 135)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX + 50, self.frame.midY + 135)
                 Node.name = "world1level8"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level8") == nil && highestLevel >= 7{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level9node = SKSpriteNode(imageNamed: "World_1_Level_9_Text")
             if let Node = world1level9node {
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 110, self.frame.midY + 85)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX + 110, self.frame.midY + 85)
                 Node.name = "world1level9"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level9") == nil && highestLevel >= 8{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level10node = SKSpriteNode(imageNamed: "World_1_Level_10_Text")
             if let Node = world1level10node {
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 110, self.frame.midY + 15)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX + 110, self.frame.midY + 15)
                 Node.name = "world1level10"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level10") == nil && highestLevel >= 9{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level11node = SKSpriteNode(imageNamed: "World_1_Level_11_Text")
             if let Node = world1level11node {
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 110, self.frame.midY - 55)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX + 110, self.frame.midY - 55)
                 Node.name = "world1level11"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level11") == nil && highestLevel >= 10{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level12node = SKSpriteNode(imageNamed: "World_1_Level_12_Text")
             if let Node = world1level12node {
                 let levelIcon = SKSpriteNode(imageNamed: "Whale_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 75, self.frame.midY - 115)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX + 75, self.frame.midY - 115)
                 Node.name = "world1level12"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level12") == nil && highestLevel >= 11{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level13node = SKSpriteNode(imageNamed: "World_1_Level_13_Text")
             if let Node = world1level13node {
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX, self.frame.midY - 120)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX, self.frame.midY - 120)
                 Node.name = "world1level13"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level13") == nil && highestLevel >= 12{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level14node = SKSpriteNode(imageNamed: "World_1_Level_14_Text")
             if let Node = world1level14node {
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 35, self.frame.midY - 210)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX + 35, self.frame.midY - 210)
                 Node.name = "world1level14"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level14") == nil && highestLevel >= 13{
+                    self.addChild(Node)
+                    self.addChild(levelIcon)
+                }
             }
             world1level15node = SKSpriteNode(imageNamed: "World_1_Level_15_Text")
             if let Node = world1level15node {
                 let levelIcon = SKSpriteNode(imageNamed: "Whale_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 110, self.frame.midY - 210)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX + 110, self.frame.midY - 210)
                 Node.name = "world1level15"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level15") == nil && highestLevel >= 14{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level16node = SKSpriteNode(imageNamed: "World_1_Level_16_Text")
             if let Node = world1level16node {
                 let levelIcon = SKSpriteNode(imageNamed: "Whale_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 150)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 150)
                 Node.name = "world1level16"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level16") == nil && highestLevel >= 15{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level17node = SKSpriteNode(imageNamed: "World_1_Level_17_Text")
             if let Node = world1level17node {
                 let levelIcon = SKSpriteNode(imageNamed: "Kraken_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 80)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 80)
                 Node.name = "world1level17"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level17") == nil && highestLevel >= 16{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level18node = SKSpriteNode(imageNamed: "World_1_Level_18_Text")
             if let Node = world1level18node {
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 10)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 10)
                 Node.name = "world1level18"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level18") == nil && highestLevel >= 17{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level19node = SKSpriteNode(imageNamed: "World_1_Level_19_Text")
             if let Node = world1level19node {
                 let levelIcon = SKSpriteNode(imageNamed: "Kraken_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY + 60)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX + 155, self.frame.midY + 60)
                 Node.name = "world1level19"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level19") == nil && highestLevel >= 18{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level20node = SKSpriteNode(imageNamed: "World_1_Level_20_Text")
             if let Node = world1level20node {
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY + 130)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX + 155, self.frame.midY + 130)
                 Node.name = "world1level20"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level20") == nil && highestLevel >= 19{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level21node = SKSpriteNode(imageNamed: "World_1_Level_21_Text")
             if let Node = world1level21node {
                 let levelIcon = SKSpriteNode(imageNamed: "Kraken_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 110, self.frame.midY + 180)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX + 110, self.frame.midY + 180)
                 Node.name = "world1level21"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level21") == nil && highestLevel >= 20{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level22node = SKSpriteNode(imageNamed: "World_1_Level_22_Text")
             if let Node = world1level22node {
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 40, self.frame.midY + 180)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX + 40, self.frame.midY + 180)
                 Node.name = "world1level22"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level22") == nil && highestLevel >= 21{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level23node = SKSpriteNode(imageNamed: "World_1_Level_23_Text")
             if let Node = world1level23node {
                 let levelIcon = SKSpriteNode(imageNamed: "Whale_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 40, self.frame.midY + 180)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 40, self.frame.midY + 180)
                 Node.name = "world1level23"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level23") == nil && highestLevel >= 22{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level24node = SKSpriteNode(imageNamed: "World_1_Level_24_Text")
             if let Node = world1level24node {
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY + 180)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 110, self.frame.midY + 180)
                 Node.name = "world1level24"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level24") == nil && highestLevel >= 23{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level25node = SKSpriteNode(imageNamed: "World_1_Level_25_Text")
             if let Node = world1level25node {
                 let levelIcon = SKSpriteNode(imageNamed: "Kraken_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 155, self.frame.midY + 130)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 155, self.frame.midY + 130)
                 Node.name = "world1level25"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level25") == nil && highestLevel >= 24{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level26node = SKSpriteNode(imageNamed: "World_1_Level_26_Text")
             if let Node = world1level26node {
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 155, self.frame.midY + 60)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 155, self.frame.midY + 60)
                 Node.name = "world1level26"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level26") == nil && highestLevel >= 25{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level27node = SKSpriteNode(imageNamed: "World_1_Level_27_Text")
             if let Node = world1level27node {
                 let levelIcon = SKSpriteNode(imageNamed: "Kraken_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 155, self.frame.midY - 10)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 155, self.frame.midY - 10)
                 Node.name = "world1level27"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level27") == nil && highestLevel >= 26{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level28node = SKSpriteNode(imageNamed: "World_1_Level_28_Text")
             if let Node = world1level28node {
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 155, self.frame.midY - 80)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 155, self.frame.midY - 80)
                 Node.name = "world1level28"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level28") == nil && highestLevel >= 27{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level29node = SKSpriteNode(imageNamed: "World_1_Level_29_Text")
             if let Node = world1level29node {
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 155, self.frame.midY - 150)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 155, self.frame.midY - 150)
                 Node.name = "world1level29"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level29") == nil && highestLevel >= 28{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             world1level30node = SKSpriteNode(imageNamed: "World_1_Gauntlet_Level_Text_1")
             if let Node = world1level30node {
                 let levelIcon = SKSpriteNode(imageNamed: "Gauntlet_Level_Icon_1")
                 levelIcon.setScale(0.35)
                 levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 215)
-                self.addChild(levelIcon)
                 Node.setScale(0.25)
                 Node.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 215)
                 Node.name = "world1level30"
-                self.addChild(Node)
+                if self.childNodeWithName("world1level30") == nil && highestLevel >= 29{
+                    self.addChild(levelIcon)
+                    self.addChild(Node)
+                }
             }
             
-            firstTimeLoaded = false
-        
-        
-        }
         println("highestLevel = \(highestLevel)")
         println("highestTime = \(highestTime)")
         //ADD HIGHEST LEVEL - 30 IF IN GAUNTLET AND TIMER
@@ -550,6 +609,10 @@ class MainMenuScene: SKScene {
         for touch in touches{
                 
             if world1level1node!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level1scene = World1Level1(size: self.frame.size)
                 world1level1scene.userData = NSMutableDictionary()
@@ -559,7 +622,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level1scene, transition: skTransition)
                 
-            }else if world1level2node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level2node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 1{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level2scene = World1Level2(size: self.frame.size)
                 world1level2scene.userData = NSMutableDictionary()
@@ -569,7 +636,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level2scene, transition: skTransition)
                 
-            }else if world1level3node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level3node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 2{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level3scene = World1Level3(size: self.frame.size)
                 world1level3scene.userData = NSMutableDictionary()
@@ -579,7 +650,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level3scene, transition: skTransition)
                 
-            }else if world1level4node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level4node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 3{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level4scene = World1Level4(size: self.frame.size)
                 world1level4scene.userData = NSMutableDictionary()
@@ -589,7 +664,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level4scene, transition: skTransition)
                 
-            }else if world1level5node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level5node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 4{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level5scene = World1Level5(size: self.frame.size)
                 world1level5scene.userData = NSMutableDictionary()
@@ -599,7 +678,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level5scene, transition: skTransition)
                 
-            }else if world1level6node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level6node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 5{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level6scene = World1Level6(size: self.frame.size)
                 world1level6scene.userData = NSMutableDictionary()
@@ -609,7 +692,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level6scene, transition: skTransition)
                 
-            }else if world1level7node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level7node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 6{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level7scene = World1Level7(size: self.frame.size)
                 world1level7scene.userData = NSMutableDictionary()
@@ -619,7 +706,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level7scene, transition: skTransition)
                 
-            }else if world1level8node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level8node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 7{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level8scene = World1Level8(size: self.frame.size)
                 world1level8scene.userData = NSMutableDictionary()
@@ -629,7 +720,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level8scene, transition: skTransition)
                 
-            }else if world1level9node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level9node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 8{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level9scene = World1Level9(size: self.frame.size)
                 world1level9scene.userData = NSMutableDictionary()
@@ -639,7 +734,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level9scene, transition: skTransition)
                 
-            }else if world1level10node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level10node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 9{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level10scene = World1Level10(size: self.frame.size)
                 world1level10scene.userData = NSMutableDictionary()
@@ -649,7 +748,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level10scene, transition: skTransition)
                 
-            }else if world1level11node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level11node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 10{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level11scene = World1Level11(size: self.frame.size)
                 world1level11scene.userData = NSMutableDictionary()
@@ -659,7 +762,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level11scene, transition: skTransition)
                 
-            }else if world1level12node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level12node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 11{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level12scene = World1Level12(size: self.frame.size)
                 world1level12scene.userData = NSMutableDictionary()
@@ -669,7 +776,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level12scene, transition: skTransition)
                 
-            }else if world1level13node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level13node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 12{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level13scene = World1Level13(size: self.frame.size)
                 world1level13scene.userData = NSMutableDictionary()
@@ -679,7 +790,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level13scene, transition: skTransition)
                 
-            }else if world1level14node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level14node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 13{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level14scene = World1Level14(size: self.frame.size)
                 world1level14scene.userData = NSMutableDictionary()
@@ -689,7 +804,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level14scene, transition: skTransition)
                 
-            }else if world1level15node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level15node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 14{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level15scene = World1Level15(size: self.frame.size)
                 world1level15scene.userData = NSMutableDictionary()
@@ -699,7 +818,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level15scene, transition: skTransition)
                 
-            }else if world1level16node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level16node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 15{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level16scene = World1Level16(size: self.frame.size)
                 world1level16scene.userData = NSMutableDictionary()
@@ -709,7 +832,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level16scene, transition: skTransition)
                 
-            }else if world1level17node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level17node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 16{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level17scene = World1Level17(size: self.frame.size)
                 world1level17scene.userData = NSMutableDictionary()
@@ -719,7 +846,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level17scene, transition: skTransition)
                 
-            }else if world1level18node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level18node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 17{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level18scene = World1Level18(size: self.frame.size)
                 world1level18scene.userData = NSMutableDictionary()
@@ -729,7 +860,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level18scene, transition: skTransition)
                 
-            }else if world1level19node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level19node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 18{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level19scene = World1Level19(size: self.frame.size)
                 world1level19scene.userData = NSMutableDictionary()
@@ -739,7 +874,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level19scene, transition: skTransition)
                 
-            }else if world1level20node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level20node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 19{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level20scene = World1Level20(size: self.frame.size)
                 world1level20scene.userData = NSMutableDictionary()
@@ -749,7 +888,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level20scene, transition: skTransition)
                 
-            }else if world1level21node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level21node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 20{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level21scene = World1Level21(size: self.frame.size)
                 world1level21scene.userData = NSMutableDictionary()
@@ -759,7 +902,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level21scene, transition: skTransition)
                 
-            }else if world1level22node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level22node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 21{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level22scene = World1Level22(size: self.frame.size)
                 world1level22scene.userData = NSMutableDictionary()
@@ -769,7 +916,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level22scene, transition: skTransition)
                 
-            }else if world1level23node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level23node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 22{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level23scene = World1Level23(size: self.frame.size)
                 world1level23scene.userData = NSMutableDictionary()
@@ -779,7 +930,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level23scene, transition: skTransition)
                 
-            }else if world1level24node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level24node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 23{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level24scene = World1Level24(size: self.frame.size)
                 world1level24scene.userData = NSMutableDictionary()
@@ -789,7 +944,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level24scene, transition: skTransition)
                 
-            }else if world1level25node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level25node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 24{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level25scene = World1Level25(size: self.frame.size)
                 world1level25scene.userData = NSMutableDictionary()
@@ -799,7 +958,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level25scene, transition: skTransition)
                 
-            }else if world1level26node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level26node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 25{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level26scene = World1Level26(size: self.frame.size)
                 world1level26scene.userData = NSMutableDictionary()
@@ -809,7 +972,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level26scene, transition: skTransition)
                 
-            }else if world1level27node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level27node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 26{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level27scene = World1Level27(size: self.frame.size)
                 world1level27scene.userData = NSMutableDictionary()
@@ -820,7 +987,11 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level27scene, transition: skTransition)
 
                 
-            }else if world1level28node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level28node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 27{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level28scene = World1Level28(size: self.frame.size)
                 world1level28scene.userData = NSMutableDictionary()
@@ -830,7 +1001,11 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level28scene, transition: skTransition)
                 
-            }else if world1level29node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level29node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 28{
+                if soundOn {
+                    self.runAction(clickSound)
+                    levelMusic.play()
+                }
                 happyMusic.stop()
                 let world1level29scene = World1Level29(size: self.frame.size)
                 world1level29scene.userData = NSMutableDictionary()
@@ -840,7 +1015,10 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level29scene, transition: skTransition)
                 
-            }else if world1level30node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if world1level30node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 29{
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 happyMusic.stop()
                 let world1level30scene = World1Level30(size: self.frame.size)
                 world1level30scene.userData = NSMutableDictionary()
@@ -859,10 +1037,16 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(self.userData?.objectForKey("inventory") as Inventory, transition: skTransition)*/
                 
             }else if inventoryNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(self.userData?.objectForKey("inventory") as! Inventory, transition: skTransition)
                 
             }else if guideNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 let guideScene = GuideScene(size: self.frame.size)
                 guideScene.userData = NSMutableDictionary()
@@ -870,6 +1054,9 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(guideScene, transition: skTransition)
                 
             }else if storeNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 let aStoreScene = StoreScene(size: self.frame.size)
                 aStoreScene.userData = NSMutableDictionary()
                 aStoreScene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -878,6 +1065,9 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(aStoreScene, transition: skTransition)
             
             } else if menu!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 let aZoneScene = ZoneScene(size: self.frame.size)
                 aZoneScene.userData = NSMutableDictionary()
                 aZoneScene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")

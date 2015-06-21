@@ -302,6 +302,9 @@ class ItemDisplayScene: SKScene {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         for touch in touches {
             if continueButton!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if soundOn {
+                    self.runAction(clickSound)
+                }
                 if soundOn{
                     beachMusic.stop()
                 }

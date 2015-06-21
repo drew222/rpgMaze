@@ -16,9 +16,10 @@ class IntroScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         //ADJUST SOUND VOLUMES HERE
-        introMusic.volume = 0.7
-        happyMusic.volume = 0.5
-        beachMusic.volume = 0.7
+        introMusic.volume = 0.3
+        happyMusic.volume = 0.3
+        beachMusic.volume = 0.5
+        levelMusic.volume = 0.3
         
         
         
