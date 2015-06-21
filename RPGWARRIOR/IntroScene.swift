@@ -15,6 +15,10 @@ class IntroScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        //ADJUST SOUND VOLUMES HERE
+        happyMusic.volume = 0.5
+        beachMusic.volume = 0.7
+        
         let background = SKSpriteNode(imageNamed: "Opening_Screen_1")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)

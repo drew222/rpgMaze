@@ -982,6 +982,9 @@ class Inventory: SKScene {
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
                                             displayItem(itemToMove!, spot: "weapon")
+                                            if soundOn {
+                                                self.runAction(itemSound)
+                                            }
                                         }else if space.name == "body" && (itemToMove!.itemType == ItemType.body || itemToMove!.itemType == ItemType.feet){
                                             //SWAPPING LEFT FOR LEFT HIGHLIGHTED = packspace
                                             
@@ -996,6 +999,9 @@ class Inventory: SKScene {
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
                                             displayItem(itemToMove!, spot: "body")
+                                            if soundOn {
+                                                self.runAction(itemSound)
+                                            }
                                         }else if space.name == "feet" && (itemToMove!.itemType == ItemType.feet || itemToMove!.itemType == ItemType.body){
                                             //SWAPPING RIGHT FOR RIGHT HIGHLIGHTED = packspace
                                             
@@ -1010,6 +1016,9 @@ class Inventory: SKScene {
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
                                             displayItem(itemToMove!, spot: "feet")
+                                            if soundOn {
+                                                self.runAction(itemSound)
+                                            }
                                         }else if space.name == "neck" && itemToMove!.itemType == ItemType.neck{
                                             //SWAPPING NECK FOR NECK HIGHLIGHTED = packspace
                                             
@@ -1041,6 +1050,9 @@ class Inventory: SKScene {
                                             self.spaceToMove!.insertItem(space.item!)
                                             displayItem(space.item!, spot: "weapon")
                                             space.insertItem(self.itemToMove!)
+                                            if soundOn {
+                                                self.runAction(itemSound)
+                                            }
                                         }else if spaceToMove!.name == "body" && (space.item!.itemType == ItemType.body || space.item!.itemType == ItemType.feet){
                                             //SWAPPING Left FOR Left HIGHLIGHTED = Left
                                             
@@ -1054,7 +1066,9 @@ class Inventory: SKScene {
                                             displayItem(space.item!, spot: "body")
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
-
+                                            if soundOn {
+                                                self.runAction(itemSound)
+                                            }
                                         }else if spaceToMove!.name == "feet" && (space.item!.itemType == ItemType.feet || space.item!.itemType == ItemType.body){
                                             //SWAPPING Right FOR Right HIGHLIGHTED = Right
                                             
@@ -1068,6 +1082,9 @@ class Inventory: SKScene {
                                             displayItem(space.item!, spot: "feet")
                                             self.spaceToMove!.insertItem(space.item!)
                                             space.insertItem(self.itemToMove!)
+                                            if soundOn {
+                                                self.runAction(itemSound)
+                                            }
                                         }else if spaceToMove!.name == "neck" && space.item!.itemType == ItemType.neck{
                                             //SWAPPING Neck FOR Neck HIGHLIGHTED = Neck
                                             
@@ -1082,11 +1099,16 @@ class Inventory: SKScene {
                                             self.spaceToMove!.insertItem(space.item!)
                                             displayItem(space.item!, spot: "neck")
                                             space.insertItem(self.itemToMove!)
+                                            if soundOn {
+                                                self.runAction(itemSound)
+                                            }
                                         }
                                     }
                                     else{
                                         //SWAPPING TWO ITEMS IN THE BACKPACK!!!
-                                        
+                                        if soundOn {
+                                            self.runAction(itemSound)
+                                        }
                                         //&&
                                         persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(spaceToMove!.name!)")
                                         //&&
@@ -1173,7 +1195,9 @@ class Inventory: SKScene {
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
                                         moved = true
-                                        
+                                        if soundOn {
+                                            self.runAction(itemSound)
+                                        }
                                     }else if space.name == "body" && (itemToMove!.itemType == ItemType.body || itemToMove!.itemType == ItemType.feet){
                                         //MOVING ITEM FROM PACK TO LEFT
                                         backPackSpaces++
@@ -1191,7 +1215,9 @@ class Inventory: SKScene {
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
                                         moved = true
-                                        
+                                        if soundOn {
+                                            self.runAction(itemSound)
+                                        }
                                     }else if space.name == "feet" && (itemToMove!.itemType == ItemType.feet || itemToMove!.itemType == ItemType.body){
                                         //MOVING ITEM FROM PACK TO RIGHT
                                         backPackSpaces++
@@ -1209,7 +1235,9 @@ class Inventory: SKScene {
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
                                         moved = true
-                                        
+                                        if soundOn {
+                                            self.runAction(itemSound)
+                                        }
                                     }else if space.name == "neck" && itemToMove!.itemType == ItemType.neck{
                                         //MOVING ITEM FROM PACK TO NECK
                                         backPackSpaces++
@@ -1227,6 +1255,9 @@ class Inventory: SKScene {
                                         spaceToMove!.removeItem()
                                         space.insertItem(self.itemToMove!)
                                         moved = true
+                                        if soundOn {
+                                            self.runAction(itemSound)
+                                        }
                                     }else{
                                     }
                                 }else{
@@ -1242,6 +1273,9 @@ class Inventory: SKScene {
                                     spaceToMove!.removeItem()
                                     space.insertItem(self.itemToMove!)
                                     moved = true
+                                    if soundOn {
+                                        self.runAction(itemSound)
+                                    }
                                 }
                                 if (spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "neck") && moved{
                                     backPackSpaces--
