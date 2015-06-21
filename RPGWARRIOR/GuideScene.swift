@@ -12,7 +12,7 @@ import SpriteKit
 
 class GuideScene: SKScene {
     
-    let allImages: [SKTexture] = [SKTexture(imageNamed: "Guide_Screen_1"), SKTexture(imageNamed: "Guide_Screen_2"), SKTexture(imageNamed: "Guide_Screen_3"), SKTexture(imageNamed: "Guide_Screen_6"), SKTexture(imageNamed: "Guide_Screen_5")]
+    let allImages: [SKTexture] = [SKTexture(imageNamed: "Guide_Screen_1"), SKTexture(imageNamed: "Guide_Screen_2"), SKTexture(imageNamed: "Guide_Screen_3"), SKTexture(imageNamed: "Guide_Screen_6"), SKTexture(imageNamed: "Guide_Screen_7")]
     var theImage: SKSpriteNode?
     var count = 0
     

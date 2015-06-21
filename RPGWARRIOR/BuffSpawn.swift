@@ -15,7 +15,7 @@ class BuffSpawn: SKSpriteNode {
     class func buffAtPos(position: CGPoint, type: Int) -> BuffSpawn{
         var buffer: BuffSpawn?
         if type == 1{
-            buffer = BuffSpawn(imageNamed: "Life_Symbol_1")
+            buffer = BuffSpawn(imageNamed: "Regeneration_Symbol_1")
         }else if type == 2{
             buffer = BuffSpawn(imageNamed: "Speed_Symbol_1")
         }else{
