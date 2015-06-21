@@ -64,7 +64,7 @@ let url3 = NSBundle.mainBundle().URLForResource("Beach_Noise", withExtension: "m
 let beachMusic = AVAudioPlayer(contentsOfURL: url3, error: nil)
 let url4 = NSBundle.mainBundle().URLForResource("Intro_Music", withExtension: "mp3")
 let introMusic = AVAudioPlayer(contentsOfURL: url4, error: nil)
-let url5 = NSBundle.mainBundle().URLForResource("Level_Music", withExtension: "mp3")
+let url5 = NSBundle.mainBundle().URLForResource("Level_Music2", withExtension: "mp3")
 let levelMusic = AVAudioPlayer(contentsOfURL: url5, error: nil)
 let bootySound = SKAction.playSoundFileNamed("Kraken_Booty_Sound_1.mp3", waitForCompletion: false)
 

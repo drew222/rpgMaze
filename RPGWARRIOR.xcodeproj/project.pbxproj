@@ -174,6 +174,7 @@
 		DC9435CC1B376D3B00231FE9 /* Level_Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435CB1B376D3B00231FE9 /* Level_Music.mp3 */; };
 		DC9435CE1B37711F00231FE9 /* Button_Click_Sound2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435CD1B37711F00231FE9 /* Button_Click_Sound2.mp3 */; };
 		DC9435D01B3773CC00231FE9 /* Ink_Spray_Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435CF1B3773CC00231FE9 /* Ink_Spray_Sound.mp3 */; };
+		DC9435D21B3775AF00231FE9 /* Level_Music2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435D11B3775AF00231FE9 /* Level_Music2.mp3 */; };
 		DCA8F2161B2E846E007A6B52 /* Guide_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */; };
 		DCA8F21E1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */; };
 		DCA8F21F1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */; };
@@ -802,6 +803,7 @@
 		DC9435CB1B376D3B00231FE9 /* Level_Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Level_Music.mp3; sourceTree = "<group>"; };
 		DC9435CD1B37711F00231FE9 /* Button_Click_Sound2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Button_Click_Sound2.mp3; sourceTree = "<group>"; };
 		DC9435CF1B3773CC00231FE9 /* Ink_Spray_Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ink_Spray_Sound.mp3; sourceTree = "<group>"; };
+		DC9435D11B3775AF00231FE9 /* Level_Music2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Level_Music2.mp3; sourceTree = "<group>"; };
 		DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide_Button_1.png; sourceTree = "<group>"; };
 		DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Happy_Background_Sound_1.mp3; sourceTree = "<group>"; };
 		DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ink_Splatter_Sound_1.mp3; sourceTree = "<group>"; };
@@ -1405,6 +1407,7 @@
 			isa = PBXGroup;
 			children = (
 				DC9435CB1B376D3B00231FE9 /* Level_Music.mp3 */,
+				DC9435D11B3775AF00231FE9 /* Level_Music2.mp3 */,
 				DC9435C91B375D7B00231FE9 /* Intro_Music.mp3 */,
 				DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */,
 				DCE5859A1B364F3E00F58449 /* Button_Click_Sound.mp3 */,
@@ -2510,6 +2513,7 @@
 				DCFD74541B0153300054E370 /* Clam_Boss_1.png in Resources */,
 				EEB809201B13981D00A221E2 /* Sun_Hat_Text.png in Resources */,
 				DCFD74661B0153300054E370 /* Crab_Boss_2.png in Resources */,
+				DC9435D21B3775AF00231FE9 /* Level_Music2.mp3 in Resources */,
 				DCFD74C11B0153300054E370 /* Store_Shelf_1.png in Resources */,
 				DCF23E1D1B0BABA100484040 /* Inky_Ring_2.png in Resources */,
 				DCFD747A1B0153300054E370 /* Ink_Flood_2.png in Resources */,
