@@ -173,6 +173,7 @@
 		DC9435CA1B375D7B00231FE9 /* Intro_Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435C91B375D7B00231FE9 /* Intro_Music.mp3 */; };
 		DC9435CC1B376D3B00231FE9 /* Level_Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435CB1B376D3B00231FE9 /* Level_Music.mp3 */; };
 		DC9435CE1B37711F00231FE9 /* Button_Click_Sound2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435CD1B37711F00231FE9 /* Button_Click_Sound2.mp3 */; };
+		DC9435D01B3773CC00231FE9 /* Ink_Spray_Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435CF1B3773CC00231FE9 /* Ink_Spray_Sound.mp3 */; };
 		DCA8F2161B2E846E007A6B52 /* Guide_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */; };
 		DCA8F21E1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */; };
 		DCA8F21F1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */; };
@@ -800,6 +801,7 @@
 		DC9435C91B375D7B00231FE9 /* Intro_Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Intro_Music.mp3; sourceTree = "<group>"; };
 		DC9435CB1B376D3B00231FE9 /* Level_Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Level_Music.mp3; sourceTree = "<group>"; };
 		DC9435CD1B37711F00231FE9 /* Button_Click_Sound2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Button_Click_Sound2.mp3; sourceTree = "<group>"; };
+		DC9435CF1B3773CC00231FE9 /* Ink_Spray_Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ink_Spray_Sound.mp3; sourceTree = "<group>"; };
 		DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide_Button_1.png; sourceTree = "<group>"; };
 		DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Happy_Background_Sound_1.mp3; sourceTree = "<group>"; };
 		DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ink_Splatter_Sound_1.mp3; sourceTree = "<group>"; };
@@ -1418,6 +1420,7 @@
 				DCE585A31B364F3E00F58449 /* Swish_Noise.mp3 */,
 				DCE585A41B364F3E00F58449 /* Beach_Noise.mp3 */,
 				DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */,
+				DC9435CF1B3773CC00231FE9 /* Ink_Spray_Sound.mp3 */,
 				DC9435A91B37405600231FE9 /* Ink_Squirt_Sound_1.mp3 */,
 				DC9435A71B36B06500231FE9 /* Kraken_Booty_Sound_1.mp3 */,
 			);
@@ -2313,6 +2316,7 @@
 				DC64A2D61B2E63FB00C73BD3 /* Endless_Mode_Text_2.png in Resources */,
 				DCFD75531B01D9100054E370 /* Seashell_Charm_Bracelet_1.png in Resources */,
 				DCFD74BF1B0153300054E370 /* Store_2.png in Resources */,
+				DC9435D01B3773CC00231FE9 /* Ink_Spray_Sound.mp3 in Resources */,
 				DCFD75171B0153300054E370 /* World_1_Level_27_Text.png in Resources */,
 				DC59259F1B26BED000244578 /* Crab_Boss_Dead_1.png in Resources */,
 				DCFD74B61B0153300054E370 /* Seashell_2.png in Resources */,
