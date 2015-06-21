@@ -170,6 +170,7 @@
 		DC9435C41B37469800231FE9 /* Tutorial_Screen_18.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435BC1B37469800231FE9 /* Tutorial_Screen_18.png */; };
 		DC9435C71B3746AF00231FE9 /* Tutorial_Screen_20.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435C51B3746AF00231FE9 /* Tutorial_Screen_20.png */; };
 		DC9435C81B3746AF00231FE9 /* Tutorial_Screen_21.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435C61B3746AF00231FE9 /* Tutorial_Screen_21.png */; };
+		DC9435CA1B375D7B00231FE9 /* Intro_Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435C91B375D7B00231FE9 /* Intro_Music.mp3 */; };
 		DCA8F2161B2E846E007A6B52 /* Guide_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */; };
 		DCA8F21E1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */; };
 		DCA8F21F1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */; };
@@ -794,6 +795,7 @@
 		DC9435BC1B37469800231FE9 /* Tutorial_Screen_18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_18.png; sourceTree = "<group>"; };
 		DC9435C51B3746AF00231FE9 /* Tutorial_Screen_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_20.png; sourceTree = "<group>"; };
 		DC9435C61B3746AF00231FE9 /* Tutorial_Screen_21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_21.png; sourceTree = "<group>"; };
+		DC9435C91B375D7B00231FE9 /* Intro_Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Intro_Music.mp3; sourceTree = "<group>"; };
 		DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide_Button_1.png; sourceTree = "<group>"; };
 		DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Happy_Background_Sound_1.mp3; sourceTree = "<group>"; };
 		DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ink_Splatter_Sound_1.mp3; sourceTree = "<group>"; };
@@ -1396,6 +1398,7 @@
 		DCA8F2171B2FCBCB007A6B52 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				DC9435C91B375D7B00231FE9 /* Intro_Music.mp3 */,
 				DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */,
 				DCE5859A1B364F3E00F58449 /* Button_Click_Sound.mp3 */,
 				DCE5859B1B364F3E00F58449 /* Chest_Opening_Sound.mp3 */,
@@ -2429,6 +2432,7 @@
 				DCFD74F01B0153300054E370 /* Wave_2.png in Resources */,
 				EEB809521B15674700A221E2 /* Sunhat_Text.png in Resources */,
 				EEB809181B13981D00A221E2 /* Rusty_Gold_Ring_Text.png in Resources */,
+				DC9435CA1B375D7B00231FE9 /* Intro_Music.mp3 in Resources */,
 				DCE585AC1B364F3E00F58449 /* Smoke_Poof_Sound.mp3 in Resources */,
 				DC5925651B26BCEF00244578 /* Tutorial_Button_1.png in Resources */,
 				DC5925671B26BCF800244578 /* World_Coming_Soon_Button_1.png in Resources */,

@@ -62,6 +62,8 @@ let url2 = NSBundle.mainBundle().URLForResource("Rap_Funk_Music", withExtension:
 let happyMusic = AVAudioPlayer(contentsOfURL: url2, error: nil)
 let url3 = NSBundle.mainBundle().URLForResource("Beach_Noise", withExtension: "mp3")
 let beachMusic = AVAudioPlayer(contentsOfURL: url3, error: nil)
+let url4 = NSBundle.mainBundle().URLForResource("Intro_Music", withExtension: "mp3")
+let introMusic = AVAudioPlayer(contentsOfURL: url4, error: nil)
 let bootySound = SKAction.playSoundFileNamed("Kraken_Booty_Sound_1.mp3", waitForCompletion: false)
 
 

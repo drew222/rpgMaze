@@ -204,17 +204,17 @@ class Inventory: SKScene {
         } else {
         
         inv.lifeSymbol2 = SKSpriteNode(imageNamed: "Life_Symbol_1")
-        inv.lifeSymbol2!.position = CGPointMake(inv.frame.midX - 55, inv.frame.minY + 360)
+        inv.lifeSymbol2!.position = CGPointMake(inv.frame.midX - 55, inv.frame.minY + 260)
         inv.lifeSymbol2!.zPosition = 2
         inv.lifeSymbol2!.setScale(0.15)
         
         inv.speedSymbol2 = SKSpriteNode(imageNamed: "Speed_Symbol_1")
-        inv.speedSymbol2!.position = CGPointMake(inv.frame.midX, inv.frame.minY + 360)
+        inv.speedSymbol2!.position = CGPointMake(inv.frame.midX, inv.frame.minY + 260)
         inv.speedSymbol2!.zPosition = 2
         inv.speedSymbol2!.setScale(0.15)
         
         inv.regenerationSymbol2 = SKSpriteNode(imageNamed: "Regeneration_Symbol_1")
-        inv.regenerationSymbol2!.position = CGPointMake(inv.frame.midX + 55, inv.frame.minY + 360)
+        inv.regenerationSymbol2!.position = CGPointMake(inv.frame.midX + 55, inv.frame.minY + 260)
         inv.regenerationSymbol2!.zPosition = 2
         inv.regenerationSymbol2!.setScale(0.15)
         }

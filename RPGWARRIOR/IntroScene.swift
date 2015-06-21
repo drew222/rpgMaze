@@ -12,17 +12,28 @@ import SpriteKit
 
 class IntroScene: SKScene {
     
-    
+    let defaults = NSUserDefaults.standardUserDefaults()
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         //ADJUST SOUND VOLUMES HERE
+        introMusic.volume = 0.7
         happyMusic.volume = 0.5
         beachMusic.volume = 0.7
+        
+        
         
         let background = SKSpriteNode(imageNamed: "Opening_Screen_1")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         self.addChild(background)
+        
+        if let alreadyOpened = defaults.objectForKey("firstOpen") as? Bool {
+            if defaults.objectForKey("sound") as! Bool {
+                introMusic.play()
+            }
+        }else{
+            introMusic.play()
+        }
         
         //find the url within the package
         //sets background music using a NSURL
@@ -32,8 +43,7 @@ class IntroScene: SKScene {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         
         var gameplayScene = ZoneScene(size: self.frame.size)
-        
-        let defaults = NSUserDefaults.standardUserDefaults()
+        introMusic.stop()
         if let alreadyOpened = defaults.objectForKey("firstOpen") as? Bool {
             //already opened the app
             let skTransition = SKTransition.fadeWithDuration(1.0)
