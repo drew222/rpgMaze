@@ -700,6 +700,9 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         if currentTime - lastHeal  > healSpeed && theHero!.life > 0{
             self.lastHeal = currentTime
             if theHero!.life < maxLife{
+                if soundOn {
+                    self.runAction(regenSound)
+                }
                 theHero!.life! += theHero!.regeneration!
                 if theHero!.life > maxLife{
                     theHero!.life = maxLife
