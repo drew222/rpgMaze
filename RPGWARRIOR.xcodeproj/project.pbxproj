@@ -32,6 +32,8 @@
 		DC27114A1A85E26C00986D2E /* Fireball.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2711491A85E26C00986D2E /* Fireball.swift */; };
 		DC3097A71B37C219003C115E /* Seashell_Charm_Bracelet_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3097A51B37C219003C115E /* Seashell_Charm_Bracelet_1.png */; };
 		DC3097A81B37C219003C115E /* Seashell_Charm_Bracelet_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3097A61B37C219003C115E /* Seashell_Charm_Bracelet_2.png */; };
+		DC3097AB1B37C484003C115E /* Pearl_Necklace_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3097A91B37C484003C115E /* Pearl_Necklace_1.png */; };
+		DC3097AC1B37C484003C115E /* Pearl_Necklace_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3097AA1B37C484003C115E /* Pearl_Necklace_2.png */; };
 		DC321BDD1AAB9D68006E3F2B /* MiniCrab.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BDC1AAB9D68006E3F2B /* MiniCrab.swift */; };
 		DC321BDF1AACCDBE006E3F2B /* IntroScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BDE1AACCDBE006E3F2B /* IntroScene.swift */; };
 		DC321BE11AACD471006E3F2B /* World1Level1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321BE01AACD471006E3F2B /* World1Level1.swift */; };
@@ -360,8 +362,6 @@
 		DCFD74A41B0153300054E370 /* No_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFD73C41B01532F0054E370 /* No_Text_1.png */; };
 		DCFD74A51B0153300054E370 /* Noggin_Text_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFD73C51B01532F0054E370 /* Noggin_Text_1.png */; };
 		DCFD74A61B0153300054E370 /* Opening_Screen_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFD73C61B01532F0054E370 /* Opening_Screen_1.png */; };
-		DCFD74A71B0153300054E370 /* Pearl_Necklace_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFD73C71B01532F0054E370 /* Pearl_Necklace_1.png */; };
-		DCFD74A81B0153300054E370 /* Pearl_Necklace_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFD73C81B01532F0054E370 /* Pearl_Necklace_2.png */; };
 		DCFD74A91B0153300054E370 /* Pearl_Projectile_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFD73C91B01532F0054E370 /* Pearl_Projectile_1.png */; };
 		DCFD74AA1B0153300054E370 /* Pearl_Projectile_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFD73CA1B01532F0054E370 /* Pearl_Projectile_2.png */; };
 		DCFD74AB1B0153300054E370 /* Rusty_Copper_Ring_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCFD73CB1B01532F0054E370 /* Rusty_Copper_Ring_1.png */; };
@@ -664,6 +664,8 @@
 		DC27114F1A86A09D00986D2E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC3097A51B37C219003C115E /* Seashell_Charm_Bracelet_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seashell_Charm_Bracelet_1.png; sourceTree = "<group>"; };
 		DC3097A61B37C219003C115E /* Seashell_Charm_Bracelet_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Seashell_Charm_Bracelet_2.png; sourceTree = "<group>"; };
+		DC3097A91B37C484003C115E /* Pearl_Necklace_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pearl_Necklace_1.png; sourceTree = "<group>"; };
+		DC3097AA1B37C484003C115E /* Pearl_Necklace_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pearl_Necklace_2.png; sourceTree = "<group>"; };
 		DC321BDC1AAB9D68006E3F2B /* MiniCrab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniCrab.swift; sourceTree = "<group>"; };
 		DC321BDE1AACCDBE006E3F2B /* IntroScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScene.swift; sourceTree = "<group>"; };
 		DC321BE01AACD471006E3F2B /* World1Level1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = World1Level1.swift; sourceTree = "<group>"; };
@@ -992,8 +994,6 @@
 		DCFD73C41B01532F0054E370 /* No_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = No_Text_1.png; sourceTree = "<group>"; };
 		DCFD73C51B01532F0054E370 /* Noggin_Text_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Noggin_Text_1.png; sourceTree = "<group>"; };
 		DCFD73C61B01532F0054E370 /* Opening_Screen_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Opening_Screen_1.png; sourceTree = "<group>"; };
-		DCFD73C71B01532F0054E370 /* Pearl_Necklace_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pearl_Necklace_1.png; sourceTree = "<group>"; };
-		DCFD73C81B01532F0054E370 /* Pearl_Necklace_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pearl_Necklace_2.png; sourceTree = "<group>"; };
 		DCFD73C91B01532F0054E370 /* Pearl_Projectile_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pearl_Projectile_1.png; sourceTree = "<group>"; };
 		DCFD73CA1B01532F0054E370 /* Pearl_Projectile_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pearl_Projectile_2.png; sourceTree = "<group>"; };
 		DCFD73CB1B01532F0054E370 /* Rusty_Copper_Ring_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rusty_Copper_Ring_1.png; sourceTree = "<group>"; };
@@ -1648,11 +1648,11 @@
 				DCFD73C41B01532F0054E370 /* No_Text_1.png */,
 				DCFD73C51B01532F0054E370 /* Noggin_Text_1.png */,
 				DCFD73C61B01532F0054E370 /* Opening_Screen_1.png */,
-				DCFD73C71B01532F0054E370 /* Pearl_Necklace_1.png */,
-				DCFD73C81B01532F0054E370 /* Pearl_Necklace_2.png */,
 				EEB808EF1B13981D00A221E2 /* Pearl_Necklace_Text.png */,
 				DCFD73C91B01532F0054E370 /* Pearl_Projectile_1.png */,
 				DCFD73CA1B01532F0054E370 /* Pearl_Projectile_2.png */,
+				DC3097A91B37C484003C115E /* Pearl_Necklace_1.png */,
+				DC3097AA1B37C484003C115E /* Pearl_Necklace_2.png */,
 				DCFD754C1B01D9100054E370 /* Pearl_Snap_Ring_1.png */,
 				DCFD754B1B01D9100054E370 /* Pearl_Snap_Ring_2.png */,
 				EEB808F01B13981D00A221E2 /* Pearl_Snap_Ring_Text.png */,
@@ -2110,7 +2110,6 @@
 				DCFD74961B0153300054E370 /* Kraken_Movement_7.png in Resources */,
 				DCFD74C71B0153300054E370 /* Tentacle_13.png in Resources */,
 				DCFD74531B0153300054E370 /* Bow_Tie_1.png in Resources */,
-				DCFD74A71B0153300054E370 /* Pearl_Necklace_1.png in Resources */,
 				DCFD746A1B0153300054E370 /* Crab_Boss_6.png in Resources */,
 				DCFD74701B0153300054E370 /* Cracked_Ground_1.png in Resources */,
 				EEB809211B13981D00A221E2 /* Sunscreen_Text.png in Resources */,
@@ -2283,6 +2282,7 @@
 				DC5925A51B26BED000244578 /* Gauntlet_Background_1.png in Resources */,
 				DCF23E1F1B0BABB000484040 /* King_Kraken_Tentacle_Ring_1.png in Resources */,
 				DCFD74601B0153300054E370 /* Copper_Ring_2.png in Resources */,
+				DC3097AC1B37C484003C115E /* Pearl_Necklace_2.png in Resources */,
 				DCFD74AE1B0153300054E370 /* Rusty_Gold_Ring_2.png in Resources */,
 				DCFD750B1B0153300054E370 /* World_1_Level_16_Text.png in Resources */,
 				DC5926141B27A2CA00244578 /* Phase_20_Text.png in Resources */,
@@ -2452,6 +2452,7 @@
 				DCFD74A61B0153300054E370 /* Opening_Screen_1.png in Resources */,
 				DC2711231A85E11900986D2E /* Main.storyboard in Resources */,
 				DCE585B31B36968E00F58449 /* Guide_Screen_7.png in Resources */,
+				DC3097AB1B37C484003C115E /* Pearl_Necklace_1.png in Resources */,
 				EEDD7FFE1B2CBD45007EFE12 /* Mud_Crab_3.png in Resources */,
 				DC5925AA1B26BED000244578 /* Nightfall_Text.png in Resources */,
 				DCFD74F01B0153300054E370 /* Wave_2.png in Resources */,
@@ -2504,7 +2505,6 @@
 				DCFD746D1B0153300054E370 /* Crab_Boss_9.png in Resources */,
 				DCFD74EA1B0153300054E370 /* Treasure_Chest_4.png in Resources */,
 				DC5925631B26BCE700244578 /* Level_Revealing_Tide_1.png in Resources */,
-				DCFD74A81B0153300054E370 /* Pearl_Necklace_2.png in Resources */,
 				DCFD74751B0153300054E370 /* Fitting_Room_Kraken_1.png in Resources */,
 				DC5925A01B26BED000244578 /* Kraken_Boss_Dead_1.png in Resources */,
 				DCFD744F1B0153300054E370 /* Beach_Crab_1.png in Resources */,
