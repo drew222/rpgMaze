@@ -278,9 +278,12 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryCoin.rawValue){
+                if soundOn {
+                    self.runAction(bootySound)
+                }
                 (self.userData?.objectForKey("inventory") as! Inventory).gold += CGFloat(coinAmount)
                 persistentData!.setObject((self.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
-                let fadeOut = SKAction.fadeOutWithDuration(1)
+                let fadeOut = SKAction.fadeOutWithDuration(0.2)
                 let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
                 secondBody.categoryBitMask = 99999
@@ -290,15 +293,21 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryBuff.rawValue){
                 if (secondBody.node as! BuffSpawn).buffType == 1 {
                     //life
+                    if soundOn {
+                        self.runAction(buffSound)
+                    }
                     theHero!.life! += lifeBuff
                     if theHero!.life! > maxLife {
                         theHero!.life = maxLife
                     }
-                    let fadeOut = SKAction.fadeOutWithDuration(1)
+                    let fadeOut = SKAction.fadeOutWithDuration(0.2)
                     let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                     let sequence = SKAction.sequence([fadeOut, codeBlock])
                     secondBody.node?.runAction(sequence)
                 } else if (secondBody.node as! BuffSpawn).buffType == 2 {
+                    if soundOn {
+                        self.runAction(speedSound)
+                    }
                     //movespeed
                     heroSpeed += 30
                     let waitAction = SKAction.waitForDuration(4)
@@ -306,19 +315,21 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                     let asequence = SKAction.sequence([waitAction, runBlock])
                     self.runAction(asequence)
                     
-                    let fadeOut = SKAction.fadeOutWithDuration(1)
+                    let fadeOut = SKAction.fadeOutWithDuration(0.2)
                     let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                     let sequence = SKAction.sequence([fadeOut, codeBlock])
                     secondBody.node?.runAction(sequence)
                 } else {
                     //killAll
-                    
+                    if soundOn {
+                        self.runAction(fireworksSound)
+                    }
                     for node in self.children {
                         if (node as? SKEmitterNode != nil){
                             node.removeFromParent()
                         }
                         if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "whale" && node.name != "kraken" && node.name != "life" && node.name != "gold" && node.name != "chest" && node.name != "lifeheart" && node.name != "regenClock" && node.name != "coin"{
-                            let fadeOut = SKAction.fadeOutWithDuration(0.3)
+                            let fadeOut = SKAction.fadeOutWithDuration(0.1)
                             let codeBlock = SKAction.runBlock({node.removeFromParent()})
                             let sequence = SKAction.sequence([fadeOut, codeBlock])
                             if node.name == "bomb" {
@@ -327,7 +338,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                             node.runAction(sequence)
                         }
                     }
-                    let fadeOut = SKAction.fadeOutWithDuration(1)
+                    let fadeOut = SKAction.fadeOutWithDuration(0.2)
                     let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
                     let sequence = SKAction.sequence([fadeOut, codeBlock])
                     secondBody.node?.runAction(sequence)
