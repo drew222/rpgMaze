@@ -1296,7 +1296,7 @@
 			isa = PBXGroup;
 			children = (
 				DCA8F2171B2FCBCB007A6B52 /* Sounds */,
-				DCFD73671B01532F0054E370 /* Rpg14 */,
+				DCFD73671B01532F0054E370 /* Rpg14.atlas */,
 				DC2711491A85E26C00986D2E /* Fireball.swift */,
 				2FC73DE21A912CAA0068A2FB /* BlizzNode.swift */,
 				DCC4E37A1A94EDED000E5E89 /* Block.swift */,
@@ -1439,7 +1439,7 @@
 			name = Sounds;
 			sourceTree = "<group>";
 		};
-		DCFD73671B01532F0054E370 /* Rpg14 */ = {
+		DCFD73671B01532F0054E370 /* Rpg14.atlas */ = {
 			isa = PBXGroup;
 			children = (
 				DCE585B61B36978800F58449 /* Quick_Tutorial_Screen_1.png */,
@@ -1952,6 +1952,7 @@
 				DCFD74461B0153300054E370 /* Zones__Button_1.png */,
 				DCFD74471B0153300054E370 /* Zones_Text_1.png */,
 			);
+			name = Rpg14.atlas;
 			path = Rpg14;
 			sourceTree = "<group>";
 		};
