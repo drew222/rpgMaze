@@ -332,8 +332,8 @@ class MainMenuScene: SKScene {
                 Node.position = CGPointMake(self.frame.midX + 35, self.frame.midY - 210)
                 Node.name = "world1level14"
                 if self.childNodeWithName("world1level14") == nil && highestLevel >= 13{
-                    self.addChild(Node)
                     self.addChild(levelIcon)
+                    self.addChild(Node)
                 }
             }
             world1level15node = SKSpriteNode(imageNamed: "World_1_Level_15_Text")
