@@ -50,7 +50,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         //lifeNode!.fontColor = UIColor.whiteColor()
         //lifeNode!.fontSize = 20
         //self.addChild(lifeNode!)
-        
+        theHero!.updateStats()
         //add lifeheart to all levels!!!!!!
         let lifeHeart = SKSpriteNode(imageNamed: "Life_Symbol_1")
         lifeHeart.position = CGPointMake(self.frame.maxX - 20, self.frame.maxY - 20)
@@ -116,7 +116,6 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         background.zPosition = -1
         self.physicsWorld.contactDelegate = self
         self.addChild(background)
-        theHero!.updateStats()
         //*****REGENE CODE****
         maxLife = theHero!.life!
         //********************
@@ -190,7 +189,7 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         if currentTime - lastHeal  > healSpeed{
             self.lastHeal = currentTime
             if theHero!.life < maxLife{
-                if soundOn {
+                if soundOn && !levelOver{
                     self.runAction(regenSound)
                 }
                 theHero!.life! += theHero!.regeneration!
