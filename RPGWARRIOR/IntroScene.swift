@@ -18,7 +18,7 @@ class IntroScene: SKScene {
         //ADJUST SOUND VOLUMES HERE
         introMusic.volume = 0.3
         happyMusic.volume = 0.3
-        beachMusic.volume = 0.5
+        beachMusic.volume = 0.3
         levelMusic.volume = 0.3
         levelMusic.numberOfLoops = -1
         introMusic.numberOfLoops = -1

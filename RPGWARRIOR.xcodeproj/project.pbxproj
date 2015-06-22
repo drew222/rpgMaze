@@ -155,18 +155,12 @@
 		DC9435A81B36B06500231FE9 /* Kraken_Booty_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435A71B36B06500231FE9 /* Kraken_Booty_Sound_1.mp3 */; };
 		DC9435AA1B37405600231FE9 /* Ink_Squirt_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435A91B37405600231FE9 /* Ink_Squirt_Sound_1.mp3 */; };
 		DC9435B01B37465000231FE9 /* Tutorial_Screen_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435AB1B37465000231FE9 /* Tutorial_Screen_3.png */; };
-		DC9435B11B37465000231FE9 /* Tutorial_Screen_7.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435AC1B37465000231FE9 /* Tutorial_Screen_7.png */; };
-		DC9435B21B37465000231FE9 /* Tutorial_Screen_8.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435AD1B37465000231FE9 /* Tutorial_Screen_8.png */; };
-		DC9435B31B37465000231FE9 /* Tutorial_Screen_9.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435AE1B37465000231FE9 /* Tutorial_Screen_9.png */; };
 		DC9435B41B37465000231FE9 /* Tutorial_Screen_10.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435AF1B37465000231FE9 /* Tutorial_Screen_10.png */; };
-		DC9435BD1B37469800231FE9 /* Tutorial_Screen_11.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435B51B37469800231FE9 /* Tutorial_Screen_11.png */; };
 		DC9435BE1B37469800231FE9 /* Tutorial_Screen_12.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435B61B37469800231FE9 /* Tutorial_Screen_12.png */; };
 		DC9435BF1B37469800231FE9 /* Tutorial_Screen_13.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435B71B37469800231FE9 /* Tutorial_Screen_13.png */; };
 		DC9435C01B37469800231FE9 /* Tutorial_Screen_14.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435B81B37469800231FE9 /* Tutorial_Screen_14.png */; };
 		DC9435C11B37469800231FE9 /* Tutorial_Screen_15.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435B91B37469800231FE9 /* Tutorial_Screen_15.png */; };
 		DC9435C21B37469800231FE9 /* Tutorial_Screen_16.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435BA1B37469800231FE9 /* Tutorial_Screen_16.png */; };
-		DC9435C31B37469800231FE9 /* Tutorial_Screen_17.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435BB1B37469800231FE9 /* Tutorial_Screen_17.png */; };
-		DC9435C41B37469800231FE9 /* Tutorial_Screen_18.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435BC1B37469800231FE9 /* Tutorial_Screen_18.png */; };
 		DC9435C71B3746AF00231FE9 /* Tutorial_Screen_20.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435C51B3746AF00231FE9 /* Tutorial_Screen_20.png */; };
 		DC9435C81B3746AF00231FE9 /* Tutorial_Screen_21.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435C61B3746AF00231FE9 /* Tutorial_Screen_21.png */; };
 		DC9435CA1B375D7B00231FE9 /* Intro_Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435C91B375D7B00231FE9 /* Intro_Music.mp3 */; };
@@ -178,6 +172,13 @@
 		DC9435D61B37AD5F00231FE9 /* Speed_Buff_Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435D51B37AD5F00231FE9 /* Speed_Buff_Sound.mp3 */; };
 		DC9435D81B37B44800231FE9 /* Skip_Tutorial_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435D71B37B44800231FE9 /* Skip_Tutorial_Button_1.png */; };
 		DC9435DA1B37B54200231FE9 /* Regen_Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435D91B37B54200231FE9 /* Regen_Sound.mp3 */; };
+		DC9435E21B37BFEE00231FE9 /* Quick_Tutorial_Screen_6.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435DB1B37BFEE00231FE9 /* Quick_Tutorial_Screen_6.png */; };
+		DC9435E31B37BFEE00231FE9 /* Tutorial_Screen_7.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435DC1B37BFEE00231FE9 /* Tutorial_Screen_7.png */; };
+		DC9435E41B37BFEE00231FE9 /* Tutorial_Screen_8.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435DD1B37BFEE00231FE9 /* Tutorial_Screen_8.png */; };
+		DC9435E51B37BFEE00231FE9 /* Tutorial_Screen_9.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435DE1B37BFEE00231FE9 /* Tutorial_Screen_9.png */; };
+		DC9435E61B37BFEE00231FE9 /* Tutorial_Screen_11.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435DF1B37BFEE00231FE9 /* Tutorial_Screen_11.png */; };
+		DC9435E71B37BFEE00231FE9 /* Tutorial_Screen_17.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435E01B37BFEE00231FE9 /* Tutorial_Screen_17.png */; };
+		DC9435E81B37BFEE00231FE9 /* Tutorial_Screen_18.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435E11B37BFEE00231FE9 /* Tutorial_Screen_18.png */; };
 		DCA8F2161B2E846E007A6B52 /* Guide_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */; };
 		DCA8F21E1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */; };
 		DCA8F21F1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */; };
@@ -226,7 +227,6 @@
 		DCE585BC1B36978800F58449 /* Quick_Tutorial_Screen_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE585B71B36978800F58449 /* Quick_Tutorial_Screen_2.png */; };
 		DCE585BD1B36978800F58449 /* Quick_Tutorial_Screen_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE585B81B36978800F58449 /* Quick_Tutorial_Screen_3.png */; };
 		DCE585BE1B36978800F58449 /* Quick_Tutorial_Screen_5.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE585B91B36978800F58449 /* Quick_Tutorial_Screen_5.png */; };
-		DCE585BF1B36978800F58449 /* Quick_Tutorial_Screen_6.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE585BA1B36978800F58449 /* Quick_Tutorial_Screen_6.png */; };
 		DCE69C4A1AB4813A003561E6 /* World1Level4.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C491AB4813A003561E6 /* World1Level4.swift */; };
 		DCE69C4E1AB4A04C003561E6 /* World1Level6.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C4D1AB4A04C003561E6 /* World1Level6.swift */; };
 		DCE69C501AB507CB003561E6 /* World1Level7.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C4F1AB507CB003561E6 /* World1Level7.swift */; };
@@ -787,18 +787,12 @@
 		DC9435A71B36B06500231FE9 /* Kraken_Booty_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Kraken_Booty_Sound_1.mp3; sourceTree = "<group>"; };
 		DC9435A91B37405600231FE9 /* Ink_Squirt_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ink_Squirt_Sound_1.mp3; sourceTree = "<group>"; };
 		DC9435AB1B37465000231FE9 /* Tutorial_Screen_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_3.png; sourceTree = "<group>"; };
-		DC9435AC1B37465000231FE9 /* Tutorial_Screen_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_7.png; sourceTree = "<group>"; };
-		DC9435AD1B37465000231FE9 /* Tutorial_Screen_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_8.png; sourceTree = "<group>"; };
-		DC9435AE1B37465000231FE9 /* Tutorial_Screen_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_9.png; sourceTree = "<group>"; };
 		DC9435AF1B37465000231FE9 /* Tutorial_Screen_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_10.png; sourceTree = "<group>"; };
-		DC9435B51B37469800231FE9 /* Tutorial_Screen_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_11.png; sourceTree = "<group>"; };
 		DC9435B61B37469800231FE9 /* Tutorial_Screen_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_12.png; sourceTree = "<group>"; };
 		DC9435B71B37469800231FE9 /* Tutorial_Screen_13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_13.png; sourceTree = "<group>"; };
 		DC9435B81B37469800231FE9 /* Tutorial_Screen_14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_14.png; sourceTree = "<group>"; };
 		DC9435B91B37469800231FE9 /* Tutorial_Screen_15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_15.png; sourceTree = "<group>"; };
 		DC9435BA1B37469800231FE9 /* Tutorial_Screen_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_16.png; sourceTree = "<group>"; };
-		DC9435BB1B37469800231FE9 /* Tutorial_Screen_17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_17.png; sourceTree = "<group>"; };
-		DC9435BC1B37469800231FE9 /* Tutorial_Screen_18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_18.png; sourceTree = "<group>"; };
 		DC9435C51B3746AF00231FE9 /* Tutorial_Screen_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_20.png; sourceTree = "<group>"; };
 		DC9435C61B3746AF00231FE9 /* Tutorial_Screen_21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_21.png; sourceTree = "<group>"; };
 		DC9435C91B375D7B00231FE9 /* Intro_Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Intro_Music.mp3; sourceTree = "<group>"; };
@@ -810,6 +804,13 @@
 		DC9435D51B37AD5F00231FE9 /* Speed_Buff_Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Speed_Buff_Sound.mp3; sourceTree = "<group>"; };
 		DC9435D71B37B44800231FE9 /* Skip_Tutorial_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Skip_Tutorial_Button_1.png; sourceTree = "<group>"; };
 		DC9435D91B37B54200231FE9 /* Regen_Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Regen_Sound.mp3; sourceTree = "<group>"; };
+		DC9435DB1B37BFEE00231FE9 /* Quick_Tutorial_Screen_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quick_Tutorial_Screen_6.png; sourceTree = "<group>"; };
+		DC9435DC1B37BFEE00231FE9 /* Tutorial_Screen_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_7.png; sourceTree = "<group>"; };
+		DC9435DD1B37BFEE00231FE9 /* Tutorial_Screen_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_8.png; sourceTree = "<group>"; };
+		DC9435DE1B37BFEE00231FE9 /* Tutorial_Screen_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_9.png; sourceTree = "<group>"; };
+		DC9435DF1B37BFEE00231FE9 /* Tutorial_Screen_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_11.png; sourceTree = "<group>"; };
+		DC9435E01B37BFEE00231FE9 /* Tutorial_Screen_17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_17.png; sourceTree = "<group>"; };
+		DC9435E11B37BFEE00231FE9 /* Tutorial_Screen_18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tutorial_Screen_18.png; sourceTree = "<group>"; };
 		DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide_Button_1.png; sourceTree = "<group>"; };
 		DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Happy_Background_Sound_1.mp3; sourceTree = "<group>"; };
 		DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ink_Splatter_Sound_1.mp3; sourceTree = "<group>"; };
@@ -858,7 +859,6 @@
 		DCE585B71B36978800F58449 /* Quick_Tutorial_Screen_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quick_Tutorial_Screen_2.png; sourceTree = "<group>"; };
 		DCE585B81B36978800F58449 /* Quick_Tutorial_Screen_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quick_Tutorial_Screen_3.png; sourceTree = "<group>"; };
 		DCE585B91B36978800F58449 /* Quick_Tutorial_Screen_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quick_Tutorial_Screen_5.png; sourceTree = "<group>"; };
-		DCE585BA1B36978800F58449 /* Quick_Tutorial_Screen_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quick_Tutorial_Screen_6.png; sourceTree = "<group>"; };
 		DCE69C491AB4813A003561E6 /* World1Level4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level4.swift; sourceTree = "<group>"; };
 		DCE69C4D1AB4A04C003561E6 /* World1Level6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level6.swift; sourceTree = "<group>"; };
 		DCE69C4F1AB507CB003561E6 /* World1Level7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level7.swift; sourceTree = "<group>"; };
@@ -1446,7 +1446,6 @@
 				DCE585B71B36978800F58449 /* Quick_Tutorial_Screen_2.png */,
 				DCE585B81B36978800F58449 /* Quick_Tutorial_Screen_3.png */,
 				DCE585B91B36978800F58449 /* Quick_Tutorial_Screen_5.png */,
-				DCE585BA1B36978800F58449 /* Quick_Tutorial_Screen_6.png */,
 				DCF23E321B0BAC5C00484040 /* Afro_Seaweed_1.png */,
 				DC5926161B28059600244578 /* Afro_Seaweed_Text.png */,
 				EEACC06D1B361D6400708BA2 /* Backpack_Full_Text.png */,
@@ -1822,22 +1821,23 @@
 				DCFD740A1B01532F0054E370 /* Treasure_Chest_4.png */,
 				DCFD740B1B01532F0054E370 /* Treasure_Chest_5.png */,
 				DCFD740C1B01532F0054E370 /* Treasure_Chest_6.png */,
+				DC9435DB1B37BFEE00231FE9 /* Quick_Tutorial_Screen_6.png */,
+				DC9435DC1B37BFEE00231FE9 /* Tutorial_Screen_7.png */,
+				DC9435DD1B37BFEE00231FE9 /* Tutorial_Screen_8.png */,
+				DC9435DE1B37BFEE00231FE9 /* Tutorial_Screen_9.png */,
+				DC9435DF1B37BFEE00231FE9 /* Tutorial_Screen_11.png */,
+				DC9435E01B37BFEE00231FE9 /* Tutorial_Screen_17.png */,
+				DC9435E11B37BFEE00231FE9 /* Tutorial_Screen_18.png */,
 				DC5925641B26BCEF00244578 /* Tutorial_Button_1.png */,
 				DC5925DA1B27908300244578 /* Tutorial_Screen_1.png */,
 				DC5925DB1B27908300244578 /* Tutorial_Screen_2.png */,
 				DC9435AB1B37465000231FE9 /* Tutorial_Screen_3.png */,
-				DC9435AC1B37465000231FE9 /* Tutorial_Screen_7.png */,
-				DC9435AD1B37465000231FE9 /* Tutorial_Screen_8.png */,
-				DC9435AE1B37465000231FE9 /* Tutorial_Screen_9.png */,
 				DC9435AF1B37465000231FE9 /* Tutorial_Screen_10.png */,
-				DC9435B51B37469800231FE9 /* Tutorial_Screen_11.png */,
 				DC9435B61B37469800231FE9 /* Tutorial_Screen_12.png */,
 				DC9435B71B37469800231FE9 /* Tutorial_Screen_13.png */,
 				DC9435B81B37469800231FE9 /* Tutorial_Screen_14.png */,
 				DC9435B91B37469800231FE9 /* Tutorial_Screen_15.png */,
 				DC9435BA1B37469800231FE9 /* Tutorial_Screen_16.png */,
-				DC9435BB1B37469800231FE9 /* Tutorial_Screen_17.png */,
-				DC9435BC1B37469800231FE9 /* Tutorial_Screen_18.png */,
 				DC9435C51B3746AF00231FE9 /* Tutorial_Screen_20.png */,
 				DC9435C61B3746AF00231FE9 /* Tutorial_Screen_21.png */,
 				DC5926791B2911BF00244578 /* Tutorial_Screen_4.png */,
@@ -2037,7 +2037,6 @@
 			files = (
 				DC5926701B290E3800244578 /* Phase_47_Text.png in Resources */,
 				DC5925BF1B26BED000244578 /* Fear_2.png in Resources */,
-				DC9435B21B37465000231FE9 /* Tutorial_Screen_8.png in Resources */,
 				DCFD75391B01C5D90054E370 /* Kraken_Boss_7.png in Resources */,
 				DC9435BF1B37469800231FE9 /* Tutorial_Screen_13.png in Resources */,
 				DC5925C11B26BED000244578 /* Insidious_2.png in Resources */,
@@ -2058,6 +2057,7 @@
 				DCFD74F61B0153300054E370 /* Whale_Boss_13.png in Resources */,
 				DCFD744D1B0153300054E370 /* Beach_Ball_5.png in Resources */,
 				EEB8090B1B13981D00A221E2 /* Floatie_Text.png in Resources */,
+				DC9435E41B37BFEE00231FE9 /* Tutorial_Screen_8.png in Resources */,
 				DCBCE44D1B12EBA100FCF4A5 /* Water_Wing_2.png in Resources */,
 				EEB8091D1B13981D00A221E2 /* Seaweed_Mustache_Text.png in Resources */,
 				DC5925EF1B27908300244578 /* Tutorial_Screen_2.png in Resources */,
@@ -2093,7 +2093,6 @@
 				DCFD74881B0153300054E370 /* Kraken_Level_Icon_1.png in Resources */,
 				DCF23E3B1B0BB2A100484040 /* Tentacle_Swing_6.png in Resources */,
 				DCFD74D81B0153300054E370 /* Tentacle_30.png in Resources */,
-				DCE585BF1B36978800F58449 /* Quick_Tutorial_Screen_6.png in Resources */,
 				EEB809591B15674700A221E2 /* World_1_Level_35_Text.png in Resources */,
 				DCF23E361B0BAEB600484040 /* Beach_Ball_Fragment_1.png in Resources */,
 				DCFD753F1B01C5D90054E370 /* Kraken_Boss_13.png in Resources */,
@@ -2154,7 +2153,6 @@
 				EEB809661B15674700A221E2 /* World_1_Level_48_Text.png in Resources */,
 				DC9435CC1B376D3B00231FE9 /* Level_Music.mp3 in Resources */,
 				DC5925A61B26BED000244578 /* Gauntlet_Level_Icon_1.png in Resources */,
-				DC9435C41B37469800231FE9 /* Tutorial_Screen_18.png in Resources */,
 				DCFD74721B0153300054E370 /* Fitting_Room_1.png in Resources */,
 				2FC73DE11A912B690068A2FB /* BlizzParticle.sks in Resources */,
 				EEDD80021B2CBD45007EFE12 /* Whiteshell_4.png in Resources */,
@@ -2209,6 +2207,7 @@
 				EEB8095B1B15674700A221E2 /* World_1_Level_37_Text.png in Resources */,
 				DCFD75011B0153300054E370 /* Whale_Boss_7.png in Resources */,
 				EEB809541B15674700A221E2 /* Whistle_Text.png in Resources */,
+				DC9435E81B37BFEE00231FE9 /* Tutorial_Screen_18.png in Resources */,
 				DCFD74AD1B0153300054E370 /* Rusty_Gold_Ring_1.png in Resources */,
 				DCFD74E81B0153300054E370 /* Treasure_Chest_2.png in Resources */,
 				DCFD75251B0153300054E370 /* Zone_Screen_2.png in Resources */,
@@ -2294,7 +2293,6 @@
 				DCFD74571B0153300054E370 /* Clam_Boss_4.png in Resources */,
 				DC5925C01B26BED000244578 /* Insidious_1.png in Resources */,
 				DCF23DF91B0BA9C100484040 /* Lifejacket_1.png in Resources */,
-				DC9435B31B37465000231FE9 /* Tutorial_Screen_9.png in Resources */,
 				EEDD7FFB1B2CBD45007EFE12 /* High_Score_Frame.png in Resources */,
 				DCBCE4371B12EB3A00FCF4A5 /* Sweaty_Wristband_2.png in Resources */,
 				DC5925BC1B26BED000244578 /* Dusk_1.png in Resources */,
@@ -2305,13 +2303,11 @@
 				DC5926601B290E3800244578 /* Phase_31_Text.png in Resources */,
 				DC5925B11B26BED000244578 /* Phase_6_Text.png in Resources */,
 				EEB809261B13981D00A221E2 /* Watch_Text.png in Resources */,
-				DC9435C31B37469800231FE9 /* Tutorial_Screen_17.png in Resources */,
 				EEDD7FED1B2CBD45007EFE12 /* Bomb_Ball_1.png in Resources */,
 				EEB8091C1B13981D00A221E2 /* Seashell_Necklace_Text.png in Resources */,
 				DCFD74801B0153300054E370 /* Inventory_Slot_3.png in Resources */,
 				DCFD74DB1B0153300054E370 /* Tentacle_33.png in Resources */,
 				DC59266A1B290E3800244578 /* Phase_41_Text.png in Resources */,
-				DC9435BD1B37469800231FE9 /* Tutorial_Screen_11.png in Resources */,
 				DCFD744E1B0153300054E370 /* Beach_Ball_Particle.png in Resources */,
 				DC9435C21B37469800231FE9 /* Tutorial_Screen_16.png in Resources */,
 				DC9435C81B3746AF00231FE9 /* Tutorial_Screen_21.png in Resources */,
@@ -2343,6 +2339,7 @@
 				EEB809321B14C11600A221E2 /* Right_Text_1.png in Resources */,
 				DCFD74681B0153300054E370 /* Crab_Boss_4.png in Resources */,
 				DC5925C61B26BED000244578 /* Nightfall_1.png in Resources */,
+				DC9435E31B37BFEE00231FE9 /* Tutorial_Screen_7.png in Resources */,
 				DCFD747E1B0153300054E370 /* Inventory_Slot_1.png in Resources */,
 				EEB809581B15674700A221E2 /* World_1_Level_34_Text.png in Resources */,
 				DCBCE43F1B12EB6500FCF4A5 /* Sweatband_1.png in Resources */,
@@ -2402,6 +2399,7 @@
 				EEDD7FEF1B2CBD45007EFE12 /* Bomb_Ball_3.png in Resources */,
 				DCFD74E21B0153300054E370 /* Tentacle_8.png in Resources */,
 				DC59265F1B290E3800244578 /* Endless_Mode_Text.png in Resources */,
+				DC9435E51B37BFEE00231FE9 /* Tutorial_Screen_9.png in Resources */,
 				EEB809301B14C11600A221E2 /* Left_Text_1.png in Resources */,
 				DCFD74B11B0153300054E370 /* Safety_Pillar_1.png in Resources */,
 				DCFD744A1B0153300054E370 /* Beach_Ball_2.png in Resources */,
@@ -2432,7 +2430,6 @@
 				DC9435DA1B37B54200231FE9 /* Regen_Sound.mp3 in Resources */,
 				DCFD74DC1B0153300054E370 /* Tentacle_34.png in Resources */,
 				DCFD74B81B0153300054E370 /* Seashell_4.png in Resources */,
-				DC9435B11B37465000231FE9 /* Tutorial_Screen_7.png in Resources */,
 				DCE585AB1B364F3E00F58449 /* Page_Turn_Sound.mp3 in Resources */,
 				DCE585AE1B364F3E00F58449 /* Swish_Noise.mp3 in Resources */,
 				DC59266B1B290E3800244578 /* Phase_42_Text.png in Resources */,
@@ -2493,6 +2490,7 @@
 				DCE585A71B364F3E00F58449 /* Fireworks_Sound.mp3 in Resources */,
 				DCFD74AB1B0153300054E370 /* Rusty_Copper_Ring_1.png in Resources */,
 				DCFD745D1B0153300054E370 /* Clam_Boss_Rocking_6.png in Resources */,
+				DC9435E71B37BFEE00231FE9 /* Tutorial_Screen_17.png in Resources */,
 				DCFD74821B0153300054E370 /* Kraken_Boss_1.png in Resources */,
 				DCFD74631B0153300054E370 /* Crab_Boss_10.png in Resources */,
 				DCFD74F81B0153300054E370 /* Whale_Boss_15.png in Resources */,
@@ -2524,6 +2522,7 @@
 				DCFD751A1B0153300054E370 /* World_1_Level_2_Text.png in Resources */,
 				DCFD74C51B0153300054E370 /* Tentacle_11.png in Resources */,
 				DCFD74541B0153300054E370 /* Clam_Boss_1.png in Resources */,
+				DC9435E21B37BFEE00231FE9 /* Quick_Tutorial_Screen_6.png in Resources */,
 				EEB809201B13981D00A221E2 /* Sun_Hat_Text.png in Resources */,
 				DCFD74661B0153300054E370 /* Crab_Boss_2.png in Resources */,
 				DC9435D21B3775AF00231FE9 /* Level_Music2.mp3 in Resources */,
@@ -2571,6 +2570,7 @@
 				EEB8090A1B13981D00A221E2 /* Crab_Claw_Cap_Text.png in Resources */,
 				DC9435A81B36B06500231FE9 /* Kraken_Booty_Sound_1.mp3 in Resources */,
 				DC5926751B290E4600244578 /* Phase_49_Text.png in Resources */,
+				DC9435E61B37BFEE00231FE9 /* Tutorial_Screen_11.png in Resources */,
 				DCFD74A51B0153300054E370 /* Noggin_Text_1.png in Resources */,
 				DC5926621B290E3800244578 /* Phase_33_Text.png in Resources */,
 				EEB809221B13981D00A221E2 /* Sweaty_Headband_Text.png in Resources */,
