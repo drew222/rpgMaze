@@ -886,7 +886,6 @@ class Inventory: SKScene {
                 neckDisplay!.position = CGPointMake(self.frame.midX, self.frame.maxY - 230)
                 neckDisplay!.zPosition = 1
             } else if itemName == "Pearl_Necklace_2" {
-                itemName = "Pearl_Necklace_1"
                 neckDisplay!.size = CGSizeMake(154, 77)
                 neckDisplay!.position = CGPointMake(self.frame.midX - 7, self.frame.maxY - 250)
                 neckDisplay!.zPosition = 2
