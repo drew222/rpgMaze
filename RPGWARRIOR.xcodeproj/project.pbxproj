@@ -149,7 +149,6 @@
 		DC5926871B29379900244578 /* Ink_Splat_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC5926861B29379900244578 /* Ink_Splat_2.png */; };
 		DC64A2CD1B2D443E00C73BD3 /* ItemDisplayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64A2CC1B2D443E00C73BD3 /* ItemDisplayScene.swift */; };
 		DC64A2D01B2E353400C73BD3 /* Congrats_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC64A2CE1B2E353400C73BD3 /* Congrats_1.png */; };
-		DC64A2D11B2E353400C73BD3 /* Skip_Tutorial_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC64A2CF1B2E353400C73BD3 /* Skip_Tutorial_Button_1.png */; };
 		DC64A2D31B2E60F900C73BD3 /* GuideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC64A2D21B2E60F900C73BD3 /* GuideScene.swift */; };
 		DC64A2D61B2E63FB00C73BD3 /* Endless_Mode_Text_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC64A2D41B2E63FB00C73BD3 /* Endless_Mode_Text_2.png */; };
 		DC64A2D71B2E63FB00C73BD3 /* High_Score_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DC64A2D51B2E63FB00C73BD3 /* High_Score_Text.png */; };
@@ -177,6 +176,7 @@
 		DC9435D21B3775AF00231FE9 /* Level_Music2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435D11B3775AF00231FE9 /* Level_Music2.mp3 */; };
 		DC9435D41B37A78900231FE9 /* Buff_Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435D31B37A78900231FE9 /* Buff_Sound.mp3 */; };
 		DC9435D61B37AD5F00231FE9 /* Speed_Buff_Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC9435D51B37AD5F00231FE9 /* Speed_Buff_Sound.mp3 */; };
+		DC9435D81B37B44800231FE9 /* Skip_Tutorial_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC9435D71B37B44800231FE9 /* Skip_Tutorial_Button_1.png */; };
 		DCA8F2161B2E846E007A6B52 /* Guide_Button_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */; };
 		DCA8F21E1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */; };
 		DCA8F21F1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */; };
@@ -780,7 +780,6 @@
 		DC5926861B29379900244578 /* Ink_Splat_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ink_Splat_2.png; sourceTree = "<group>"; };
 		DC64A2CC1B2D443E00C73BD3 /* ItemDisplayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDisplayScene.swift; sourceTree = "<group>"; };
 		DC64A2CE1B2E353400C73BD3 /* Congrats_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Congrats_1.png; sourceTree = "<group>"; };
-		DC64A2CF1B2E353400C73BD3 /* Skip_Tutorial_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Skip_Tutorial_Button_1.png; sourceTree = "<group>"; };
 		DC64A2D21B2E60F900C73BD3 /* GuideScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideScene.swift; sourceTree = "<group>"; };
 		DC64A2D41B2E63FB00C73BD3 /* Endless_Mode_Text_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Endless_Mode_Text_2.png; sourceTree = "<group>"; };
 		DC64A2D51B2E63FB00C73BD3 /* High_Score_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = High_Score_Text.png; sourceTree = "<group>"; };
@@ -808,6 +807,7 @@
 		DC9435D11B3775AF00231FE9 /* Level_Music2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Level_Music2.mp3; sourceTree = "<group>"; };
 		DC9435D31B37A78900231FE9 /* Buff_Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Buff_Sound.mp3; sourceTree = "<group>"; };
 		DC9435D51B37AD5F00231FE9 /* Speed_Buff_Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Speed_Buff_Sound.mp3; sourceTree = "<group>"; };
+		DC9435D71B37B44800231FE9 /* Skip_Tutorial_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Skip_Tutorial_Button_1.png; sourceTree = "<group>"; };
 		DCA8F2151B2E846E007A6B52 /* Guide_Button_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide_Button_1.png; sourceTree = "<group>"; };
 		DCA8F21A1B2FDDC4007A6B52 /* Happy_Background_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Happy_Background_Sound_1.mp3; sourceTree = "<group>"; };
 		DCA8F21B1B2FDDC4007A6B52 /* Ink_Splatter_Sound_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Ink_Splatter_Sound_1.mp3; sourceTree = "<group>"; };
@@ -1734,10 +1734,10 @@
 				DCFD73DC1B01532F0054E370 /* Silver_Ring_1.png */,
 				DCFD73DD1B01532F0054E370 /* Silver_Ring_2.png */,
 				EEB808F91B13981D00A221E2 /* Silver_Ring_Text.png */,
+				DC9435D71B37B44800231FE9 /* Skip_Tutorial_Button_1.png */,
 				DC5925941B26BED000244578 /* Sinister_1.png */,
 				DC5925951B26BED000244578 /* Sinister_2.png */,
 				DC5925811B26BED000244578 /* Sinister_Text.png */,
-				DC64A2CF1B2E353400C73BD3 /* Skip_Tutorial_Button_1.png */,
 				EEACC0651B32360000708BA2 /* Sound_Off_Button_1.png */,
 				EEACC0661B32360000708BA2 /* Sound_On_Button_1.png */,
 				DCBCE43C1B12EB5C00FCF4A5 /* Speed_Symbol_1.png */,
@@ -2423,6 +2423,7 @@
 				DCFD74B71B0153300054E370 /* Seashell_3.png in Resources */,
 				EEB8091B1B13981D00A221E2 /* Seashell_Charm_Bracelet_Text.png in Resources */,
 				DCFD75181B0153300054E370 /* World_1_Level_28_Text.png in Resources */,
+				DC9435D81B37B44800231FE9 /* Skip_Tutorial_Button_1.png in Resources */,
 				DCBCE4411B12EB6B00FCF4A5 /* Sweatband_2.png in Resources */,
 				DCFD75121B0153300054E370 /* World_1_Level_22_Text.png in Resources */,
 				DCFD74DC1B0153300054E370 /* Tentacle_34.png in Resources */,
@@ -2530,7 +2531,6 @@
 				DC64A2D01B2E353400C73BD3 /* Congrats_1.png in Resources */,
 				EEB809601B15674700A221E2 /* World_1_Level_42_Text.png in Resources */,
 				DCFD74E41B0153300054E370 /* Tentacles_Text_1.png in Resources */,
-				DC64A2D11B2E353400C73BD3 /* Skip_Tutorial_Button_1.png in Resources */,
 				DCFD75071B0153300054E370 /* World_1_Level_12_Text.png in Resources */,
 				DCFD75091B0153300054E370 /* World_1_Level_14_Text.png in Resources */,
 				DCFD75111B0153300054E370 /* World_1_Level_21_Text.png in Resources */,
