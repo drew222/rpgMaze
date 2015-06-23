@@ -58,6 +58,17 @@ class World1Level12: SKScene, SKPhysicsContactDelegate {
             CGPointMake(self.frame.maxX + 20, 400),
             CGPointMake(-20, 500),
             CGPointMake(self.frame.maxX + 20, 600)]
+        if isPad || is5 {
+            wavePositions = [
+                CGPointMake(-20, 70),
+                CGPointMake(self.frame.maxX + 20, 150),
+                CGPointMake(-20, 100),
+                CGPointMake(self.frame.maxX + 20, 200),
+                CGPointMake(-20, 250),
+                CGPointMake(self.frame.maxX + 20, 330),
+                CGPointMake(-20, 380),
+                CGPointMake(self.frame.maxX + 20, 410)]
+        }
         theWhale = WhaleBoss.makeWhale(CGPointMake(self.frame.midX, self.frame.maxY - 50))
         self.addChild(theWhale!)
         

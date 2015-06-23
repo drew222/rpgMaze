@@ -145,7 +145,24 @@ class World1Level3: SKScene, SKPhysicsContactDelegate {
                 ); i > 155; i -= 40){
                     self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY - 43)))
             }
-
+            
+        } else if isPad || is5{
+            //midtop row
+            for (var i = 70; i < Int(self.frame.maxX); i += 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY + 150)))
+            }
+            //midbot row
+            for (var i = 20; i < Int(self.frame.maxX - 70); i += 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY - 150)))
+            }
+            //right column
+            for (var i = Int(self.frame.midY) - 130; i < Int(self.frame.midY + 100); i += 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 70, CGFloat(i))))
+            }
+            //left column
+            for (var i = Int(self.frame.midY + 100); i > Int(self.frame.midY) - 100; i -= 40){
+                self.addChild(MineNode.mineAtPos(CGPointMake(70, CGFloat(i))))
+            }
         } else {
             // bot row
             for (var i = 20; i < Int(self.frame.maxX - 90); i += 40){

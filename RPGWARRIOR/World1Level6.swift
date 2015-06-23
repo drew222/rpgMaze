@@ -115,12 +115,20 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
             self.addChild(MiniCrab.crabAtPosition(CGPointMake(65, self.frame.maxY - 250), endPosition: CGPointMake(65, 130)))
             self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 50, 140), endPosition: CGPointMake(self.frame.midX - 50, 140)))
             self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 50, 220), endPosition: CGPointMake(self.frame.maxX - 50, 220)))
-        } else{
+        } else if !(isPad || is5){
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 40, self.frame.maxY - 200), endPosition: CGPointMake(self.frame.midX - 40, self.frame.maxY - 360)))
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX + 40, self.frame.maxY - 360), endPosition: CGPointMake(self.frame.midX + 40, self.frame.maxY - 200)))
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(65, self.frame.maxY - 250), endPosition: CGPointMake(65, 130)))
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 50, 140), endPosition: CGPointMake(self.frame.midX - 50, 140)))
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 50, 220), endPosition: CGPointMake(self.frame.maxX - 50, 220)))
+        }else {
+            self.addChild(MiniCrab.crabAtPosition(CGPointMake(65, self.frame.maxY - 250), endPosition: CGPointMake(65, 130)))
+            self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 10, 135), endPosition: CGPointMake(self.frame.maxX - 20, 135)))
+            self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 20, 225), endPosition: CGPointMake(self.frame.midX - 10, 225)))
+            self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.midX - 10, 305), endPosition: CGPointMake(self.frame.maxX - 20, 305)))
+            if is5 {
+                self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 20, 385), endPosition: CGPointMake(self.frame.midX - 10, 385)))
+            }
         }
         //shells i = y, k = x
         for (var i = 100; i < Int(self.frame.maxY - 100); i += 80){
@@ -131,10 +139,10 @@ class World1Level6: SKScene, SKPhysicsContactDelegate {
                 }
             }
         }
-        if isPlus{
+        if isPlus && !(isPad || is5){
             self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 105, 260)))
         }
-        else{
+        else if !(isPad || is5){
             self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 65, 260)))
         }
         

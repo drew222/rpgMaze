@@ -120,8 +120,15 @@ class World1Level5: SKScene, SKPhysicsContactDelegate {
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 210), endPosition: CGPointMake(self.frame.maxX - 10, 210)))
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 290), endPosition: CGPointMake(10, 290)))
         self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 370), endPosition: CGPointMake(self.frame.maxX - 10, 370)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 450), endPosition: CGPointMake(10, 450)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 530), endPosition: CGPointMake(self.frame.maxX - 10, 530)))
+        if isPad {
+        }else{
+            self.addChild(MiniCrab.crabAtPosition(CGPointMake(self.frame.maxX - 10, 450), endPosition: CGPointMake(10, 450)))
+        }
+        if isPad || is5{
+        }else{
+            self.addChild(MiniCrab.crabAtPosition(CGPointMake(10, 530), endPosition: CGPointMake(self.frame.maxX - 10, 530)))
+
+        }
         
         
         

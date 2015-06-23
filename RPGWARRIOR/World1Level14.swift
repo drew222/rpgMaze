@@ -150,13 +150,17 @@ class World1Level14: SKScene, SKPhysicsContactDelegate {
         for (var k = 20; k < Int(self.frame.maxX) - 60; k += 40){
             attackSpots.append(CGPointMake(CGFloat(k), 360))
         }
-        attackSpots.append(CGPointMake(0, 0))
-        for (var k = Int(self.frame.maxX) - 20; k > 60; k -= 40){
-            attackSpots.append(CGPointMake(CGFloat(k), 440))
+        if !isPad{
+            attackSpots.append(CGPointMake(0, 0))
+            for (var k = Int(self.frame.maxX) - 20; k > 60; k -= 40){
+                    attackSpots.append(CGPointMake(CGFloat(k), 440))
+            }
         }
-        attackSpots.append(CGPointMake(0, 0))
-        for (var k = 20; k < Int(self.frame.maxX) - 60; k += 40){
-            attackSpots.append(CGPointMake(CGFloat(k), 520))
+        if !(is5 || isPad){
+            attackSpots.append(CGPointMake(0, 0))
+            for (var k = 20; k < Int(self.frame.maxX) - 60; k += 40){
+                attackSpots.append(CGPointMake(CGFloat(k), 520))
+            }
         }
         
         
