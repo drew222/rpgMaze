@@ -360,9 +360,9 @@ class MainMenuScene: SKScene {
                 Node.position = CGPointMake(self.frame.midX + 50, self.frame.midY + 135)
                 if is5{
                     levelIcon.setScale(0.25)
-                    levelIcon.position = CGPointMake(self.frame.midX + 50, self.frame.midY + 125)
+                    levelIcon.position = CGPointMake(self.frame.midX + 50, self.frame.midY + 120)
                     Node.setScale(0.25)
-                    Node.position = CGPointMake(self.frame.midX + 50, self.frame.midY + 125)
+                    Node.position = CGPointMake(self.frame.midX + 50, self.frame.midY + 120)
                 } else if isPad{
                     levelIcon.setScale(0.25)
                     levelIcon.position = CGPointMake(self.frame.midX + 50, self.frame.midY + 135)

@@ -53,6 +53,13 @@ class Inventory: SKScene {
         inv.menu!.zPosition = 4
         inv.menu!.name = "menu"
         inv.menu!.size = CGSizeMake(100, 100)
+        if is5{
+            inv.menu!.position = CGPointMake(inv.frame.minX + 45, inv.frame.maxY - 45)
+            inv.menu!.size = CGSizeMake(80, 80)
+        } else if isPad{
+            inv.menu!.position = CGPointMake(inv.frame.minX + 55, inv.frame.maxY - 55)
+            inv.menu!.size = CGSizeMake(100, 100)
+        }
         inv.addChild(inv.menu!)
         let krakenNode = SKSpriteNode(imageNamed: "Fitting_Room_Kraken_1")
         krakenNode.position = CGPointMake(inv.frame.midX, inv.frame.maxY - 230)
@@ -92,40 +99,54 @@ class Inventory: SKScene {
         inv.headDisplay!.texture = nil
         inv.headDisplay!.size = CGSizeMake(135, 80)
         inv.headDisplay!.position = CGPointMake(krakenNode.position.x - 10, krakenNode.position.y + 75)
-        inv.headDisplay!.zPosition = 2
+        inv.headDisplay!.zPosition = 10
         inv.addChild(inv.headDisplay!)
         inv.leftDisplay = SKSpriteNode(imageNamed: "")
         inv.leftDisplay!.texture = nil
         inv.leftDisplay!.size = CGSizeMake(40, 40)
         inv.leftDisplay!.zRotation = -pi/3
         inv.leftDisplay!.position = CGPointMake(krakenNode.position.x - 65, krakenNode.position.y - 40)
-        inv.leftDisplay!.zPosition = 2
+        inv.leftDisplay!.zPosition = 10
         inv.addChild(inv.leftDisplay!)
         inv.rightDisplay = SKSpriteNode(imageNamed: "")
         inv.rightDisplay!.size = CGSizeMake(40, 40)
         inv.rightDisplay!.zRotation = pi/2
         inv.rightDisplay!.texture = nil
         inv.rightDisplay!.position = CGPointMake(krakenNode.position.x + 65, krakenNode.position.y - 28)
-        inv.rightDisplay!.zPosition = 2
+        inv.rightDisplay!.zPosition = 10
         inv.addChild(inv.rightDisplay!)
         inv.neckDisplay = SKSpriteNode(imageNamed: "")
         inv.neckDisplay!.size = CGSizeMake(110, 45)
         //neckDisplay!.zRotation = pi/3
         inv.neckDisplay!.texture = nil
         inv.neckDisplay!.position = CGPointMake(krakenNode.position.x, krakenNode.position.y - 25)
-        inv.neckDisplay!.zPosition = 2
+        inv.neckDisplay!.zPosition = 10
         inv.addChild(inv.neckDisplay!)
         inv.store = SKSpriteNode(imageNamed: "Store_Button_1")
         inv.store!.position = CGPointMake(inv.frame.maxX - 55, inv.frame.maxY - 55)
-        inv.store!.zPosition = 4
+        inv.store!.zPosition = 10
         inv.store!.name = "store"
         inv.store!.size = CGSizeMake(100, 100)
+        if is5{
+            inv.store!.position = CGPointMake(inv.frame.maxX - 45, inv.frame.maxY - 45)
+            inv.store!.size = CGSizeMake(80, 80)
+        } else if isPad{
+            inv.store!.position = CGPointMake(inv.frame.maxX - 55, inv.frame.maxY - 55)
+            inv.store!.size = CGSizeMake(100, 100)
+        }
         inv.addChild(inv.store!)
         let storeText = SKSpriteNode(imageNamed: "Fitting_Room_Text_1")
         storeText.position = CGPointMake(inv.frame.midX, inv.frame.maxY - 50)
         storeText.name = "store"
-        storeText.zPosition = 4
+        storeText.zPosition = 10
         storeText.size = CGSizeMake(165, 60)
+        if is5{
+            storeText.position = CGPointMake(inv.frame.midX, inv.frame.maxY - 50)
+            storeText.size = CGSizeMake(130, 40)
+        } else if isPad{
+            storeText.position = CGPointMake(inv.frame.midX, inv.frame.maxY - 50)
+            storeText.size = CGSizeMake(165, 60)
+        }
         inv.addChild(storeText)
         inv.backPack = SKSpriteNode(imageNamed: "Inventory_Array_Background_1")
         inv.backPack!.position = CGPointMake(inv.frame.midX, inv.frame.minY + 115)
@@ -167,6 +188,7 @@ class Inventory: SKScene {
         inv.statLabelLife!.fontColor = UIColor.blackColor()
         inv.statLabelLife!.name = "lifeStat"
         inv.statLabelLife!.setScale(0.7)
+        inv.statLabelLife!.zPosition = 10
         inv.addChild(inv.statLabelLife!)
         inv.statLabelMovement = SKLabelNode.init(text: "")
         inv.statLabelMovement!.position = CGPointMake(inv.frame.midX + 25, inv.frame.minY + 253)
@@ -175,6 +197,7 @@ class Inventory: SKScene {
         inv.statLabelMovement!.fontColor = UIColor.blackColor()
         inv.statLabelMovement!.name = "movementStat"
         inv.statLabelMovement!.setScale(0.7)
+        inv.statLabelMovement!.zPosition = 10
         inv.addChild(inv.statLabelMovement!)
         inv.statLabelRegen = SKLabelNode.init(text: "")
         inv.statLabelRegen!.position = CGPointMake(inv.frame.midX + 75, inv.frame.minY + 253)
@@ -183,6 +206,7 @@ class Inventory: SKScene {
         inv.statLabelRegen!.fontColor = UIColor.blackColor()
         inv.statLabelRegen!.name = "regenStat"
         inv.statLabelRegen!.setScale(0.7)
+        inv.statLabelRegen!.zPosition = 10
         inv.addChild(inv.statLabelRegen!)
         }
         
@@ -205,17 +229,17 @@ class Inventory: SKScene {
         
         inv.lifeSymbol2 = SKSpriteNode(imageNamed: "Life_Symbol_1")
         inv.lifeSymbol2!.position = CGPointMake(inv.frame.midX - 55, inv.frame.minY + 260)
-        inv.lifeSymbol2!.zPosition = 2
+        inv.lifeSymbol2!.zPosition = 10
         inv.lifeSymbol2!.setScale(0.15)
         
         inv.speedSymbol2 = SKSpriteNode(imageNamed: "Speed_Symbol_1")
         inv.speedSymbol2!.position = CGPointMake(inv.frame.midX, inv.frame.minY + 260)
-        inv.speedSymbol2!.zPosition = 2
+        inv.speedSymbol2!.zPosition = 10
         inv.speedSymbol2!.setScale(0.15)
         
         inv.regenerationSymbol2 = SKSpriteNode(imageNamed: "Regeneration_Symbol_1")
         inv.regenerationSymbol2!.position = CGPointMake(inv.frame.midX + 55, inv.frame.minY + 260)
-        inv.regenerationSymbol2!.zPosition = 2
+        inv.regenerationSymbol2!.zPosition = 10
         inv.regenerationSymbol2!.setScale(0.15)
         }
         
@@ -224,6 +248,7 @@ class Inventory: SKScene {
         inv.statLabelLife2!.fontName = "ChalkboardSE-Bold"
         inv.statLabelLife2!.fontSize = 25
         inv.statLabelLife2!.fontColor = UIColor.blackColor()
+        inv.statLabelLife2!.zPosition = 10
         inv.statLabelLife2!.name = "lifeStat"
         inv.addChild(inv.statLabelLife2!)
         inv.statLabelMovement2 = SKLabelNode.init(text: "0")
@@ -231,6 +256,7 @@ class Inventory: SKScene {
         inv.statLabelMovement2!.fontName = "ChalkboardSE-Bold"
         inv.statLabelMovement2!.fontSize = 25
         inv.statLabelMovement2!.fontColor = UIColor.blackColor()
+        inv.statLabelMovement2!.zPosition = 10
         inv.statLabelMovement2!.name = "movementStat"
         inv.addChild(inv.statLabelMovement2!)
         inv.statLabelRegen2 = SKLabelNode.init(text: "0")
@@ -238,25 +264,28 @@ class Inventory: SKScene {
         inv.statLabelRegen2!.fontName = "ChalkboardSE-Bold"
         inv.statLabelRegen2!.fontSize = 25
         inv.statLabelRegen2!.fontColor = UIColor.blackColor()
+        inv.statLabelRegen2!.zPosition = 10
         inv.statLabelRegen2!.name = "regenStat"
         inv.addChild(inv.statLabelRegen2!)
         
         let weaponLabel = SKSpriteNode(imageNamed: "Noggin_Text_1")
         weaponLabel.setScale(0.35)
-        weaponLabel.zPosition = 4
+        weaponLabel.zPosition = 10
         weaponLabel.position = CGPointMake(inv.frame.maxX - 40, inv.frame.maxY - 120)
         inv.addChild(weaponLabel)
         let neckLabel = SKSpriteNode(imageNamed: "Neck_Text_1")
         neckLabel.setScale(0.35)
-        neckLabel.zPosition = 4
+        neckLabel.zPosition = 10
         neckLabel.position = CGPointMake(inv.frame.maxX - 40, inv.frame.maxY - 195)
         inv.addChild(neckLabel)
         let bodyLabel = SKSpriteNode(imageNamed: "Left_Text_1")
         bodyLabel.setScale(0.35)
+        bodyLabel.zPosition = 10
         bodyLabel.position = CGPointMake(inv.frame.minX + 40, inv.frame.maxY - 275)
         inv.addChild(bodyLabel)
         let feetLabel = SKSpriteNode(imageNamed: "Right_Text_1")
         feetLabel.setScale(0.35)
+        feetLabel.zPosition = 10
         feetLabel.position = CGPointMake(inv.frame.maxX - 40, inv.frame.maxY - 275)
         inv.addChild(feetLabel)
         //create all the item spaces
@@ -384,6 +413,13 @@ class Inventory: SKScene {
         let booty = SKSpriteNode(imageNamed: "Booty_1.png")
         booty.position = CGPointMake(inv.frame.maxX - 40, inv.frame.minY + 230)
         booty.setScale(0.08)
+        if is5{
+            booty.position = CGPointMake(inv.frame.maxX - 40, inv.frame.minY + 222)
+            booty.setScale(0.06)
+        } else if isPad{
+            booty.position = CGPointMake(inv.frame.maxX - 40, inv.frame.minY + 230)
+            booty.setScale(0.08)
+        }
         inv.addChild(booty)
         //gold node
         inv.goldNode = SKLabelNode.init(text: "\(Int(inv.gold))")
@@ -391,6 +427,13 @@ class Inventory: SKScene {
         inv.goldNode!.fontSize = 30
         inv.goldNode!.fontColor = UIColor.blackColor()
         inv.goldNode!.position = CGPointMake(inv.frame.maxX - 100, inv.frame.minY + 220)
+        if is5{
+            inv.goldNode!.fontSize = 24
+            inv.goldNode!.position = CGPointMake(inv.frame.maxX - 85, inv.frame.minY + 215)
+        } else if isPad{
+            inv.goldNode!.fontSize = 30
+            inv.goldNode!.position = CGPointMake(inv.frame.maxX - 100, inv.frame.minY + 220)
+        }
         inv.addChild(inv.goldNode!)
         
         return inv
