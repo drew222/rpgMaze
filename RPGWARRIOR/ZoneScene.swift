@@ -38,7 +38,15 @@ class ZoneScene: SKScene {
             soundOnButton = SKSpriteNode(imageNamed: "Sound_Off_Button_1")
         }
         soundOnButton!.size = CGSizeMake(100, 100)
-        soundOnButton!.position = CGPointMake(self.frame.minX + 55, self.frame.minY + 55)
+            soundOnButton!.position = CGPointMake(self.frame.minX + 55, self.frame.minY + 55)
+            if is5{
+                soundOnButton!.size = CGSizeMake(80, 80)
+                soundOnButton!.position = CGPointMake(self.frame.minX + 45, self.frame.minY + 45)
+            } else if isPad {
+                soundOnButton!.size = CGSizeMake(90, 90)
+                soundOnButton!.position = CGPointMake(self.frame.minX + 55, self.frame.minY + 55)
+            }
+        
         soundOnButton!.name = "soundButton"
         soundOnButton!.zPosition = 3
         self.addChild(soundOnButton!)
@@ -227,17 +235,40 @@ class ZoneScene: SKScene {
             
             
             world1Node = SKSpriteNode(imageNamed: "The_Beach_Zone_Button_1")
-            //world1Node!.zPosition = -2
             world1Node!.size = CGSizeMake(350, 80)
             world1Node!.position = CGPointMake(self.frame.midX, self.frame.maxY - 150)
+
+            if is5 {
+                world1Node!.size = CGSizeMake(300, 80)
+                world1Node!.position = CGPointMake(self.frame.midX, self.frame.maxY - 130)
+
+            } else if isPad {
+                world1Node!.size = CGSizeMake(350, 80)
+                world1Node!.position = CGPointMake(self.frame.midX, self.frame.maxY - 150)
+
+            }
             self.addChild(world1Node!)
             let comingSoon = SKSpriteNode(imageNamed: "World_Coming_Soon_Button_1")
             comingSoon.size = CGSizeMake(350, 80)
             comingSoon.position = CGPointMake(self.frame.midX, self.frame.maxY - 250)
+            if is5 {
+                comingSoon.size = CGSizeMake(300, 80)
+                comingSoon.position = CGPointMake(self.frame.midX, self.frame.maxY - 220)
+            } else if isPad {
+                comingSoon.size = CGSizeMake(350, 80)
+                comingSoon.position = CGPointMake(self.frame.midX, self.frame.maxY - 250)
+            }
             self.addChild(comingSoon)
             let comingSoon2 = SKSpriteNode(imageNamed: "World_Coming_Soon_Button_1")
             comingSoon2.size = CGSizeMake(350, 80)
             comingSoon2.position = CGPointMake(self.frame.midX, self.frame.maxY - 350)
+            if is5 {
+                comingSoon2.size = CGSizeMake(300, 80)
+                comingSoon2.position = CGPointMake(self.frame.midX, self.frame.maxY - 310)
+            } else if isPad {
+                comingSoon2.size = CGSizeMake(350, 80)
+                comingSoon2.position = CGPointMake(self.frame.midX, self.frame.maxY - 350)
+            }
             self.addChild(comingSoon2)
             let revealingTide = SKSpriteNode(imageNamed: "Level_Revealing_Tide_1")
             revealingTide.size = CGSizeMake(self.frame.maxX, self.frame.maxY - 170)
@@ -247,22 +278,53 @@ class ZoneScene: SKScene {
             tutorialButton = SKSpriteNode(imageNamed: "Tutorial_Button_1")
             tutorialButton!.size = CGSizeMake(100, 100)
             tutorialButton!.position = CGPointMake(self.frame.maxX - 55, self.frame.minX + 55)
+            if is5{
+                tutorialButton!.size = CGSizeMake(80, 80)
+                tutorialButton!.position = CGPointMake(self.frame.maxX - 45, self.frame.minX + 45)
+            } else if isPad {
+                tutorialButton!.size = CGSizeMake(100, 100)
+                tutorialButton!.position = CGPointMake(self.frame.maxX - 55, self.frame.minX + 55)
+            }
+            
             tutorialButton!.name = "tutorial"
             self.addChild(tutorialButton!)
             inventoryNode = SKSpriteNode(imageNamed: "Fitting_Room__Button_1")
             //inventoryNode!.zPosition = -2
             inventoryNode!.size = CGSizeMake(100, 100)
             inventoryNode!.position = CGPointMake(self.frame.minX + 55, self.frame.maxY - 55)
+            if is5{
+                inventoryNode!.size = CGSizeMake(80, 80)
+                inventoryNode!.position = CGPointMake(self.frame.minX + 45, self.frame.maxY - 45)
+            } else if isPad{
+                inventoryNode!.size = CGSizeMake(100, 100)
+                inventoryNode!.position = CGPointMake(self.frame.minX + 55, self.frame.maxY - 55)
+            }
+            
             self.addChild(inventoryNode!)
             storeNode = SKSpriteNode(imageNamed: "Store_Button_1")
             //storeNode!.zPosition = -2
             storeNode!.size = CGSizeMake(100, 100)
             storeNode!.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 55)
+            if is5{
+                storeNode!.size = CGSizeMake(80, 80)
+                storeNode!.position = CGPointMake(self.frame.maxX - 45, self.frame.maxY - 45)
+            } else if isPad{
+                storeNode!.size = CGSizeMake(100, 100)
+                storeNode!.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 55)
+            }
             self.addChild(storeNode!)
             zonesTextNode = SKSpriteNode(imageNamed: "Zones_Text_1")
             //zonesTextNode!.zPosition = -2
             zonesTextNode!.size = CGSizeMake(150, 40)
             zonesTextNode!.position = CGPointMake(self.frame.midX, self.frame.maxY - 53)
+            if is5{
+                 zonesTextNode!.size = CGSizeMake(130, 33)
+                zonesTextNode!.position = CGPointMake(self.frame.midX, self.frame.maxY - 48)
+            } else if isPad{
+                 zonesTextNode!.size = CGSizeMake(110, 27)
+                zonesTextNode!.position = CGPointMake(self.frame.midX, self.frame.maxY - 53)
+            }
+            
             self.addChild(zonesTextNode!)
             firstLoad = false
         }
