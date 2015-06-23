@@ -20,6 +20,7 @@ class IntroScene: SKScene {
         happyMusic.volume = 0.3
         beachMusic.volume = 0.3
         levelMusic.volume = 0.3
+        gauntletMusic.volume = 0.3
         levelMusic.numberOfLoops = -1
         introMusic.numberOfLoops = -1
         beachMusic.numberOfLoops = -1
