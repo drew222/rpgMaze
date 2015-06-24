@@ -110,8 +110,8 @@ class MainMenuScene: SKScene {
                 sandCastle.setScale(0.3)
                 sandCastle.position = CGPointMake(self.frame.midX, self.frame.midY - 36)
             } else if isPad{
-                sandCastle.setScale(0.35)
-                sandCastle.position = CGPointMake(self.frame.midX, self.frame.midY - 50)
+                sandCastle.setScale(0.26)
+                sandCastle.position = CGPointMake(self.frame.midX, self.frame.midY - 25)
             }
             self.addChild(sandCastle)
         
@@ -135,8 +135,9 @@ class MainMenuScene: SKScene {
                 inventoryNode!.size = CGSizeMake(80, 80)
                 inventoryNode!.position = CGPointMake(self.frame.midX, self.frame.maxY - 45)
             } else if isPad{
-                inventoryNode!.size = CGSizeMake(100, 100)
-                inventoryNode!.position = CGPointMake(self.frame.midX, self.frame.maxY - 55)
+                inventoryNode!.size = CGSizeMake(70, 70)
+                inventoryNode!.position = CGPointMake(self.frame.midX, self.frame.maxY - 40)
+                inventoryNode!.zPosition = 3
             }
             self.addChild(inventoryNode!)
             storeNode = SKSpriteNode(imageNamed: "Store_Button_1")
@@ -147,8 +148,9 @@ class MainMenuScene: SKScene {
                 storeNode!.size = CGSizeMake(80, 80)
                 storeNode!.position = CGPointMake(self.frame.maxX - 45, self.frame.maxY - 45)
             } else if isPad{
-                storeNode!.size = CGSizeMake(100, 100)
-                storeNode!.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 55)
+                storeNode!.size = CGSizeMake(70, 70)
+                storeNode!.position = CGPointMake(self.frame.maxX - 40, self.frame.maxY - 40)
+                storeNode!.zPosition = 3
             }
             self.addChild(storeNode!)
             
@@ -160,8 +162,9 @@ class MainMenuScene: SKScene {
                 menu!.position = CGPointMake(self.frame.minX + 45, self.frame.maxY - 45)
                 menu!.size = CGSizeMake(80, 80)
             } else if isPad{
-                menu!.position = CGPointMake(self.frame.minX + 55, self.frame.maxY - 55)
-                menu!.size = CGSizeMake(100, 100)
+                menu!.position = CGPointMake(self.frame.minX + 40, self.frame.maxY - 40)
+                menu!.size = CGSizeMake(70, 70)
+                menu!.zPosition = 3
             }
             self.addChild(menu!)
             
@@ -172,8 +175,9 @@ class MainMenuScene: SKScene {
                 guideNode!.position = CGPointMake(self.frame.maxX - 45, self.frame.minX + 45)
                 guideNode!.size = CGSizeMake(80, 80)
             } else if isPad{
-                guideNode!.position = CGPointMake(self.frame.maxX - 55, self.frame.minX + 55)
-                guideNode!.size = CGSizeMake(100, 100)
+                guideNode!.position = CGPointMake(self.frame.maxX - 40, self.frame.minX + 40)
+                guideNode!.size = CGSizeMake(70, 70)
+                guideNode!.zPosition = 3
             }
             self.addChild(guideNode!)
             
@@ -188,9 +192,17 @@ class MainMenuScene: SKScene {
             let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
             levelIcon.setScale(0.25)
             levelIcon.position = CGPointMake(self.frame.midX + 3, self.frame.midY - 5)
+            if isPad{
+                levelIcon.setScale(0.2)
+                levelIcon.position = CGPointMake(self.frame.midX + 1, self.frame.midY - 2)
+            }
             self.addChild(levelIcon)
             Node.setScale(0.25)
             Node.position = CGPointMake(self.frame.midX + 3, self.frame.midY - 5)
+            if isPad{
+                Node.setScale(0.2)
+                Node.position = CGPointMake(self.frame.midX + 1, self.frame.midY - 2)
+            }
             Node.name = "world1level1"
             if self.childNodeWithName("world1level1") == nil{
                 self.addChild(Node)
@@ -211,10 +223,10 @@ class MainMenuScene: SKScene {
                 Node.position = CGPointMake(self.frame.midX - 45, self.frame.midY - 15)
 
             } else if isPad{
-                levelIcon.setScale(0.25)
-                levelIcon.position = CGPointMake(self.frame.midX - 55, self.frame.midY - 25)
-                Node.setScale(0.25)
-                Node.position = CGPointMake(self.frame.midX - 55, self.frame.midY - 25)
+                levelIcon.setScale(0.2)
+                levelIcon.position = CGPointMake(self.frame.midX - 40, self.frame.midY - 10)
+                Node.setScale(0.2)
+                Node.position = CGPointMake(self.frame.midX - 40, self.frame.midY - 10)
 
             }
             Node.name = "world1level2"
@@ -227,9 +239,9 @@ class MainMenuScene: SKScene {
             world1level3node = SKSpriteNode(imageNamed: "World_1_Level_3_Text")
             if let Node = world1level3node {
             let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
-            levelIcon.setScale(0.25)
+            levelIcon.setScale(0.2)
             levelIcon.position = CGPointMake(self.frame.midX - 75, self.frame.midY - 115)
-            Node.setScale(0.25)
+            Node.setScale(0.2)
             Node.position = CGPointMake(self.frame.midX - 75, self.frame.midY - 115)
                 if is5{
                     levelIcon.setScale(0.25)
@@ -237,10 +249,10 @@ class MainMenuScene: SKScene {
                     Node.setScale(0.25)
                     Node.position = CGPointMake(self.frame.midX - 55, self.frame.midY - 95)
                 } else if isPad{
-                    levelIcon.setScale(0.25)
-                    levelIcon.position = CGPointMake(self.frame.midX - 75, self.frame.midY - 115)
-                    Node.setScale(0.25)
-                    Node.position = CGPointMake(self.frame.midX - 75, self.frame.midY - 115)
+                    levelIcon.setScale(0.2)
+                    levelIcon.position = CGPointMake(self.frame.midX - 60, self.frame.midY - 105)
+                    Node.setScale(0.2)
+                    Node.position = CGPointMake(self.frame.midX - 60, self.frame.midY - 105)
                 }
             Node.name = "world1level3"
                 if self.childNodeWithName("world1level3") == nil && highestLevel >= 2{
@@ -258,7 +270,7 @@ class MainMenuScene: SKScene {
                     levelIcon.setScale(0.25)
                     levelIcon.position = CGPointMake(self.frame.midX - 95, self.frame.midY - 55)
                 } else if isPad{
-                    levelIcon.setScale(0.25)
+                    levelIcon.setScale(0.2)
                     levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 55)
                 }
                 Node.setScale(0.25)
@@ -267,7 +279,7 @@ class MainMenuScene: SKScene {
                     Node.setScale(0.25)
                     Node.position = CGPointMake(self.frame.midX - 95, self.frame.midY - 55)
                 }else if isPad{
-                    Node.setScale(0.25)
+                    Node.setScale(0.2)
                     Node.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 55)
                 }
                 Node.name = "world1level4"

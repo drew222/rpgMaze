@@ -38,6 +38,13 @@ class ItemDisplayScene: SKScene {
         levelComplete.name = "levelComplete"
         levelComplete.setScale(0.35)
         levelComplete.zPosition = 1
+        if is5{
+            levelComplete.position = CGPointMake(self.frame.midX, self.frame.midY + 230)
+            levelComplete.setScale(0.3)
+        } else if isPad{
+            levelComplete.position = CGPointMake(self.frame.midX, self.frame.midY + 250)
+            levelComplete.setScale(0.35)
+        }
         self.addChild(levelComplete)
         
         //backpack spaces
@@ -64,6 +71,11 @@ class ItemDisplayScene: SKScene {
         let litePath = NSBundle.mainBundle().pathForResource("TreasureChestSpark", ofType: "sks")
         liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
         liteAttack!.position = CGPointMake(self.frame.midX, self.frame.midY + 50)
+            if is5{
+                liteAttack!.position = CGPointMake(self.frame.midX, self.frame.midY + 30)
+            } else if isPad{
+                liteAttack!.position = CGPointMake(self.frame.midX, self.frame.midY + 50)
+            }
             if itemName == "Booty_1" {
                 liteAttack!.position = CGPointMake(self.frame.midX, self.frame.midY + 130)
             }
@@ -102,6 +114,13 @@ class ItemDisplayScene: SKScene {
         continueButton!.name = "continue"
         continueButton!.setScale(0.35)
         continueButton!.zPosition = 3
+        if is5{
+            continueButton!.position = CGPointMake(self.frame.midX, self.frame.midY - 230)
+            continueButton!.setScale(0.3)
+        } else if isPad{
+            continueButton!.position = CGPointMake(self.frame.midX, self.frame.midY - 250)
+            continueButton!.setScale(0.35)
+        }
         self.addChild(continueButton!)
         
         

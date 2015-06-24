@@ -34,13 +34,13 @@ class TutorialScene: SKScene {
         if is5{
            skipButton!.size = CGSizeMake(80, 80)
         } else if isPad{
-            skipButton!.size = CGSizeMake(100, 100)
+            skipButton!.size = CGSizeMake(70, 70)
         }
         skipButton!.position = CGPointMake(self.frame.minX + 55, self.frame.minY + 55)
         if is5{
             skipButton!.position = CGPointMake(self.frame.minX + 45, self.frame.minY + 45)
         } else if isPad{
-            skipButton!.position = CGPointMake(self.frame.minX + 55, self.frame.minY + 55)
+            skipButton!.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 40)
         }
         skipButton!.zPosition = 2
         self.addChild(skipButton!)

@@ -71,6 +71,15 @@ class Inventory: SKScene {
         napsackText.position = CGPointMake(inv.frame.midX, inv.frame.minY + 213)
         napsackText.zPosition = 2
         napsackText.setScale(0.45)
+        if is5{
+            napsackText.position = CGPointMake(inv.frame.midX, inv.frame.minY + 20)
+            napsackText.zPosition = 2
+            napsackText.setScale(0.45)
+        } else if isPad{
+            napsackText.position = CGPointMake(inv.frame.midX, inv.frame.minY + 213)
+            napsackText.zPosition = 2
+            napsackText.setScale(0.45)
+        }
         inv.addChild(napsackText)
         
         //overall stats
@@ -142,7 +151,7 @@ class Inventory: SKScene {
         storeText.size = CGSizeMake(165, 60)
         if is5{
             storeText.position = CGPointMake(inv.frame.midX, inv.frame.maxY - 50)
-            storeText.size = CGSizeMake(130, 40)
+            storeText.size = CGSizeMake(140, 55)
         } else if isPad{
             storeText.position = CGPointMake(inv.frame.midX, inv.frame.maxY - 50)
             storeText.size = CGSizeMake(165, 60)
@@ -428,7 +437,7 @@ class Inventory: SKScene {
         inv.goldNode!.fontColor = UIColor.blackColor()
         inv.goldNode!.position = CGPointMake(inv.frame.maxX - 100, inv.frame.minY + 220)
         if is5{
-            inv.goldNode!.fontSize = 24
+            inv.goldNode!.fontSize = 23
             inv.goldNode!.position = CGPointMake(inv.frame.maxX - 85, inv.frame.minY + 215)
         } else if isPad{
             inv.goldNode!.fontSize = 30
@@ -1384,7 +1393,37 @@ class Inventory: SKScene {
                                 booty.name = "sellBooty"
                                 booty.setScale(0.06)
                                 self.addChild(booty)
-                            } else {
+                            } else if is5{
+                                let sellNode = SKLabelNode.init(text: "\(Int(round(itemToMove!.price! / 5)))")
+                                sellNode.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 215)
+                                sellNode.fontName = "ChalkboardSE-Bold"
+                                sellNode.fontSize = 23
+                                sellNode.fontColor = UIColor.blackColor()
+                                sellNode.name = "priceButton"
+                                self.addChild(sellNode)
+                                
+                                //booty coin image
+                                let booty = SKSpriteNode(imageNamed: "Booty_1.png")
+                                booty.position = CGPointMake(self.frame.minX + 72, self.frame.minY + 222)
+                                booty.name = "sellBooty"
+                                booty.setScale(0.06)
+                                self.addChild(booty)
+                            } else if isPad{
+                                let sellNode = SKLabelNode.init(text: "\(Int(round(itemToMove!.price! / 5)))")
+                                sellNode.position = CGPointMake(self.frame.minX + 65, self.frame.midY - 118)
+                                sellNode.fontName = "ChalkboardSE-Bold"
+                                sellNode.fontSize = 22
+                                sellNode.fontColor = UIColor.blackColor()
+                                sellNode.name = "priceButton"
+                                self.addChild(sellNode)
+                                
+                                //booty coin image
+                                let booty = SKSpriteNode(imageNamed: "Booty_1.png")
+                                booty.position = CGPointMake(self.frame.minX + 97, self.frame.midY - 110)
+                                booty.name = "sellBooty"
+                                booty.setScale(0.06)
+                                self.addChild(booty)
+                            }else {
                                 let sellNode = SKLabelNode.init(text: "\(Int(round(itemToMove!.price! / 5)))")
                                 sellNode.position = CGPointMake(self.frame.minX + 48, self.frame.minY + 252)
                                 sellNode.fontName = "ChalkboardSE-Bold"
@@ -1406,6 +1445,13 @@ class Inventory: SKScene {
                             sellText.position = CGPointMake(self.frame.midX - 120, self.frame.minY + 230)
                             sellText.setScale(0.45)
                             sellText.name = "sellButton"
+                            if is5{
+                                sellText.position = CGPointMake(self.frame.midX - 30, self.frame.minY + 225)
+                                sellText.setScale(0.4)
+                            } else if isPad{
+                                sellText.position = CGPointMake(self.frame.midX - 120, self.frame.minY + 230)
+                                sellText.setScale(0.45)
+                            }
                             self.addChild(sellText)
                             //name of the item
                             var itemPicName = spaceToMove!.item!.itemName!
@@ -1415,6 +1461,13 @@ class Inventory: SKScene {
                             itemText.name = "itemName"
                             itemText.setScale(0.7)
                             if isPlus {
+                                itemText.position = CGPointMake(self.frame.midX, self.frame.midY - 25)
+                            } else if is5{
+                                itemText.zPosition = 10
+                                itemText.setScale(0.35)
+                                itemText.position = CGPointMake(self.frame.midX, self.frame.midY - 5)
+                            } else if isPad{
+                                itemText.setScale(0.7)
                                 itemText.position = CGPointMake(self.frame.midX, self.frame.midY - 25)
                             } else {
                             itemText.position = CGPointMake(self.frame.midX, self.frame.minY + 295)
@@ -1434,6 +1487,30 @@ class Inventory: SKScene {
                                 }
 
                                 typeString!.position = CGPointMake(self.frame.midX, self.frame.midY - 105)
+                                typeString?.setScale(0.3)
+                            } else if is5{
+                                if itemType == ItemType.weapon{
+                                    typeString = SKSpriteNode(imageNamed: "Noggin_Text_1")
+                                }else if itemType == ItemType.neck {
+                                    typeString = SKSpriteNode(imageNamed: "Neck_Text_1")
+                                }else {
+                                    typeString = SKSpriteNode(imageNamed: "Tentacles_Text_1")
+                                }
+                                
+                                typeString!.position = CGPointMake(self.frame.midX, self.frame.midY - 38)
+                                typeString?.zPosition = 10
+                                typeString?.setScale(0.2)
+                            } else if isPad{
+                                if itemType == ItemType.weapon{
+                                    typeString = SKSpriteNode(imageNamed: "Noggin_Text_1")
+                                }else if itemType == ItemType.neck {
+                                    typeString = SKSpriteNode(imageNamed: "Neck_Text_1")
+                                }else {
+                                    typeString = SKSpriteNode(imageNamed: "Tentacles_Text_1")
+                                }
+                                
+                                typeString!.position = CGPointMake(self.frame.midX, self.frame.midY - 105)
+                                typeString?.setScale(0.3)
                             } else {
                                 if itemType == ItemType.weapon{
                                     typeString = SKSpriteNode(imageNamed: "Noggin_Text_1")
@@ -1444,9 +1521,9 @@ class Inventory: SKScene {
                                 }
 
                                 typeString!.position = CGPointMake(self.frame.midX, self.frame.midY - 95)
+                                typeString?.setScale(0.3)
                             }
                             
-                            typeString?.setScale(0.3)
                             typeString!.name = "typeString"
                             self.addChild(typeString!)
                             //************************

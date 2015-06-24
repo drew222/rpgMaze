@@ -43,8 +43,8 @@ class ZoneScene: SKScene {
                 soundOnButton!.size = CGSizeMake(80, 80)
                 soundOnButton!.position = CGPointMake(self.frame.minX + 45, self.frame.minY + 45)
             } else if isPad {
-                soundOnButton!.size = CGSizeMake(90, 90)
-                soundOnButton!.position = CGPointMake(self.frame.minX + 55, self.frame.minY + 55)
+                soundOnButton!.size = CGSizeMake(70, 70)
+                soundOnButton!.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 40)
             }
         
         soundOnButton!.name = "soundButton"
@@ -243,8 +243,8 @@ class ZoneScene: SKScene {
                 world1Node!.position = CGPointMake(self.frame.midX, self.frame.maxY - 130)
 
             } else if isPad {
-                world1Node!.size = CGSizeMake(350, 80)
-                world1Node!.position = CGPointMake(self.frame.midX, self.frame.maxY - 150)
+                world1Node!.size = CGSizeMake(270, 65)
+                world1Node!.position = CGPointMake(self.frame.midX, self.frame.maxY - 115)
 
             }
             self.addChild(world1Node!)
@@ -255,8 +255,8 @@ class ZoneScene: SKScene {
                 comingSoon.size = CGSizeMake(300, 80)
                 comingSoon.position = CGPointMake(self.frame.midX, self.frame.maxY - 220)
             } else if isPad {
-                comingSoon.size = CGSizeMake(350, 80)
-                comingSoon.position = CGPointMake(self.frame.midX, self.frame.maxY - 250)
+                comingSoon.size = CGSizeMake(270, 65)
+                comingSoon.position = CGPointMake(self.frame.midX, self.frame.maxY - 190)
             }
             self.addChild(comingSoon)
             let comingSoon2 = SKSpriteNode(imageNamed: "World_Coming_Soon_Button_1")
@@ -266,8 +266,8 @@ class ZoneScene: SKScene {
                 comingSoon2.size = CGSizeMake(300, 80)
                 comingSoon2.position = CGPointMake(self.frame.midX, self.frame.maxY - 310)
             } else if isPad {
-                comingSoon2.size = CGSizeMake(350, 80)
-                comingSoon2.position = CGPointMake(self.frame.midX, self.frame.maxY - 350)
+                comingSoon2.size = CGSizeMake(270, 65)
+                comingSoon2.position = CGPointMake(self.frame.midX, self.frame.maxY - 265)
             }
             self.addChild(comingSoon2)
             let revealingTide = SKSpriteNode(imageNamed: "Level_Revealing_Tide_1")
@@ -282,8 +282,8 @@ class ZoneScene: SKScene {
                 tutorialButton!.size = CGSizeMake(80, 80)
                 tutorialButton!.position = CGPointMake(self.frame.maxX - 45, self.frame.minX + 45)
             } else if isPad {
-                tutorialButton!.size = CGSizeMake(100, 100)
-                tutorialButton!.position = CGPointMake(self.frame.maxX - 55, self.frame.minX + 55)
+                tutorialButton!.size = CGSizeMake(70, 70)
+                tutorialButton!.position = CGPointMake(self.frame.maxX - 40, self.frame.minX + 40)
             }
             
             tutorialButton!.name = "tutorial"
@@ -296,8 +296,8 @@ class ZoneScene: SKScene {
                 inventoryNode!.size = CGSizeMake(80, 80)
                 inventoryNode!.position = CGPointMake(self.frame.minX + 45, self.frame.maxY - 45)
             } else if isPad{
-                inventoryNode!.size = CGSizeMake(100, 100)
-                inventoryNode!.position = CGPointMake(self.frame.minX + 55, self.frame.maxY - 55)
+                inventoryNode!.size = CGSizeMake(70, 70)
+                inventoryNode!.position = CGPointMake(self.frame.minX + 40, self.frame.maxY - 40)
             }
             
             self.addChild(inventoryNode!)
@@ -309,8 +309,8 @@ class ZoneScene: SKScene {
                 storeNode!.size = CGSizeMake(80, 80)
                 storeNode!.position = CGPointMake(self.frame.maxX - 45, self.frame.maxY - 45)
             } else if isPad{
-                storeNode!.size = CGSizeMake(100, 100)
-                storeNode!.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 55)
+                storeNode!.size = CGSizeMake(70, 70)
+                storeNode!.position = CGPointMake(self.frame.maxX - 40, self.frame.maxY - 40)
             }
             self.addChild(storeNode!)
             zonesTextNode = SKSpriteNode(imageNamed: "Zones_Text_1")
@@ -321,8 +321,8 @@ class ZoneScene: SKScene {
                  zonesTextNode!.size = CGSizeMake(130, 33)
                 zonesTextNode!.position = CGPointMake(self.frame.midX, self.frame.maxY - 48)
             } else if isPad{
-                 zonesTextNode!.size = CGSizeMake(110, 27)
-                zonesTextNode!.position = CGPointMake(self.frame.midX, self.frame.maxY - 53)
+                 zonesTextNode!.size = CGSizeMake(130, 33)
+                zonesTextNode!.position = CGPointMake(self.frame.midX, self.frame.maxY - 43)
             }
             
             self.addChild(zonesTextNode!)
