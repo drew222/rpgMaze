@@ -57,6 +57,8 @@ class MainMenuScene: SKScene {
     var world1level28node: SKSpriteNode?
     var world1level29node: SKSpriteNode?
     var world1level30node: SKSpriteNode?
+    var gauntletButton: SKSpriteNode?
+    var clickedGauntlet = false
     
     var highestLevel = 0
     var highestTime = 0.0
@@ -72,6 +74,8 @@ class MainMenuScene: SKScene {
     
     
     override func didMoveToView(view: SKView) {
+        //test
+        //highestLevel = 30
         /* Setup your scene here */
         //MUSIC
         if !happyMusic.playing && soundOn{
@@ -1014,6 +1018,13 @@ class MainMenuScene: SKScene {
         for touch in touches{
                 
             if world1level1node!.containsPoint((touch as! UITouch).locationInNode(self)){
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1028,6 +1039,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level1scene, transition: skTransition)
                 
             }else if world1level2node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 1{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1042,6 +1060,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level2scene, transition: skTransition)
                 
             }else if world1level3node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 2{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1056,6 +1081,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level3scene, transition: skTransition)
                 
             }else if world1level4node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 3{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1070,6 +1102,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level4scene, transition: skTransition)
                 
             }else if world1level5node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 4{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1084,6 +1123,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level5scene, transition: skTransition)
                 
             }else if world1level6node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 5{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1098,6 +1144,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level6scene, transition: skTransition)
                 
             }else if world1level7node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 6{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1112,6 +1165,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level7scene, transition: skTransition)
                 
             }else if world1level8node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 7{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1126,6 +1186,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level8scene, transition: skTransition)
                 
             }else if world1level9node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 8{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1140,6 +1207,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level9scene, transition: skTransition)
                 
             }else if world1level10node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 9{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1154,6 +1228,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level10scene, transition: skTransition)
                 
             }else if world1level11node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 10{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1168,6 +1249,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level11scene, transition: skTransition)
                 
             }else if world1level12node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 11{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1182,6 +1270,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level12scene, transition: skTransition)
                 
             }else if world1level13node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 12{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1196,6 +1291,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level13scene, transition: skTransition)
                 
             }else if world1level14node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 13{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1210,6 +1312,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level14scene, transition: skTransition)
                 
             }else if world1level15node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 14{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1224,6 +1333,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level15scene, transition: skTransition)
                 
             }else if world1level16node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 15{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1238,6 +1354,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level16scene, transition: skTransition)
                 
             }else if world1level17node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 16{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1252,6 +1375,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level17scene, transition: skTransition)
                 
             }else if world1level18node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 17{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1266,6 +1396,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level18scene, transition: skTransition)
                 
             }else if world1level19node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 18{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1280,6 +1417,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level19scene, transition: skTransition)
                 
             }else if world1level20node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 19{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1294,6 +1438,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level20scene, transition: skTransition)
                 
             }else if world1level21node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 20{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1308,6 +1459,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level21scene, transition: skTransition)
                 
             }else if world1level22node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 21{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1322,6 +1480,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level22scene, transition: skTransition)
                 
             }else if world1level23node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 22{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1336,6 +1501,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level23scene, transition: skTransition)
                 
             }else if world1level24node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 23{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1350,6 +1522,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level24scene, transition: skTransition)
                 
             }else if world1level25node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 24{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1364,6 +1543,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level25scene, transition: skTransition)
                 
             }else if world1level26node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 25{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1378,6 +1564,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level26scene, transition: skTransition)
                 
             }else if world1level27node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 26{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1393,6 +1586,13 @@ class MainMenuScene: SKScene {
 
                 
             }else if world1level28node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 27{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1407,6 +1607,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level28scene, transition: skTransition)
                 
             }else if world1level29node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 28{
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                     levelMusic.play()
@@ -1424,14 +1631,28 @@ class MainMenuScene: SKScene {
                 if soundOn {
                     self.runAction(clickSound)
                 }
-                happyMusic.stop()
-                let world1level30scene = World1Level30(size: self.frame.size)
-                world1level30scene.userData = NSMutableDictionary()
-                world1level30scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
-                world1level30scene.userData?.setObject(self, forKey: "menu")
-                //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
-                let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(world1level30scene, transition: skTransition)
+                //add enter the gauntlet button
+                gauntletButton = SKSpriteNode(imageNamed: "Enter_Text_1")
+                gauntletButton!.position = CGPointMake(world1level30node!.position.x - 30, world1level30node!.position.y - 50)
+                gauntletButton!.name = "gauntletButton"
+                gauntletButton!.size = CGSizeMake(70, 30)
+                self.addChild(gauntletButton!)
+                let bootyImage = SKSpriteNode(imageNamed: "Booty_1")
+                bootyImage.position = CGPointMake(world1level30node!.position.x + 30, world1level30node!.position.y - 50)
+                bootyImage.name = "bootyImage"
+                bootyImage.size = CGSizeMake(30, 30)
+                self.addChild(bootyImage)
+                let text50 = SKLabelNode()
+                text50.text = "50"
+                text50.position = CGPointMake(world1level30node!.position.x + 65, world1level30node!.position.y - 60)
+                text50.name = "text50"
+                text50.fontName = "ChalkboardSE-Bold"
+                text50.fontColor = UIColor.blackColor()
+                text50.fontSize = 32
+                self.addChild(text50)
+                clickedGauntlet = true
+                
+                
                 
                 // ##### change this for new level #####
                 
@@ -1441,7 +1662,30 @@ class MainMenuScene: SKScene {
                 (self.userData?.objectForKey("inventory") as Inventory).userData?.setObject(self, forKey: "menu")
                 self.view?.presentScene(self.userData?.objectForKey("inventory") as Inventory, transition: skTransition)*/
                 
+            }else if gauntletButton != nil && gauntletButton!.containsPoint((touch as! UITouch).locationInNode(self)) {
+                    if (self.userData?.objectForKey("inventory") as! Inventory).gold >= 50 {
+                        if soundOn {
+                            self.runAction(bootySound)
+                        }
+                        (self.userData?.objectForKey("inventory") as! Inventory).gold -= 50
+                        persistentData.setObject((self.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+                        happyMusic.stop()
+                        let world1level30scene = World1Level30(size: self.frame.size)
+                        world1level30scene.userData = NSMutableDictionary()
+                        world1level30scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
+                        world1level30scene.userData?.setObject(self, forKey: "menu")
+                        //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
+                        let skTransition = SKTransition.fadeWithDuration(1.0)
+                        self.view?.presentScene(world1level30scene, transition: skTransition)
+                }
             }else if inventoryNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                 }
@@ -1449,6 +1693,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(self.userData?.objectForKey("inventory") as! Inventory, transition: skTransition)
                 
             }else if guideNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                 }
@@ -1459,6 +1710,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(guideScene, transition: skTransition)
                 
             }else if storeNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                 }
@@ -1470,6 +1728,13 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(aStoreScene, transition: skTransition)
             
             } else if menu!.containsPoint((touch as! UITouch).locationInNode(self)){
+                //remove gauntletNodes
+                if clickedGauntlet {
+                    self.childNodeWithName("gauntletButton")?.removeFromParent()
+                    self.childNodeWithName("bootyImage")?.removeFromParent()
+                    self.childNodeWithName("text50")?.removeFromParent()
+                    clickedGauntlet = false
+                }
                 if soundOn {
                     self.runAction(clickSound)
                 }
