@@ -31,8 +31,10 @@ class TreasureChest: SKSpriteNode {
         if soundOn {
             //let waitAction = SKAction.waitForDuration(0.2)
             //let sequence = SKAction.sequence([bootySound, waitAction, bootySound, waitAction, bootySound, waitAction, bootySound, waitAction, bootySound])
-            (self.parent as! SKScene).runAction(chestSound)
-            (self.parent as! SKScene).runAction(fireworksSound)
+            if let parent = self.parent as? SKScene{
+                parent.runAction(chestSound)
+                parent.runAction(fireworksSound)
+            }
         }
         
         open = true
