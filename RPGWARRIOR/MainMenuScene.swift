@@ -1638,13 +1638,13 @@ class MainMenuScene: SKScene {
                 gauntletButton!.size = CGSizeMake(70, 30)
                 self.addChild(gauntletButton!)
                 let bootyImage = SKSpriteNode(imageNamed: "Booty_1")
-                bootyImage.position = CGPointMake(world1level30node!.position.x + 30, world1level30node!.position.y - 50)
+                bootyImage.position = CGPointMake(world1level30node!.position.x - 45, world1level30node!.position.y - 90)
                 bootyImage.name = "bootyImage"
                 bootyImage.size = CGSizeMake(30, 30)
                 self.addChild(bootyImage)
                 let text50 = SKLabelNode()
                 text50.text = "50"
-                text50.position = CGPointMake(world1level30node!.position.x + 65, world1level30node!.position.y - 60)
+                text50.position = CGPointMake(world1level30node!.position.x - 10, world1level30node!.position.y - 100)
                 text50.name = "text50"
                 text50.fontName = "ChalkboardSE-Bold"
                 text50.fontColor = UIColor.blackColor()
