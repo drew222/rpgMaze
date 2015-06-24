@@ -1664,6 +1664,13 @@ class MainMenuScene: SKScene {
                 
             }else if gauntletButton != nil && gauntletButton!.containsPoint((touch as! UITouch).locationInNode(self)) {
                     if (self.userData?.objectForKey("inventory") as! Inventory).gold >= 50 {
+                        //remove gauntletNodes
+                        if clickedGauntlet {
+                            self.childNodeWithName("gauntletButton")?.removeFromParent()
+                            self.childNodeWithName("bootyImage")?.removeFromParent()
+                            self.childNodeWithName("text50")?.removeFromParent()
+                            clickedGauntlet = false
+                        }
                         if soundOn {
                             self.runAction(bootySound)
                         }
