@@ -105,22 +105,59 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
         //*************************
         
         //lower strafing crabs
+        if is5 || isPad{
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX, self.frame.midY - 145), endPosition: CGPointMake(self.frame.minX + 500, self.frame.midY - 145)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 150, self.frame.midY - 145), endPosition: CGPointMake(self.frame.minX + 650, self.frame.midY - 145)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 300, self.frame.midY - 145), endPosition: CGPointMake(self.frame.minX + 800, self.frame.midY - 145)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX - 150, self.frame.midY - 145), endPosition: CGPointMake(self.frame.minX + 350, self.frame.midY - 145)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX - 300, self.frame.midY - 145), endPosition: CGPointMake(self.frame.minX + 200, self.frame.midY - 145)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX - 450, self.frame.midY - 145), endPosition: CGPointMake(self.frame.minX + 50, self.frame.midY - 145)))
+        }else{
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 500, self.frame.midY - 100)))
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 150, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 650, self.frame.midY - 100)))
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 300, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 800, self.frame.midY - 100)))
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX - 150, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 350, self.frame.midY - 100)))
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX - 300, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 200, self.frame.midY - 100)))
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX - 450, self.frame.midY - 100), endPosition: CGPointMake(self.frame.minX + 50, self.frame.midY - 100)))
+        }
         //higher strafing crabs
+        if is5 || isPad{
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX, self.frame.midY + 50), endPosition: CGPointMake(self.frame.minX + 500, self.frame.midY + 50)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 150, self.frame.midY + 50), endPosition: CGPointMake(self.frame.minX + 650, self.frame.midY + 50)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 300, self.frame.midY + 50), endPosition: CGPointMake(self.frame.minX + 800, self.frame.midY + 50)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX - 150, self.frame.midY + 50), endPosition: CGPointMake(self.frame.minX + 350, self.frame.midY + 50)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX - 300, self.frame.midY + 50), endPosition: CGPointMake(self.frame.minX + 200, self.frame.midY + 50)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX - 450, self.frame.midY + 50), endPosition: CGPointMake(self.frame.minX + 50, self.frame.midY + 50)))
+        }else{
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX, self.frame.midY + 100), endPosition: CGPointMake(self.frame.minX + 500, self.frame.midY + 100)))
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 150, self.frame.midY + 100), endPosition: CGPointMake(self.frame.minX + 650, self.frame.midY + 100)))
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 300, self.frame.midY + 100), endPosition: CGPointMake(self.frame.minX + 800, self.frame.midY + 100)))
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX - 150, self.frame.midY + 100), endPosition: CGPointMake(self.frame.minX + 350, self.frame.midY + 100)))
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX - 300, self.frame.midY + 100), endPosition: CGPointMake(self.frame.minX + 200, self.frame.midY + 100)))
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX - 450, self.frame.midY + 100), endPosition: CGPointMake(self.frame.minX + 50, self.frame.midY + 100)))
+        }
         
         
         //bottom row seashells
+        if is5 || isPad{
+            if isPad{
+                self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 70, self.frame.midY - 190)))
+                self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 100, self.frame.midY - 190)))
+                self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 130, self.frame.midY - 190)))
+                self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 160, self.frame.midY - 190)))
+                self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 190, self.frame.midY - 190)))
+                self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 220, self.frame.midY - 190)))
+                self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 250, self.frame.midY - 190)))
+            }else{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 70, self.frame.midY - 200)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 100, self.frame.midY - 200)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 130, self.frame.midY - 200)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 160, self.frame.midY - 200)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 190, self.frame.midY - 200)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 220, self.frame.midY - 200)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 250, self.frame.midY - 200)))
+            }
+        }else{
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 10, self.frame.midY - 250)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.midY - 250)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 70, self.frame.midY - 250)))
@@ -131,15 +168,29 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 220, self.frame.midY - 250)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 250, self.frame.midY - 250)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 280, self.frame.midY - 250)))
+        }
         //2nd from bottom
+        if is5 || isPad{
+        }else{
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.midY - 150)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 80, self.frame.midY - 150)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.midY - 150)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.midY - 150)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 110, self.frame.midY - 150)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 110, self.frame.midY - 150)))
+        }
+        if is5 || isPad{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 150, self.frame.midY - 100)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY - 100)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 90, self.frame.midY - 100)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 120, self.frame.midY - 100)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 150, self.frame.midY - 100)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY - 100)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 90, self.frame.midY - 100)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 120, self.frame.midY - 100)))
+        }else{
         //3rd from bottom
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 50)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 50)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 30, self.frame.midY - 50)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.midY - 50)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 90, self.frame.midY - 50)))
@@ -148,7 +199,18 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY - 50)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 90, self.frame.midY - 50)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 120, self.frame.midY - 50)))
+        }
         //top row
+        if is5 || isPad{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 10, self.frame.midY + 110)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 40, self.frame.midY + 110)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 70, self.frame.midY + 110)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 310, self.frame.midY + 110)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 280, self.frame.midY + 110)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 100, self.frame.midY + 110)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 220, self.frame.midY + 110)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 250, self.frame.midY + 110)))
+        }else{
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 10, self.frame.midY + 230)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 40, self.frame.midY + 230)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 70, self.frame.midY + 230)))
@@ -158,7 +220,11 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 190, self.frame.midY + 230)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 220, self.frame.midY + 230)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 250, self.frame.midY + 230)))
+        }
         //2nd from top
+        if is5 || isPad{
+            
+        }else{
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 10, self.frame.midY + 150)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.midY + 150)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 70, self.frame.midY + 150)))
@@ -166,8 +232,18 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 130, self.frame.midY + 150)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 160, self.frame.midY + 150)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 260, self.frame.midY + 150)))
+        }
         
         //3rd from top
+        if is5 || isPad{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 30, self.frame.midY)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 30, self.frame.midY)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 100, self.frame.midY)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 70, self.frame.midY)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 100, self.frame.midY)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 70, self.frame.midY)))
+        }else{
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 50)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 30, self.frame.midY + 50)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 30, self.frame.midY + 50)))
@@ -177,6 +253,7 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 10, self.frame.midY + 50)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 40, self.frame.midY + 50)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 70, self.frame.midY + 50)))
+        }
         
     }
     func didBeginContact(contact: SKPhysicsContact) {
@@ -255,10 +332,14 @@ class World1Level20: SKScene, SKPhysicsContactDelegate  {
         
         
         if (self.timeSinceCrabAdded > self.addCrabTimeInterval && !self.levelOver && !inkSplatted && !droppedChest) {
+            if is5 || isPad{
+                self.addChild(MudCrab.crabDash(CGPointMake(self.frame.maxX, self.frame.midY - 50), endPosition: CGPointMake(self.frame.minX, self.frame.midY - 50)))
+            }else{
             self.addChild(MudCrab.crabDash(CGPointMake(self.frame.minX, self.frame.midY ), endPosition: CGPointMake(self.frame.maxX, self.frame.midY)))
             self.addChild(MudCrab.crabDash(CGPointMake(self.frame.maxX, self.frame.midY - 200 ), endPosition: CGPointMake(self.frame.minX, self.frame.midY - 200)))
             self.addChild(MudCrab.crabDash(CGPointMake(self.frame.minX, self.frame.midY - 400), endPosition: CGPointMake(self.frame.maxX, self.frame.midY - 400)))
             self.addChild(MudCrab.crabDash(CGPointMake(self.frame.maxX, self.frame.midY + 200), endPosition: CGPointMake(self.frame.minX, self.frame.midY + 200)))
+            }
             
             
             self.timeSinceCrabAdded = 0
