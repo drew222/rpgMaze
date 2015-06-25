@@ -221,6 +221,9 @@ class HeroClass: SKSpriteNode {
             let animation2 = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
             let repeatAction = SKAction.repeatActionForever(animation2)
             self.runAction(repeatAction , withKey: "repeatAction")
+            if !self.isMoving {
+                self.removeActionForKey("repeatAction")
+            }
         })
         let sequence = SKAction.sequence([codeBlock0, SKAction.waitForDuration(0.1), codeBlock])
         self.runAction(sequence)

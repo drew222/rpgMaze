@@ -147,6 +147,27 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
             for (var i = 290; i < Int(self.frame.maxY) - 180; i += 40){
                 self.addChild(GreyShell.mineAtPos(CGPointMake(60, CGFloat(i))))
             }
+            
+        }else if isPad || is5 {
+            
+            //add bot horizontal row
+            for (var i = 20; i < Int(self.frame.maxX - 80); i += 40){
+                self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  100)))
+            }
+            //add top row
+            for (var i = 115; i < Int(self.frame.maxX); i += 40){
+                self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 100)))
+            }
+            //right column
+            for (var i = Int(self.frame.maxY) - 200; i > 100; i -= 40){
+                self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.maxX - 80, CGFloat(i))))
+            }
+            //left column
+            for (var i = 200; i < Int(self.frame.maxY) - 100; i += 40){
+                self.addChild(GreyShell.mineAtPos(CGPointMake(80, CGFloat(i))))
+            }
+            
+            
         } else {
         //add bot right corner
         self.addChild(GreyShell.mineAtPos(CGPointMake(260, 120)))
