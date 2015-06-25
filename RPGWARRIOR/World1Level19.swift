@@ -26,7 +26,7 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
     let healSpeed = 45.0
     var maxLife: CGFloat = 0.0
     //*****************
-    let krakenAttackSpeed = 1.5
+    var krakenAttackSpeed = 1.5
     
     //Ink / Life / Chest Changes*****
     var inkSplatted = false
@@ -41,6 +41,12 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
     var theHero: HeroClass?
     
     override func didMoveToView(view: SKView) {
+        if is5{
+            krakenAttackSpeed = 2.65
+        }
+        if isPad{
+            krakenAttackSpeed = 3.3
+        }
         /* Setup your scene here */
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)

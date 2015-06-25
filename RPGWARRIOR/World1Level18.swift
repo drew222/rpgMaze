@@ -137,14 +137,21 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
         if isPlus{
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 390, self.frame.maxY - 100)))
         }
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 30, self.frame.maxY - 100)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 70, self.frame.maxY - 100)))
+        
+        if !(is5 || isPad){
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 30, self.frame.maxY - 100)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 70, self.frame.maxY - 100)))
+        }
         
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 190, self.frame.maxY - 100)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 230, self.frame.maxY - 100)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 270, self.frame.maxY - 100)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 310, self.frame.maxY - 100)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 350, self.frame.maxY - 100)))
+        if is5 || isPad{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 150, self.frame.maxY - 100)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 110, self.frame.maxY - 100)))
+        }
         //right inside diagnols
         if isPlus{
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 265, self.frame.minY + 200)))
@@ -157,6 +164,17 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 285, self.frame.minY + 480)))
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 265, self.frame.minY + 520)))
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 285, self.frame.minY + 560)))
+            
+        }else if is5 || isPad{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 180)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 220)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 260)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 300)))
+            if is5{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 340)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 380)))
+            }
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 140)))
         }else{
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 140)))
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 245, self.frame.minY + 180)))
@@ -181,6 +199,8 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 380, self.frame.minY + 480)))
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 360, self.frame.minY + 520)))
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 380, self.frame.minY + 560)))
+            
+        }else if is5 || isPad{
         }else{
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 320, self.frame.minY + 140)))
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 340, self.frame.minY + 180)))
@@ -194,27 +214,42 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 340, self.frame.minY + 500)))
         }
         //left inside diagnols
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 140)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 180)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 125, self.frame.maxY - 220)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 260)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 300)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 340)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 125, self.frame.maxY - 380)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 420)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 460)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 500)))
+        if is5 || isPad{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 105, self.frame.maxY - 140)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 105, self.frame.maxY - 180)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 105, self.frame.maxY - 220)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 105, self.frame.maxY - 260)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 105, self.frame.maxY - 300)))
+            if is5{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 105, self.frame.maxY - 340)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 105, self.frame.maxY - 380)))
+            }
+        }else{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 220)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 260)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 125, self.frame.maxY - 300)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 340)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 380)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 420)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 125, self.frame.maxY - 460)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 500)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 540)))
+        }
         //left outside diagnols
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 60, self.frame.maxY - 140)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.maxY - 180)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 20, self.frame.maxY - 220)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.maxY - 260)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 60, self.frame.maxY - 300)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.maxY - 340)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 20, self.frame.maxY - 380)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.maxY - 420)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 60, self.frame.maxY - 460)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.maxY - 500)))
+        if is5 || isPad {
+
+        }else{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 60, self.frame.maxY - 140)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.maxY - 180)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 20, self.frame.maxY - 220)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.maxY - 260)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 60, self.frame.maxY - 300)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.maxY - 340)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 20, self.frame.maxY - 380)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.maxY - 420)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 60, self.frame.maxY - 460)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 40, self.frame.maxY - 500)))
+        }
         
     }
     
