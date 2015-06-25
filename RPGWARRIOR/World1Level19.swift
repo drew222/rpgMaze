@@ -45,7 +45,7 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
             krakenAttackSpeed = 2.65
         }
         if isPad{
-            krakenAttackSpeed = 3.3
+            krakenAttackSpeed = 3.5
         }
         /* Setup your scene here */
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
