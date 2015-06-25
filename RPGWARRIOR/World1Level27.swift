@@ -27,7 +27,7 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
     var maxLife: CGFloat = 0.0
     //*****************
     let krakenAttackSpeed = 5.0
-    let krakenAttackSpeedSpike = 6.0
+    var krakenAttackSpeedSpike = 6.0
     
     //Ink / Life / Chest Changes*****
     var inkSplatted = false
@@ -43,6 +43,9 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        if isPad{
+            krakenAttackSpeedSpike = 9.0
+        }
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
@@ -135,7 +138,6 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
         
         //top shells
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 25)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 25)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 65)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 65)))
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 105)))
@@ -149,8 +151,13 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
         self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 20, self.frame.maxY - 145)))
         
         //top whites
+        if is5 || isPad{
+            
+        }else{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 140, self.frame.maxY - 15)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 25)))
+        }
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 140, self.frame.maxY - 15)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 140, self.frame.maxY - 15)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 140, self.frame.maxY - 55)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 140, self.frame.maxY - 55)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 140, self.frame.maxY - 95)))

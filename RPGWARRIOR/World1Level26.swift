@@ -125,8 +125,12 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
 
         } else{
         //crabs
-        self.addChild(MudCrab.crabAtPosition(CGPointMake(25, 100), endPosition: CGPointMake(self.frame.maxX - 25, 100)))
-        self.addChild(MudCrab.crabAtPosition(CGPointMake(25, self.frame.maxY - 130), endPosition: CGPointMake(self.frame.maxX - 25, self.frame.maxY - 130)))
+            if is5 || isPad{
+                self.addChild(MudCrab.crabAtPosition(CGPointMake(25, 100), endPosition: CGPointMake(self.frame.maxX - 25, 100)))
+            }else{
+                self.addChild(MudCrab.crabAtPosition(CGPointMake(25, 100), endPosition: CGPointMake(self.frame.maxX - 25, 100)))
+                self.addChild(MudCrab.crabAtPosition(CGPointMake(25, self.frame.maxY - 130), endPosition: CGPointMake(self.frame.maxX - 25, self.frame.maxY - 130)))
+            }
         //shells
         //mid column c = x d = y
         for (var d = 140; d < Int(self.frame.maxY - 140); d += 40){
