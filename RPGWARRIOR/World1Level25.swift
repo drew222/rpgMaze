@@ -26,7 +26,7 @@ class World1Level25: SKScene, SKPhysicsContactDelegate {
     let healSpeed = 20.0
     var maxLife: CGFloat = 0.0
     //*****************
-    let krakenAttackSpeed = 1.5
+    var krakenAttackSpeed = 1.5
     
     //Ink / Life / Chest Changes*****
     var inkSplatted = false
@@ -42,6 +42,12 @@ class World1Level25: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        if is5 {
+            krakenAttackSpeed = 3.0
+        }
+        if isPad {
+            krakenAttackSpeed = 4.0
+        }
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
@@ -137,13 +143,20 @@ class World1Level25: SKScene, SKPhysicsContactDelegate {
         for (var i = 30; CGFloat(i) < (self.frame.maxX - CGFloat(10)); i += 40) {
             self.addChild(WhiteShell.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY)))
         }
+        if is5{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.maxX - 10, self.frame.midY)))
+        }
         if isPlus{
             self.addChild(MudCrab.crabAtPosition(CGPointMake(50, 200), endPosition: CGPointMake(self.frame.maxX - 50, 200)))
             self.addChild(MudCrab.crabAtPosition(CGPointMake(50, 500), endPosition: CGPointMake(self.frame.maxX - 50, 500)))
         } else{
         //crabs
-        self.addChild(MudCrab.crabAtPosition(CGPointMake(50, 200), endPosition: CGPointMake(self.frame.maxX - 50, 200)))
-        self.addChild(MudCrab.crabAtPosition(CGPointMake(50, 440), endPosition: CGPointMake(self.frame.maxX - 50, 440)))
+            if is5 || isPad{
+                self.addChild(MudCrab.crabAtPosition(CGPointMake(50, 185), endPosition: CGPointMake(self.frame.maxX - 50, 185)))
+            }else{
+                self.addChild(MudCrab.crabAtPosition(CGPointMake(50, 200), endPosition: CGPointMake(self.frame.maxX - 50, 200)))
+                self.addChild(MudCrab.crabAtPosition(CGPointMake(50, 440), endPosition: CGPointMake(self.frame.maxX - 50, 440)))
+            }
         }
     }
     
