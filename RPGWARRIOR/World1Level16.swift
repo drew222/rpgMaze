@@ -58,6 +58,26 @@ class World1Level16: SKScene, SKPhysicsContactDelegate {
                 CGPointMake(-20, 455),
                 CGPointMake(self.frame.maxX + 20, 500),
             CGPointMake(self.frame.maxX - 20, 600)]
+            
+        } else if isPad{
+            wavePositions = [
+                CGPointMake(-20, 140),
+                CGPointMake(self.frame.maxX + 20, 190),
+                CGPointMake(-20, 140),
+                CGPointMake(self.frame.maxX + 20, 190),
+                CGPointMake(-20, 360),
+                CGPointMake(self.frame.maxX + 20, 360),
+                CGPointMake(-20, 360)]
+        } else if is5 {
+            wavePositions = [
+                CGPointMake(-20, 150),
+                CGPointMake(self.frame.maxX + 20, 230),
+                CGPointMake(-20, 150),
+                CGPointMake(self.frame.maxX + 20, 230),
+                CGPointMake(-20, 340),
+                CGPointMake(self.frame.maxX + 20, 430),
+                CGPointMake(-20, 340),
+                CGPointMake(self.frame.maxX + 20, 430)]
         } else{
         wavePositions = [
             CGPointMake(-20, 150),
@@ -163,8 +183,18 @@ class World1Level16: SKScene, SKPhysicsContactDelegate {
         
         
         //crabs
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(50, 200), endPosition: CGPointMake(self.frame.maxX - 50, 200)))
-        self.addChild(MiniCrab.crabAtPosition(CGPointMake(50, 450), endPosition: CGPointMake(self.frame.maxX - 50, 450)))
+        if !isPad{
+            if is5 {
+                self.addChild(MiniCrab.crabAtPosition(CGPointMake(50, 380), endPosition: CGPointMake(self.frame.maxX - 50, 380)))
+                self.addChild(MiniCrab.crabAtPosition(CGPointMake(50, 180), endPosition: CGPointMake(self.frame.maxX - 50, 180)))
+            }else{
+                self.addChild(MiniCrab.crabAtPosition(CGPointMake(50, 450), endPosition: CGPointMake(self.frame.maxX - 50, 450)))
+                self.addChild(MiniCrab.crabAtPosition(CGPointMake(50, 200), endPosition: CGPointMake(self.frame.maxX - 50, 200)))
+            }
+            
+        }else{
+            self.addChild(MiniCrab.crabAtPosition(CGPointMake(50, 290), endPosition: CGPointMake(self.frame.maxX - 50, 290)))
+        }
         
     }
     
