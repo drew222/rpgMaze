@@ -120,8 +120,13 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 45, 25)))
         
         //top shells
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 25)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 25)))
+        if is5 || isPad{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 65, self.frame.maxY - 25)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 65, self.frame.maxY - 25)))
+        }else{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 25)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 25)))
+        }
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 65)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 65)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 105)))

@@ -122,8 +122,12 @@ class World1Level24: SKScene, SKPhysicsContactDelegate {
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.midY - 20), endPosition: CGPointMake(self.frame.minX + 30, self.frame.minY + 50)))
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 80, self.frame.midY - 20), endPosition: CGPointMake(self.frame.minX + 80, self.frame.minY + 50)))
         //bottom right two vertical crabs
+        if is5 || isPad{
+            
+        }else{
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.midY - 20), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 50)))
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.maxX - 80, self.frame.midY - 20), endPosition: CGPointMake(self.frame.maxX - 80, self.frame.minY + 50)))
+        }
         //horizontal crabs (bottom to top)
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.minX + 30, self.frame.minY + 30), endPosition: CGPointMake(self.frame.maxX - 30, self.frame.minY + 30)))
         self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.maxX - 30, self.frame.minY + 180),
