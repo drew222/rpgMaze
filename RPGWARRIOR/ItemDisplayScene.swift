@@ -42,8 +42,8 @@ class ItemDisplayScene: SKScene {
             levelComplete.position = CGPointMake(self.frame.midX, self.frame.midY + 230)
             levelComplete.setScale(0.3)
         } else if isPad{
-            levelComplete.position = CGPointMake(self.frame.midX, self.frame.midY + 250)
-            levelComplete.setScale(0.35)
+            levelComplete.position = CGPointMake(self.frame.midX, self.frame.midY + 200)
+            levelComplete.setScale(0.3)
         }
         self.addChild(levelComplete)
         
@@ -118,8 +118,8 @@ class ItemDisplayScene: SKScene {
             continueButton!.position = CGPointMake(self.frame.midX, self.frame.midY - 230)
             continueButton!.setScale(0.3)
         } else if isPad{
-            continueButton!.position = CGPointMake(self.frame.midX, self.frame.midY - 250)
-            continueButton!.setScale(0.35)
+            continueButton!.position = CGPointMake(self.frame.midX, self.frame.midY - 210)
+            continueButton!.setScale(0.3)
         }
         self.addChild(continueButton!)
         

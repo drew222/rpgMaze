@@ -1633,22 +1633,22 @@ class MainMenuScene: SKScene {
                 }
                 //add enter the gauntlet button
                 gauntletButton = SKSpriteNode(imageNamed: "Enter_Text_1")
-                gauntletButton!.position = CGPointMake(world1level30node!.position.x - 30, world1level30node!.position.y - 50)
+                gauntletButton!.position = CGPointMake(world1level30node!.position.x + 70, world1level30node!.position.y)
                 gauntletButton!.name = "gauntletButton"
-                gauntletButton!.size = CGSizeMake(70, 30)
+                gauntletButton!.setScale(0.25)
                 self.addChild(gauntletButton!)
                 let bootyImage = SKSpriteNode(imageNamed: "Booty_1")
-                bootyImage.position = CGPointMake(world1level30node!.position.x - 45, world1level30node!.position.y - 90)
+                bootyImage.position = CGPointMake(world1level30node!.position.x + 75, world1level30node!.position.y - 30)
                 bootyImage.name = "bootyImage"
-                bootyImage.size = CGSizeMake(30, 30)
+                bootyImage.setScale(0.2)
                 self.addChild(bootyImage)
                 let text50 = SKLabelNode()
                 text50.text = "50"
-                text50.position = CGPointMake(world1level30node!.position.x - 10, world1level30node!.position.y - 100)
+                text50.position = CGPointMake(world1level30node!.position.x + 65, world1level30node!.position.y - 30)
                 text50.name = "text50"
                 text50.fontName = "ChalkboardSE-Bold"
                 text50.fontColor = UIColor.blackColor()
-                text50.fontSize = 32
+                text50.fontSize = 28
                 self.addChild(text50)
                 clickedGauntlet = true
                 
