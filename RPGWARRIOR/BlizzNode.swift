@@ -33,7 +33,7 @@ class BlizzNode: SKSpriteNode{
     }
 
     func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
+        self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.width * 0.9, self.frame.height * 0.8))
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryBlizzard.rawValue
         self.physicsBody?.collisionBitMask = 0
