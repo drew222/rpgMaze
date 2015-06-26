@@ -1663,18 +1663,18 @@ class MainMenuScene: SKScene {
                 }
                 //add enter the gauntlet button
                 gauntletButton = SKSpriteNode(imageNamed: "Enter_Text_1")
-                gauntletButton!.position = CGPointMake(world1level30node!.position.x + 70, world1level30node!.position.y)
+                gauntletButton!.position = CGPointMake(world1level30node!.position.x - 30, world1level30node!.position.y - 40)
                 gauntletButton!.name = "gauntletButton"
-                gauntletButton!.setScale(0.25)
+                gauntletButton!.setScale(0.3)
                 self.addChild(gauntletButton!)
                 let bootyImage = SKSpriteNode(imageNamed: "Booty_1")
-                bootyImage.position = CGPointMake(world1level30node!.position.x + 75, world1level30node!.position.y - 30)
+                bootyImage.position = CGPointMake(world1level30node!.position.x - 40, world1level30node!.position.y - 70)
                 bootyImage.name = "bootyImage"
-                bootyImage.setScale(0.2)
+                bootyImage.setScale(0.08)
                 self.addChild(bootyImage)
                 let text50 = SKLabelNode()
                 text50.text = "50"
-                text50.position = CGPointMake(world1level30node!.position.x + 65, world1level30node!.position.y - 30)
+                text50.position = CGPointMake(world1level30node!.position.x , world1level30node!.position.y - 75)
                 text50.name = "text50"
                 text50.fontName = "ChalkboardSE-Bold"
                 text50.fontColor = UIColor.blackColor()
