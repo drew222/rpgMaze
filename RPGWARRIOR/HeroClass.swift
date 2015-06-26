@@ -53,9 +53,10 @@ class HeroClass: SKSpriteNode {
     
     func interactableNode(node: SKSpriteNode) -> Bool{
         if node.name != nil{
-            if node.name! == "bomb" || node.name! == "beachball" || node.name! == "Fireball" || node.name! == "krill" || node.name! == "Mine" || node.name! == "whiteshell" || node.name! == "greyshell" || node.name! == "hero" || node.name! == "spike" || node.name! == "crab" || node.name! == "mudcrab" || node.name! == "tentacle" || node.name! == "safeSpot1" || node.name! == "safeSpot2" || node.name! == "wave" || node.name! == "buff" || node.name! == "phaseText" || node.name! == "coin" || node.name! == "infText" || node.name! == "runGauntlet" || node.name! == "deathSplat" || node.name! == "timer" || node.name! == "inkBlood" || node.name! == "gameComplete"{
+            if node.name! == "bomb" || node.name! == "beachball" || node.name! == "Fireball" || node.name! == "krill" || node.name! == "Mine" || node.name! == "whiteshell" || node.name! == "greyshell" || node.name! == "hero" || node.name! == "spike" || node.name! == "crab" || node.name! == "mudcrab" || node.name! == "tentacle" || node.name! == "safeSpot1" || node.name! == "safeSpot2" || node.name! == "wave" || node.name! == "buff" || node.name! == "phaseText" || node.name! == "coin" || node.name! == "infText" || node.name! == "runGauntlet" || node.name! == "deathSplat" || node.name! == "timer" || node.name! == "inkBlood" || node.name! == "gameComplete" || node.name! == "lifeheart" || node.name! == "backTimer" || node.name! == "regenClock"{
                 return false
             }else{
+                
                 return true
             }
         }
