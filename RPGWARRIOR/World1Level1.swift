@@ -234,6 +234,8 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
                     let codeBlock = SKAction.runBlock({
                         let yesText = SKSpriteNode(imageNamed: "Yes_Text_1")
                         let noText = SKSpriteNode(imageNamed: "No_Text_1")
+                        yesText.zPosition = 3
+                        noText.zPosition = 3
                         yesText.size = CGSizeMake(75, 40)
                         noText.size = CGSizeMake(75, 40)
                         yesText.position = CGPointMake(self.frame.midX - 60, self.frame.midY - 30)
