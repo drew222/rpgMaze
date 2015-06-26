@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import SpriteKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+        if happyMusic.playing {
+            happyMusic.stop()
+        }
+        if gauntletMusic.playing {
+            gauntletMusic.stop()
+        }
+        if beachMusic.playing {
+            beachMusic.stop()
+        }
+        if introMusic.playing {
+            introMusic.stop()
+        }
+        if levelMusic.playing {
+            levelMusic.stop()
+        }
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
@@ -33,6 +49,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        let gamecontroller = window?.rootViewController as! GameViewController
+        let view = gamecontroller.view as! SKView
+        if (view.scene as? Inventory != nil) || (view.scene as? MainMenuScene != nil) || (view.scene as? IntroScene != nil) || (view.scene as? StoreScene != nil) || (view.scene as? GuideScene != nil) || (view.scene as? TutorialScene != nil) || (view.scene as? ZoneScene != nil) || (view.scene as? ItemDisplayScene != nil){
+            
+        }else{
+            view.presentScene(gamecontroller.titleScene)
+        }
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
