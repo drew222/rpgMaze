@@ -122,6 +122,20 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
             self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 180, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 180, self.frame.midY - 150)))
             self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 150, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 150, self.frame.midY - 150)))
             self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 180, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 180, self.frame.midY + 150)))
+            
+        } else if is5 || isPad {
+            //inside square
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 100, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 100, self.frame.midY + 100)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 90, self.frame.midY + 100), endPosition: CGPointMake(self.frame.midX - 90, self.frame.midY - 120)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 100, self.frame.midY - 100), endPosition: CGPointMake(self.frame.midX + 100, self.frame.midY - 100)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 90, self.frame.midY - 100), endPosition: CGPointMake(self.frame.midX + 90, self.frame.midY + 100)))
+            //outside square
+            if !isPad{
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 150, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 150, self.frame.midY + 150)))
+            }
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 140, self.frame.midY + 150), endPosition: CGPointMake(self.frame.midX - 140, self.frame.midY - 170)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX - 150, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 150, self.frame.midY - 150)))
+            self.addChild(MudCrab.crabAtPosition(CGPointMake(self.frame.midX + 140, self.frame.midY - 150), endPosition: CGPointMake(self.frame.midX + 140, self.frame.midY + 150)))
 
         } else {
         //inside square
@@ -149,32 +163,50 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
         //bottom wall
         self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 60)))
         self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX + 30, self.frame.midY - 60)))
-        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX + 90, self.frame.midY - 60)))
+        if !(is5 || isPad){
+            self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX + 90, self.frame.midY - 60)))
+        }
     
         //top wall
         self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 60)))
         self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX - 30, self.frame.midY + 60)))
         self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.midY + 60)))
+        if !isPad{
         self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX - 90, self.frame.midY + 60)))
+        }
         
         //top mid column
+        if !isPad{
         self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 90)))
         self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 120)))
         self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 150)))
-        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 180)))
+        if !(is5 || isPad){
+            self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY + 180)))
+        }
+        }
         //bottom mid column
         self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 90)))
         self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 120)))
         self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 150)))
-        self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 180)))
+        if !isPad{
+            self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY - 180)))
+        }
         
         //bottom big wall
-        for (var i = 20; i < Int(self.frame.maxX - 80); i += 30){
-            self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  self.frame.midY - 205)))
+        if !isPad{
+            for (var i = 20; i < Int(self.frame.maxX - 80); i += 30){
+                self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  self.frame.midY - 205)))
+            }
         }
         //top big wall
-        for (var i = 90; i < Int(self.frame.maxX); i += 30){
-            self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  self.frame.midY + 205)))
+        if is5{
+            for (var i = 90; i < Int(self.frame.maxX); i += 30){
+                self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  self.frame.midY + 175)))
+            }
+        }else if !isPad{
+            for (var i = 90; i < Int(self.frame.maxX); i += 30){
+                self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  self.frame.midY + 205)))
+            }
         }
     }
     

@@ -216,7 +216,8 @@ class HeroClass: SKSpriteNode {
                     textures.append(SKTexture(imageNamed:"Kraken_Movement_\(i)"))
                 }
             }else{
-                textures.append(SKTexture(imageNamed:"Kraken_Movement_1"))
+                //textures.append(SKTexture(imageNamed:"Kraken_Movement_1"))
+                self.texture = SKTexture(imageNamed:"Kraken_Movement_1")
             }
             let animation2 = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
             let repeatAction = SKAction.repeatActionForever(animation2)
