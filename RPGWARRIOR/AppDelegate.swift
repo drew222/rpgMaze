@@ -14,6 +14,11 @@ import SpriteKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var happyStopped = false
+    var gauntletStopped = false
+    var beachStopped = false
+    var introStopped = false
+    var levelStopped = false
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -27,15 +32,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
         if happyMusic.playing {
             happyMusic.stop()
+            happyStopped = true
         }
         if gauntletMusic.playing {
             gauntletMusic.stop()
+            gauntletStopped = true
         }
         if beachMusic.playing {
             beachMusic.stop()
         }
         if introMusic.playing {
             introMusic.stop()
+            introStopped = true
         }
         if levelMusic.playing {
             levelMusic.stop()
@@ -52,6 +60,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let gamecontroller = window?.rootViewController as! GameViewController
         let view = gamecontroller.view as! SKView
         if (view.scene as? Inventory != nil) || (view.scene as? MainMenuScene != nil) || (view.scene as? IntroScene != nil) || (view.scene as? StoreScene != nil) || (view.scene as? GuideScene != nil) || (view.scene as? TutorialScene != nil) || (view.scene as? ZoneScene != nil) || (view.scene as? ItemDisplayScene != nil){
+            if happyStopped {
+                happyMusic.play()
+                happyStopped = false
+            }
+            if gauntletStopped {
+                gauntletMusic.play()
+                gauntletStopped = false
+            }
+            if introStopped {
+                introMusic.play()
+                introStopped = false
+            }
             
         }else{
             view.presentScene(gamecontroller.titleScene)
