@@ -57,8 +57,8 @@ class Inventory: SKScene {
             inv.menu!.position = CGPointMake(inv.frame.minX + 45, inv.frame.maxY - 45)
             inv.menu!.size = CGSizeMake(80, 80)
         } else if isPad{
-            inv.menu!.position = CGPointMake(inv.frame.minX + 55, inv.frame.maxY - 55)
-            inv.menu!.size = CGSizeMake(100, 100)
+            inv.menu!.position = CGPointMake(inv.frame.minX + 40, inv.frame.maxY - 40)
+            inv.menu!.size = CGSizeMake(70, 70)
         }
         inv.addChild(inv.menu!)
         let krakenNode = SKSpriteNode(imageNamed: "Fitting_Room_Kraken_1")
@@ -67,20 +67,20 @@ class Inventory: SKScene {
         krakenNode.size = CGSizeMake(250, 250)
         inv.addChild(krakenNode)
         //napsack text
-        let napsackText = SKSpriteNode(imageNamed: "Napsack_Text_1")
-        napsackText.position = CGPointMake(inv.frame.midX, inv.frame.minY + 213)
-        napsackText.zPosition = 2
-        napsackText.setScale(0.45)
         if is5{
+            let napsackText = SKSpriteNode(imageNamed: "Napsack_Text_1")
             napsackText.position = CGPointMake(inv.frame.midX, inv.frame.minY + 20)
             napsackText.zPosition = 2
             napsackText.setScale(0.45)
+            inv.addChild(napsackText)
         } else if isPad{
+        } else {
+            let napsackText = SKSpriteNode(imageNamed: "Napsack_Text_1")
             napsackText.position = CGPointMake(inv.frame.midX, inv.frame.minY + 213)
             napsackText.zPosition = 2
             napsackText.setScale(0.45)
+            inv.addChild(napsackText)
         }
-        inv.addChild(napsackText)
         
         //overall stats
         let Totaltext = SKSpriteNode(imageNamed: "Total_Stats_Text_1")
@@ -140,8 +140,8 @@ class Inventory: SKScene {
             inv.store!.position = CGPointMake(inv.frame.maxX - 45, inv.frame.maxY - 45)
             inv.store!.size = CGSizeMake(80, 80)
         } else if isPad{
-            inv.store!.position = CGPointMake(inv.frame.maxX - 55, inv.frame.maxY - 55)
-            inv.store!.size = CGSizeMake(100, 100)
+            inv.store!.position = CGPointMake(inv.frame.maxX - 40, inv.frame.maxY - 40)
+            inv.store!.size = CGSizeMake(70, 70)
         }
         inv.addChild(inv.store!)
         let storeText = SKSpriteNode(imageNamed: "Fitting_Room_Text_1")
@@ -160,6 +160,10 @@ class Inventory: SKScene {
         inv.backPack = SKSpriteNode(imageNamed: "Inventory_Array_Background_1")
         inv.backPack!.position = CGPointMake(inv.frame.midX, inv.frame.minY + 115)
         inv.backPack!.size = CGSizeMake(325,195)
+        if isPad{
+            inv.backPack!.position = CGPointMake(inv.frame.midX, inv.frame.minY + 65)
+            inv.backPack!.size = CGSizeMake(310,131)
+        }
         inv.backPack!.name = "backpack"
         inv.addChild(inv.backPack!)
         
@@ -188,6 +192,34 @@ class Inventory: SKScene {
             inv.statLabelRegen!.fontColor = UIColor.blackColor()
             inv.statLabelRegen!.name = "regenStat"
             inv.statLabelRegen!.setScale(0.7)
+            inv.addChild(inv.statLabelRegen!)
+        } else if isPad{
+            inv.statLabelLife = SKLabelNode.init(text: "")
+            inv.statLabelLife!.position = CGPointMake(inv.frame.midX - 30, inv.frame.minY + 158)
+            inv.statLabelLife!.fontName = "ChalkboardSE-Bold"
+            inv.statLabelLife!.fontSize = 22
+            inv.statLabelLife!.fontColor = UIColor.blackColor()
+            inv.statLabelLife!.name = "lifeStat"
+            inv.statLabelLife!.setScale(0.7)
+            inv.statLabelLife!.zPosition = 10
+            inv.addChild(inv.statLabelLife!)
+            inv.statLabelMovement = SKLabelNode.init(text: "")
+            inv.statLabelMovement!.position = CGPointMake(inv.frame.midX + 25, inv.frame.minY + 158)
+            inv.statLabelMovement!.fontName = "ChalkboardSE-Bold"
+            inv.statLabelMovement!.fontSize = 22
+            inv.statLabelMovement!.fontColor = UIColor.blackColor()
+            inv.statLabelMovement!.name = "movementStat"
+            inv.statLabelMovement!.setScale(0.7)
+            inv.statLabelMovement!.zPosition = 10
+            inv.addChild(inv.statLabelMovement!)
+            inv.statLabelRegen = SKLabelNode.init(text: "")
+            inv.statLabelRegen!.position = CGPointMake(inv.frame.midX + 75, inv.frame.minY + 158)
+            inv.statLabelRegen!.fontName = "ChalkboardSE-Bold"
+            inv.statLabelRegen!.fontSize = 22
+            inv.statLabelRegen!.fontColor = UIColor.blackColor()
+            inv.statLabelRegen!.name = "regenStat"
+            inv.statLabelRegen!.setScale(0.7)
+            inv.statLabelRegen!.zPosition = 10
             inv.addChild(inv.statLabelRegen!)
         } else {
         inv.statLabelLife = SKLabelNode.init(text: "")
@@ -234,6 +266,22 @@ class Inventory: SKScene {
             inv.regenerationSymbol2!.position = CGPointMake(inv.frame.midX + 55, inv.frame.midY - 75)
             inv.regenerationSymbol2!.zPosition = 2
             inv.regenerationSymbol2!.setScale(0.15)
+        } else if isPad{
+            inv.lifeSymbol2 = SKSpriteNode(imageNamed: "Life_Symbol_1")
+            inv.lifeSymbol2!.position = CGPointMake(inv.frame.midX - 55, inv.frame.minY + 165)
+            inv.lifeSymbol2!.zPosition = 10
+            inv.lifeSymbol2!.setScale(0.15)
+            
+            inv.speedSymbol2 = SKSpriteNode(imageNamed: "Speed_Symbol_1")
+            inv.speedSymbol2!.position = CGPointMake(inv.frame.midX, inv.frame.minY + 165)
+            inv.speedSymbol2!.zPosition = 10
+            inv.speedSymbol2!.setScale(0.15)
+            
+            inv.regenerationSymbol2 = SKSpriteNode(imageNamed: "Regeneration_Symbol_1")
+            inv.regenerationSymbol2!.position = CGPointMake(inv.frame.midX + 55, inv.frame.minY + 165)
+            inv.regenerationSymbol2!.zPosition = 10
+            inv.regenerationSymbol2!.setScale(0.15)
+
         } else {
         
         inv.lifeSymbol2 = SKSpriteNode(imageNamed: "Life_Symbol_1")
@@ -297,7 +345,106 @@ class Inventory: SKScene {
         feetLabel.zPosition = 10
         feetLabel.position = CGPointMake(inv.frame.maxX - 40, inv.frame.maxY - 275)
         inv.addChild(feetLabel)
+        
+        
         //create all the item spaces
+        if isPad{
+            //row 1
+            let itemSpace1 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 23))
+            itemSpace1.setScale(1.0)
+            itemSpace1.zPosition = 1
+            itemSpace1.name = "1"
+            inv.itemSpaces.append(itemSpace1)
+            inv.addChild(itemSpace1)
+            let itemSpace2 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 100, inv.backPack!.frame.maxY - 23))
+            itemSpace2.setScale(1.0)
+            itemSpace2.zPosition = 1
+            itemSpace2.name = "2"
+            inv.itemSpaces.append(itemSpace2)
+            inv.addChild(itemSpace2)
+            let itemSpace3 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 160, inv.backPack!.frame.maxY - 23))
+            itemSpace3.setScale(1.0)
+            itemSpace3.zPosition = 1
+            itemSpace3.name = "3"
+            inv.itemSpaces.append(itemSpace3)
+            inv.addChild(itemSpace3)
+            let itemSpace4 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 220, inv.backPack!.frame.maxY - 23))
+            itemSpace4.setScale(1.0)
+            itemSpace4.zPosition = 1
+            itemSpace4.name = "4"
+            inv.itemSpaces.append(itemSpace4)
+            inv.addChild(itemSpace4)
+            let itemSpace5 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 280, inv.backPack!.frame.maxY - 23))
+            itemSpace5.setScale(1.0)
+            itemSpace5.zPosition = 1
+            itemSpace5.name = "5"
+            inv.itemSpaces.append(itemSpace5)
+            inv.addChild(itemSpace5)
+            //row 2
+            let itemSpace6 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 65))
+            itemSpace6.setScale(1.0)
+            itemSpace6.zPosition = 1
+            itemSpace6.name = "6"
+            inv.itemSpaces.append(itemSpace6)
+            inv.addChild(itemSpace6)
+            let itemSpace7 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 100, inv.backPack!.frame.maxY - 65))
+            itemSpace7.setScale(1.0)
+            itemSpace7.zPosition = 1
+            itemSpace7.name = "7"
+            inv.itemSpaces.append(itemSpace7)
+            inv.addChild(itemSpace7)
+            let itemSpace8 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 160, inv.backPack!.frame.maxY - 65))
+            itemSpace8.setScale(1.0)
+            itemSpace8.zPosition = 1
+            itemSpace8.name = "8"
+            inv.itemSpaces.append(itemSpace8)
+            inv.addChild(itemSpace8)
+            let itemSpace9 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 220, inv.backPack!.frame.maxY - 65))
+            itemSpace9.zPosition = 1
+            itemSpace9.setScale(1.0)
+            itemSpace9.name = "9"
+            inv.itemSpaces.append(itemSpace9)
+            inv.addChild(itemSpace9)
+            let itemSpace10 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 280, inv.backPack!.frame.maxY - 65))
+            itemSpace10.zPosition = 1
+            itemSpace10.setScale(1.0)
+            itemSpace10.name = "10"
+            inv.itemSpaces.append(itemSpace10)
+            inv.addChild(itemSpace10)
+            
+            //row 3
+            let itemSpace11 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 107))
+            itemSpace11.setScale(1.0)
+            itemSpace11.zPosition = 1
+            itemSpace11.name = "11"
+            inv.itemSpaces.append(itemSpace11)
+            inv.addChild(itemSpace11)
+            let itemSpace12 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 100, inv.backPack!.frame.maxY - 107))
+            itemSpace12.setScale(1.0)
+            itemSpace12.zPosition = 1
+            itemSpace12.name = "12"
+            inv.itemSpaces.append(itemSpace12)
+            inv.addChild(itemSpace12)
+            let itemSpace13 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 160, inv.backPack!.frame.maxY - 107))
+            itemSpace13.setScale(1.0)
+            itemSpace13.zPosition = 1
+            itemSpace13.name = "13"
+            inv.itemSpaces.append(itemSpace13)
+            inv.addChild(itemSpace13)
+            let itemSpace14 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 220, inv.backPack!.frame.maxY - 107))
+            itemSpace14.setScale(1.0)
+            itemSpace14.zPosition = 1
+            itemSpace14.name = "14"
+            inv.itemSpaces.append(itemSpace14)
+            inv.addChild(itemSpace14)
+            let itemSpace15 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 280, inv.backPack!.frame.maxY - 107))
+            itemSpace15.setScale(1.0)
+            itemSpace15.zPosition = 1
+            itemSpace15.name = "15"
+            inv.itemSpaces.append(itemSpace15)
+            inv.addChild(itemSpace15)
+ 
+        } else {
         //row 1
         let itemSpace1 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 40))
         itemSpace1.setScale(1.3)
@@ -392,8 +539,8 @@ class Inventory: SKScene {
         itemSpace15.name = "15"
         inv.itemSpaces.append(itemSpace15)
         inv.addChild(itemSpace15)
-        
-        
+    }
+    
         //weaponspace holds noggin items
         let weaponSpace = ItemSpaceNode.spaceAtPosition(CGPointMake(weaponLabel.frame.midX, weaponLabel.frame.midY - 40))
         weaponSpace.zPosition = 1
@@ -426,8 +573,8 @@ class Inventory: SKScene {
             booty.position = CGPointMake(inv.frame.maxX - 40, inv.frame.minY + 222)
             booty.setScale(0.06)
         } else if isPad{
-            booty.position = CGPointMake(inv.frame.maxX - 40, inv.frame.minY + 230)
-            booty.setScale(0.08)
+            booty.position = CGPointMake(inv.frame.maxX - 15, inv.frame.minY + 138)
+            booty.setScale(0.04)
         }
         inv.addChild(booty)
         //gold node
@@ -440,8 +587,8 @@ class Inventory: SKScene {
             inv.goldNode!.fontSize = 23
             inv.goldNode!.position = CGPointMake(inv.frame.maxX - 85, inv.frame.minY + 215)
         } else if isPad{
-            inv.goldNode!.fontSize = 30
-            inv.goldNode!.position = CGPointMake(inv.frame.maxX - 100, inv.frame.minY + 220)
+            inv.goldNode!.fontSize = 17
+            inv.goldNode!.position = CGPointMake(inv.frame.maxX - 43, inv.frame.minY + 131)
         }
         inv.addChild(inv.goldNode!)
         
@@ -1410,18 +1557,18 @@ class Inventory: SKScene {
                                 self.addChild(booty)
                             } else if isPad{
                                 let sellNode = SKLabelNode.init(text: "\(Int(round(itemToMove!.price! / 5)))")
-                                sellNode.position = CGPointMake(self.frame.minX + 65, self.frame.midY - 118)
+                                sellNode.position = CGPointMake(self.frame.minX + 30, self.frame.minY + 131)
                                 sellNode.fontName = "ChalkboardSE-Bold"
-                                sellNode.fontSize = 22
+                                sellNode.fontSize = 17
                                 sellNode.fontColor = UIColor.blackColor()
                                 sellNode.name = "priceButton"
                                 self.addChild(sellNode)
                                 
                                 //booty coin image
                                 let booty = SKSpriteNode(imageNamed: "Booty_1.png")
-                                booty.position = CGPointMake(self.frame.minX + 97, self.frame.midY - 110)
+                                booty.position = CGPointMake(self.frame.minX + 53, self.frame.minY + 137)
                                 booty.name = "sellBooty"
-                                booty.setScale(0.06)
+                                booty.setScale(0.04)
                                 self.addChild(booty)
                             }else {
                                 let sellNode = SKLabelNode.init(text: "\(Int(round(itemToMove!.price! / 5)))")
@@ -1449,8 +1596,8 @@ class Inventory: SKScene {
                                 sellText.position = CGPointMake(self.frame.midX - 30, self.frame.minY + 225)
                                 sellText.setScale(0.4)
                             } else if isPad{
-                                sellText.position = CGPointMake(self.frame.midX - 120, self.frame.minY + 230)
-                                sellText.setScale(0.45)
+                                sellText.position = CGPointMake(self.frame.midX - 73, self.frame.minY + 140)
+                                sellText.setScale(0.25)
                             }
                             self.addChild(sellText)
                             //name of the item
@@ -1467,8 +1614,9 @@ class Inventory: SKScene {
                                 itemText.setScale(0.35)
                                 itemText.position = CGPointMake(self.frame.midX, self.frame.midY - 5)
                             } else if isPad{
-                                itemText.setScale(0.7)
-                                itemText.position = CGPointMake(self.frame.midX, self.frame.midY - 25)
+                                itemText.setScale(0.35)
+                                itemText.zPosition = 10
+                                itemText.position = CGPointMake(self.frame.midX, self.frame.midY - 55)
                             } else {
                             itemText.position = CGPointMake(self.frame.midX, self.frame.minY + 295)
                             }
@@ -1509,8 +1657,9 @@ class Inventory: SKScene {
                                     typeString = SKSpriteNode(imageNamed: "Tentacles_Text_1")
                                 }
                                 
-                                typeString!.position = CGPointMake(self.frame.midX, self.frame.midY - 105)
-                                typeString?.setScale(0.3)
+                                typeString!.position = CGPointMake(self.frame.midX, self.frame.midY - 95)
+                                typeString?.zPosition = 10
+                                typeString?.setScale(0.2)
                             } else {
                                 if itemType == ItemType.weapon{
                                     typeString = SKSpriteNode(imageNamed: "Noggin_Text_1")

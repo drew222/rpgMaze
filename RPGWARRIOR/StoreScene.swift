@@ -48,8 +48,8 @@ class StoreScene: SKScene {
             shelf1.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 135)
             shelf1.setScale(0.3)
         } else if isPad{
-            shelf1.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 175)
-            shelf1.setScale(0.35)
+            shelf1.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 105)
+            shelf1.setScale(0.3)
         }
         self.addChild(shelf1)
         let shelf2 = SKSpriteNode(imageNamed: "Store_Shelf_1.png")
@@ -59,8 +59,8 @@ class StoreScene: SKScene {
             shelf2.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 220)
             shelf2.setScale(0.3)
         } else if isPad{
-            shelf2.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 275)
-            shelf2.setScale(0.35)
+            shelf2.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 190)
+            shelf2.setScale(0.3)
         }
         self.addChild(shelf2)
         let shelf3 = SKSpriteNode(imageNamed: "Store_Shelf_1.png")
@@ -70,8 +70,8 @@ class StoreScene: SKScene {
             shelf3.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 305)
             shelf3.setScale(0.3)
         } else if isPad{
-            shelf3.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 375)
-            shelf3.setScale(0.35)
+            shelf3.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 275)
+            shelf3.setScale(0.3)
         }
         self.addChild(shelf3)
         let shelf4 = SKSpriteNode(imageNamed: "Store_Shelf_1.png")
@@ -81,8 +81,8 @@ class StoreScene: SKScene {
             shelf4.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 390)
             shelf4.setScale(0.3)
         } else if isPad{
-            shelf4.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 475)
-            shelf4.setScale(0.35)
+            shelf4.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame) - 360)
+            shelf4.setScale(0.3)
         }
         self.addChild(shelf4)
         let storeTextNode = SKSpriteNode(imageNamed: "Store_Text_1")
@@ -92,8 +92,8 @@ class StoreScene: SKScene {
             storeTextNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 38)
             storeTextNode.size = CGSizeMake(130, 33)
         } else if isPad{
-            storeTextNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 53)
-            storeTextNode.size = CGSizeMake(150, 40)
+            storeTextNode.position = CGPointMake(self.frame.midX, self.frame.maxY - 27)
+            storeTextNode.size = CGSizeMake(130, 33)
         }
         self.addChild(storeTextNode)
         //shelf1.zPosition = -1
@@ -134,8 +134,8 @@ class StoreScene: SKScene {
             menu!.size = CGSizeMake(80, 80)
             menu!.position = CGPointMake(self.frame.minX + 45, self.frame.maxY - 45)
         } else if isPad{
-            menu!.size = CGSizeMake(100, 100)
-            menu!.position = CGPointMake(self.frame.minX + 55, self.frame.maxY - 55)
+            menu!.size = CGSizeMake(70, 70)
+            menu!.position = CGPointMake(self.frame.minX + 40, self.frame.maxY - 40)
         }
         self.addChild(menu!)
         inv = SKSpriteNode(imageNamed: "Fitting_Room__Button_1")
@@ -146,8 +146,8 @@ class StoreScene: SKScene {
             inv!.size = CGSizeMake(80, 80)
             inv!.position = CGPointMake(self.frame.maxX - 45, self.frame.maxY - 45)
         } else if isPad{
-            inv!.size = CGSizeMake(100, 100)
-            inv!.position = CGPointMake(self.frame.maxX - 55, self.frame.maxY - 55)
+            inv!.size = CGSizeMake(70, 70)
+            inv!.position = CGPointMake(self.frame.maxX - 40, self.frame.maxY - 40)
         }
         self.addChild(inv!)
         //gold node
@@ -160,8 +160,8 @@ class StoreScene: SKScene {
             goldNode!.position = CGPointMake(self.frame.midX - 25, self.frame.maxY - 90)
             goldNode!.fontSize = 26
         } else if isPad{
-            goldNode!.position = CGPointMake(self.frame.midX - 30, self.frame.maxY - 120)
-            goldNode!.fontSize = 30
+            goldNode!.position = CGPointMake(self.frame.midX - 25, self.frame.maxY - 70)
+            goldNode!.fontSize = 26
         }
         goldNode!.fontColor = UIColor.blackColor()
         self.addChild(goldNode!)
@@ -173,8 +173,8 @@ class StoreScene: SKScene {
             booty.position = CGPointMake(self.frame.midX + 30, self.frame.maxY - 80)
             booty.setScale(0.08)
         } else if isPad{
-            booty.position = CGPointMake(self.frame.midX + 30, self.frame.maxY - 110)
-            booty.setScale(0.10)
+            booty.position = CGPointMake(self.frame.midX + 30, self.frame.maxY - 60)
+            booty.setScale(0.08)
         }
         self.addChild(booty)
         addItems()
@@ -194,7 +194,7 @@ class StoreScene: SKScene {
                 } else if is5{
                     item.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 125)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.minX + 80, self.frame.maxY - 165)
+                    item.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 95)
                 }
             }else if itemName == "Sweaty_Wristband_1"{
                 item.size = CGSizeMake(45, 60)
@@ -205,7 +205,7 @@ class StoreScene: SKScene {
                     item.position = CGPointMake(self.frame.minX + 100, self.frame.maxY - 120)
 
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.minX + 140, self.frame.maxY - 160)
+                    item.position = CGPointMake(self.frame.minX + 100, self.frame.maxY - 90)
 
                 }
             }else if itemName == "Silver_Ring_1"{
@@ -214,7 +214,7 @@ class StoreScene: SKScene {
                 if is5{
                     item.position = CGPointMake(self.frame.midX, self.frame.maxY - 125)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.midX, self.frame.maxY - 165)
+                    item.position = CGPointMake(self.frame.midX, self.frame.maxY - 95)
                 }
             }else if itemName == "Water_Wing_1"{
                 item.size = CGSizeMake(70, 70)
@@ -224,7 +224,7 @@ class StoreScene: SKScene {
                 } else if is5{
                     item.position = CGPointMake(self.frame.maxX - 100, self.frame.maxY - 120)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.maxX - 140, self.frame.maxY - 160)
+                    item.position = CGPointMake(self.frame.maxX - 100, self.frame.maxY - 90)
                 }
             }else if itemName == "Gold_Ring_1"{
                 item.size = CGSizeMake(40, 40)
@@ -235,7 +235,7 @@ class StoreScene: SKScene {
                     item.position = CGPointMake(self.frame.maxX - 50, self.frame.maxY - 125)
 
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.maxX - 80, self.frame.maxY - 165)
+                    item.position = CGPointMake(self.frame.maxX - 50, self.frame.maxY - 95)
 
                 }
             
@@ -249,7 +249,7 @@ class StoreScene: SKScene {
                 } else if is5{
                     item.position = CGPointMake(self.frame.minX + 35, self.frame.maxY - 210)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.minX + 70, self.frame.maxY - 265)
+                    item.position = CGPointMake(self.frame.minX + 35, self.frame.maxY - 180)
                 }
             }else if itemName == "Lifejacket_1"{
                 item.size = CGSizeMake(110, 75)
@@ -259,7 +259,7 @@ class StoreScene: SKScene {
                 } else if is5{
                     item.position = CGPointMake(self.frame.minX + 90, self.frame.maxY - 200)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.minX + 125, self.frame.maxY - 250)
+                    item.position = CGPointMake(self.frame.minX + 90, self.frame.maxY - 170)
                 }
             }else if itemName == "Beach_Towel_1"{
                 item.size = CGSizeMake(100, 50)
@@ -267,7 +267,7 @@ class StoreScene: SKScene {
                 if is5{
                   item.position = CGPointMake(self.frame.midX + 5, self.frame.maxY - 205)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.midX, self.frame.maxY - 255)
+                    item.position = CGPointMake(self.frame.midX + 5, self.frame.maxY - 175)
                 }
             }else if itemName == "Floatie_1"{
                 item.size = CGSizeMake(90, 60)
@@ -277,7 +277,7 @@ class StoreScene: SKScene {
                 } else if is5{
                     item.position = CGPointMake(self.frame.maxX - 75, self.frame.maxY - 195)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.maxX - 115, self.frame.maxY - 250)
+                    item.position = CGPointMake(self.frame.maxX - 75, self.frame.maxY - 165)
                 }
             }else if itemName == "Sun_Screen_1"{
                 item.size = CGSizeMake(35, 50)
@@ -288,7 +288,7 @@ class StoreScene: SKScene {
                     item.position = CGPointMake(self.frame.maxX - 25, self.frame.maxY - 200)
 
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.maxX - 60, self.frame.maxY - 255)
+                    item.position = CGPointMake(self.frame.maxX - 25, self.frame.maxY - 170)
 
                 }
                 
@@ -301,7 +301,7 @@ class StoreScene: SKScene {
                 } else if is5{
                     item.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 290)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.minX + 70, self.frame.maxY - 360)
+                    item.position = CGPointMake(self.frame.minX + 50, self.frame.maxY - 260)
                 }
             }else if itemName == "Visor_1"{
                 item.size = CGSizeMake(65, 75)
@@ -311,7 +311,7 @@ class StoreScene: SKScene {
                 } else if is5{
                     item.position = CGPointMake(self.frame.minX + 105, self.frame.maxY - 290)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.minX + 135, self.frame.maxY - 360)
+                    item.position = CGPointMake(self.frame.minX + 105, self.frame.maxY - 260)
                 }
             }else if itemName == "Sand_Bucket_1"{
                 item.size = CGSizeMake(70, 70)
@@ -319,7 +319,7 @@ class StoreScene: SKScene {
                 if is5{
                     item.position = CGPointMake(self.frame.midX, self.frame.maxY - 280)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.midX - 7, self.frame.maxY - 350)
+                    item.position = CGPointMake(self.frame.midX, self.frame.maxY - 250)
                 }
             }else if itemName == "Sunhat_1"{
                 item.size = CGSizeMake(80, 80)
@@ -329,7 +329,7 @@ class StoreScene: SKScene {
                 } else if is5{
                     item.position = CGPointMake(self.frame.maxX - 95, self.frame.maxY - 290)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.maxX - 140, self.frame.maxY - 360)
+                    item.position = CGPointMake(self.frame.maxX - 95, self.frame.maxY - 260)
                 }
             }else if itemName == "Shades_1"{
                 item.size = CGSizeMake(50, 35)
@@ -339,7 +339,7 @@ class StoreScene: SKScene {
                 } else if is5{
                     item.position = CGPointMake(self.frame.maxX - 37, self.frame.maxY - 295)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.maxX - 72, self.frame.maxY - 365)
+                    item.position = CGPointMake(self.frame.maxX - 37, self.frame.maxY - 265)
                 }
                 
             //shelf 4
@@ -351,7 +351,7 @@ class StoreScene: SKScene {
                 } else if is5{
                     item.position = CGPointMake(self.frame.minX + 45, self.frame.maxY - 375)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.minX + 80, self.frame.maxY - 465)
+                    item.position = CGPointMake(self.frame.minX + 45, self.frame.maxY - 345)
                 }
             }else if itemName == "Watch_1"{
                 item.size = CGSizeMake(60, 60)
@@ -361,7 +361,7 @@ class StoreScene: SKScene {
                 } else if is5{
                     item.position = CGPointMake(self.frame.minX + 105, self.frame.maxY - 375)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.minX + 145, self.frame.maxY - 460)
+                    item.position = CGPointMake(self.frame.minX + 105, self.frame.maxY - 345)
                 }
             }else if itemName == "Bow_Tie_1"{
                 item.size = CGSizeMake(90, 70)
@@ -369,7 +369,7 @@ class StoreScene: SKScene {
                 if is5{
                     item.position = CGPointMake(self.frame.midX, self.frame.maxY - 380)
                 }else if isPad{
-                    item.position = CGPointMake(self.frame.midX, self.frame.maxY - 465)
+                    item.position = CGPointMake(self.frame.midX, self.frame.maxY - 350)
                 }
             }else if itemName == "Monocle_1"{
                 item.size = CGSizeMake(60, 60)
@@ -379,7 +379,7 @@ class StoreScene: SKScene {
                 } else if is5{
                     item.position = CGPointMake(self.frame.maxX - 110, self.frame.maxY - 385)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.maxX - 155, self.frame.maxY - 395)
+                    item.position = CGPointMake(self.frame.maxX - 110, self.frame.maxY - 355)
                 }
             }else if itemName == "Top_Hat_1"{
                 item.size = CGSizeMake(70, 70)
@@ -389,7 +389,7 @@ class StoreScene: SKScene {
                 } else if is5{
                     item.position = CGPointMake(self.frame.maxX - 50, self.frame.maxY - 365)
                 } else if isPad{
-                    item.position = CGPointMake(self.frame.maxX - 80, self.frame.maxY - 445)
+                    item.position = CGPointMake(self.frame.maxX - 50, self.frame.maxY - 335)
                 }
             }
             else{
@@ -481,8 +481,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 }else if currentItem?.itemName == "Sweaty_Wristband_1" {
@@ -496,8 +497,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Silver_Ring_1" {
@@ -511,8 +513,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Gold_Ring_1" {
@@ -526,8 +529,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Water_Wing_1" {
@@ -541,8 +545,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Whistle_1" {
@@ -556,8 +561,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Lifejacket_1" {
@@ -571,8 +577,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Beach_Towel_1" {
@@ -586,8 +593,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Floatie_1" {
@@ -601,8 +609,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Sun_Screen_1" {
@@ -616,8 +625,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Sweatband_1" {
@@ -631,8 +641,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Visor_1" {
@@ -646,8 +657,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Sand_Bucket_1" {
@@ -661,8 +673,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Sunhat_1" {
@@ -676,8 +689,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Shades_1" {
@@ -691,8 +705,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Bling_Ring_1" {
@@ -706,8 +721,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Monocle_1" {
@@ -721,8 +737,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Bow_Tie_1" {
@@ -736,8 +753,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Watch_1" {
@@ -751,8 +769,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 } else if currentItem?.itemName == "Top_Hat_1" {
@@ -766,8 +785,9 @@ class StoreScene: SKScene {
                         slotLabel.setScale(0.3)
                         slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 100)
                     } else if isPad{
-                        slotLabel.setScale(0.35)
-                        slotLabel.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 100)
+                        slotLabel.setScale(0.3)
+                        slotLabel.zPosition = 10
+                        slotLabel.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 95)
                     }
                     self.addChild(slotLabel)
                 }
@@ -797,7 +817,7 @@ class StoreScene: SKScene {
             if is5{
                 buyNode.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 35)
             } else if isPad{
-                buyNode.position = CGPointMake(self.frame.midX + 135, self.frame.minY + 35)
+                buyNode.position = CGPointMake(self.frame.midX + 115, self.frame.minY + 35)
             }
             buyNode.setScale(0.5)
             buyNode.zPosition = 3
@@ -807,15 +827,18 @@ class StoreScene: SKScene {
             let lifeSymbol = SKSpriteNode(imageNamed: "Life_Symbol_1")
             lifeSymbol.setScale(0.15)
             lifeSymbol.name = "life"
+            lifeSymbol.zPosition = 10
             lifeSymbol.position = CGPointMake(self.frame.midX - 145, self.frame.minY + 95)
             self.addChild(lifeSymbol)
             let speedSymbol = SKSpriteNode(imageNamed: "Speed_Symbol_1")
             speedSymbol.setScale(0.15)
+            speedSymbol.zPosition = 10
             speedSymbol.name = "speed"
             speedSymbol.position = CGPointMake(self.frame.midX - 145, self.frame.minY + 65)
             self.addChild(speedSymbol)
             let regenerationSymbol = SKSpriteNode(imageNamed: "Regeneration_Symbol_1")
             regenerationSymbol.setScale(0.15)
+            regenerationSymbol.zPosition = 10
             regenerationSymbol.name = "regen"
             regenerationSymbol.position = CGPointMake(self.frame.midX - 145, self.frame.minY + 35)
             self.addChild(regenerationSymbol)
@@ -838,8 +861,8 @@ class StoreScene: SKScene {
                 priceNode.position = CGPointMake(self.frame.midX + 100, self.frame.minY + 60)
                 priceNode.fontSize = 26
             }else if isPad{
-                priceNode.position = CGPointMake(self.frame.midX + 110, self.frame.minY + 60)
-                priceNode.fontSize = 30
+                priceNode.position = CGPointMake(self.frame.midX + 100, self.frame.minY + 60)
+                priceNode.fontSize = 26
             }
             priceNode.name = "priceButton"
             priceNode.fontColor = UIColor.blackColor()
@@ -851,8 +874,8 @@ class StoreScene: SKScene {
                 booty.position = CGPointMake(self.frame.midX + 140, self.frame.minY + 70)
                 booty.setScale(0.07)
             } else if isPad{
-                booty.position = CGPointMake(self.frame.midX + 160, self.frame.minY + 70)
-                booty.setScale(0.075)
+                booty.position = CGPointMake(self.frame.midX + 140, self.frame.minY + 70)
+                booty.setScale(0.07)
             }
             //if firstClick{
             self.addChild(booty)
@@ -866,6 +889,11 @@ class StoreScene: SKScene {
             itemText!.name = "itemText"
             itemText!.setScale(0.7)
             itemText!.position = CGPointMake(self.frame.midX, self.frame.minY + 135)
+            if isPad{
+                itemText!.setScale(0.4)
+                itemText!.position = CGPointMake(self.frame.midX, self.frame.minY + 15)
+                itemText?.zPosition = 10
+            }
             //if firstClick{
                 self.addChild(itemText!)
             //}
