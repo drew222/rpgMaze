@@ -165,6 +165,7 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 265, self.frame.minY + 520)))
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 285, self.frame.minY + 560)))
             
+            
         }else if is5 || isPad{
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 180)))
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 220)))
@@ -176,6 +177,7 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
             }
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 140)))
         }else{
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 100)))
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 225, self.frame.minY + 140)))
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 245, self.frame.minY + 180)))
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 265, self.frame.minY + 220)))
@@ -225,15 +227,25 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 105, self.frame.maxY - 380)))
             }
         }else{
-            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 220)))
+            //self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 220)))
+            //self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 260)))
+            //self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 125, self.frame.maxY - 300)))
+            //self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 340)))
+            //self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 380)))
+            //self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 420)))
+            //self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 125, self.frame.maxY - 460)))
+            //self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 500)))
+            //self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 540)))
+            
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 140)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 180)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 125, self.frame.maxY - 220)))
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 260)))
-            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 125, self.frame.maxY - 300)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 300)))
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 340)))
-            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 380)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 125, self.frame.maxY - 380)))
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 420)))
-            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 125, self.frame.maxY - 460)))
-            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 145, self.frame.maxY - 500)))
-            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 540)))
+            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 165, self.frame.maxY - 460)))
         }
         //left outside diagnols
         if is5 || isPad {
