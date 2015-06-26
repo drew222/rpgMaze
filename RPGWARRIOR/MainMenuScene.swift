@@ -1674,7 +1674,7 @@ class MainMenuScene: SKScene {
                 self.addChild(bootyImage)
                 let text50 = SKLabelNode()
                 text50.text = "50"
-                text50.position = CGPointMake(world1level30node!.position.x , world1level30node!.position.y - 75)
+                text50.position = CGPointMake(world1level30node!.position.x , world1level30node!.position.y - 78)
                 text50.name = "text50"
                 text50.fontName = "ChalkboardSE-Bold"
                 text50.fontColor = UIColor.blackColor()
