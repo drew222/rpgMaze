@@ -1661,11 +1661,26 @@ class MainMenuScene: SKScene {
                 if soundOn {
                     self.runAction(clickSound)
                 }
+                
                 //add enter the gauntlet button
                 gauntletButton = SKSpriteNode(imageNamed: "Enter_Text_1")
-                gauntletButton!.position = CGPointMake(world1level30node!.position.x - 30, world1level30node!.position.y - 40)
-                gauntletButton!.name = "gauntletButton"
-                gauntletButton!.setScale(0.3)
+                if is5{
+                    gauntletButton!.position = CGPointMake(world1level30node!.position.x - 30, world1level30node!.position.y - 40)
+                    gauntletButton!.name = "gauntletButton"
+                    gauntletButton!.setScale(0.3)
+                } else if isPad{
+                    gauntletButton!.position = CGPointMake(world1level30node!.position.x - 30, world1level30node!.position.y - 40)
+                    gauntletButton!.name = "gauntletButton"
+                    gauntletButton!.setScale(0.3)
+                } else if isPlus{
+                    gauntletButton!.position = CGPointMake(world1level30node!.position.x - 30, world1level30node!.position.y - 40)
+                    gauntletButton!.name = "gauntletButton"
+                    gauntletButton!.setScale(0.3)
+                } else {
+                    gauntletButton!.position = CGPointMake(world1level30node!.position.x - 30, world1level30node!.position.y - 40)
+                    gauntletButton!.name = "gauntletButton"
+                    gauntletButton!.setScale(0.3)
+                }
                 self.addChild(gauntletButton!)
                 let bootyImage = SKSpriteNode(imageNamed: "Booty_1")
                 bootyImage.position = CGPointMake(world1level30node!.position.x - 40, world1level30node!.position.y - 70)
