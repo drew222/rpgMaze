@@ -343,7 +343,7 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
         println("add success")
         banner.sizeThatFits(CGSizeMake(self.frame.maxX, 200))
         banner.frame.origin.y = self.frame.maxY - 50
-        if !addLoaded{
+        if self.view?.scene == self{
             addLoaded = true
             self.view?.addSubview(banner) //Add banner to view (Ad loaded)
         }
