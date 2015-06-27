@@ -29,6 +29,9 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
     var addLoaded = false
     
     override func didMoveToView(view: SKView) {
+        if addLoaded {
+            addLoaded = false
+        }
         mediumRectAdView = ADBannerView(adType: ADAdType.Banner)
         mediumRectAdView!.delegate = self
         /* Setup your scene here */
@@ -338,11 +341,15 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
     
     //Delegate methods for AdBannerView
     func bannerViewDidLoadAd(banner: ADBannerView!) {
-        addLoaded = true
         println("add success")
         banner.sizeThatFits(CGSizeMake(self.frame.maxX, 200))
         banner.frame.origin.y = self.frame.maxY - 50
-        self.view?.addSubview(banner) //Add banner to view (Ad loaded)
+        if !addLoaded{
+            addLoaded = true
+            self.view?.addSubview(banner) //Add banner to view (Ad loaded)
+        }else {
+            addLoaded = false
+        }
     }
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError
         error: NSError!) {
@@ -354,28 +361,28 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         let skTransition = SKTransition.fadeWithDuration(1.0)
         for touch in touches{
-            if world1Node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            if world1Node!.containsPoint((touch as! UITouch).locationInNode(self)) && addLoaded{
                 //remove add
                 if addLoaded {
-                    addLoaded = false
+                    addLoaded = true
                 mediumRectAdView!.removeFromSuperview()
                 }
                 if soundOn {
                     self.runAction(clickSound)
                 }
                 self.view?.presentScene(world1Menu, transition: skTransition)
-            }else if inventoryNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if inventoryNode!.containsPoint((touch as! UITouch).locationInNode(self)) && addLoaded{
                 if addLoaded {
-                    addLoaded = false
+                    addLoaded = true
                 mediumRectAdView!.removeFromSuperview()
                 }
                 if soundOn {
                     self.runAction(clickSound)
                 }
                 self.view?.presentScene(inventory, transition: skTransition)
-            }else if storeNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if storeNode!.containsPoint((touch as! UITouch).locationInNode(self)) && addLoaded{
                 if addLoaded {
-                    addLoaded = false
+                    addLoaded = true
                 mediumRectAdView!.removeFromSuperview()
                 }
                 if soundOn {
@@ -387,9 +394,9 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
                 //aStoreScene.userData?.setObject(world1Menu!, forKey: "menu")
                 aStoreScene.userData?.setObject(self, forKey: "worldscene")
                 self.view?.presentScene(aStoreScene, transition: skTransition)
-            }else if tutorialButton!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if tutorialButton!.containsPoint((touch as! UITouch).locationInNode(self)) && addLoaded{
                 if addLoaded {
-                    addLoaded = false
+                    addLoaded = true
                 mediumRectAdView!.removeFromSuperview()
                 }
                 if soundOn {
