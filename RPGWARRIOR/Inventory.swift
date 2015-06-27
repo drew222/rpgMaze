@@ -22,7 +22,7 @@ class Inventory: SKScene {
     var spaceToMove: ItemSpaceNode?
     var firstLoad = true
     var backPackSpaces = 15
-    var gold: CGFloat = 1500
+    var gold: CGFloat = 0
     var goldNode: SKLabelNode?
     var statLabelLife: SKLabelNode?
     var statLabelMovement: SKLabelNode?
