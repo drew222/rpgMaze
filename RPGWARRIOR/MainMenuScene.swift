@@ -75,7 +75,7 @@ class MainMenuScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         //test
-        highestLevel = 30
+        //highestLevel = 30
         /* Setup your scene here */
         //MUSIC
         if !happyMusic.playing && soundOn{
