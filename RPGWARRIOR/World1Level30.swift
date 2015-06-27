@@ -432,28 +432,28 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             crabAttackSpeed = 1.9
             buffSpawnSpeed = 9
         }else if phase % 10 == 7{
-            krakenAttackSpeedSpike = 9.0
+            krakenAttackSpeedSpike = 9.5
             whaleAttackSpeedKrill = 2.8
             whaleAttackSpeedWave = 12
             crabSpawnSpeed = 0.4
             crabAttackSpeed = 1.8
             buffSpawnSpeed = 8
         }else if phase % 10 == 8{
-            krakenAttackSpeedSpike = 8.5
+            krakenAttackSpeedSpike = 9.5
             whaleAttackSpeedKrill = 2.5
             whaleAttackSpeedWave = 11
             crabSpawnSpeed = 0.4
             crabAttackSpeed = 1.7
             buffSpawnSpeed = 8
         }else if phase % 10 == 9{
-            krakenAttackSpeedSpike = 8.0
+            krakenAttackSpeedSpike = 9.5
             whaleAttackSpeedKrill = 2.3
             whaleAttackSpeedWave = 10
             crabSpawnSpeed = 0.4
             crabAttackSpeed = 1.6
             buffSpawnSpeed = 7
         }else if phase % 10 == 0{
-            krakenAttackSpeedSpike = 8.0
+            krakenAttackSpeedSpike = 9.5
             whaleAttackSpeedKrill = 2.3
             whaleAttackSpeedWave = 9
             crabSpawnSpeed = 0.3
@@ -490,11 +490,11 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         
         //Damages
-        spikeDamage = CGFloat(8)
+        spikeDamage = CGFloat(5)
         waterWaveDamage = CGFloat(10)
         oilWaveDamage = CGFloat(150)
-        krillDamage = CGFloat(2)
-        crabDamage = CGFloat(3)
+        krillDamage = CGFloat(1)
+        crabDamage = CGFloat(2)
         lifeBuff = CGFloat(13)
         speedBuff = CGFloat(40)
         coinAmount = 1
@@ -506,11 +506,11 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 theHero!.regeneration = 9
                 heroSpeed = 160
             }
-            spikeDamage = CGFloat(9)
+            spikeDamage = CGFloat(8)
             waterWaveDamage = CGFloat(12)
             oilWaveDamage = CGFloat(150)
-            krillDamage = CGFloat(3)
-            crabDamage = CGFloat(4)
+            krillDamage = CGFloat(2)
+            crabDamage = CGFloat(3)
             lifeBuff = CGFloat(16)
             speedBuff = CGFloat(50)
             coinAmount = 2
@@ -522,11 +522,11 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 theHero!.regeneration = 10
                 heroSpeed = 168
             }
-            spikeDamage = CGFloat(18)
+            spikeDamage = CGFloat(15)
             waterWaveDamage = CGFloat(24)
             oilWaveDamage = CGFloat(150)
-            krillDamage = CGFloat(6)
-            crabDamage = CGFloat(8)
+            krillDamage = CGFloat(3)
+            crabDamage = CGFloat(6)
             lifeBuff = CGFloat(32)
             speedBuff = CGFloat(60)
             coinAmount = 3
@@ -541,8 +541,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             spikeDamage = CGFloat(36)
             waterWaveDamage = CGFloat(48)
             oilWaveDamage = CGFloat(150)
-            krillDamage = CGFloat(12)
-            crabDamage = CGFloat(16)
+            krillDamage = CGFloat(7)
+            crabDamage = CGFloat(13)
             lifeBuff = CGFloat(64)
             speedBuff = CGFloat(70)
             coinAmount = 4
@@ -555,11 +555,11 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 heroSpeed = 200
                 coinAmount = 5
             }
-            spikeDamage = CGFloat(72)
-            waterWaveDamage = CGFloat(96)
+            spikeDamage = CGFloat(80)
+            waterWaveDamage = CGFloat(110)
             oilWaveDamage = CGFloat(150)
-            krillDamage = CGFloat(24)
-            crabDamage = CGFloat(32)
+            krillDamage = CGFloat(15)
+            crabDamage = CGFloat(30)
             lifeBuff = CGFloat(150)
             speedBuff = CGFloat(80)
         }
