@@ -1775,12 +1775,15 @@ class MainMenuScene: SKScene {
                 if soundOn {
                     self.runAction(clickSound)
                 }
+                
+                
+                
                 let aZoneScene = ZoneScene(size: self.frame.size)
                 aZoneScene.userData = NSMutableDictionary()
                 aZoneScene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
                 //aStoreScene.userData?.setObject(world1Menu!, forKey: "menu")
                 aZoneScene.userData?.setObject(self, forKey: "worldscene")
-                self.view?.presentScene(aZoneScene, transition: skTransition)
+                //self.view?.presentScene(aZoneScene, transition: skTransition)
                 
                     //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
                     //(self.userData?.objectForKey("menu") as MainMenuScene).userData?.setObject(self, forKey: "inventory")
