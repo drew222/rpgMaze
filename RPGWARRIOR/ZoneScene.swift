@@ -9,9 +9,10 @@
 import Foundation
 import SpriteKit
 import AVFoundation
+import iAd
 
 
-class ZoneScene: SKScene {
+class ZoneScene: SKScene, ADBannerViewDelegate {
     
     var world1Menu: MainMenuScene?
     var inventory: Inventory?
@@ -24,8 +25,12 @@ class ZoneScene: SKScene {
     var soundOnButton: SKSpriteNode?
     let defaults = NSUserDefaults.standardUserDefaults()
     var backgroundMusic: AVAudioPlayer?
+    var mediumRectAdView: ADBannerView?
+    var addLoaded = false
     
     override func didMoveToView(view: SKView) {
+        mediumRectAdView = ADBannerView(adType: ADAdType.Banner)
+        mediumRectAdView!.delegate = self
         /* Setup your scene here */
         //MUSIC
         //check for saved data on sound off/on, set spritenode to this and set soundOn
@@ -38,13 +43,13 @@ class ZoneScene: SKScene {
             soundOnButton = SKSpriteNode(imageNamed: "Sound_Off_Button_1")
         }
         soundOnButton!.size = CGSizeMake(100, 100)
-            soundOnButton!.position = CGPointMake(self.frame.minX + 55, self.frame.minY + 55)
+            soundOnButton!.position = CGPointMake(self.frame.minX + 55, self.frame.minY + 110)
             if is5{
                 soundOnButton!.size = CGSizeMake(80, 80)
-                soundOnButton!.position = CGPointMake(self.frame.minX + 45, self.frame.minY + 45)
+                soundOnButton!.position = CGPointMake(self.frame.minX + 45, self.frame.minY + 90)
             } else if isPad {
                 soundOnButton!.size = CGSizeMake(70, 70)
-                soundOnButton!.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 40)
+                soundOnButton!.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 85)
             }
         
         soundOnButton!.name = "soundButton"
@@ -277,13 +282,13 @@ class ZoneScene: SKScene {
             self.addChild(revealingTide)
             tutorialButton = SKSpriteNode(imageNamed: "Tutorial_Button_1")
             tutorialButton!.size = CGSizeMake(100, 100)
-            tutorialButton!.position = CGPointMake(self.frame.maxX - 55, self.frame.minX + 55)
+            tutorialButton!.position = CGPointMake(self.frame.maxX - 55, self.frame.minX + 110)
             if is5{
                 tutorialButton!.size = CGSizeMake(80, 80)
-                tutorialButton!.position = CGPointMake(self.frame.maxX - 45, self.frame.minX + 45)
+                tutorialButton!.position = CGPointMake(self.frame.maxX - 45, self.frame.minX + 90)
             } else if isPad {
                 tutorialButton!.size = CGSizeMake(70, 70)
-                tutorialButton!.position = CGPointMake(self.frame.maxX - 40, self.frame.minX + 40)
+                tutorialButton!.position = CGPointMake(self.frame.maxX - 40, self.frame.minX + 85)
             }
             
             tutorialButton!.name = "tutorial"
@@ -331,20 +336,48 @@ class ZoneScene: SKScene {
         
     }
     
+    //Delegate methods for AdBannerView
+    func bannerViewDidLoadAd(banner: ADBannerView!) {
+        addLoaded = true
+        println("add success")
+        banner.sizeThatFits(CGSizeMake(self.frame.maxX, 200))
+        banner.frame.origin.y = self.frame.maxY - 50
+        self.view?.addSubview(banner) //Add banner to view (Ad loaded)
+    }
+    func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError
+        error: NSError!) {
+            addLoaded = false
+            println("add fail")
+            banner.removeFromSuperview() //Remove the banner (No ad)
+    }
+    
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         let skTransition = SKTransition.fadeWithDuration(1.0)
         for touch in touches{
             if world1Node!.containsPoint((touch as! UITouch).locationInNode(self)){
+                //remove add
+                if addLoaded {
+                    addLoaded = false
+                mediumRectAdView!.removeFromSuperview()
+                }
                 if soundOn {
                     self.runAction(clickSound)
                 }
                 self.view?.presentScene(world1Menu, transition: skTransition)
             }else if inventoryNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if addLoaded {
+                    addLoaded = false
+                mediumRectAdView!.removeFromSuperview()
+                }
                 if soundOn {
                     self.runAction(clickSound)
                 }
                 self.view?.presentScene(inventory, transition: skTransition)
             }else if storeNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if addLoaded {
+                    addLoaded = false
+                mediumRectAdView!.removeFromSuperview()
+                }
                 if soundOn {
                     self.runAction(clickSound)
                 }
@@ -355,6 +388,10 @@ class ZoneScene: SKScene {
                 aStoreScene.userData?.setObject(self, forKey: "worldscene")
                 self.view?.presentScene(aStoreScene, transition: skTransition)
             }else if tutorialButton!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if addLoaded {
+                    addLoaded = false
+                mediumRectAdView!.removeFromSuperview()
+                }
                 if soundOn {
                     self.runAction(clickSound)
                 }
