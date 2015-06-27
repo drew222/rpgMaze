@@ -500,12 +500,13 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         coinAmount = 1
         let test = false
         if phase > 10 {
+            /*
             if test{
                 theHero!.life = 16
                 maxLife = 16
                 theHero!.regeneration = 9
                 heroSpeed = 160
-            }
+            }*/
             spikeDamage = CGFloat(8)
             waterWaveDamage = CGFloat(12)
             oilWaveDamage = CGFloat(150)
@@ -516,12 +517,13 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             coinAmount = 2
         }
         if phase > 20 {
+            /*
             if test{
                 theHero!.life = 32
                 maxLife = 32
                 theHero!.regeneration = 10
                 heroSpeed = 168
-            }
+            }*/
             spikeDamage = CGFloat(15)
             waterWaveDamage = CGFloat(24)
             oilWaveDamage = CGFloat(150)
@@ -532,12 +534,13 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             coinAmount = 3
         }
         if phase > 30 {
+            /*
             if test{
                 theHero!.life = 64
                 maxLife = 64
                 theHero!.regeneration = 16
                 heroSpeed = 180
-            }
+            }*/
             spikeDamage = CGFloat(36)
             waterWaveDamage = CGFloat(48)
             oilWaveDamage = CGFloat(150)
@@ -548,13 +551,14 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             coinAmount = 4
         }
         if phase > 40 {
+            /*
             if test{
                 theHero!.life = 130
                 maxLife = 130
                 theHero!.regeneration = 25
                 heroSpeed = 200
                 coinAmount = 5
-            }
+            }*/
             spikeDamage = CGFloat(80)
             waterWaveDamage = CGFloat(110)
             oilWaveDamage = CGFloat(150)
