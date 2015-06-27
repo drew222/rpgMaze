@@ -53,7 +53,12 @@ class IntroScene: SKScene {
         if let alreadyOpened = defaults.objectForKey("firstOpen") as? Bool {
             //already opened the app
             let skTransition = SKTransition.fadeWithDuration(1.0)
-            self.view?.presentScene(gameplayScene, transition: skTransition)
+            if uniZoneScene != nil {
+                self.view?.presentScene(uniZoneScene!, transition: skTransition)
+            }else{
+                uniZoneScene = gameplayScene
+                self.view?.presentScene(gameplayScene, transition: skTransition)
+            }
         }else {
             defaults.setBool(true, forKey: "firstOpen")
             defaults.setBool(true, forKey: "sound")

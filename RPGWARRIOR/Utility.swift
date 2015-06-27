@@ -21,6 +21,7 @@ var isPlus = false
 var isPad = false
 var is5 = false
 var soundOn = true
+var uniZoneScene: ZoneScene?
 
 
 
