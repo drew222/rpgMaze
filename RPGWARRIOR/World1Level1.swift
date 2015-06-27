@@ -119,17 +119,23 @@ class World1Level1: SKScene, SKPhysicsContactDelegate {
         //*****REGENE CODE****
         maxLife = theHero!.life!
         //********************
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 83, self.frame.midY + 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 83, self.frame.midY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 83, self.frame.midY - 100)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 83, self.frame.midY + 100)))
+        
         if isPad || is5 {
             self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.midY)))
             self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.midY)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 55, self.frame.midY + 100)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 55, self.frame.midY - 100)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 55, self.frame.midY - 100)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 55, self.frame.midY + 100)))
         }else {
             self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 165, self.frame.midY)))
             self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 165, self.frame.midY)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.midY)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 83, self.frame.midY + 100)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 83, self.frame.midY - 100)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 83, self.frame.midY - 100)))
+            self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 83, self.frame.midY + 100)))
         }
         
     }

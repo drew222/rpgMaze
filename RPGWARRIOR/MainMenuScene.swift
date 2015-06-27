@@ -75,7 +75,7 @@ class MainMenuScene: SKScene {
     
     override func didMoveToView(view: SKView) {
         //test
-        //highestLevel = 30
+        highestLevel = 30
         /* Setup your scene here */
         //MUSIC
         if !happyMusic.playing && soundOn{
@@ -1665,35 +1665,63 @@ class MainMenuScene: SKScene {
                 //add enter the gauntlet button
                 gauntletButton = SKSpriteNode(imageNamed: "Enter_Text_1")
                 if is5{
-                    gauntletButton!.position = CGPointMake(world1level30node!.position.x - 30, world1level30node!.position.y - 40)
+                    gauntletButton!.position = CGPointMake(world1level30node!.position.x + 65, world1level30node!.position.y + 10)
                     gauntletButton!.name = "gauntletButton"
                     gauntletButton!.setScale(0.3)
                 } else if isPad{
-                    gauntletButton!.position = CGPointMake(world1level30node!.position.x - 30, world1level30node!.position.y - 40)
+                    gauntletButton!.position = CGPointMake(world1level30node!.position.x + 65, world1level30node!.position.y + 15)
                     gauntletButton!.name = "gauntletButton"
                     gauntletButton!.setScale(0.3)
                 } else if isPlus{
-                    gauntletButton!.position = CGPointMake(world1level30node!.position.x - 30, world1level30node!.position.y - 40)
+                    gauntletButton!.position = CGPointMake(world1level30node!.position.x + 70, world1level30node!.position.y + 15)
                     gauntletButton!.name = "gauntletButton"
-                    gauntletButton!.setScale(0.3)
+                    gauntletButton!.setScale(0.32)
                 } else {
-                    gauntletButton!.position = CGPointMake(world1level30node!.position.x - 30, world1level30node!.position.y - 40)
+                    gauntletButton!.position = CGPointMake(world1level30node!.position.x + 70, world1level30node!.position.y + 15)
                     gauntletButton!.name = "gauntletButton"
-                    gauntletButton!.setScale(0.3)
+                    gauntletButton!.setScale(0.32)
                 }
                 self.addChild(gauntletButton!)
                 let bootyImage = SKSpriteNode(imageNamed: "Booty_1")
-                bootyImage.position = CGPointMake(world1level30node!.position.x - 40, world1level30node!.position.y - 70)
+                if is5{
+                    bootyImage.position = CGPointMake(world1level30node!.position.x + 80, world1level30node!.position.y - 15)
+                    bootyImage.name = "bootyImage"
+                    bootyImage.setScale(0.07)
+                } else if isPlus{
+                    bootyImage.position = CGPointMake(world1level30node!.position.x + 90, world1level30node!.position.y - 15)
+                    bootyImage.name = "bootyImage"
+                    bootyImage.setScale(0.07)
+                }else if isPad{
+                    bootyImage.position = CGPointMake(world1level30node!.position.x + 85, world1level30node!.position.y - 10)
+                    bootyImage.name = "bootyImage"
+                    bootyImage.setScale(0.05)
+                }else {
+                bootyImage.position = CGPointMake(world1level30node!.position.x + 90, world1level30node!.position.y - 15)
                 bootyImage.name = "bootyImage"
-                bootyImage.setScale(0.08)
+                bootyImage.setScale(0.07)
+                }
                 self.addChild(bootyImage)
+                
                 let text50 = SKLabelNode()
                 text50.text = "50"
-                text50.position = CGPointMake(world1level30node!.position.x , world1level30node!.position.y - 78)
+                
+                if is5{
+                    text50.position = CGPointMake(world1level30node!.position.x + 45 , world1level30node!.position.y - 25)
+                    text50.fontSize = 26
+                } else if isPlus{
+                    text50.position = CGPointMake(world1level30node!.position.x + 55 , world1level30node!.position.y - 25)
+                    text50.fontSize = 26
+                } else if isPad{
+                    text50.position = CGPointMake(world1level30node!.position.x + 55 , world1level30node!.position.y - 20)
+                    text50.fontSize = 23
+                }
+                else {
+                    text50.position = CGPointMake(world1level30node!.position.x + 55 , world1level30node!.position.y - 25)
+                    text50.fontSize = 26
+                }
                 text50.name = "text50"
                 text50.fontName = "ChalkboardSE-Bold"
                 text50.fontColor = UIColor.blackColor()
-                text50.fontSize = 28
                 self.addChild(text50)
                 clickedGauntlet = true
                 
