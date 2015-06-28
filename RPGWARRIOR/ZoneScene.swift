@@ -46,13 +46,13 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
             soundOnButton = SKSpriteNode(imageNamed: "Sound_Off_Button_1")
         }
         soundOnButton!.size = CGSizeMake(100, 100)
-            soundOnButton!.position = CGPointMake(self.frame.minX + 55, self.frame.minY + 110)
+            soundOnButton!.position = CGPointMake(self.frame.minX + 55, self.frame.minY + 60)
             if is5{
                 soundOnButton!.size = CGSizeMake(80, 80)
-                soundOnButton!.position = CGPointMake(self.frame.minX + 45, self.frame.minY + 90)
+                soundOnButton!.position = CGPointMake(self.frame.minX + 45, self.frame.minY + 40)
             } else if isPad {
                 soundOnButton!.size = CGSizeMake(70, 70)
-                soundOnButton!.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 85)
+                soundOnButton!.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 35)
             }
         
         soundOnButton!.name = "soundButton"
@@ -284,13 +284,13 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
             self.addChild(revealingTide)
             tutorialButton = SKSpriteNode(imageNamed: "Tutorial_Button_1")
             tutorialButton!.size = CGSizeMake(100, 100)
-            tutorialButton!.position = CGPointMake(self.frame.maxX - 55, self.frame.minX + 110)
+            tutorialButton!.position = CGPointMake(self.frame.maxX - 55, self.frame.minX + 60)
             if is5{
                 tutorialButton!.size = CGSizeMake(80, 80)
-                tutorialButton!.position = CGPointMake(self.frame.maxX - 45, self.frame.minX + 90)
+                tutorialButton!.position = CGPointMake(self.frame.maxX - 45, self.frame.minX + 40)
             } else if isPad {
                 tutorialButton!.size = CGSizeMake(70, 70)
-                tutorialButton!.position = CGPointMake(self.frame.maxX - 40, self.frame.minX + 85)
+                tutorialButton!.position = CGPointMake(self.frame.maxX - 40, self.frame.minX + 35)
             }
             
             tutorialButton!.name = "tutorial"
@@ -338,6 +338,29 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
         
     }
     
+    //needs lock
+    
+    var lock = true
+    func moveButtonsUp() {
+        if lock {
+            lock = false
+            let oldPosition = soundOnButton!.position
+            soundOnButton!.position = CGPointMake(oldPosition.x, oldPosition.y + 50)
+            let oldPosition2 = tutorialButton!.position
+            tutorialButton!.position = CGPointMake(oldPosition2.x, oldPosition2.y + 50)
+        }
+    }
+    
+    func moveButtonsDown() {
+        if !lock {
+            lock = true
+            let oldPosition = soundOnButton!.position
+            soundOnButton!.position = CGPointMake(oldPosition.x, oldPosition.y - 50)
+            let oldPosition2 = tutorialButton!.position
+            tutorialButton!.position = CGPointMake(oldPosition2.x, oldPosition2.y - 50)
+        }
+    }
+    
     //Delegate methods for AdBannerView
     func bannerViewDidLoadAd(banner: ADBannerView!) {
         println("add success")
@@ -347,12 +370,14 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
             addLoaded = true
             self.view?.addSubview(banner) //Add banner to view (Ad loaded)
         }
+        moveButtonsUp()
     }
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError
         error: NSError!) {
             addLoaded = false
             println("add fail")
             banner.removeFromSuperview() //Remove the banner (No ad)
+            moveButtonsDown()
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
