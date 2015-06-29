@@ -120,13 +120,14 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
         //*************************
         
         //bot shells
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, 65)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 45, 65)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 45, 65)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 45, 25)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 45, 25)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX, 65)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 45, 65)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 45, 65)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 45, 25)))
+        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 45, 25)))
         
         //bot whites
+        /*
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 25, 85)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 65, 85)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 25, 85)))
@@ -135,6 +136,7 @@ class World1Level27: SKScene, SKPhysicsContactDelegate {
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 70, 55)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 70, 25)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 70, 25)))
+        */
         
         
         

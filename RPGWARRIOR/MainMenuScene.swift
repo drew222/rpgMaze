@@ -963,7 +963,7 @@ class MainMenuScene: SKScene {
         if let highLevel = self.childNodeWithName("highestTime") as? SKSpriteNode{
             highLevel.removeFromParent()
         }
-        if highestLevel > 30 {
+        if highestLevel >= 30 {
             //highscore text
             let highscoreText = SKSpriteNode(imageNamed: "High_Score_Text")
             highscoreText.setScale(0.35)
@@ -971,7 +971,7 @@ class MainMenuScene: SKScene {
             if is5{
                 highscoreText.position = CGPointMake(self.frame.midX - 5, self.frame.midY - 210)
             } else if isPad{
-                highscoreText.position = CGPointMake(self.frame.midX - 5, self.frame.midY - 250)
+                highscoreText.position = CGPointMake(self.frame.midX - 5, self.frame.midY - 170)
             }
             highscoreText.zPosition = 4
             self.addChild(highscoreText)
@@ -983,7 +983,7 @@ class MainMenuScene: SKScene {
             if is5{
                 endlessText.position = CGPointMake(self.frame.midX + 35, self.frame.midY - 243)
             } else if isPad{
-                endlessText.position = CGPointMake(self.frame.midX + 35, self.frame.midY - 283)
+                endlessText.position = CGPointMake(self.frame.midX + 35, self.frame.midY - 203)
             }
             self.addChild(endlessText)
             
@@ -994,7 +994,7 @@ class MainMenuScene: SKScene {
             if is5{
                 highscoreFrame.position = CGPointMake(self.frame.midX - 5, self.frame.midY - 250)
             } else if isPad{
-                highscoreFrame.position = CGPointMake(self.frame.midX - 5, self.frame.midY - 290)
+                highscoreFrame.position = CGPointMake(self.frame.midX - 5, self.frame.midY - 210)
             }
             self.addChild(highscoreFrame)
             var highestLevelText: SKSpriteNode?
@@ -1007,7 +1007,7 @@ class MainMenuScene: SKScene {
             if is5{
                 highestLevelText!.position = CGPointMake(self.frame.midX - 40, self.frame.midY - 250)
             } else if isPad{
-                highestLevelText!.position = CGPointMake(self.frame.midX - 40, self.frame.midY - 290)
+                highestLevelText!.position = CGPointMake(self.frame.midX - 40, self.frame.midY - 210)
             }
             highestLevelText!.name = "highestLevel"
             highestLevelText!.setScale(0.125)
@@ -1021,7 +1021,7 @@ class MainMenuScene: SKScene {
                 if is5{
                     highestTimeText.position = CGPointMake(self.frame.midX + 40, self.frame.midY - 275)
                 } else if isPad{
-                    highestTimeText.position = CGPointMake(self.frame.midX + 40, self.frame.midY - 315)
+                    highestTimeText.position = CGPointMake(self.frame.midX + 40, self.frame.midY - 235)
                 }
                 highestTimeText.name = "highestTime"
                 highestTimeText.fontSize = 20
@@ -1034,7 +1034,7 @@ class MainMenuScene: SKScene {
                 if is5{
                     highestTimeText.position = CGPointMake(self.frame.midX + 40, self.frame.midY - 275)
                 } else if isPad{
-                    highestTimeText.position = CGPointMake(self.frame.midX + 40, self.frame.midY - 315)
+                    highestTimeText.position = CGPointMake(self.frame.midX + 40, self.frame.midY - 235)
                 }
                 highestTimeText.name = "highestTime"
                 highestTimeText.fontSize = 20
@@ -1665,11 +1665,11 @@ class MainMenuScene: SKScene {
                 //add enter the gauntlet button
                 gauntletButton = SKSpriteNode(imageNamed: "Enter_Text_1")
                 if is5{
-                    gauntletButton!.position = CGPointMake(world1level30node!.position.x + 65, world1level30node!.position.y + 10)
+                    gauntletButton!.position = CGPointMake(world1level30node!.position.x + 65, world1level30node!.position.y + 15)
                     gauntletButton!.name = "gauntletButton"
                     gauntletButton!.setScale(0.3)
                 } else if isPad{
-                    gauntletButton!.position = CGPointMake(world1level30node!.position.x + 65, world1level30node!.position.y + 15)
+                    gauntletButton!.position = CGPointMake(world1level30node!.position.x + 65, world1level30node!.position.y + 25)
                     gauntletButton!.name = "gauntletButton"
                     gauntletButton!.setScale(0.3)
                 } else if isPlus{
@@ -1692,7 +1692,7 @@ class MainMenuScene: SKScene {
                     bootyImage.name = "bootyImage"
                     bootyImage.setScale(0.07)
                 }else if isPad{
-                    bootyImage.position = CGPointMake(world1level30node!.position.x + 85, world1level30node!.position.y - 10)
+                    bootyImage.position = CGPointMake(world1level30node!.position.x + 85, world1level30node!.position.y - 0)
                     bootyImage.name = "bootyImage"
                     bootyImage.setScale(0.05)
                 }else {
@@ -1712,7 +1712,7 @@ class MainMenuScene: SKScene {
                     text50.position = CGPointMake(world1level30node!.position.x + 55 , world1level30node!.position.y - 25)
                     text50.fontSize = 26
                 } else if isPad{
-                    text50.position = CGPointMake(world1level30node!.position.x + 55 , world1level30node!.position.y - 20)
+                    text50.position = CGPointMake(world1level30node!.position.x + 55 , world1level30node!.position.y - 10)
                     text50.fontSize = 23
                 }
                 else {
@@ -1735,7 +1735,7 @@ class MainMenuScene: SKScene {
                 (self.userData?.objectForKey("inventory") as Inventory).userData?.setObject(self, forKey: "menu")
                 self.view?.presentScene(self.userData?.objectForKey("inventory") as Inventory, transition: skTransition)*/
                 
-            }else if gauntletButton != nil && gauntletButton!.containsPoint((touch as! UITouch).locationInNode(self)) {
+            }else if gauntletButton != nil && gauntletButton!.containsPoint((touch as! UITouch).locationInNode(self)) && clickedGauntlet{
                     if (self.userData?.objectForKey("inventory") as! Inventory).gold >= 50 {
                         //remove gauntletNodes
                         if clickedGauntlet {
