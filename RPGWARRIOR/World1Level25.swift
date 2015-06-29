@@ -140,7 +140,7 @@ class World1Level25: SKScene, SKPhysicsContactDelegate {
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.maxY - 145)))
         self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 20, self.frame.maxY - 145)))
 
-        for (var i = 30; CGFloat(i) < (self.frame.maxX - CGFloat(10)); i += 40) {
+        for (var i = 20; CGFloat(i) < (self.frame.maxX + CGFloat(10)); i += 40) {
             self.addChild(WhiteShell.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY)))
         }
         if isPad {

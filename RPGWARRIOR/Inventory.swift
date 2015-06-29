@@ -1130,6 +1130,19 @@ class Inventory: SKScene {
                 if soundOn {
                     self.runAction(clickSound)
                 }
+                //do some cleanup on highlighted items
+                itemToMove = nil
+                statLabelLife!.text = ""
+                statLabelMovement!.text = ""
+                statLabelRegen!.text = ""
+                lifeSymbol2?.removeFromParent()
+                speedSymbol2?.removeFromParent()
+                regenerationSymbol2?.removeFromParent()
+                self.childNodeWithName("sellButton")?.removeFromParent()
+                self.childNodeWithName("typeString")?.removeFromParent()
+                self.childNodeWithName("itemName")?.removeFromParent()
+                self.childNodeWithName("priceButton")?.removeFromParent()
+                self.childNodeWithName("sellBooty")?.removeFromParent()
                 //let menuScene = MainMenuScene(size: self.frame.size)
                 //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
                 (self.userData?.objectForKey("menu") as! MainMenuScene).userData?.setObject(self, forKey: "inventory")
@@ -1140,6 +1153,19 @@ class Inventory: SKScene {
                 if soundOn {
                     self.runAction(clickSound)
                 }
+                //do some cleanup on highlighted items
+                itemToMove = nil
+                statLabelLife!.text = ""
+                statLabelMovement!.text = ""
+                statLabelRegen!.text = ""
+                lifeSymbol2?.removeFromParent()
+                speedSymbol2?.removeFromParent()
+                regenerationSymbol2?.removeFromParent()
+                self.childNodeWithName("sellButton")?.removeFromParent()
+                self.childNodeWithName("typeString")?.removeFromParent()
+                self.childNodeWithName("itemName")?.removeFromParent()
+                self.childNodeWithName("priceButton")?.removeFromParent()
+                self.childNodeWithName("sellBooty")?.removeFromParent()
                 let storeScene = StoreScene(size: self.frame.size)
                 storeScene.userData = NSMutableDictionary()
                 storeScene.userData?.setObject(self, forKey: "inventory")

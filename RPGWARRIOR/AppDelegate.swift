@@ -80,6 +80,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        let gamecontroller = window?.rootViewController as! GameViewController
+        let view = gamecontroller.view as! SKView
+        if (view.scene as? Inventory != nil) || (view.scene as? MainMenuScene != nil) || (view.scene as? IntroScene != nil) || (view.scene as? StoreScene != nil) || (view.scene as? GuideScene != nil) || (view.scene as? TutorialScene != nil) || (view.scene as? ZoneScene != nil) || (view.scene as? ItemDisplayScene != nil){
+            if happyStopped {
+                happyMusic.play()
+                happyStopped = false
+            }
+            if gauntletStopped {
+                gauntletMusic.play()
+                gauntletStopped = false
+            }
+            if introStopped {
+                introMusic.play()
+                introStopped = false
+            }
+            
+        }else{
+            view.presentScene(gamecontroller.titleScene)
+        }
     }
 
     func applicationWillTerminate(application: UIApplication) {
