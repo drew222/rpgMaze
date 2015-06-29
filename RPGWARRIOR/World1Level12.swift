@@ -73,6 +73,7 @@ class World1Level12: SKScene, SKPhysicsContactDelegate {
         self.addChild(theWhale!)
         
         //add seashells blocking hero
+        if !isPlus{
         let seashell1 = MineNode.mineAtPos(CGPointMake(self.frame.midX, self.frame.maxY - 100))
         self.addChild(seashell1)
         let seashell2 = MineNode.mineAtPos(CGPointMake(self.frame.midX + 40, self.frame.maxY - 100))
@@ -83,6 +84,7 @@ class World1Level12: SKScene, SKPhysicsContactDelegate {
         self.addChild(seashell4)
         let seashell5 = MineNode.mineAtPos(CGPointMake(self.frame.midX - 80, self.frame.maxY - 100))
         self.addChild(seashell5)
+        }
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
         //ourHero.constraints = [distanceConstraint]
