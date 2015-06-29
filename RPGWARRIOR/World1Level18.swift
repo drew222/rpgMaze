@@ -134,6 +134,8 @@ class World1Level18: SKScene, SKPhysicsContactDelegate {
             self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 350, self.frame.minY + 100)))
             if is5{
                 self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 220, self.frame.minY + 100)))
+            }else if isPlus{
+                self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.minX + 260, self.frame.minY + 100)))
             }
         }
         //top row
