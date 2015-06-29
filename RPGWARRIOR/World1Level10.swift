@@ -36,7 +36,7 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
     var itemDropped: ItemClass?
     
     let wizardAttackSpeed = 1.5
-    let wizardAttackSpeedBlizz = 4.0
+    var wizardAttackSpeedBlizz = 4.0
     
     var theWizard: WizardClass?
     var theHero: HeroClass?
@@ -45,6 +45,9 @@ class World1Level10: SKScene, SKPhysicsContactDelegate {
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        if isPlus{
+            wizardAttackSpeedBlizz = 5.0
+        }
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.1))
         theHero!.setScale(0.6)
         theHero!.name = "hero"
