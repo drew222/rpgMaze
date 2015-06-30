@@ -42,6 +42,8 @@
 		DC321D731AAE3A0E006E3F2B /* ZoneScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC321D721AAE3A0E006E3F2B /* ZoneScene.swift */; };
 		DC38BEBE1B40E26600382802 /* Guide_Screen_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC38BEBD1B40E26600382802 /* Guide_Screen_3.png */; };
 		DC38BEC01B40E27000382802 /* Guide_Screen_6.png in Resources */ = {isa = PBXBuildFile; fileRef = DC38BEBF1B40E27000382802 /* Guide_Screen_6.png */; };
+		DC38BEC21B422BDB00382802 /* bossattacksound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC38BEC11B422BDB00382802 /* bossattacksound.mp3 */; };
+		DC38BEC41B422E5200382802 /* Guide_Screen_7.png in Resources */ = {isa = PBXBuildFile; fileRef = DC38BEC31B422E5200382802 /* Guide_Screen_7.png */; };
 		DC4A442A1ACDDCED00BE81D8 /* WaveNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A44291ACDDCED00BE81D8 /* WaveNode.swift */; };
 		DC4A442C1ACDE6CF00BE81D8 /* WhaleBoss.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A442B1ACDE6CF00BE81D8 /* WhaleBoss.swift */; };
 		DC4A442E1ACDF79D00BE81D8 /* World1Level12.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4A442D1ACDF79D00BE81D8 /* World1Level12.swift */; };
@@ -232,7 +234,6 @@
 		DCE585AD1B364F3E00F58449 /* Rap_Funk_Music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCE585A21B364F3E00F58449 /* Rap_Funk_Music.mp3 */; };
 		DCE585AE1B364F3E00F58449 /* Swish_Noise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCE585A31B364F3E00F58449 /* Swish_Noise.mp3 */; };
 		DCE585AF1B364F3E00F58449 /* Beach_Noise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DCE585A41B364F3E00F58449 /* Beach_Noise.mp3 */; };
-		DCE585B31B36968E00F58449 /* Guide_Screen_7.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE585B21B36968E00F58449 /* Guide_Screen_7.png */; };
 		DCE585BB1B36978800F58449 /* Quick_Tutorial_Screen_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE585B61B36978800F58449 /* Quick_Tutorial_Screen_1.png */; };
 		DCE585BC1B36978800F58449 /* Quick_Tutorial_Screen_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE585B71B36978800F58449 /* Quick_Tutorial_Screen_2.png */; };
 		DCE585BD1B36978800F58449 /* Quick_Tutorial_Screen_3.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE585B81B36978800F58449 /* Quick_Tutorial_Screen_3.png */; };
@@ -675,6 +676,8 @@
 		DC321D721AAE3A0E006E3F2B /* ZoneScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneScene.swift; sourceTree = "<group>"; };
 		DC38BEBD1B40E26600382802 /* Guide_Screen_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide_Screen_3.png; sourceTree = "<group>"; };
 		DC38BEBF1B40E27000382802 /* Guide_Screen_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide_Screen_6.png; sourceTree = "<group>"; };
+		DC38BEC11B422BDB00382802 /* bossattacksound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bossattacksound.mp3; sourceTree = "<group>"; };
+		DC38BEC31B422E5200382802 /* Guide_Screen_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide_Screen_7.png; sourceTree = "<group>"; };
 		DC4A44291ACDDCED00BE81D8 /* WaveNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveNode.swift; sourceTree = "<group>"; };
 		DC4A442B1ACDE6CF00BE81D8 /* WhaleBoss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhaleBoss.swift; sourceTree = "<group>"; };
 		DC4A442D1ACDF79D00BE81D8 /* World1Level12.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level12.swift; sourceTree = "<group>"; };
@@ -865,7 +868,6 @@
 		DCE585A21B364F3E00F58449 /* Rap_Funk_Music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rap_Funk_Music.mp3; sourceTree = "<group>"; };
 		DCE585A31B364F3E00F58449 /* Swish_Noise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Swish_Noise.mp3; sourceTree = "<group>"; };
 		DCE585A41B364F3E00F58449 /* Beach_Noise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beach_Noise.mp3; sourceTree = "<group>"; };
-		DCE585B21B36968E00F58449 /* Guide_Screen_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Guide_Screen_7.png; sourceTree = "<group>"; };
 		DCE585B61B36978800F58449 /* Quick_Tutorial_Screen_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quick_Tutorial_Screen_1.png; sourceTree = "<group>"; };
 		DCE585B71B36978800F58449 /* Quick_Tutorial_Screen_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quick_Tutorial_Screen_2.png; sourceTree = "<group>"; };
 		DCE585B81B36978800F58449 /* Quick_Tutorial_Screen_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quick_Tutorial_Screen_3.png; sourceTree = "<group>"; };
@@ -1416,6 +1418,7 @@
 		DCA8F2171B2FCBCB007A6B52 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				DC38BEC11B422BDB00382802 /* bossattacksound.mp3 */,
 				DC9435CB1B376D3B00231FE9 /* Level_Music.mp3 */,
 				DC9435D51B37AD5F00231FE9 /* Speed_Buff_Sound.mp3 */,
 				DC9435D11B3775AF00231FE9 /* Level_Music2.mp3 */,
@@ -1553,7 +1556,7 @@
 				EEDD7FE11B2CBD45007EFE12 /* Guide_Screen_2.png */,
 				DC38BEBD1B40E26600382802 /* Guide_Screen_3.png */,
 				DC38BEBF1B40E27000382802 /* Guide_Screen_6.png */,
-				DCE585B21B36968E00F58449 /* Guide_Screen_7.png */,
+				DC38BEC31B422E5200382802 /* Guide_Screen_7.png */,
 				EEDD7FE51B2CBD45007EFE12 /* High_Score_Frame.png */,
 				DC64A2D51B2E63FB00C73BD3 /* High_Score_Text.png */,
 				DCFD73991B01532F0054E370 /* Ink_Flood_1.png */,
@@ -2112,6 +2115,7 @@
 				DCFD74F41B0153300054E370 /* Whale_Boss_11.png in Resources */,
 				DC5926711B290E3800244578 /* Phase_48_Text.png in Resources */,
 				DCFD74741B0153300054E370 /* Fitting_Room__Button_1.png in Resources */,
+				DC38BEC41B422E5200382802 /* Guide_Screen_7.png in Resources */,
 				DC3097A71B37C219003C115E /* Seashell_Charm_Bracelet_1.png in Resources */,
 				DC59266F1B290E3800244578 /* Phase_46_Text.png in Resources */,
 				DCFD74961B0153300054E370 /* Kraken_Movement_7.png in Resources */,
@@ -2429,6 +2433,7 @@
 				EEB8091B1B13981D00A221E2 /* Seashell_Charm_Bracelet_Text.png in Resources */,
 				DCFD75181B0153300054E370 /* World_1_Level_28_Text.png in Resources */,
 				DC9435D81B37B44800231FE9 /* Skip_Tutorial_Button_1.png in Resources */,
+				DC38BEC21B422BDB00382802 /* bossattacksound.mp3 in Resources */,
 				DCBCE4411B12EB6B00FCF4A5 /* Sweatband_2.png in Resources */,
 				DCFD75121B0153300054E370 /* World_1_Level_22_Text.png in Resources */,
 				DC9435DA1B37B54200231FE9 /* Regen_Sound.mp3 in Resources */,
@@ -2454,7 +2459,6 @@
 				DCF23E081B0BAA0500484040 /* Tentacle_Swing_1.png in Resources */,
 				DCFD74A61B0153300054E370 /* Opening_Screen_1.png in Resources */,
 				DC2711231A85E11900986D2E /* Main.storyboard in Resources */,
-				DCE585B31B36968E00F58449 /* Guide_Screen_7.png in Resources */,
 				DCB90E711B3CC7D200DC06A8 /* Bomb_Ball_4.png in Resources */,
 				DC3097AB1B37C484003C115E /* Pearl_Necklace_1.png in Resources */,
 				EEDD7FFE1B2CBD45007EFE12 /* Mud_Crab_3.png in Resources */,

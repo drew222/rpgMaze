@@ -25,6 +25,7 @@ class IntroScene: SKScene {
         introMusic.numberOfLoops = -1
         beachMusic.numberOfLoops = -1
         happyMusic.numberOfLoops = -1
+        gauntletMusic.numberOfLoops = -1
         
         
         
