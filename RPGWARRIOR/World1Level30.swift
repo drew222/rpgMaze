@@ -508,7 +508,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 heroSpeed = 160
             }*/
             spikeDamage = CGFloat(8)
-            waterWaveDamage = CGFloat(12)
+            waterWaveDamage = CGFloat(10)
             oilWaveDamage = CGFloat(150)
             krillDamage = CGFloat(2)
             crabDamage = CGFloat(3)
@@ -525,7 +525,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 heroSpeed = 168
             }*/
             spikeDamage = CGFloat(16)
-            waterWaveDamage = CGFloat(24)
+            waterWaveDamage = CGFloat(20)
             oilWaveDamage = CGFloat(150)
             krillDamage = CGFloat(3)
             crabDamage = CGFloat(6)
@@ -542,7 +542,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 heroSpeed = 180
             }*/
             spikeDamage = CGFloat(32)
-            waterWaveDamage = CGFloat(48)
+            waterWaveDamage = CGFloat(40)
             oilWaveDamage = CGFloat(150)
             krillDamage = CGFloat(7)
             crabDamage = CGFloat(13)
@@ -560,7 +560,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 coinAmount = 5
             }*/
             spikeDamage = CGFloat(64)
-            waterWaveDamage = CGFloat(110)
+            waterWaveDamage = CGFloat(80)
             oilWaveDamage = CGFloat(150)
             krillDamage = CGFloat(15)
             crabDamage = CGFloat(30)
