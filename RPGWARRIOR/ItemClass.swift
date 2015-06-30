@@ -89,10 +89,10 @@ class ItemClass: SKSpriteNode {
             price = 5
             return [("Life", CGFloat(1)), ("Movement", CGFloat(5))]
         }else if picName == "Inky_Ring_1"{
-            price = 50
+            price = 5
             return [("Movement", CGFloat(8)), ("Life", CGFloat(2))]
         }else if picName == "Pearl_Snap_Ring_1"{
-            price = 50
+            price = 25
             return [("Movement", CGFloat(17)), ("Life", CGFloat(1)), ("Regeneration", CGFloat(1))]
         }else if picName == "Watch_1"{
             price = 100
@@ -171,7 +171,7 @@ class ItemClass: SKSpriteNode {
             price = 25
             return [("Movement", CGFloat(15))]
         }else if picName == "Seashell_Necklace_1"{
-            price = 50
+            price = 25
             return [("Movement", CGFloat(12)), ("Regeneration", CGFloat(1)), ("Life", CGFloat(1))]
         }else if picName == "Whistle_1"{
             price = 10
