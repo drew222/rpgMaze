@@ -375,6 +375,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     
     
     func updateLevel() {
+        phase == 49
         if phase < 51{
             phase += 1
         }
