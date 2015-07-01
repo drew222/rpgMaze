@@ -233,6 +233,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         //*************************************
         //phase = 49
         updateLevel()
+        //test
+        //theHero!.life = 99999
         
         
     }
@@ -403,21 +405,45 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         if phase % 10 == 1{
             crabSpawnSpeed = 0.2
             buffSpawnSpeed = 10
+            if is5 {
+                crabSpawnSpeed = 0.22
+            }
+            if isPad {
+                crabSpawnSpeed = 0.26
+            }
         }else if phase % 10 == 2{
             whaleAttackSpeedKrill = 2
             crabSpawnSpeed = 0.4
             buffSpawnSpeed = 10
+            if is5 {
+                crabSpawnSpeed = 0.45
+            }
+            if isPad {
+                crabSpawnSpeed = 0.5
+            }
         }else if phase % 10 == 3{
             whaleAttackSpeedKrill = 2.3
             whaleAttackSpeedWave = 15
             crabSpawnSpeed = 0.4
             buffSpawnSpeed = 10
+            if is5 {
+                crabSpawnSpeed = 0.45
+            }
+            if isPad {
+                crabSpawnSpeed = 0.5
+            }
         }else if phase % 10 == 4{
             whaleAttackSpeedKrill = 2.8
             whaleAttackSpeedWave = 15
             crabSpawnSpeed = 0.5
             crabAttackSpeed = 1.5
             buffSpawnSpeed = 10
+            if is5 {
+                crabSpawnSpeed = 0.55
+            }
+            if isPad {
+                crabSpawnSpeed = 0.6
+            }
         }else if phase % 10 == 5{
             krakenAttackSpeedSpike = 10.0
             whaleAttackSpeedKrill = 3.1
@@ -425,6 +451,14 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             crabSpawnSpeed = 0.5
             crabAttackSpeed = 2.0
             buffSpawnSpeed = 10
+            if is5 {
+                crabSpawnSpeed = 0.55
+                krakenAttackSpeedSpike = 11.0
+            }
+            if isPad {
+                crabSpawnSpeed = 0.6
+                krakenAttackSpeedSpike = 13.0
+            }
         }else if phase % 10 == 6{
             krakenAttackSpeedSpike = 9.5
             whaleAttackSpeedKrill = 3.0
@@ -432,6 +466,14 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             crabSpawnSpeed = 0.5
             crabAttackSpeed = 1.9
             buffSpawnSpeed = 9
+            if is5 {
+                crabSpawnSpeed = 0.55
+                krakenAttackSpeedSpike = 10.5
+            }
+            if isPad {
+                crabSpawnSpeed = 0.6
+                krakenAttackSpeedSpike = 12.5
+            }
         }else if phase % 10 == 7{
             krakenAttackSpeedSpike = 9.5
             whaleAttackSpeedKrill = 2.8
@@ -439,6 +481,14 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             crabSpawnSpeed = 0.4
             crabAttackSpeed = 1.8
             buffSpawnSpeed = 8
+            if is5 {
+                crabSpawnSpeed = 0.55
+                krakenAttackSpeedSpike = 10.5
+            }
+            if isPad {
+                crabSpawnSpeed = 0.6
+                krakenAttackSpeedSpike = 12.5
+            }
         }else if phase % 10 == 8{
             krakenAttackSpeedSpike = 9.5
             whaleAttackSpeedKrill = 2.5
@@ -446,6 +496,14 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             crabSpawnSpeed = 0.4
             crabAttackSpeed = 1.7
             buffSpawnSpeed = 8
+            if is5 {
+                crabSpawnSpeed = 0.55
+                krakenAttackSpeedSpike = 10.5
+            }
+            if isPad {
+                crabSpawnSpeed = 0.6
+                krakenAttackSpeedSpike = 12.5
+            }
         }else if phase % 10 == 9{
             krakenAttackSpeedSpike = 9.5
             whaleAttackSpeedKrill = 2.3
@@ -453,13 +511,29 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             crabSpawnSpeed = 0.4
             crabAttackSpeed = 1.6
             buffSpawnSpeed = 7
+            if is5 {
+                crabSpawnSpeed = 0.55
+                krakenAttackSpeedSpike = 10.5
+            }
+            if isPad {
+                crabSpawnSpeed = 0.6
+                krakenAttackSpeedSpike = 12.5
+            }
         }else if phase % 10 == 0{
             krakenAttackSpeedSpike = 9.5
             whaleAttackSpeedKrill = 2.3
             whaleAttackSpeedWave = 9
-            crabSpawnSpeed = 0.3
+            crabSpawnSpeed = 0.4
             crabAttackSpeed = 1.5
             buffSpawnSpeed = 7
+            if is5 {
+                crabSpawnSpeed = 0.55
+                krakenAttackSpeedSpike = 10.5
+            }
+            if isPad {
+                crabSpawnSpeed = 0.6
+                krakenAttackSpeedSpike = 12.5
+            }
         }
         }else{
             //if first level 51, say infinite level
