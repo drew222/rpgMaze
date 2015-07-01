@@ -161,8 +161,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         //*************************
         
         
-        //maxLife = 3000
-        //theHero!.life! = 3000
+        //maxLife = 100000
+        //theHero!.life! = 100000
         
         //******CHECKPOINT FROM GEAR CHECK*****
         let checkPoint = SKSpriteNode(imageNamed: "Checkpoint_Text_1")
@@ -466,11 +466,11 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             if firstEndless {
                 let infText = SKSpriteNode(imageNamed: "Endless_Mode_Text")
                 infText.position = CGPointMake(self.frame.midX, self.frame.midY)
-                infText.setScale(0.5)
+                infText.setScale(0.28)
                 infText.name = "infText"
                 infText.runAction(SKAction.fadeOutWithDuration(0))
-                let wait = SKAction.waitForDuration(3)
-                let wait2 = SKAction.waitForDuration(4)
+                let wait = SKAction.waitForDuration(2)
+                let wait2 = SKAction.waitForDuration(1)
                 let fadeInAction = SKAction.fadeInWithDuration(1)
                 let runBlock2 = SKAction.runBlock({infText.removeFromParent()})
                 let runBlock = SKAction.runBlock({infText.removeFromParent()})
