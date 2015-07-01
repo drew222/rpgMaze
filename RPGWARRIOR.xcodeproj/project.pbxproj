@@ -242,6 +242,17 @@
 		DCE69C4E1AB4A04C003561E6 /* World1Level6.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C4D1AB4A04C003561E6 /* World1Level6.swift */; };
 		DCE69C501AB507CB003561E6 /* World1Level7.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C4F1AB507CB003561E6 /* World1Level7.swift */; };
 		DCE69C521AB604F2003561E6 /* World1Level108.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE69C511AB604F2003561E6 /* World1Level108.swift */; };
+		DCE974FF1B43837A00700EBA /* Phase_18_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE974FE1B43837A00700EBA /* Phase_18_Text.png */; };
+		DCE9750C1B43842100700EBA /* Phase_21_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE975011B43842000700EBA /* Phase_21_Text.png */; };
+		DCE9750D1B43842100700EBA /* Phase_22_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE975021B43842000700EBA /* Phase_22_Text.png */; };
+		DCE9750E1B43842100700EBA /* Phase_23_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE975031B43842000700EBA /* Phase_23_Text.png */; };
+		DCE9750F1B43842100700EBA /* Phase_24_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE975041B43842000700EBA /* Phase_24_Text.png */; };
+		DCE975101B43842100700EBA /* Phase_25_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE975051B43842000700EBA /* Phase_25_Text.png */; };
+		DCE975111B43842100700EBA /* Phase_26_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE975061B43842000700EBA /* Phase_26_Text.png */; };
+		DCE975121B43842100700EBA /* Phase_27_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE975071B43842100700EBA /* Phase_27_Text.png */; };
+		DCE975131B43842100700EBA /* Phase_28_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE975081B43842100700EBA /* Phase_28_Text.png */; };
+		DCE975141B43842100700EBA /* Phase_29_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE975091B43842100700EBA /* Phase_29_Text.png */; };
+		DCE975151B43842100700EBA /* Phase_30_Text.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE9750A1B43842100700EBA /* Phase_30_Text.png */; };
 		DCF23DF91B0BA9C100484040 /* Lifejacket_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF23DF81B0BA9C100484040 /* Lifejacket_1.png */; };
 		DCF23DFB1B0BA9CD00484040 /* Lifejacket_2.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF23DFA1B0BA9CD00484040 /* Lifejacket_2.png */; };
 		DCF23E071B0BAA0500484040 /* Sand_Bucket_1.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF23DFE1B0BAA0500484040 /* Sand_Bucket_1.png */; };
@@ -876,6 +887,17 @@
 		DCE69C4D1AB4A04C003561E6 /* World1Level6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level6.swift; sourceTree = "<group>"; };
 		DCE69C4F1AB507CB003561E6 /* World1Level7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level7.swift; sourceTree = "<group>"; };
 		DCE69C511AB604F2003561E6 /* World1Level108.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World1Level108.swift; sourceTree = "<group>"; };
+		DCE974FE1B43837A00700EBA /* Phase_18_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_18_Text.png; sourceTree = "<group>"; };
+		DCE975011B43842000700EBA /* Phase_21_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_21_Text.png; sourceTree = "<group>"; };
+		DCE975021B43842000700EBA /* Phase_22_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_22_Text.png; sourceTree = "<group>"; };
+		DCE975031B43842000700EBA /* Phase_23_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_23_Text.png; sourceTree = "<group>"; };
+		DCE975041B43842000700EBA /* Phase_24_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_24_Text.png; sourceTree = "<group>"; };
+		DCE975051B43842000700EBA /* Phase_25_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_25_Text.png; sourceTree = "<group>"; };
+		DCE975061B43842000700EBA /* Phase_26_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_26_Text.png; sourceTree = "<group>"; };
+		DCE975071B43842100700EBA /* Phase_27_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_27_Text.png; sourceTree = "<group>"; };
+		DCE975081B43842100700EBA /* Phase_28_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_28_Text.png; sourceTree = "<group>"; };
+		DCE975091B43842100700EBA /* Phase_29_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_29_Text.png; sourceTree = "<group>"; };
+		DCE9750A1B43842100700EBA /* Phase_30_Text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phase_30_Text.png; sourceTree = "<group>"; };
 		DCF23DF81B0BA9C100484040 /* Lifejacket_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lifejacket_1.png; sourceTree = "<group>"; };
 		DCF23DFA1B0BA9CD00484040 /* Lifejacket_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lifejacket_2.png; sourceTree = "<group>"; };
 		DCF23DFE1B0BAA0500484040 /* Sand_Bucket_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sand_Bucket_1.png; sourceTree = "<group>"; };
@@ -1680,8 +1702,19 @@
 				DC5926061B27A2CA00244578 /* Phase_15_Text.png */,
 				DC5926071B27A2CA00244578 /* Phase_16_Text.png */,
 				DC5926081B27A2CA00244578 /* Phase_17_Text.png */,
+				DCE974FE1B43837A00700EBA /* Phase_18_Text.png */,
 				DC5926091B27A2CA00244578 /* Phase_19_Text.png */,
 				DC59260A1B27A2CA00244578 /* Phase_20_Text.png */,
+				DCE975011B43842000700EBA /* Phase_21_Text.png */,
+				DCE975021B43842000700EBA /* Phase_22_Text.png */,
+				DCE975031B43842000700EBA /* Phase_23_Text.png */,
+				DCE975041B43842000700EBA /* Phase_24_Text.png */,
+				DCE975051B43842000700EBA /* Phase_25_Text.png */,
+				DCE975061B43842000700EBA /* Phase_26_Text.png */,
+				DCE975071B43842100700EBA /* Phase_27_Text.png */,
+				DCE975081B43842100700EBA /* Phase_28_Text.png */,
+				DCE975091B43842100700EBA /* Phase_29_Text.png */,
+				DCE9750A1B43842100700EBA /* Phase_30_Text.png */,
 				DC59264C1B290E3700244578 /* Phase_31_Text.png */,
 				DC59264D1B290E3800244578 /* Phase_32_Text.png */,
 				DC59264E1B290E3800244578 /* Phase_33_Text.png */,
@@ -2076,6 +2109,7 @@
 				DCFD74CF1B0153300054E370 /* Tentacle_21.png in Resources */,
 				DCFD747B1B0153300054E370 /* Ink_Flood_3.png in Resources */,
 				DCE585AF1B364F3E00F58449 /* Beach_Noise.mp3 in Resources */,
+				DCE974FF1B43837A00700EBA /* Phase_18_Text.png in Resources */,
 				EEDD7FFD1B2CBD45007EFE12 /* Mud_Crab_2.png in Resources */,
 				DCE585A91B364F3E00F58449 /* Gauntlet_Music.mp3 in Resources */,
 				EEB8090F1B13981D00A221E2 /* Life_Jacket_Text.png in Resources */,
@@ -2091,6 +2125,8 @@
 				DCFD74EB1B0153300054E370 /* Treasure_Chest_5.png in Resources */,
 				DCFD75081B0153300054E370 /* World_1_Level_13_Text.png in Resources */,
 				DC59260C1B27A2CA00244578 /* Phase_11_Text.png in Resources */,
+				DCE975121B43842100700EBA /* Phase_27_Text.png in Resources */,
+				DCE9750E1B43842100700EBA /* Phase_23_Text.png in Resources */,
 				EEB8095F1B15674700A221E2 /* World_1_Level_41_Text.png in Resources */,
 				DC9435BE1B37469800231FE9 /* Tutorial_Screen_12.png in Resources */,
 				DCFD753C1B01C5D90054E370 /* Kraken_Boss_10.png in Resources */,
@@ -2384,10 +2420,12 @@
 				EEDD7FFF1B2CBD45007EFE12 /* Whiteshell_1.png in Resources */,
 				DC2711251A85E11900986D2E /* Images.xcassets in Resources */,
 				DCE585A51B364F3E00F58449 /* Button_Click_Sound.mp3 in Resources */,
+				DCE975131B43842100700EBA /* Phase_28_Text.png in Resources */,
 				DC5925B31B26BED000244578 /* Phase_8_Text.png in Resources */,
 				DCFD74CC1B0153300054E370 /* Tentacle_19.png in Resources */,
 				DCFD75151B0153300054E370 /* World_1_Level_25_Text.png in Resources */,
 				DCFD74D31B0153300054E370 /* Tentacle_25.png in Resources */,
+				DCE9750D1B43842100700EBA /* Phase_22_Text.png in Resources */,
 				DCF23DFB1B0BA9CD00484040 /* Lifejacket_2.png in Resources */,
 				DCFD74C01B0153300054E370 /* Store_Button_1.png in Resources */,
 				DCFD75051B0153300054E370 /* World_1_Level_10_Text.png in Resources */,
@@ -2414,6 +2452,7 @@
 				DCFD74761B0153300054E370 /* Fitting_Room_Text_1.png in Resources */,
 				DC5925D31B26BED000244578 /* Wicked_2.png in Resources */,
 				EEB809131B13981D00A221E2 /* Mossy_Gold_Ring_Text.png in Resources */,
+				DCE9750C1B43842100700EBA /* Phase_21_Text.png in Resources */,
 				EEB809251B13981D00A221E2 /* Visor_Text.png in Resources */,
 				DCBCE43B1B12EB5400FCF4A5 /* Regeneration_Symbol_1.png in Resources */,
 				DCBCE44F1B12EBA700FCF4A5 /* Water_Wing_2-1.png in Resources */,
@@ -2427,6 +2466,7 @@
 				DCFD74931B0153300054E370 /* Kraken_Movement_4.png in Resources */,
 				DC5925CE1B26BED000244578 /* Tomorrows_End_1.png in Resources */,
 				DCFD753D1B01C5D90054E370 /* Kraken_Boss_11.png in Resources */,
+				DCE975111B43842100700EBA /* Phase_26_Text.png in Resources */,
 				DC9435C01B37469800231FE9 /* Tutorial_Screen_14.png in Resources */,
 				EEB809081B13981D00A221E2 /* Copper_Ring_Text.png in Resources */,
 				DCFD74B71B0153300054E370 /* Seashell_3.png in Resources */,
@@ -2497,6 +2537,7 @@
 				DC5925AB1B26BED000244578 /* Nightmare_Text.png in Resources */,
 				EEB809641B15674700A221E2 /* World_1_Level_46_Text.png in Resources */,
 				DC5925CD1B26BED000244578 /* The_Jitters_2.png in Resources */,
+				DCE975101B43842100700EBA /* Phase_25_Text.png in Resources */,
 				DCE585A71B364F3E00F58449 /* Fireworks_Sound.mp3 in Resources */,
 				DCFD74AB1B0153300054E370 /* Rusty_Copper_Ring_1.png in Resources */,
 				DCFD745D1B0153300054E370 /* Clam_Boss_Rocking_6.png in Resources */,
@@ -2528,6 +2569,7 @@
 				DCB90E6F1B3CC7D200DC06A8 /* Bomb_Ball_2.png in Resources */,
 				EEB809631B15674700A221E2 /* World_1_Level_45_Text.png in Resources */,
 				DCA8F2291B2FFBDE007A6B52 /* You_Received_Text.png in Resources */,
+				DCE9750F1B43842100700EBA /* Phase_24_Text.png in Resources */,
 				DCF23E131B0BAB7800484040 /* Beach_Towel_1.png in Resources */,
 				DCFD751A1B0153300054E370 /* World_1_Level_2_Text.png in Resources */,
 				DCFD74C51B0153300054E370 /* Tentacle_11.png in Resources */,
@@ -2536,6 +2578,7 @@
 				EEB809201B13981D00A221E2 /* Sun_Hat_Text.png in Resources */,
 				DCFD74661B0153300054E370 /* Crab_Boss_2.png in Resources */,
 				DC9435D21B3775AF00231FE9 /* Level_Music2.mp3 in Resources */,
+				DCE975151B43842100700EBA /* Phase_30_Text.png in Resources */,
 				DCFD74C11B0153300054E370 /* Store_Shelf_1.png in Resources */,
 				DCF23E1D1B0BABA100484040 /* Inky_Ring_2.png in Resources */,
 				DCFD747A1B0153300054E370 /* Ink_Flood_2.png in Resources */,
@@ -2576,6 +2619,7 @@
 				DC5925571B26436800244578 /* Whale_Flesh_Ring_Text.png in Resources */,
 				DC5925AE1B26BED000244578 /* Phase_3_Text.png in Resources */,
 				DCFD74521B0153300054E370 /* Booty_1.png in Resources */,
+				DCE975141B43842100700EBA /* Phase_29_Text.png in Resources */,
 				DCE585BB1B36978800F58449 /* Quick_Tutorial_Screen_1.png in Resources */,
 				EEB8090A1B13981D00A221E2 /* Crab_Claw_Cap_Text.png in Resources */,
 				DC9435A81B36B06500231FE9 /* Kraken_Booty_Sound_1.mp3 in Resources */,
