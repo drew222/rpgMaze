@@ -61,6 +61,7 @@ let buffSound = SKAction.playSoundFileNamed("Buff_Sound.mp3", waitForCompletion:
 let speedSound = SKAction.playSoundFileNamed("Speed_Buff_Sound.mp3", waitForCompletion: false)
 let regenSound = SKAction.playSoundFileNamed("Regen_Sound.mp3", waitForCompletion: false)
 let url = NSBundle.mainBundle().URLForResource("Gauntlet_Music", withExtension: "mp3")
+/*
 let gauntletMusic = AVAudioPlayer(contentsOfURL: url, error: nil)
 let url2 = NSBundle.mainBundle().URLForResource("Rap_Funk_Music", withExtension: "mp3")
 let happyMusic = AVAudioPlayer(contentsOfURL: url2, error: nil)
@@ -69,7 +70,9 @@ let beachMusic = AVAudioPlayer(contentsOfURL: url3, error: nil)
 let url4 = NSBundle.mainBundle().URLForResource("Intro_Music", withExtension: "mp3")
 let introMusic = AVAudioPlayer(contentsOfURL: url4, error: nil)
 let url5 = NSBundle.mainBundle().URLForResource("Level_Music2", withExtension: "mp3")
-let levelMusic = AVAudioPlayer(contentsOfURL: url5, error: nil)
+var levelMusic = AVAudioPlayer();
+levelMusic = AVAudioPlayer(contentsOfURL: url5!, fileTypeHint: nil)
+*/
 let bootySound = SKAction.playSoundFileNamed("Kraken_Booty_Sound_1.mp3", waitForCompletion: false)
 
 
@@ -101,7 +104,7 @@ func randomWithMin(min: Int, max: Int) -> NSInteger{
 }
 
 func resizeLabel(node: SKLabelNode){
-    let numChars = count(node.text)
+    let numChars = node.text!.characters.count
     node.fontSize = 25 - (CGFloat(numChars) / 6)
 }
 
@@ -115,7 +118,7 @@ func distanceBetween(point1: CGPoint, point2: CGPoint)-> CGFloat{
 func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     if level == "level1"{
         //75% 1 booty, 25% rusty copper ring
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Rusty_Copper_Ring_1")
             item.position = position
@@ -134,7 +137,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "level2"{
         //50% 1 booty, 50% rusty copper ring
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 50{
             let item = ItemClass.itemInSpace("Rusty_Copper_Ring_1")
             item.position = position
@@ -152,7 +155,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level3"{
         //75% booty, 25% mossy copper ring
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max:100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Mossy_Copper_Ring_1")
             item.position = position
@@ -171,7 +174,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "level4"{
         //25% mossy copper ring, 50% 2 booty, 15% crab claw cap, 10% beachball fragment
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum < 75{
             let item = ItemClass.itemInSpace("Mossy_Copper_Ring_1")
             item.position = position
@@ -200,7 +203,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level5"{
         //50% 2 booty, 25% mossy copper ring, 25% Crab claw cap
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Mossy_Copper_Ring_1")
             item.position = position
@@ -223,7 +226,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level6"{
         //25% crab claw cap, 50% mossy copper ring, 25% 2 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Crab_Claw_Cap_1")
             item.position = position
@@ -246,7 +249,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level7"{
         //25% copper ring, 65% 3 booty, 10% pearl necklace
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Copper_Ring_1")
             item.position = position
@@ -269,7 +272,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level8"{
         //25% copper ring, 25% 3 booty, 50% barnacles
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Copper_Ring_1")
             item.position = position
@@ -292,7 +295,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level9"{
         //10% beach ball fragment, 25% crab claw cap, 65% 3 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max:100)
         if myNum > 90{
             let item = ItemClass.itemInSpace("Beach_Ball_Fragment_1")
             item.position = position
@@ -315,7 +318,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level10"{
         //10% pearl necklace, 50% copper ring, 40% 3 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 90{
             let item = ItemClass.itemInSpace("Pearl_Necklace_1")
             item.position = position
@@ -338,7 +341,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level11"{
         //25% rusty silver ring, 15% beach ball fragment, 60% 4 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max:100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Rusty_Silver_Ring_1")
             item.position = position
@@ -361,7 +364,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level12"{
         //10% whale flesh ring, 25% rusty silver ring, 15% 4 booty, 50% barnacles
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 90{
             let item = ItemClass.itemInSpace("Whale_Flesh_Ring_1")
             item.position = position
@@ -389,7 +392,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level13"{
         //50% coral crown, 25% 5 booty, 25% crab claw cap
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 50{
             let item = ItemClass.itemInSpace("Coral_Crown_1")
             item.position = position
@@ -412,7 +415,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level14"{
         // 25% 5 booty, 25% pearl necklace, 50% coral crown
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Pearl_Necklace_1")
             item.position = position
@@ -435,7 +438,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level15"{
         //25% mossy silver ring, 25% whale flesh ring, 50% coral crown
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if (myNum > 50){
             let item = ItemClass.itemInSpace("Coral_Crown_1")
             item.position = position
@@ -454,7 +457,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level16"{
         //50% 5 booty, 25% mossy silver ring,  25% whale flesh
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Mossy_Silver_Ring_1")
             item.position = position
@@ -477,7 +480,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level17"{
         //75% 1 booty, 25% mossy silver ring
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Mossy_Silver_Ring_1")
             item.position = position
@@ -495,7 +498,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level18"{
         //50% 6 booty, 25% silver ring, 25% pearl necklace
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Silver_Ring_1")
             item.position = position
@@ -518,7 +521,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level19"{
         //100% king kraken tentacle ring
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > -1{
             let item = ItemClass.itemInSpace("King_Kraken_Tentacle_Ring_1")
             item.position = position
@@ -526,7 +529,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             scene.addChild(item)
         }     }else if level == "level20"{
         //35% 7 booty, 25% silver ring, 40% seashell charm bracelet
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Silver_Ring_1")
             item.position = position
@@ -549,7 +552,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level21"{
         //50% 1 booty, 25 % king kraken tentacle, 25% rusty gold ring
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
             item.position = position
@@ -573,7 +576,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level22"{
         //30% 9 booty, 50% rusty gold ring, 10% afro seaweed, 10% seaweed mustache
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 50{
             let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
             item.position = position
@@ -601,7 +604,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level23"{
         //10% afroseaweed, 10% seaweed mustache, 30% mossy gold ring, 25% barnacles, 25% 10 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 90{
             let item = ItemClass.itemInSpace("Afro_Seaweed_1")
             item.position = position
@@ -634,7 +637,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level24"{
         //50% 10 booty, 25% mossy gold ring, 25% crab claw cap
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("Mossy_Gold_Ring_1")
             item.position = position
@@ -657,7 +660,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level25"{
         //20% 10 booty, 50% mossy gold ring, 10% inky ring, 20% king kraken tentacle ring
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 50{
             let item = ItemClass.itemInSpace("Mossy_Gold_Ring_1")
             item.position = position
@@ -685,7 +688,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level26"{
         //40% 10 booty, 15% seashell charm bracelet, 15% seashell necklace, 15% pearlsnap ring, 15% gold ring
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 85{
             let item = ItemClass.itemInSpace("Seashell_Charm_Bracelet_1")
             item.position = position
@@ -718,7 +721,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level27"{
         //50% 10 booty, 25% inky ring, 25% king kraken tentacle ring
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 75{
             let item = ItemClass.itemInSpace("King_Kraken_Tentacle_Ring_1")
             item.position = position
@@ -741,7 +744,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level28"{
         //20% afro seaweed, 20% seaweed mustache, 20% seashell charm bracelet, 20% seashell necklace, 20% pearl snap ring
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 80{
             let item = ItemClass.itemInSpace("Afro_Seaweed_1")
             item.position = position
@@ -770,7 +773,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     }else if level == "level29"{
         //20% gold ring, 20% afro seaweed, 20% seaweed mustache, 20% seashell charm bracelet, 20% seashell necklace
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         if myNum > 80{
             let item = ItemClass.itemInSpace("Afro_Seaweed_1")
             item.position = position
@@ -801,7 +804,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     //GAUNTLET PHASES
     }else if level == "phase1"{
         //10% selected store item, 90% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 98{
@@ -844,7 +847,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         
     } else if level == "phase2"{
         //20% selected store item, 80% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 96{
@@ -887,7 +890,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         
     } else if level == "phase3"{
         //30% selected store item, 70% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 94{
@@ -930,7 +933,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         
     } else if level == "phase4"{
         //40% selected store item, 60% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 92{
@@ -972,7 +975,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     } else if level == "phase5"{
         //50% selected store item, 50% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 90{
@@ -1014,7 +1017,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     } else if level == "phase6"{
         //60% selected store item, 40% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0,max:100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 88{
@@ -1056,7 +1059,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     } else if level == "phase7"{
         //70% selected store item, 30% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 86{
@@ -1098,7 +1101,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         }
     } else if level == "phase8"{
         //80% selected store item, 20% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 84{
@@ -1141,7 +1144,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         
     } else if level == "phase9"{
         //90% selected store item, 10% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 82{
@@ -1184,7 +1187,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
         
     } else if level == "phase10"{
         //100% selected store item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 80{
@@ -1218,7 +1221,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     
     else if level == "phase11"{
         //10% T1 item, 45% selected store item, 45% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 91{
@@ -1279,7 +1282,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase12"{
         //20% T1 item, 40% selected store item, 40% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 92{
@@ -1340,7 +1343,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase13"{
         //30% T1 item, 35% selected store item, 35% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 93{
@@ -1401,7 +1404,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase14"{
         //40% T1 item, 30% selected store item, 30% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 94{
@@ -1462,7 +1465,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase15"{
         //50% T1 item, 25% selected store item, 25% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 95{
@@ -1523,7 +1526,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase16"{
         //60% T1 item, 20% selected store item, 20% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 96{
@@ -1584,7 +1587,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase17"{
         //70% T1 item, 15% selected store item, 15% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 97{
@@ -1645,7 +1648,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase18"{
         //80% T1 item, 10% selected store item, 10% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 98{
@@ -1706,7 +1709,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase19"{
         //90% T1 item, 5% selected store item, 5% 30 booty
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 99{
@@ -1767,7 +1770,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase20"{
         //100% T1 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
             
             //*****TIER 1 ITEMS***************************************************************
         if (myNum > 67) {
@@ -1790,7 +1793,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase21"{
         //10% T2 item, 90% T1 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 97) {
@@ -1830,7 +1833,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase22"{
         //20% T2 item, 80% T1 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 93) {
@@ -1870,7 +1873,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase23"{
         //30% T2 item, 70% T1 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 90) {
@@ -1910,7 +1913,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase24"{
         //40% T2 item, 60% T1 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 87) {
@@ -1950,7 +1953,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase25"{
         //50% T2 item, 50% T1 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 83) {
@@ -1990,7 +1993,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase26"{
         //60% T2 item, 40% T1 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 80) {
@@ -2030,7 +2033,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase27"{
         //70% T2 item, 30% T1 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 77) {
@@ -2070,7 +2073,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase28"{
         //80% T2 item, 20% T1 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 73) {
@@ -2110,7 +2113,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase29"{
         //90% T2 item, 10% T1 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 70) {
@@ -2150,7 +2153,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase30"{
         //100% T2 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 67) {
@@ -2176,7 +2179,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     
     else if level == "phase31"{
         //10% T3 item, 90% T2 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 97) {
@@ -2216,7 +2219,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase32"{
         //20% T3 item, 80% T2 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 93) {
@@ -2256,7 +2259,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase33"{
         //30% T3 item, 70% T2 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 90) {
@@ -2296,7 +2299,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase34"{
         //40% T3 item, 60% T2 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 87) {
@@ -2336,7 +2339,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase35"{
         //50% T3 item, 50% T2 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 83) {
@@ -2376,7 +2379,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase36"{
         //60% T3 item, 40% T2 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 80) {
@@ -2416,7 +2419,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase37"{
         //70% T3 item, 30% T2 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 77) {
@@ -2456,7 +2459,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase38"{
         //80% T3 item, 20% T2 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 73) {
@@ -2496,7 +2499,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase39"{
         //90% T3 item, 10% T2 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 70) {
@@ -2536,7 +2539,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase40"{
         //100% T3 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 67) {
@@ -2558,7 +2561,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase41"{
         //10% T4 item, 90% T3 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 97) {
@@ -2598,7 +2601,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase42"{
         //20% T4 item, 80% T3 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 93) {
@@ -2638,7 +2641,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase43"{
         //30% T4 item, 70% T3 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 90) {
@@ -2678,7 +2681,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase44"{
         //40% T4 item, 60% T3 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 87) {
@@ -2718,7 +2721,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase45"{
         //50% T4 item, 50% T3 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 83) {
@@ -2758,7 +2761,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase46"{
         //60% T4 item, 40% T3 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 80) {
@@ -2798,7 +2801,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase47"{
         //70% T4 item, 30% T3 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 77) {
@@ -2838,7 +2841,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase48"{
         //80% T4 item, 20% T3 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 73) {
@@ -2878,7 +2881,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase49"{
         //90% T4 item, 10% T3 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin (0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 70) {
@@ -2918,7 +2921,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase50"{
         //100% T4 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 67) {
@@ -2940,7 +2943,7 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase51"{
         //100% T4 item
-        let myNum = randomWithMin(0, 100)
+        let myNum = randomWithMin(0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 67) {
@@ -2987,7 +2990,7 @@ func generatePointsOnLine(point1: CGPoint, point2: CGPoint) -> [CGPoint]{
         xPoints.append(point1.x + CGFloat(CGFloat(k) * (xDistance / CGFloat(numberOfPoints))))
     }
     //use y=mx+b, find x and b
-    let myLine = getLine(point1, point2)
+    let myLine = getLine(point1, point2: point2)
     let m = myLine.0
     let b = myLine.1
     //loop through x values, appending final points
@@ -3002,7 +3005,7 @@ func generatePointsOnLine(point1: CGPoint, point2: CGPoint) -> [CGPoint]{
 
 //returns (entryPoint, exitPoint)
 func entryExitPoints(node: SKSpriteNode, startSpot: CGPoint, endSpot: CGPoint)->(CGPoint, CGPoint){
-    let myLine = getLine(startSpot, endSpot)
+    let myLine = getLine(startSpot, point2: endSpot)
     let m = myLine.0
     let b = myLine.1
     let botY = node.frame.minY
@@ -3038,7 +3041,7 @@ func entryExitPoints(node: SKSpriteNode, startSpot: CGPoint, endSpot: CGPoint)->
         //println("Entry/Exit Points function fucked up!")
     }
     //points contains the entry.exit points, return in first, second order
-    if (distanceBetween(points[0], startSpot) >= distanceBetween(points[1], startSpot)){
+    if (distanceBetween(points[0], point2: startSpot) >= distanceBetween(points[1], point2: startSpot)){
         return (points[1], points[0])
     }else{
         return (points[0], points[1])
@@ -3047,7 +3050,7 @@ func entryExitPoints(node: SKSpriteNode, startSpot: CGPoint, endSpot: CGPoint)->
 
 //get infrontOf position of an SKSpritenode
 func infrontOf(theNode: SKSpriteNode, startPos: CGPoint)->CGPoint{
-    let entrySpots = entryExitPoints(theNode, startPos, theNode.position)
+    let entrySpots = entryExitPoints(theNode, startSpot: startPos, endSpot: theNode.position)
     return entrySpots.0
 }
 
@@ -3157,17 +3160,17 @@ func getStillTexture(myNode: SKSpriteNode)->SKTexture{
 }
 
 func moveTo(nodeToMove: SKSpriteNode, startPosition: CGPoint, position: CGPoint)-> SKAction{
-    if distanceBetween(startPosition, position) < 5 {
+    if distanceBetween(startPosition, point2: position) < 5 {
         return SKAction()
     }
-    let angle = angleFromPoints(startPosition, position)
+    let angle = angleFromPoints(startPosition, point2: position)
     var amountToTurn = CGFloat(angle) - getNodeAngle(nodeToMove)
     if (amountToTurn > pi){
         amountToTurn = amountToTurn - (2 * pi)
     }else if(amountToTurn * -1 > pi){
         amountToTurn = amountToTurn + (2 * pi)
     }
-    setAngle(nodeToMove, angle)
+    setAngle(nodeToMove, angle: angle)
     let rotateAction = SKAction.rotateByAngle(CGFloat(amountToTurn), duration: 0.2)
     //start new running animation if not already running
     if (nodeToMove.actionForKey("repeatAction") == nil){
@@ -3179,7 +3182,7 @@ func moveTo(nodeToMove: SKSpriteNode, startPosition: CGPoint, position: CGPoint)
     //do math for time
     let xDistance = position.x - startPosition.x
     let yDistance = position.y - startPosition.y
-    var distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
+    let distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
     let time = NSTimeInterval(distance / CGFloat(heroSpeed))
     return SKAction.moveTo(position, duration: time)
 }
@@ -3195,14 +3198,14 @@ func getSimpleMove(nodeToMove: SKSpriteNode, position: CGPoint)->SKAction{
             nodeToMove.texture = getStillTexture(nodeToMove)
             (nodeToMove as! HeroClass).isMoving = false
     })
-    let moveAction = moveTo(nodeToMove, nodeToMove.position, position)
+    let moveAction = moveTo(nodeToMove, startPosition: nodeToMove.position, position: position)
     let sequence = SKAction.sequence([moveAction, completionBlock])
     return sequence
 }
 
 //return action sequence for attackMove
 func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAttacking: Bool)-> SKAction{
-    let spotInfront = infrontOf(nodeToAttack, nodeToMove.position)
+    let spotInfront = infrontOf(nodeToAttack, startPos: nodeToMove.position)
     let completionBlock = SKAction.runBlock(
         {nodeToMove.removeActionForKey("repeatAction")
             nodeToMove.texture = getStillTexture(nodeToMove)
@@ -3224,7 +3227,7 @@ func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAtta
             (nodeToMove as! HeroClass).isMoving = false
     })
     var sequence: SKAction?
-    let moveAction = moveTo(nodeToMove, nodeToMove.position, spotInfront)
+    let moveAction = moveTo(nodeToMove, startPosition: nodeToMove.position, position: spotInfront)
     if (wasAttacking && nodeToAttack.name != "item" && nodeToAttack.name != "gold" && nodeToAttack.name != "chest"){
         sequence = SKAction.sequence([completionBlock])
     }else{
@@ -3239,15 +3242,15 @@ func getAroundMove(nodeToMove: SKSpriteNode, clickPoint: CGPoint, nodeToGoAround
         let myNode = nodeToMove as! HeroClass
         myNode.isAttacking = false
     }
-    let cornerSide = getGoAroundCorner(nodeToGoAround, nodeToMove.position, clickPoint)
-    let cornerPointPushed = pushPointOut(nodeToGoAround, cornerSide.0, nodeToMove)
+    let cornerSide = getGoAroundCorner(nodeToGoAround, startPoint: nodeToMove.position, clickPoint: clickPoint)
+    let cornerPointPushed = pushPointOut(nodeToGoAround, corner: cornerSide.0, selfNode: nodeToMove)
     var sequence: SKAction?
     
     // sequence needs to be blocks of codes to 
     if (cornerSide.1){
         //need to move to another corner
-        let firstCornerMove = moveTo(nodeToMove, nodeToMove.position, cornerPointPushed)
-        let secondCornerPushed = pushPointOut(nodeToGoAround, cornerSide.2, nodeToMove)
+        let firstCornerMove = moveTo(nodeToMove, startPosition: nodeToMove.position, position: cornerPointPushed)
+        let secondCornerPushed = pushPointOut(nodeToGoAround, corner: cornerSide.2, selfNode: nodeToMove)
         //let secondCornerMove = moveTo(nodeToMove, cornerSide.0, secondCornerPushed)
         //let moveToPoint = moveTo(nodeToMove,cornerSide.2, clickPoint)
         let completionBlock2 = SKAction.runBlock(
@@ -3259,14 +3262,14 @@ func getAroundMove(nodeToMove: SKSpriteNode, clickPoint: CGPoint, nodeToGoAround
 
         })
         let completionBlock1 = SKAction.runBlock(
-            {let runAction = moveTo(nodeToMove, cornerSide.0, secondCornerPushed)
+            {let runAction = moveTo(nodeToMove, startPosition: cornerSide.0, position: secondCornerPushed)
                 let innerComplete = SKAction.runBlock({nodeToMove.runAction(completionBlock2)})
                 nodeToMove.runAction(SKAction.sequence([runAction, innerComplete]), withKey: "runAction")
                 (nodeToMove as! HeroClass).isMoving = false
         })
         sequence = SKAction.sequence([firstCornerMove, completionBlock1])
     }else{
-        let firstCornerMove = moveTo(nodeToMove, nodeToMove.position, cornerPointPushed)
+        let firstCornerMove = moveTo(nodeToMove, startPosition: nodeToMove.position, position: cornerPointPushed)
         //let moveToPoint = moveTo(nodeToMove, cornerSide.0, clickPoint)
         let completionBlock = SKAction.runBlock(
             {(nodeToMove as! HeroClass).moveHelper(clickPoint)
@@ -3334,7 +3337,7 @@ func spotToStop(node: SKSpriteNode, spot: CGPoint) -> CGPoint {
 
 //takes in startPoint = heroPosition, clickPoint = touchSpot, entry/exit of enemyNodes frame. Return 1 or 2 corners to run to.
 func getGoAroundCorner(enemyNode: SKSpriteNode, startPoint: CGPoint, clickPoint: CGPoint)-> (CGPoint, Bool, CGPoint){
-    let entryExit = entryExitPoints(enemyNode, startPoint, clickPoint)
+    let entryExit = entryExitPoints(enemyNode, startSpot: startPoint, endSpot: clickPoint)
     let upperLeft = CGPointMake(enemyNode.frame.minX, enemyNode.frame.maxY)
     let upperRight = CGPointMake(enemyNode.frame.maxX, enemyNode.frame.maxY)
     let lowerLeft = CGPointMake(enemyNode.frame.minX, enemyNode.frame.minY)
@@ -3350,10 +3353,10 @@ func getGoAroundCorner(enemyNode: SKSpriteNode, startPoint: CGPoint, clickPoint:
         }else{
             //its coming out of the top
             //compare going left or right
-            let firstLeft = distanceBetween(startPoint, lowerLeft)
-            let secondLeft = distanceBetween(upperLeft, clickPoint)
-            let firstRight = distanceBetween(startPoint, lowerRight)
-            let secondRight = distanceBetween(upperRight, clickPoint)
+            let firstLeft = distanceBetween(startPoint, point2: lowerLeft)
+            let secondLeft = distanceBetween(upperLeft, point2: clickPoint)
+            let firstRight = distanceBetween(startPoint, point2: lowerRight)
+            let secondRight = distanceBetween(upperRight, point2: clickPoint)
             //println("left \(firstLeft + secondLeft) right \(firstRight + secondRight)")
             if (firstLeft + secondLeft > firstRight + secondRight){
                 return (lowerRight, true, upperRight)
@@ -3374,10 +3377,10 @@ func getGoAroundCorner(enemyNode: SKSpriteNode, startPoint: CGPoint, clickPoint:
         }else{
             //its coming out of the right
             //compare going top or bot
-            let firstLeft = distanceBetween(startPoint, upperLeft)
-            let secondLeft = distanceBetween(upperRight, clickPoint)
-            let firstRight = distanceBetween(startPoint, lowerLeft)
-            let secondRight = distanceBetween(clickPoint, lowerRight)
+            let firstLeft = distanceBetween(startPoint, point2: upperLeft)
+            let secondLeft = distanceBetween(upperRight, point2: clickPoint)
+            let firstRight = distanceBetween(startPoint, point2: lowerLeft)
+            let secondRight = distanceBetween(clickPoint, point2: lowerRight)
             //println("upperLeft: \(upperLeft)")
             //println("lowerLeft: \(lowerLeft)")
             //println("start: \(startPoint)")
@@ -3401,10 +3404,10 @@ func getGoAroundCorner(enemyNode: SKSpriteNode, startPoint: CGPoint, clickPoint:
         }else{
             //its coming out of the left
             //compare going top or bot
-            let firstLeft = distanceBetween(startPoint, lowerRight)
-            let secondLeft = distanceBetween(lowerLeft, clickPoint)
-            let firstRight = distanceBetween(startPoint, upperRight)
-            let secondRight = distanceBetween(upperLeft, clickPoint)
+            let firstLeft = distanceBetween(startPoint, point2: lowerRight)
+            let secondLeft = distanceBetween(lowerLeft, point2: clickPoint)
+            let firstRight = distanceBetween(startPoint, point2: upperRight)
+            let secondRight = distanceBetween(upperLeft, point2: clickPoint)
             //println("left \(firstLeft + secondLeft) right \(firstRight + secondRight)")
             if (firstLeft + secondLeft > firstRight + secondRight){
                 return (upperRight, true, upperLeft)
@@ -3423,10 +3426,10 @@ func getGoAroundCorner(enemyNode: SKSpriteNode, startPoint: CGPoint, clickPoint:
         }else{
             //its coming out of the top
             //compare going left or right
-            let firstLeft = distanceBetween(startPoint, upperRight)
-            let secondLeft = distanceBetween(lowerRight, clickPoint)
-            let firstRight = distanceBetween(startPoint, upperLeft)
-            let secondRight = distanceBetween(lowerLeft, clickPoint)
+            let firstLeft = distanceBetween(startPoint, point2: upperRight)
+            let secondLeft = distanceBetween(lowerRight, point2: clickPoint)
+            let firstRight = distanceBetween(startPoint, point2: upperLeft)
+            let secondRight = distanceBetween(lowerLeft, point2: clickPoint)
             //println("left \(firstLeft + secondLeft) right \(firstRight + secondRight)")
             if (firstLeft + secondLeft > firstRight + secondRight){
                 return (upperLeft, true, lowerLeft)

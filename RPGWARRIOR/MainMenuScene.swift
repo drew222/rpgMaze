@@ -78,10 +78,11 @@ class MainMenuScene: SKScene {
         //highestLevel = 30
         /* Setup your scene here */
         //MUSIC
-        if !happyMusic.playing && soundOn{
-            happyMusic.numberOfLoops = -1
-            happyMusic.prepareToPlay()
-            happyMusic.play()
+        let gameController = self.view!.window!.rootViewController as! GameViewController
+        if !gameController.happyMusic!.playing && soundOn{
+            gameController.happyMusic!.numberOfLoops = -1
+            gameController.happyMusic!.prepareToPlay()
+            gameController.happyMusic!.play()
         }
         
         if highestLevel  == 29 && beatGame == false {
@@ -954,8 +955,6 @@ class MainMenuScene: SKScene {
                 }
             }
             
-        println("highestLevel = \(highestLevel)")
-        println("highestTime = \(highestTime)")
         //ADD HIGHEST LEVEL - 30 IF IN GAUNTLET AND TIMER
         if let highLevel = self.childNodeWithName("highestLevel") as? SKSpriteNode{
             highLevel.removeFromParent()
@@ -1043,11 +1042,12 @@ class MainMenuScene: SKScene {
         }
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let skTransition = SKTransition.fadeWithDuration(1.0)
+        let gameController = self.view!.window!.rootViewController as! GameViewController
         for touch in touches{
                 
-            if world1level1node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            if world1level1node!.containsPoint((touch).locationInNode(self)){
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1055,11 +1055,12 @@ class MainMenuScene: SKScene {
                     self.childNodeWithName("text50")?.removeFromParent()
                     clickedGauntlet = false
                 }
+                
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level1scene = World1Level1(size: self.frame.size)
                 world1level1scene.userData = NSMutableDictionary()
                 world1level1scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1068,7 +1069,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level1scene, transition: skTransition)
                 
-            }else if world1level2node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 1{
+            }else if world1level2node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 1{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1078,9 +1079,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level2scene = World1Level2(size: self.frame.size)
                 world1level2scene.userData = NSMutableDictionary()
                 world1level2scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1089,7 +1090,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level2scene, transition: skTransition)
                 
-            }else if world1level3node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 2{
+            }else if world1level3node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 2{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1099,9 +1100,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level3scene = World1Level3(size: self.frame.size)
                 world1level3scene.userData = NSMutableDictionary()
                 world1level3scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1110,7 +1111,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level3scene, transition: skTransition)
                 
-            }else if world1level4node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 3{
+            }else if world1level4node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 3{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1120,9 +1121,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level4scene = World1Level4(size: self.frame.size)
                 world1level4scene.userData = NSMutableDictionary()
                 world1level4scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1131,7 +1132,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level4scene, transition: skTransition)
                 
-            }else if world1level5node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 4{
+            }else if world1level5node!.containsPoint((touch.locationInNode(self))) && highestLevel >= 4{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1141,9 +1142,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level5scene = World1Level5(size: self.frame.size)
                 world1level5scene.userData = NSMutableDictionary()
                 world1level5scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1152,7 +1153,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level5scene, transition: skTransition)
                 
-            }else if world1level6node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 5{
+            }else if world1level6node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 5{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1162,9 +1163,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level6scene = World1Level6(size: self.frame.size)
                 world1level6scene.userData = NSMutableDictionary()
                 world1level6scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1173,7 +1174,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level6scene, transition: skTransition)
                 
-            }else if world1level7node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 6{
+            }else if world1level7node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 6{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1183,9 +1184,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level7scene = World1Level7(size: self.frame.size)
                 world1level7scene.userData = NSMutableDictionary()
                 world1level7scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1194,7 +1195,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level7scene, transition: skTransition)
                 
-            }else if world1level8node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 7{
+            }else if world1level8node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 7{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1204,9 +1205,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level8scene = World1Level8(size: self.frame.size)
                 world1level8scene.userData = NSMutableDictionary()
                 world1level8scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1215,7 +1216,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level8scene, transition: skTransition)
                 
-            }else if world1level9node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 8{
+            }else if world1level9node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 8{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1225,9 +1226,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level9scene = World1Level9(size: self.frame.size)
                 world1level9scene.userData = NSMutableDictionary()
                 world1level9scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1236,7 +1237,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level9scene, transition: skTransition)
                 
-            }else if world1level10node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 9{
+            }else if world1level10node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 9{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1246,9 +1247,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level10scene = World1Level10(size: self.frame.size)
                 world1level10scene.userData = NSMutableDictionary()
                 world1level10scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1257,7 +1258,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level10scene, transition: skTransition)
                 
-            }else if world1level11node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 10{
+            }else if world1level11node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 10{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1267,9 +1268,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level11scene = World1Level11(size: self.frame.size)
                 world1level11scene.userData = NSMutableDictionary()
                 world1level11scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1278,7 +1279,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level11scene, transition: skTransition)
                 
-            }else if world1level12node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 11{
+            }else if world1level12node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 11{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1288,9 +1289,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level12scene = World1Level12(size: self.frame.size)
                 world1level12scene.userData = NSMutableDictionary()
                 world1level12scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1299,7 +1300,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level12scene, transition: skTransition)
                 
-            }else if world1level13node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 12{
+            }else if world1level13node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 12{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1309,9 +1310,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level13scene = World1Level13(size: self.frame.size)
                 world1level13scene.userData = NSMutableDictionary()
                 world1level13scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1320,7 +1321,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level13scene, transition: skTransition)
                 
-            }else if world1level14node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 13{
+            }else if world1level14node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 13{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1330,9 +1331,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level14scene = World1Level14(size: self.frame.size)
                 world1level14scene.userData = NSMutableDictionary()
                 world1level14scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1341,7 +1342,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level14scene, transition: skTransition)
                 
-            }else if world1level15node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 14{
+            }else if world1level15node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 14{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1351,9 +1352,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level15scene = World1Level15(size: self.frame.size)
                 world1level15scene.userData = NSMutableDictionary()
                 world1level15scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1362,7 +1363,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level15scene, transition: skTransition)
                 
-            }else if world1level16node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 15{
+            }else if world1level16node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 15{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1372,9 +1373,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level16scene = World1Level16(size: self.frame.size)
                 world1level16scene.userData = NSMutableDictionary()
                 world1level16scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1383,7 +1384,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level16scene, transition: skTransition)
                 
-            }else if world1level17node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 16{
+            }else if world1level17node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 16{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1393,9 +1394,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level17scene = World1Level17(size: self.frame.size)
                 world1level17scene.userData = NSMutableDictionary()
                 world1level17scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1404,7 +1405,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level17scene, transition: skTransition)
                 
-            }else if world1level18node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 17{
+            }else if world1level18node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 17{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1414,9 +1415,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level18scene = World1Level18(size: self.frame.size)
                 world1level18scene.userData = NSMutableDictionary()
                 world1level18scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1425,7 +1426,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level18scene, transition: skTransition)
                 
-            }else if world1level19node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 18{
+            }else if world1level19node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 18{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1435,9 +1436,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level19scene = World1Level19(size: self.frame.size)
                 world1level19scene.userData = NSMutableDictionary()
                 world1level19scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1446,7 +1447,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level19scene, transition: skTransition)
                 
-            }else if world1level20node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 19{
+            }else if world1level20node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 19{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1456,9 +1457,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level20scene = World1Level20(size: self.frame.size)
                 world1level20scene.userData = NSMutableDictionary()
                 world1level20scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1467,7 +1468,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level20scene, transition: skTransition)
                 
-            }else if world1level21node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 20{
+            }else if world1level21node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 20{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1477,9 +1478,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level21scene = World1Level21(size: self.frame.size)
                 world1level21scene.userData = NSMutableDictionary()
                 world1level21scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1488,7 +1489,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level21scene, transition: skTransition)
                 
-            }else if world1level22node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 21{
+            }else if world1level22node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 21{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1498,9 +1499,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level22scene = World1Level22(size: self.frame.size)
                 world1level22scene.userData = NSMutableDictionary()
                 world1level22scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1509,7 +1510,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level22scene, transition: skTransition)
                 
-            }else if world1level23node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 22{
+            }else if world1level23node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 22{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1519,9 +1520,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level23scene = World1Level23(size: self.frame.size)
                 world1level23scene.userData = NSMutableDictionary()
                 world1level23scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1530,7 +1531,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level23scene, transition: skTransition)
                 
-            }else if world1level24node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 23{
+            }else if world1level24node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 23{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1540,9 +1541,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level24scene = World1Level24(size: self.frame.size)
                 world1level24scene.userData = NSMutableDictionary()
                 world1level24scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1551,7 +1552,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level24scene, transition: skTransition)
                 
-            }else if world1level25node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 24{
+            }else if world1level25node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 24{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1561,9 +1562,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level25scene = World1Level25(size: self.frame.size)
                 world1level25scene.userData = NSMutableDictionary()
                 world1level25scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1572,7 +1573,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level25scene, transition: skTransition)
                 
-            }else if world1level26node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 25{
+            }else if world1level26node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 25{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1582,9 +1583,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level26scene = World1Level26(size: self.frame.size)
                 world1level26scene.userData = NSMutableDictionary()
                 world1level26scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1593,7 +1594,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level26scene, transition: skTransition)
                 
-            }else if world1level27node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 26{
+            }else if world1level27node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 26{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1603,9 +1604,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level27scene = World1Level27(size: self.frame.size)
                 world1level27scene.userData = NSMutableDictionary()
                 world1level27scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1615,7 +1616,7 @@ class MainMenuScene: SKScene {
                 self.view?.presentScene(world1level27scene, transition: skTransition)
 
                 
-            }else if world1level28node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 27{
+            }else if world1level28node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 27{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1625,9 +1626,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level28scene = World1Level28(size: self.frame.size)
                 world1level28scene.userData = NSMutableDictionary()
                 world1level28scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1636,7 +1637,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level28scene, transition: skTransition)
                 
-            }else if world1level29node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 28{
+            }else if world1level29node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 28{
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1646,9 +1647,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    levelMusic.play()
+                    gameController.levelMusic!.play()
                 }
-                happyMusic.stop()
+                gameController.happyMusic!.stop()
                 let world1level29scene = World1Level29(size: self.frame.size)
                 world1level29scene.userData = NSMutableDictionary()
                 world1level29scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1657,7 +1658,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(world1level29scene, transition: skTransition)
                 
-            }else if world1level30node!.containsPoint((touch as! UITouch).locationInNode(self)) && highestLevel >= 29{
+            }else if world1level30node!.containsPoint((touch ).locationInNode(self)) && highestLevel >= 29{
                 if soundOn {
                     self.runAction(clickSound)
                 }
@@ -1735,7 +1736,7 @@ class MainMenuScene: SKScene {
                 (self.userData?.objectForKey("inventory") as Inventory).userData?.setObject(self, forKey: "menu")
                 self.view?.presentScene(self.userData?.objectForKey("inventory") as Inventory, transition: skTransition)*/
                 
-            }else if gauntletButton != nil && gauntletButton!.containsPoint((touch as! UITouch).locationInNode(self)) && clickedGauntlet{
+            }else if gauntletButton != nil && gauntletButton!.containsPoint((touch ).locationInNode(self)) && clickedGauntlet{
                     if (self.userData?.objectForKey("inventory") as! Inventory).gold >= 50 {
                         //remove gauntletNodes
                         if clickedGauntlet {
@@ -1749,7 +1750,7 @@ class MainMenuScene: SKScene {
                         }
                         (self.userData?.objectForKey("inventory") as! Inventory).gold -= 50
                         persistentData.setObject((self.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
-                        happyMusic.stop()
+                        gameController.happyMusic!.stop()
                         let world1level30scene = World1Level30(size: self.frame.size)
                         world1level30scene.userData = NSMutableDictionary()
                         world1level30scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1758,7 +1759,7 @@ class MainMenuScene: SKScene {
                         let skTransition = SKTransition.fadeWithDuration(1.0)
                         self.view?.presentScene(world1level30scene, transition: skTransition)
                 }
-            }else if inventoryNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if inventoryNode!.containsPoint((touch ).locationInNode(self)){
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1772,7 +1773,7 @@ class MainMenuScene: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(self.userData?.objectForKey("inventory") as! Inventory, transition: skTransition)
                 
-            }else if guideNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if guideNode!.containsPoint((touch ).locationInNode(self)){
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1789,7 +1790,7 @@ class MainMenuScene: SKScene {
                 guideScene.userData?.setObject(self, forKey: "menu")
                 self.view?.presentScene(guideScene, transition: skTransition)
                 
-            }else if storeNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if storeNode!.containsPoint((touch ).locationInNode(self)){
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()
@@ -1807,7 +1808,7 @@ class MainMenuScene: SKScene {
                 aStoreScene.userData?.setObject(self.userData?.objectForKey("worldscene") as! ZoneScene, forKey: "worldscene")
                 self.view?.presentScene(aStoreScene, transition: skTransition)
             
-            } else if menu!.containsPoint((touch as! UITouch).locationInNode(self)){
+            } else if menu!.containsPoint((touch ).locationInNode(self)){
                 //remove gauntletNodes
                 if clickedGauntlet {
                     self.childNodeWithName("gauntletButton")?.removeFromParent()

@@ -1124,9 +1124,9 @@ class Inventory: SKScene {
         }
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches{
-            if menu!.containsPoint((touch as! UITouch).locationInNode(self)){
+            if menu!.containsPoint((touch).locationInNode(self)){
                 if soundOn {
                     self.runAction(clickSound)
                 }
@@ -1149,7 +1149,7 @@ class Inventory: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 //self.view?.presentScene(menuScene, transition: skTransition)
                 self.view?.presentScene(self.userData?.objectForKey("worldscene") as! ZoneScene, transition: skTransition)
-            }else if store!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if store!.containsPoint((touch).locationInNode(self)){
                 if soundOn {
                     self.runAction(clickSound)
                 }
@@ -1174,11 +1174,11 @@ class Inventory: SKScene {
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 //self.view?.presentScene(menuScene, transition: skTransition)
                 self.view?.presentScene(storeScene, transition: skTransition)
-            }else if self.childNodeWithName("sellButton") != nil && self.childNodeWithName("sellButton")!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if self.childNodeWithName("sellButton") != nil && self.childNodeWithName("sellButton")!.containsPoint((touch).locationInNode(self)){
                 sellItem()
             }else{
                 for space in itemSpaces{
-                    if space.containsPoint((touch as! UITouch).locationInNode(self)){
+                    if space.containsPoint((touch).locationInNode(self)){
                         if spaceToMove != nil{
                             spaceToMove!.texture = SKTexture(imageNamed: "Inventory_Slot_1")
                         }

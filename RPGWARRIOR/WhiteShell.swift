@@ -57,9 +57,9 @@ class WhiteShell: SKSpriteNode {
         let removeBlock = SKAction.runBlock({
             self.removeFromParent()})
         let damageBlock = SKAction.runBlock({
-            let distanceFromMine = distanceBetween(self.parent!.childNodeWithName("hero")!.position, self.position)
+            _ = distanceBetween(self.parent!.childNodeWithName("hero")!.position, point2: self.position)
             //if distanceFromMine < 25{
-            let theHero = self.parent!.childNodeWithName("hero")! as! HeroClass
+            _ = self.parent!.childNodeWithName("hero")! as! HeroClass
             self.isArmed = false
             //}
         })
@@ -74,15 +74,15 @@ class WhiteShell: SKSpriteNode {
         let frameY: UInt32 = UInt32(self.frame.height)
         let randomPositionX = CGFloat(arc4random_uniform(frameX))
         let randomPositionY = CGFloat(arc4random_uniform(frameY))
-        let randomPos = CGPointMake(randomPositionX, randomPositionY)
-        var distanceA = Float(randomPositionY - self.position.y)
-        var distanceB = Float(randomPositionX - self.position.x)
-        var distanceC = CGFloat((sqrt(powf(distanceA, 2))) + (sqrt(powf(distanceB, 2))))
+        _ = CGPointMake(randomPositionX, randomPositionY)
+        let distanceA = Float(randomPositionY - self.position.y)
+        let distanceB = Float(randomPositionX - self.position.x)
+        let distanceC = CGFloat((sqrt(powf(distanceA, 2))) + (sqrt(powf(distanceB, 2))))
         let time = distanceC / mineSpeed
         
-        let throw = SKAction.moveTo(position, duration: NSTimeInterval(time))
+        let throw1 = SKAction.moveTo(position, duration: NSTimeInterval(time))
         let armMine = SKAction.runBlock({self.isArmed = true})
-        let sequence = SKAction.sequence([throw, armMine])
+        let sequence = SKAction.sequence([throw1, armMine])
         self.runAction(sequence)
         
     }

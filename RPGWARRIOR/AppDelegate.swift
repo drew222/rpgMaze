@@ -30,23 +30,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-        if happyMusic.playing {
-            happyMusic.stop()
+        let gamecontroller = window?.rootViewController as! GameViewController
+        
+        if gamecontroller.happyMusic!.playing {
+            gamecontroller.happyMusic!.stop()
             happyStopped = true
         }
-        if gauntletMusic.playing {
-            gauntletMusic.stop()
+        if gamecontroller.gauntletMusic!.playing {
+            gamecontroller.gauntletMusic!.stop()
             gauntletStopped = true
         }
-        if beachMusic.playing {
-            beachMusic.stop()
+        if gamecontroller.beachMusic!.playing {
+            gamecontroller.beachMusic!.stop()
         }
-        if introMusic.playing {
-            introMusic.stop()
+        if gamecontroller.introMusic!.playing {
+            gamecontroller.introMusic!.stop()
             introStopped = true
         }
-        if levelMusic.playing {
-            levelMusic.stop()
+        if gamecontroller.levelMusic!.playing {
+            gamecontroller.levelMusic!.stop()
         }
     }
 
@@ -61,15 +63,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let view = gamecontroller.view as! SKView
         if (view.scene as? Inventory != nil) || (view.scene as? MainMenuScene != nil) || (view.scene as? IntroScene != nil) || (view.scene as? StoreScene != nil) || (view.scene as? GuideScene != nil) || (view.scene as? TutorialScene != nil) || (view.scene as? ZoneScene != nil) || (view.scene as? ItemDisplayScene != nil){
             if happyStopped {
-                happyMusic.play()
+                gamecontroller.happyMusic!.play()
                 happyStopped = false
             }
             if gauntletStopped {
-                gauntletMusic.play()
+                gamecontroller.gauntletMusic!.play()
                 gauntletStopped = false
             }
             if introStopped {
-                introMusic.play()
+                gamecontroller.introMusic!.play()
                 introStopped = false
             }
             
@@ -80,6 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        /*
         let gamecontroller = window?.rootViewController as! GameViewController
         let view = gamecontroller.view as! SKView
         if (view.scene as? Inventory != nil) || (view.scene as? MainMenuScene != nil) || (view.scene as? IntroScene != nil) || (view.scene as? StoreScene != nil) || (view.scene as? GuideScene != nil) || (view.scene as? TutorialScene != nil) || (view.scene as? ZoneScene != nil) || (view.scene as? ItemDisplayScene != nil){
@@ -99,6 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }else{
             view.presentScene(gamecontroller.titleScene)
         }
+        */
     }
 
     func applicationWillTerminate(application: UIApplication) {

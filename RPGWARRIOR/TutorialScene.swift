@@ -18,8 +18,9 @@ class TutorialScene: SKScene {
     var skipButton: SKSpriteNode?
     
     override func didMoveToView(view: SKView) {
+        let gameController = self.view!.window!.rootViewController as! GameViewController
         if soundOn{
-            happyMusic.stop()
+            gameController.happyMusic!.stop()
         }
         /* Setup your scene here */
         theImage = SKSpriteNode()
@@ -50,9 +51,9 @@ class TutorialScene: SKScene {
         //-1 sets loops to infinity
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches{
-            if skipButton!.containsPoint((touch as! UITouch).locationInNode(self)){
+            if skipButton!.containsPoint((touch ).locationInNode(self)){
                 if soundOn {
                     self.runAction(clickSound)
                 }
@@ -74,7 +75,7 @@ class TutorialScene: SKScene {
                         zoneScene = ZoneScene(size: self.frame.size)
                     }
                     let skTransition = SKTransition.fadeWithDuration(1.0)
-                    self.view?.presentScene(zoneScene, transition: skTransition)
+                    self.view?.presentScene(zoneScene!, transition: skTransition)
                 }else{
                     if soundOn {
                         self.runAction(pageSound)

@@ -8,12 +8,13 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
 
 extension SKNode {
     class func unarchiveFromFile(file : NSString) -> SKNode? {
         if let path = NSBundle.mainBundle().pathForResource(file as String, ofType: "sks") {
-            var sceneData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)!
-            var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
+            let sceneData = try! NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe)
+            let archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
             
             archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
             let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! GameScene
@@ -25,13 +26,39 @@ extension SKNode {
     }
 }
 
-class GameViewController: UIViewController {
 
+class GameViewController: UIViewController {
+    var levelMusic: AVAudioPlayer?
+    var gauntletMusic: AVAudioPlayer?
+    var happyMusic: AVAudioPlayer?
+    var introMusic: AVAudioPlayer?
+    var beachMusic: AVAudioPlayer?
+    
     
     var titleScene: SKScene?
     var inventoryScene: Inventory?
     override func viewDidLoad() {
         super.viewDidLoad()
+        do{
+        let url = NSBundle.mainBundle().URLForResource("Gauntlet_Music", withExtension: "mp3")
+            try gauntletMusic = AVAudioPlayer(contentsOfURL: url!, fileTypeHint: "mp3")}
+        catch{}
+        do{
+        let url2 = NSBundle.mainBundle().URLForResource("Rap_Funk_Music", withExtension: "mp3")
+        try happyMusic = AVAudioPlayer(contentsOfURL: url2!, fileTypeHint: "mp3")
+        }catch{}
+        do{
+        let url3 = NSBundle.mainBundle().URLForResource("Beach_Noise", withExtension: "mp3")
+        try beachMusic = AVAudioPlayer(contentsOfURL: url3!, fileTypeHint: "mp3")
+        }catch{}
+        do{
+        let url4 = NSBundle.mainBundle().URLForResource("Intro_Music", withExtension: "mp3")
+        try introMusic = AVAudioPlayer(contentsOfURL: url4!, fileTypeHint: "mp3")
+        }catch{}
+        do{
+        let url5 = NSBundle.mainBundle().URLForResource("Level_Music2", withExtension: "mp3")
+        try levelMusic = AVAudioPlayer(contentsOfURL: url5!, fileTypeHint: "mp3")
+        }catch{}
         
         //set isPlus if its an iPhone 6+
         if self.view.frame.maxX == 414.0{
@@ -42,8 +69,8 @@ class GameViewController: UIViewController {
         else if self.view.frame.maxY == 568.0{
             is5 = true
         }
-        println("maxX = \(self.view.frame.maxX)")
-        println("maxY = \(self.view.frame.maxY)")
+        print("maxX = \(self.view.frame.maxX)")
+        print("maxY = \(self.view.frame.maxY)")
 
       //  if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             titleScene = IntroScene(size: self.view.frame.size)
@@ -65,13 +92,18 @@ class GameViewController: UIViewController {
     override func shouldAutorotate() -> Bool {
         return true
     }
-
+/*
     override func supportedInterfaceOrientations() -> Int {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
         } else {
             return Int(UIInterfaceOrientationMask.All.rawValue)
         }
+    }
+*/
+    
+    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
+        return [.Portrait, .PortraitUpsideDown]
     }
 
     override func didReceiveMemoryWarning() {

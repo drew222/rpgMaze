@@ -12,7 +12,7 @@ import SpriteKit
 class CoinNode: SKSpriteNode {
     
     class func coinAtPos(position: CGPoint) -> CoinNode{
-        var coin = CoinNode(imageNamed: "Booty_1")
+        let coin = CoinNode(imageNamed: "Booty_1")
         coin.position = position
         coin.name = "coin"
         coin.size = CGSizeMake(30, 30)

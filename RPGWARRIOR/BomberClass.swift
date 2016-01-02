@@ -61,8 +61,8 @@ class BomberClass: SKSpriteNode {
         let lowerYDiff = round(yRange * 0.45)
         let upperXDiff = round(xRange * 1)
         let upperYDiff = round(yRange * 1)
-        let xDiff = CGFloat(randomWithMin(Int(lowerXDiff), Int(upperXDiff)))
-        let yDiff = CGFloat(randomWithMin(Int(lowerYDiff), Int(upperYDiff)))
+        let xDiff = CGFloat(randomWithMin(Int(lowerXDiff), max: Int(upperXDiff)))
+        let yDiff = CGFloat(randomWithMin(Int(lowerYDiff), max: Int(upperYDiff)))
         var xPosition: CGFloat?
         var yPosition: CGFloat?
         if self.position.x > heroPosition.x{
@@ -77,9 +77,9 @@ class BomberClass: SKSpriteNode {
         }
         
         //Gauntlet sends bombs around the hero
-        if let level30 = self.parent as? World1Level30 {
-            xPosition = CGFloat(randomWithMin(Int(heroPosition.x - 150), Int(heroPosition.x + 150)))
-            yPosition = CGFloat(randomWithMin(Int(heroPosition.y - 150), Int(heroPosition.y + 150)))
+        if let _ = self.parent as? World1Level30 {
+            xPosition = CGFloat(randomWithMin(Int(heroPosition.x - 150), max: Int(heroPosition.x + 150)))
+            yPosition = CGFloat(randomWithMin(Int(heroPosition.y - 150), max: Int(heroPosition.y + 150)))
         }
         
         return CGPointMake(xPosition!, yPosition!)
@@ -128,7 +128,7 @@ class BomberClass: SKSpriteNode {
             let repeatAction = SKAction.repeatActionForever(sequenceRepeat)
             self.runAction(repeatAction , withKey: "repeatAction")
             let hero = self.parent!.childNodeWithName("hero") as! HeroClass
-            let shootAtPoint = self.getBombLocation(hero.position)
+            _ = self.getBombLocation(hero.position)
             //shoot the fireball
             let bomb = Bomb.bombAtPosition(self.getBombLocation(hero.position))
             self.parent!.addChild(bomb)
@@ -189,7 +189,7 @@ class BomberClass: SKSpriteNode {
             let repeatAction = SKAction.repeatActionForever(sequenceRepeat)
             self.runAction(repeatAction , withKey: "repeatAction")
             let hero = self.parent!.childNodeWithName("hero") as! HeroClass
-            let shootAtPoint = self.getBombLocation(hero.position)
+            _ = self.getBombLocation(hero.position)
             //shoot the fireball
             let beachBall = BeachBall.bombAtPosition(self.getBombLocation(hero.position))
             self.parent!.addChild(beachBall)
@@ -202,13 +202,14 @@ class BomberClass: SKSpriteNode {
 
     
     func takeDamage(howMuch: CGFloat){
+        let gameController = (self.parent as! SKScene).view!.window!.rootViewController as! GameViewController
         if soundOn {
             (self.parent as! SKScene).runAction(poofSound)
             let waitDuration = SKAction.waitForDuration(1)
-            let runBlock = SKAction.runBlock({beachMusic.play()})
+            let runBlock = SKAction.runBlock({gameController.beachMusic!.play()})
             let sequence = SKAction.sequence([waitDuration, runBlock])
             (self.parent as! SKScene).runAction(sequence)
-            levelMusic.stop()
+            gameController.levelMusic!.stop()
         }
         self.life -= howMuch
         if (self.life <= 0) && !self.isDead{

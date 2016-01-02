@@ -25,7 +25,7 @@ class MudCrab: SKSpriteNode {
         crab.endPosition = endPosition
         crab.setScale(0.07)
         //rotate
-        var angle = angleFromPoints(startPos, endPosition)
+        var angle = angleFromPoints(startPos, point2: endPosition)
         //println(angle)
         //if angle > pi + pi / 2{
         //  angle += pi
@@ -62,7 +62,7 @@ class MudCrab: SKSpriteNode {
         crab.endPosition = endPosition
         crab.setScale(0.07)
         //rotate
-        var angle = angleFromPoints(startPos, endPosition)
+        var angle = angleFromPoints(startPos, point2: endPosition)
         //println(angle)
         //if angle > pi + pi / 2{
         //  angle += pi
@@ -117,7 +117,7 @@ class MudCrab: SKSpriteNode {
         let removeBlock = SKAction.runBlock({//liteAttack!.removeFromParent()
             self.removeFromParent()})
         let damageBlock = SKAction.runBlock({
-            let distanceFromMine = distanceBetween(self.parent!.childNodeWithName("hero")!.position, self.position)
+            _ = distanceBetween(self.parent!.childNodeWithName("hero")!.position, point2: self.position)
             //if distanceFromMine < 25{
             let theHero = self.parent!.childNodeWithName("hero")! as! HeroClass
             //println("distance from bomb = \(distanceFromMine)")
@@ -130,7 +130,7 @@ class MudCrab: SKSpriteNode {
     func getCrabMoveAction() -> SKAction{
         let xDistance = self.endPosition!.x - self.startPosition!.x
         let yDistance = self.endPosition!.y - self.startPosition!.y
-        var distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
+        let distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
         let time = NSTimeInterval(distance / CGFloat(crabSpeed))
         let moveToAction = SKAction.moveTo(self.endPosition!, duration: time)
         let moveFromAction = SKAction.moveTo(self.startPosition!, duration: time)
@@ -142,7 +142,7 @@ class MudCrab: SKSpriteNode {
     func getCrabDashAction() -> SKAction{
         let xDistance = self.endPosition!.x - self.startPosition!.x
         let yDistance = self.endPosition!.y - self.startPosition!.y
-        var distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
+        let distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
         let time = NSTimeInterval(distance / CGFloat(crabSpeed))
         let moveToAction = SKAction.moveTo(self.endPosition!, duration: time)
         let removeAction = SKAction.removeFromParent()

@@ -44,7 +44,7 @@ class Fireball: SKSpriteNode {
     }
     
     func moveTowardsPosition(position: CGPoint){
-        if let world = (self.parent as? World1Level14){
+        if let _ = (self.parent as? World1Level14){
             fireballSpeed = 50
         }
         //println("Click position at (\(position.x), \(position.y))")

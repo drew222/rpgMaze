@@ -86,22 +86,22 @@ class HeroClass: SKSpriteNode {
             }
         }
         //check if there is something hit first, move around this item
-        let manyPoints = generatePointsOnLine(self.position, position)
+        let manyPoints = generatePointsOnLine(self.position, point2: position)
         for onePoint in manyPoints{
             for node in self.parent!.children{
                 if (node is SKSpriteNode && node.containsPoint(onePoint) && !node.containsPoint(position) && node.zPosition > -1) && interactableNode(node as! SKSpriteNode){
-                    self.runAction(getAroundMove(self, position, node as! SKSpriteNode), withKey: "runAction")
+                    self.runAction(getAroundMove(self, clickPoint: position, nodeToGoAround: node as! SKSpriteNode), withKey: "runAction")
                     return
                 }
             }
         }
         //attack move if bool is set
         if clickedNode{
-            self.runAction(getAttackMove(self, theClickedNode!, self.isAttacking), withKey: "runAction")
+            self.runAction(getAttackMove(self, nodeToAttack: theClickedNode!, wasAttacking: self.isAttacking), withKey: "runAction")
             return
         }
         //do simple move
-        self.runAction(getSimpleMove(self, position), withKey: "runAction")
+        self.runAction(getSimpleMove(self, position: position), withKey: "runAction")
     }
 
 
@@ -298,38 +298,39 @@ class HeroClass: SKSpriteNode {
     }
     
     func attack(){
+        let gameController = (self.parent as! SKScene).view!.window!.rootViewController as! GameViewController
         if let theWizard = self.parent!.childNodeWithName("wizard") as? WizardClass{
-            if distanceBetween(self.position, theWizard.position) < 110{
+            if distanceBetween(self.position, point2: theWizard.position) < 110{
                 if soundOn {
                     (self.parent as! SKScene).runAction(poofSound)
                     let waitDuration = SKAction.waitForDuration(1)
-                    let runBlock = SKAction.runBlock({beachMusic.play()})
+                    let runBlock = SKAction.runBlock({gameController.beachMusic!.play()})
                     let sequence = SKAction.sequence([waitDuration, runBlock])
                     (self.parent as! SKScene).runAction(sequence)
-                    levelMusic.stop()
+                    gameController.levelMusic!.stop()
                 }
                 theWizard.takeDamage(1)
             }
             //println("THE WIZARD HAS DIED!")
         }else if let theBomber = self.parent!.childNodeWithName("bomber") as? BomberClass{
-            if distanceBetween(self.position, theBomber.position) < 110{
+            if distanceBetween(self.position, point2: theBomber.position) < 110{
                 theBomber.takeDamage(1)
             }
             //println("THE BOMBER HAS DIED!")
         }else if let mineThrower = self.parent!.childNodeWithName("MineThrower") as? MineThrowerNode{
-            if distanceBetween(self.position, mineThrower.position) < 110{
+            if distanceBetween(self.position, point2: mineThrower.position) < 110{
                 mineThrower.takeDamage(1)
             }
         }else if let whaleBoss = self.parent!.childNodeWithName("whale") as? WhaleBoss{
-            if distanceBetween(self.position, whaleBoss.position) < 110{
+            if distanceBetween(self.position, point2: whaleBoss.position) < 110{
                 whaleBoss.takeDamage(1)
             }
         }else if let krakenBoss = self.parent!.childNodeWithName("kraken") as? KrakenBoss{
-            if distanceBetween(self.position, krakenBoss.position) < 110{
+            if distanceBetween(self.position, point2: krakenBoss.position) < 110{
                 krakenBoss.takeDamage(1)
             }
         }else if let treasureChest = self.parent!.childNodeWithName("chest") as? TreasureChest{
-            if distanceBetween(self.position, treasureChest.position) < 110{
+            if distanceBetween(self.position, point2: treasureChest.position) < 110{
                 treasureChest.openChest()
             }
         

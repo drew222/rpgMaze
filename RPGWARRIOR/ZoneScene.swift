@@ -59,10 +59,11 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
         soundOnButton!.zPosition = 3
         self.addChild(soundOnButton!)
         }
-        if (!happyMusic.playing) && soundOn{
-            happyMusic.numberOfLoops = -1
-            happyMusic.prepareToPlay()
-            happyMusic.play()
+        let gameController = self.view!.window!.rootViewController as! GameViewController
+        if (!gameController.happyMusic!.playing) && soundOn{
+            gameController.happyMusic!.numberOfLoops = -1
+            gameController.happyMusic!.prepareToPlay()
+            gameController.happyMusic!.play()
         }
         
         let background = SKSpriteNode(imageNamed: "Zone_Screen_2")
@@ -363,7 +364,7 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
     
     //Delegate methods for AdBannerView
     func bannerViewDidLoadAd(banner: ADBannerView!) {
-        println("add success")
+        print("add success")
         banner.sizeThatFits(CGSizeMake(self.frame.maxX, 1000))
         banner.frame.origin.y = self.frame.maxY - 50
         if self.view?.scene == self{
@@ -375,15 +376,15 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
     func bannerView(banner: ADBannerView!, didFailToReceiveAdWithError
         error: NSError!) {
             addLoaded = false
-            println("add fail")
+            print("add fail")
             banner.removeFromSuperview() //Remove the banner (No ad)
             moveButtonsDown()
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let skTransition = SKTransition.fadeWithDuration(1.0)
         for touch in touches{
-            if world1Node!.containsPoint((touch as! UITouch).locationInNode(self)){
+            if world1Node!.containsPoint((touch ).locationInNode(self)){
                 //remove add
                 if addLoaded {
                     addLoaded = true
@@ -393,8 +394,8 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
                 if soundOn {
                     self.runAction(clickSound)
                 }
-                self.view?.presentScene(world1Menu, transition: skTransition)
-            }else if inventoryNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+                self.view?.presentScene(world1Menu!, transition: skTransition)
+            }else if inventoryNode!.containsPoint((touch ).locationInNode(self)){
                 if addLoaded {
                     addLoaded = true
                     mediumRectAdView!.delegate = nil
@@ -403,8 +404,8 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
                 if soundOn {
                     self.runAction(clickSound)
                 }
-                self.view?.presentScene(inventory, transition: skTransition)
-            }else if storeNode!.containsPoint((touch as! UITouch).locationInNode(self)){
+                self.view?.presentScene(inventory!, transition: skTransition)
+            }else if storeNode!.containsPoint((touch ).locationInNode(self)){
                 if addLoaded {
                     addLoaded = true
                     mediumRectAdView!.delegate = nil
@@ -419,7 +420,7 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
                 //aStoreScene.userData?.setObject(world1Menu!, forKey: "menu")
                 aStoreScene.userData?.setObject(self, forKey: "worldscene")
                 self.view?.presentScene(aStoreScene, transition: skTransition)
-            }else if tutorialButton!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if tutorialButton!.containsPoint((touch ).locationInNode(self)){
                 if addLoaded {
                     addLoaded = true
                     mediumRectAdView!.delegate = nil
@@ -432,18 +433,19 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
                 aTutorialScene.userData = NSMutableDictionary()
                 aTutorialScene.userData?.setObject(self, forKey: "zoneScene")
                 self.view?.presentScene(aTutorialScene, transition: skTransition)
-            }else if soundOnButton!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if soundOnButton!.containsPoint((touch ).locationInNode(self)){
+                let gameController = self.view!.window!.rootViewController as! GameViewController
                 if soundOn {
                     soundOnButton!.texture = SKTexture(imageNamed: "Sound_Off_Button_1")
                     soundOn = false
                     defaults.setBool(false, forKey: "sound")
-                    happyMusic.stop()
+                    gameController.happyMusic!.stop()
                 }else {
                     self.runAction(clickSound)
                     soundOnButton!.texture = SKTexture(imageNamed: "Sound_On_Button_1")
                     soundOn = true
                     defaults.setBool(true, forKey: "sound")
-                    happyMusic.play()
+                    gameController.happyMusic!.play()
                 }
             }
         }

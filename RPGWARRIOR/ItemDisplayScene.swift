@@ -318,14 +318,15 @@ class ItemDisplayScene: SKScene {
         
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches {
-            if continueButton!.containsPoint((touch as! UITouch).locationInNode(self)){
+            if continueButton!.containsPoint((touch ).locationInNode(self)){
                 if soundOn {
                     self.runAction(clickSound)
                 }
                 if soundOn{
-                    beachMusic.stop()
+                    let gameController = self.view!.window!.rootViewController as! GameViewController
+                    gameController.beachMusic!.stop()
                 }
                 //go to mainmenuscene
                 let skTransition = SKTransition.fadeWithDuration(1.0)
@@ -338,7 +339,7 @@ class ItemDisplayScene: SKScene {
                 var liteAttack: SKEmitterNode?
                 let litePath = NSBundle.mainBundle().pathForResource("TreasureChestSpark", ofType: "sks")
                 liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
-                liteAttack!.position = (touch as! UITouch).locationInNode(self)
+                liteAttack!.position = (touch ).locationInNode(self)
                 liteAttack!.zPosition = 2
                 liteAttack!.particleColorBlueRange = 100
                 liteAttack!.setScale(0.3)

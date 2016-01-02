@@ -426,21 +426,21 @@ class StoreScene: SKScene {
         }
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches{
-            if menu!.containsPoint((touch as! UITouch).locationInNode(self)){
+            if menu!.containsPoint((touch ).locationInNode(self)){
                 if soundOn {
                     self.runAction(clickSound)
                 }
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(self.userData?.objectForKey("worldscene") as! ZoneScene, transition: skTransition)
-            }else if inv!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if inv!.containsPoint((touch ).locationInNode(self)){
                 if soundOn {
                     self.runAction(clickSound)
                 }
                 let skTransition = SKTransition.fadeWithDuration(1.0)
                 self.view?.presentScene(self.userData?.objectForKey("inventory") as! Inventory, transition: skTransition)
-            }else if self.childNodeWithName("buyButton") != nil && self.childNodeWithName("buyButton")!.containsPoint((touch as! UITouch).locationInNode(self)){
+            }else if self.childNodeWithName("buyButton") != nil && self.childNodeWithName("buyButton")!.containsPoint((touch ).locationInNode(self)){
                 buyItem()
                 self.childNodeWithName("buyButton")?.removeFromParent()
                 self.childNodeWithName("life")?.removeFromParent()
@@ -457,7 +457,7 @@ class StoreScene: SKScene {
                 statLabelRegen!.text = ""
                 currentItem?.texture = nil
                 currentItem = nil
-            }else if clickedItem((touch as! UITouch).locationInNode(self)) != ""{
+            }else if clickedItem((touch ).locationInNode(self)) != ""{
                 if soundOn {
                     self.runAction(clickSound)
                 }
@@ -465,8 +465,8 @@ class StoreScene: SKScene {
                     currentItem!.removeFromParent()
                     self.childNodeWithName("slotLabel")?.removeFromParent()
                 }
-                currentItem = ItemClass.itemInSpace(clickedItem((touch as! UITouch).locationInNode(self)))
-                currentItem!.size == CGSizeMake(70, 70)
+                currentItem = ItemClass.itemInSpace(clickedItem((touch ).locationInNode(self)))
+                //currentItem!.size == CGSizeMake(70, 70)
                 currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
                 
                 //ZACH ITEMS HERE@@@

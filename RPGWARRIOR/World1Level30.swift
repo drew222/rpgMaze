@@ -68,10 +68,11 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var persistentData: NSUserDefaults?
     
     override func didMoveToView(view: SKView) {
+        let gameController = self.view!.window!.rootViewController as! GameViewController
         persistentData = NSUserDefaults.standardUserDefaults()
         
         if soundOn{
-            gauntletMusic.play()
+            gameController.gauntletMusic!.play()
         }
         /* Setup your scene here */
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
@@ -173,7 +174,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         let aSequence = SKAction.sequence([afadeOut, aRunBlock])
         checkPoint.runAction(aSequence)
         if theHero!.life > 128 {
-            var phaseText = SKSpriteNode()
+            let phaseText = SKSpriteNode()
             phaseText.size = CGSizeMake(240, 60)
             phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
             phaseText.name = "phaseText"
@@ -187,7 +188,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             self.addChild(checkPoint)
             phase = 40
         }else if theHero!.life > 63{
-            var phaseText = SKSpriteNode()
+            let phaseText = SKSpriteNode()
             phaseText.size = CGSizeMake(240, 60)
             phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
             phaseText.name = "phaseText"
@@ -201,7 +202,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             self.addChild(checkPoint)
             phase = 30
         }else if theHero!.life > 31{
-            var phaseText = SKSpriteNode()
+            let phaseText = SKSpriteNode()
             phaseText.size = CGSizeMake(240, 60)
             phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
             phaseText.name = "phaseText"
@@ -215,7 +216,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             self.addChild(checkPoint)
             phase = 20
         }else if theHero!.life > 15{
-            var phaseText = SKSpriteNode()
+            let phaseText = SKSpriteNode()
             phaseText.size = CGSizeMake(240, 60)
             phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
             phaseText.name = "phaseText"
@@ -367,11 +368,11 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as! HeroClass
         for touch in touches{
-            aHero.moveHelper((touch as! UITouch).locationInNode(self))
+            aHero.moveHelper((touch ).locationInNode(self))
         }
     }
     
@@ -384,7 +385,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     
         
         //Phase Transition
-        var phaseText = SKSpriteNode()
+        let phaseText = SKSpriteNode()
         phaseText.size = CGSizeMake(240, 60)
         phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
         phaseText.name = "phaseText"
@@ -546,7 +547,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 let wait = SKAction.waitForDuration(2)
                 let wait2 = SKAction.waitForDuration(1)
                 let fadeInAction = SKAction.fadeInWithDuration(1)
-                let runBlock2 = SKAction.runBlock({infText.removeFromParent()})
+                _ = SKAction.runBlock({infText.removeFromParent()})
                 let runBlock = SKAction.runBlock({infText.removeFromParent()})
                 let sequence = SKAction.sequence([wait2, fadeInAction, wait, runBlock])
                 infText.runAction(sequence)
@@ -573,7 +574,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         lifeBuff = CGFloat(13)
         speedBuff = CGFloat(40)
         coinAmount = 1
-        let test = false
+        _ = false
         if phase > 10 {
             /*
             if test{
@@ -648,9 +649,9 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     
     func addRandomBuff(){
         //generate random position and type
-        let randX = randomWithMin(40, Int(self.frame.maxX - 40))
-        let randY = randomWithMin(40, Int(self.frame.maxY - 140))
-        let type = randomWithMin(1, 4)
+        let randX = randomWithMin(40, max: Int(self.frame.maxX - 40))
+        let randY = randomWithMin(40, max: Int(self.frame.maxY - 140))
+        let type = randomWithMin(1, max: 4)
         let buff = BuffSpawn.buffAtPos(CGPointMake(CGFloat(randX), CGFloat(randY)), type: type)
         let fadeInAction = SKAction.fadeInWithDuration(1)
         let waitAction = SKAction.waitForDuration(5)
@@ -729,8 +730,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver && !inking  && ((phase % 10 == 3) || (phase % 10 == 4) || (phase % 10 == 5)  || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8)  || (phase % 10 == 9) || (phase % 10 == 0) || (phase == 51)) && !droppedChest{
             self.lastWaterWave = currentTime
-            let yValue = randomWithMin(Int(self.frame.minY + 100), Int(self.frame.maxY - 175))
-            let xBool = randomWithMin(0, 10)
+            let yValue = randomWithMin(Int(self.frame.minY + 100), max: Int(self.frame.maxY - 175))
+            let xBool = randomWithMin(0, max: 10)
             var xValue = self.frame.maxX + 20
             if xBool < 5 {
                 xValue = -20
@@ -740,7 +741,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         
         if (currentTime - lastCrab > crabSpawnSpeed && !self.levelOver && !inking && !droppedChest) {
-            var xMatch = CGFloat(randomWithMin(Int(10), Int(self.frame.maxX - 10)))
+            let xMatch = CGFloat(randomWithMin(Int(10), max: Int(self.frame.maxX - 10)))
             self.addChild(MiniCrab.crabDash(CGPointMake(xMatch, self.frame.maxY + 30), endPosition: CGPointMake(xMatch, self.frame.minY)))
             
             
@@ -748,8 +749,8 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         }
         
         if (currentTime - lastCoin > coinSpawnSpeed && !self.levelOver && !inking && !droppedChest) {
-            let xCoin = CGFloat(randomWithMin(Int(20), Int(self.frame.maxX - 20)))
-            let yCoin = CGFloat(randomWithMin(Int(20), Int(self.frame.maxY - 50)))
+            let xCoin = CGFloat(randomWithMin(Int(20), max: Int(self.frame.maxX - 20)))
+            let yCoin = CGFloat(randomWithMin(Int(20), max: Int(self.frame.maxY - 50)))
             self.addChild(CoinNode.coinAtPos(CGPointMake(xCoin, yCoin)))
             
             
@@ -795,12 +796,13 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         //check for win condition
         if (theHero!.life <= 0){
+            let gameController = self.view!.window!.rootViewController as! GameViewController
             if !splatted {
                 
                 if soundOn{
-                    gauntletMusic.stop()
+                    gameController.gauntletMusic!.stop()
                     let waitDuration = SKAction.waitForDuration(1)
-                    let runBlock = SKAction.runBlock({beachMusic.play()})
+                    let runBlock = SKAction.runBlock({gameController.beachMusic!.play()})
                     let sequence = SKAction.sequence([waitDuration, runBlock])
                     self.runAction(sequence)
                 }
@@ -836,7 +838,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             }
             else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil && !levelOver){
                 if droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
-                    dropLoot("phase\(phase)", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    dropLoot("phase\(phase)", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
                     droppedItem = true
                     itemDropped = self.childNodeWithName("item") as? ItemClass
                 }else if !droppedChest {

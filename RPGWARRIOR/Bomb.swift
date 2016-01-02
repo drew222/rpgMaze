@@ -60,10 +60,10 @@ class Bomb: SKSpriteNode {
         let removeBlock = SKAction.runBlock({liteAttack!.removeFromParent()
                                              self.removeFromParent()})
         let damageBlock = SKAction.runBlock({
-            let distanceFromBomb = distanceBetween(self.parent!.childNodeWithName("hero")!.position, self.position)
+            let distanceFromBomb = distanceBetween(self.parent!.childNodeWithName("hero")!.position, point2: self.position)
             if distanceFromBomb < 55{
             let theHero = self.parent!.childNodeWithName("hero")! as! HeroClass
-                println("distance from bomb = \(distanceFromBomb)")
+                print("distance from bomb = \(distanceFromBomb)")
                 if (theHero.parent as? World1Level22 != nil){
                     theHero.takeDamage(3.0)
                 }else if let gauntletLevel = theHero.parent as? World1Level30 {

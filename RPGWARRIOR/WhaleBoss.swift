@@ -82,8 +82,8 @@ class WhaleBoss: SKSpriteNode {
         let realRepeatAction = SKAction.repeatActionForever(sequence)
         let finalSequence = SKAction.sequence([waveAttackAnimation, realRepeatAction])
         self.runAction(finalSequence)
-        var lengthOfTop = self.parent!.frame.maxY - gapPosition.y + 25
-        var lengthOfBot = gapPosition.y - 25
+        let lengthOfTop = self.parent!.frame.maxY - gapPosition.y + 25
+        let lengthOfBot = gapPosition.y - 25
         var theSpeed = 150
         if (self.parent as? World1Level30 != nil) {
             //let extraSpeed = (self.parent as! World1Level30).phase * 2
