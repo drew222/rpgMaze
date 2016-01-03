@@ -61,11 +61,11 @@ class Level5Scene: SKScene, SKPhysicsContactDelegate  {
         }
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as! HeroClass
         for touch in touches{
-            aHero.moveHelper((touch as! UITouch).locationInNode(self))
+            aHero.moveHelper((touch ).locationInNode(self))
         }
     }
     
@@ -105,7 +105,7 @@ class Level5Scene: SKScene, SKPhysicsContactDelegate  {
         return points
     }
     func placeMine(position: CGPoint) {
-        let theMinethrower = (self.childNodeWithName("MineThrower")) as? MineThrowerNode
+        _ = (self.childNodeWithName("MineThrower")) as? MineThrowerNode
         let mine = MineNode.mineAtPos(position) as MineNode
         mine.isArmed = true
         self.addChild(mine)
@@ -151,7 +151,7 @@ class Level5Scene: SKScene, SKPhysicsContactDelegate  {
             }
             else if (self.childNodeWithName("item") == nil){
                 if bombthrower!.isDead{
-                    dropLoot("level5", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    dropLoot("level5", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }

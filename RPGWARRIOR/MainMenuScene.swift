@@ -78,18 +78,17 @@ class MainMenuScene: SKScene {
         //highestLevel = 30
         /* Setup your scene here */
         //MUSIC
-        let gameController = self.view!.window!.rootViewController as! GameViewController
-        if !gameController.happyMusic!.playing && soundOn{
-            gameController.happyMusic!.numberOfLoops = -1
-            gameController.happyMusic!.prepareToPlay()
-            gameController.happyMusic!.play()
+        if !happyMusic!.playing && soundOn{
+            happyMusic!.numberOfLoops = -1
+            happyMusic!.prepareToPlay()
+            happyMusic!.play()
         }
         
         if highestLevel  == 29 && beatGame == false {
             let gameCompleteNode = SKSpriteNode(imageNamed: "Congrats_1")
             gameCompleteNode.name = "gameComplete"
             gameCompleteNode.size = CGSizeMake(300, 300)
-            gameCompleteNode.zPosition = 3
+            gameCompleteNode.zPosition = 5
             gameCompleteNode.position = CGPointMake(self.frame.midX, self.frame.midY)
             let waitAction = SKAction.waitForDuration(10)
             let runBlock = SKAction.runBlock({gameCompleteNode.removeFromParent()})
@@ -176,6 +175,7 @@ class MainMenuScene: SKScene {
             guideNode = SKSpriteNode(imageNamed: "Guide_Button_1")
             guideNode!.position = CGPointMake(self.frame.maxX - 55, self.frame.minX + 55)
             guideNode!.size = CGSizeMake(100, 100)
+            guideNode!.zPosition = 3
             if is5{
                 guideNode!.position = CGPointMake(self.frame.maxX - 45, self.frame.minX + 45)
                 guideNode!.size = CGSizeMake(80, 80)
@@ -197,6 +197,7 @@ class MainMenuScene: SKScene {
             Node.zPosition = 3
             let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
             levelIcon.setScale(0.25)
+            levelIcon.zPosition = 2
             levelIcon.position = CGPointMake(self.frame.midX + 3, self.frame.midY - 5)
             if isPad{
                 levelIcon.setScale(0.2)
@@ -219,6 +220,7 @@ class MainMenuScene: SKScene {
         if let Node = world1level2node {
             Node.zPosition = 3
             let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
+            levelIcon.zPosition = 2
             levelIcon.setScale(0.25)
             levelIcon.position = CGPointMake(self.frame.midX - 55, self.frame.midY - 25)
             Node.setScale(0.25)
@@ -247,6 +249,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level3node {
                 Node.zPosition = 3
             let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.zPosition = 2
             levelIcon.setScale(0.25)
             levelIcon.position = CGPointMake(self.frame.midX - 75, self.frame.midY - 115)
             Node.setScale(0.25)
@@ -273,6 +276,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level4node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 55)
                 if is5{
@@ -302,6 +306,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level5node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY + 15)
                 Node.setScale(0.25)
@@ -328,6 +333,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level6node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY + 85)
                 Node.setScale(0.25)
@@ -354,6 +360,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level7node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 50, self.frame.midY + 130)
                 Node.setScale(0.25)
@@ -379,6 +386,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level8node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Whale_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 50, self.frame.midY + 135)
                 Node.setScale(0.25)
@@ -404,6 +412,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level9node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 110, self.frame.midY + 85)
                 Node.setScale(0.25)
@@ -429,6 +438,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level10node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 110, self.frame.midY + 15)
                 Node.setScale(0.25)
@@ -454,6 +464,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level11node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 110, self.frame.midY - 55)
                 Node.setScale(0.25)
@@ -479,6 +490,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level12node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Whale_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 75, self.frame.midY - 115)
                 Node.setScale(0.25)
@@ -504,6 +516,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level13node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX, self.frame.midY - 120)
                 Node.setScale(0.25)
@@ -524,6 +537,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level14node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 35, self.frame.midY - 210)
                 Node.setScale(0.25)
@@ -549,6 +563,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level15node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Whale_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 110, self.frame.midY - 210)
                 Node.setScale(0.25)
@@ -574,6 +589,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level16node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Whale_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 150)
                 Node.setScale(0.25)
@@ -599,6 +615,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level17node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Kraken_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 80)
                 Node.setScale(0.25)
@@ -624,6 +641,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level18node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY - 10)
                 Node.setScale(0.25)
@@ -649,6 +667,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level19node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Kraken_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY + 60)
                 Node.setScale(0.25)
@@ -676,6 +695,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level20node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 155, self.frame.midY + 130)
                 Node.setScale(0.25)
@@ -701,6 +721,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level21node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Kraken_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 110, self.frame.midY + 180)
                 Node.setScale(0.25)
@@ -726,6 +747,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level22node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX + 40, self.frame.midY + 180)
                 Node.setScale(0.25)
@@ -751,6 +773,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level23node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Whale_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 40, self.frame.midY + 180)
                 Node.setScale(0.25)
@@ -776,6 +799,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level24node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY + 180)
                 Node.setScale(0.25)
@@ -801,6 +825,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level25node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Kraken_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 155, self.frame.midY + 130)
                 Node.setScale(0.25)
@@ -827,6 +852,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level26node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 155, self.frame.midY + 60)
                 Node.setScale(0.25)
@@ -855,6 +881,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level27node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Kraken_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 155, self.frame.midY - 10)
                 Node.setScale(0.25)
@@ -881,6 +908,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level28node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Clam_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 155, self.frame.midY - 80)
                 Node.setScale(0.25)
@@ -907,6 +935,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level29node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Crab_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.25)
                 levelIcon.position = CGPointMake(self.frame.midX - 155, self.frame.midY - 150)
                 Node.setScale(0.25)
@@ -932,6 +961,7 @@ class MainMenuScene: SKScene {
             if let Node = world1level30node {
                 Node.zPosition = 3
                 let levelIcon = SKSpriteNode(imageNamed: "Gauntlet_Level_Icon_1")
+                levelIcon.zPosition = 2
                 levelIcon.setScale(0.35)
                 levelIcon.position = CGPointMake(self.frame.midX - 110, self.frame.midY - 215)
                 Node.setScale(0.25)
@@ -965,6 +995,7 @@ class MainMenuScene: SKScene {
         if highestLevel >= 30 {
             //highscore text
             let highscoreText = SKSpriteNode(imageNamed: "High_Score_Text")
+            highscoreText.zPosition = 5
             highscoreText.setScale(0.35)
             highscoreText.position = CGPointMake(self.frame.midX - 5, self.frame.midY - 250)
             if is5{
@@ -978,6 +1009,7 @@ class MainMenuScene: SKScene {
             //endless text
             let endlessText = SKSpriteNode(imageNamed: "Endless_Mode_Text_2")
             endlessText.setScale(0.5)
+            endlessText.zPosition = 5
             endlessText.position = CGPointMake(self.frame.midX + 35, self.frame.midY - 283)
             if is5{
                 endlessText.position = CGPointMake(self.frame.midX + 35, self.frame.midY - 243)
@@ -988,6 +1020,7 @@ class MainMenuScene: SKScene {
             
             //highscore frame
             let highscoreFrame = SKSpriteNode(imageNamed: "High_Score_Frame")
+            highscoreFrame.zPosition = 5
             highscoreFrame.size = CGSizeMake(160, 60)
             highscoreFrame.position = CGPointMake(self.frame.midX - 5, self.frame.midY - 290)
             if is5{
@@ -1008,6 +1041,7 @@ class MainMenuScene: SKScene {
             } else if isPad{
                 highestLevelText!.position = CGPointMake(self.frame.midX - 40, self.frame.midY - 210)
             }
+            highestLevelText!.zPosition = 5
             highestLevelText!.name = "highestLevel"
             highestLevelText!.setScale(0.125)
             self.addChild(highestLevelText!)
@@ -1015,6 +1049,7 @@ class MainMenuScene: SKScene {
             if highestLevel == 81 {
                 let highestTimeText = SKLabelNode(fontNamed: "ChalkboardSE-Bold")
                 highestTimeText.text = "\(Int(highestTime))"
+                highestTimeText.zPosition = 5
                 highestTimeText.fontColor = UIColor.blackColor()
                 highestTimeText.position = CGPointMake(self.frame.midX + 40, self.frame.midY - 315)
                 if is5{
@@ -1044,7 +1079,6 @@ class MainMenuScene: SKScene {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let skTransition = SKTransition.fadeWithDuration(1.0)
-        let gameController = self.view!.window!.rootViewController as! GameViewController
         for touch in touches{
                 
             if world1level1node!.containsPoint((touch).locationInNode(self)){
@@ -1058,9 +1092,9 @@ class MainMenuScene: SKScene {
                 
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level1scene = World1Level1(size: self.frame.size)
                 world1level1scene.userData = NSMutableDictionary()
                 world1level1scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1079,9 +1113,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level2scene = World1Level2(size: self.frame.size)
                 world1level2scene.userData = NSMutableDictionary()
                 world1level2scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1100,9 +1134,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level3scene = World1Level3(size: self.frame.size)
                 world1level3scene.userData = NSMutableDictionary()
                 world1level3scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1121,9 +1155,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level4scene = World1Level4(size: self.frame.size)
                 world1level4scene.userData = NSMutableDictionary()
                 world1level4scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1142,9 +1176,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level5scene = World1Level5(size: self.frame.size)
                 world1level5scene.userData = NSMutableDictionary()
                 world1level5scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1163,9 +1197,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level6scene = World1Level6(size: self.frame.size)
                 world1level6scene.userData = NSMutableDictionary()
                 world1level6scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1184,9 +1218,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level7scene = World1Level7(size: self.frame.size)
                 world1level7scene.userData = NSMutableDictionary()
                 world1level7scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1205,9 +1239,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level8scene = World1Level8(size: self.frame.size)
                 world1level8scene.userData = NSMutableDictionary()
                 world1level8scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1226,9 +1260,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level9scene = World1Level9(size: self.frame.size)
                 world1level9scene.userData = NSMutableDictionary()
                 world1level9scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1247,9 +1281,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level10scene = World1Level10(size: self.frame.size)
                 world1level10scene.userData = NSMutableDictionary()
                 world1level10scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1268,9 +1302,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level11scene = World1Level11(size: self.frame.size)
                 world1level11scene.userData = NSMutableDictionary()
                 world1level11scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1289,9 +1323,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level12scene = World1Level12(size: self.frame.size)
                 world1level12scene.userData = NSMutableDictionary()
                 world1level12scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1310,9 +1344,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level13scene = World1Level13(size: self.frame.size)
                 world1level13scene.userData = NSMutableDictionary()
                 world1level13scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1331,9 +1365,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level14scene = World1Level14(size: self.frame.size)
                 world1level14scene.userData = NSMutableDictionary()
                 world1level14scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1352,9 +1386,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level15scene = World1Level15(size: self.frame.size)
                 world1level15scene.userData = NSMutableDictionary()
                 world1level15scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1373,9 +1407,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level16scene = World1Level16(size: self.frame.size)
                 world1level16scene.userData = NSMutableDictionary()
                 world1level16scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1394,9 +1428,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level17scene = World1Level17(size: self.frame.size)
                 world1level17scene.userData = NSMutableDictionary()
                 world1level17scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1415,9 +1449,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level18scene = World1Level18(size: self.frame.size)
                 world1level18scene.userData = NSMutableDictionary()
                 world1level18scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1436,9 +1470,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level19scene = World1Level19(size: self.frame.size)
                 world1level19scene.userData = NSMutableDictionary()
                 world1level19scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1457,9 +1491,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level20scene = World1Level20(size: self.frame.size)
                 world1level20scene.userData = NSMutableDictionary()
                 world1level20scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1478,9 +1512,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level21scene = World1Level21(size: self.frame.size)
                 world1level21scene.userData = NSMutableDictionary()
                 world1level21scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1499,9 +1533,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level22scene = World1Level22(size: self.frame.size)
                 world1level22scene.userData = NSMutableDictionary()
                 world1level22scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1520,9 +1554,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level23scene = World1Level23(size: self.frame.size)
                 world1level23scene.userData = NSMutableDictionary()
                 world1level23scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1541,9 +1575,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level24scene = World1Level24(size: self.frame.size)
                 world1level24scene.userData = NSMutableDictionary()
                 world1level24scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1562,9 +1596,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level25scene = World1Level25(size: self.frame.size)
                 world1level25scene.userData = NSMutableDictionary()
                 world1level25scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1583,9 +1617,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level26scene = World1Level26(size: self.frame.size)
                 world1level26scene.userData = NSMutableDictionary()
                 world1level26scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1604,9 +1638,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level27scene = World1Level27(size: self.frame.size)
                 world1level27scene.userData = NSMutableDictionary()
                 world1level27scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1626,9 +1660,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level28scene = World1Level28(size: self.frame.size)
                 world1level28scene.userData = NSMutableDictionary()
                 world1level28scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1647,9 +1681,9 @@ class MainMenuScene: SKScene {
                 }
                 if soundOn {
                     self.runAction(clickSound)
-                    gameController.levelMusic!.play()
+                    levelMusic!.play()
                 }
-                gameController.happyMusic!.stop()
+                happyMusic!.stop()
                 let world1level29scene = World1Level29(size: self.frame.size)
                 world1level29scene.userData = NSMutableDictionary()
                 world1level29scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -1665,6 +1699,7 @@ class MainMenuScene: SKScene {
                 
                 //add enter the gauntlet button
                 gauntletButton = SKSpriteNode(imageNamed: "Enter_Text_1")
+                gauntletButton!.zPosition = 5
                 if is5{
                     gauntletButton!.position = CGPointMake(world1level30node!.position.x + 65, world1level30node!.position.y + 15)
                     gauntletButton!.name = "gauntletButton"
@@ -1684,6 +1719,7 @@ class MainMenuScene: SKScene {
                 }
                 self.addChild(gauntletButton!)
                 let bootyImage = SKSpriteNode(imageNamed: "Booty_1")
+                bootyImage.zPosition = 5
                 if is5{
                     bootyImage.position = CGPointMake(world1level30node!.position.x + 80, world1level30node!.position.y - 15)
                     bootyImage.name = "bootyImage"
@@ -1704,6 +1740,7 @@ class MainMenuScene: SKScene {
                 self.addChild(bootyImage)
                 
                 let text50 = SKLabelNode()
+                text50.zPosition = 5
                 text50.text = "50"
                 
                 if is5{
@@ -1750,7 +1787,7 @@ class MainMenuScene: SKScene {
                         }
                         (self.userData?.objectForKey("inventory") as! Inventory).gold -= 50
                         persistentData.setObject((self.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
-                        gameController.happyMusic!.stop()
+                        happyMusic!.stop()
                         let world1level30scene = World1Level30(size: self.frame.size)
                         world1level30scene.userData = NSMutableDictionary()
                         world1level30scene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")

@@ -176,15 +176,7 @@ class HeroClass: SKSpriteNode {
     }
     
     func takeDamage(damage: CGFloat) -> Bool{
-        //play damage sound
-        //find the url within the package
-        //let url = NSBundle.mainBundle().URLForResource("Ink_Squirt_Sound_1", withExtension: "mp3")
-        //sets background music using a NSURL
-        //let backgroundMusic = AVAudioPlayer(contentsOfURL: url, error: nil)
-        //-1 sets loops to infinity
-        //backgroundMusic.numberOfLoops = 1
-        //backgroundMusic.prepareToPlay()
-        //backgroundMusic.play()
+
         if soundOn {
         (self.parent as! SKScene).runAction(damageSound)
         }
@@ -204,8 +196,8 @@ class HeroClass: SKSpriteNode {
         
         //animate damage stuff
         let codeBlock0 = SKAction.runBlock({
-            var textures: [SKTexture] = []
-            textures.append(SKTexture(imageNamed:"Kraken_Gets_Hurt_1"))
+            let textures: [SKTexture] = [SKTexture(imageNamed:"Kraken_Gets_Hurt_1")]
+            //textures.append(SKTexture(imageNamed:"Kraken_Gets_Hurt_1"))
             let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
             let repeatAction0 = SKAction.repeatActionForever(animation)
             self.runAction(repeatAction0, withKey: "repeatAction")
@@ -217,7 +209,7 @@ class HeroClass: SKSpriteNode {
                     textures.append(SKTexture(imageNamed:"Kraken_Movement_\(i)"))
                 }
             }else{
-                //textures.append(SKTexture(imageNamed:"Kraken_Movement_1"))
+                textures.append(SKTexture(imageNamed:"Kraken_Movement_1"))
                 self.texture = SKTexture(imageNamed:"Kraken_Movement_1")
             }
             let animation2 = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
@@ -298,16 +290,15 @@ class HeroClass: SKSpriteNode {
     }
     
     func attack(){
-        let gameController = (self.parent as! SKScene).view!.window!.rootViewController as! GameViewController
         if let theWizard = self.parent!.childNodeWithName("wizard") as? WizardClass{
             if distanceBetween(self.position, point2: theWizard.position) < 110{
                 if soundOn {
                     (self.parent as! SKScene).runAction(poofSound)
                     let waitDuration = SKAction.waitForDuration(1)
-                    let runBlock = SKAction.runBlock({gameController.beachMusic!.play()})
+                    let runBlock = SKAction.runBlock({beachMusic!.play()})
                     let sequence = SKAction.sequence([waitDuration, runBlock])
                     (self.parent as! SKScene).runAction(sequence)
-                    gameController.levelMusic!.stop()
+                    levelMusic!.stop()
                 }
                 theWizard.takeDamage(1)
             }

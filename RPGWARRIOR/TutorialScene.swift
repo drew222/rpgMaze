@@ -18,9 +18,8 @@ class TutorialScene: SKScene {
     var skipButton: SKSpriteNode?
     
     override func didMoveToView(view: SKView) {
-        let gameController = self.view!.window!.rootViewController as! GameViewController
         if soundOn{
-            gameController.happyMusic!.stop()
+            happyMusic!.stop()
         }
         /* Setup your scene here */
         theImage = SKSpriteNode()

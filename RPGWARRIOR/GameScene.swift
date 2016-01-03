@@ -74,10 +74,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //}
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as! HeroClass
-        let aWizard = self.childNodeWithName("wizard") as! WizardClass
+        _ = self.childNodeWithName("wizard") as! WizardClass
         for touch in touches{
             //stop when mouse comes in contact hero
             //let theSpot = spotToStop(aHero, touch.locationInNode(self))
@@ -88,7 +88,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
               //      aHero.attack()
               //  }
             //}
-            aHero.moveHelper((touch as! UITouch).locationInNode(self))
+            aHero.moveHelper((touch ).locationInNode(self))
         }
     }
    
@@ -126,15 +126,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 //println("got here222")
                 //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
                 let skTransition = SKTransition.fadeWithDuration(1.0)
-                println("got here111")
                 //let gameScene = self.userData?.objectForKey("menu") as MainMenuScene
                 self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
-                println("got here222")
                 levelOver = true
             }
             else if (self.childNodeWithName("item") == nil){
                 if theWizard!.isDead{
-                    dropLoot("level1", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    dropLoot("level1", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }

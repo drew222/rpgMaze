@@ -325,8 +325,7 @@ class ItemDisplayScene: SKScene {
                     self.runAction(clickSound)
                 }
                 if soundOn{
-                    let gameController = self.view!.window!.rootViewController as! GameViewController
-                    gameController.beachMusic!.stop()
+                    beachMusic!.stop()
                 }
                 //go to mainmenuscene
                 let skTransition = SKTransition.fadeWithDuration(1.0)

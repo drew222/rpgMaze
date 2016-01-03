@@ -54,7 +54,7 @@ class Krill: SKSpriteNode {
         var actionArray: [SKAction] = []
         var isFirst = true
         for (var i = 0; i < numberOfMoves; i++){
-            let leftOrRight = randomWithMin(0, 100)
+            let leftOrRight = randomWithMin(0, max: 100)
             if isFirst && leftOrRight > 49 {
                 isFirst = false
                 self.zRotation = -pi / 4

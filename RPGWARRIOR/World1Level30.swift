@@ -68,11 +68,10 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var persistentData: NSUserDefaults?
     
     override func didMoveToView(view: SKView) {
-        let gameController = self.view!.window!.rootViewController as! GameViewController
         persistentData = NSUserDefaults.standardUserDefaults()
         
         if soundOn{
-            gameController.gauntletMusic!.play()
+            gauntletMusic!.play()
         }
         /* Setup your scene here */
         theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
@@ -796,13 +795,12 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         //check for win condition
         if (theHero!.life <= 0){
-            let gameController = self.view!.window!.rootViewController as! GameViewController
             if !splatted {
                 
                 if soundOn{
-                    gameController.gauntletMusic!.stop()
+                    gauntletMusic!.stop()
                     let waitDuration = SKAction.waitForDuration(1)
-                    let runBlock = SKAction.runBlock({gameController.beachMusic!.play()})
+                    let runBlock = SKAction.runBlock({beachMusic!.play()})
                     let sequence = SKAction.sequence([waitDuration, runBlock])
                     self.runAction(sequence)
                 }

@@ -16,16 +16,16 @@ class IntroScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         //ADJUST SOUND VOLUMES HERE
-        introMusic.volume = 0.3
-        happyMusic.volume = 0.3
-        beachMusic.volume = 0.3
-        levelMusic.volume = 0.3
-        gauntletMusic.volume = 0.3
-        levelMusic.numberOfLoops = -1
-        introMusic.numberOfLoops = -1
-        beachMusic.numberOfLoops = -1
-        happyMusic.numberOfLoops = -1
-        gauntletMusic.numberOfLoops = -1
+        introMusic!.volume = 0.3
+        happyMusic!.volume = 0.3
+        beachMusic!.volume = 0.3
+        levelMusic!.volume = 0.3
+        gauntletMusic!.volume = 0.3
+        levelMusic!.numberOfLoops = -1
+        introMusic!.numberOfLoops = -1
+        beachMusic!.numberOfLoops = -1
+        happyMusic!.numberOfLoops = -1
+        gauntletMusic!.numberOfLoops = -1
         
         
         
@@ -34,12 +34,12 @@ class IntroScene: SKScene {
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         self.addChild(background)
         
-        if let alreadyOpened = defaults.objectForKey("firstOpen") as? Bool {
+        if let _ = defaults.objectForKey("firstOpen") as? Bool {
             if defaults.objectForKey("sound") as! Bool {
-                introMusic.play()
+                introMusic!.play()
             }
         }else{
-            introMusic.play()
+            introMusic!.play()
         }
         
         //find the url within the package
@@ -47,11 +47,11 @@ class IntroScene: SKScene {
         //-1 sets loops to infinity
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        var gameplayScene = ZoneScene(size: self.frame.size)
-        introMusic.stop()
-        if let alreadyOpened = defaults.objectForKey("firstOpen") as? Bool {
+        let gameplayScene = ZoneScene(size: self.frame.size)
+        introMusic!.stop()
+        if let _ = defaults.objectForKey("firstOpen") as? Bool {
             //already opened the app
             let skTransition = SKTransition.fadeWithDuration(1.0)
             if uniZoneScene != nil {

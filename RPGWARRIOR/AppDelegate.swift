@@ -30,25 +30,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-        let gamecontroller = window?.rootViewController as! GameViewController
         
-        if gamecontroller.happyMusic!.playing {
-            gamecontroller.happyMusic!.stop()
+        if happyMusic!.playing {
+            happyMusic!.stop()
             happyStopped = true
         }
-        if gamecontroller.gauntletMusic!.playing {
-            gamecontroller.gauntletMusic!.stop()
+        if gauntletMusic!.playing {
+            gauntletMusic!.stop()
             gauntletStopped = true
         }
-        if gamecontroller.beachMusic!.playing {
-            gamecontroller.beachMusic!.stop()
+        if beachMusic!.playing {
+            beachMusic!.stop()
         }
-        if gamecontroller.introMusic!.playing {
-            gamecontroller.introMusic!.stop()
+        if introMusic!.playing {
+            introMusic!.stop()
             introStopped = true
         }
-        if gamecontroller.levelMusic!.playing {
-            gamecontroller.levelMusic!.stop()
+        if levelMusic!.playing {
+            levelMusic!.stop()
         }
     }
 
@@ -63,15 +62,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let view = gamecontroller.view as! SKView
         if (view.scene as? Inventory != nil) || (view.scene as? MainMenuScene != nil) || (view.scene as? IntroScene != nil) || (view.scene as? StoreScene != nil) || (view.scene as? GuideScene != nil) || (view.scene as? TutorialScene != nil) || (view.scene as? ZoneScene != nil) || (view.scene as? ItemDisplayScene != nil){
             if happyStopped {
-                gamecontroller.happyMusic!.play()
+                happyMusic!.play()
                 happyStopped = false
             }
             if gauntletStopped {
-                gamecontroller.gauntletMusic!.play()
+                gauntletMusic!.play()
                 gauntletStopped = false
             }
             if introStopped {
-                gamecontroller.introMusic!.play()
+                introMusic!.play()
                 introStopped = false
             }
             

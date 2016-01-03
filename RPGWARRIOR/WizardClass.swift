@@ -147,8 +147,8 @@ class WizardClass: SKSpriteNode {
             let lowerYDiff = round(yRange * 0.45)
             let upperXDiff = round(xRange * 1)
             let upperYDiff = round(yRange * 1)
-            let xDiff = CGFloat(randomWithMin(Int(lowerXDiff), Int(upperXDiff)))
-            let yDiff = CGFloat(randomWithMin(Int(lowerYDiff), Int(upperYDiff)))
+            let xDiff = CGFloat(randomWithMin(Int(lowerXDiff), max: Int(upperXDiff)))
+            let yDiff = CGFloat(randomWithMin(Int(lowerYDiff), max: Int(upperYDiff)))
             var xPosition: CGFloat?
             var yPosition: CGFloat?
             if self.position.x > heroPosition.x{

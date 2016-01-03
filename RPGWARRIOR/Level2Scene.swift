@@ -46,6 +46,7 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
+        /*
         var firstBody: SKPhysicsBody!
         var secondBody: SKPhysicsBody!
         if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask){
@@ -55,6 +56,7 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate {
             firstBody = contact.bodyB
             secondBody = contact.bodyA
         }
+        */
         //HERO VS FIRE
        // if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
          //   secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
@@ -69,11 +71,11 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate {
         //}
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as! HeroClass
         for touch in touches{
-            aHero.moveHelper((touch as! UITouch).locationInNode(self))
+            aHero.moveHelper((touch ).locationInNode(self))
         }
     }
     
@@ -102,7 +104,7 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate {
             }
             else if (self.childNodeWithName("item") == nil){
                 if theBomber!.isDead{
-                    dropLoot("level2", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    dropLoot("level2", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }

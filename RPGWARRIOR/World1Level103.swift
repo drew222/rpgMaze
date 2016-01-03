@@ -72,10 +72,10 @@ class World1Level103: SKScene, SKPhysicsContactDelegate {
         //}
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as! HeroClass
-        let aBomber = self.childNodeWithName("bomber") as! BomberClass
+        _ = self.childNodeWithName("bomber") as! BomberClass
         for touch in touches{
             //stop when mouse comes in contact hero
             //let theSpot = spotToStop(aHero, touch.locationInNode(self))
@@ -86,7 +86,7 @@ class World1Level103: SKScene, SKPhysicsContactDelegate {
             //      aHero.attack()
             //  }
             //}
-            aHero.moveHelper((touch as! UITouch).locationInNode(self))
+            aHero.moveHelper((touch ).locationInNode(self))
         }
     }
     
@@ -126,7 +126,7 @@ class World1Level103: SKScene, SKPhysicsContactDelegate {
             }
             else if (self.childNodeWithName("item") == nil){
                 if theBomber!.isDead{
-                    dropLoot("world1level103", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    dropLoot("world1level103", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }

@@ -19,7 +19,7 @@ class GuideScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         if soundOn{
-            happyMusic.stop()
+            happyMusic!.stop()
         }
         theImage = SKSpriteNode()
         theImage!.texture = allImages[count]
@@ -34,8 +34,8 @@ class GuideScene: SKScene {
         //-1 sets loops to infinity
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        for touch in touches{
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        for _ in touches{
 
                 count++
                 if count == allImages.count {

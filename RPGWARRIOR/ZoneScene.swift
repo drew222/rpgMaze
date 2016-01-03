@@ -56,14 +56,13 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
             }
         
         soundOnButton!.name = "soundButton"
-        soundOnButton!.zPosition = 3
+        soundOnButton!.zPosition = 4
         self.addChild(soundOnButton!)
         }
-        let gameController = self.view!.window!.rootViewController as! GameViewController
-        if (!gameController.happyMusic!.playing) && soundOn{
-            gameController.happyMusic!.numberOfLoops = -1
-            gameController.happyMusic!.prepareToPlay()
-            gameController.happyMusic!.play()
+        if (!happyMusic!.playing) && soundOn{
+            happyMusic!.numberOfLoops = -1
+            happyMusic!.prepareToPlay()
+            happyMusic!.play()
         }
         
         let background = SKSpriteNode(imageNamed: "Zone_Screen_2")
@@ -279,12 +278,14 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
             }
             self.addChild(comingSoon2)
             let revealingTide = SKSpriteNode(imageNamed: "Level_Revealing_Tide_1")
+            revealingTide.zPosition = 3
             revealingTide.size = CGSizeMake(self.frame.maxX, self.frame.maxY - 170)
             revealingTide.anchorPoint = CGPointMake(0.5, 0)
             revealingTide.position = CGPointMake(self.frame.midX, 0)
             self.addChild(revealingTide)
             tutorialButton = SKSpriteNode(imageNamed: "Tutorial_Button_1")
             tutorialButton!.size = CGSizeMake(100, 100)
+            tutorialButton!.zPosition = 4
             tutorialButton!.position = CGPointMake(self.frame.maxX - 55, self.frame.minX + 60)
             if is5{
                 tutorialButton!.size = CGSizeMake(80, 80)
@@ -434,18 +435,17 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
                 aTutorialScene.userData?.setObject(self, forKey: "zoneScene")
                 self.view?.presentScene(aTutorialScene, transition: skTransition)
             }else if soundOnButton!.containsPoint((touch ).locationInNode(self)){
-                let gameController = self.view!.window!.rootViewController as! GameViewController
                 if soundOn {
                     soundOnButton!.texture = SKTexture(imageNamed: "Sound_Off_Button_1")
                     soundOn = false
                     defaults.setBool(false, forKey: "sound")
-                    gameController.happyMusic!.stop()
+                    happyMusic!.stop()
                 }else {
                     self.runAction(clickSound)
                     soundOnButton!.texture = SKTexture(imageNamed: "Sound_On_Button_1")
                     soundOn = true
                     defaults.setBool(true, forKey: "sound")
-                    gameController.happyMusic!.play()
+                    happyMusic!.play()
                 }
             }
         }

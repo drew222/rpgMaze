@@ -202,14 +202,13 @@ class BomberClass: SKSpriteNode {
 
     
     func takeDamage(howMuch: CGFloat){
-        let gameController = (self.parent as! SKScene).view!.window!.rootViewController as! GameViewController
         if soundOn {
             (self.parent as! SKScene).runAction(poofSound)
             let waitDuration = SKAction.waitForDuration(1)
-            let runBlock = SKAction.runBlock({gameController.beachMusic!.play()})
+            let runBlock = SKAction.runBlock({beachMusic!.play()})
             let sequence = SKAction.sequence([waitDuration, runBlock])
             (self.parent as! SKScene).runAction(sequence)
-            gameController.levelMusic!.stop()
+            levelMusic!.stop()
         }
         self.life -= howMuch
         if (self.life <= 0) && !self.isDead{

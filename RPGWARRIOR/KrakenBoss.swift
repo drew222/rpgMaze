@@ -99,7 +99,7 @@ class KrakenBoss: SKSpriteNode {
         let moveUpAction = SKAction.fadeOutWithDuration(1)
         let remBlock = SKAction.runBlock({oilWave.removeFromParent()})
         var waitToWave = SKAction.waitForDuration(1.75)
-        if let aLevel = self.parent as? World1Level30 {
+        if let _ = self.parent as? World1Level30 {
             waitToWave = SKAction.waitForDuration(3)
         }
         let sequence = SKAction.sequence([waitToWave, moveDownAction, moveUpAction, remBlock])
@@ -108,8 +108,8 @@ class KrakenBoss: SKSpriteNode {
     }
     
     func getSafePosition() -> CGPoint {
-        let xPos = randomWithMin(25, Int(self.parent!.frame.width) - 25)
-        let yPos = randomWithMin(115, Int(self.parent!.frame.height) - 185)
+        let xPos = randomWithMin(25, max: Int(self.parent!.frame.width) - 25)
+        let yPos = randomWithMin(115, max: Int(self.parent!.frame.height) - 185)
         return CGPointMake(CGFloat(xPos), CGFloat(yPos))
     }
     
@@ -171,10 +171,10 @@ class KrakenBoss: SKSpriteNode {
         if soundOn {
             (self.parent as! SKScene).runAction(poofSound)
             let waitDuration = SKAction.waitForDuration(1)
-            let runBlock = SKAction.runBlock({beachMusic.play()})
+            let runBlock = SKAction.runBlock({beachMusic!.play()})
             let sequence = SKAction.sequence([waitDuration, runBlock])
             (self.parent as! SKScene).runAction(sequence)
-            levelMusic.stop()
+            levelMusic!.stop()
         }
         self.life -= howMuch
         if (self.life <= 0) && !self.isDead{

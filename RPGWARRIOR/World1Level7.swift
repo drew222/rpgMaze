@@ -136,14 +136,14 @@ class World1Level7: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as? HeroClass
         for touch in touches{
             if !inkSplatted{
-                aHero!.moveHelper((touch as! UITouch).locationInNode(self))
+                aHero!.moveHelper((touch ).locationInNode(self))
             }else if self.childNodeWithName("yesText") != nil{
-                if self.childNodeWithName("yesText")!.containsPoint((touch as! UITouch).locationInNode(self)){
+                if self.childNodeWithName("yesText")!.containsPoint((touch ).locationInNode(self)){
                     let newLevel1 = World1Level7(size: self.frame.size)
                     newLevel1.userData = NSMutableDictionary()
                     newLevel1.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
@@ -152,10 +152,10 @@ class World1Level7: SKScene, SKPhysicsContactDelegate {
                     let skTransition = SKTransition.fadeWithDuration(1.0)
                     self.view?.presentScene(newLevel1, transition: skTransition)
                     
-                }else if self.childNodeWithName("noText")!.containsPoint((touch as! UITouch).locationInNode(self)){
+                }else if self.childNodeWithName("noText")!.containsPoint((touch ).locationInNode(self)){
                     let skTransition = SKTransition.fadeWithDuration(1.0)
                     if soundOn {
-                        levelMusic.stop()
+                        levelMusic!.stop()
                     }
                     self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
                 }
@@ -263,7 +263,7 @@ class World1Level7: SKScene, SKPhysicsContactDelegate {
             }
             else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil){
                 if theWizard!.isDead && droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
-                    dropLoot("level7", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    dropLoot("level7", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
                     droppedItem = true
                     itemDropped = self.childNodeWithName("item") as? ItemClass
                 }else if theWizard!.isDead && !droppedChest {

@@ -26,13 +26,14 @@ extension SKNode {
     }
 }
 
+var levelMusic: AVAudioPlayer?
+var gauntletMusic: AVAudioPlayer?
+var happyMusic: AVAudioPlayer?
+var introMusic: AVAudioPlayer?
+var beachMusic: AVAudioPlayer?
 
 class GameViewController: UIViewController {
-    var levelMusic: AVAudioPlayer?
-    var gauntletMusic: AVAudioPlayer?
-    var happyMusic: AVAudioPlayer?
-    var introMusic: AVAudioPlayer?
-    var beachMusic: AVAudioPlayer?
+    
     
     
     var titleScene: SKScene?
@@ -53,7 +54,7 @@ class GameViewController: UIViewController {
         }catch{}
         do{
         let url4 = NSBundle.mainBundle().URLForResource("Intro_Music", withExtension: "mp3")
-        try introMusic = AVAudioPlayer(contentsOfURL: url4!, fileTypeHint: "mp3")
+        try introMusic = AVAudioPlayer(contentsOfURL: url4!, fileTypeHint: nil)
         }catch{}
         do{
         let url5 = NSBundle.mainBundle().URLForResource("Level_Music2", withExtension: "mp3")

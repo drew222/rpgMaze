@@ -78,12 +78,12 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
         */
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as! HeroClass
-        let aWizard = self.childNodeWithName("wizard") as! WizardClass
+        _ = self.childNodeWithName("wizard") as! WizardClass
         for touch in touches{
-            aHero.moveHelper((touch as! UITouch).locationInNode(self))
+            aHero.moveHelper((touch ).locationInNode(self))
         }
     }
     
@@ -143,7 +143,7 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
             }
             else if (self.childNodeWithName("item") == nil){
                 if theWizard!.isDead{
-                    dropLoot("level4", self, CGPointMake(self.frame.midX, self.frame.midY), CGSizeMake(30, 30))
+                    dropLoot("level4", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }

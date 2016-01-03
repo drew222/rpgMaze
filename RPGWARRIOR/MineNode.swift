@@ -53,9 +53,9 @@ class MineNode: SKSpriteNode {
         let removeBlock = SKAction.runBlock({
             self.removeFromParent()})
         let damageBlock = SKAction.runBlock({
-            _ = distanceBetween(self.parent!.childNodeWithName("hero")!.position, point2: self.position)
+            //_ = distanceBetween(self.parent!.childNodeWithName("hero")!.position, point2: self.position)
             //if distanceFromMine < 25{
-            _ = self.parent!.childNodeWithName("hero")! as! HeroClass
+            //_ = self.parent!.childNodeWithName("hero")! as! HeroClass
             self.isArmed = false
             //}
         })

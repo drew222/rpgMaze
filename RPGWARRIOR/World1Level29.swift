@@ -240,7 +240,6 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         let aHero = self.childNodeWithName("hero") as? HeroClass
-        let gameController = self.view!.window!.rootViewController as! GameViewController
         for touch in touches{
             if !inkSplatted{
                 aHero!.moveHelper((touch ).locationInNode(self))
@@ -257,7 +256,7 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
                 }else if self.childNodeWithName("noText")!.containsPoint((touch ).locationInNode(self)){
                     let skTransition = SKTransition.fadeWithDuration(1.0)
                     if soundOn {
-                        gameController.levelMusic!.stop()
+                        levelMusic!.stop()
                     }
                     self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
                 }

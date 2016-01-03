@@ -167,8 +167,7 @@ class World1Level15: SKScene, SKPhysicsContactDelegate {
                 }else if self.childNodeWithName("noText")!.containsPoint((touch ).locationInNode(self)){
                     let skTransition = SKTransition.fadeWithDuration(1.0)
                     if soundOn {
-                        let controller: GameViewController = self.view!.window!.rootViewController as! GameViewController
-                        controller.levelMusic!.stop()
+                        levelMusic!.stop()
                     }
                     self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
                 }

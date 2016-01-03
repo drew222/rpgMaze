@@ -175,10 +175,10 @@ class WhaleBoss: SKSpriteNode {
         if soundOn {
             (self.parent as! SKScene).runAction(poofSound)
             let waitDuration = SKAction.waitForDuration(1)
-            let runBlock = SKAction.runBlock({beachMusic.play()})
+            let runBlock = SKAction.runBlock({beachMusic!.play()})
             let sequence = SKAction.sequence([waitDuration, runBlock])
             (self.parent as! SKScene).runAction(sequence)
-            levelMusic.stop()
+            levelMusic!.stop()
         }
         self.life -= howMuch
         if (self.life <= 0) && !self.isDead{
