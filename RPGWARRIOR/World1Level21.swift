@@ -190,7 +190,7 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
-            if !self.childNodeWithName("safeSpot1")!.contains(theHero!.position){
+            if !self.childNode(withName: "safeSpot1")!.contains(theHero!.position){
                     theHero!.takeDamage(damage: 10)
                 }
                 //println("died by tentalce")
@@ -201,26 +201,26 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
-        let aHero = self.childNodeWithName("hero") as? HeroClass
+        let aHero = self.childNode(withName: "hero") as? HeroClass
         for touch in touches{
             if !inkSplatted{
-                aHero!.moveHelper(position: (touch ).locationInNode(self))
-            }else if self.childNodeWithName("yesText") != nil{
-                if self.childNodeWithName("yesText")!.contains((touch ).locationInNode(self)){
+                aHero!.moveHelper(position: (touch ).location(in: self))
+            }else if self.childNode(withName: "yesText") != nil{
+                if self.childNode(withName: "yesText")!.contains((touch ).location(in: locationin,: self)){
                     let newLevel1 = World1Level21(size: self.frame.size)
                     newLevel1.userData = NSMutableDictionary()
-                    newLevel1.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory" as NSCopying)
-                    newLevel1.userData?.setObject(self.userData?.objectForKey("menu") as! MainMenuScene, forKey: "menu" as NSCopying)
+                    newLevel1.userData?.setObject(self.userData?.object(forKey: "inventory") as! Inventory, forKey: "inventory" as NSCopying)
+                    newLevel1.userData?.setObject(self.userData?.object(forKey: "menu") as! MainMenuScene, forKey: "menu" as NSCopying)
                     //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
-                    let skTransition = SKTransition.fadeWithDuration(1.0)
+                    let skTransition = SKTransition.fade(withDuration: 1.0)
                     self.view?.presentScene(newLevel1, transition: skTransition)
                     
-                }else if self.childNodeWithName("noText")!.contains((touch ).locationInNode(self)){
-                    let skTransition = SKTransition.fadeWithDuration(1.0)
+                }else if self.childNode(withName: "noText")!.contains((touch ).location(in: self)){
+                    let skTransition = SKTransition.fade(withDuration: 1.0)
                     if soundOn {
                         levelMusic!.stop()
                     }
-                    self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
+                    self.view?.presentScene(self.userData?.object(forKey: "menu") as! MainMenuScene, transition: skTransition)
                 }
             }
         }
@@ -251,12 +251,12 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
             self.lastHeal = currentTime
-            if theHero!.life < maxLife{
+            if theHero!.life ?? <#default value#> < maxLife{
                 if soundOn && !levelOver && !droppedChest{
                     self.run(regenSound)
                 }
                 theHero!.life! += theHero!.regeneration!
-                if theHero!.life > maxLife{
+                if theHero!.life ?? <#default value#> > maxLife{
                     theHero!.life = maxLife
                 }
             }
@@ -264,12 +264,12 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         
         self.lastUpdatesTime = currentTime
         lifeNode!.text = "\(Int(theHero!.life!))"
-        if (theKraken!.isDead || theHero!.life <= 0) && !levelOver{
+        if (theKraken!.isDead || theHero!.life ?? <#default value#> <= 0) && !levelOver{
             
-            if (self.childNodeWithName("gold") == nil && self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
+            if (self.childNode(withName: "gold") == nil && self.childNode(withName: "item") == nil && droppedItem) || theHero!.life ?? <#default value#> <= 0{
                 
                 //INK SPLAT CODE
-                if theHero!.life <= 0 {
+                if theHero!.life ?? <#default value#> <= 0 {
                     let inkSplat = SKSpriteNode(imageNamed: "Ink_Splat_1")
                     for node in self.children{
                         if node as? SKLabelNode != nil {
@@ -279,11 +279,11 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
                             node.removeFromParent()
                         }
                     }
-                    self.childNodeWithName("lifeNumber")?.removeFromParent()
+                    self.childNode(withName: "lifeNumber")?.removeFromParent()
                     inkSplat.position = CGPointMake(self.frame.midX, self.frame.midY)
                     inkSplat.size = CGSizeMake(50, 50)
                     self.addChild(inkSplat)
-                    let stretchAction = SKAction.scaleXBy(7, y: 7, duration: 0.4)
+                    let stretchAction = SKAction.scaleX(by: 7, y: 7, duration: 0.4)
                     let codeBlock = SKAction.run({
                         let yesText = SKSpriteNode(imageNamed: "Yes_Text_1")
                         let noText = SKSpriteNode(imageNamed: "No_Text_1")
@@ -307,15 +307,15 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
                 }else{
                     
                     //&&
-                    let persistentData = NSUserDefaults.standardUserDefaults
-                    if (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel < 21{
-                    persistentData.setObject(21, forKey: "highestLevel")
-                        (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel = 21
+                    let persistentData = UserDefaults.standard
+                    if (self.userData?.object(forKey: "menu") as! MainMenuScene).highestLevel < 21{
+                        persistentData.set(21, forKey: "highestLevel")
+                        (self.userData?.object(forKey: "menu") as! MainMenuScene).highestLevel = 21
                     }
                     //&&
                     
                     //ITEM DISPLAY***************
-                    let skTransition = SKTransition.fadeWithDuration(1.0)
+                    let skTransition = SKTransition.fade(withDuration: 1.0)
                     let itemDisplayScene = ItemDisplayScene(size: self.frame.size)
                     if itemDropped != nil{
                         itemDisplayScene.itemName = itemDropped!.itemName!
@@ -324,19 +324,19 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
                         itemDisplayScene.numBooty = 8
                     }
                     itemDisplayScene.userData = NSMutableDictionary()
-                    itemDisplayScene.userData?.setObject(self.userData?.objectForKey("menu") as! MainMenuScene, forKey: "menu" as NSCopying)
-                    itemDisplayScene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory" as NSCopying)
+                    itemDisplayScene.userData?.setObject(self.userData?.object(forKey: "menu") as! MainMenuScene, forKey: "menu" as NSCopying)
+                    itemDisplayScene.userData?.setObject(self.userData?.object(forKey: "inventory") as! Inventory, forKey: "inventory" as NSCopying)
                     self.view?.presentScene(itemDisplayScene, transition: skTransition)
                     //***************************
                 }
                 
                 levelOver = true
             }
-            else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil){
-                if theKraken!.isDead && droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
+            else if (self.childNode(withName: "item") == nil && self.childNode(withName: "gold") == nil){
+                if theKraken!.isDead && droppedChest && (self.childNode(withName: "chest") as! TreasureChest).open{
                     dropLoot(level: "level21", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
                     droppedItem = true
-                    itemDropped = self.childNodeWithName("item") as? ItemClass
+                    itemDropped = self.childNode(withName: "item") as? ItemClass
                 }else if theKraken!.isDead && !droppedChest {
                     for node in self.children{
                         if node as? SKLabelNode != nil {
@@ -346,7 +346,7 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
                             node.removeFromParent()
                         }
                     }
-                    self.childNodeWithName("lifeNumber")?.removeFromParent()
+                    self.childNode(withName: "lifeNumber")?.removeFromParent()
                     self.addChild(TreasureChest.chestAtPosition(position: CGPointMake(self.frame.midX, self.frame.midY)))
                     droppedChest = true
                 }
