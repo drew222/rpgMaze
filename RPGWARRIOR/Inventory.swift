@@ -42,12 +42,12 @@ class Inventory: SKScene {
     var rightDisplay: SKSpriteNode?
     var neckDisplay: SKSpriteNode?
     
-    var persistentData: NSUserDefaults?
+    var persistentData: UserDefaults?
     
     class func createInventory(size: CGSize) -> Inventory {
         let inv = Inventory()
         inv.size = size
-        inv.backgroundColor = UIColor.grayColor()
+        inv.backgroundColor = UIColor.gray
         inv.menu = SKSpriteNode(imageNamed: "Zones__Button_1")
         inv.menu!.position = CGPointMake(inv.frame.minX + 55, inv.frame.maxY - 55)
         inv.menu!.zPosition = 4
@@ -173,7 +173,7 @@ class Inventory: SKScene {
             inv.statLabelLife!.position = CGPointMake(inv.frame.midX - 30, inv.frame.midY - 83)
             inv.statLabelLife!.fontName = "ChalkboardSE-Bold"
             inv.statLabelLife!.fontSize = 22
-            inv.statLabelLife!.fontColor = UIColor.blackColor()
+            inv.statLabelLife!.fontColor = UIColor.black
             inv.statLabelLife!.name = "lifeStat"
             inv.statLabelLife!.setScale(0.7)
             inv.addChild(inv.statLabelLife!)
@@ -181,7 +181,7 @@ class Inventory: SKScene {
             inv.statLabelMovement!.position = CGPointMake(inv.frame.midX + 25, inv.frame.midY - 83)
             inv.statLabelMovement!.fontName = "ChalkboardSE-Bold"
             inv.statLabelMovement!.fontSize = 22
-            inv.statLabelMovement!.fontColor = UIColor.blackColor()
+            inv.statLabelMovement!.fontColor = UIColor.black
             inv.statLabelMovement!.name = "movementStat"
             inv.statLabelMovement!.setScale(0.7)
             inv.addChild(inv.statLabelMovement!)
@@ -189,7 +189,7 @@ class Inventory: SKScene {
             inv.statLabelRegen!.position = CGPointMake(inv.frame.midX + 75, inv.frame.midY - 83)
             inv.statLabelRegen!.fontName = "ChalkboardSE-Bold"
             inv.statLabelRegen!.fontSize = 22
-            inv.statLabelRegen!.fontColor = UIColor.blackColor()
+            inv.statLabelRegen!.fontColor = UIColor.black
             inv.statLabelRegen!.name = "regenStat"
             inv.statLabelRegen!.setScale(0.7)
             inv.addChild(inv.statLabelRegen!)
@@ -198,7 +198,7 @@ class Inventory: SKScene {
             inv.statLabelLife!.position = CGPointMake(inv.frame.midX - 30, inv.frame.minY + 158)
             inv.statLabelLife!.fontName = "ChalkboardSE-Bold"
             inv.statLabelLife!.fontSize = 22
-            inv.statLabelLife!.fontColor = UIColor.blackColor()
+            inv.statLabelLife!.fontColor = UIColor.black
             inv.statLabelLife!.name = "lifeStat"
             inv.statLabelLife!.setScale(0.7)
             inv.statLabelLife!.zPosition = 10
@@ -207,7 +207,7 @@ class Inventory: SKScene {
             inv.statLabelMovement!.position = CGPointMake(inv.frame.midX + 25, inv.frame.minY + 158)
             inv.statLabelMovement!.fontName = "ChalkboardSE-Bold"
             inv.statLabelMovement!.fontSize = 22
-            inv.statLabelMovement!.fontColor = UIColor.blackColor()
+            inv.statLabelMovement!.fontColor = UIColor.black
             inv.statLabelMovement!.name = "movementStat"
             inv.statLabelMovement!.setScale(0.7)
             inv.statLabelMovement!.zPosition = 10
@@ -216,7 +216,7 @@ class Inventory: SKScene {
             inv.statLabelRegen!.position = CGPointMake(inv.frame.midX + 75, inv.frame.minY + 158)
             inv.statLabelRegen!.fontName = "ChalkboardSE-Bold"
             inv.statLabelRegen!.fontSize = 22
-            inv.statLabelRegen!.fontColor = UIColor.blackColor()
+            inv.statLabelRegen!.fontColor = UIColor.black
             inv.statLabelRegen!.name = "regenStat"
             inv.statLabelRegen!.setScale(0.7)
             inv.statLabelRegen!.zPosition = 10
@@ -226,7 +226,7 @@ class Inventory: SKScene {
         inv.statLabelLife!.position = CGPointMake(inv.frame.midX - 30, inv.frame.minY + 253)
         inv.statLabelLife!.fontName = "ChalkboardSE-Bold"
         inv.statLabelLife!.fontSize = 22
-        inv.statLabelLife!.fontColor = UIColor.blackColor()
+            inv.statLabelLife!.fontColor = UIColor.black
         inv.statLabelLife!.name = "lifeStat"
         inv.statLabelLife!.setScale(0.7)
         inv.statLabelLife!.zPosition = 10
@@ -235,7 +235,7 @@ class Inventory: SKScene {
         inv.statLabelMovement!.position = CGPointMake(inv.frame.midX + 25, inv.frame.minY + 253)
         inv.statLabelMovement!.fontName = "ChalkboardSE-Bold"
         inv.statLabelMovement!.fontSize = 22
-        inv.statLabelMovement!.fontColor = UIColor.blackColor()
+            inv.statLabelMovement!.fontColor = UIColor.black
         inv.statLabelMovement!.name = "movementStat"
         inv.statLabelMovement!.setScale(0.7)
         inv.statLabelMovement!.zPosition = 10
@@ -244,7 +244,7 @@ class Inventory: SKScene {
         inv.statLabelRegen!.position = CGPointMake(inv.frame.midX + 75, inv.frame.minY + 253)
         inv.statLabelRegen!.fontName = "ChalkboardSE-Bold"
         inv.statLabelRegen!.fontSize = 22
-        inv.statLabelRegen!.fontColor = UIColor.blackColor()
+            inv.statLabelRegen!.fontColor = UIColor.black
         inv.statLabelRegen!.name = "regenStat"
         inv.statLabelRegen!.setScale(0.7)
         inv.statLabelRegen!.zPosition = 10
@@ -304,7 +304,7 @@ class Inventory: SKScene {
         inv.statLabelLife2!.position = CGPointMake(inv.frame.minX + 60, inv.frame.maxY - 165)
         inv.statLabelLife2!.fontName = "ChalkboardSE-Bold"
         inv.statLabelLife2!.fontSize = 25
-        inv.statLabelLife2!.fontColor = UIColor.blackColor()
+        inv.statLabelLife2!.fontColor = UIColor.black
         inv.statLabelLife2!.zPosition = 10
         inv.statLabelLife2!.name = "lifeStat"
         inv.addChild(inv.statLabelLife2!)
@@ -312,7 +312,7 @@ class Inventory: SKScene {
         inv.statLabelMovement2!.position = CGPointMake(inv.frame.minX + 60, inv.frame.maxY - 205)
         inv.statLabelMovement2!.fontName = "ChalkboardSE-Bold"
         inv.statLabelMovement2!.fontSize = 25
-        inv.statLabelMovement2!.fontColor = UIColor.blackColor()
+        inv.statLabelMovement2!.fontColor = UIColor.black
         inv.statLabelMovement2!.zPosition = 10
         inv.statLabelMovement2!.name = "movementStat"
         inv.addChild(inv.statLabelMovement2!)
@@ -320,7 +320,7 @@ class Inventory: SKScene {
         inv.statLabelRegen2!.position = CGPointMake(inv.frame.minX + 60, inv.frame.maxY - 245)
         inv.statLabelRegen2!.fontName = "ChalkboardSE-Bold"
         inv.statLabelRegen2!.fontSize = 25
-        inv.statLabelRegen2!.fontColor = UIColor.blackColor()
+        inv.statLabelRegen2!.fontColor = UIColor.black
         inv.statLabelRegen2!.zPosition = 10
         inv.statLabelRegen2!.name = "regenStat"
         inv.addChild(inv.statLabelRegen2!)
@@ -350,62 +350,62 @@ class Inventory: SKScene {
         //create all the item spaces
         if isPad{
             //row 1
-            let itemSpace1 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 23))
+            let itemSpace1 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 23))
             itemSpace1.setScale(1.0)
             itemSpace1.zPosition = 1
             itemSpace1.name = "1"
             inv.itemSpaces.append(itemSpace1)
             inv.addChild(itemSpace1)
-            let itemSpace2 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 100, inv.backPack!.frame.maxY - 23))
+            let itemSpace2 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 100, inv.backPack!.frame.maxY - 23))
             itemSpace2.setScale(1.0)
             itemSpace2.zPosition = 1
             itemSpace2.name = "2"
             inv.itemSpaces.append(itemSpace2)
             inv.addChild(itemSpace2)
-            let itemSpace3 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 160, inv.backPack!.frame.maxY - 23))
+            let itemSpace3 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 160, inv.backPack!.frame.maxY - 23))
             itemSpace3.setScale(1.0)
             itemSpace3.zPosition = 1
             itemSpace3.name = "3"
             inv.itemSpaces.append(itemSpace3)
             inv.addChild(itemSpace3)
-            let itemSpace4 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 220, inv.backPack!.frame.maxY - 23))
+            let itemSpace4 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 220, inv.backPack!.frame.maxY - 23))
             itemSpace4.setScale(1.0)
             itemSpace4.zPosition = 1
             itemSpace4.name = "4"
             inv.itemSpaces.append(itemSpace4)
             inv.addChild(itemSpace4)
-            let itemSpace5 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 280, inv.backPack!.frame.maxY - 23))
+            let itemSpace5 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 280, inv.backPack!.frame.maxY - 23))
             itemSpace5.setScale(1.0)
             itemSpace5.zPosition = 1
             itemSpace5.name = "5"
             inv.itemSpaces.append(itemSpace5)
             inv.addChild(itemSpace5)
             //row 2
-            let itemSpace6 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 65))
+            let itemSpace6 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 65))
             itemSpace6.setScale(1.0)
             itemSpace6.zPosition = 1
             itemSpace6.name = "6"
             inv.itemSpaces.append(itemSpace6)
             inv.addChild(itemSpace6)
-            let itemSpace7 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 100, inv.backPack!.frame.maxY - 65))
+            let itemSpace7 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 100, inv.backPack!.frame.maxY - 65))
             itemSpace7.setScale(1.0)
             itemSpace7.zPosition = 1
             itemSpace7.name = "7"
             inv.itemSpaces.append(itemSpace7)
             inv.addChild(itemSpace7)
-            let itemSpace8 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 160, inv.backPack!.frame.maxY - 65))
+            let itemSpace8 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 160, inv.backPack!.frame.maxY - 65))
             itemSpace8.setScale(1.0)
             itemSpace8.zPosition = 1
             itemSpace8.name = "8"
             inv.itemSpaces.append(itemSpace8)
             inv.addChild(itemSpace8)
-            let itemSpace9 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 220, inv.backPack!.frame.maxY - 65))
+            let itemSpace9 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 220, inv.backPack!.frame.maxY - 65))
             itemSpace9.zPosition = 1
             itemSpace9.setScale(1.0)
             itemSpace9.name = "9"
             inv.itemSpaces.append(itemSpace9)
             inv.addChild(itemSpace9)
-            let itemSpace10 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 280, inv.backPack!.frame.maxY - 65))
+            let itemSpace10 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 280, inv.backPack!.frame.maxY - 65))
             itemSpace10.zPosition = 1
             itemSpace10.setScale(1.0)
             itemSpace10.name = "10"
@@ -413,31 +413,31 @@ class Inventory: SKScene {
             inv.addChild(itemSpace10)
             
             //row 3
-            let itemSpace11 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 107))
+            let itemSpace11 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 107))
             itemSpace11.setScale(1.0)
             itemSpace11.zPosition = 1
             itemSpace11.name = "11"
             inv.itemSpaces.append(itemSpace11)
             inv.addChild(itemSpace11)
-            let itemSpace12 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 100, inv.backPack!.frame.maxY - 107))
+            let itemSpace12 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 100, inv.backPack!.frame.maxY - 107))
             itemSpace12.setScale(1.0)
             itemSpace12.zPosition = 1
             itemSpace12.name = "12"
             inv.itemSpaces.append(itemSpace12)
             inv.addChild(itemSpace12)
-            let itemSpace13 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 160, inv.backPack!.frame.maxY - 107))
+            let itemSpace13 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 160, inv.backPack!.frame.maxY - 107))
             itemSpace13.setScale(1.0)
             itemSpace13.zPosition = 1
             itemSpace13.name = "13"
             inv.itemSpaces.append(itemSpace13)
             inv.addChild(itemSpace13)
-            let itemSpace14 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 220, inv.backPack!.frame.maxY - 107))
+            let itemSpace14 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 220, inv.backPack!.frame.maxY - 107))
             itemSpace14.setScale(1.0)
             itemSpace14.zPosition = 1
             itemSpace14.name = "14"
             inv.itemSpaces.append(itemSpace14)
             inv.addChild(itemSpace14)
-            let itemSpace15 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 280, inv.backPack!.frame.maxY - 107))
+            let itemSpace15 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 280, inv.backPack!.frame.maxY - 107))
             itemSpace15.setScale(1.0)
             itemSpace15.zPosition = 1
             itemSpace15.name = "15"
@@ -446,62 +446,62 @@ class Inventory: SKScene {
  
         } else {
         //row 1
-        let itemSpace1 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 40))
+            let itemSpace1 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 40))
         itemSpace1.setScale(1.3)
         itemSpace1.zPosition = 1
         itemSpace1.name = "1"
         inv.itemSpaces.append(itemSpace1)
         inv.addChild(itemSpace1)
-        let itemSpace2 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 100, inv.backPack!.frame.maxY - 40))
+            let itemSpace2 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 100, inv.backPack!.frame.maxY - 40))
         itemSpace2.setScale(1.3)
         itemSpace2.zPosition = 1
         itemSpace2.name = "2"
         inv.itemSpaces.append(itemSpace2)
         inv.addChild(itemSpace2)
-        let itemSpace3 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 160, inv.backPack!.frame.maxY - 40))
+            let itemSpace3 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 160, inv.backPack!.frame.maxY - 40))
         itemSpace3.setScale(1.3)
         itemSpace3.zPosition = 1
         itemSpace3.name = "3"
         inv.itemSpaces.append(itemSpace3)
         inv.addChild(itemSpace3)
-        let itemSpace4 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 220, inv.backPack!.frame.maxY - 40))
+            let itemSpace4 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 220, inv.backPack!.frame.maxY - 40))
         itemSpace4.setScale(1.3)
         itemSpace4.zPosition = 1
         itemSpace4.name = "4"
         inv.itemSpaces.append(itemSpace4)
         inv.addChild(itemSpace4)
-        let itemSpace5 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 280, inv.backPack!.frame.maxY - 40))
+            let itemSpace5 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 280, inv.backPack!.frame.maxY - 40))
         itemSpace5.setScale(1.3)
         itemSpace5.zPosition = 1
         itemSpace5.name = "5"
         inv.itemSpaces.append(itemSpace5)
         inv.addChild(itemSpace5)
         //row 2
-        let itemSpace6 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 100))
+            let itemSpace6 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 100))
         itemSpace6.setScale(1.3)
         itemSpace6.zPosition = 1
         itemSpace6.name = "6"
         inv.itemSpaces.append(itemSpace6)
         inv.addChild(itemSpace6)
-        let itemSpace7 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 100, inv.backPack!.frame.maxY - 100))
+            let itemSpace7 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 100, inv.backPack!.frame.maxY - 100))
         itemSpace7.setScale(1.3)
         itemSpace7.zPosition = 1
         itemSpace7.name = "7"
         inv.itemSpaces.append(itemSpace7)
         inv.addChild(itemSpace7)
-        let itemSpace8 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 160, inv.backPack!.frame.maxY - 100))
+            let itemSpace8 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 160, inv.backPack!.frame.maxY - 100))
         itemSpace8.setScale(1.3)
         itemSpace8.zPosition = 1
         itemSpace8.name = "8"
         inv.itemSpaces.append(itemSpace8)
         inv.addChild(itemSpace8)
-        let itemSpace9 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 220, inv.backPack!.frame.maxY - 100))
+            let itemSpace9 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 220, inv.backPack!.frame.maxY - 100))
         itemSpace9.zPosition = 1
         itemSpace9.setScale(1.3)
         itemSpace9.name = "9"
         inv.itemSpaces.append(itemSpace9)
         inv.addChild(itemSpace9)
-        let itemSpace10 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 280, inv.backPack!.frame.maxY - 100))
+            let itemSpace10 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 280, inv.backPack!.frame.maxY - 100))
         itemSpace10.zPosition = 1
         itemSpace10.setScale(1.3)
         itemSpace10.name = "10"
@@ -509,31 +509,31 @@ class Inventory: SKScene {
         inv.addChild(itemSpace10)
         
         //row 3
-        let itemSpace11 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 160))
+            let itemSpace11 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 40, inv.backPack!.frame.maxY - 160))
         itemSpace11.setScale(1.3)
         itemSpace11.zPosition = 1
         itemSpace11.name = "11"
         inv.itemSpaces.append(itemSpace11)
         inv.addChild(itemSpace11)
-        let itemSpace12 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 100, inv.backPack!.frame.maxY - 160))
+            let itemSpace12 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 100, inv.backPack!.frame.maxY - 160))
         itemSpace12.setScale(1.3)
         itemSpace12.zPosition = 1
         itemSpace12.name = "12"
         inv.itemSpaces.append(itemSpace12)
         inv.addChild(itemSpace12)
-        let itemSpace13 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 160, inv.backPack!.frame.maxY - 160))
+            let itemSpace13 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 160, inv.backPack!.frame.maxY - 160))
         itemSpace13.setScale(1.3)
         itemSpace13.zPosition = 1
         itemSpace13.name = "13"
         inv.itemSpaces.append(itemSpace13)
         inv.addChild(itemSpace13)
-        let itemSpace14 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 220, inv.backPack!.frame.maxY - 160))
+            let itemSpace14 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 220, inv.backPack!.frame.maxY - 160))
         itemSpace14.setScale(1.3)
         itemSpace14.zPosition = 1
         itemSpace14.name = "14"
         inv.itemSpaces.append(itemSpace14)
         inv.addChild(itemSpace14)
-        let itemSpace15 = ItemSpaceNode.spaceAtPosition(CGPointMake(inv.backPack!.frame.minX + 280, inv.backPack!.frame.maxY - 160))
+            let itemSpace15 = ItemSpaceNode.spaceAtPosition(position: CGPointMake(inv.backPack!.frame.minX + 280, inv.backPack!.frame.maxY - 160))
         itemSpace15.setScale(1.3)
         itemSpace15.zPosition = 1
         itemSpace15.name = "15"
@@ -542,23 +542,23 @@ class Inventory: SKScene {
     }
     
         //weaponspace holds noggin items
-        let weaponSpace = ItemSpaceNode.spaceAtPosition(CGPointMake(weaponLabel.frame.midX, weaponLabel.frame.midY - 40))
+        let weaponSpace = ItemSpaceNode.spaceAtPosition(position: CGPointMake(weaponLabel.frame.midX, weaponLabel.frame.midY - 40))
         weaponSpace.zPosition = 1
         weaponSpace.name = "weapon"
         inv.addChild(weaponSpace)
         inv.itemSpaces.append(weaponSpace)
-        let neckSpace = ItemSpaceNode.spaceAtPosition(CGPointMake(neckLabel.frame.midX, neckLabel.frame.midY - 40))
+        let neckSpace = ItemSpaceNode.spaceAtPosition(position: CGPointMake(neckLabel.frame.midX, neckLabel.frame.midY - 40))
         neckSpace.zPosition = 1
         neckSpace.name = "neck"
         inv.addChild(neckSpace)
         inv.itemSpaces.append(neckSpace)
         //body and feet spaces are tentacles
-        let bodySpace = ItemSpaceNode.spaceAtPosition(CGPointMake(bodyLabel.frame.midX, bodyLabel.frame.midY - 40))
+        let bodySpace = ItemSpaceNode.spaceAtPosition(position: CGPointMake(bodyLabel.frame.midX, bodyLabel.frame.midY - 40))
         bodySpace.zPosition = 1
         bodySpace.name = "body"
         inv.addChild(bodySpace)
         inv.itemSpaces.append(bodySpace)
-        let feetSpace = ItemSpaceNode.spaceAtPosition(CGPointMake(feetLabel.frame.midX, feetLabel.frame.midY - 40))
+        let feetSpace = ItemSpaceNode.spaceAtPosition(position: CGPointMake(feetLabel.frame.midX, feetLabel.frame.midY - 40))
         feetSpace.zPosition = 1
         feetSpace.name = "feet"
         inv.addChild(feetSpace)
@@ -581,7 +581,7 @@ class Inventory: SKScene {
         inv.goldNode = SKLabelNode.init(text: "\(Int(inv.gold))")
         inv.goldNode!.fontName = "ChalkboardSE-Bold"
         inv.goldNode!.fontSize = 30
-        inv.goldNode!.fontColor = UIColor.blackColor()
+        inv.goldNode!.fontColor = UIColor.black
         inv.goldNode!.position = CGPointMake(inv.frame.maxX - 100, inv.frame.minY + 220)
         if is5{
             inv.goldNode!.fontSize = 23
@@ -596,9 +596,9 @@ class Inventory: SKScene {
     }
     
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
-        persistentData = NSUserDefaults.standardUserDefaults()
+        persistentData = UserDefaults.standard
         
         
         if spaceToMove != nil{
@@ -608,18 +608,18 @@ class Inventory: SKScene {
             statLabelLife!.text = ""
             statLabelMovement!.text = ""
             statLabelRegen!.text = ""
-            self.childNodeWithName("sellButton")?.removeFromParent()
+            self.childNode(withName: "sellButton")?.removeFromParent()
         }
         
         
         updateStats()
         
         goldNode!.text = "\(Int(gold))"
-        goldNode!.fontColor = UIColor.blackColor()
+        goldNode!.fontColor = UIColor.black
         
         self.populateBags()
         if spaceToMove != nil{
-            spaceToMove!.color = UIColor.whiteColor()
+            spaceToMove!.color = UIColor.white
         }
         itemToMove = nil
         spaceToMove = nil
@@ -631,10 +631,10 @@ class Inventory: SKScene {
         var life = 1
         var movement = 0
         var regen = 0
-        let weaponSpace = self.childNodeWithName("weapon") as! ItemSpaceNode
-        let bodySpace = self.childNodeWithName("body") as! ItemSpaceNode
-        let neckSpace = self.childNodeWithName("neck") as! ItemSpaceNode
-        let feetSpace = self.childNodeWithName("feet") as! ItemSpaceNode
+        let weaponSpace = self.childNode(withName: "weapon") as! ItemSpaceNode
+        let bodySpace = self.childNode(withName: "body") as! ItemSpaceNode
+        let neckSpace = self.childNode(withName: "neck") as! ItemSpaceNode
+        let feetSpace = self.childNode(withName: "feet") as! ItemSpaceNode
         if (weaponSpace.item != nil){
             for statTuple in weaponSpace.item!.getStats(){
                 if statTuple.0 == "Life" {
@@ -692,17 +692,17 @@ class Inventory: SKScene {
             
             //get correct packSpace
             var packIndex = 1
-            while (self.childNodeWithName("\(packIndex)") as? ItemSpaceNode != nil) {
-                if (self.childNodeWithName("\(packIndex)") as! ItemSpaceNode).item != nil {
+            while (self.childNode(withName: "\(packIndex)") as? ItemSpaceNode != nil) {
+                if (self.childNode(withName: "\(packIndex)") as! ItemSpaceNode).item != nil {
                     packIndex += 1
                 }else {
                     break
                 }
             }
-            persistentData = NSUserDefaults.standardUserDefaults()
-            persistentData!.setObject(itemName, forKey: "packSpace\(packIndex)")
+            persistentData = UserDefaults.standard
+            persistentData!.set(itemName, forKey: "packSpace\(packIndex)")
             //&&
-            (self.childNodeWithName("\(packIndex)") as! ItemSpaceNode).insertItem(ItemClass.itemInSpace(itemName))
+            (self.childNode(withName: "\(packIndex)") as! ItemSpaceNode).insertItem(anItem: ItemClass.itemInSpace(nameOfTexture: itemName))
             //let anItem = ItemClass.itemInSpace(itemName)
             //anItem.size = CGSizeMake(37, 37)
             //items.append(anItem)
@@ -717,7 +717,7 @@ class Inventory: SKScene {
             var placed = false
             for space in itemSpaces{
                 if space.item == nil && placed == false{
-                    space.insertItem(item)
+                    space.insertItem(anItem: item)
                     placed = true
                     items.removeAtIndex(count)
                     count--
@@ -730,43 +730,43 @@ class Inventory: SKScene {
     func sellItem(){
         //sound
         if soundOn {
-        self.runAction(bootySound)
+            self.run(bootySound)
         }
         gold += round(itemToMove!.price! / 5)
         //&&
-        persistentData!.setObject(gold, forKey: "gold")
+        persistentData!.set(gold, forKey: "gold")
         //&&
         goldNode!.text = "\(Int(gold))"
         spaceToMove!.texture = SKTexture(imageNamed: "Inventory_Slot_1")
         spaceToMove!.item = nil
         itemToMove?.removeFromParent()
-        spaceToMove!.color = UIColor.whiteColor()
-        self.childNodeWithName("sellButton")?.removeFromParent()
+        spaceToMove!.color = UIColor.white
+        self.childNode(withName: "sellButton")?.removeFromParent()
         if !(spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "neck"){
             backPackSpaces++
             //&&
-            persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name!)")
+            persistentData!.set("", forKey: "packSpace\(spaceToMove!.name!)")
             //&&
         }else{
             if spaceToMove!.name == "weapon"{
                 headDisplay!.texture = nil
                 //&&
-                persistentData!.setObject("", forKey: "headSpace")
+                persistentData!.set("", forKey: "headSpace")
                 //&&
             }else if spaceToMove!.name == "body" {
                 leftDisplay!.texture = nil
                 //&&
-                persistentData!.setObject("", forKey: "leftSpace")
+                persistentData!.set("", forKey: "leftSpace")
                 //&&
             }else if spaceToMove!.name == "feet"{
                 rightDisplay!.texture = nil
                 //&&
-                persistentData!.setObject("", forKey: "rightSpace")
+                persistentData!.set("", forKey: "rightSpace")
                 //&&
             }else{
                 neckDisplay!.texture = nil
                 //&&
-                persistentData!.setObject("", forKey: "neckSpace")
+                persistentData!.set("", forKey: "neckSpace")
                 //&&
             }
         }
@@ -778,10 +778,10 @@ class Inventory: SKScene {
         lifeSymbol2?.removeFromParent()
         speedSymbol2?.removeFromParent()
         regenerationSymbol2?.removeFromParent()
-        self.childNodeWithName("itemName")?.removeFromParent()
-        self.childNodeWithName("priceButton")?.removeFromParent()
-        self.childNodeWithName("sellBooty")?.removeFromParent()
-        self.childNodeWithName("typeString")?.removeFromParent()
+        self.childNode(withName: "itemName")?.removeFromParent()
+        self.childNode(withName: "priceButton")?.removeFromParent()
+        self.childNode(withName: "sellBooty")?.removeFromParent()
+        self.childNode(withName: "typeString")?.removeFromParent()
     }
     
     func displayItem(item: ItemClass, spot: String) {
@@ -1126,9 +1126,9 @@ class Inventory: SKScene {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches{
-            if menu!.containsPoint((touch).locationInNode(self)){
+            if menu!.contains((touch).location(in: self)){
                 if soundOn {
-                    self.runAction(clickSound)
+                    self.run(clickSound)
                 }
                 //do some cleanup on highlighted items
                 itemToMove = nil
@@ -1138,20 +1138,20 @@ class Inventory: SKScene {
                 lifeSymbol2?.removeFromParent()
                 speedSymbol2?.removeFromParent()
                 regenerationSymbol2?.removeFromParent()
-                self.childNodeWithName("sellButton")?.removeFromParent()
-                self.childNodeWithName("typeString")?.removeFromParent()
-                self.childNodeWithName("itemName")?.removeFromParent()
-                self.childNodeWithName("priceButton")?.removeFromParent()
-                self.childNodeWithName("sellBooty")?.removeFromParent()
+                self.childNode(withName: "sellButton")?.removeFromParent()
+                self.childNode(withName: "typeString")?.removeFromParent()
+                self.childNode(withName: "itemName")?.removeFromParent()
+                self.childNode(withName: "priceButton")?.removeFromParent()
+                self.childNode(withName: "sellBooty")?.removeFromParent()
                 //let menuScene = MainMenuScene(size: self.frame.size)
                 //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
-                (self.userData?.objectForKey("menu") as! MainMenuScene).userData?.setObject(self, forKey: "inventory")
-                let skTransition = SKTransition.fadeWithDuration(1.0)
+                (self.userData?.object(forKey: "menu") as! MainMenuScene).userData?.setObject(self, forKey: "inventory" as NSCopying)
+                let skTransition = SKTransition.fade(withDuration: 1.0)
                 //self.view?.presentScene(menuScene, transition: skTransition)
-                self.view?.presentScene(self.userData?.objectForKey("worldscene") as! ZoneScene, transition: skTransition)
-            }else if store!.containsPoint((touch).locationInNode(self)){
+                self.view?.presentScene(self.userData?.object(forKey: "worldscene") as! ZoneScene, transition: skTransition)
+            }else if store!.contains((touch).location(in: self)){
                 if soundOn {
-                    self.runAction(clickSound)
+                    self.run(clickSound)
                 }
                 //do some cleanup on highlighted items
                 itemToMove = nil
@@ -1161,31 +1161,31 @@ class Inventory: SKScene {
                 lifeSymbol2?.removeFromParent()
                 speedSymbol2?.removeFromParent()
                 regenerationSymbol2?.removeFromParent()
-                self.childNodeWithName("sellButton")?.removeFromParent()
-                self.childNodeWithName("typeString")?.removeFromParent()
-                self.childNodeWithName("itemName")?.removeFromParent()
-                self.childNodeWithName("priceButton")?.removeFromParent()
-                self.childNodeWithName("sellBooty")?.removeFromParent()
+                self.childNode(withName: "sellButton")?.removeFromParent()
+                self.childNode(withName: "typeString")?.removeFromParent()
+                self.childNode(withName: "itemName")?.removeFromParent()
+                self.childNode(withName: "priceButton")?.removeFromParent()
+                self.childNode(withName: "sellBooty")?.removeFromParent()
                 let storeScene = StoreScene(size: self.frame.size)
                 storeScene.userData = NSMutableDictionary()
-                storeScene.userData?.setObject(self, forKey: "inventory")
+                storeScene.userData?.setObject(self, forKey: "inventory" as NSCopying)
                 //storeScene.userData?.setObject(self.userData?.objectForKey("menu") as MainMenuScene, forKey: "menu")
-                storeScene.userData?.setObject(self.userData?.objectForKey("worldscene") as! ZoneScene, forKey: "worldscene")
-                let skTransition = SKTransition.fadeWithDuration(1.0)
+                storeScene.userData?.setObject(self.userData?.object(forKey: "worldscene") as! ZoneScene, forKey: "worldscene" as NSCopying)
+                let skTransition = SKTransition.fade(withDuration: 1.0)
                 //self.view?.presentScene(menuScene, transition: skTransition)
                 self.view?.presentScene(storeScene, transition: skTransition)
-            }else if self.childNodeWithName("sellButton") != nil && self.childNodeWithName("sellButton")!.containsPoint((touch).locationInNode(self)){
+            }else if self.childNode(withName: "sellButton") != nil && self.childNode(withName: "sellButton")!.contains((touch).location(in: self)){
                 sellItem()
             }else{
                 for space in itemSpaces{
-                    if space.containsPoint((touch).locationInNode(self)){
+                    if space.contains((touch).location(in: self)){
                         if spaceToMove != nil{
                             spaceToMove!.texture = SKTexture(imageNamed: "Inventory_Slot_1")
                         }
                         //clicked on space with item in it
                         if space.item != nil{
                             if soundOn {
-                                self.runAction(clickSound)
+                                self.run(clickSound)
                             }
                             if self.itemToMove == nil{
                                 self.itemToMove = space.item
@@ -1205,75 +1205,75 @@ class Inventory: SKScene {
                                         if space.name == "weapon" && itemToMove!.itemType == ItemType.weapon{
                                             //SWAPPING HEAD FOR HEAD HIGHLIGHTED = packspace
                                             //&&
-                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "headSpace")
+                                            persistentData!.set("\(itemToMove!.itemName!)", forKey: "headSpace")
                                             //&&
                                             
                                             //&&
                                             //changed
-                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(spaceToMove!.name!)")
+                                            persistentData!.set("\(space.item!.itemName!)", forKey: "packSpace\(spaceToMove!.name!)")
                                             //&&
                                             
-                                            self.spaceToMove!.insertItem(space.item!)
-                                            space.insertItem(self.itemToMove!)
-                                            displayItem(itemToMove!, spot: "weapon")
+                                            self.spaceToMove!.insertItem(anItem: space.item!)
+                                            space.insertItem(anItem: self.itemToMove!)
+                                            displayItem(item: itemToMove!, spot: "weapon")
                                             if soundOn {
-                                                self.runAction(itemSound)
+                                                self.run(itemSound)
                                             }
                                         }else if space.name == "body" && (itemToMove!.itemType == ItemType.body || itemToMove!.itemType == ItemType.feet){
                                             //SWAPPING LEFT FOR LEFT HIGHLIGHTED = packspace
                                             
                                             //&&
-                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "leftSpace")
+                                            persistentData!.set("\(itemToMove!.itemName!)", forKey: "leftSpace")
                                             //&&
                                             
                                             //&&
                                             //changed
-                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(spaceToMove!.name!)")
+                                            persistentData!.set("\(space.item!.itemName!)", forKey: "packSpace\(spaceToMove!.name!)")
                                             //&&
                                             
-                                            self.spaceToMove!.insertItem(space.item!)
-                                            space.insertItem(self.itemToMove!)
-                                            displayItem(itemToMove!, spot: "body")
+                                            self.spaceToMove!.insertItem(anItem: space.item!)
+                                            space.insertItem(anItem: self.itemToMove!)
+                                            displayItem(item: itemToMove!, spot: "body")
                                             if soundOn {
-                                                self.runAction(itemSound)
+                                                self.run(itemSound)
                                             }
                                         }else if space.name == "feet" && (itemToMove!.itemType == ItemType.feet || itemToMove!.itemType == ItemType.body){
                                             //SWAPPING RIGHT FOR RIGHT HIGHLIGHTED = packspace
                                             
                                             //&&
-                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "rightSpace")
+                                            persistentData!.set("\(itemToMove!.itemName!)", forKey: "rightSpace")
                                             //&&
                                             
                                             //&&
                                             //changed
-                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(spaceToMove!.name!)")
+                                            persistentData!.set("\(space.item!.itemName!)", forKey: "packSpace\(spaceToMove!.name!)")
                                             //&&
                                             
-                                            self.spaceToMove!.insertItem(space.item!)
-                                            space.insertItem(self.itemToMove!)
-                                            displayItem(itemToMove!, spot: "feet")
+                                            self.spaceToMove!.insertItem(anItem: space.item!)
+                                            space.insertItem(anItem: self.itemToMove!)
+                                            displayItem(item: itemToMove!, spot: "feet")
                                             if soundOn {
-                                                self.runAction(itemSound)
+                                                self.run(itemSound)
                                             }
                                         }else if space.name == "neck" && itemToMove!.itemType == ItemType.neck{
                                             //SWAPPING NECK FOR NECK HIGHLIGHTED = packspace
                                             
                                             //&&
-                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "neckSpace")
+                                            persistentData!.set("\(itemToMove!.itemName!)", forKey: "neckSpace")
                                             //&&
                                             
                                             //&&
                                             //changed
-                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(spaceToMove!.name!)")
+                                            persistentData!.set("\(space.item!.itemName!)", forKey: "packSpace\(spaceToMove!.name!)")
                                             //&&
                                             
                                             //println("Name of the space: \(space.name!)")
                                             //println("\(itemToMove!.itemName!)")
                                             
                                             
-                                            self.spaceToMove!.insertItem(space.item!)
-                                            space.insertItem(self.itemToMove!)
-                                            displayItem(itemToMove!, spot: "neck")
+                                            self.spaceToMove!.insertItem(anItem: space.item!)
+                                            space.insertItem(anItem: self.itemToMove!)
+                                            displayItem(item: itemToMove!, spot: "neck")
                                         }
                                     }else if spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "neck"{
                                         //CHECK IF SPACETOMOVE IS WEP,BODY,FEET AND THEN CHECK SPACE'S ITEMTYPE
@@ -1281,85 +1281,85 @@ class Inventory: SKScene {
                                             //SWAPPING HEAD FOR HEAD HIGHLIGHTED = HEAD
                                             
                                             //&&
-                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "headSpace")
+                                            persistentData!.set("\(space.item!.itemName!)", forKey: "headSpace")
                                             //&&
                                             
                                             //&&
-                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
+                                            persistentData!.set("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
                                             //&&
                                             
-                                            self.spaceToMove!.insertItem(space.item!)
-                                            displayItem(space.item!, spot: "weapon")
-                                            space.insertItem(self.itemToMove!)
+                                            self.spaceToMove!.insertItem(anItem: space.item!)
+                                            displayItem(item: space.item!, spot: "weapon")
+                                            space.insertItem(anItem: self.itemToMove!)
                                             if soundOn {
-                                                self.runAction(itemSound)
+                                                self.run(itemSound)
                                             }
                                         }else if spaceToMove!.name == "body" && (space.item!.itemType == ItemType.body || space.item!.itemType == ItemType.feet){
                                             //SWAPPING Left FOR Left HIGHLIGHTED = Left
                                             
                                             //&&
-                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "leftSpace")
+                                            persistentData!.set("\(space.item!.itemName!)", forKey: "leftSpace")
                                             //&&
                                             
                                             //&&
-                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
+                                            persistentData!.set("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
                                             //&&
-                                            displayItem(space.item!, spot: "body")
-                                            self.spaceToMove!.insertItem(space.item!)
-                                            space.insertItem(self.itemToMove!)
+                                            displayItem(item: space.item!, spot: "body")
+                                            self.spaceToMove!.insertItem(anItem: space.item!)
+                                            space.insertItem(anItem: self.itemToMove!)
                                             if soundOn {
-                                                self.runAction(itemSound)
+                                                self.run(itemSound)
                                             }
                                         }else if spaceToMove!.name == "feet" && (space.item!.itemType == ItemType.feet || space.item!.itemType == ItemType.body){
                                             //SWAPPING Right FOR Right HIGHLIGHTED = Right
                                             
                                             //&&
-                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "rightSpace")
+                                            persistentData!.set("\(space.item!.itemName!)", forKey: "rightSpace")
                                             //&&
                                             
                                             //&&
-                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
+                                            persistentData!.set("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
                                             //&&
-                                            displayItem(space.item!, spot: "feet")
-                                            self.spaceToMove!.insertItem(space.item!)
-                                            space.insertItem(self.itemToMove!)
+                                            displayItem(item: space.item!, spot: "feet")
+                                            self.spaceToMove!.insertItem(anItem: space.item!)
+                                            space.insertItem(anItem: self.itemToMove!)
                                             if soundOn {
-                                                self.runAction(itemSound)
+                                                self.run(itemSound)
                                             }
                                         }else if spaceToMove!.name == "neck" && space.item!.itemType == ItemType.neck{
                                             //SWAPPING Neck FOR Neck HIGHLIGHTED = Neck
                                             
                                             //&&
-                                            persistentData!.setObject("\(space.item!.itemName!)", forKey: "neckSpace")
+                                            persistentData!.set("\(space.item!.itemName!)", forKey: "neckSpace")
                                             //&&
                                             
                                             //&&
-                                            persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
+                                            persistentData!.set("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
                                             //&&
                                             
-                                            self.spaceToMove!.insertItem(space.item!)
-                                            displayItem(space.item!, spot: "neck")
-                                            space.insertItem(self.itemToMove!)
+                                            self.spaceToMove!.insertItem(anItem: space.item!)
+                                            displayItem(item: space.item!, spot: "neck")
+                                            space.insertItem(anItem: self.itemToMove!)
                                             if soundOn {
-                                                self.runAction(itemSound)
+                                                self.run(itemSound)
                                             }
                                         }
                                     }
                                     else{
                                         //SWAPPING TWO ITEMS IN THE BACKPACK!!!
                                         if soundOn {
-                                            self.runAction(itemSound)
+                                            self.run(itemSound)
                                         }
                                         //&&
-                                        persistentData!.setObject("\(space.item!.itemName!)", forKey: "packSpace\(spaceToMove!.name!)")
+                                        persistentData!.set("\(space.item!.itemName!)", forKey: "packSpace\(spaceToMove!.name!)")
                                         //&&
                                         
                                         //&&
-                                        persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
+                                        persistentData!.set("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
                                         //&&
                                         
-                                        self.spaceToMove!.insertItem(space.item!)
-                                        space.insertItem(self.itemToMove!)
+                                        self.spaceToMove!.insertItem(anItem: space.item!)
+                                        space.insertItem(anItem: self.itemToMove!)
                                     }
                                     self.itemToMove = nil
                                     self.spaceToMove = nil
@@ -1374,7 +1374,7 @@ class Inventory: SKScene {
                                 if spaceToMove!.name == "weapon"{
                                     
                                     //&&
-                                    persistentData!.setObject("", forKey: "headSpace")
+                                    persistentData!.set("", forKey: "headSpace")
                                     //&&
                                     
                                     //&&
@@ -1385,7 +1385,7 @@ class Inventory: SKScene {
                                 }else if spaceToMove!.name == "body"{
                                     
                                     //&&
-                                    persistentData!.setObject("", forKey: "leftSpace")
+                                    persistentData!.set("", forKey: "leftSpace")
                                     //&&
                                     
                                     //&&
@@ -1396,7 +1396,7 @@ class Inventory: SKScene {
                                 }else if spaceToMove!.name == "feet"{
                                     
                                     //&&
-                                    persistentData!.setObject("", forKey: "rightSpace")
+                                    persistentData!.set("", forKey: "rightSpace")
                                     //&&
                                     
                                     //&&
@@ -1407,7 +1407,7 @@ class Inventory: SKScene {
                                 }else if spaceToMove!.name == "neck"{
                                     
                                     //&&
-                                    persistentData!.setObject("", forKey: "neckSpace")
+                                    persistentData!.set("", forKey: "neckSpace")
                                     //&&
                                     
                                     //&&
@@ -1422,100 +1422,100 @@ class Inventory: SKScene {
                                         //MOVING ITEM FROM PACK TO HEAD
                                         backPackSpaces++
                                         weapon = itemToMove
-                                        displayItem(itemToMove!, spot: "weapon")
+                                        displayItem(item: itemToMove!, spot: "weapon")
                                         
                                         //&&
-                                        persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "headSpace")
+                                        persistentData!.set("\(itemToMove!.itemName!)", forKey: "headSpace")
                                         //&&
                                         
                                         //&&
                                         //println("spaceToMove name is \(spaceToMove!.name!)")
-                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name!)")
+                                        persistentData!.set("", forKey: "packSpace\(spaceToMove!.name!)")
                                         //&&
                                         
                                         spaceToMove!.removeItem()
-                                        space.insertItem(self.itemToMove!)
+                                        space.insertItem(anItem: self.itemToMove!)
                                         moved = true
                                         if soundOn {
-                                            self.runAction(itemSound)
+                                            self.run(itemSound)
                                         }
                                     }else if space.name == "body" && (itemToMove!.itemType == ItemType.body || itemToMove!.itemType == ItemType.feet){
                                         //MOVING ITEM FROM PACK TO LEFT
                                         backPackSpaces++
                                         body = itemToMove
-                                        displayItem(itemToMove!, spot: "body")
+                                        displayItem(item: itemToMove!, spot: "body")
                                         
                                         //&&
-                                        persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "leftSpace")
+                                        persistentData!.set("\(itemToMove!.itemName!)", forKey: "leftSpace")
                                         //&&
                                         
                                         //&&
-                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name!)")
+                                        persistentData!.set("", forKey: "packSpace\(spaceToMove!.name!)")
                                         //&&
                                         
                                         spaceToMove!.removeItem()
-                                        space.insertItem(self.itemToMove!)
+                                        space.insertItem(anItem: self.itemToMove!)
                                         moved = true
                                         if soundOn {
-                                            self.runAction(itemSound)
+                                            self.run(itemSound)
                                         }
                                     }else if space.name == "feet" && (itemToMove!.itemType == ItemType.feet || itemToMove!.itemType == ItemType.body){
                                         //MOVING ITEM FROM PACK TO RIGHT
                                         backPackSpaces++
                                         feet = itemToMove
-                                        displayItem(itemToMove!, spot: "feet")
+                                        displayItem(item: itemToMove!, spot: "feet")
                                         
                                         //&&
-                                        persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "rightSpace")
+                                        persistentData!.set("\(itemToMove!.itemName!)", forKey: "rightSpace")
                                         //&&
                                         
                                         //&&
-                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name!)")
+                                        persistentData!.set("", forKey: "packSpace\(spaceToMove!.name!)")
                                         //&&
                                         
                                         spaceToMove!.removeItem()
-                                        space.insertItem(self.itemToMove!)
+                                        space.insertItem(anItem: self.itemToMove!)
                                         moved = true
                                         if soundOn {
-                                            self.runAction(itemSound)
+                                            self.run(itemSound)
                                         }
                                     }else if space.name == "neck" && itemToMove!.itemType == ItemType.neck{
                                         //MOVING ITEM FROM PACK TO NECK
                                         backPackSpaces++
                                         neck = itemToMove
-                                        displayItem(itemToMove!, spot: "neck")
+                                        displayItem(item: itemToMove!, spot: "neck")
                                         
                                         //&&
-                                        persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "neckSpace")
+                                        persistentData!.set("\(itemToMove!.itemName!)", forKey: "neckSpace")
                                         //&&
                                         
                                         //&&
-                                        persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name!)")
+                                        persistentData!.set("", forKey: "packSpace\(spaceToMove!.name!)")
                                         //&&
                                         
                                         spaceToMove!.removeItem()
-                                        space.insertItem(self.itemToMove!)
+                                        space.insertItem(anItem: self.itemToMove!)
                                         moved = true
                                         if soundOn {
-                                            self.runAction(itemSound)
+                                            self.run(itemSound)
                                         }
                                     }else{
                                     }
                                 }else{
                                     //println("space to space!")
                                     //&&
-                                    persistentData!.setObject("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
+                                    persistentData!.set("\(itemToMove!.itemName!)", forKey: "packSpace\(space.name!)")
                                     //&&
                                     
                                     //&&
-                                    persistentData!.setObject("", forKey: "packSpace\(spaceToMove!.name!)")
+                                    persistentData!.set("", forKey: "packSpace\(spaceToMove!.name!)")
                                     //&&
                                     
                                     spaceToMove!.removeItem()
-                                    space.insertItem(self.itemToMove!)
+                                    space.insertItem(anItem: self.itemToMove!)
                                     moved = true
                                     if soundOn {
-                                        self.runAction(itemSound)
+                                        self.run(itemSound)
                                     }
                                 }
                                 if (spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "neck") && moved{
@@ -1539,7 +1539,7 @@ class Inventory: SKScene {
                         //space.wasClicked = true
                         //self.itemToMove = space.item
                         if spaceToMove != nil{
-                            spaceToMove!.color = UIColor.blackColor()
+                            spaceToMove!.color = UIColor.black
                             statLabelLife!.text = "0"
                             statLabelMovement!.text = "0"
                             statLabelRegen!.text = "0"
@@ -1555,8 +1555,8 @@ class Inventory: SKScene {
                             self.addChild(lifeSymbol2!)
                             self.addChild(speedSymbol2!)
                             self.addChild(regenerationSymbol2!)
-                            if self.childNodeWithName("priceButton") != nil{
-                                self.childNodeWithName("priceButton")?.removeFromParent()
+                            if self.childNode(withName: "priceButton") != nil{
+                                self.childNode(withName: "priceButton")?.removeFromParent()
                             }
                             
                             if isPlus{
@@ -1564,7 +1564,7 @@ class Inventory: SKScene {
                                 sellNode.position = CGPointMake(self.frame.minX + 65, self.frame.midY - 118)
                                 sellNode.fontName = "ChalkboardSE-Bold"
                                 sellNode.fontSize = 22
-                                sellNode.fontColor = UIColor.blackColor()
+                                sellNode.fontColor = UIColor.black
                                 sellNode.name = "priceButton"
                                 self.addChild(sellNode)
                                 
@@ -1579,7 +1579,7 @@ class Inventory: SKScene {
                                 sellNode.position = CGPointMake(self.frame.minX + 40, self.frame.minY + 215)
                                 sellNode.fontName = "ChalkboardSE-Bold"
                                 sellNode.fontSize = 23
-                                sellNode.fontColor = UIColor.blackColor()
+                                sellNode.fontColor = UIColor.black
                                 sellNode.name = "priceButton"
                                 self.addChild(sellNode)
                                 
@@ -1594,7 +1594,7 @@ class Inventory: SKScene {
                                 sellNode.position = CGPointMake(self.frame.minX + 30, self.frame.minY + 131)
                                 sellNode.fontName = "ChalkboardSE-Bold"
                                 sellNode.fontSize = 17
-                                sellNode.fontColor = UIColor.blackColor()
+                                sellNode.fontColor = UIColor.black
                                 sellNode.name = "priceButton"
                                 self.addChild(sellNode)
                                 
@@ -1609,7 +1609,7 @@ class Inventory: SKScene {
                                 sellNode.position = CGPointMake(self.frame.minX + 48, self.frame.minY + 252)
                                 sellNode.fontName = "ChalkboardSE-Bold"
                                 sellNode.fontSize = 22
-                                sellNode.fontColor = UIColor.blackColor()
+                                sellNode.fontColor = UIColor.black
                                 sellNode.name = "priceButton"
                                 self.addChild(sellNode)
                                 
@@ -1717,11 +1717,11 @@ class Inventory: SKScene {
                             lifeSymbol2?.removeFromParent()
                             speedSymbol2?.removeFromParent()
                             regenerationSymbol2?.removeFromParent()
-                            self.childNodeWithName("sellButton")?.removeFromParent()
-                            self.childNodeWithName("typeString")?.removeFromParent()
-                            self.childNodeWithName("itemName")?.removeFromParent()
-                            self.childNodeWithName("priceButton")?.removeFromParent()
-                            self.childNodeWithName("sellBooty")?.removeFromParent()
+                            self.childNode(withName: "sellButton")?.removeFromParent()
+                            self.childNode(withName: "typeString")?.removeFromParent()
+                            self.childNode(withName: "itemName")?.removeFromParent()
+                            self.childNode(withName: "priceButton")?.removeFromParent()
+                            self.childNode(withName: "sellBooty")?.removeFromParent()
                         }
                     }//else{
                         //space.wasClicked = false

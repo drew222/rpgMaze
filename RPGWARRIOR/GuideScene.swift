@@ -16,7 +16,7 @@ class GuideScene: SKScene {
     var theImage: SKSpriteNode?
     var count = 0
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
         if soundOn{
             happyMusic!.stop()
@@ -40,12 +40,12 @@ class GuideScene: SKScene {
                 count++
                 if count == allImages.count {
                     var zoneScene: MainMenuScene
-                    zoneScene = self.userData?.objectForKey("menu") as! MainMenuScene
-                    let skTransition = SKTransition.fadeWithDuration(1.0)
+                    zoneScene = self.userData?.object(forKey: "menu") as! MainMenuScene
+                    let skTransition = SKTransition.fade(withDuration: 1.0)
                     self.view?.presentScene(zoneScene, transition: skTransition)
                 }else{
                     if soundOn {
-                        self.runAction(pageSound)
+                        self.run(pageSound)
                     }
                     theImage!.texture = allImages[count]
                 }

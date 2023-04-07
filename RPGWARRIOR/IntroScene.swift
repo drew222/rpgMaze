@@ -12,8 +12,8 @@ import SpriteKit
 
 class IntroScene: SKScene {
     
-    let defaults = NSUserDefaults.standardUserDefaults()
-    override func didMoveToView(view: SKView) {
+    let defaults = UserDefaults.standard
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
         //ADJUST SOUND VOLUMES HERE
         introMusic!.volume = 0.3
@@ -34,8 +34,8 @@ class IntroScene: SKScene {
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
         self.addChild(background)
         
-        if let _ = defaults.objectForKey("firstOpen") as? Bool {
-            if defaults.objectForKey("sound") as! Bool {
+        if let _ = defaults.object(forKey: "firstOpen") as? Bool {
+            if defaults.object(forKey: "sound") as! Bool {
                 introMusic!.play()
             }
         }else{
@@ -51,9 +51,9 @@ class IntroScene: SKScene {
         
         let gameplayScene = ZoneScene(size: self.frame.size)
         introMusic!.stop()
-        if let _ = defaults.objectForKey("firstOpen") as? Bool {
+        if let _ = defaults.object(forKey: "firstOpen") as? Bool {
             //already opened the app
-            let skTransition = SKTransition.fadeWithDuration(1.0)
+            let skTransition = SKTransition.fade(withDuration: 1.0)
             if uniZoneScene != nil {
                 self.view?.presentScene(uniZoneScene!, transition: skTransition)
             }else{
@@ -61,11 +61,11 @@ class IntroScene: SKScene {
                 self.view?.presentScene(gameplayScene, transition: skTransition)
             }
         }else {
-            defaults.setBool(true, forKey: "firstOpen")
-            defaults.setBool(true, forKey: "sound")
-            defaults.setBool(false, forKey: "beatgame")
+            defaults.set(true, forKey: "firstOpen")
+            defaults.set(true, forKey: "sound")
+            defaults.set(false, forKey: "beatgame")
             //present tutorial here instead
-            let skTransition = SKTransition.fadeWithDuration(1.0)
+            let skTransition = SKTransition.fade(withDuration: 1.0)
             let tutorial = TutorialScene(size: self.frame.size)
             self.view?.presentScene(tutorial, transition: skTransition)
         }

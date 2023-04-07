@@ -40,12 +40,12 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
     var theKraken: KrakenBoss?
     var theHero: HeroClass?
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
-        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
+        theHero = HeroClass.makeHero(position: CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
-        theKraken = KrakenBoss.makeKraken(CGPointMake(self.frame.midX, self.frame.maxY - 50))
+        theKraken = KrakenBoss.makeKraken(position: CGPointMake(self.frame.midX, self.frame.maxY - 50))
         theKraken!.size = CGSizeMake(150, 120)
         self.addChild(theKraken!)
         //the below constraints did nothing
@@ -91,9 +91,9 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         clockNode.size = CGSizeMake(30, 30)
         clockNode.name = "regenClock"
         clockNode.zPosition = 3
-        let spinAction = SKAction.rotateByAngle(2 * pi, duration: healSpeed)
-        let repeatAction = SKAction.repeatActionForever(spinAction)
-        clockNode.runAction(repeatAction)
+        let spinAction = SKAction.rotate(byAngle: 2 * pi, duration: healSpeed)
+        let repeatAction = SKAction.repeatForever(spinAction)
+        clockNode.run(repeatAction)
         clockNode.zRotation = pi / 1.6
         self.addChild(clockNode)
         //********************
@@ -106,52 +106,52 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         }else{
             regenAmount.fontSize = 13
         }
-        regenAmount.fontColor = UIColor.whiteColor()
+        regenAmount.fontColor = UIColor.white
         regenAmount.zPosition = 2
         regenAmount.fontName = "ChalkboardSE-Bold"
         self.addChild(regenAmount)
         //*************************
         
         //bot shells
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX, 65)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 45, 65)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 45, 65)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 45, 25)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 45, 25)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX, 65)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX - 45, 65)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 45, 65)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 45, 25)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX - 45, 25)))
         
         //top shells
         if is5 || isPad{
-            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 65, self.frame.maxY - 25)))
-            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 65, self.frame.maxY - 25)))
+            self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX - 65, self.frame.maxY - 25)))
+            self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 65, self.frame.maxY - 25)))
         }else{
-            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 25)))
-            self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 25)))
+            self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX - 100, self.frame.maxY - 25)))
+            self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 100, self.frame.maxY - 25)))
         }
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 65)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 65)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 105)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 105)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 145)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 145)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 145)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.maxY - 145)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 20, self.frame.maxY - 145)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.maxY - 145)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 20, self.frame.maxY - 145)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX - 100, self.frame.maxY - 65)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 100, self.frame.maxY - 65)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX - 100, self.frame.maxY - 105)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 100, self.frame.maxY - 105)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 100, self.frame.maxY - 145)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX - 100, self.frame.maxY - 145)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 100, self.frame.maxY - 145)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 60, self.frame.maxY - 145)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 20, self.frame.maxY - 145)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX - 60, self.frame.maxY - 145)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX - 20, self.frame.maxY - 145)))
         
         //mid row
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 50, self.frame.midY)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 50, self.frame.midY)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 90, self.frame.midY)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 90, self.frame.midY)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 130, self.frame.midY)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 130, self.frame.midY)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 170, self.frame.midY)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 170, self.frame.midY)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 210, self.frame.midY)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 210, self.frame.midY)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX + 250, self.frame.midY)))
-        self.addChild(WhiteShell.mineAtPos(CGPointMake(self.frame.midX - 250, self.frame.midY)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 50, self.frame.midY)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX - 50, self.frame.midY)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 90, self.frame.midY)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX - 90, self.frame.midY)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 130, self.frame.midY)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX - 130, self.frame.midY)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 170, self.frame.midY)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX - 170, self.frame.midY)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 210, self.frame.midY)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX - 210, self.frame.midY)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX + 250, self.frame.midY)))
+        self.addChild(WhiteShell.mineAtPos(position: CGPointMake(self.frame.midX - 250, self.frame.midY)))
         for node in self.children {
             if let aNode = node as? SKSpriteNode {
                 if aNode.name == "whiteshell" {
@@ -184,14 +184,14 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWhiteShell.rawValue){
-                theHero!.takeDamage(2)
-                (secondBody.node as! WhiteShell).explode(secondBody.node!.position)
+            theHero!.takeDamage(damage: 2)
+            (secondBody.node as! WhiteShell).explode(position: secondBody.node!.position)
         }
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
-                if !self.childNodeWithName("safeSpot1")!.containsPoint(theHero!.position){
-                    theHero!.takeDamage(10)
+            if !self.childNodeWithName("safeSpot1")!.contains(theHero!.position){
+                    theHero!.takeDamage(damage: 10)
                 }
                 //println("died by tentalce")
         }
@@ -204,18 +204,18 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         let aHero = self.childNodeWithName("hero") as? HeroClass
         for touch in touches{
             if !inkSplatted{
-                aHero!.moveHelper((touch ).locationInNode(self))
+                aHero!.moveHelper(position: (touch ).locationInNode(self))
             }else if self.childNodeWithName("yesText") != nil{
-                if self.childNodeWithName("yesText")!.containsPoint((touch ).locationInNode(self)){
+                if self.childNodeWithName("yesText")!.contains((touch ).locationInNode(self)){
                     let newLevel1 = World1Level21(size: self.frame.size)
                     newLevel1.userData = NSMutableDictionary()
-                    newLevel1.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
-                    newLevel1.userData?.setObject(self.userData?.objectForKey("menu") as! MainMenuScene, forKey: "menu")
+                    newLevel1.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory" as NSCopying)
+                    newLevel1.userData?.setObject(self.userData?.objectForKey("menu") as! MainMenuScene, forKey: "menu" as NSCopying)
                     //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
                     let skTransition = SKTransition.fadeWithDuration(1.0)
                     self.view?.presentScene(newLevel1, transition: skTransition)
                     
-                }else if self.childNodeWithName("noText")!.containsPoint((touch ).locationInNode(self)){
+                }else if self.childNodeWithName("noText")!.contains((touch ).locationInNode(self)){
                     let skTransition = SKTransition.fadeWithDuration(1.0)
                     if soundOn {
                         levelMusic!.stop()
@@ -226,7 +226,7 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
@@ -253,7 +253,7 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
             self.lastHeal = currentTime
             if theHero!.life < maxLife{
                 if soundOn && !levelOver && !droppedChest{
-                    self.runAction(regenSound)
+                    self.run(regenSound)
                 }
                 theHero!.life! += theHero!.regeneration!
                 if theHero!.life > maxLife{
@@ -284,7 +284,7 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
                     inkSplat.size = CGSizeMake(50, 50)
                     self.addChild(inkSplat)
                     let stretchAction = SKAction.scaleXBy(7, y: 7, duration: 0.4)
-                    let codeBlock = SKAction.runBlock({
+                    let codeBlock = SKAction.run({
                         let yesText = SKSpriteNode(imageNamed: "Yes_Text_1")
                         let noText = SKSpriteNode(imageNamed: "No_Text_1")
                         yesText.zPosition = 3
@@ -299,15 +299,15 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
                         self.addChild(noText)
                     })
                     let sequence = SKAction.sequence([stretchAction, codeBlock])
-                    inkSplat.runAction(sequence)
+                    inkSplat.run(sequence)
                     inkSplatted = true
                     if soundOn {
-                    self.runAction(splatterSound)
+                        self.run(splatterSound)
                     }
                 }else{
                     
                     //&&
-                    let persistentData = NSUserDefaults.standardUserDefaults()
+                    let persistentData = NSUserDefaults.standardUserDefaults
                     if (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel < 21{
                     persistentData.setObject(21, forKey: "highestLevel")
                         (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel = 21
@@ -324,8 +324,8 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
                         itemDisplayScene.numBooty = 8
                     }
                     itemDisplayScene.userData = NSMutableDictionary()
-                    itemDisplayScene.userData?.setObject(self.userData?.objectForKey("menu") as! MainMenuScene, forKey: "menu")
-                    itemDisplayScene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
+                    itemDisplayScene.userData?.setObject(self.userData?.objectForKey("menu") as! MainMenuScene, forKey: "menu" as NSCopying)
+                    itemDisplayScene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory" as NSCopying)
                     self.view?.presentScene(itemDisplayScene, transition: skTransition)
                     //***************************
                 }
@@ -334,7 +334,7 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
             }
             else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil){
                 if theKraken!.isDead && droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
-                    dropLoot("level21", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
+                    dropLoot(level: "level21", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
                     droppedItem = true
                     itemDropped = self.childNodeWithName("item") as? ItemClass
                 }else if theKraken!.isDead && !droppedChest {
@@ -347,7 +347,7 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
                         }
                     }
                     self.childNodeWithName("lifeNumber")?.removeFromParent()
-                    self.addChild(TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY)))
+                    self.addChild(TreasureChest.chestAtPosition(position: CGPointMake(self.frame.midX, self.frame.midY)))
                     droppedChest = true
                 }
             }

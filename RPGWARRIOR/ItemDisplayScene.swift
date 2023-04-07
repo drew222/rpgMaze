@@ -20,10 +20,10 @@ class ItemDisplayScene: SKScene {
     var numBooty = 0
     var continueButton: SKSpriteNode? = nil
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
         
-        theItem = ItemClass.itemInSpace("\(itemName!)")
+        theItem = ItemClass.itemInSpace(nameOfTexture: "\(itemName!)")
         let theImage = SKSpriteNode(imageNamed: "\(itemName!)")
         theImage.position = CGPointMake(self.frame.midX, self.frame.midY + 50)
         if itemName == "Booty_1" {
@@ -48,7 +48,7 @@ class ItemDisplayScene: SKScene {
         self.addChild(levelComplete)
         
         //backpack spaces
-        let backpackSpaces = (self.userData?.objectForKey("inventory") as! Inventory).backPackSpaces
+        let backpackSpaces = (self.userData?.object(forKey: "inventory") as! Inventory).backPackSpaces
         if backpackSpaces == 0 && itemName != "Booty_1"{
             theImage.texture = SKTexture(imageNamed: "Backpack_Full_Text")
             theImage.size = CGSizeMake(300, 250)
@@ -68,7 +68,7 @@ class ItemDisplayScene: SKScene {
         
         if backpackSpaces != 0 {
         var liteAttack: SKEmitterNode?
-        let litePath = NSBundle.mainBundle().pathForResource("TreasureChestSpark", ofType: "sks")
+            let litePath = BundleBundle.main.pathForResource("TreasureChestSpark", ofType: "sks")
         liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
         liteAttack!.position = CGPointMake(self.frame.midX, self.frame.midY + 50)
             if is5{
@@ -82,10 +82,10 @@ class ItemDisplayScene: SKScene {
         liteAttack!.zPosition = 2
         liteAttack!.particleColorBlueRange = 100
         liteAttack!.setScale(0.9)
-        let waitDuration = SKAction.waitForDuration(1)
-        let runBlock = SKAction.runBlock({liteAttack!.removeFromParent()})
+            let waitDuration = SKAction.wait(forDuration: 1)
+            let runBlock = SKAction.run({liteAttack!.removeFromParent()})
         let sequence = SKAction.sequence([waitDuration, runBlock])
-        liteAttack!.runAction(sequence)
+            liteAttack!.run(sequence)
         self.addChild(liteAttack!)
         }
         
@@ -168,7 +168,7 @@ class ItemDisplayScene: SKScene {
         sellNode.position = CGPointMake(self.frame.midX + 155, 285)
         sellNode.fontName = "ChalkboardSE-Bold"
         sellNode.fontSize = 20
-        sellNode.fontColor = UIColor.blackColor()
+            sellNode.fontColor = UIColor.black
         sellNode.name = "priceButton"
         sellNode.zPosition = 3
         //self.addChild(sellNode)
@@ -183,12 +183,12 @@ class ItemDisplayScene: SKScene {
             
             
             //gold node
-            let goldCount = (self.userData?.objectForKey("inventory") as! Inventory).gold
+            let goldCount = (self.userData?.object(forKey: "inventory") as! Inventory).gold
             let goldNode = SKLabelNode.init(text: "\(Int(goldCount))")
             goldNode.position = CGPointMake(self.frame.midX + 50, self.frame.midY - 180)
             goldNode.fontName = "ChalkboardSE-Bold"
             goldNode.fontSize = 20
-            goldNode.fontColor = UIColor.blackColor()
+            goldNode.fontColor = UIColor.black
             self.addChild(goldNode)
             //booty coin image
             let booty = SKSpriteNode(imageNamed: "Booty_1.png")
@@ -200,7 +200,7 @@ class ItemDisplayScene: SKScene {
             myBootyText.position = CGPointMake(self.frame.midX - 50, self.frame.midY - 180)
             myBootyText.fontName = "ChalkboardSE-Bold"
             myBootyText.fontSize = 20
-            myBootyText.fontColor = UIColor.blackColor()
+            myBootyText.fontColor = UIColor.black
             myBootyText.name = "bootyText"
             myBootyText.zPosition = 3
             self.addChild(myBootyText)
@@ -211,7 +211,7 @@ class ItemDisplayScene: SKScene {
             sellNode2.position = CGPointMake(self.frame.midX + 80, self.frame.midY - 51)
             sellNode2.fontName = "ChalkboardSE-Bold"
             sellNode2.fontSize = 20
-            sellNode2.fontColor = UIColor.blackColor()
+            sellNode2.fontColor = UIColor.black
             sellNode2.name = "priceButton"
             sellNode2.zPosition = 3
             self.addChild(sellNode2)
@@ -225,7 +225,7 @@ class ItemDisplayScene: SKScene {
         myBootyText2.position = CGPointMake(self.frame.midX + 50, 285)
         myBootyText2.fontName = "ChalkboardSE-Bold"
         myBootyText2.fontSize = 20
-        myBootyText2.fontColor = UIColor.blackColor()
+            myBootyText2.fontColor = UIColor.black
         myBootyText2.name = "sellText"
         myBootyText2.zPosition = 3
         //self.addChild(myBootyText2)
@@ -234,7 +234,7 @@ class ItemDisplayScene: SKScene {
             myBootyText3.position = CGPointMake(self.frame.midX - 20, self.frame.midY - 50)
             myBootyText3.fontName = "ChalkboardSE-Bold"
             myBootyText3.fontSize = 20
-            myBootyText3.fontColor = UIColor.blackColor()
+            myBootyText3.fontColor = UIColor.black
             myBootyText3.name = "sellText"
             myBootyText3.zPosition = 3
             self.addChild(myBootyText3)
@@ -267,7 +267,7 @@ class ItemDisplayScene: SKScene {
         statLabelLife.position = CGPointMake(self.frame.midX - 70, self.frame.minY + 327)
         statLabelLife.fontName = "ChalkboardSE-Bold"
         statLabelLife.fontSize = 25
-        statLabelLife.fontColor = UIColor.blackColor()
+            statLabelLife.fontColor = UIColor.black
         statLabelLife.name = "lifeStat"
         statLabelLife.setScale(0.7)
         //self.addChild(statLabelLife)
@@ -275,7 +275,7 @@ class ItemDisplayScene: SKScene {
         statLabelMovement.position = CGPointMake(self.frame.midX + 30, self.frame.minY + 327)
         statLabelMovement.fontName = "ChalkboardSE-Bold"
         statLabelMovement.fontSize = 30
-        statLabelMovement.fontColor = UIColor.blackColor()
+            statLabelMovement.fontColor = UIColor.black
         statLabelMovement.name = "movementStat"
         statLabelMovement.setScale(0.7)
         //self.addChild(statLabelMovement)
@@ -283,7 +283,7 @@ class ItemDisplayScene: SKScene {
         statLabelRegen.position = CGPointMake(self.frame.midX + 130, self.frame.minY + 327)
         statLabelRegen.fontName = "ChalkboardSE-Bold"
         statLabelRegen.fontSize = 30
-        statLabelRegen.fontColor = UIColor.blackColor()
+            statLabelRegen.fontColor = UIColor.black
         statLabelRegen.name = "regenStat"
         statLabelRegen.setScale(0.7)
         //self.addChild(statLabelRegen)
@@ -309,10 +309,10 @@ class ItemDisplayScene: SKScene {
         
         
         if soundOn {
-            self.runAction(hornSound)
-            let wait = SKAction.waitForDuration(0.1)
+            self.run(hornSound)
+            let wait = SKAction.wait(forDuration: 0.1)
             let sequence = SKAction.sequence([wait, fireworksSound, wait, fireworksSound, wait, fireworksSound, wait, fireworksSound])
-            self.runAction(sequence)
+            self.run(sequence)
         }
         
         
@@ -320,32 +320,32 @@ class ItemDisplayScene: SKScene {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches {
-            if continueButton!.containsPoint((touch ).locationInNode(self)){
+            if continueButton!.contains((touch ).location(in: self)){
                 if soundOn {
-                    self.runAction(clickSound)
+                    self.run(clickSound)
                 }
                 if soundOn{
                     beachMusic!.stop()
                 }
                 //go to mainmenuscene
-                let skTransition = SKTransition.fadeWithDuration(1.0)
-                let mainMenu = self.userData?.objectForKey("menu") as! MainMenuScene
+                let skTransition = SKTransition.fade(withDuration: 1.0)
+                let mainMenu = self.userData?.object(forKey: "menu") as! MainMenuScene
                 self.view?.presentScene(mainMenu, transition: skTransition)
             }else{
                 if soundOn{
-                    self.runAction(fireworksSound)
+                    self.run(fireworksSound)
                 }
                 var liteAttack: SKEmitterNode?
-                let litePath = NSBundle.mainBundle().pathForResource("TreasureChestSpark", ofType: "sks")
-                liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
-                liteAttack!.position = (touch ).locationInNode(self)
+                let litePath = Bundle.main.path(forResource: "TreasureChestSpark", ofType: "sks")
+                liteAttack = (NSKeyedUnarchiver.unarchiveObject(withFile: litePath!) as! SKEmitterNode)
+                liteAttack!.position = (touch ).location(in: self)
                 liteAttack!.zPosition = 2
                 liteAttack!.particleColorBlueRange = 100
                 liteAttack!.setScale(0.3)
-                let waitDuration = SKAction.waitForDuration(1)
-                let runBlock = SKAction.runBlock({liteAttack!.removeFromParent()})
+                let waitDuration = SKAction.wait(forDuration: 1)
+                let runBlock = SKAction.run({liteAttack!.removeFromParent()})
                 let sequence = SKAction.sequence([waitDuration, runBlock])
-                liteAttack!.runAction(sequence)
+                liteAttack!.run(sequence)
                 self.addChild(liteAttack!)
             }
         }
