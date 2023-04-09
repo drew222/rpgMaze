@@ -228,7 +228,7 @@ class World1Level24: SKScene, SKPhysicsContactDelegate {
         lifeNode!.text = "\(Int(theHero!.life!))"
         if (theWizard!.isDead || theHero!.life ?? <#default value#> <= 0) && !levelOver{
             
-            if (self.childNode(withName: "gold") == nil && self.childNode(withName: "item") == nil && droppedItem) || theHero!.life ?? <#default value#> <= 0{
+            if (self.childNode(withName: "gold") == nil && self.childNode(withName: "item") == nil && droppedItem) || theHero!.life ?? default value <= 0{
                 
                 //INK SPLAT CODE
                 if theHero!.life ?? <#default value#> <= 0 {
