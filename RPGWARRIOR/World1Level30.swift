@@ -65,16 +65,16 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     var theWhale: WhaleBoss?
     var theCrab: BomberClass?
     
-    var persistentData: NSUserDefaults?
+    var persistentData: UserDefaults?
     
-    override func didMoveToView(view: SKView) {
-        persistentData = NSUserDefaults.standardUserDefaults()
+    override func didMove(to view: SKView) {
+        persistentData = UserDefaults.standard
         
         if soundOn{
             gauntletMusic!.play()
         }
         /* Setup your scene here */
-        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
+        theHero = HeroClass.makeHero(position: CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
         
@@ -90,13 +90,13 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         lifeNode!.fontSize = 16
         self.addChild(lifeNode!)
         
-        theKraken = KrakenBoss.makeKraken(CGPointMake(self.frame.midX, self.frame.maxY + 200))
+        theKraken = KrakenBoss.makeKraken(position: CGPointMake(self.frame.midX, self.frame.maxY + 200))
         theKraken!.size = CGSizeMake(150, 120)
         self.addChild(theKraken!)
-        theWhale = WhaleBoss.makeWhale(CGPointMake(self.frame.midX, self.frame.maxY + 200))
+        theWhale = WhaleBoss.makeWhale(position: CGPointMake(self.frame.midX, self.frame.maxY + 200))
         theWhale!.size = CGSizeMake(150, 120)
         self.addChild(theWhale!)
-        theCrab = BomberClass.makeBomber(CGPointMake(self.frame.midX, self.frame.maxY + 200))
+        theCrab = BomberClass.makeBomber(position: CGPointMake(self.frame.midX, self.frame.maxY + 200))
         theCrab!.size = CGSizeMake(150, 120)
         self.addChild(theCrab!)
         //the below constraints did nothing
@@ -114,12 +114,12 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         runGauntlet.name = "runGauntlet"
         runGauntlet.zPosition = 3
         self.addChild(runGauntlet)
-        let waitAction = SKAction.waitForDuration(2)
-        let waitToFadeOut = SKAction.waitForDuration(1.5)
-        let fadeOut = SKAction.fadeOutWithDuration(3)
-        let runBlock = SKAction.runBlock({runGauntlet.removeFromParent()})
+        let waitAction = SKAction.wait(forDuration: 2)
+        let waitToFadeOut = SKAction.wait(forDuration: 1.5)
+        let fadeOut = SKAction.fadeOut(withDuration: 3)
+        let runBlock = SKAction.run({runGauntlet.removeFromParent()})
         let sequence = SKAction.sequence([waitToFadeOut, fadeOut, waitAction, runBlock])
-        runGauntlet.runAction(sequence)
+        runGauntlet.run(sequence)
         self.physicsWorld.contactDelegate = self
         theHero!.updateStats()
         //*****REGENE CODE****
@@ -139,9 +139,9 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         clockNode.size = CGSizeMake(30, 30)
         clockNode.name = "regenClock"
         clockNode.zPosition = 3
-        let spinAction = SKAction.rotateByAngle(2 * pi, duration: healSpeed)
-        let repeatAction = SKAction.repeatActionForever(spinAction)
-        clockNode.runAction(repeatAction)
+        let spinAction = SKAction.rotate(byAngle: 2 * pi, duration: healSpeed)
+        let repeatAction = SKAction.repeatForever(spinAction)
+        clockNode.run(repeatAction)
         clockNode.zRotation = pi / 1.25
         self.addChild(clockNode)
         //********************
@@ -154,7 +154,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         }else{
             regenAmount.fontSize = 13
         }
-        regenAmount.fontColor = UIColor.whiteColor()
+        regenAmount.fontColor = UIColor.white
         regenAmount.zPosition = 2
         regenAmount.fontName = "ChalkboardSE-Bold"
         self.addChild(regenAmount)
@@ -168,64 +168,64 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         let checkPoint = SKSpriteNode(imageNamed: "Checkpoint_Text_1")
         checkPoint.position = CGPointMake(self.frame.midX, self.frame.midY + 150)
         checkPoint.size = CGSizeMake(300, 75)
-        let afadeOut = SKAction.fadeOutWithDuration(1)
-        let aRunBlock = SKAction.runBlock({checkPoint.removeFromParent()})
+        let afadeOut = SKAction.fadeOut(withDuration: 1)
+        let aRunBlock = SKAction.run({checkPoint.removeFromParent()})
         let aSequence = SKAction.sequence([afadeOut, aRunBlock])
-        checkPoint.runAction(aSequence)
-        if theHero!.life > 128 {
+        checkPoint.run(aSequence)
+        if theHero!.life ?? <#default value#> > 128 {
             let phaseText = SKSpriteNode()
             phaseText.size = CGSizeMake(240, 60)
             phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
             phaseText.name = "phaseText"
-            let runBlock = SKAction.runBlock({phaseText.removeFromParent()})
-            let runBlock2 = SKAction.runBlock({phaseText.texture = SKTexture(imageNamed: "Phase_\(self.phase)_Text")})
-            let waitAction = SKAction.waitForDuration(3)
-            let waitAction2 = SKAction.waitForDuration(5)
+            let runBlock = SKAction.run({phaseText.removeFromParent()})
+            let runBlock2 = SKAction.run({phaseText.texture = SKTexture(imageNamed: "Phase_\(self.phase)_Text")})
+            let waitAction = SKAction.wait(forDuration: 3)
+            let waitAction2 = SKAction.wait(forDuration: 5)
             let sequence = SKAction.sequence([waitAction2, runBlock2, waitAction, runBlock])
             self.addChild(phaseText)
-            phaseText.runAction(sequence)
+            phaseText.run(sequence)
             self.addChild(checkPoint)
             phase = 40
-        }else if theHero!.life > 63{
+        }else if theHero!.life ?? <#default value#> > 63{
             let phaseText = SKSpriteNode()
             phaseText.size = CGSizeMake(240, 60)
             phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
             phaseText.name = "phaseText"
-            let runBlock = SKAction.runBlock({phaseText.removeFromParent()})
-            let runBlock2 = SKAction.runBlock({phaseText.texture = SKTexture(imageNamed: "Phase_\(self.phase)_Text")})
-            let waitAction = SKAction.waitForDuration(3)
-            let waitAction2 = SKAction.waitForDuration(5)
+            let runBlock = SKAction.run({phaseText.removeFromParent()})
+            let runBlock2 = SKAction.run({phaseText.texture = SKTexture(imageNamed: "Phase_\(self.phase)_Text")})
+            let waitAction = SKAction.wait(forDuration: 3)
+            let waitAction2 = SKAction.wait(forDuration: 5)
             let sequence = SKAction.sequence([waitAction2, runBlock2, waitAction, runBlock])
             self.addChild(phaseText)
-            phaseText.runAction(sequence)
+            phaseText.run(sequence)
             self.addChild(checkPoint)
             phase = 30
-        }else if theHero!.life > 31{
+        }else if theHero!.life ?? <#default value#> > 31{
             let phaseText = SKSpriteNode()
             phaseText.size = CGSizeMake(240, 60)
             phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
             phaseText.name = "phaseText"
-            let runBlock = SKAction.runBlock({phaseText.removeFromParent()})
-            let runBlock2 = SKAction.runBlock({phaseText.texture = SKTexture(imageNamed: "Phase_\(self.phase)_Text")})
-            let waitAction = SKAction.waitForDuration(3)
-            let waitAction2 = SKAction.waitForDuration(5)
+            let runBlock = SKAction.run({phaseText.removeFromParent()})
+            let runBlock2 = SKAction.run({phaseText.texture = SKTexture(imageNamed: "Phase_\(self.phase)_Text")})
+            let waitAction = SKAction.wait(forDuration: 3)
+            let waitAction2 = SKAction.wait(forDuration: 5)
             let sequence = SKAction.sequence([waitAction2, runBlock2, waitAction, runBlock])
             self.addChild(phaseText)
-            phaseText.runAction(sequence)
+            phaseText.run(sequence)
             self.addChild(checkPoint)
             phase = 20
-        }else if theHero!.life > 15{
+        }else if theHero!.life ?? <#default value#> > 15{
             let phaseText = SKSpriteNode()
             phaseText.size = CGSizeMake(240, 60)
             phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
             phaseText.name = "phaseText"
-            let runBlock = SKAction.runBlock({phaseText.removeFromParent()})
-            let runBlock2 = SKAction.runBlock({phaseText.texture = SKTexture(imageNamed: "Phase_\(self.phase)_Text")})
-            let waitAction = SKAction.waitForDuration(3)
-            let waitAction2 = SKAction.waitForDuration(5)
+            let runBlock = SKAction.run({phaseText.removeFromParent()})
+            let runBlock2 = SKAction.run({phaseText.texture = SKTexture(imageNamed: "Phase_\(self.phase)_Text")})
+            let waitAction = SKAction.wait(forDuration: 3)
+            let waitAction2 = SKAction.wait(forDuration: 5)
             let sequence = SKAction.sequence([waitAction2, runBlock2, waitAction, runBlock])
             self.addChild(phaseText)
-            phaseText.runAction(sequence)
+            phaseText.run(sequence)
             self.addChild(checkPoint)
             phase = 10
         }
@@ -252,98 +252,98 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySpike.rawValue){
-                theHero!.takeDamage(spikeDamage)
-                let fadeOut = SKAction.fadeOutWithDuration(1)
-                let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+            theHero!.takeDamage(damage: spikeDamage)
+            let fadeOut = SKAction.fadeOut(withDuration: 1)
+            let codeBlock = SKAction.run({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
                 secondBody.categoryBitMask = 99999
-                secondBody.node?.runAction(sequence)
+            secondBody.node?.run(sequence)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryMiniCrab.rawValue){
-                theHero!.takeDamage(crabDamage)
-                let fadeOut = SKAction.fadeOutWithDuration(1)
-                let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+            theHero!.takeDamage(damage: crabDamage)
+            let fadeOut = SKAction.fadeOut(withDuration: 1)
+            let codeBlock = SKAction.run({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
                 secondBody.categoryBitMask = 99999
-                secondBody.node?.runAction(sequence)
+            secondBody.node?.run(sequence)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryKrill.rawValue){
-                theHero!.takeDamage(krillDamage)
-                let fadeOut = SKAction.fadeOutWithDuration(1)
-                let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+            theHero!.takeDamage(damage: krillDamage)
+            let fadeOut = SKAction.fadeOut(withDuration: 1)
+            let codeBlock = SKAction.run({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
                 secondBody.categoryBitMask = 99999
-                secondBody.node?.runAction(sequence)
+            secondBody.node?.run(sequence)
         }
         
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryCoin.rawValue){
                 if soundOn {
-                    self.runAction(bootySound)
+                    self.run(bootySound)
                 }
-                (self.userData?.objectForKey("inventory") as! Inventory).gold += CGFloat(coinAmount)
-                persistentData!.setObject((self.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
-                let fadeOut = SKAction.fadeOutWithDuration(0.2)
-                let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+            (self.userData?.object(forKey: "inventory") as! Inventory).gold += CGFloat(coinAmount)
+            persistentData!.set((self.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
+            let fadeOut = SKAction.fadeOut(withDuration: 0.2)
+            let codeBlock = SKAction.run({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
                 secondBody.categoryBitMask = 99999
-                secondBody.node?.runAction(sequence)
+            secondBody.node?.run(sequence)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryBuff.rawValue){
                 if (secondBody.node as! BuffSpawn).buffType == 1 {
                     //life
                     if soundOn {
-                        self.runAction(buffSound)
+                        self.run(buffSound)
                     }
                     theHero!.life! += lifeBuff
                     if theHero!.life! > maxLife {
                         theHero!.life = maxLife
                     }
-                    let fadeOut = SKAction.fadeOutWithDuration(0.2)
-                    let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+                    let fadeOut = SKAction.fadeOut(withDuration: 0.2)
+                    let codeBlock = SKAction.run({secondBody.node?.removeFromParent()})
                     let sequence = SKAction.sequence([fadeOut, codeBlock])
-                    secondBody.node?.runAction(sequence)
+                    secondBody.node?.run(sequence)
                 } else if (secondBody.node as! BuffSpawn).buffType == 2 {
                     if soundOn {
-                        self.runAction(speedSound)
+                        self.run(speedSound)
                     }
                     //movespeed
                     heroSpeed += 30
-                    let waitAction = SKAction.waitForDuration(4)
-                    let runBlock = SKAction.runBlock({heroSpeed -= 30})
+                    let waitAction = SKAction.wait(forDuration: 4)
+                    let runBlock = SKAction.run({heroSpeed -= 30})
                     let asequence = SKAction.sequence([waitAction, runBlock])
-                    self.runAction(asequence)
+                    self.run(asequence)
                     
-                    let fadeOut = SKAction.fadeOutWithDuration(0.2)
-                    let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+                    let fadeOut = SKAction.fadeOut(withDuration: 0.2)
+                    let codeBlock = SKAction.run({secondBody.node?.removeFromParent()})
                     let sequence = SKAction.sequence([fadeOut, codeBlock])
-                    secondBody.node?.runAction(sequence)
+                    secondBody.node?.run(sequence)
                 } else {
                     //killAll
                     if soundOn {
-                        self.runAction(fireworksSound)
+                        self.run(fireworksSound)
                     }
                     for node in self.children {
                         if (node as? SKEmitterNode != nil){
                             node.removeFromParent()
                         }
                         if (node as? SKSpriteNode != nil) && node.name != "background" && node.name != "item" && node.name != "hero" && node.name != "bomber" && node.name != "whale" && node.name != "kraken" && node.name != "life" && node.name != "gold" && node.name != "chest" && node.name != "lifeheart" && node.name != "regenClock" && node.name != "coin"{
-                            let fadeOut = SKAction.fadeOutWithDuration(0.1)
-                            let codeBlock = SKAction.runBlock({node.removeFromParent()})
+                            let fadeOut = SKAction.fadeOut(withDuration: 0.1)
+                            let codeBlock = SKAction.run({node.removeFromParent()})
                             let sequence = SKAction.sequence([fadeOut, codeBlock])
                             if node.name == "bomb" {
                                 node.removeAllActions()
                             }
-                            node.runAction(sequence)
+                            node.run(sequence)
                         }
                     }
-                    let fadeOut = SKAction.fadeOutWithDuration(0.2)
-                    let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+                    let fadeOut = SKAction.fadeOut(withDuration: 0.2)
+                    let codeBlock = SKAction.run({secondBody.node?.removeFromParent()})
                     let sequence = SKAction.sequence([fadeOut, codeBlock])
-                    secondBody.node?.runAction(sequence)
+                    secondBody.node?.run(sequence)
                 }
                 secondBody.node?.removeFromParent()
         }
@@ -351,15 +351,15 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryWave.rawValue){
                 if (secondBody.node as? WaveNode != nil){
-                    theHero!.takeDamage(waterWaveDamage)
-                    let fadeOut = SKAction.fadeOutWithDuration(1)
-                    let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+                    theHero!.takeDamage(damage: waterWaveDamage)
+                    let fadeOut = SKAction.fadeOut(withDuration: 1)
+                    let codeBlock = SKAction.run({secondBody.node?.removeFromParent()})
                     let sequence = SKAction.sequence([fadeOut, codeBlock])
                     secondBody.categoryBitMask = 99999
-                    secondBody.node?.runAction(sequence)
+                    secondBody.node?.run(sequence)
                 }else{
-                    if !self.childNodeWithName("safeSpot1")!.containsPoint(theHero!.position){
-                        theHero!.takeDamage(oilWaveDamage)
+                    if !self.childNode(withName: "safeSpot1")!.contains(theHero!.position){
+                        theHero!.takeDamage(damage: oilWaveDamage)
                     }
                 }
         }
@@ -369,9 +369,9 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
-        let aHero = self.childNodeWithName("hero") as! HeroClass
+        let aHero = self.childNode(withName: "hero") as! HeroClass
         for touch in touches{
-            aHero.moveHelper((touch ).locationInNode(self))
+            aHero.moveHelper(position: (touch ).location(in: self))
         }
     }
     
@@ -388,15 +388,15 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         phaseText.size = CGSizeMake(240, 60)
         phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
         phaseText.name = "phaseText"
-        let runBlock = SKAction.runBlock({phaseText.removeFromParent()})
-        let runBlock2 = SKAction.runBlock({phaseText.texture = SKTexture(imageNamed: "Phase_\(self.phase)_Text")})
-        let waitAction = SKAction.waitForDuration(3)
-        let waitAction2 = SKAction.waitForDuration(5)
+        let runBlock = SKAction.run({phaseText.removeFromParent()})
+        let runBlock2 = SKAction.run({phaseText.texture = SKTexture(imageNamed: "Phase_\(self.phase)_Text")})
+        let waitAction = SKAction.wait(forDuration: 3)
+        let waitAction2 = SKAction.wait(forDuration: 5)
         let sequence = SKAction.sequence([waitAction2, runBlock2, waitAction, runBlock])
         if phase < 51{
             self.addChild(phaseText)
         }
-        phaseText.runAction(sequence)
+        phaseText.run(sequence)
         
         
         
@@ -542,14 +542,14 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 infText.position = CGPointMake(self.frame.midX, self.frame.midY)
                 infText.setScale(0.28)
                 infText.name = "infText"
-                infText.runAction(SKAction.fadeOutWithDuration(0))
-                let wait = SKAction.waitForDuration(2)
-                let wait2 = SKAction.waitForDuration(1)
-                let fadeInAction = SKAction.fadeInWithDuration(1)
-                _ = SKAction.runBlock({infText.removeFromParent()})
-                let runBlock = SKAction.runBlock({infText.removeFromParent()})
+                infText.run(SKAction.fadeOut(withDuration: 0))
+                let wait = SKAction.wait(forDuration: 2)
+                let wait2 = SKAction.wait(forDuration: 1)
+                let fadeInAction = SKAction.fadeIn(withDuration: 1)
+                _ = SKAction.run({infText.removeFromParent()})
+                let runBlock = SKAction.run({infText.removeFromParent()})
                 let sequence = SKAction.sequence([wait2, fadeInAction, wait, runBlock])
-                infText.runAction(sequence)
+                infText.run(sequence)
                 self.addChild(infText)
                 firstEndless = false
             }
@@ -648,20 +648,20 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
     
     func addRandomBuff(){
         //generate random position and type
-        let randX = randomWithMin(40, max: Int(self.frame.maxX - 40))
-        let randY = randomWithMin(40, max: Int(self.frame.maxY - 140))
-        let type = randomWithMin(1, max: 4)
-        let buff = BuffSpawn.buffAtPos(CGPointMake(CGFloat(randX), CGFloat(randY)), type: type)
-        let fadeInAction = SKAction.fadeInWithDuration(1)
-        let waitAction = SKAction.waitForDuration(5)
-        let removeBlock = SKAction.runBlock({buff.removeFromParent()})
+        let randX = randomWithMin(min: 40, max: Int(self.frame.maxX - 40))
+        let randY = randomWithMin(min: 40, max: Int(self.frame.maxY - 140))
+        let type = randomWithMin(min: 1, max: 4)
+        let buff = BuffSpawn.buffAtPos(position: CGPointMake(CGFloat(randX), CGFloat(randY)), type: type)
+        let fadeInAction = SKAction.fadeIn(withDuration: 1)
+        let waitAction = SKAction.wait(forDuration: 5)
+        let removeBlock = SKAction.run({buff.removeFromParent()})
         self.addChild(buff)
         let sequence = SKAction.sequence([fadeInAction, waitAction, removeBlock])
-        buff.runAction(sequence)
+        buff.run(sequence)
     }
     
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
@@ -729,28 +729,28 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         if currentTime - lastWaterWave  > whaleAttackSpeedWave && !levelOver && !inking  && ((phase % 10 == 3) || (phase % 10 == 4) || (phase % 10 == 5)  || (phase % 10 == 6) || (phase % 10 == 7) || (phase % 10 == 8)  || (phase % 10 == 9) || (phase % 10 == 0) || (phase == 51)) && !droppedChest{
             self.lastWaterWave = currentTime
-            let yValue = randomWithMin(Int(self.frame.minY + 100), max: Int(self.frame.maxY - 175))
-            let xBool = randomWithMin(0, max: 10)
+            let yValue = randomWithMin(min: Int(self.frame.minY + 100), max: Int(self.frame.maxY - 175))
+            let xBool = randomWithMin(min: 0, max: 10)
             var xValue = self.frame.maxX + 20
             if xBool < 5 {
                 xValue = -20
             }
-            theWhale!.throwWave(CGPointMake(xValue, CGFloat(yValue)))
+            theWhale!.throwWave(gapPosition: CGPointMake(xValue, CGFloat(yValue)))
         }
         
         
         if (currentTime - lastCrab > crabSpawnSpeed && !self.levelOver && !inking && !droppedChest) {
-            let xMatch = CGFloat(randomWithMin(Int(10), max: Int(self.frame.maxX - 10)))
-            self.addChild(MiniCrab.crabDash(CGPointMake(xMatch, self.frame.maxY + 30), endPosition: CGPointMake(xMatch, self.frame.minY)))
+            let xMatch = CGFloat(randomWithMin(min: Int(10), max: Int(self.frame.maxX - 10)))
+            self.addChild(MiniCrab.crabDash(startPos: CGPointMake(xMatch, self.frame.maxY + 30), endPosition: CGPointMake(xMatch, self.frame.minY)))
             
             
             self.lastCrab = currentTime
         }
         
         if (currentTime - lastCoin > coinSpawnSpeed && !self.levelOver && !inking && !droppedChest) {
-            let xCoin = CGFloat(randomWithMin(Int(20), max: Int(self.frame.maxX - 20)))
-            let yCoin = CGFloat(randomWithMin(Int(20), max: Int(self.frame.maxY - 50)))
-            self.addChild(CoinNode.coinAtPos(CGPointMake(xCoin, yCoin)))
+            let xCoin = CGFloat(randomWithMin(min: Int(20), max: Int(self.frame.maxX - 20)))
+            let yCoin = CGFloat(randomWithMin(min: Int(20), max: Int(self.frame.maxY - 50)))
+            self.addChild(CoinNode.coinAtPos(position: CGPointMake(xCoin, yCoin)))
             
             
             self.lastCoin = currentTime
@@ -758,7 +758,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         //add Timer if above level 50
         if phase == 51{
-            if let timer = self.childNodeWithName("timer") as? SKLabelNode{
+            if let timer = self.childNode(withName: "timer") as? SKLabelNode{
                 if !droppedChest{
                     timer.text = "Time  \(Int(round(self.totalGameTime)))"
                 }
@@ -769,21 +769,21 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 aTimer.name = "timer"
                 aTimer.position = CGPointMake(self.frame.maxX - 70, 15)
                 aTimer.fontSize = 20
-                aTimer.fontColor = UIColor.blackColor()
+                aTimer.fontColor = UIColor.black
                 self.addChild(aTimer)
             }
         }
         
         
         //******REGEN CODE
-        if currentTime - lastHeal  > healSpeed && theHero!.life > 0{
+        if currentTime - lastHeal  > healSpeed && theHero!.life ?? <#default value#> > 0{
             self.lastHeal = currentTime
-            if theHero!.life < maxLife{
+            if theHero!.life ?? <#default value#> < maxLife{
                 if soundOn && !levelOver && !droppedChest{
-                    self.runAction(regenSound)
+                    self.run(regenSound)
                 }
                 theHero!.life! += theHero!.regeneration!
-                if theHero!.life > maxLife{
+                if theHero!.life ?? <#default value#> > maxLife{
                     theHero!.life = maxLife
                 }
             }
@@ -794,15 +794,15 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         //***************
         
         //check for win condition
-        if (theHero!.life <= 0){
+        if (theHero!.life ?? <#default value#> <= 0){
             if !splatted {
                 
                 if soundOn{
                     gauntletMusic!.stop()
-                    let waitDuration = SKAction.waitForDuration(1)
-                    let runBlock = SKAction.runBlock({beachMusic!.play()})
+                    let waitDuration = SKAction.wait(forDuration: 1)
+                    let runBlock = SKAction.run({beachMusic!.play()})
                     let sequence = SKAction.sequence([waitDuration, runBlock])
-                    self.runAction(sequence)
+                    self.run(sequence)
                 }
                 
                 splatted = true
@@ -811,15 +811,15 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                 splat.name = "deathSplat"
                 splat.position = theHero!.position
                 self.addChild(splat)
-                theHero!.removeActionForKey("runAction")
-                theHero!.removeActionForKey("repeatAction")
-                theHero!.runAction(SKAction.fadeOutWithDuration(0))
+                theHero!.removeAction(forKey: "runAction")
+                theHero!.removeAction(forKey: "repeatAction")
+                theHero!.run(SKAction.fadeOut(withDuration: 0))
                 theHero!.position = CGPointMake(self.frame.midX, 100)
-                theHero!.runAction(SKAction.fadeInWithDuration(2))
+                theHero!.run(SKAction.fadeIn(withDuration: 2))
             }
-            if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil && droppedItem && !levelOver){
+            if (self.childNode(withName: "item") == nil && self.childNode(withName: "gold") == nil && droppedItem && !levelOver){
                 //ITEM DISPLAY***************
-                let skTransition = SKTransition.fadeWithDuration(1.0)
+                let skTransition = SKTransition.fade(withDuration: 1.0)
                 let itemDisplayScene = ItemDisplayScene(size: self.frame.size)
                 if itemDropped != nil{
                     itemDisplayScene.itemName = itemDropped!.itemName!
@@ -828,17 +828,17 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                     itemDisplayScene.numBooty = 30
                 }
                 itemDisplayScene.userData = NSMutableDictionary()
-                itemDisplayScene.userData?.setObject(self.userData?.objectForKey("menu") as! MainMenuScene, forKey: "menu")
-                itemDisplayScene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
+                itemDisplayScene.userData?.setObject(self.userData?.object(forKey: "menu") as! MainMenuScene, forKey: "menu" as NSCopying)
+                itemDisplayScene.userData?.setObject(self.userData?.object(forKey: "inventory") as! Inventory, forKey: "inventory" as NSCopying)
                 self.view?.presentScene(itemDisplayScene, transition: skTransition)
                 //***************************
                 levelOver = true
             }
-            else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil && !levelOver){
-                if droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
-                    dropLoot("phase\(phase)", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
+            else if (self.childNode(withName: "item") == nil && self.childNode(withName: "gold") == nil && !levelOver){
+                if droppedChest && (self.childNode(withName: "chest") as! TreasureChest).open{
+                    dropLoot(level: "phase\(phase)", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
                     droppedItem = true
-                    itemDropped = self.childNodeWithName("item") as? ItemClass
+                    itemDropped = self.childNode(withName: "item") as? ItemClass
                 }else if !droppedChest {
                     for node in self.children{
                         if (node as? SKEmitterNode != nil) && node.name != "inkAttack"{
@@ -848,21 +848,21 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
                             node.removeFromParent()
                         }
                     }
-                    self.childNodeWithName("lifeNumber")?.removeFromParent()
-                    self.addChild(TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY)))
+                    self.childNode(withName: "lifeNumber")?.removeFromParent()
+                    self.addChild(TreasureChest.chestAtPosition(position: CGPointMake(self.frame.midX, self.frame.midY)))
                     droppedChest = true
                     
                     //set the highest phase in data and main menu
-                    if (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel < (30 + phase){
-                        (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel = 30 + phase
-                        let persistentData = NSUserDefaults.standardUserDefaults()
-                        persistentData.setObject(30 + phase, forKey: "highestLevel")
+                    if (self.userData?.object(forKey: "menu") as! MainMenuScene).highestLevel < (30 + phase){
+                        (self.userData?.object(forKey: "menu") as! MainMenuScene).highestLevel = 30 + phase
+                        let persistentData = UserDefaults.standard
+                        persistentData.set(30 + phase, forKey: "highestLevel")
                     }
                     if phase == 51 {
-                        if (self.userData?.objectForKey("menu") as! MainMenuScene).highestTime < round(totalGameTime){
-                            (self.userData?.objectForKey("menu") as! MainMenuScene).highestTime = round(totalGameTime)
-                            let persistentData = NSUserDefaults.standardUserDefaults()
-                            persistentData.setObject(round(totalGameTime), forKey: "highestTime")
+                        if (self.userData?.object(forKey: "menu") as! MainMenuScene).highestTime < round(totalGameTime){
+                            (self.userData?.object(forKey: "menu") as! MainMenuScene).highestTime = round(totalGameTime)
+                            let persistentData = UserDefaults.standard
+                            persistentData.set(round(totalGameTime), forKey: "highestTime")
                         }
                     }
                 }
