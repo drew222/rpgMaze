@@ -23,12 +23,12 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
     var zonesTextNode: SKSpriteNode?
     var tutorialButton: SKSpriteNode?
     var soundOnButton: SKSpriteNode?
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     var backgroundMusic: AVAudioPlayer?
     var mediumRectAdView: ADBannerView?
     var addLoaded = false
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         if addLoaded {
             addLoaded = false
         }
@@ -38,7 +38,7 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
         //MUSIC
         //check for saved data on sound off/on, set spritenode to this and set soundOn
         if firstLoad{
-        if (defaults.objectForKey("sound") as! Bool) {
+            if (defaults.object(forKey: "sound") as! Bool) {
             soundOn = true
             soundOnButton = SKSpriteNode(imageNamed: "Sound_On_Button_1")
         }else {
@@ -59,7 +59,7 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
         soundOnButton!.zPosition = 4
         self.addChild(soundOnButton!)
         }
-        if (!happyMusic!.playing) && soundOn{
+        if (!happyMusic!.isPlaying) && soundOn{
             happyMusic!.numberOfLoops = -1
             happyMusic!.prepareToPlay()
             happyMusic!.play()
@@ -72,7 +72,7 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
         self.addChild(background)
         if firstLoad{
             var beatGame2: Bool?
-            if defaults.objectForKey("beatgame") as! Bool {
+            if defaults.object(forKey: "beatgame") as! Bool {
                 beatGame2 = true
             }else{
                 beatGame2 = false
@@ -81,158 +81,158 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
             world1Menu = MainMenuScene(size: self.frame.size)
             world1Menu!.beatGame = beatGame2!
             world1Menu!.userData = NSMutableDictionary()
-            world1Menu!.userData?.setObject(self, forKey: "worldscene")
-            inventory = Inventory.createInventory(self.frame.size)
-            world1Menu!.userData?.setObject(inventory!, forKey: "inventory")
+            world1Menu!.userData?.setObject(self, forKey: "worldscene" as NSCopying)
+            inventory = Inventory.createInventory(size: self.frame.size)
+            world1Menu!.userData?.setObject(inventory!, forKey: "inventory" as NSCopying)
             inventory!.userData = NSMutableDictionary()
-            inventory!.userData?.setObject(world1Menu!, forKey: "menu")
-            inventory!.userData?.setObject(self, forKey: "worldscene")
+            inventory!.userData?.setObject(world1Menu!, forKey: "menu" as NSCopying)
+            inventory!.userData?.setObject(self, forKey: "worldscene" as NSCopying)
             
             //******SETUP SAVED DATA FOR INVENTORY AND MainMenuScene HERE********
-            if let bestLevel = defaults.objectForKey("highestLevel") as? Int{
+            if let bestLevel = defaults.object(forKey: "highestLevel") as? Int{
                 world1Menu!.highestLevel = bestLevel
             }
-            if let bestTime = defaults.objectForKey("highestTime") as? Double{
+            if let bestTime = defaults.object(forKey: "highestTime") as? Double{
                 world1Menu!.highestTime = bestTime
             }
-            if let gold = defaults.objectForKey("gold") as? CGFloat{
+            if let gold = defaults.object(forKey: "gold") as? CGFloat{
                 inventory!.gold = gold
             }
-            if let head = defaults.objectForKey("headSpace") as? String{
+            if let head = defaults.object(forKey: "headSpace") as? String{
                 if head != "" {
-                    let item = ItemClass.itemInSpace("\(head)")
-                    (inventory!.childNodeWithName("weapon") as! ItemSpaceNode).insertItem(item)
-                    inventory!.displayItem(item, spot: "weapon")
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(head)")
+                    (inventory!.childNode(withName: "weapon") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.displayItem(item: item, spot: "weapon")
                     inventory!.weapon = item
                 }
             }
-            if let neck = defaults.objectForKey("neckSpace") as? String{
+            if let neck = defaults.object(forKey: "neckSpace") as? String{
                 if neck != "" {
-                    let item = ItemClass.itemInSpace("\(neck)")
-                    (inventory!.childNodeWithName("neck") as! ItemSpaceNode).insertItem(item)
-                    inventory!.displayItem(item, spot: "neck")
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(neck)")
+                    (inventory!.childNode(withName: "neck") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.displayItem(item: item, spot: "neck")
                     inventory!.neck = item
                 }
             }
-            if let left = defaults.objectForKey("leftSpace") as? String{
+            if let left = defaults.object(forKey: "leftSpace") as? String{
                 if left != "" {
-                    let item = ItemClass.itemInSpace("\(left)")
-                    (inventory!.childNodeWithName("body") as! ItemSpaceNode).insertItem(item)
-                    inventory!.displayItem(item, spot: "body")
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(left)")
+                    (inventory!.childNode(withName: "body") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.displayItem(item: item, spot: "body")
                     inventory!.body = item
                 }
             }
-            if let right = defaults.objectForKey("rightSpace") as? String{
+            if let right = defaults.object(forKey: "rightSpace") as? String{
                 if right != "" {
-                    let item = ItemClass.itemInSpace("\(right)")
-                    (inventory!.childNodeWithName("feet") as! ItemSpaceNode).insertItem(item)
-                    inventory!.displayItem(item, spot: "feet")
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(right)")
+                    (inventory!.childNode(withName: "feet") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.displayItem(item: item, spot: "feet")
                     inventory!.feet = item
                 }
             }
-            if let spot1 = defaults.objectForKey("packSpace1") as? String{
+            if let spot1 = defaults.object(forKey: "packSpace1") as? String{
                 if spot1 != "" {
-                    let item = ItemClass.itemInSpace("\(spot1)")
-                    (inventory!.childNodeWithName("1") as! ItemSpaceNode).insertItem(item)
-                    inventory!.backPackSpaces--
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(spot1)")
+                    (inventory!.childNode(withName: "1") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.backPackSpaces-=1
                 }
             }
-            if let spot2 = defaults.objectForKey("packSpace2") as? String{
+            if let spot2 = defaults.object(forKey: "packSpace2") as? String{
                 if spot2 != "" {
-                    let item = ItemClass.itemInSpace("\(spot2)")
-                    (inventory!.childNodeWithName("2") as! ItemSpaceNode).insertItem(item)
-                    inventory!.backPackSpaces--
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(spot2)")
+                    (inventory!.childNode(withName: "2") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.backPackSpaces-=1
                 }
             }
-            if let spot3 = defaults.objectForKey("packSpace3") as? String{
+            if let spot3 = defaults.object(forKey: "packSpace3") as? String{
                 if spot3 != "" {
-                    let item = ItemClass.itemInSpace("\(spot3)")
-                    (inventory!.childNodeWithName("3") as! ItemSpaceNode).insertItem(item)
-                    inventory!.backPackSpaces--
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(spot3)")
+                    (inventory!.childNode(withName: "3") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.backPackSpaces-=1
                 }
             }
-            if let spot4 = defaults.objectForKey("packSpace4") as? String{
+            if let spot4 = defaults.object(forKey: "packSpace4") as? String{
                 if spot4 != "" {
-                    let item = ItemClass.itemInSpace("\(spot4)")
-                    (inventory!.childNodeWithName("4") as! ItemSpaceNode).insertItem(item)
-                    inventory!.backPackSpaces--
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(spot4)")
+                    (inventory!.childNode(withName: "4") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.backPackSpaces-=1
                 }
             }
-            if let spot5 = defaults.objectForKey("packSpace5") as? String{
+            if let spot5 = defaults.object(forKey: "packSpace5") as? String{
                 if spot5 != "" {
-                    let item = ItemClass.itemInSpace("\(spot5)")
-                    (inventory!.childNodeWithName("5") as! ItemSpaceNode).insertItem(item)
-                    inventory!.backPackSpaces--
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(spot5)")
+                    (inventory!.childNode(withName: "5") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.backPackSpaces-=1
                 }
             }
-            if let spot6 = defaults.objectForKey("packSpace6") as? String{
+            if let spot6 = defaults.object(forKey: "packSpace6") as? String{
                 if spot6 != "" {
-                    let item = ItemClass.itemInSpace("\(spot6)")
-                    (inventory!.childNodeWithName("6") as! ItemSpaceNode).insertItem(item)
-                    inventory!.backPackSpaces--
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(spot6)")
+                    (inventory!.childNode(withName: "6") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.backPackSpaces-=1
                 }
             }
-            if let spot7 = defaults.objectForKey("packSpace7") as? String{
+            if let spot7 = defaults.object(forKey: "packSpace7") as? String{
                 if spot7 != "" {
-                    let item = ItemClass.itemInSpace("\(spot7)")
-                    (inventory!.childNodeWithName("7") as! ItemSpaceNode).insertItem(item)
-                    inventory!.backPackSpaces--
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(spot7)")
+                    (inventory!.childNode(withName: "7") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.backPackSpaces-=1
                 }
             }
-            if let spot8 = defaults.objectForKey("packSpace8") as? String{
+            if let spot8 = defaults.object(forKey: "packSpace8") as? String{
                 if spot8 != "" {
-                    let item = ItemClass.itemInSpace("\(spot8)")
-                    (inventory!.childNodeWithName("8") as! ItemSpaceNode).insertItem(item)
-                    inventory!.backPackSpaces--
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(spot8)")
+                    (inventory!.childNode(withName: "8") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.backPackSpaces-=1
                 }
             }
-            if let spot9 = defaults.objectForKey("packSpace9") as? String{
+            if let spot9 = defaults.object(forKey: "packSpace9") as? String{
                 if spot9 != "" {
-                    let item = ItemClass.itemInSpace("\(spot9)")
-                    (inventory!.childNodeWithName("9") as! ItemSpaceNode).insertItem(item)
-                    inventory!.backPackSpaces--
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(spot9)")
+                    (inventory!.childNode(withName: "9") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.backPackSpaces-=1
                 }
             }
-            if let spot10 = defaults.objectForKey("packSpace10") as? String{
+            if let spot10 = defaults.object(forKey: "packSpace10") as? String{
                 if spot10 != "" {
-                    let item = ItemClass.itemInSpace("\(spot10)")
-                    (inventory!.childNodeWithName("10") as! ItemSpaceNode).insertItem(item)
-                    inventory!.backPackSpaces--
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(spot10)")
+                    (inventory!.childNode(withName: "10") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.backPackSpaces-=1
                 }
             }
-            if let spot11 = defaults.objectForKey("packSpace11") as? String{
+            if let spot11 = defaults.object(forKey: "packSpace11") as? String{
                 if spot11 != "" {
-                    let item = ItemClass.itemInSpace("\(spot11)")
-                    (inventory!.childNodeWithName("11") as! ItemSpaceNode).insertItem(item)
-                    inventory!.backPackSpaces--
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(spot11)")
+                    (inventory!.childNode(withName: "11") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.backPackSpaces-=1
                 }
             }
-            if let spot12 = defaults.objectForKey("packSpace12") as? String{
+            if let spot12 = defaults.object(forKey: "packSpace12") as? String{
                 if spot12 != "" {
-                    let item = ItemClass.itemInSpace("\(spot12)")
-                    (inventory!.childNodeWithName("12") as! ItemSpaceNode).insertItem(item)
-                    inventory!.backPackSpaces--
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(spot12)")
+                    (inventory!.childNode(withName: "12") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.backPackSpaces-=1
                 }
             }
-            if let spot13 = defaults.objectForKey("packSpace13") as? String{
+            if let spot13 = defaults.object(forKey: "packSpace13") as? String{
                 if spot13 != "" {
-                    let item = ItemClass.itemInSpace("\(spot13)")
-                    (inventory!.childNodeWithName("13") as! ItemSpaceNode).insertItem(item)
-                    inventory!.backPackSpaces--
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(spot13)")
+                    (inventory!.childNode(withName: "13") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.backPackSpaces-=1
                 }
             }
-            if let spot14 = defaults.objectForKey("packSpace14") as? String{
+            if let spot14 = defaults.object(forKey: "packSpace14") as? String{
                 if spot14 != "" {
-                    let item = ItemClass.itemInSpace("\(spot14)")
-                    (inventory!.childNodeWithName("14") as! ItemSpaceNode).insertItem(item)
-                    inventory!.backPackSpaces--
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(spot14)")
+                    (inventory!.childNode(withName: "14") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.backPackSpaces-=1
                 }
             }
-            if let spot15 = defaults.objectForKey("packSpace15") as? String{
+            if let spot15 = defaults.object(forKey: "packSpace15") as? String{
                 if spot15 != "" {
-                    let item = ItemClass.itemInSpace("\(spot15)")
-                    (inventory!.childNodeWithName("15") as! ItemSpaceNode).insertItem(item)
-                    inventory!.backPackSpaces--
+                    let item = ItemClass.itemInSpace(nameOfTexture: "\(spot15)")
+                    (inventory!.childNode(withName: "15") as! ItemSpaceNode).insertItem(anItem: item)
+                    inventory!.backPackSpaces-=1
                 }
             }
             
@@ -383,9 +383,9 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let skTransition = SKTransition.fadeWithDuration(1.0)
+        let skTransition = SKTransition.fade(withDuration: 1.0)
         for touch in touches{
-            if world1Node!.containsPoint((touch ).locationInNode(self)){
+            if world1Node!.contains((touch ).location(in: self)){
                 //remove add
                 if addLoaded {
                     addLoaded = true
@@ -393,58 +393,58 @@ class ZoneScene: SKScene, ADBannerViewDelegate {
                 mediumRectAdView!.removeFromSuperview()
                 }
                 if soundOn {
-                    self.runAction(clickSound)
+                    self.run(clickSound)
                 }
                 self.view?.presentScene(world1Menu!, transition: skTransition)
-            }else if inventoryNode!.containsPoint((touch ).locationInNode(self)){
+            }else if inventoryNode!.contains((touch ).location(in: self)){
                 if addLoaded {
                     addLoaded = true
                     mediumRectAdView!.delegate = nil
                 mediumRectAdView!.removeFromSuperview()
                 }
                 if soundOn {
-                    self.runAction(clickSound)
+                    self.run(clickSound)
                 }
                 self.view?.presentScene(inventory!, transition: skTransition)
-            }else if storeNode!.containsPoint((touch ).locationInNode(self)){
+            }else if storeNode!.contains((touch ).location(in: self)){
                 if addLoaded {
                     addLoaded = true
                     mediumRectAdView!.delegate = nil
                 mediumRectAdView!.removeFromSuperview()
                 }
                 if soundOn {
-                    self.runAction(clickSound)
+                    self.run(clickSound)
                 }
                 let aStoreScene = StoreScene(size: self.frame.size)
                 aStoreScene.userData = NSMutableDictionary()
-                aStoreScene.userData?.setObject(inventory!, forKey: "inventory")
+                aStoreScene.userData?.setObject(inventory!, forKey: "inventory" as NSCopying)
                 //aStoreScene.userData?.setObject(world1Menu!, forKey: "menu")
-                aStoreScene.userData?.setObject(self, forKey: "worldscene")
+                aStoreScene.userData?.setObject(self, forKey: "worldscene" as NSCopying)
                 self.view?.presentScene(aStoreScene, transition: skTransition)
-            }else if tutorialButton!.containsPoint((touch ).locationInNode(self)){
+            }else if tutorialButton!.contains((touch ).location(in: self)){
                 if addLoaded {
                     addLoaded = true
                     mediumRectAdView!.delegate = nil
                 mediumRectAdView!.removeFromSuperview()
                 }
                 if soundOn {
-                    self.runAction(clickSound)
+                    self.run(clickSound)
                 }
                 let aTutorialScene = TutorialScene(size: self.frame.size)
                 aTutorialScene.userData = NSMutableDictionary()
-                aTutorialScene.userData?.setObject(self, forKey: "zoneScene")
+                aTutorialScene.userData?.setObject(self, forKey: "zoneScene" as NSCopying)
                 self.view?.presentScene(aTutorialScene, transition: skTransition)
-            }else if soundOnButton!.containsPoint((touch ).locationInNode(self)){
+            }else if soundOnButton!.contains((touch ).location(in: self)){
                 if soundOn {
                     soundOnButton!.texture = SKTexture(imageNamed: "Sound_Off_Button_1")
                     soundOn = false
-                    defaults.setBool(false, forKey: "sound")
+                    defaults.set(false, forKey: "sound")
                     happyMusic!.stop()
                 }else {
-                    self.runAction(clickSound)
+                    self.run(clickSound)
                     soundOnButton!.texture = SKTexture(imageNamed: "Sound_On_Button_1")
                     soundOn = true
-                    defaults.setBool(true, forKey: "sound")
+                    defaults.set(true, forKey: "sound")
                     happyMusic!.play()
                 }
             }

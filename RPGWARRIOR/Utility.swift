@@ -60,7 +60,7 @@ let itemSound = SKAction.playSoundFileNamed("Swish_Noise.mp3", waitForCompletion
 let buffSound = SKAction.playSoundFileNamed("Buff_Sound.mp3", waitForCompletion: false)
 let speedSound = SKAction.playSoundFileNamed("Speed_Buff_Sound.mp3", waitForCompletion: false)
 let regenSound = SKAction.playSoundFileNamed("Regen_Sound.mp3", waitForCompletion: false)
-let url = NSBundle.mainBundle().URLForResource("Gauntlet_Music", withExtension: "mp3")
+let url = Bundle.main.url(forResource: "Gauntlet_Music", withExtension: "mp3")
 /*
 let gauntletMusic = AVAudioPlayer(contentsOfURL: url, error: nil)
 let url2 = NSBundle.mainBundle().URLForResource("Rap_Funk_Music", withExtension: "mp3")
@@ -118,9 +118,9 @@ func distanceBetween(point1: CGPoint, point2: CGPoint)-> CGFloat{
 func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     if level == "level1"{
         //75% 1 booty, 25% rusty copper ring
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 75{
-            let item = ItemClass.itemInSpace("Rusty_Copper_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Rusty_Copper_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -129,17 +129,17 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 1
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }
     else if level == "level2"{
         //50% 1 booty, 50% rusty copper ring
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 50{
-            let item = ItemClass.itemInSpace("Rusty_Copper_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Rusty_Copper_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -148,16 +148,16 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 1
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level3"{
         //75% booty, 25% mossy copper ring
-        let myNum = randomWithMin(0, max:100)
+        let myNum = randomWithMin(min: 0, max:100)
         if myNum > 75{
-            let item = ItemClass.itemInSpace("Mossy_Copper_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Mossy_Copper_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -166,27 +166,27 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 1
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }
     else if level == "level4"{
         //25% mossy copper ring, 50% 2 booty, 15% crab claw cap, 10% beachball fragment
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum < 75{
-            let item = ItemClass.itemInSpace("Mossy_Copper_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Mossy_Copper_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 75) && (myNum > 65){
-            let item = ItemClass.itemInSpace("Beach_Ball_Fragment_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Beach_Ball_Fragment_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 65) && (myNum > 50){
-            let item = ItemClass.itemInSpace("Crab_Claw_Cap_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Crab_Claw_Cap_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -196,16 +196,16 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 1
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 1
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level5"{
         //50% 2 booty, 25% mossy copper ring, 25% Crab claw cap
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 75{
-            let item = ItemClass.itemInSpace("Mossy_Copper_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Mossy_Copper_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -214,21 +214,21 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 2
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 2
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         } else {
-            let item = ItemClass.itemInSpace("Mossy_Copper_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Mossy_Copper_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
     }else if level == "level6"{
         //25% crab claw cap, 50% mossy copper ring, 25% 2 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 75{
-            let item = ItemClass.itemInSpace("Crab_Claw_Cap_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Crab_Claw_Cap_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -237,21 +237,21 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 2
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 2
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         } else {
-            let item = ItemClass.itemInSpace("Mossy_Copper_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Mossy_Copper_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
     }else if level == "level7"{
         //25% copper ring, 65% 3 booty, 10% pearl necklace
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 75{
-            let item = ItemClass.itemInSpace("Copper_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Copper_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -260,21 +260,21 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 3
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 3
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         } else{
-            let item = ItemClass.itemInSpace("Pearl_Necklace_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Pearl_Necklace_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
     }else if level == "level8"{
         //25% copper ring, 25% 3 booty, 50% barnacles
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 75{
-            let item = ItemClass.itemInSpace("Copper_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Copper_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -283,21 +283,21 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 3
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 3
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         } else{
-            let item = ItemClass.itemInSpace("Barnacles_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Barnacles_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
     }else if level == "level9"{
         //10% beach ball fragment, 25% crab claw cap, 65% 3 booty
-        let myNum = randomWithMin(0, max:100)
+        let myNum = randomWithMin(min: 0, max:100)
         if myNum > 90{
-            let item = ItemClass.itemInSpace("Beach_Ball_Fragment_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Beach_Ball_Fragment_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -306,26 +306,26 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 3
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 3
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         } else {
-            let item = ItemClass.itemInSpace("Crab_Claw_Cap_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Crab_Claw_Cap_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
     }else if level == "level10"{
         //10% pearl necklace, 50% copper ring, 40% 3 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 90{
-            let item = ItemClass.itemInSpace("Pearl_Necklace_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Pearl_Necklace_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum <= 90) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Copper_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Copper_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -334,16 +334,16 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 3
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 3
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level11"{
         //25% rusty silver ring, 15% beach ball fragment, 60% 4 booty
-        let myNum = randomWithMin(0, max:100)
+        let myNum = randomWithMin(min: 0, max:100)
         if myNum > 75{
-            let item = ItemClass.itemInSpace("Rusty_Silver_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Rusty_Silver_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -352,31 +352,31 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 4
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 4
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         } else {
-            let item = ItemClass.itemInSpace("Beach_Ball_Fragment_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Beach_Ball_Fragment_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
     }else if level == "level12"{
         //10% whale flesh ring, 25% rusty silver ring, 15% 4 booty, 50% barnacles
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 90{
-            let item = ItemClass.itemInSpace("Whale_Flesh_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Whale_Flesh_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum <= 90) && (myNum > 65){
-            let item = ItemClass.itemInSpace("Rusty_Silver_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Rusty_Silver_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum <= 65) && (myNum > 15){
-            let item = ItemClass.itemInSpace("Barnacles_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Barnacles_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -385,21 +385,21 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 4
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 4
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level13"{
         //50% coral crown, 25% 5 booty, 25% crab claw cap
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 50{
-            let item = ItemClass.itemInSpace("Coral_Crown_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Coral_Crown_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum <= 50) && (myNum > 25){
-            let item = ItemClass.itemInSpace("Crab_Claw_Cap_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Crab_Claw_Cap_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -408,21 +408,21 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 5
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 5
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level14"{
         // 25% 5 booty, 25% pearl necklace, 50% coral crown
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 75{
-            let item = ItemClass.itemInSpace("Pearl_Necklace_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Pearl_Necklace_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum > 25) && (myNum <= 75){
-            let item = ItemClass.itemInSpace("Coral_Crown_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Coral_Crown_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -431,40 +431,40 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 5
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 5
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level15"{
         //25% mossy silver ring, 25% whale flesh ring, 50% coral crown
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if (myNum > 50){
-            let item = ItemClass.itemInSpace("Coral_Crown_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Coral_Crown_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum <= 50) && (myNum > 25){
-            let item = ItemClass.itemInSpace("Mossy_Silver_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Mossy_Silver_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else{
-            let item = ItemClass.itemInSpace("Whale_Flesh_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Whale_Flesh_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
     }else if level == "level16"{
         //50% 5 booty, 25% mossy silver ring,  25% whale flesh
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 75{
-            let item = ItemClass.itemInSpace("Mossy_Silver_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Mossy_Silver_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum <= 75) && (myNum > 50){
-            let item = ItemClass.itemInSpace("Whale_Flesh_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Whale_Flesh_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -473,16 +473,16 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 5
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 5
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level17"{
         //75% 1 booty, 25% mossy silver ring
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 75{
-            let item = ItemClass.itemInSpace("Mossy_Silver_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Mossy_Silver_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -491,21 +491,21 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 6
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 6
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level18"{
         //50% 6 booty, 25% silver ring, 25% pearl necklace
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 75{
-            let item = ItemClass.itemInSpace("Silver_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Silver_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 75) && (myNum > 50){
-            let item = ItemClass.itemInSpace("Pearl_Necklace_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Pearl_Necklace_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -514,29 +514,29 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 6
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 6
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level19"{
         //100% king kraken tentacle ring
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > -1{
-            let item = ItemClass.itemInSpace("King_Kraken_Tentacle_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "King_Kraken_Tentacle_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }     }else if level == "level20"{
         //35% 7 booty, 25% silver ring, 40% seashell charm bracelet
-        let myNum = randomWithMin(0, max: 100)
+            let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 75{
-            let item = ItemClass.itemInSpace("Silver_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Silver_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 75) && (myNum > 35){
-            let item = ItemClass.itemInSpace("Seashell_Charm_Bracelet_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Seashell_Charm_Bracelet_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -545,22 +545,22 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 7
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 7
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level21"{
         //50% 1 booty, 25 % king kraken tentacle, 25% rusty gold ring
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 75{
-            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Rusty_Gold_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
         else if (myNum <= 75) && (myNum > 50){
-            let item = ItemClass.itemInSpace("King_Kraken_Tentacle_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "King_Kraken_Tentacle_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -569,26 +569,26 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 8
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 8
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level22"{
         //30% 9 booty, 50% rusty gold ring, 10% afro seaweed, 10% seaweed mustache
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 50{
-            let item = ItemClass.itemInSpace("Rusty_Gold_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Rusty_Gold_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 50) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Afro_Seaweed_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Afro_Seaweed_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 40) && (myNum > 30){
-            let item = ItemClass.itemInSpace("Seaweed_Mustache_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Seaweed_Mustache_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -597,31 +597,31 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 9
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 9
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level23"{
         //10% afroseaweed, 10% seaweed mustache, 30% mossy gold ring, 25% barnacles, 25% 10 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 90{
-            let item = ItemClass.itemInSpace("Afro_Seaweed_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Afro_Seaweed_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 90) && (myNum > 80){
-            let item = ItemClass.itemInSpace("Seaweed_Mustache_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Seaweed_Mustache_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum <= 80) && (myNum > 50){
-            let item = ItemClass.itemInSpace("Mossy_Gold_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Mossy_Gold_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum <= 50) && (myNum > 25){
-            let item = ItemClass.itemInSpace("Barnacles_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Barnacles_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -630,21 +630,21 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 10
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 10
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level24"{
         //50% 10 booty, 25% mossy gold ring, 25% crab claw cap
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 75{
-            let item = ItemClass.itemInSpace("Mossy_Gold_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Mossy_Gold_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 75) && (myNum > 50){
-            let item = ItemClass.itemInSpace("Crab_Claw_Cap_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Crab_Claw_Cap_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -653,26 +653,26 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 10
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 10
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level25"{
         //20% 10 booty, 50% mossy gold ring, 10% inky ring, 20% king kraken tentacle ring
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 50{
-            let item = ItemClass.itemInSpace("Mossy_Gold_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Mossy_Gold_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 50) && (myNum > 30){
-            let item = ItemClass.itemInSpace("King_Kraken_Tentacle_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "King_Kraken_Tentacle_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum <= 30) && (myNum > 20){
-            let item = ItemClass.itemInSpace("Inky_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Inky_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -681,31 +681,31 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 10
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 10
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level26"{
         //40% 10 booty, 15% seashell charm bracelet, 15% seashell necklace, 15% pearlsnap ring, 15% gold ring
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 85{
-            let item = ItemClass.itemInSpace("Seashell_Charm_Bracelet_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Seashell_Charm_Bracelet_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 85) && (myNum > 70){
-            let item = ItemClass.itemInSpace("Seashell_Necklace_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Seashell_Necklace_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum <= 70) && (myNum > 55){
-            let item = ItemClass.itemInSpace("Pearl_Snap_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Pearl_Snap_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum <= 55) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Gold_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Gold_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -714,21 +714,21 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 10
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 10
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level27"{
         //50% 10 booty, 25% inky ring, 25% king kraken tentacle ring
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 75{
-            let item = ItemClass.itemInSpace("King_Kraken_Tentacle_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "King_Kraken_Tentacle_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 75) && (myNum > 50){
-            let item = ItemClass.itemInSpace("Inky_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Inky_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -737,65 +737,65 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 10
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 10
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }else if level == "level28"{
         //20% afro seaweed, 20% seaweed mustache, 20% seashell charm bracelet, 20% seashell necklace, 20% pearl snap ring
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 80{
-            let item = ItemClass.itemInSpace("Afro_Seaweed_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Afro_Seaweed_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 80) && (myNum > 60){
-            let item = ItemClass.itemInSpace("Seaweed_Mustache_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Seaweed_Mustache_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum <= 60) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Seashell_Charm_Bracelet_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Seashell_Charm_Bracelet_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum <= 40) && (myNum > 20){
-            let item = ItemClass.itemInSpace("Seashell_Necklace_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Seashell_Necklace_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else {
-            let item = ItemClass.itemInSpace("Pearl_Snap_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Pearl_Snap_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
     }else if level == "level29"{
         //20% gold ring, 20% afro seaweed, 20% seaweed mustache, 20% seashell charm bracelet, 20% seashell necklace
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         if myNum > 80{
-            let item = ItemClass.itemInSpace("Afro_Seaweed_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Afro_Seaweed_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 80) && (myNum > 60){
-            let item = ItemClass.itemInSpace("Seaweed_Mustache_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Seaweed_Mustache_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum <= 60) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Seashell_Charm_Bracelet_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Seashell_Charm_Bracelet_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else if (myNum <= 40) && (myNum > 20){
-            let item = ItemClass.itemInSpace("Seashell_Necklace_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Seashell_Necklace_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }else {
-            let item = ItemClass.itemInSpace("Gold_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Gold_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -804,31 +804,31 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     //GAUNTLET PHASES
     }else if level == "phase1"{
         //10% selected store item, 90% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 98{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 98) && (myNum > 96){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 96) && (myNum > 94){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 94) && (myNum > 92){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 92) && (myNum > 90){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -839,39 +839,39 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
         
     } else if level == "phase2"{
         //20% selected store item, 80% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 96{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 96) && (myNum > 92){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 92) && (myNum > 88){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 88) && (myNum > 84){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 84) && (myNum > 80){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -882,39 +882,39 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
         
     } else if level == "phase3"{
         //30% selected store item, 70% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 94{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 94) && (myNum > 88){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 88) && (myNum > 82){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 82) && (myNum > 76){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 76) && (myNum > 70){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -925,39 +925,39 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
         
     } else if level == "phase4"{
         //40% selected store item, 60% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 92{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 92) && (myNum > 84){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 84) && (myNum > 76){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 76) && (myNum > 68){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 68) && (myNum > 60){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -968,38 +968,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     } else if level == "phase5"{
         //50% selected store item, 50% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 90{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 90) && (myNum > 80){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 80) && (myNum > 70){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 70) && (myNum > 60){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 60) && (myNum > 50){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1010,38 +1010,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     } else if level == "phase6"{
         //60% selected store item, 40% 30 booty
-        let myNum = randomWithMin(0,max:100)
+        let myNum = randomWithMin(min: 0,max:100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 88{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 88) && (myNum > 76){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 76) && (myNum > 64){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 64) && (myNum > 52){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 52) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1052,38 +1052,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     } else if level == "phase7"{
         //70% selected store item, 30% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 86{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 86) && (myNum > 72){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 72) && (myNum > 58){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 58) && (myNum > 44){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 44) && (myNum > 30){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1094,38 +1094,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     } else if level == "phase8"{
         //80% selected store item, 20% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 84{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 84) && (myNum > 68){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 68) && (myNum > 52){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 52) && (myNum > 36){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 36) && (myNum > 20){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1136,39 +1136,39 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
         
     } else if level == "phase9"{
         //90% selected store item, 10% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 82{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 82) && (myNum > 64){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 64) && (myNum > 46){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 46) && (myNum > 28){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 28) && (myNum > 10){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1179,39 +1179,39 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
         
     } else if level == "phase10"{
         //100% selected store item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 80{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 80) && (myNum > 60){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 60) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 40) && (myNum > 20){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1221,31 +1221,31 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     
     else if level == "phase11"{
         //10% T1 item, 45% selected store item, 45% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 91{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 91) && (myNum > 82){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 82) && (myNum > 73){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 73) && (myNum > 64){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 64) && (myNum > 55){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1253,17 +1253,17 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
          
         //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 55) && (myNum > 52){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 52) && (myNum > 49){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 49) && (myNum > 45){
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1274,39 +1274,39 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }
     else if level == "phase12"{
         //20% T1 item, 40% selected store item, 40% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 92{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 92) && (myNum > 84){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 84) && (myNum > 76){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 76) && (myNum > 68){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 68) && (myNum > 60){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1314,17 +1314,17 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             
         //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 60) && (myNum > 53){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 53) && (myNum > 46){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 46) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1335,39 +1335,39 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }
     else if level == "phase13"{
         //30% T1 item, 35% selected store item, 35% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 93{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 93) && (myNum > 86){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 86) && (myNum > 79){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 79) && (myNum > 72){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 72) && (myNum > 65){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1375,17 +1375,17 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 65) && (myNum > 55){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 55) && (myNum > 45){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 45) && (myNum > 35){
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1396,39 +1396,39 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }
     else if level == "phase14"{
         //40% T1 item, 30% selected store item, 30% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 94{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 94) && (myNum > 88){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 88) && (myNum > 82){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 82) && (myNum > 76){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 76) && (myNum > 70){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1436,17 +1436,17 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 70) && (myNum > 57){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 57) && (myNum > 44){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 44) && (myNum > 30){
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1457,39 +1457,39 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }
     else if level == "phase15"{
         //50% T1 item, 25% selected store item, 25% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 95{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 95) && (myNum > 90){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 90) && (myNum > 85){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 85) && (myNum > 80){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 80) && (myNum > 75){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1497,17 +1497,17 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 75) && (myNum > 58){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 58) && (myNum > 41){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 41) && (myNum > 25){
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1518,39 +1518,39 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }
     else if level == "phase16"{
         //60% T1 item, 20% selected store item, 20% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 96{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 96) && (myNum > 92){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 92) && (myNum > 88){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 88) && (myNum > 84){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 84) && (myNum > 80){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1558,17 +1558,17 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 80) && (myNum > 60){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 60) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 40) && (myNum > 20){
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1579,39 +1579,39 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }
     else if level == "phase17"{
         //70% T1 item, 15% selected store item, 15% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 97{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 97) && (myNum > 94){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 94) && (myNum > 91){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 91) && (myNum > 88){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 88) && (myNum > 85){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1619,17 +1619,17 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 85) && (myNum > 62){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 62) && (myNum > 39){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 39) && (myNum > 15){
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1640,39 +1640,39 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }
     else if level == "phase18"{
         //80% T1 item, 10% selected store item, 10% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 98{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 98) && (myNum > 96){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 96) && (myNum > 94){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 94) && (myNum > 92){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 92) && (myNum > 90){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1680,17 +1680,17 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 90) && (myNum > 63){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 63) && (myNum > 36){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 36) && (myNum > 10){
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1701,39 +1701,39 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }
     else if level == "phase19"{
         //90% T1 item, 5% selected store item, 5% 30 booty
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****SELECTED STORE ITEMS (Top Hat, Monocle, Bowtie, Watch, Bling Ring)*****
         if myNum > 99{
-            let item = ItemClass.itemInSpace("Top_Hat_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Top_Hat_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 99) && (myNum > 98){
-            let item = ItemClass.itemInSpace("Monocle_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Monocle_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 98) && (myNum > 97){
-            let item = ItemClass.itemInSpace("Bow_Tie_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bow_Tie_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 97) && (myNum > 96){
-            let item = ItemClass.itemInSpace("Watch_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Watch_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 96) && (myNum > 95){
-            let item = ItemClass.itemInSpace("Bling_Ring_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Bling_Ring_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1741,17 +1741,17 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 95) && (myNum > 65){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 65) && (myNum > 35){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 35) && (myNum > 5){
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1762,29 +1762,29 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
             gold.name = "gold"
             gold.position = position
             gold.size = size
-            (scene.userData?.objectForKey("inventory") as! Inventory).gold += 30
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject((scene.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            (scene.userData?.object(forKey: "inventory") as! Inventory).gold += 30
+            let defaults = UserDefaults.standard
+            defaults.set((scene.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             scene.addChild(gold)
         }
     }
     else if level == "phase20"{
         //100% T1 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
             
             //*****TIER 1 ITEMS***************************************************************
         if (myNum > 67) {
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 67) && (myNum > 34){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1793,38 +1793,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase21"{
         //10% T2 item, 90% T1 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 97) {
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 97) && (myNum > 94){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 94) && (myNum > 90){
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 90) && (myNum > 60){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 60) && (myNum > 30){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1833,38 +1833,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase22"{
         //20% T2 item, 80% T1 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 93) {
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 93) && (myNum > 86){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 86) && (myNum > 80){
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 80) && (myNum > 53){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 53) && (myNum > 26){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1873,38 +1873,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase23"{
         //30% T2 item, 70% T1 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 90) {
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 90) && (myNum > 80){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 80) && (myNum > 70){
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 70) && (myNum > 47){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 47) && (myNum > 24){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1913,38 +1913,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase24"{
         //40% T2 item, 60% T1 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 87) {
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 87) && (myNum > 74){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 74) && (myNum > 60){
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 60) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 40) && (myNum > 20){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1953,38 +1953,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase25"{
         //50% T2 item, 50% T1 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 83) {
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 83) && (myNum > 66){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 66) && (myNum > 50){
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 50) && (myNum > 33){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 33) && (myNum > 16){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -1993,38 +1993,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase26"{
         //60% T2 item, 40% T1 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 80) {
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 80) && (myNum > 60){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 60) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 40) && (myNum > 27){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 27) && (myNum > 14){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2033,38 +2033,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase27"{
         //70% T2 item, 30% T1 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 77) {
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 77) && (myNum > 54){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 54) && (myNum > 30){
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 30) && (myNum > 20){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 20) && (myNum > 10){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2073,38 +2073,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase28"{
         //80% T2 item, 20% T1 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 73) {
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 73) && (myNum > 46){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 46) && (myNum > 20){
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 20) && (myNum > 13){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 13) && (myNum > 6){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2113,38 +2113,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase29"{
         //90% T2 item, 10% T1 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 70) {
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 70) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 40) && (myNum > 10){
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 1 ITEMS***************************************************************
         else if (myNum <= 10) && (myNum > 7){
-            let item = ItemClass.itemInSpace("Wicked_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Wicked_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 7) && (myNum > 4){
-            let item = ItemClass.itemInSpace("Fear_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Fear_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Dusk_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Dusk_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2153,21 +2153,21 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase30"{
         //100% T2 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 2 ITEMS***************************************************************
         if (myNum > 67) {
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 67) && (myNum > 34){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2179,38 +2179,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     
     else if level == "phase31"{
         //10% T3 item, 90% T2 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 97) {
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 97) && (myNum > 94){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 94) && (myNum > 90){
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 2 ITEMS***************************************************************
         else if (myNum <= 90) && (myNum > 60){
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 60) && (myNum > 30){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2219,38 +2219,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase32"{
         //20% T3 item, 80% T2 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 93) {
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 93) && (myNum > 86){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 86) && (myNum > 80){
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 2 ITEMS***************************************************************
         else if (myNum <= 80) && (myNum > 53){
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 53) && (myNum > 26){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2259,38 +2259,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase33"{
         //30% T3 item, 70% T2 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 90) {
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 90) && (myNum > 80){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 80) && (myNum > 70){
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 2 ITEMS***************************************************************
         else if (myNum <= 70) && (myNum > 47){
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 47) && (myNum > 24){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2299,38 +2299,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase34"{
         //40% T3 item, 60% T2 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 87) {
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 87) && (myNum > 74){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 74) && (myNum > 60){
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 2 ITEMS***************************************************************
         else if (myNum <= 60) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 40) && (myNum > 20){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2339,38 +2339,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase35"{
         //50% T3 item, 50% T2 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 83) {
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 83) && (myNum > 66){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 66) && (myNum > 50){
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 2 ITEMS***************************************************************
         else if (myNum <= 50) && (myNum > 33){
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 33) && (myNum > 16){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2379,38 +2379,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase36"{
         //60% T3 item, 40% T2 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 80) {
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 80) && (myNum > 60){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 60) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 2 ITEMS***************************************************************
         else if (myNum <= 40) && (myNum > 27){
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 27) && (myNum > 14){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2419,38 +2419,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase37"{
         //70% T3 item, 30% T2 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 77) {
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 77) && (myNum > 54){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 54) && (myNum > 30){
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 2 ITEMS***************************************************************
         else if (myNum <= 30) && (myNum > 20){
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 20) && (myNum > 10){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2459,38 +2459,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase38"{
         //80% T3 item, 20% T2 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 73) {
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 73) && (myNum > 46){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 46) && (myNum > 20){
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 2 ITEMS***************************************************************
         else if (myNum <= 20) && (myNum > 13){
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 13) && (myNum > 6){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2499,38 +2499,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase39"{
         //90% T3 item, 10% T2 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 70) {
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 70) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 40) && (myNum > 10){
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 2 ITEMS***************************************************************
         else if (myNum <= 10) && (myNum > 7){
-            let item = ItemClass.itemInSpace("Sinister_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Sinister_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 7) && (myNum > 4){
-            let item = ItemClass.itemInSpace("Nightmare_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightmare_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Nightfall_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Nightfall_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2539,21 +2539,21 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase40"{
         //100% T3 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 67) {
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 67) && (myNum > 34){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2561,38 +2561,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase41"{
         //10% T4 item, 90% T3 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 97) {
-            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Lust_Of_Lucifer_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 97) && (myNum > 94){
-            let item = ItemClass.itemInSpace("The_Jitters_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "The_Jitters_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 94) && (myNum > 90){
-            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Tomorrows_End_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 3 ITEMS***************************************************************
         else if (myNum <= 90) && (myNum > 60){
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 60) && (myNum > 30){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2601,38 +2601,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase42"{
         //20% T4 item, 80% T3 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 3 ITEMS***************************************************************
         if (myNum > 93) {
-            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Lust_Of_Lucifer_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 93) && (myNum > 86){
-            let item = ItemClass.itemInSpace("The_Jitters_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "The_Jitters_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 86) && (myNum > 80){
-            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Tomorrows_End_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 2 ITEMS***************************************************************
         else if (myNum <= 80) && (myNum > 53){
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 53) && (myNum > 26){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2641,38 +2641,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase43"{
         //30% T4 item, 70% T3 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 90) {
-            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Lust_Of_Lucifer_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 90) && (myNum > 80){
-            let item = ItemClass.itemInSpace("The_Jitters_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "The_Jitters_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 80) && (myNum > 70){
-            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Tomorrows_End_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 3 ITEMS***************************************************************
         else if (myNum <= 70) && (myNum > 47){
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 47) && (myNum > 24){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2681,38 +2681,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase44"{
         //40% T4 item, 60% T3 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 87) {
-            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Lust_Of_Lucifer_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 87) && (myNum > 74){
-            let item = ItemClass.itemInSpace("The_Jitters_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "The_Jitters_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 74) && (myNum > 60){
-            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Tomorrows_End_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 3 ITEMS***************************************************************
         else if (myNum <= 60) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 40) && (myNum > 20){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2721,38 +2721,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase45"{
         //50% T4 item, 50% T3 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 83) {
-            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Lust_Of_Lucifer_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 83) && (myNum > 66){
-            let item = ItemClass.itemInSpace("The_Jitters_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "The_Jitters_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 66) && (myNum > 50){
-            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Tomorrows_End_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 3 ITEMS***************************************************************
         else if (myNum <= 50) && (myNum > 33){
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 33) && (myNum > 16){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2761,38 +2761,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase46"{
         //60% T4 item, 40% T3 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 80) {
-            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Lust_Of_Lucifer_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 80) && (myNum > 60){
-            let item = ItemClass.itemInSpace("The_Jitters_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "The_Jitters_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 60) && (myNum > 40){
-            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Tomorrows_End_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 3 ITEMS***************************************************************
         else if (myNum <= 40) && (myNum > 27){
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 27) && (myNum > 14){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2801,38 +2801,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase47"{
         //70% T4 item, 30% T3 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 77) {
-            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Lust_Of_Lucifer_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 77) && (myNum > 54){
-            let item = ItemClass.itemInSpace("The_Jitters_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "The_Jitters_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 54) && (myNum > 30){
-            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Tomorrows_End_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 3 ITEMS***************************************************************
         else if (myNum <= 30) && (myNum > 20){
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 20) && (myNum > 10){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2841,38 +2841,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase48"{
         //80% T4 item, 20% T3 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 73) {
-            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Lust_Of_Lucifer_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 73) && (myNum > 46){
-            let item = ItemClass.itemInSpace("The_Jitters_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "The_Jitters_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 46) && (myNum > 20){
-            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Tomorrows_End_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 3 ITEMS***************************************************************
         else if (myNum <= 20) && (myNum > 13){
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 13) && (myNum > 6){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2881,38 +2881,38 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase49"{
         //90% T4 item, 10% T3 item
-        let myNum = randomWithMin (0, max: 100)
+        let myNum = randomWithMin (min: 0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 70) {
-            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Lust_Of_Lucifer_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 70) && (myNum > 40){
-            let item = ItemClass.itemInSpace("The_Jitters_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "The_Jitters_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 40) && (myNum > 10){
-            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Tomorrows_End_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         }
             //*****TIER 3 ITEMS***************************************************************
         else if (myNum <= 10) && (myNum > 7){
-            let item = ItemClass.itemInSpace("Insidious_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insidious_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 7) && (myNum > 4){
-            let item = ItemClass.itemInSpace("Insomnia_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Insomnia_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Twilight_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Twilight_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2921,21 +2921,21 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase50"{
         //100% T4 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 67) {
-            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Lust_Of_Lucifer_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 67) && (myNum > 34){
-            let item = ItemClass.itemInSpace("The_Jitters_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "The_Jitters_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Tomorrows_End_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2943,21 +2943,21 @@ func dropLoot(level: String, scene: SKScene, position: CGPoint, size: CGSize){
     }
     else if level == "phase51"{
         //100% T4 item
-        let myNum = randomWithMin(0, max: 100)
+        let myNum = randomWithMin(min: 0, max: 100)
         
         //*****TIER 4 ITEMS***************************************************************
         if (myNum > 67) {
-            let item = ItemClass.itemInSpace("Lust_Of_Lucifer_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Lust_Of_Lucifer_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else if (myNum <= 67) && (myNum > 34){
-            let item = ItemClass.itemInSpace("The_Jitters_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "The_Jitters_1")
             item.position = position
             item.size = size
             scene.addChild(item)
         } else {
-            let item = ItemClass.itemInSpace("Tomorrows_End_1")
+            let item = ItemClass.itemInSpace(nameOfTexture: "Tomorrows_End_1")
             item.position = position
             item.size = size
             scene.addChild(item)
@@ -2990,7 +2990,7 @@ func generatePointsOnLine(point1: CGPoint, point2: CGPoint) -> [CGPoint]{
         xPoints.append(point1.x + CGFloat(CGFloat(k) * (xDistance / CGFloat(numberOfPoints))))
     }
     //use y=mx+b, find x and b
-    let myLine = getLine(point1, point2: point2)
+    let myLine = getLine(point1: point1, point2: point2)
     let m = myLine.0
     let b = myLine.1
     //loop through x values, appending final points
@@ -3005,7 +3005,7 @@ func generatePointsOnLine(point1: CGPoint, point2: CGPoint) -> [CGPoint]{
 
 //returns (entryPoint, exitPoint)
 func entryExitPoints(node: SKSpriteNode, startSpot: CGPoint, endSpot: CGPoint)->(CGPoint, CGPoint){
-    let myLine = getLine(startSpot, point2: endSpot)
+    let myLine = getLine(point1: startSpot, point2: endSpot)
     let m = myLine.0
     let b = myLine.1
     let botY = node.frame.minY
@@ -3041,7 +3041,7 @@ func entryExitPoints(node: SKSpriteNode, startSpot: CGPoint, endSpot: CGPoint)->
         //println("Entry/Exit Points function fucked up!")
     }
     //points contains the entry.exit points, return in first, second order
-    if (distanceBetween(points[0], point2: startSpot) >= distanceBetween(points[1], point2: startSpot)){
+    if (distanceBetween(point1: points[0], point2: startSpot) >= distanceBetween(point1: points[1], point2: startSpot)){
         return (points[1], points[0])
     }else{
         return (points[0], points[1])
@@ -3050,7 +3050,7 @@ func entryExitPoints(node: SKSpriteNode, startSpot: CGPoint, endSpot: CGPoint)->
 
 //get infrontOf position of an SKSpritenode
 func infrontOf(theNode: SKSpriteNode, startPos: CGPoint)->CGPoint{
-    let entrySpots = entryExitPoints(theNode, startSpot: startPos, endSpot: theNode.position)
+    let entrySpots = entryExitPoints(node: theNode, startSpot: startPos, endSpot: theNode.position)
     return entrySpots.0
 }
 
@@ -3147,8 +3147,8 @@ func getMoveAnimations(myNode: SKSpriteNode)->SKAction{
             SKTexture(imageNamed: "Kraken_Movement_12.png"),
             SKTexture(imageNamed: "Kraken_Movement_11.png"),
             SKTexture(imageNamed: "Kraken_Movement_5.png")]
-        let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-        return SKAction.repeatActionForever(animation)
+        let animation = SKAction.animate(with: textures, timePerFrame: 0.1)
+        return SKAction.repeatForever(animation)
     }
     else {return SKAction()}
 }
@@ -3160,31 +3160,31 @@ func getStillTexture(myNode: SKSpriteNode)->SKTexture{
 }
 
 func moveTo(nodeToMove: SKSpriteNode, startPosition: CGPoint, position: CGPoint)-> SKAction{
-    if distanceBetween(startPosition, point2: position) < 5 {
+    if distanceBetween(point1: startPosition, point2: position) < 5 {
         return SKAction()
     }
-    let angle = angleFromPoints(startPosition, point2: position)
-    var amountToTurn = CGFloat(angle) - getNodeAngle(nodeToMove)
+    let angle = angleFromPoints(point1: startPosition, point2: position)
+    var amountToTurn = CGFloat(angle) - getNodeAngle(node: nodeToMove)
     if (amountToTurn > pi){
         amountToTurn = amountToTurn - (2 * pi)
     }else if(amountToTurn * -1 > pi){
         amountToTurn = amountToTurn + (2 * pi)
     }
-    setAngle(nodeToMove, angle: angle)
-    let rotateAction = SKAction.rotateByAngle(CGFloat(amountToTurn), duration: 0.2)
+    setAngle(myNode: nodeToMove, angle: angle)
+    let rotateAction = SKAction.rotate(byAngle: CGFloat(amountToTurn), duration: 0.2)
     //start new running animation if not already running
-    if (nodeToMove.actionForKey("repeatAction") == nil){
-        nodeToMove.runAction(getMoveAnimations(nodeToMove), withKey: "repeatAction")
+    if (nodeToMove.action(forKey: "repeatAction") == nil){
+        nodeToMove.run(getMoveAnimations(myNode: nodeToMove), withKey: "repeatAction")
     }
     if (angle > -1){
-        nodeToMove.runAction(rotateAction)
+        nodeToMove.run(rotateAction)
     }
     //do math for time
     let xDistance = position.x - startPosition.x
     let yDistance = position.y - startPosition.y
     let distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
-    let time = NSTimeInterval(distance / CGFloat(heroSpeed))
-    return SKAction.moveTo(position, duration: time)
+    let time = TimeInterval(distance / CGFloat(heroSpeed))
+    return SKAction.move(to: position, duration: time)
 }
 
 //return the action sequence for simple move type
@@ -3193,27 +3193,27 @@ func getSimpleMove(nodeToMove: SKSpriteNode, position: CGPoint)->SKAction{
         let myNode = nodeToMove as! HeroClass
         myNode.isAttacking = false
     }
-    let completionBlock = SKAction.runBlock(
-        {nodeToMove.removeActionForKey("repeatAction")
-            nodeToMove.texture = getStillTexture(nodeToMove)
+    let completionBlock = SKAction.run(
+        {nodeToMove.removeAction(forKey: "repeatAction")
+            nodeToMove.texture = getStillTexture(myNode: nodeToMove)
             (nodeToMove as! HeroClass).isMoving = false
     })
-    let moveAction = moveTo(nodeToMove, startPosition: nodeToMove.position, position: position)
+    let moveAction = moveTo(nodeToMove: nodeToMove, startPosition: nodeToMove.position, position: position)
     let sequence = SKAction.sequence([moveAction, completionBlock])
     return sequence
 }
 
 //return action sequence for attackMove
 func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAttacking: Bool)-> SKAction{
-    let spotInfront = infrontOf(nodeToAttack, startPos: nodeToMove.position)
-    let completionBlock = SKAction.runBlock(
-        {nodeToMove.removeActionForKey("repeatAction")
-            nodeToMove.texture = getStillTexture(nodeToMove)
+    let spotInfront = infrontOf(theNode: nodeToAttack, startPos: nodeToMove.position)
+    let completionBlock = SKAction.run(
+        {nodeToMove.removeAction(forKey: "repeatAction")
+            nodeToMove.texture = getStillTexture(myNode: nodeToMove)
             if nodeToMove.name == "hero"{
                 let myNode = nodeToMove as! HeroClass
                 if nodeToAttack.name == "item" {
                     myNode.isAttacking = false
-                    myNode.pickupItem(nodeToAttack as! ItemClass)
+                    myNode.pickupItem(theItem: nodeToAttack as! ItemClass)
                 }else if nodeToAttack.name == "gold" {
                     nodeToAttack.removeFromParent()
                 }else if nodeToAttack.name == "chest" {
@@ -3227,7 +3227,7 @@ func getAttackMove(nodeToMove: SKSpriteNode, nodeToAttack: SKSpriteNode, wasAtta
             (nodeToMove as! HeroClass).isMoving = false
     })
     var sequence: SKAction?
-    let moveAction = moveTo(nodeToMove, startPosition: nodeToMove.position, position: spotInfront)
+    let moveAction = moveTo(nodeToMove: nodeToMove, startPosition: nodeToMove.position, position: spotInfront)
     if (wasAttacking && nodeToAttack.name != "item" && nodeToAttack.name != "gold" && nodeToAttack.name != "chest"){
         sequence = SKAction.sequence([completionBlock])
     }else{
@@ -3242,37 +3242,37 @@ func getAroundMove(nodeToMove: SKSpriteNode, clickPoint: CGPoint, nodeToGoAround
         let myNode = nodeToMove as! HeroClass
         myNode.isAttacking = false
     }
-    let cornerSide = getGoAroundCorner(nodeToGoAround, startPoint: nodeToMove.position, clickPoint: clickPoint)
-    let cornerPointPushed = pushPointOut(nodeToGoAround, corner: cornerSide.0, selfNode: nodeToMove)
+    let cornerSide = getGoAroundCorner(enemyNode: nodeToGoAround, startPoint: nodeToMove.position, clickPoint: clickPoint)
+    let cornerPointPushed = pushPointOut(theNode: nodeToGoAround, corner: cornerSide.0, selfNode: nodeToMove)
     var sequence: SKAction?
     
     // sequence needs to be blocks of codes to 
     if (cornerSide.1){
         //need to move to another corner
-        let firstCornerMove = moveTo(nodeToMove, startPosition: nodeToMove.position, position: cornerPointPushed)
-        let secondCornerPushed = pushPointOut(nodeToGoAround, corner: cornerSide.2, selfNode: nodeToMove)
+        let firstCornerMove = moveTo(nodeToMove: nodeToMove, startPosition: nodeToMove.position, position: cornerPointPushed)
+        let secondCornerPushed = pushPointOut(theNode: nodeToGoAround, corner: cornerSide.2, selfNode: nodeToMove)
         //let secondCornerMove = moveTo(nodeToMove, cornerSide.0, secondCornerPushed)
         //let moveToPoint = moveTo(nodeToMove,cornerSide.2, clickPoint)
-        let completionBlock2 = SKAction.runBlock(
-            {(nodeToMove as! HeroClass).moveHelper(clickPoint)
+        let completionBlock2 = SKAction.run(
+            {(nodeToMove as! HeroClass).moveHelper(position: clickPoint)
                 //let runAction = moveTo(nodeToMove,cornerSide.2, clickPoint)
                 //let innerComplete = SKAction.runBlock({nodeToMove.removeActionForKey("repeatAction")
                 //nodeToMove.texture = getStillTexture(nodeToMove)})
                 //nodeToMove.runAction(SKAction.sequence([runAction, innerComplete]), withKey: "runAction")
 
         })
-        let completionBlock1 = SKAction.runBlock(
-            {let runAction = moveTo(nodeToMove, startPosition: cornerSide.0, position: secondCornerPushed)
-                let innerComplete = SKAction.runBlock({nodeToMove.runAction(completionBlock2)})
-                nodeToMove.runAction(SKAction.sequence([runAction, innerComplete]), withKey: "runAction")
+        let completionBlock1 = SKAction.run(
+            {let runAction = moveTo(nodeToMove: nodeToMove, startPosition: cornerSide.0, position: secondCornerPushed)
+                let innerComplete = SKAction.run({nodeToMove.run(completionBlock2)})
+                nodeToMove.run(SKAction.sequence([runAction, innerComplete]), withKey: "runAction")
                 (nodeToMove as! HeroClass).isMoving = false
         })
         sequence = SKAction.sequence([firstCornerMove, completionBlock1])
     }else{
-        let firstCornerMove = moveTo(nodeToMove, startPosition: nodeToMove.position, position: cornerPointPushed)
+        let firstCornerMove = moveTo(nodeToMove: nodeToMove, startPosition: nodeToMove.position, position: cornerPointPushed)
         //let moveToPoint = moveTo(nodeToMove, cornerSide.0, clickPoint)
-        let completionBlock = SKAction.runBlock(
-            {(nodeToMove as! HeroClass).moveHelper(clickPoint)
+        let completionBlock = SKAction.run(
+            {(nodeToMove as! HeroClass).moveHelper(position: clickPoint)
                 //nodeToMove.runAction(moveTo(nodeToMove, cornerSide.0, clickPoint), completion: {nodeToMove.removeActionForKey("repeatAction")
                 //nodeToMove.texture = getStillTexture(nodeToMove)})
                 (nodeToMove as! HeroClass).isMoving = false
@@ -3337,7 +3337,7 @@ func spotToStop(node: SKSpriteNode, spot: CGPoint) -> CGPoint {
 
 //takes in startPoint = heroPosition, clickPoint = touchSpot, entry/exit of enemyNodes frame. Return 1 or 2 corners to run to.
 func getGoAroundCorner(enemyNode: SKSpriteNode, startPoint: CGPoint, clickPoint: CGPoint)-> (CGPoint, Bool, CGPoint){
-    let entryExit = entryExitPoints(enemyNode, startSpot: startPoint, endSpot: clickPoint)
+    let entryExit = entryExitPoints(node: enemyNode, startSpot: startPoint, endSpot: clickPoint)
     let upperLeft = CGPointMake(enemyNode.frame.minX, enemyNode.frame.maxY)
     let upperRight = CGPointMake(enemyNode.frame.maxX, enemyNode.frame.maxY)
     let lowerLeft = CGPointMake(enemyNode.frame.minX, enemyNode.frame.minY)
@@ -3353,10 +3353,10 @@ func getGoAroundCorner(enemyNode: SKSpriteNode, startPoint: CGPoint, clickPoint:
         }else{
             //its coming out of the top
             //compare going left or right
-            let firstLeft = distanceBetween(startPoint, point2: lowerLeft)
-            let secondLeft = distanceBetween(upperLeft, point2: clickPoint)
-            let firstRight = distanceBetween(startPoint, point2: lowerRight)
-            let secondRight = distanceBetween(upperRight, point2: clickPoint)
+            let firstLeft = distanceBetween(point1: startPoint, point2: lowerLeft)
+            let secondLeft = distanceBetween(point1: upperLeft, point2: clickPoint)
+            let firstRight = distanceBetween(point1: startPoint, point2: lowerRight)
+            let secondRight = distanceBetween(point1: upperRight, point2: clickPoint)
             //println("left \(firstLeft + secondLeft) right \(firstRight + secondRight)")
             if (firstLeft + secondLeft > firstRight + secondRight){
                 return (lowerRight, true, upperRight)
@@ -3377,10 +3377,10 @@ func getGoAroundCorner(enemyNode: SKSpriteNode, startPoint: CGPoint, clickPoint:
         }else{
             //its coming out of the right
             //compare going top or bot
-            let firstLeft = distanceBetween(startPoint, point2: upperLeft)
-            let secondLeft = distanceBetween(upperRight, point2: clickPoint)
-            let firstRight = distanceBetween(startPoint, point2: lowerLeft)
-            let secondRight = distanceBetween(clickPoint, point2: lowerRight)
+            let firstLeft = distanceBetween(point1: startPoint, point2: upperLeft)
+            let secondLeft = distanceBetween(point1: upperRight, point2: clickPoint)
+            let firstRight = distanceBetween(point1: startPoint, point2: lowerLeft)
+            let secondRight = distanceBetween(point1: clickPoint, point2: lowerRight)
             //println("upperLeft: \(upperLeft)")
             //println("lowerLeft: \(lowerLeft)")
             //println("start: \(startPoint)")
@@ -3404,10 +3404,10 @@ func getGoAroundCorner(enemyNode: SKSpriteNode, startPoint: CGPoint, clickPoint:
         }else{
             //its coming out of the left
             //compare going top or bot
-            let firstLeft = distanceBetween(startPoint, point2: lowerRight)
-            let secondLeft = distanceBetween(lowerLeft, point2: clickPoint)
-            let firstRight = distanceBetween(startPoint, point2: upperRight)
-            let secondRight = distanceBetween(upperLeft, point2: clickPoint)
+            let firstLeft = distanceBetween(point1: startPoint, point2: lowerRight)
+            let secondLeft = distanceBetween(point1: lowerLeft, point2: clickPoint)
+            let firstRight = distanceBetween(point1: startPoint, point2: upperRight)
+            let secondRight = distanceBetween(point1: upperLeft, point2: clickPoint)
             //println("left \(firstLeft + secondLeft) right \(firstRight + secondRight)")
             if (firstLeft + secondLeft > firstRight + secondRight){
                 return (upperRight, true, upperLeft)
@@ -3426,10 +3426,10 @@ func getGoAroundCorner(enemyNode: SKSpriteNode, startPoint: CGPoint, clickPoint:
         }else{
             //its coming out of the top
             //compare going left or right
-            let firstLeft = distanceBetween(startPoint, point2: upperRight)
-            let secondLeft = distanceBetween(lowerRight, point2: clickPoint)
-            let firstRight = distanceBetween(startPoint, point2: upperLeft)
-            let secondRight = distanceBetween(lowerLeft, point2: clickPoint)
+            let firstLeft = distanceBetween(point1: startPoint, point2: upperRight)
+            let secondLeft = distanceBetween(point1: lowerRight, point2: clickPoint)
+            let firstRight = distanceBetween(point1: startPoint, point2: upperLeft)
+            let secondRight = distanceBetween(point1: lowerLeft, point2: clickPoint)
             //println("left \(firstLeft + secondLeft) right \(firstRight + secondRight)")
             if (firstLeft + secondLeft > firstRight + secondRight){
                 return (upperLeft, true, lowerLeft)

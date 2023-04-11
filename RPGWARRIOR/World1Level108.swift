@@ -34,12 +34,12 @@ class World1Level108: SKScene, SKPhysicsContactDelegate {
     var theWizard: WizardClass?
     var theHero: HeroClass?
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
-        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
+        theHero = HeroClass.makeHero(position: CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
-        theWizard = WizardClass.makeWizard(CGPointMake(self.frame.midX, self.frame.maxY - 50))
+        theWizard = WizardClass.makeWizard(position: CGPointMake(self.frame.midX, self.frame.maxY - 50))
         self.addChild(theWizard!)
         let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
@@ -64,22 +64,22 @@ class World1Level108: SKScene, SKPhysicsContactDelegate {
         //HERO VS FIRE
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategoryProjectile.rawValue){
-                let aHero = self.childNodeWithName("hero") as! HeroClass
-                aHero.takeDamage(1)
+            let aHero = self.childNode(withName: "hero") as! HeroClass
+            aHero.takeDamage(damage: 1)
                 secondBody.node!.removeFromParent()
         }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
-        let aHero = self.childNodeWithName("hero") as! HeroClass
+        let aHero = self.childNode(withName: "hero") as! HeroClass
         //let aWizard = self.childNodeWithName("wizard") as! WizardClass
         for touch in touches{
-            aHero.moveHelper((touch ).locationInNode(self))
+            aHero.moveHelper(position: (touch ).location(in: self))
         }
     }
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
@@ -89,21 +89,21 @@ class World1Level108: SKScene, SKPhysicsContactDelegate {
         self.totalGameTime += currentTime - self.lastUpdatesTime
         if currentTime - lastFireball  > wizardAttackSpeed{
             self.lastFireball = currentTime
-            theWizard!.shootFireball(theHero!.position)
+            theWizard!.shootFireball(aPosition: theHero!.position)
         }
         
         self.lastUpdatesTime = currentTime
         
         //check for win condition
-        if (theWizard!.isDead || theHero!.life <= 0) && !levelOver{
-            if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
-                let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
+        if (theWizard!.isDead || theHero!.life ?? <#default value#> <= 0) && !levelOver{
+            if (self.childNode(withName: "item") == nil && droppedItem) || theHero!.life ?? <#default value#> <= 0{
+                let skTransition = SKTransition.fade(withDuration: 1.0)
+                self.view?.presentScene(self.userData?.object(forKey: "menu") as! MainMenuScene, transition: skTransition)
                 levelOver = true
             }
-            else if (self.childNodeWithName("item") == nil){
+            else if (self.childNode(withName: "item") == nil){
                 if theWizard!.isDead{
-                    dropLoot("world1level108", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
+                    dropLoot(level: "world1level108", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }

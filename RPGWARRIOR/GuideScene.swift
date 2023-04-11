@@ -37,7 +37,7 @@ class GuideScene: SKScene {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for _ in touches{
 
-                count++
+                count+=1
                 if count == allImages.count {
                     var zoneScene: MainMenuScene
                     zoneScene = self.userData?.object(forKey: "menu") as! MainMenuScene

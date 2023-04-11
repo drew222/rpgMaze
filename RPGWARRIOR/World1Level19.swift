@@ -40,7 +40,7 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
     var theKraken: KrakenBoss?
     var theHero: HeroClass?
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         if is5{
             krakenAttackSpeed = 2.65
         }
@@ -48,10 +48,10 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
             krakenAttackSpeed = 3.5
         }
         /* Setup your scene here */
-        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, 30))
+        theHero = HeroClass.makeHero(position: CGPointMake(self.frame.midX, 30))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
-        theKraken = KrakenBoss.makeKraken(CGPointMake(self.frame.midX, self.frame.maxY - 50))
+        theKraken = KrakenBoss.makeKraken(position: CGPointMake(self.frame.midX, self.frame.maxY - 50))
         theKraken!.size = CGSizeMake(150, 120)
         self.addChild(theKraken!)
         //the below constraints did nothing
@@ -97,9 +97,9 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
         clockNode.size = CGSizeMake(30, 30)
         clockNode.name = "regenClock"
         clockNode.zPosition = 3
-        let spinAction = SKAction.rotateByAngle(2 * pi, duration: healSpeed)
-        let repeatAction = SKAction.repeatActionForever(spinAction)
-        clockNode.runAction(repeatAction)
+        let spinAction = SKAction.rotate(byAngle: 2 * pi, duration: healSpeed)
+        let repeatAction = SKAction.repeatForever(spinAction)
+        clockNode.run(repeatAction)
         clockNode.zRotation = pi / 1.7
         self.addChild(clockNode)
         //********************
@@ -112,33 +112,33 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
         }else{
             regenAmount.fontSize = 13
         }
-        regenAmount.fontColor = UIColor.whiteColor()
+        regenAmount.fontColor = UIColor.white
         regenAmount.zPosition = 2
         regenAmount.fontName = "ChalkboardSE-Bold"
         self.addChild(regenAmount)
         //*************************
         
         //bot shells
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX, 65)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 45, 65)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 45, 65)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 45, 25)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 45, 25)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX, 65)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX - 45, 65)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX + 45, 65)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX + 45, 25)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX - 45, 25)))
         
         //top shells
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 25)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 25)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 65)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 65)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 105)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 105)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 145)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 100, self.frame.maxY - 145)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 100, self.frame.maxY - 145)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 60, self.frame.maxY - 145)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX + 20, self.frame.maxY - 145)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 60, self.frame.maxY - 145)))
-        self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.midX - 20, self.frame.maxY - 145)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX - 100, self.frame.maxY - 25)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX + 100, self.frame.maxY - 25)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX - 100, self.frame.maxY - 65)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX + 100, self.frame.maxY - 65)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX - 100, self.frame.maxY - 105)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX + 100, self.frame.maxY - 105)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX + 100, self.frame.maxY - 145)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX - 100, self.frame.maxY - 145)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX + 100, self.frame.maxY - 145)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX + 60, self.frame.maxY - 145)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX + 20, self.frame.maxY - 145)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX - 60, self.frame.maxY - 145)))
+        self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.midX - 20, self.frame.maxY - 145)))
         
     }
     
@@ -155,16 +155,16 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
         //HERO VS SEASHELL
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
-                theHero!.takeDamage(1)
-                (secondBody.node as! MineNode).explode(secondBody.node!.position)
+            theHero!.takeDamage(damage: 1)
+            (secondBody.node as! MineNode).explode(position: secondBody.node!.position)
         }
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySpike.rawValue){
-                theHero!.takeDamage(10)
-                let fadeOut = SKAction.fadeOutWithDuration(0.6)
-                let codeBlock = SKAction.runBlock({secondBody.node?.removeFromParent()})
+            theHero!.takeDamage(damage: 10)
+            let fadeOut = SKAction.fadeOut(withDuration: 0.6)
+            let codeBlock = SKAction.run({secondBody.node?.removeFromParent()})
                 let sequence = SKAction.sequence([fadeOut, codeBlock])
-                secondBody.node?.runAction(sequence)
+            secondBody.node?.run(sequence)
         }
         /*
         if (firstBody.categoryBitMask == CollisionBitMasks.collisionCategoryHero.rawValue &&
@@ -179,32 +179,32 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
-        let aHero = self.childNodeWithName("hero") as? HeroClass
+        let aHero = self.childNode(withName: "hero") as? HeroClass
         for touch in touches{
             if !inkSplatted{
-                aHero!.moveHelper((touch ).locationInNode(self))
-            }else if self.childNodeWithName("yesText") != nil{
-                if self.childNodeWithName("yesText")!.containsPoint((touch ).locationInNode(self)){
+                aHero!.moveHelper(position: (touch ).location(in: self))
+            }else if self.childNode(withName: "yesText") != nil{
+                if self.childNode(withName: "yesText")!.contains((touch ).location(in: self)){
                     let newLevel1 = World1Level19(size: self.frame.size)
                     newLevel1.userData = NSMutableDictionary()
-                    newLevel1.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
-                    newLevel1.userData?.setObject(self.userData?.objectForKey("menu") as! MainMenuScene, forKey: "menu")
+                    newLevel1.userData?.setObject(self.userData?.object(forKey: "inventory") as! Inventory, forKey: "inventory" as NSCopying)
+                    newLevel1.userData?.setObject(self.userData?.object(forKey: "menu") as! MainMenuScene, forKey: "menu" as NSCopying)
                     //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
-                    let skTransition = SKTransition.fadeWithDuration(1.0)
+                    let skTransition = SKTransition.fade(withDuration: 1.0)
                     self.view?.presentScene(newLevel1, transition: skTransition)
                     
-                }else if self.childNodeWithName("noText")!.containsPoint((touch ).locationInNode(self)){
-                    let skTransition = SKTransition.fadeWithDuration(1.0)
+                }else if self.childNode(withName: "noText")!.contains((touch ).location(in: self)){
+                    let skTransition = SKTransition.fade(withDuration: 1.0)
                     if soundOn {
                         levelMusic!.stop()
                     }
-                    self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
+                    self.view?.presentScene(self.userData?.object(forKey: "menu") as! MainMenuScene, transition: skTransition)
                 }
             }
         }
     }
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         if self.gameStartTime == 0 {
             self.gameStartTime = currentTime
@@ -235,12 +235,12 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
             self.lastHeal = currentTime
-            if theHero!.life < maxLife{
+            if theHero!.life ?? <#default value#> < maxLife{
                 if soundOn && !levelOver && !droppedChest{
-                    self.runAction(regenSound)
+                    self.run(regenSound)
                 }
                 theHero!.life! += theHero!.regeneration!
-                if theHero!.life > maxLife{
+                if theHero!.life ?? <#default value#> > maxLife{
                     theHero!.life = maxLife
                 }
             }
@@ -248,12 +248,12 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
         
         self.lastUpdatesTime = currentTime
         lifeNode!.text = "\(Int(theHero!.life!))"
-        if (theKraken!.isDead || theHero!.life <= 0) && !levelOver{
+        if (theKraken!.isDead || theHero!.life ?? <#default value#> <= 0) && !levelOver{
             
-            if (self.childNodeWithName("gold") == nil && self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
+            if (self.childNode(withName: "gold") == nil && self.childNode(withName: "item") == nil && droppedItem) || theHero!.life ?? <#default value#> <= 0{
                 
                 //INK SPLAT CODE
-                if theHero!.life <= 0 {
+                if theHero!.life ?? <#default value#> <= 0 {
                     let inkSplat = SKSpriteNode(imageNamed: "Ink_Splat_1")
                     for node in self.children{
                         if node as? SKLabelNode != nil {
@@ -263,12 +263,12 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
                             node.removeFromParent()
                         }
                     }
-                    self.childNodeWithName("lifeNumber")?.removeFromParent()
+                    self.childNode(withName: "lifeNumber")?.removeFromParent()
                     inkSplat.position = CGPointMake(self.frame.midX, self.frame.midY)
                     inkSplat.size = CGSizeMake(50, 50)
                     self.addChild(inkSplat)
-                    let stretchAction = SKAction.scaleXBy(7, y: 7, duration: 0.4)
-                    let codeBlock = SKAction.runBlock({
+                    let stretchAction = SKAction.scaleX(by: 7, y: 7, duration: 0.4)
+                    let codeBlock = SKAction.run({
                         let yesText = SKSpriteNode(imageNamed: "Yes_Text_1")
                         let noText = SKSpriteNode(imageNamed: "No_Text_1")
                         yesText.zPosition = 3
@@ -283,23 +283,23 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
                         self.addChild(noText)
                     })
                     let sequence = SKAction.sequence([stretchAction, codeBlock])
-                    inkSplat.runAction(sequence)
+                    inkSplat.run(sequence)
                     inkSplatted = true
                     if soundOn {
-                    self.runAction(splatterSound)
+                        self.run(splatterSound)
                     }
                 }else{
                     
                     //&&
-                    let persistentData = NSUserDefaults.standardUserDefaults()
-                    if (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel < 19{
-                    persistentData.setObject(19, forKey: "highestLevel")
-                        (self.userData?.objectForKey("menu") as! MainMenuScene).highestLevel = 19
+                    let persistentData = UserDefaults.standard
+                    if (self.userData?.object(forKey: "menu") as! MainMenuScene).highestLevel < 19{
+                        persistentData.set(19, forKey: "highestLevel")
+                        (self.userData?.object(forKey: "menu") as! MainMenuScene).highestLevel = 19
                     }
                     //&&
                     
                     //ITEM DISPLAY***************
-                    let skTransition = SKTransition.fadeWithDuration(1.0)
+                    let skTransition = SKTransition.fade(withDuration: 1.0)
                     let itemDisplayScene = ItemDisplayScene(size: self.frame.size)
                     if itemDropped != nil{
                         itemDisplayScene.itemName = itemDropped!.itemName!
@@ -308,19 +308,19 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
                         itemDisplayScene.numBooty = 1
                     }
                     itemDisplayScene.userData = NSMutableDictionary()
-                    itemDisplayScene.userData?.setObject(self.userData?.objectForKey("menu") as! MainMenuScene, forKey: "menu")
-                    itemDisplayScene.userData?.setObject(self.userData?.objectForKey("inventory") as! Inventory, forKey: "inventory")
+                    itemDisplayScene.userData?.setObject(self.userData?.object(forKey: "menu") as! MainMenuScene, forKey: "menu" as NSCopying)
+                    itemDisplayScene.userData?.setObject(self.userData?.object(forKey: "inventory") as! Inventory, forKey: "inventory" as NSCopying)
                     self.view?.presentScene(itemDisplayScene, transition: skTransition)
                     //***************************
                 }
                 
                 levelOver = true
             }
-            else if (self.childNodeWithName("item") == nil && self.childNodeWithName("gold") == nil){
-                if theKraken!.isDead && droppedChest && (self.childNodeWithName("chest") as! TreasureChest).open{
-                    dropLoot("level19", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
+            else if (self.childNode(withName: "item") == nil && self.childNode(withName: "gold") == nil){
+                if theKraken!.isDead && droppedChest && (self.childNode(withName: "chest") as! TreasureChest).open{
+                    dropLoot(level: "level19", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
                     droppedItem = true
-                    itemDropped = self.childNodeWithName("item") as? ItemClass
+                    itemDropped = self.childNode(withName: "item") as? ItemClass
                 }else if theKraken!.isDead && !droppedChest {
                     for node in self.children{
                         if node as? SKLabelNode != nil {
@@ -330,8 +330,8 @@ class World1Level19: SKScene, SKPhysicsContactDelegate {
                             node.removeFromParent()
                         }
                     }
-                    self.childNodeWithName("lifeNumber")?.removeFromParent()
-                    self.addChild(TreasureChest.chestAtPosition(CGPointMake(self.frame.midX, self.frame.midY)))
+                    self.childNode(withName: "lifeNumber")?.removeFromParent()
+                    self.addChild(TreasureChest.chestAtPosition(position: CGPointMake(self.frame.midX, self.frame.midY)))
                     droppedChest = true
                 }
             }

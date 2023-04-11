@@ -25,12 +25,12 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate {
     var theBomber: BomberClass?
     var theHero: HeroClass?
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
-        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.1))
+        theHero = HeroClass.makeHero(position: CGPointMake(self.frame.midX, self.frame.maxY * 0.1))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
-        theBomber = BomberClass.makeBomber(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
+        theBomber = BomberClass.makeBomber(position: CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
         self.addChild(theBomber!)
         //the below constraints did nothing
         //let distanceConstraint = SKConstraint.distance(SKRange(lowerLimit: 10), toNode: aWizard)
@@ -73,13 +73,13 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
-        let aHero = self.childNodeWithName("hero") as! HeroClass
+        let aHero = self.childNode(withName: "hero") as! HeroClass
         for touch in touches{
-            aHero.moveHelper((touch ).locationInNode(self))
+            aHero.moveHelper(position: (touch ).location(in: self))
         }
     }
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         //println("current time: \(currentTime)")
         if self.gameStartTime == 0 {
@@ -96,15 +96,15 @@ class Level2Scene: SKScene, SKPhysicsContactDelegate {
         self.lastUpdatesTime = currentTime
         
         //check for win condition
-        if (theBomber!.isDead || theHero!.life <= 0) && !levelOver{
-            if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
-                let skTransition = SKTransition.fadeWithDuration(5.0)
-                self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
+        if (theBomber!.isDead || theHero!.life ?? <#default value#> <= 0) && !levelOver{
+            if (self.childNode(withName: "item") == nil && droppedItem) || theHero!.life ?? <#default value#> <= 0{
+                let skTransition = SKTransition.fade(withDuration: 5.0)
+                self.view?.presentScene(self.userData?.object(forKey: "menu") as! MainMenuScene, transition: skTransition)
                 levelOver = true
             }
-            else if (self.childNodeWithName("item") == nil){
+            else if (self.childNode(withName: "item") == nil){
                 if theBomber!.isDead{
-                    dropLoot("level2", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
+                    dropLoot(level: "level2", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }

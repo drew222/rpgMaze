@@ -22,7 +22,7 @@ class Level5Scene: SKScene, SKPhysicsContactDelegate  {
     let bomberAttackSpeed = 1.0
     var lastBomb: Double = 0.0
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
         let background = SKSpriteNode(imageNamed: "Beach_Background_1.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
@@ -30,12 +30,12 @@ class Level5Scene: SKScene, SKPhysicsContactDelegate  {
         background.zPosition = -1
         self.physicsWorld.contactDelegate = self
         self.addChild(background)
-        theHero = HeroClass.makeHero(CGPointMake(self.frame.midX, self.frame.maxY * 0.04))
+        theHero = HeroClass.makeHero(position: CGPointMake(self.frame.midX, self.frame.maxY * 0.04))
         theHero!.setScale(0.6)
         self.addChild(theHero!)
-        bombthrower = BomberClass.makeBomber(CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
+        bombthrower = BomberClass.makeBomber(position: CGPointMake(self.frame.maxX * 0.25, self.frame.maxY * 0.75))
         for spot in generateMinePoints(){
-            placeMine(spot)
+            placeMine(position: spot)
         }
         self.addChild(bombthrower!)
         theHero!.updateStats()
@@ -54,7 +54,7 @@ class Level5Scene: SKScene, SKPhysicsContactDelegate  {
             secondBody.categoryBitMask == CollisionBitMasks.collisionCategorySeashell.rawValue){
                 let mine = secondBody.node as? MineNode
                 if mine!.isArmed{
-                    mine!.explode(secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
+                    mine!.explode(position: secondBody.node!.position)//(theHero!.position)//secondBody.node!.position)
                     //let aHero = self.childNodeWithName("hero") as HeroClass
                     //aHero.takeDamage(3)
                 }
@@ -63,9 +63,9 @@ class Level5Scene: SKScene, SKPhysicsContactDelegate  {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
-        let aHero = self.childNodeWithName("hero") as! HeroClass
+        let aHero = self.childNode(withName: "hero") as! HeroClass
         for touch in touches{
-            aHero.moveHelper((touch ).locationInNode(self))
+            aHero.moveHelper(position: (touch ).location(in: self))
         }
     }
     
@@ -105,12 +105,12 @@ class Level5Scene: SKScene, SKPhysicsContactDelegate  {
         return points
     }
     func placeMine(position: CGPoint) {
-        _ = (self.childNodeWithName("MineThrower")) as? MineThrowerNode
-        let mine = MineNode.mineAtPos(position) as MineNode
+        _ = (self.childNode(withName: "MineThrower")) as? MineThrowerNode
+        let mine = MineNode.mineAtPos(position: position) as MineNode
         mine.isArmed = true
         self.addChild(mine)
     }
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         //println("current time: \(currentTime)")
         if self.gameStartTime == 0 {
@@ -127,7 +127,7 @@ class Level5Scene: SKScene, SKPhysicsContactDelegate  {
         self.lastUpdatesTime = currentTime
         
         //check for win condition
-        if (bombthrower!.isDead || theHero!.life <= 0) && !levelOver{
+        if (bombthrower!.isDead || theHero!.life ?? <#default value#> <= 0) && !levelOver{
             //parent of self is viewcontroller, has view, extends sknode
             //if (theHero!.life == 0){
             //   let deathNode = SKLabelNode.init(text: "You died, try again!")
@@ -138,20 +138,20 @@ class Level5Scene: SKScene, SKPhysicsContactDelegate  {
             //   winNode.position = CGPointMake(self.frame.midX, self.frame.midY)
             //   self.addChild(winNode)
             // }
-            if (self.childNodeWithName("item") == nil && droppedItem) || theHero!.life <= 0{
+            if (self.childNode(withName: "item") == nil && droppedItem) || theHero!.life ?? <#default value#> <= 0{
                 //let menuScene = MainMenuScene(size: self.frame.size)
                 //println("got here111")
                 //(self.userData?.objectForKey("menu") as MainMenuScene).userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")
                 //println("got here222")
                 //menuScene.userData?.setValue(self.userData?.objectForKey("inventory"), forKey: "inventory")
-                let skTransition = SKTransition.fadeWithDuration(5.0)
+                let skTransition = SKTransition.fade(withDuration: 5.0)
                 //let gameScene = self.userData?.objectForKey("menu") as MainMenuScene
-                self.view?.presentScene(self.userData?.objectForKey("menu") as! MainMenuScene, transition: skTransition)
+                self.view?.presentScene(self.userData?.object(forKey: "menu") as! MainMenuScene, transition: skTransition)
                 levelOver = true
             }
-            else if (self.childNodeWithName("item") == nil){
+            else if (self.childNode(withName: "item") == nil){
                 if bombthrower!.isDead{
-                    dropLoot("level5", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
+                    dropLoot(level: "level5", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
                     droppedItem = true
                 }
             }

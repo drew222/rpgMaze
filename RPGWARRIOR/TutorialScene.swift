@@ -17,7 +17,7 @@ class TutorialScene: SKScene {
     var count = 0
     var skipButton: SKSpriteNode?
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         if soundOn{
             happyMusic!.stop()
         }
@@ -52,32 +52,32 @@ class TutorialScene: SKScene {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         for touch in touches{
-            if skipButton!.containsPoint((touch ).locationInNode(self)){
+            if skipButton!.contains((touch ).location(in: self)){
                 if soundOn {
-                    self.runAction(clickSound)
+                    self.run(clickSound)
                 }
-                let skTransition = SKTransition.fadeWithDuration(1.0)
+                let skTransition = SKTransition.fade(withDuration: 1.0)
                 var zoneScene: ZoneScene?
-                if let aZoneScene = self.userData?.objectForKey("zoneScene") as? ZoneScene{
+                if let aZoneScene = self.userData?.object(forKey: "zoneScene") as? ZoneScene{
                     zoneScene = aZoneScene
                 }else{
                     zoneScene = ZoneScene(size: self.frame.size)
                 }
                 self.view?.presentScene(zoneScene!, transition: skTransition)
             }else{
-                count++
+                count+=1
                 if count == allImages.count {
                     var zoneScene: ZoneScene?
-                    if let aZoneScene = self.userData?.objectForKey("zoneScene") as? ZoneScene{
+                    if let aZoneScene = self.userData?.object(forKey: "zoneScene") as? ZoneScene{
                         zoneScene = aZoneScene
                     }else{
                         zoneScene = ZoneScene(size: self.frame.size)
                     }
-                    let skTransition = SKTransition.fadeWithDuration(1.0)
+                    let skTransition = SKTransition.fade(withDuration: 1.0)
                     self.view?.presentScene(zoneScene!, transition: skTransition)
                 }else{
                     if soundOn {
-                        self.runAction(pageSound)
+                        self.run(pageSound)
                     }
                     theImage!.texture = allImages[count]
                 }

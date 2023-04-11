@@ -706,7 +706,7 @@ class Inventory: SKScene {
             //let anItem = ItemClass.itemInSpace(itemName)
             //anItem.size = CGSizeMake(37, 37)
             //items.append(anItem)
-            backPackSpaces--
+            backPackSpaces-=1
         }
     }
     
@@ -720,10 +720,10 @@ class Inventory: SKScene {
                     space.insertItem(anItem: item)
                     placed = true
                     items.removeAtIndex(count)
-                    count--
+                    count-=1
                 }
             }
-            count++
+            count+=1
         }
     }
     
@@ -743,7 +743,7 @@ class Inventory: SKScene {
         spaceToMove!.color = UIColor.white
         self.childNode(withName: "sellButton")?.removeFromParent()
         if !(spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "neck"){
-            backPackSpaces++
+            backPackSpaces+=1
             //&&
             persistentData!.set("", forKey: "packSpace\(spaceToMove!.name!)")
             //&&
@@ -1420,7 +1420,7 @@ class Inventory: SKScene {
                                 if space.name == "weapon" || space.name == "body" || space.name == "feet" || space.name == "neck"{
                                     if space.name == "weapon" && itemToMove!.itemType == ItemType.weapon{
                                         //MOVING ITEM FROM PACK TO HEAD
-                                        backPackSpaces++
+                                        backPackSpaces+=1
                                         weapon = itemToMove
                                         displayItem(item: itemToMove!, spot: "weapon")
                                         
@@ -1441,7 +1441,7 @@ class Inventory: SKScene {
                                         }
                                     }else if space.name == "body" && (itemToMove!.itemType == ItemType.body || itemToMove!.itemType == ItemType.feet){
                                         //MOVING ITEM FROM PACK TO LEFT
-                                        backPackSpaces++
+                                        backPackSpaces+=1
                                         body = itemToMove
                                         displayItem(item: itemToMove!, spot: "body")
                                         
@@ -1461,7 +1461,7 @@ class Inventory: SKScene {
                                         }
                                     }else if space.name == "feet" && (itemToMove!.itemType == ItemType.feet || itemToMove!.itemType == ItemType.body){
                                         //MOVING ITEM FROM PACK TO RIGHT
-                                        backPackSpaces++
+                                        backPackSpaces+=1
                                         feet = itemToMove
                                         displayItem(item: itemToMove!, spot: "feet")
                                         
@@ -1481,7 +1481,7 @@ class Inventory: SKScene {
                                         }
                                     }else if space.name == "neck" && itemToMove!.itemType == ItemType.neck{
                                         //MOVING ITEM FROM PACK TO NECK
-                                        backPackSpaces++
+                                        backPackSpaces+=1
                                         neck = itemToMove
                                         displayItem(item: itemToMove!, spot: "neck")
                                         
@@ -1519,7 +1519,7 @@ class Inventory: SKScene {
                                     }
                                 }
                                 if (spaceToMove!.name == "weapon" || spaceToMove!.name == "body" || spaceToMove!.name == "feet" || spaceToMove!.name == "neck") && moved{
-                                    backPackSpaces--
+                                    backPackSpaces-=1
                                     if spaceToMove!.name == "weapon"{
                                         headDisplay!.texture = nil
                                     }else if spaceToMove!.name == "body"{
