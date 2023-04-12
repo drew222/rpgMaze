@@ -27,14 +27,14 @@ class StoreScene: SKScene {
     var goldCount: CGFloat = 0
     var firstClick = true
     
-    var persistentData: NSUserDefaults?
+    var persistentData: UserDefaults?
     
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
-        persistentData = NSUserDefaults.standardUserDefaults()
+        persistentData = UserDefaults.standard
        //add menu option node here
-        self.backgroundColor = UIColor.grayColor()
+        self.backgroundColor = UIColor.gray
         let background = SKSpriteNode(imageNamed: "Store_2.png")
         background.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
         background.size = CGSize(width: self.frame.width, height: self.frame.height)
@@ -101,10 +101,10 @@ class StoreScene: SKScene {
         
         statLabelLife = SKLabelNode.init(text: "")
         statLabelLife!.position = CGPointMake(self.frame.midX - 110, self.frame.minY + 87)
-        statLabelLife!.fontColor = UIColor.blueColor()
+        statLabelLife!.fontColor = UIColor.blue
         statLabelLife!.fontName = "ChalkboardSE-Bold"
         statLabelLife!.fontSize = 30
-        statLabelLife!.fontColor = UIColor.blackColor()
+        statLabelLife!.fontColor = UIColor.black
         statLabelLife!.name = "lifeStat"
         statLabelLife!.setScale(0.7)
         self.addChild(statLabelLife!)
@@ -112,16 +112,16 @@ class StoreScene: SKScene {
         statLabelMovement!.position = CGPointMake(self.frame.midX - 110, self.frame.minY + 57)
         statLabelMovement!.fontName = "ChalkboardSE-Bold"
         statLabelMovement!.fontSize = 30
-        statLabelMovement!.fontColor = UIColor.blackColor()
+        statLabelMovement!.fontColor = UIColor.black
         statLabelMovement!.name = "movementStat"
         statLabelMovement!.setScale(0.7)
         self.addChild(statLabelMovement!)
         statLabelRegen = SKLabelNode.init(text: "")
         statLabelRegen!.position = CGPointMake(self.frame.midX - 110, self.frame.minY + 27)
-        statLabelRegen!.fontColor = UIColor.blueColor()
+        statLabelRegen!.fontColor = UIColor.blue
         statLabelRegen!.fontName = "ChalkboardSE-Bold"
         statLabelRegen!.fontSize = 30
-        statLabelRegen!.fontColor = UIColor.blackColor()
+        statLabelRegen!.fontColor = UIColor.black
         statLabelRegen!.name = "regenStat"
         statLabelRegen!.setScale(0.7)
         self.addChild(statLabelRegen!)
@@ -151,7 +151,7 @@ class StoreScene: SKScene {
         }
         self.addChild(inv!)
         //gold node
-        goldCount = (self.userData?.objectForKey("inventory") as! Inventory).gold
+        goldCount = (self.userData?.object(forKey: "inventory") as! Inventory).gold
         goldNode = SKLabelNode.init(text: "\(Int(goldCount))")
         goldNode!.position = CGPointMake(self.frame.midX - 30, self.frame.maxY - 120)
         goldNode!.fontName = "ChalkboardSE-Bold"
@@ -163,7 +163,7 @@ class StoreScene: SKScene {
             goldNode!.position = CGPointMake(self.frame.midX - 25, self.frame.maxY - 70)
             goldNode!.fontSize = 26
         }
-        goldNode!.fontColor = UIColor.blackColor()
+        goldNode!.fontColor = UIColor.black
         self.addChild(goldNode!)
         //booty coin image
         let booty = SKSpriteNode(imageNamed: "Booty_1.png")
@@ -184,7 +184,7 @@ class StoreScene: SKScene {
         
         var counter = 1
         for itemName in allStoreItems{
-            let item = ItemClass.itemInSpace(itemName)
+            let item = ItemClass.itemInSpace(nameOfTexture: itemName)
             //shelf 1
             if itemName == "Copper_Ring_1"{
                 item.size = CGSizeMake(40, 40)
@@ -404,7 +404,7 @@ class StoreScene: SKScene {
     }
     func clickedItem(point: CGPoint) -> String{
         for var x = 1; x < allStoreItems.count+1; x+=1{
-            let anItem = self.childNodeWithName("item\(x)") as! ItemClass
+            let anItem = self.childNode(withName: "item\(x)") as! ItemClass
             if anItem.containsPoint(point){
                 return anItem.itemName!
             }
@@ -413,59 +413,59 @@ class StoreScene: SKScene {
     }
     
     func buyItem(){
-        if (self.userData?.objectForKey("inventory") as! Inventory).gold >= currentItem!.price && (self.userData?.objectForKey("inventory") as! Inventory).backPackSpaces > 0{
+        if (self.userData?.objectForKey("inventory") as! Inventory).gold >= currentItem!.price! && (self.userData?.object(forKey: objectforKey,: "inventory") as! Inventory).backPackSpaces > 0{
             //sound
             if soundOn {
-                self.runAction(bootySound)
+                self.run(bootySound)
             }
-            (self.userData?.objectForKey("inventory") as! Inventory).gold -= currentItem!.price!
-            (self.userData?.objectForKey("inventory") as! Inventory).addItem(currentItem!.itemName!)
+            (self.userData?.object(forKey: "inventory") as! Inventory).gold -= currentItem!.price!
+            (self.userData?.object(forKey: "inventory") as! Inventory).addItem(itemName: currentItem!.itemName!)
             goldCount -= currentItem!.price!
-            persistentData!.setObject((self.userData?.objectForKey("inventory") as! Inventory).gold, forKey: "gold")
+            persistentData!.set((self.userData?.object(forKey: objectforKey,: "inventory") as! Inventory).gold, forKey: "gold")
             goldNode!.text = "\(Int(goldCount))"
         }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches{
-            if menu!.containsPoint((touch ).locationInNode(self)){
+            if menu!.contains((touch ).location(in: self)){
                 if soundOn {
-                    self.runAction(clickSound)
+                    self.run(clickSound)
                 }
-                let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(self.userData?.objectForKey("worldscene") as! ZoneScene, transition: skTransition)
-            }else if inv!.containsPoint((touch ).locationInNode(self)){
+                let skTransition = SKTransition.fade(withDuration: 1.0)
+                self.view?.presentScene(self.userData?.object(forKey: "worldscene") as! ZoneScene, transition: skTransition)
+            }else if inv!.contains((touch ).location(in: self)){
                 if soundOn {
-                    self.runAction(clickSound)
+                    self.run(clickSound)
                 }
-                let skTransition = SKTransition.fadeWithDuration(1.0)
-                self.view?.presentScene(self.userData?.objectForKey("inventory") as! Inventory, transition: skTransition)
-            }else if self.childNodeWithName("buyButton") != nil && self.childNodeWithName("buyButton")!.containsPoint((touch ).locationInNode(self)){
+                let skTransition = SKTransition.fade(withDuration: 1.0)
+                self.view?.presentScene(self.userData?.object(forKey: "inventory") as! Inventory, transition: skTransition)
+            }else if self.childNode(withName: "buyButton") != nil && self.childNode(withName: "buyButton")!.contains((touch ).location(in: self)){
                 buyItem()
-                self.childNodeWithName("buyButton")?.removeFromParent()
-                self.childNodeWithName("life")?.removeFromParent()
-                self.childNodeWithName("speed")?.removeFromParent()
-                self.childNodeWithName("regen")?.removeFromParent()
-                self.childNodeWithName("priceButton")?.removeFromParent()
-                self.childNodeWithName("itemText")?.removeFromParent()
-                while (self.childNodeWithName("booty") as? SKSpriteNode != nil) {
-                    self.childNodeWithName("booty")?.removeFromParent()
+                self.childNode(withName: "buyButton")?.removeFromParent()
+                self.childNode(withName: "life")?.removeFromParent()
+                self.childNode(withName: "speed")?.removeFromParent()
+                self.childNode(withName: "regen")?.removeFromParent()
+                self.childNode(withName: "priceButton")?.removeFromParent()
+                self.childNode(withName: "itemText")?.removeFromParent()
+                while (self.childNode(withName: "booty") as? SKSpriteNode != nil) {
+                    self.childNode(withName: "booty")?.removeFromParent()
                 }
-                self.childNodeWithName("slotLabel")?.removeFromParent()
+                self.childNode(withName: "slotLabel")?.removeFromParent()
                 statLabelLife!.text = ""
                 statLabelMovement!.text = ""
                 statLabelRegen!.text = ""
                 currentItem?.texture = nil
                 currentItem = nil
-            }else if clickedItem((touch ).locationInNode(self)) != ""{
+            }else if clickedItem(point: (touch ).location(in: self)) != ""{
                 if soundOn {
-                    self.runAction(clickSound)
+                    self.run(clickSound)
                 }
                 if currentItem != nil{
                     currentItem!.removeFromParent()
-                    self.childNodeWithName("slotLabel")?.removeFromParent()
+                    self.childNode(withName: "slotLabel")?.removeFromParent()
                 }
-                currentItem = ItemClass.itemInSpace(clickedItem((touch ).locationInNode(self)))
+                currentItem = ItemClass.itemInSpace(nameOfTexture: clickedItem(point: (touch ).location(in: self)))
                 //currentItem!.size == CGSizeMake(70, 70)
                 currentItem!.position = CGPointMake(self.frame.midX, self.frame.minY + 65)
                 
@@ -811,7 +811,7 @@ class StoreScene: SKScene {
             }
         }
         //an item is being highlighted
-        if currentItem != nil && self.childNodeWithName("buyButton") == nil{
+        if currentItem != nil && self.childNode(withName: "buyButton") == nil{
             let buyNode = SKSpriteNode(imageNamed: "Buy_Text_1")
             buyNode.position = CGPointMake(self.frame.midX + 135, self.frame.minY + 35)
             if is5{
@@ -848,8 +848,8 @@ class StoreScene: SKScene {
         
         
         if currentItem != nil{
-            if self.childNodeWithName("priceButton") != nil{
-                self.childNodeWithName("priceButton")?.removeFromParent()
+            if self.childNode(withName: "priceButton") != nil{
+                self.childNode(withName: "priceButton")?.removeFromParent()
                 
             }
             
@@ -865,7 +865,7 @@ class StoreScene: SKScene {
                 priceNode.fontSize = 26
             }
             priceNode.name = "priceButton"
-            priceNode.fontColor = UIColor.blackColor()
+            priceNode.fontColor = UIColor.black
             let booty = SKSpriteNode(imageNamed: "Booty_1.png")
             booty.position = CGPointMake(self.frame.midX + 160, self.frame.minY + 70)
             booty.name = "booty"
@@ -881,7 +881,7 @@ class StoreScene: SKScene {
             self.addChild(booty)
             //}
             self.addChild(priceNode)
-            self.childNodeWithName("itemText")?.removeFromParent()
+            self.childNode(withName: "itemText")?.removeFromParent()
             //text for item names
             var itemName = currentItem?.itemName!
             itemName = itemName!.stringByReplacingOccurrencesOfString("1", withString: "Text", options: NSStringCompareOptions.LiteralSearch, range: nil)

@@ -199,14 +199,14 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         /* Called when a touch begins */
         let aHero = self.childNode(withName: "hero") as? HeroClass
         for touch in touches{
             if !inkSplatted{
                 aHero!.moveHelper(position: (touch ).location(in: self))
             }else if self.childNode(withName: "yesText") != nil{
-                if self.childNode(withName: "yesText")!.contains((touch ).location(in: locationin,: self)){
+                if self.childNode(withName: "yesText")!.contains((touch ).location(in: self)){
                     let newLevel1 = World1Level21(size: self.frame.size)
                     newLevel1.userData = NSMutableDictionary()
                     newLevel1.userData?.setObject(self.userData?.object(forKey: "inventory") as! Inventory, forKey: "inventory" as NSCopying)
@@ -251,7 +251,7 @@ class World1Level21: SKScene, SKPhysicsContactDelegate {
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
             self.lastHeal = currentTime
-            if theHero!.life ?? <#default value#> < maxLife{
+            if theHero!.life! < maxLife{
                 if soundOn && !levelOver && !droppedChest{
                     self.run(regenSound)
                 }

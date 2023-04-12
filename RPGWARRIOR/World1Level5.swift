@@ -161,7 +161,7 @@ class World1Level5: SKScene, SKPhysicsContactDelegate {
         //}
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         /* Called when a touch begins */
         let aHero = self.childNode(withName: "hero") as? HeroClass
         for touch in touches{

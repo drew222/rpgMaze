@@ -50,7 +50,7 @@ class TutorialScene: SKScene {
         //-1 sets loops to infinity
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches{
             if skipButton!.contains((touch ).location(in: self)){
                 if soundOn {

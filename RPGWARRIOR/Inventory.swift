@@ -1124,7 +1124,7 @@ class Inventory: SKScene {
         }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches{
             if menu!.contains((touch).location(in: self)){
                 if soundOn {

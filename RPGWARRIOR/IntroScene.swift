@@ -47,7 +47,7 @@ class IntroScene: SKScene {
         //-1 sets loops to infinity
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         let gameplayScene = ZoneScene(size: self.frame.size)
         introMusic!.stop()
