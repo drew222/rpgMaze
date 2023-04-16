@@ -18,9 +18,9 @@ class ItemClass: SKSpriteNode {
     class func itemInSpace(nameOfTexture: String) -> ItemClass{
         let item = ItemClass(imageNamed: nameOfTexture)
         item.name = "item"
-        item.itemType = item.getItemType(nameOfTexture)
+        item.itemType = item.getItemType(picName: nameOfTexture)
         item.itemName = nameOfTexture
-        item.itemStats = item.getItemStats(nameOfTexture)
+        item.itemStats = item.getItemStats(picName: nameOfTexture)
         item.zPosition = 2
         return item
     }

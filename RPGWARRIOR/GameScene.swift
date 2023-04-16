@@ -108,7 +108,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.lastUpdatesTime = currentTime
         
         //check for win condition
-        if (theWizard!.isDead || theHero!.life ?? <#default value#> <= 0) && !levelOver{
+        if (theWizard!.isDead || theHero!.life! <= 0) && !levelOver{
             //parent of self is viewcontroller, has view, extends sknode
             //if (theHero!.life == 0){
             //   let deathNode = SKLabelNode.init(text: "You died, try again!")
@@ -119,7 +119,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //   winNode.position = CGPointMake(self.frame.midX, self.frame.midY)
             //   self.addChild(winNode)
             // }
-            if (self.childNode(withName: "item") == nil && droppedItem) || theHero!.life ?? <#default value#> <= 0{
+            if (self.childNode(withName: "item") == nil && droppedItem) || theHero!.life! <= 0{
                 //let menuScene = MainMenuScene(size: self.frame.size)
                 //println("got here111")
                 //(self.userData?.objectForKey("menu") as MainMenuScene).userData?.setObject(self.userData?.objectForKey("inventory") as Inventory, forKey: "inventory")

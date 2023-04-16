@@ -31,22 +31,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
         
-        if happyMusic!.playing {
+        if happyMusic!.isPlaying {
             happyMusic!.stop()
             happyStopped = true
         }
-        if gauntletMusic!.playing {
+        if gauntletMusic!.isPlaying {
             gauntletMusic!.stop()
             gauntletStopped = true
         }
-        if beachMusic!.playing {
+        if beachMusic!.isPlaying {
             beachMusic!.stop()
         }
-        if introMusic!.playing {
+        if introMusic!.isPlaying {
             introMusic!.stop()
             introStopped = true
         }
-        if levelMusic!.playing {
+        if levelMusic!.isPlaying {
             levelMusic!.stop()
         }
     }

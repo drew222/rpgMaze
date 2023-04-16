@@ -27,7 +27,7 @@ class ItemSpaceNode: SKSpriteNode {
         self.hasItem = true
         self.item!.position = self.position
         self.item!.size = self.frame.size
-        if self.parent!.childNodeWithName(self.item!.name!) != nil{
+        if self.parent!.childNode(withName: self.item!.name!) != nil{
             self.item!.name = "\(self.item!.name)\(self.name)"
         }
         self.item!.removeFromParent()

@@ -135,8 +135,8 @@ class Level4Scene: SKScene, SKPhysicsContactDelegate {
         
         
         //check for win condition
-        if (theWizard!.isDead || theHero!.life ?? <#default value#> <= 0) && !levelOver{
-            if (self.childNode(withName: "item") == nil && droppedItem) || theHero!.life ?? <#default value#> <= 0{
+        if (theWizard!.isDead || theHero!.life! <= 0) && !levelOver{
+            if (self.childNode(withName: "item") == nil && droppedItem) || theHero!.life! <= 0{
                 let skTransition = SKTransition.fade(withDuration: 5.0)
                 self.view?.presentScene(self.userData?.object(forKey: "menu") as! MainMenuScene, transition: skTransition)
                 levelOver = true

@@ -104,7 +104,7 @@ func randomWithMin(min: Int, max: Int) -> NSInteger{
 }
 
 func resizeLabel(node: SKLabelNode){
-    let numChars = node.text!.characters.count
+    let numChars = node.text!.count
     node.fontSize = 25 - (CGFloat(numChars) / 6)
 }
 
@@ -2986,7 +2986,7 @@ func generatePointsOnLine(point1: CGPoint, point2: CGPoint) -> [CGPoint]{
     //divide by smoothness factor
     let numberOfPoints = distance / CGFloat(smoothnessFactor)
     var xPoints: [CGFloat] = []
-    for (var k = 1; CGFloat(k) < numberOfPoints; k = k+1){
+    for k in 1...Int(numberOfPoints){
         xPoints.append(point1.x + CGFloat(CGFloat(k) * (xDistance / CGFloat(numberOfPoints))))
     }
     //use y=mx+b, find x and b

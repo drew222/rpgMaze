@@ -719,7 +719,7 @@ class Inventory: SKScene {
                 if space.item == nil && placed == false{
                     space.insertItem(anItem: item)
                     placed = true
-                    items.removeAtIndex(count)
+                    items.remove(at:count)
                     count-=1
                 }
             }
@@ -788,7 +788,7 @@ class Inventory: SKScene {
         //NOGGIN
         if spot == "weapon"{
             var itemName = item.itemName!
-            itemName = itemName.stringByReplacingOccurrencesOfString("1", withString: "2", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            itemName = itemName.replacingOccurrences(of: "1", with: "2")
             //USE MIDX and MAXY FOR SPACING ON BOTH IPHONE 6 and PLUS PURPOSES
             if itemName == "Top_Hat_2" {
                 itemName = "Top_Hat_1"
@@ -858,7 +858,7 @@ class Inventory: SKScene {
             //LEFT
         }else if spot == "body" {
             var itemName = item.itemName!
-            itemName = itemName.stringByReplacingOccurrencesOfString("1", withString: "2", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            itemName = itemName.replacingOccurrences(of: "1", with: "2")
            if itemName == "Copper_Ring_2" {
                 leftDisplay!.size = CGSizeMake(50, 50)
                 leftDisplay!.position = CGPointMake(self.frame.midX - 75, self.frame.maxY - 279)
@@ -959,7 +959,7 @@ class Inventory: SKScene {
             //RIGHT
         }else if spot == "feet" {
             var itemName = item.itemName!
-            itemName = itemName.stringByReplacingOccurrencesOfString("1", withString: "2", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            itemName = itemName.replacingOccurrences(of: "1", with: "2")
             if itemName == "Copper_Ring_2" {
                 rightDisplay!.size = CGSizeMake(50, 50)
                 rightDisplay!.position = CGPointMake(self.frame.midX + 75, self.frame.maxY - 262)
@@ -1057,7 +1057,7 @@ class Inventory: SKScene {
             //NECK
         }else {
             var itemName = item.itemName!
-            itemName = itemName.stringByReplacingOccurrencesOfString("1", withString: "2", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            itemName = itemName.replacingOccurrences(of: "1", with: "2")
             
             if itemName == "Bow_Tie_2" {
                 itemName = "Bow_Tie_1"
@@ -1637,7 +1637,7 @@ class Inventory: SKScene {
                             //name of the item
                             var itemPicName = spaceToMove!.item!.itemName!
                             //println("\(itemPicName)")
-                            itemPicName = itemPicName.stringByReplacingOccurrencesOfString("1", withString: "Text", options: NSStringCompareOptions.LiteralSearch, range: nil)
+                            itemPicName = itemPicName.replacingOccurrences(of: "1", with: "Text")
                             let itemText = SKSpriteNode(imageNamed: "\(itemPicName)")
                             itemText.name = "itemName"
                             itemText.setScale(0.7)

@@ -1244,10 +1244,10 @@ class MainMenuScene: SKScene {
                 happyMusic!.stop()
                 let world1level8scene = World1Level8(size: self.frame.size)
                 world1level8scene.userData = NSMutableDictionary()
-                world1level8scene.userData?.setObject(self.userData?.object(forKey: objectforKey,: "inventory") as! Inventory, forKey: "inventory" as NSCopying)
+                world1level8scene.userData?.setObject(self.userData?.object(forKey: "inventory") as! Inventory, forKey: "inventory" as NSCopying)
                 world1level8scene.userData?.setObject(self, forKey: "menu" as NSCopying)
                 //level2.userData? = ["menu" : self, "inventory" : self.userData?.objectForKey("inventory") as Inventory]
-                let skTransition = SKTransition.fade(withDuration: fadewithDuration,: 1.0)
+                let skTransition = SKTransition.fade(withDuration: 1.0)
                 self.view?.presentScene(world1level8scene, transition: skTransition)
                 
             }else if world1level9node!.contains((touch ).location(in: self)) && highestLevel >= 8{
