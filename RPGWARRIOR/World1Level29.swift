@@ -194,18 +194,18 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
         
         //bottom big wall
         if !isPad{
-            for (var i = 20; i < Int(self.frame.maxX - 80); i += 30){
-                self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  self.frame.midY - 205)))
+            for i in stride(from: 20, to: Int(self.frame.maxX - 80), by: 30) {
+                self.addChild(GreyShell.mineAtPos(position: CGPointMake(CGFloat(i),  self.frame.midY - 205)))
             }
         }
         //top big wall
         if is5{
-            for (var i = 90; i < Int(self.frame.maxX); i += 30){
-                self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  self.frame.midY + 175)))
+            for i in stride(from: 90, to: Int(self.frame.maxX), by: 30) {
+                self.addChild(GreyShell.mineAtPos(position: CGPointMake(CGFloat(i),  self.frame.midY + 175)))
             }
         }else if !isPad{
-            for (var i = 90; i < Int(self.frame.maxX); i += 30){
-                self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  self.frame.midY + 205)))
+            for i in stride(from: 90, to: Int(self.frame.maxX), by: 30) {
+                self.addChild(GreyShell.mineAtPos(position: CGPointMake(CGFloat(i),  self.frame.midY + 205)))
             }
         }
     }
@@ -281,23 +281,23 @@ class World1Level29: SKScene, SKPhysicsContactDelegate {
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
             self.lastHeal = currentTime
-            if theHero!.life ?? <#default value#> < maxLife{
+            if theHero!.life! < maxLife{
                 if soundOn && !levelOver && !droppedChest{
                     self.run(regenSound)
                 }
                 theHero!.life! += theHero!.regeneration!
-                if theHero!.life ?? <#default value#> > maxLife{
+                if theHero!.life! > maxLife{
                     theHero!.life = maxLife
                 }
             }
         }
         lifeNode!.text = "\(Int(theHero!.life!))"
-        if (theBomber!.isDead || theHero!.life ?? <#default value#> <= 0) && !levelOver{
+        if (theBomber!.isDead || theHero!.life! <= 0) && !levelOver{
             
-            if (self.childNode(withName: "gold") == nil && self.childNode(withName: "item") == nil && droppedItem) || theHero!.life ?? <#default value#> <= 0{
+            if (self.childNode(withName: "gold") == nil && self.childNode(withName: "item") == nil && droppedItem) || theHero!.life! <= 0{
                 
                 //INK SPLAT CODE
-                if theHero!.life ?? <#default value#> <= 0 {
+                if theHero!.life! <= 0 {
                     let inkSplat = SKSpriteNode(imageNamed: "Ink_Splat_1")
                     for node in self.children{
                         if node as? SKLabelNode != nil {

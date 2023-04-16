@@ -112,91 +112,89 @@ class World1Level3: SKScene, SKPhysicsContactDelegate {
         if isPlus {
             
             // bot row
-            for (var i = 20; i < Int(self.frame.maxX - 90); i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY - 237)))
+            for i in stride(from: 20, to: Int(self.frame.maxX - 90), by: 40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.midY - 237)))
             }
             
             //add 1st row from bot
-            for (var i = Int(self.frame.maxX - 20); i > 90; i -= 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY - 157)))
+            for i in stride(from: Int(self.frame.maxX - 20), to: 90, by: -40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.midY - 157)))
             }
             //add top row
-            for (var i = Int(self.frame.maxX - 20); i > 90; i -= 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY + 235)))
+            for i in stride(from: Int(self.frame.maxX - 20), to: 90, by: -40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.midY + 235)))
             }
             //2nd from top row
-            for (var i = 20; i < Int(self.frame.maxX - 90); i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY + 155)))
+            for i in stride(from: 20, to: Int(self.frame.maxX - 90), by: 40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.midY + 155)))
             }
             //right column
-            for (var i = Int(self.frame.maxY) - 212; i > 300; i -= 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 80, CGFloat(i))))
+            for i in stride(from: Int(self.frame.maxY) - 212, to: 300, by: -40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.maxX - 80, CGFloat(i))))
             }
             //left column
-            for (var i = 213; i < Int(self.frame.maxY) - 297; i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(80, CGFloat(i))))
+            for i in stride(from: 213, to: Int(self.frame.maxY) - 297, by: 40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(80, CGFloat(i))))
             }
             //midtop row
-            for (var i = 120; i < Int(self.frame.maxX - 155); i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY + 47)))
+            for i in stride(from: 120, to: Int(self.frame.maxX - 155), by: 40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.midY + 47)))
             }
             //midbot row
-            for (var i = Int(self.frame.maxX - 120
-                ); i > 155; i -= 40){
-                    self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY - 43)))
+            for i in stride(from: Int(self.frame.maxX - 120), to: 155, by: -40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.midY - 43)))
             }
             
         } else if isPad || is5{
             //midtop row
-            for (var i = 70; i < Int(self.frame.maxX); i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY + 150)))
+            for i in stride(from: 70, to: Int(self.frame.maxX), by: 40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.midY + 150)))
             }
             //midbot row
-            for (var i = 20; i < Int(self.frame.maxX - 70); i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY - 150)))
+            for i in stride(from: 70, to: Int(self.frame.maxX), by: 40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.midY - 150)))
             }
             //right column
-            for (var i = Int(self.frame.midY) - 130; i < Int(self.frame.midY + 100); i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 70, CGFloat(i))))
+            for i in stride(from: Int(self.frame.midY) - 130, to: Int(self.frame.midY + 100), by: 40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.maxX - 70, CGFloat(i))))
             }
             //left column
-            for (var i = Int(self.frame.midY + 100); i > Int(self.frame.midY) - 100; i -= 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(70, CGFloat(i))))
+            for i in stride(from: Int(self.frame.midY + 100), to: Int(self.frame.midY) - 100, by: -40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(70, CGFloat(i))))
             }
         } else {
             // bot row
-            for (var i = 20; i < Int(self.frame.maxX - 90); i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY - 202)))
+            for i in stride(from: 20, to: Int(self.frame.maxX - 90), by: 40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.midY - 202)))
             }
             
             //add 1st row from bot
-            for (var i = Int(self.frame.maxX - 20); i > 90; i -= 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY - 122)))
+            for i in stride(from: Int(self.frame.maxX - 20), to: 90, by: -40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.midY - 122)))
             }
             //add top row
-            for (var i = Int(self.frame.maxX - 20); i > 90; i -= 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY + 200)))
+            for i in stride(from: Int(self.frame.maxX - 20), to: 90, by: -40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.midY + 200)))
             }
             //2nd from top row
-            for (var i = 20; i < Int(self.frame.maxX - 90); i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY + 120)))
+            for i in stride(from: 20, to: Int(self.frame.maxX - 90), by: 40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.midY + 120)))
             }
             //right column
-            for (var i = Int(self.frame.maxY) - 212; i > 260; i -= 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(self.frame.maxX - 80, CGFloat(i))))
+            for i in stride(from: Int(self.frame.maxY) - 212, to: 260, by: -40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(self.frame.maxX - 80, CGFloat(i))))
             }
             //left column
-            for (var i = 213; i < Int(self.frame.maxY) - 257; i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(80, CGFloat(i))))
+            for i in stride(from: 213, to: Int(self.frame.maxY) - 257, by: 40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(80, CGFloat(i))))
             }
             //midtop row
-            for (var i = 120; i < Int(self.frame.maxX - 155); i += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY + 42)))
+            for i in stride(from: 120, to: Int(self.frame.maxX - 155), by: 40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.midY + 42)))
             }
             //midbot row
-            for (var i = Int(self.frame.maxX - 120
-                ); i > 155; i -= 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.midY - 38)))
+            for i in stride(from: Int(self.frame.maxX - 120), to: 155, by: -40) {
+                self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.midY - 38)))
             }
         }
         
@@ -267,12 +265,12 @@ class World1Level3: SKScene, SKPhysicsContactDelegate {
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
             self.lastHeal = currentTime
-            if theHero!.life ?? <#default value#> < maxLife{
+            if theHero!.life! < maxLife{
                 if soundOn && !levelOver && !droppedChest{
                     self.run(regenSound)
                 }
                 theHero!.life! += theHero!.regeneration!
-                if theHero!.life ?? <#default value#> > maxLife{
+                if theHero!.life! > maxLife{
                     theHero!.life = maxLife
                 }
             }
@@ -281,12 +279,12 @@ class World1Level3: SKScene, SKPhysicsContactDelegate {
         
         
        lifeNode!.text = "\(Int(theHero!.life!))"
-        if (theWizard!.isDead || theHero!.life ?? <#default value#> <= 0) && !levelOver{
+        if (theWizard!.isDead || theHero!.life! <= 0) && !levelOver{
             
-            if (self.childNode(withName: "gold") == nil && self.childNode(withName: "item") == nil && droppedItem) || theHero!.life ?? <#default value#> <= 0{
+            if (self.childNode(withName: "gold") == nil && self.childNode(withName: "item") == nil && droppedItem) || theHero!.life! <= 0{
                 
                 //INK SPLAT CODE
-                if theHero!.life ?? <#default value#> <= 0 {
+                if theHero!.life! <= 0 {
                     let inkSplat = SKSpriteNode(imageNamed: "Ink_Splat_1")
                     for node in self.children{
                         if node as? SKLabelNode != nil {

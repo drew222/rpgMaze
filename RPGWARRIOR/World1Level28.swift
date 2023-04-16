@@ -132,39 +132,39 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
             self.addChild(GreyShell.mineAtPos(position: CGPointMake(200, 180)))
             
             //add bot horizontal row
-            for (var i = 20; i < Int(self.frame.maxX - 130); i += 40){
-                self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  100)))
+            for i in stride(from: 20, to: Int(self.frame.maxX - 130), by: 40) {
+                self.addChild(GreyShell.mineAtPos(position: CGPointMake(CGFloat(i),  100)))
             }
             //add top row
-            for (var i = 155; i < Int(self.frame.maxX); i += 40){
-                self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 100)))
+            for i in stride(from: 155, to: Int(self.frame.maxX), by: 40) {
+                self.addChild(GreyShell.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.maxY - 100)))
             }
             //right column
-            for (var i = Int(self.frame.maxY) - 290; i > 180; i -= 40){
-                self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.maxX - 60, CGFloat(i))))
+            for i in stride(from: Int(self.frame.maxY) - 290, to: 179, by: -40) {
+                self.addChild(GreyShell.mineAtPos(position: CGPointMake(self.frame.maxX - 60, CGFloat(i))))
             }
             //left column
-            for (var i = 290; i < Int(self.frame.maxY) - 180; i += 40){
-                self.addChild(GreyShell.mineAtPos(CGPointMake(60, CGFloat(i))))
+            for i in stride(from: 290, to: Int(self.frame.maxY) - 180, by: 40) {
+                self.addChild(GreyShell.mineAtPos(position: CGPointMake(60, CGFloat(i))))
             }
             
         }else if isPad || is5 {
             
             //add bot horizontal row
-            for (var i = 20; i < Int(self.frame.maxX - 80); i += 40){
-                self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  100)))
+            for i in stride(from: 20, to: Int(self.frame.maxX - 80), by: 40) {
+                self.addChild(GreyShell.mineAtPos(position: CGPointMake(CGFloat(i),  100)))
             }
             //add top row
-            for (var i = 115; i < Int(self.frame.maxX); i += 40){
-                self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 100)))
+            for i in stride(from: 115, to: Int(self.frame.maxX), by: 40) {
+                self.addChild(GreyShell.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.maxY - 100)))
             }
             //right column
-            for (var i = Int(self.frame.maxY) - 200; i > 100; i -= 40){
-                self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.maxX - 80, CGFloat(i))))
+            for i in stride(from: Int(self.frame.maxY) - 200, to: 99, by: -40) {
+                self.addChild(GreyShell.mineAtPos(position: CGPointMake(self.frame.maxX - 80, CGFloat(i))))
             }
             //left column
-            for (var i = 200; i < Int(self.frame.maxY) - 100; i += 40){
-                self.addChild(GreyShell.mineAtPos(CGPointMake(80, CGFloat(i))))
+            for i in stride(from: 200, to: Int(self.frame.maxY) - 100, by: 40) {
+                self.addChild(GreyShell.mineAtPos(position: CGPointMake(80, CGFloat(i))))
             }
             
             
@@ -191,20 +191,20 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
             self.addChild(GreyShell.mineAtPos(position: CGPointMake(200, 180)))
         
         //add bot horizontal row
-        for (var i = 20; i < Int(self.frame.maxX - 130); i += 40){
-            self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i),  100)))
+            for i in stride(from: 20, to: Int(self.frame.maxX - 130), by: 40) {
+                self.addChild(GreyShell.mineAtPos(position: CGPointMake(CGFloat(i),  100)))
         }
         //add top row
-        for (var i = 155; i < Int(self.frame.maxX); i += 40){
-            self.addChild(GreyShell.mineAtPos(CGPointMake(CGFloat(i), self.frame.maxY - 100)))
+            for i in stride(from: 155, to: Int(self.frame.maxX), by: 40) {
+                self.addChild(GreyShell.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.maxY - 100)))
         }
         //right column
-        for (var i = Int(self.frame.maxY) - 290; i > 180; i -= 40){
-            self.addChild(GreyShell.mineAtPos(CGPointMake(self.frame.maxX - 60, CGFloat(i))))
+            for i in stride(from: Int(self.frame.maxY) - 290, to: 179, by: -40) {
+                self.addChild(GreyShell.mineAtPos(position: CGPointMake(self.frame.maxX - 60, CGFloat(i))))
         }
         //left column
-        for (var i = 290; i < Int(self.frame.maxY) - 180; i += 40){
-            self.addChild(GreyShell.mineAtPos(CGPointMake(60, CGFloat(i))))
+            for i in stride(from: 290, to: Int(self.frame.maxY) - 180, by: 40) {
+                self.addChild(GreyShell.mineAtPos(position: CGPointMake(60, CGFloat(i))))
         }
         }
         
@@ -302,24 +302,24 @@ class World1Level28: SKScene, SKPhysicsContactDelegate {
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
             self.lastHeal = currentTime
-            if theHero!.life ?? <#default value#> < maxLife{
+            if theHero!.life! < maxLife{
                 if soundOn && !levelOver && !droppedChest{
                     self.run(regenSound)
                 }
                 theHero!.life! += theHero!.regeneration!
-                if theHero!.life ?? <#default value#> > maxLife{
+                if theHero!.life! > maxLife{
                     theHero!.life = maxLife
                 }
             }
         }
         self.lastUpdatesTime = currentTime
         lifeNode!.text = "\(Int(theHero!.life!))"
-        if (theWizard!.isDead || theHero!.life ?? <#default value#> <= 0) && !levelOver{
+        if (theWizard!.isDead || theHero!.life! <= 0) && !levelOver{
             
-            if (self.childNode(withName: "gold") == nil && self.childNode(withName: "item") == nil && droppedItem) || theHero!.life ?? <#default value#> <= 0{
+            if (self.childNode(withName: "gold") == nil && self.childNode(withName: "item") == nil && droppedItem) || theHero!.life! <= 0{
                 
                 //INK SPLAT CODE
-                if theHero!.life ?? <#default value#> <= 0 {
+                if theHero!.life! <= 0 {
                     let inkSplat = SKSpriteNode(imageNamed: "Ink_Splat_1")
                     for node in self.children{
                         if node as? SKLabelNode != nil {

@@ -172,7 +172,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         let aRunBlock = SKAction.run({checkPoint.removeFromParent()})
         let aSequence = SKAction.sequence([afadeOut, aRunBlock])
         checkPoint.run(aSequence)
-        if theHero!.life ?? <#default value#> > 128 {
+        if theHero!.life! > 128 {
             let phaseText = SKSpriteNode()
             phaseText.size = CGSizeMake(240, 60)
             phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
@@ -186,7 +186,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             phaseText.run(sequence)
             self.addChild(checkPoint)
             phase = 40
-        }else if theHero!.life ?? <#default value#> > 63{
+        }else if theHero!.life! > 63{
             let phaseText = SKSpriteNode()
             phaseText.size = CGSizeMake(240, 60)
             phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
@@ -200,7 +200,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             phaseText.run(sequence)
             self.addChild(checkPoint)
             phase = 30
-        }else if theHero!.life ?? <#default value#> > 31{
+        }else if theHero!.life! > 31{
             let phaseText = SKSpriteNode()
             phaseText.size = CGSizeMake(240, 60)
             phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
@@ -214,7 +214,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
             phaseText.run(sequence)
             self.addChild(checkPoint)
             phase = 20
-        }else if theHero!.life ?? <#default value#> > 15{
+        }else if theHero!.life! > 15{
             let phaseText = SKSpriteNode()
             phaseText.size = CGSizeMake(240, 60)
             phaseText.position = CGPointMake(self.frame.midX, self.frame.midY)
@@ -776,14 +776,14 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         
         
         //******REGEN CODE
-        if currentTime - lastHeal  > healSpeed && theHero!.life ?? <#default value#> > 0{
+        if currentTime - lastHeal  > healSpeed && theHero!.life! > 0{
             self.lastHeal = currentTime
-            if theHero!.life ?? <#default value#> < maxLife{
+            if theHero!.life! < maxLife{
                 if soundOn && !levelOver && !droppedChest{
                     self.run(regenSound)
                 }
                 theHero!.life! += theHero!.regeneration!
-                if theHero!.life ?? <#default value#> > maxLife{
+                if theHero!.life! > maxLife{
                     theHero!.life = maxLife
                 }
             }
@@ -794,7 +794,7 @@ class World1Level30: SKScene, SKPhysicsContactDelegate {
         //***************
         
         //check for win condition
-        if (theHero!.life ?? <#default value#> <= 0){
+        if (theHero!.life! <= 0){
             if !splatted {
                 
                 if soundOn{

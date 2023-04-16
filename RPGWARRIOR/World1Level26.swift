@@ -114,11 +114,11 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
             self.addChild(MudCrab.crabAtPosition(startPos: CGPointMake(25, self.frame.maxY - 160), endPosition: CGPointMake(self.frame.maxX - 25, self.frame.maxY - 160)))
             //shells
             //mid column c = x d = y
-            for (var d = 180; d < Int(self.frame.maxY - 180); d += 40){
-                for (var c = 10.0; c < Double(self.frame.maxX); c += 40){
-                    self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(c), CGFloat(d))))
+            for d in stride(from: 180, to: Int(self.frame.maxY - 180), by: 40) {
+                for c in stride(from: 10.0, to: Double(self.frame.maxX), by: 40) {
+                    self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(c), CGFloat(d))))
                     if Double(self.frame.maxX) - c > 150 && Double(self.frame.maxX) - c < 150 {
-                        self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(c + 30), CGFloat(d))))
+                        self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(c + 30), CGFloat(d))))
                     }
                 }
             }
@@ -133,11 +133,11 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
             }
         //shells
         //mid column c = x d = y
-        for (var d = 140; d < Int(self.frame.maxY - 140); d += 40){
-            for (var c = 10.0; c < Double(self.frame.maxX); c += 40){
-                self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(c), CGFloat(d))))
+            for d in stride(from: 140, to: Int(self.frame.maxY - 140), by: 40) {
+                for c in stride(from: 10.0, to: Double(self.frame.maxX), by: 40) {
+                    self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(c), CGFloat(d))))
                 if Double(self.frame.maxX) - c > 150 && Double(self.frame.maxX) - c < 150 {
-                    self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(c + 30), CGFloat(d))))
+                    self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(c + 30), CGFloat(d))))
                 }
             }
         }
@@ -226,24 +226,24 @@ class World1Level26: SKScene, SKPhysicsContactDelegate {
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
             self.lastHeal = currentTime
-            if theHero!.life ?? <#default value#> < maxLife{
+            if theHero!.life! < maxLife{
                 if soundOn && !levelOver && !droppedChest{
                     self.run(regenSound)
                 }
                 theHero!.life! += theHero!.regeneration!
-                if theHero!.life ?? <#default value#> > maxLife{
+                if theHero!.life! > maxLife{
                     theHero!.life = maxLife
                 }
             }
         }
         self.lastUpdatesTime = currentTime
         lifeNode!.text = "\(Int(theHero!.life!))"
-        if (theWizard!.isDead || theHero!.life ?? <#default value#> <= 0) && !levelOver{
+        if (theWizard!.isDead || theHero!.life! <= 0) && !levelOver{
             
-            if (self.childNode(withName: "gold") == nil && self.childNode(withName: "item") == nil && droppedItem) || theHero!.life ?? <#default value#> <= 0{
+            if (self.childNode(withName: "gold") == nil && self.childNode(withName: "item") == nil && droppedItem) || theHero!.life! <= 0{
                 
                 //INK SPLAT CODE
-                if theHero!.life ?? <#default value#> <= 0 {
+                if theHero!.life! <= 0 {
                     let inkSplat = SKSpriteNode(imageNamed: "Ink_Splat_1")
                     for node in self.children{
                         if node as? SKLabelNode != nil {

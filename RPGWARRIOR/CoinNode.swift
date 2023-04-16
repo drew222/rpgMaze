@@ -17,15 +17,15 @@ class CoinNode: SKSpriteNode {
         coin.name = "coin"
         coin.size = CGSizeMake(30, 30)
         coin.setupPhysicsBody()
-        let waitDuration = SKAction.waitForDuration(5)
-        let runBlock = SKAction.runBlock({coin.removeFromParent()})
+        let waitDuration = SKAction.wait(forDuration: 5)
+        let runBlock = SKAction.run({coin.removeFromParent()})
         let sequence = SKAction.sequence([waitDuration, runBlock])
-        coin.runAction(sequence)
+        coin.run(sequence)
         return coin
     }
     
     func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.width * 0.90, self.frame.height * 0.90))
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSizeMake(self.frame.width * 0.90, self.frame.height * 0.90))
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryCoin.rawValue
         self.physicsBody?.collisionBitMask = 0

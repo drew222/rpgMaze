@@ -181,24 +181,24 @@ class World1Level7: SKScene, SKPhysicsContactDelegate {
         //******REGEN CODE
         if currentTime - lastHeal  > healSpeed{
             self.lastHeal = currentTime
-            if theHero!.life ?? <#default value#> < maxLife{
+            if theHero!.life! < maxLife{
                 if soundOn && !levelOver && !droppedChest{
                     self.run(regenSound)
                 }
                 theHero!.life! += theHero!.regeneration!
-                if theHero!.life ?? <#default value#> > maxLife{
+                if theHero!.life! > maxLife{
                     theHero!.life = maxLife
                 }
             }
         }
         self.lastUpdatesTime = currentTime
         lifeNode!.text = "\(Int(theHero!.life!))"
-        if (theWizard!.isDead || theHero!.life ?? <#default value#> <= 0) && !levelOver{
+        if (theWizard!.isDead || theHero!.life! <= 0) && !levelOver{
             
-            if (self.childNode(withName: "gold") == nil && self.childNode(withName: "item") == nil && droppedItem) || theHero!.life ?? <#default value#> <= 0{
+            if (self.childNode(withName: "gold") == nil && self.childNode(withName: "item") == nil && droppedItem) || theHero!.life! <= 0{
                 
                 //INK SPLAT CODE
-                if theHero!.life ?? <#default value#> <= 0 {
+                if theHero!.life! <= 0 {
                     let inkSplat = SKSpriteNode(imageNamed: "Ink_Splat_1")
                     for node in self.children{
                         if node as? SKLabelNode != nil {
@@ -261,7 +261,7 @@ class World1Level7: SKScene, SKPhysicsContactDelegate {
                 
                 levelOver = true
             }
-            else if (self.childNode(withName: childNodewithName,: "item") == nil && self.childNodeWithName("gold") == nil){
+            else if (self.childNode(withName: "item") == nil && self.childNode(withName: "gold") == nil){
                 if theWizard!.isDead && droppedChest && (self.childNode(withName: "chest") as! TreasureChest).open{
                     dropLoot(level: "level7", scene: self, position: CGPointMake(self.frame.midX, self.frame.midY), size: CGSizeMake(30, 30))
                     droppedItem = true
