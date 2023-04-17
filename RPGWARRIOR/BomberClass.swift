@@ -33,16 +33,16 @@ class BomberClass: SKSpriteNode {
         textures.append(SKTexture(imageNamed: "Crab_Boss_2"))
         textures.append(SKTexture(imageNamed: "Crab_Boss_1"))
         textures.append(SKTexture(imageNamed: "Crab_Boss_5"))
-        let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-        let repeatAction = SKAction.repeatActionForever(animation)
-        bomber.runAction(repeatAction)
+        let animation = SKAction.animate(with: textures, timePerFrame: 0.1)
+        let repeatAction = SKAction.repeatForever(animation)
+        bomber.run(repeatAction)
         bomber.setupPhysicsBody()
         return bomber
     }
     
     func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
-        self.physicsBody?.dynamic = false
+        self.physicsBody = SKPhysicsBody(rectangleOf: self.frame.size)
+        self.physicsBody?.isDynamic = false
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryWizard.rawValue
         self.physicsBody?.collisionBitMask = 0 //CollisionBitMasks.collisionCategoryHero.rawValue
@@ -61,8 +61,8 @@ class BomberClass: SKSpriteNode {
         let lowerYDiff = round(yRange * 0.45)
         let upperXDiff = round(xRange * 1)
         let upperYDiff = round(yRange * 1)
-        let xDiff = CGFloat(randomWithMin(Int(lowerXDiff), max: Int(upperXDiff)))
-        let yDiff = CGFloat(randomWithMin(Int(lowerYDiff), max: Int(upperYDiff)))
+        let xDiff = CGFloat(randomWithMin(min: Int(lowerXDiff), max: Int(upperXDiff)))
+        let yDiff = CGFloat(randomWithMin(min: Int(lowerYDiff), max: Int(upperYDiff)))
         var xPosition: CGFloat?
         var yPosition: CGFloat?
         if self.position.x > heroPosition.x{
@@ -78,8 +78,8 @@ class BomberClass: SKSpriteNode {
         
         //Gauntlet sends bombs around the hero
         if let _ = self.parent as? World1Level30 {
-            xPosition = CGFloat(randomWithMin(Int(heroPosition.x - 150), max: Int(heroPosition.x + 150)))
-            yPosition = CGFloat(randomWithMin(Int(heroPosition.y - 150), max: Int(heroPosition.y + 150)))
+            xPosition = CGFloat(randomWithMin(min: Int(heroPosition.x - 150), max: Int(heroPosition.x + 150)))
+            yPosition = CGFloat(randomWithMin(min: Int(heroPosition.y - 150), max: Int(heroPosition.y + 150)))
         }
         
         return CGPointMake(xPosition!, yPosition!)
@@ -90,7 +90,7 @@ class BomberClass: SKSpriteNode {
             return
         }
         
-        let codeBlock0 = SKAction.runBlock({
+        let codeBlock0 = SKAction.run({
             var textures: [SKTexture] = []
             //for var i = 1; i <= 4; i=i+1{
                // textures.append(SKTexture(imageNamed:"Clam_Boss_\(i)"))
@@ -111,11 +111,11 @@ class BomberClass: SKSpriteNode {
             textures.append(SKTexture(imageNamed:"Crab_Boss_6"))
             textures.append(SKTexture(imageNamed:"Crab_Boss_4"))
             textures.append(SKTexture(imageNamed:"Crab_Boss_3"))
-            let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.05)
-            let repeatAction0 = SKAction.repeatActionForever(animation)
-            self.runAction(repeatAction0, withKey: "repeatAction")
+            let animation = SKAction.animate(with: textures, timePerFrame: 0.05)
+            let repeatAction0 = SKAction.repeatForever(animation)
+            self.run(repeatAction0, withKey: "repeatAction")
         })
-        let codeBlock = SKAction.runBlock({
+        let codeBlock = SKAction.run({
             var textures: [SKTexture] = []
             textures.append(SKTexture(imageNamed: "Crab_Boss_12"))
             textures.append(SKTexture(imageNamed: "Crab_Boss_5"))
@@ -123,19 +123,19 @@ class BomberClass: SKSpriteNode {
             textures.append(SKTexture(imageNamed: "Crab_Boss_2"))
             textures.append(SKTexture(imageNamed: "Crab_Boss_1"))
             textures.append(SKTexture(imageNamed: "Crab_Boss_5"))
-            let animation2 = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+            let animation2 = SKAction.animate(with: textures, timePerFrame: 0.1)
             let sequenceRepeat = SKAction.sequence([animation2])
-            let repeatAction = SKAction.repeatActionForever(sequenceRepeat)
-            self.runAction(repeatAction , withKey: "repeatAction")
-            let hero = self.parent!.childNodeWithName("hero") as! HeroClass
-            _ = self.getBombLocation(hero.position)
+            let repeatAction = SKAction.repeatForever(sequenceRepeat)
+            self.run(repeatAction , withKey: "repeatAction")
+            let hero = self.parent!.childNode(withName: "hero") as! HeroClass
+            _ = self.getBombLocation(heroPosition: hero.position)
             //shoot the fireball
-            let bomb = Bomb.bombAtPosition(self.getBombLocation(hero.position))
+            let bomb = Bomb.bombAtPosition(position: self.getBombLocation(heroPosition: hero.position))
             self.parent!.addChild(bomb)
-            bomb.explode(bomb.position)
+            bomb.explode(position: bomb.position)
         })
-        let sequence = SKAction.sequence([codeBlock0, SKAction.waitForDuration(0.9), codeBlock])
-        self.runAction(sequence)
+        let sequence = SKAction.sequence([codeBlock0, SKAction.wait(forDuration: 0.9), codeBlock])
+        self.run(sequence)
         
         
         //calculate where to shoot the bomb
@@ -151,7 +151,7 @@ class BomberClass: SKSpriteNode {
             return
         }
         
-        let codeBlock0 = SKAction.runBlock({
+        let codeBlock0 = SKAction.run({
             var textures: [SKTexture] = []
             //for var i = 1; i <= 4; i=i+1{
             // textures.append(SKTexture(imageNamed:"Clam_Boss_\(i)"))
@@ -172,11 +172,11 @@ class BomberClass: SKSpriteNode {
             textures.append(SKTexture(imageNamed:"Crab_Boss_6"))
             textures.append(SKTexture(imageNamed:"Crab_Boss_4"))
             textures.append(SKTexture(imageNamed:"Crab_Boss_3"))
-            let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.05)
-            let repeatAction0 = SKAction.repeatActionForever(animation)
-            self.runAction(repeatAction0, withKey: "repeatAction")
+            let animation = SKAction.animate(with: textures, timePerFrame: 0.05)
+            let repeatAction0 = SKAction.repeatForever(animation)
+            self.run(repeatAction0, withKey: "repeatAction")
         })
-        let codeBlock = SKAction.runBlock({
+        let codeBlock = SKAction.run({
             var textures: [SKTexture] = []
             textures.append(SKTexture(imageNamed: "Crab_Boss_12"))
             textures.append(SKTexture(imageNamed: "Crab_Boss_5"))
@@ -184,30 +184,30 @@ class BomberClass: SKSpriteNode {
             textures.append(SKTexture(imageNamed: "Crab_Boss_2"))
             textures.append(SKTexture(imageNamed: "Crab_Boss_1"))
             textures.append(SKTexture(imageNamed: "Crab_Boss_5"))
-            let animation2 = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+            let animation2 = SKAction.animate(with: textures, timePerFrame: 0.1)
             let sequenceRepeat = SKAction.sequence([animation2])
-            let repeatAction = SKAction.repeatActionForever(sequenceRepeat)
-            self.runAction(repeatAction , withKey: "repeatAction")
-            let hero = self.parent!.childNodeWithName("hero") as! HeroClass
-            _ = self.getBombLocation(hero.position)
+            let repeatAction = SKAction.repeatForever(sequenceRepeat)
+            self.run(repeatAction , withKey: "repeatAction")
+            let hero = self.parent!.childNode(withName: "hero") as! HeroClass
+            _ = self.getBombLocation(heroPosition: hero.position)
             //shoot the fireball
-            let beachBall = BeachBall.bombAtPosition(self.getBombLocation(hero.position))
+            let beachBall = BeachBall.bombAtPosition(position: self.getBombLocation(heroPosition: hero.position))
             self.parent!.addChild(beachBall)
-            beachBall.explode(beachBall.position)
+            beachBall.explode(position: beachBall.position)
         })
-        let sequence = SKAction.sequence([codeBlock0, SKAction.waitForDuration(0.9), codeBlock])
-        self.runAction(sequence)
+        let sequence = SKAction.sequence([codeBlock0, SKAction.wait(forDuration: 0.9), codeBlock])
+        self.run(sequence)
        
     }
 
     
     func takeDamage(howMuch: CGFloat){
         if soundOn {
-            (self.parent as! SKScene).runAction(poofSound)
-            let waitDuration = SKAction.waitForDuration(1)
-            let runBlock = SKAction.runBlock({beachMusic!.play()})
+            (self.parent as! SKScene).run(poofSound)
+            let waitDuration = SKAction.wait(forDuration: 1)
+            let runBlock = SKAction.run({beachMusic!.play()})
             let sequence = SKAction.sequence([waitDuration, runBlock])
-            (self.parent as! SKScene).runAction(sequence)
+            (self.parent as! SKScene).run(sequence)
             levelMusic!.stop()
         }
         self.life -= howMuch
@@ -215,20 +215,20 @@ class BomberClass: SKSpriteNode {
             self.isDead = true
             self.removeAllActions()
             var inkAttack: SKEmitterNode?
-            let explodeCode = SKAction.runBlock({let litePath = NSBundle.mainBundle().pathForResource("SmokeParticle", ofType: "sks")
-                inkAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
+            let explodeCode = SKAction.run({let litePath = Bundle.main.path(forResource: "SmokeParticle", ofType: "sks")
+                inkAttack = (NSKeyedUnarchiver.unarchiveObject(withFile: litePath!) as! SKEmitterNode)
                 inkAttack!.position = CGPointMake(self.position.x, self.position.y - 10)
                 inkAttack!.zPosition = 4
                 inkAttack!.name = "inkAttack"
                 inkAttack!.setScale(1)
                 self.parent!.addChild(inkAttack!)
             })
-            let waitAction = SKAction.waitForDuration(1)
-            let removeBlock = SKAction.runBlock({
+            let waitAction = SKAction.wait(forDuration: 1)
+            let removeBlock = SKAction.run({
                 self.texture = SKTexture(imageNamed: "Crab_Boss_Dead_1")
                 inkAttack?.removeFromParent()})
             let sequence = SKAction.sequence([explodeCode, waitAction, removeBlock])
-            self.runAction(sequence)
+            self.run(sequence)
         }
     }
 }

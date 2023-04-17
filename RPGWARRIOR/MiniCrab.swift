@@ -116,16 +116,16 @@ class MiniCrab: SKSpriteNode {
         
         let removeBlock = SKAction.run({//liteAttack!.removeFromParent()
             self.removeFromParent()})
-        let damageBlock = SKAction.runBlock({
-            _ = distanceBetween(point1: self.parent!.childNodeWithName("hero")!.position, point2: self.position)
+        let damageBlock = SKAction.run({
+            _ = distanceBetween(point1: self.parent!.childNode(withName: "hero")!.position, point2: self.position)
             //if distanceFromMine < 25{
-            let theHero = self.parent!.childNodeWithName("hero")! as! HeroClass
+            let theHero = self.parent!.childNode(withName: "hero")! as! HeroClass
             //println("distance from bomb = \(distanceFromMine)")
-            theHero.takeDamage(1.0)
+            theHero.takeDamage(damage: 1.0)
             //}
         })
-        let sequence = SKAction.sequence([explodeCode, damageBlock, SKAction.waitForDuration(0.3), removeBlock])
-        self.runAction(sequence)}
+        let sequence = SKAction.sequence([explodeCode, damageBlock, SKAction.wait(forDuration: 0.3), removeBlock])
+        self.run(sequence)}
     
     func getCrabMoveAction() -> SKAction{
         let xDistance = self.endPosition!.x - self.startPosition!.x

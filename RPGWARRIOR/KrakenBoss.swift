@@ -32,20 +32,20 @@ class KrakenBoss: SKSpriteNode {
         textures.append(SKTexture(imageNamed: "Kraken_Boss_3"))
         textures.append(SKTexture(imageNamed: "Kraken_Boss_2"))
         textures.append(SKTexture(imageNamed: "Kraken_Boss_1"))
-        let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
+        let animation = SKAction.animate(with: textures, timePerFrame: 0.1)
         //let repeatAction = SKAction.repeatActionForever(animation)
-        let repeatAction = SKAction.repeatAction(animation, count: 1)
-        let waitAction = SKAction.waitForDuration(2)
+        let repeatAction = SKAction.repeat(animation, count: 1)
+        let waitAction = SKAction.wait(forDuration: 2)
         let sequence = SKAction.sequence([repeatAction, waitAction])
-        let realRepeatAction = SKAction.repeatActionForever(sequence)
-        kraken.runAction(realRepeatAction)
+        let realRepeatAction = SKAction.repeatForever(sequence)
+        kraken.run(realRepeatAction)
         kraken.setupPhysicsBody()
         return kraken
     }
     
     func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
-        self.physicsBody?.dynamic = false
+        self.physicsBody = SKPhysicsBody(rectangleOf: self.frame.size)
+        self.physicsBody?.isDynamic = false
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryWizard.rawValue
         self.physicsBody?.collisionBitMask = 0 //CollisionBitMasks.collisionCategoryHero.rawValue
@@ -53,7 +53,7 @@ class KrakenBoss: SKSpriteNode {
     }
     
     func setupWavePhysicsBody(node: SKSpriteNode) {
-        node.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.width * 2.96, self.frame.height * 0.6))
+        node.physicsBody = SKPhysicsBody(rectangleOf: CGSizeMake(self.frame.width * 2.96, self.frame.height * 0.6))
         node.physicsBody?.affectedByGravity = false
         node.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryWave.rawValue
         node.physicsBody?.collisionBitMask = 0
@@ -67,49 +67,49 @@ class KrakenBoss: SKSpriteNode {
         let position = getSafePosition()
         safeSpotNode.position = position
         safeSpotNode.size = CGSizeMake(50, 50)
-        let rotateAction = SKAction.rotateByAngle(2 * pi, duration: 2)
-        let repeatRotate = SKAction.repeatActionForever(rotateAction)
-        let waitAction = SKAction.waitForDuration(6)
+        let rotateAction = SKAction.rotate(byAngle: 2 * pi, duration: 2)
+        let repeatRotate = SKAction.repeatForever(rotateAction)
+        let waitAction = SKAction.wait(forDuration: 6)
         let sandNode = SKSpriteNode(imageNamed: "Safety_Pillar_3")
         sandNode.position = position
         sandNode.name = "safeSpot2"
         sandNode.size = CGSizeMake(48, 48)
-        let removeBlock = SKAction.runBlock({safeSpotNode.removeFromParent()
+        let removeBlock = SKAction.run({safeSpotNode.removeFromParent()
             sandNode.removeFromParent()})
         self.parent?.addChild(safeSpotNode)
         self.parent?.addChild(sandNode)
-        safeSpotNode.runAction(SKAction.sequence([repeatRotate, waitAction, removeBlock]))
+        safeSpotNode.run(SKAction.sequence([repeatRotate, waitAction, removeBlock]))
         sandNode.zPosition = 2
         
         
         
         let oilWave = SKSpriteNode(imageNamed: "Ink_Flood_1")
         oilWave.name = "wave"
-        setupWavePhysicsBody(oilWave)
+        setupWavePhysicsBody(node: oilWave)
         let textures = [SKTexture(imageNamed: "Ink_Flood_2"),SKTexture(imageNamed: "Ink_Flood_3"), SKTexture(imageNamed: "Ink_Flood_1")]
-        let animateWave = SKAction.animateWithTextures(textures, timePerFrame: 0.3)
-        let repeatAction = SKAction.repeatActionForever(animateWave)
-        oilWave.runAction(repeatAction)
+        let animateWave = SKAction.animate(with: textures, timePerFrame: 0.3)
+        let repeatAction = SKAction.repeatForever(animateWave)
+        oilWave.run(repeatAction)
         //oilWave.size = self.parent!.frame.size
         oilWave.size = CGSizeMake(self.parent!.frame.maxX, self.parent!.frame.maxY + 70)
         oilWave.anchorPoint = CGPointMake(0.5, 0)
         oilWave.zPosition = 1
         oilWave.position = CGPointMake(self.parent!.frame.midX, self.parent!.frame.maxY + 30)
-        let moveDownAction = SKAction.moveTo(CGPointMake(self.parent!.frame.midX, self.parent!.frame.minY - 70), duration: 2)
-        let moveUpAction = SKAction.fadeOutWithDuration(1)
-        let remBlock = SKAction.runBlock({oilWave.removeFromParent()})
-        var waitToWave = SKAction.waitForDuration(1.75)
+        let moveDownAction = SKAction.move(to: CGPointMake(self.parent!.frame.midX, self.parent!.frame.minY - 70), duration: 2)
+        let moveUpAction = SKAction.fadeOut(withDuration: 1)
+        let remBlock = SKAction.run({oilWave.removeFromParent()})
+        var waitToWave = SKAction.wait(forDuration: 1.75)
         if let _ = self.parent as? World1Level30 {
-            waitToWave = SKAction.waitForDuration(3)
+            waitToWave = SKAction.wait(forDuration: 3)
         }
         let sequence = SKAction.sequence([waitToWave, moveDownAction, moveUpAction, remBlock])
-        oilWave.runAction(sequence)
+        oilWave.run(sequence)
         self.parent?.addChild(oilWave)
     }
     
     func getSafePosition() -> CGPoint {
-        let xPos = randomWithMin(25, max: Int(self.parent!.frame.width) - 25)
-        let yPos = randomWithMin(115, max: Int(self.parent!.frame.height) - 185)
+        let xPos = randomWithMin(min: 25, max: Int(self.parent!.frame.width) - 25)
+        let yPos = randomWithMin(min: 115, max: Int(self.parent!.frame.height) - 185)
         return CGPointMake(CGFloat(xPos), CGFloat(yPos))
     }
     
@@ -139,29 +139,29 @@ class KrakenBoss: SKSpriteNode {
         textures.append(SKTexture(imageNamed: "Kraken_Boss_3"))
         textures.append(SKTexture(imageNamed: "Kraken_Boss_2"))
         
-        let waveAttackAnimation = SKAction.animateWithTextures(textures, timePerFrame: 0.05)
+        let waveAttackAnimation = SKAction.animate(with: textures, timePerFrame: 0.05)
         var textures2: [SKTexture] = []
         textures2.append(SKTexture(imageNamed: "Kraken_Boss_1"))
         textures2.append(SKTexture(imageNamed: "Kraken_Boss_2"))
         textures2.append(SKTexture(imageNamed: "Kraken_Boss_3"))
         textures2.append(SKTexture(imageNamed: "Kraken_Boss_2"))
-        let idleAnimation = SKAction.animateWithTextures(textures2, timePerFrame: 0.1)
-        let repeatAction = SKAction.repeatAction(idleAnimation, count: 1)
-        let waitAction = SKAction.waitForDuration(2)
+        let idleAnimation = SKAction.animate(with: textures2, timePerFrame: 0.1)
+        let repeatAction = SKAction.repeat(idleAnimation, count: 1)
+        let waitAction = SKAction.wait(forDuration: 2)
         let sequence = SKAction.sequence([repeatAction, waitAction])
-        let realRepeatAction = SKAction.repeatActionForever(sequence)
+        let realRepeatAction = SKAction.repeatForever(sequence)
         let finalSequence = SKAction.sequence([waveAttackAnimation, realRepeatAction])
-        self.runAction(finalSequence)
+        self.run(finalSequence)
         
         //create tentacle
-        let tentacle = Tentacle.tentacleAtPosition(getTentaclePoint())
+        let tentacle = Tentacle.tentacleAtPosition(position: getTentaclePoint())
         tentacle.zPosition = 3
         self.parent!.addChild(tentacle)
         //self.parent!.addChild(Tentacle.tentacleAtPosition(getTentaclePoint()))
     }
     
     func getTentaclePoint() -> CGPoint {
-        let heroPosition = self.parent!.childNodeWithName("hero")!.position
+        let heroPosition = self.parent!.childNode(withName: "hero")!.position
         
         return heroPosition
     }
@@ -169,11 +169,11 @@ class KrakenBoss: SKSpriteNode {
     
     func takeDamage(howMuch: CGFloat){
         if soundOn {
-            (self.parent as! SKScene).runAction(poofSound)
-            let waitDuration = SKAction.waitForDuration(1)
-            let runBlock = SKAction.runBlock({beachMusic!.play()})
+            (self.parent as! SKScene).run(poofSound)
+            let waitDuration = SKAction.wait(forDuration: 1)
+            let runBlock = SKAction.run({beachMusic!.play()})
             let sequence = SKAction.sequence([waitDuration, runBlock])
-            (self.parent as! SKScene).runAction(sequence)
+            (self.parent as! SKScene).run(sequence)
             levelMusic!.stop()
         }
         self.life -= howMuch
@@ -181,20 +181,20 @@ class KrakenBoss: SKSpriteNode {
             self.isDead = true
             self.removeAllActions()
             var inkAttack: SKEmitterNode?
-            let explodeCode = SKAction.runBlock({let litePath = NSBundle.mainBundle().pathForResource("SmokeParticle", ofType: "sks")
-                inkAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
+            let explodeCode = SKAction.run({let litePath = Bundle.main.path(forResource: "SmokeParticle", ofType: "sks")
+                inkAttack = (NSKeyedUnarchiver.unarchiveObject(withFile: litePath!) as! SKEmitterNode)
                 inkAttack!.position = CGPointMake(self.position.x, self.position.y - 10)
                 inkAttack!.zPosition = 4
                 inkAttack!.name = "inkAttack"
                 inkAttack!.setScale(1.2)
                 self.parent!.addChild(inkAttack!)
             })
-            let waitAction = SKAction.waitForDuration(1)
-            let removeBlock = SKAction.runBlock({
+            let waitAction = SKAction.wait(forDuration: 1)
+            let removeBlock = SKAction.run({
                 self.texture = SKTexture(imageNamed: "Kraken_Boss_Dead_1")
                 inkAttack?.removeFromParent()})
             let sequence = SKAction.sequence([explodeCode, waitAction, removeBlock])
-            self.runAction(sequence)
+            self.run(sequence)
         }
     }
 }

@@ -19,7 +19,7 @@ class Block: SKSpriteNode {
         }else{
             size = CGSizeMake(200,40)
         }
-        let block = Block(color: UIColor.blackColor(), size: size!)
+        let block = Block(color: UIColor.black, size: size!)
         block.position = position
         
         

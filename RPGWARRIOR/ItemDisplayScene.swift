@@ -68,8 +68,8 @@ class ItemDisplayScene: SKScene {
         
         if backpackSpaces != 0 {
         var liteAttack: SKEmitterNode?
-            let litePath = BundleBundle.main.pathForResource("TreasureChestSpark", ofType: "sks")
-        liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
+            let litePath = Bundle.main.path(forResource: "TreasureChestSpark", ofType: "sks")
+            liteAttack = (NSKeyedUnarchiver.unarchiveObject(withFile: litePath!) as! SKEmitterNode)
         liteAttack!.position = CGPointMake(self.frame.midX, self.frame.midY + 50)
             if is5{
                 liteAttack!.position = CGPointMake(self.frame.midX, self.frame.midY + 30)
@@ -244,7 +244,7 @@ class ItemDisplayScene: SKScene {
         
         
         if itemName != "Booty_1" && backpackSpaces != 0{
-        let itemText = SKSpriteNode(imageNamed: theItem!.itemName!.stringByReplacingOccurrencesOfString("1", withString: "Text", options: NSStringCompareOptions.LiteralSearch, range: nil))
+            let itemText = SKSpriteNode(imageNamed: theItem!.itemName!.replacingOccurrences(of: "1", with: "Text"))
         itemText.name = "itemName"
         itemText.setScale(0.5)
         itemText.position = CGPointMake(self.frame.midX, self.frame.midY - 15)

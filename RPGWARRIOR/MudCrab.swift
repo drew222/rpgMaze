@@ -25,7 +25,7 @@ class MudCrab: SKSpriteNode {
         crab.endPosition = endPosition
         crab.setScale(0.07)
         //rotate
-        var angle = angleFromPoints(startPos, point2: endPosition)
+        var angle = angleFromPoints(point1: startPos, point2: endPosition)
         //println(angle)
         //if angle > pi + pi / 2{
         //  angle += pi
@@ -38,17 +38,17 @@ class MudCrab: SKSpriteNode {
             if angle > pi + pi / 2{
                 angle += pi
             }
-            crab.runAction(SKAction.rotateToAngle(angle - pi, duration: 0))
+            crab.run(SKAction.rotate(toAngle: angle - pi, duration: 0))
         }
         //animate all textures
         let textures: [SKTexture] = [SKTexture(imageNamed: "Mud_Crab_1"), SKTexture(imageNamed: "Mud_Crab_2"), SKTexture(imageNamed: "Mud_Crab_3"), SKTexture(imageNamed: "Mud_Crab_2")]
-        let animateAction = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-        let repeatAction = SKAction.repeatActionForever(animateAction)
-        crab.runAction(repeatAction)
+        let animateAction = SKAction.animate(with: textures, timePerFrame: 0.1)
+        let repeatAction = SKAction.repeatForever(animateAction)
+        crab.run(repeatAction)
         //move the crab
         let crabAction = crab.getCrabMoveAction()
         crab.setupPhysicsBody()
-        crab.runAction(crabAction)
+        crab.run(crabAction)
         return crab
         
     }
@@ -62,7 +62,7 @@ class MudCrab: SKSpriteNode {
         crab.endPosition = endPosition
         crab.setScale(0.07)
         //rotate
-        var angle = angleFromPoints(startPos, point2: endPosition)
+        var angle = angleFromPoints(point1: startPos, point2: endPosition)
         //println(angle)
         //if angle > pi + pi / 2{
         //  angle += pi
@@ -75,22 +75,22 @@ class MudCrab: SKSpriteNode {
             if angle > pi + pi / 2{
                 angle += pi
             }
-            crab.runAction(SKAction.rotateToAngle(angle - pi, duration: 0))
+            crab.run(SKAction.rotate(toAngle: angle - pi, duration: 0))
         }
         //animate all textures
         let textures: [SKTexture] = [SKTexture(imageNamed: "Mud_Crab_1"), SKTexture(imageNamed: "Mud_Crab_2"), SKTexture(imageNamed: "Mud_Crab_3"), SKTexture(imageNamed: "Mud_Crab_2")]
-        let animateAction = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-        let repeatAction = SKAction.repeatActionForever(animateAction)
-        crab.runAction(repeatAction)
+        let animateAction = SKAction.animate(with: textures, timePerFrame: 0.1)
+        let repeatAction = SKAction.repeatForever(animateAction)
+        crab.run(repeatAction)
         //move the crab
         let crabAction = crab.getCrabDashAction()
         crab.setupPhysicsBody()
-        crab.runAction(crabAction)
+        crab.run(crabAction)
         return crab
     }
     
     func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
+        self.physicsBody = SKPhysicsBody(rectangleOf: self.frame.size)
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryMudCrab.rawValue
         self.physicsBody?.collisionBitMask = 0
@@ -99,7 +99,7 @@ class MudCrab: SKSpriteNode {
     
     func explode(position: CGPoint){
         //var liteAttack: SKEmitterNode?
-        let explodeCode = SKAction.runBlock({//let litePath = NSBundle.mainBundle().pathForResource("LightParticle", ofType: "sks")
+        let explodeCode = SKAction.run({//let litePath = NSBundle.mainBundle().pathForResource("LightParticle", ofType: "sks")
             //liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as SKEmitterNode)
             //liteAttack!.position = position
             //liteAttack!.setScale(0.5)
@@ -114,28 +114,28 @@ class MudCrab: SKSpriteNode {
             //self.texture = nil
         })
         
-        let removeBlock = SKAction.runBlock({//liteAttack!.removeFromParent()
+        let removeBlock = SKAction.run({//liteAttack!.removeFromParent()
             self.removeFromParent()})
-        let damageBlock = SKAction.runBlock({
-            _ = distanceBetween(self.parent!.childNodeWithName("hero")!.position, point2: self.position)
+        let damageBlock = SKAction.run({
+            _ = distanceBetween(point1: self.parent!.childNode(withName: "hero")!.position, point2: self.position)
             //if distanceFromMine < 25{
-            let theHero = self.parent!.childNodeWithName("hero")! as! HeroClass
+            let theHero = self.parent!.childNode(withName: "hero")! as! HeroClass
             //println("distance from bomb = \(distanceFromMine)")
-            theHero.takeDamage(5.0)
+            theHero.takeDamage(damage: 5.0)
             //}
         })
-        let sequence = SKAction.sequence([explodeCode, damageBlock, SKAction.waitForDuration(0.3), removeBlock])
-        self.runAction(sequence)}
+        let sequence = SKAction.sequence([explodeCode, damageBlock, SKAction.wait(forDuration: 0.3), removeBlock])
+        self.run(sequence)}
     
     func getCrabMoveAction() -> SKAction{
         let xDistance = self.endPosition!.x - self.startPosition!.x
         let yDistance = self.endPosition!.y - self.startPosition!.y
         let distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
-        let time = NSTimeInterval(distance / CGFloat(crabSpeed))
-        let moveToAction = SKAction.moveTo(self.endPosition!, duration: time)
-        let moveFromAction = SKAction.moveTo(self.startPosition!, duration: time)
+        let time = TimeInterval(distance / CGFloat(crabSpeed))
+        let moveToAction = SKAction.move(to: self.endPosition!, duration: time)
+        let moveFromAction = SKAction.move(to: self.startPosition!, duration: time)
         let sequence = SKAction.sequence([moveToAction, moveFromAction])
-        let repeatAction = SKAction.repeatActionForever(sequence)
+        let repeatAction = SKAction.repeatForever(sequence)
         return repeatAction
     }
     //crab runs to location then gets removed
@@ -143,8 +143,8 @@ class MudCrab: SKSpriteNode {
         let xDistance = self.endPosition!.x - self.startPosition!.x
         let yDistance = self.endPosition!.y - self.startPosition!.y
         let distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
-        let time = NSTimeInterval(distance / CGFloat(crabSpeed))
-        let moveToAction = SKAction.moveTo(self.endPosition!, duration: time)
+        let time = TimeInterval(distance / CGFloat(crabSpeed))
+        let moveToAction = SKAction.move(to: self.endPosition!, duration: time)
         let removeAction = SKAction.removeFromParent()
         let sequence = SKAction.sequence([moveToAction, removeAction])
         return sequence

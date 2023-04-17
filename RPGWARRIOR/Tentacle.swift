@@ -23,25 +23,25 @@ class Tentacle: SKSpriteNode {
         tentacle.size = CGSizeMake(80, 80)
         //animate all textures
         var textures: [SKTexture] = []
-        for (var i = 1; i < 8; i+=1){
+        for i in 1..<8 {
             textures.append(SKTexture(imageNamed: "Tentacle_Swing_\(i)"))
         }
         
-        let animateAction = SKAction.animateWithTextures(textures, timePerFrame: 0.25)
-        let repeatAction = SKAction.repeatAction(animateAction, count: 1)
-        let codeBlock0 = SKAction.runBlock({//tentacle.isArmed = true
+        let animateAction = SKAction.animate(with: textures, timePerFrame: 0.25)
+        let repeatAction = SKAction.repeat(animateAction, count: 1)
+        let codeBlock0 = SKAction.run({//tentacle.isArmed = true
         tentacle.setupPhysicsBody()})
-        let rotateAction = SKAction.rotateByAngle(2 * pi, duration: 0.3)
-        let repRotateAction = SKAction.repeatAction(rotateAction, count: 200)
-        let codeBlock = SKAction.runBlock({tentacle.removeFromParent()})
+        let rotateAction = SKAction.rotate(byAngle: 2 * pi, duration: 0.3)
+        let repRotateAction = SKAction.repeat(rotateAction, count: 200)
+        let codeBlock = SKAction.run({tentacle.removeFromParent()})
         let sequence = SKAction.sequence([repeatAction, codeBlock0, repRotateAction, codeBlock])
         //tentacle.setupPhysicsBody()
-        tentacle.runAction(sequence)
+        tentacle.run(sequence)
         return tentacle
         
     }
     func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.width * 0.80, self.frame.height * 0.80))
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSizeMake(self.frame.width * 0.80, self.frame.height * 0.80))
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategorySpike.rawValue
         self.physicsBody?.collisionBitMask = 0

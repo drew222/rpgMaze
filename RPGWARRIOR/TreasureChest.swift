@@ -32,16 +32,16 @@ class TreasureChest: SKSpriteNode {
             //let waitAction = SKAction.waitForDuration(0.2)
             //let sequence = SKAction.sequence([bootySound, waitAction, bootySound, waitAction, bootySound, waitAction, bootySound, waitAction, bootySound])
             if let parent = self.parent as? SKScene{
-                parent.runAction(chestSound)
-                parent.runAction(fireworksSound)
+                parent.run(chestSound)
+                parent.run(fireworksSound)
             }
         }
         
         open = true
         
         var liteAttack: SKEmitterNode?
-        let explodeCode = SKAction.runBlock({let litePath = NSBundle.mainBundle().pathForResource("TreasureChestSpark", ofType: "sks")
-            liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
+        let explodeCode = SKAction.run({let litePath = Bundle.main.path(forResource: "TreasureChestSpark", ofType: "sks")
+            liteAttack = (NSKeyedUnarchiver.unarchiveObject(withFile: litePath!) as! SKEmitterNode)
             liteAttack!.position = self.position
             liteAttack!.zPosition = 4
             liteAttack!.setScale(0.5)
@@ -50,17 +50,17 @@ class TreasureChest: SKSpriteNode {
             //self.texture = nil
         })
         let textures = [SKTexture (imageNamed: "Treasure_Chest_2.png"), SKTexture (imageNamed: "Treasure_Chest_3.png"), SKTexture (imageNamed: "Treasure_Chest_4.png"), SKTexture (imageNamed: "Treasure_Chest_5.png")]
-        let chestAnimation = SKAction.animateWithTextures(textures, timePerFrame: 0.15)
-        let codeBlock = SKAction.runBlock({
+        let chestAnimation = SKAction.animate(with: textures, timePerFrame: 0.15)
+        let codeBlock = SKAction.run({
             liteAttack!.removeFromParent()
             self.removeFromParent()})
         let sequence = SKAction.sequence([explodeCode, chestAnimation, codeBlock])
-        self.runAction(sequence)
+        self.run(sequence)
     }
 
     func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
-        self.physicsBody?.dynamic = false
+        self.physicsBody = SKPhysicsBody(rectangleOf: self.frame.size)
+        self.physicsBody?.isDynamic = false
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryChest.rawValue
         self.physicsBody?.collisionBitMask = 0 //CollisionBitMasks.collisionCategoryHero.rawValue

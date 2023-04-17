@@ -25,29 +25,29 @@ class WaveNode: SKSpriteNode {
             left = true
             angle = -angle
         }
-        wave.runAction(SKAction.rotateToAngle(angle, duration: 0))
+        wave.run(SKAction.rotate(toAngle: angle, duration: 0))
         //animate all textures
         let textures: [SKTexture] = [SKTexture(imageNamed: "Wave_2"), SKTexture(imageNamed: "Wave_3"), SKTexture(imageNamed: "Wave_2"), SKTexture(imageNamed: "Wave_1")]
-        let animateAction = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-        let repeatAction = SKAction.repeatActionForever(animateAction)
-        wave.runAction(repeatAction)
+        let animateAction = SKAction.animate(with: textures, timePerFrame: 0.1)
+        let repeatAction = SKAction.repeatForever(animateAction)
+        wave.run(repeatAction)
         //move the wave
         var xPosition = position.x + distance
         if !left {
             xPosition = position.x - distance
         }
         //WAVESPEED IS 120***
-        let time = NSTimeInterval(distance / CGFloat(speed))
-        let moveToAction = SKAction.moveTo(CGPointMake(xPosition, position.y), duration: time)
-        let codeBlock = SKAction.runBlock({wave.removeFromParent()})
+        let time = TimeInterval(distance / CGFloat(speed))
+        let moveToAction = SKAction.move(to: CGPointMake(xPosition, position.y), duration: time)
+        let codeBlock = SKAction.run({wave.removeFromParent()})
         let sequence = SKAction.sequence([moveToAction, codeBlock])
         wave.setupPhysicsBody()
-        wave.runAction(sequence)
+        wave.run(sequence)
         return wave
         
     }
     func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.width * 0.90, self.frame.height * 0.90))
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSizeMake(self.frame.width * 0.90, self.frame.height * 0.90))
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryWave.rawValue
         self.physicsBody?.collisionBitMask = 0

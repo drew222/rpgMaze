@@ -28,7 +28,7 @@ class Krill: SKSpriteNode {
         
     }
     func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
+        self.physicsBody = SKPhysicsBody(rectangleOf: self.frame.size)
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryKrill.rawValue
         self.physicsBody?.collisionBitMask = 0
@@ -38,9 +38,9 @@ class Krill: SKSpriteNode {
     func setupAnimation() {
         let textures = [SKTexture(imageNamed: "Krill_2"),
             SKTexture(imageNamed: "Krill_1")]
-        let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-        let repeatAction = SKAction.repeatActionForever(animation)
-        self.runAction(repeatAction)
+        let animation = SKAction.animate(with: textures, timePerFrame: 0.1)
+        let repeatAction = SKAction.repeatForever(animation)
+        self.run(repeatAction)
     }
     
     func moveTowardsPosition(){
@@ -53,15 +53,15 @@ class Krill: SKSpriteNode {
         var lastWasLeft = true
         var actionArray: [SKAction] = []
         var isFirst = true
-        for (var i = 0; i < numberOfMoves; i++){
-            let leftOrRight = randomWithMin(0, max: 100)
+        for _ in 0..<numberOfMoves {
+            let leftOrRight = randomWithMin(min: 0, max: 100)
             if isFirst && leftOrRight > 49 {
                 isFirst = false
                 self.zRotation = -pi / 4
             }
             if leftOrRight < 50 {
-                moveAction = SKAction.moveTo(CGPointMake(xValue + distanceToMove, yValue - distanceToMove), duration: 1)
-                turnAction = SKAction.rotateToAngle(pi / 4, duration: 0)
+                moveAction = SKAction.move(to: CGPointMake(xValue + distanceToMove, yValue - distanceToMove), duration: 1)
+                turnAction = SKAction.rotate(toAngle: pi / 4, duration: 0)
                 if lastWasLeft {
                     actionArray.append(turnAction)
                 }
@@ -70,8 +70,8 @@ class Krill: SKSpriteNode {
                 xValue = xValue + distanceToMove
                 yValue = yValue - distanceToMove
             }else{
-                moveAction = SKAction.moveTo(CGPointMake(xValue - distanceToMove, yValue - distanceToMove), duration: 1)
-                turnAction = SKAction.rotateToAngle(-pi / 4, duration: 0)
+                moveAction = SKAction.move(to: CGPointMake(xValue - distanceToMove, yValue - distanceToMove), duration: 1)
+                turnAction = SKAction.rotate(toAngle: -pi / 4, duration: 0)
                 if !lastWasLeft{
                     actionArray.append(turnAction)
                 }
@@ -82,6 +82,6 @@ class Krill: SKSpriteNode {
             }
         }
         actionArray.append(SKAction.removeFromParent())
-        self.runAction(SKAction.sequence(actionArray))
+        self.run(SKAction.sequence(actionArray))
     }
 }

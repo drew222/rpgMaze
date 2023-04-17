@@ -55,14 +55,14 @@ class World1Level15: SKScene, SKPhysicsContactDelegate {
         background.zPosition = -1
         self.addChild(background)
         self.physicsWorld.contactDelegate = self
-        for (var i = 80; i < Int(self.frame.maxX) - 70; i += 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.minY + 70)))
+        for i in stride(from: 80, to: Int(self.frame.maxY) - 70, by: 40) {
+            self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.minY + 70)))
         }
-        for (var i = Int(self.frame.maxX - 20); i > Int(self.frame.midX) + 30; i -= 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.minY + 140)))
+        for i in stride(from: Int(self.frame.maxX - 20), to: Int(self.frame.midX) + 30, by: -40) {
+            self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.minY + 140)))
         }
-        for (var i = Int(self.frame.minX + 20); i < Int(self.frame.midX) - 30; i += 40){
-            self.addChild(MineNode.mineAtPos(CGPointMake(CGFloat(i), self.frame.minY + 140)))
+        for i in stride(from: Int(self.frame.minX + 20), to: Int(self.frame.midX) - 30, by: 40) {
+            self.addChild(MineNode.mineAtPos(position: CGPointMake(CGFloat(i), self.frame.minY + 140)))
         }
         theHero!.updateStats()
         //*****REGENE CODE****

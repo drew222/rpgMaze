@@ -31,14 +31,14 @@ class WhiteShell: SKSpriteNode {
             SKTexture(imageNamed: "Whiteshell_3"),
             SKTexture(imageNamed: "Whiteshell_2"),
             SKTexture(imageNamed: "Whiteshell_1")]
-        let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.2)
-        let randomWait = SKAction.waitForDuration(0.5, withRange: 2)
+        let animation = SKAction.animate(with: textures, timePerFrame: 0.2)
+        let randomWait = SKAction.wait(forDuration: 0.5, withRange: 2)
         let sequence = SKAction.sequence([randomWait, animation])
-        let repeatAction = SKAction.repeatActionForever(sequence)
-        self.runAction(repeatAction)
+        let repeatAction = SKAction.repeatForever(sequence)
+        self.run(repeatAction)
     }
     func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.frame.width * 0.80, self.frame.height * 0.80))
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSizeMake(self.frame.width * 0.80, self.frame.height * 0.80))
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryWhiteShell.rawValue
         self.physicsBody?.collisionBitMask = 0
@@ -46,25 +46,25 @@ class WhiteShell: SKSpriteNode {
     }
     func explode(position: CGPoint){
         //var liteAttack: SKEmitterNode?
-        let explodeCode = SKAction.runBlock({
+        let explodeCode = SKAction.run({
             let textures: [SKTexture] = [SKTexture(imageNamed:"Whiteshell_4")]
-            let animation = SKAction.animateWithTextures(textures, timePerFrame: 3.0)
-            self.runAction(animation)
+            let animation = SKAction.animate(with: textures, timePerFrame: 3.0)
+            self.run(animation)
             //self.removeActionForKey("fire")
             //self.texture = nil
         })
         
-        let removeBlock = SKAction.runBlock({
+        let removeBlock = SKAction.run({
             self.removeFromParent()})
-        let damageBlock = SKAction.runBlock({
-            _ = distanceBetween(self.parent!.childNodeWithName("hero")!.position, point2: self.position)
+        let damageBlock = SKAction.run({
+            _ = distanceBetween(point1: self.parent!.childNode(withName: "hero")!.position, point2: self.position)
             //if distanceFromMine < 25{
-            _ = self.parent!.childNodeWithName("hero")! as! HeroClass
+            _ = self.parent!.childNode(withName: "hero")! as! HeroClass
             self.isArmed = false
             //}
         })
-        let sequence = SKAction.sequence([explodeCode, damageBlock, SKAction.waitForDuration(1.0), SKAction.fadeOutWithDuration(1.0), removeBlock])
-        self.runAction(sequence)
+        let sequence = SKAction.sequence([explodeCode, damageBlock, SKAction.wait(forDuration: 1.0), SKAction.fadeOut(withDuration: 1.0), removeBlock])
+        self.run(sequence)
         self.physicsBody = nil
         
     }
@@ -80,10 +80,10 @@ class WhiteShell: SKSpriteNode {
         let distanceC = CGFloat((sqrt(powf(distanceA, 2))) + (sqrt(powf(distanceB, 2))))
         let time = distanceC / mineSpeed
         
-        let throw1 = SKAction.moveTo(position, duration: NSTimeInterval(time))
-        let armMine = SKAction.runBlock({self.isArmed = true})
+        let throw1 = SKAction.move(to: position, duration: TimeInterval(time))
+        let armMine = SKAction.run({self.isArmed = true})
         let sequence = SKAction.sequence([throw1, armMine])
-        self.runAction(sequence)
+        self.run(sequence)
         
     }
 }

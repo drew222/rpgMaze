@@ -24,7 +24,7 @@ class WizardClass: SKSpriteNode {
         wizard.currentAngle = 3 * pi / 2.0
         //if canAttack{
         var textures: [SKTexture] = []
-        for var i = 1; i <= 3; i=i+1{
+        for i in 1...3 {
             textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_\(i)"))
         }
         textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_2"))
@@ -43,17 +43,17 @@ class WizardClass: SKSpriteNode {
         textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_4"))
         textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_1"))
         textures.append(SKTexture(imageNamed:"Clam_Boss_1"))
-        let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-        let sequenceRepeat = SKAction.sequence([animation, SKAction.waitForDuration(1.5)])
-        let repeatAction = SKAction.repeatActionForever(sequenceRepeat)
-        wizard.runAction(repeatAction, withKey: "repeatAction")
+        let animation = SKAction.animate(with: textures, timePerFrame: 0.1)
+        let sequenceRepeat = SKAction.sequence([animation, SKAction.wait(forDuration: 1.5)])
+        let repeatAction = SKAction.repeatForever(sequenceRepeat)
+        wizard.run(repeatAction, withKey: "repeatAction")
         wizard.setupPhysicsBody()
         return wizard
     }
     
     func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
-        self.physicsBody?.dynamic = false
+        self.physicsBody = SKPhysicsBody(rectangleOf: self.frame.size)
+        self.physicsBody?.isDynamic = false
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryWizard.rawValue
         self.physicsBody?.collisionBitMask = 0 //CollisionBitMasks.collisionCategoryHero.rawValue
@@ -67,18 +67,19 @@ class WizardClass: SKSpriteNode {
         //display shooting animation
         //go back to rocking
         //self.runAction(repeatAction0, withKey: "repeatAction")
-        let codeBlock0 = SKAction.runBlock({
+        let codeBlock0 = SKAction.run({
             var textures: [SKTexture] = []
-            for var i = 1; i <= 4; i=i+1{
+            for i in 1...4 {
                 textures.append(SKTexture(imageNamed:"Clam_Boss_\(i)"))
             }
-            let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-            let repeatAction0 = SKAction.repeatActionForever(animation)
-            self.runAction(repeatAction0, withKey: "repeatAction")
+            let animation = SKAction.animate(with: textures, timePerFrame: 0.1)
+            let repeatAction0 = SKAction.repeatForever(animation)
+            self.run(repeatAction0, withKey: "repeatAction")
         })
-        let codeBlock = SKAction.runBlock({
+        let codeBlock = SKAction.run({
             var textures: [SKTexture] = []
-            for var i = 1; i <= 3; i=i+1{
+            for var i in 1...3 {
+                i += 1
                 textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_\(i)"))
             }
             textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_2"))
@@ -97,20 +98,20 @@ class WizardClass: SKSpriteNode {
             textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_4"))
             textures.append(SKTexture(imageNamed:"Clam_Boss_Rocking_1"))
             textures.append(SKTexture(imageNamed:"Clam_Boss_1"))
-            let animation2 = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-            let sequenceRepeat = SKAction.sequence([animation2, SKAction.waitForDuration(1.5)])
-            let repeatAction = SKAction.repeatActionForever(sequenceRepeat)
-            self.runAction(repeatAction , withKey: "repeatAction")
+            let animation2 = SKAction.animate(with: textures, timePerFrame: 0.1)
+            let sequenceRepeat = SKAction.sequence([animation2, SKAction.wait(forDuration: 1.5)])
+            let repeatAction = SKAction.repeatForever(sequenceRepeat)
+            self.run(repeatAction , withKey: "repeatAction")
         })
-        let sequence = SKAction.sequence([codeBlock0, SKAction.waitForDuration(0.4), codeBlock])
-        self.runAction(sequence)
+        let sequence = SKAction.sequence([codeBlock0, SKAction.wait(forDuration: 0.4), codeBlock])
+        self.run(sequence)
         //calculate where to shoot the fireball
         //let hero = self.parent!.childNodeWithName("hero") as! HeroClass
         let shootAtPoint = aPosition
         //shoot the fireball
-        let fireball = Fireball.fireballAtPosition(CGPointMake(self.position.x, self.position.y - 10))
+        let fireball = Fireball.fireballAtPosition(position: CGPointMake(self.position.x, self.position.y - 10))
         self.parent!.addChild(fireball)
-        fireball.moveTowardsPosition(shootAtPoint)
+        fireball.moveTowardsPosition(position: shootAtPoint)
     }
     
     func takeDamage(howMuch: CGFloat){
@@ -119,23 +120,23 @@ class WizardClass: SKSpriteNode {
             self.isDead = true
             self.removeAllActions()
             var inkAttack: SKEmitterNode?
-            let explodeCode = SKAction.runBlock({let litePath = NSBundle.mainBundle().pathForResource("SmokeParticle", ofType: "sks")
-                inkAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
+            let explodeCode = SKAction.run({let litePath = Bundle.main.path(forResource: "SmokeParticle", ofType: "sks")
+                inkAttack = (NSKeyedUnarchiver.unarchiveObject(withFile: litePath!) as! SKEmitterNode)
                 inkAttack!.position = CGPointMake(self.position.x, self.position.y - 10)
                 inkAttack!.zPosition = 4
                 inkAttack!.name = "inkAttack"
                 inkAttack!.setScale(0.7)
                 self.parent!.addChild(inkAttack!)
             })
-            let waitAction = SKAction.waitForDuration(1)
-            let removeBlock = SKAction.runBlock({
+            let waitAction = SKAction.wait(forDuration: 1)
+            let removeBlock = SKAction.run({
                 self.yScale -= 0.09
                 self.xScale -= 0.04
                 self.position = CGPointMake(self.position.x, self.position.y - 8)
                 self.texture = SKTexture(imageNamed: "Clam_Boss_Dead_1")
                 inkAttack?.removeFromParent()})
             let sequence = SKAction.sequence([explodeCode, waitAction, removeBlock])
-            self.runAction(sequence)
+            self.run(sequence)
             
         }
     }
@@ -147,8 +148,8 @@ class WizardClass: SKSpriteNode {
             let lowerYDiff = round(yRange * 0.45)
             let upperXDiff = round(xRange * 1)
             let upperYDiff = round(yRange * 1)
-            let xDiff = CGFloat(randomWithMin(Int(lowerXDiff), max: Int(upperXDiff)))
-            let yDiff = CGFloat(randomWithMin(Int(lowerYDiff), max: Int(upperYDiff)))
+        let xDiff = CGFloat(randomWithMin(min: Int(lowerXDiff), max: Int(upperXDiff)))
+        let yDiff = CGFloat(randomWithMin(min: Int(lowerYDiff), max: Int(upperYDiff)))
             var xPosition: CGFloat?
             var yPosition: CGFloat?
             if self.position.x > heroPosition.x{
@@ -168,8 +169,8 @@ class WizardClass: SKSpriteNode {
         var blizzNode: BlizzNode?
         var blizzAttack: SKEmitterNode?
         
-        let blizzCode = SKAction.runBlock({
-            blizzNode = BlizzNode.createBlizz(position)
+        let blizzCode = SKAction.run({
+            blizzNode = BlizzNode.createBlizz(position: position)
             self.parent!.addChild(blizzNode!)
             blizzAttack = blizzNode!.blizzAttack!
             //blizzAttack!.setScale(0.5)
@@ -178,10 +179,10 @@ class WizardClass: SKSpriteNode {
             //self.texture = nil
         })
         
-        let removeBlock = SKAction.runBlock({blizzAttack!.removeFromParent()
+        let removeBlock = SKAction.run({blizzAttack!.removeFromParent()
             blizzNode!.removeFromParent()})
-        let sequence = SKAction.sequence([blizzCode, SKAction.waitForDuration(5.0), removeBlock])
-        self.runAction(sequence)
+        let sequence = SKAction.sequence([blizzCode, SKAction.wait(forDuration: 5.0), removeBlock])
+        self.run(sequence)
         
     }
 }

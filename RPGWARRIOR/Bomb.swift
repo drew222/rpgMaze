@@ -26,7 +26,7 @@ class Bomb: SKSpriteNode {
         
     }
     func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
+        self.physicsBody = SKPhysicsBody(rectangleOf: self.frame.size)
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryBomb.rawValue
         self.physicsBody?.collisionBitMask = 0
@@ -39,33 +39,33 @@ class Bomb: SKSpriteNode {
             SKTexture(imageNamed: "Beach_Ball_3"),
             SKTexture(imageNamed: "Beach_Ball_5"),
             SKTexture(imageNamed: "Beach_Ball_1")]
-        let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.08)
-        let repeatAction = SKAction.repeatAction(animation, count: 1)
-        self.runAction(repeatAction, withKey: "fire")
+        let animation = SKAction.animate(with: textures, timePerFrame: 0.08)
+        let repeatAction = SKAction.repeat(animation, count: 1)
+        self.run(repeatAction, withKey: "fire")
     }
     
     
     func explode(position: CGPoint){
-        let waitAction = SKAction.waitForDuration(NSTimeInterval(0.8))
+        let waitAction = SKAction.wait(forDuration: TimeInterval(0.8))
         var liteAttack: SKEmitterNode?
-        let explodeCode = SKAction.runBlock({let litePath = NSBundle.mainBundle().pathForResource("LightParticle", ofType: "sks")
-            liteAttack = (NSKeyedUnarchiver.unarchiveObjectWithFile(litePath!) as! SKEmitterNode)
+        let explodeCode = SKAction.run({let litePath = Bundle.main.path(forResource: "LightParticle", ofType: "sks")
+            liteAttack = (NSKeyedUnarchiver.unarchiveObject(withFile: litePath!) as! SKEmitterNode)
             liteAttack!.position = position
             liteAttack!.name = "ballfrags"
             liteAttack!.setScale(0.5)
             self.parent!.addChild(liteAttack!)
-            self.removeActionForKey("fire")
+            self.removeAction(forKey: "fire")
             self.texture = nil})
         
-        let removeBlock = SKAction.runBlock({liteAttack!.removeFromParent()
+        let removeBlock = SKAction.run({liteAttack!.removeFromParent()
                                              self.removeFromParent()})
-        let damageBlock = SKAction.runBlock({
-            let distanceFromBomb = distanceBetween(self.parent!.childNodeWithName("hero")!.position, point2: self.position)
+        let damageBlock = SKAction.run({
+            let distanceFromBomb = distanceBetween(point1: self.parent!.childNode(withName: "hero")!.position, point2: self.position)
             if distanceFromBomb < 55{
-            let theHero = self.parent!.childNodeWithName("hero")! as! HeroClass
+                let theHero = self.parent!.childNode(withName: "hero")! as! HeroClass
                 print("distance from bomb = \(distanceFromBomb)")
                 if (theHero.parent as? World1Level22 != nil){
-                    theHero.takeDamage(3.0)
+                    theHero.takeDamage(damage: 3.0)
                 }else if let gauntletLevel = theHero.parent as? World1Level30 {
                     var damage = CGFloat(2)
                     if gauntletLevel.phase > 10 {
@@ -77,13 +77,13 @@ class Bomb: SKSpriteNode {
                     }else if gauntletLevel.phase > 40{
                         damage = 32
                     }
-                    theHero.takeDamage(damage)
+                    theHero.takeDamage(damage: damage)
                 }else{
-                    theHero.takeDamage(1.0)
+                    theHero.takeDamage(damage: 1.0)
                 }
             }})
-        let sequence = SKAction.sequence([waitAction, explodeCode, damageBlock, SKAction.waitForDuration(0.5), removeBlock])
-        self.runAction(sequence)
+        let sequence = SKAction.sequence([waitAction, explodeCode, damageBlock, SKAction.wait(forDuration: 0.5), removeBlock])
+        self.run(sequence)
         
     }
 }

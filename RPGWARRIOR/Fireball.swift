@@ -28,7 +28,7 @@ class Fireball: SKSpriteNode {
         
     }
     func setupPhysicsBody() {
-        self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
+        self.physicsBody = SKPhysicsBody(rectangleOf: self.frame.size)
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = CollisionBitMasks.collisionCategoryProjectile.rawValue
         self.physicsBody?.collisionBitMask = 0
@@ -38,9 +38,9 @@ class Fireball: SKSpriteNode {
     func setupAnimation() {
         let textures = [SKTexture(imageNamed: "Pearl_Projectile_2"),
             SKTexture(imageNamed: "Pearl_Projectile_1")]
-        let animation = SKAction.animateWithTextures(textures, timePerFrame: 0.1)
-        let repeatAction = SKAction.repeatActionForever(animation)
-        self.runAction(repeatAction)
+        let animation = SKAction.animate(with: textures, timePerFrame: 0.1)
+        let repeatAction = SKAction.repeatForever(animation)
+        self.run(repeatAction)
     }
     
     func moveTowardsPosition(position: CGPoint){
@@ -71,10 +71,10 @@ class Fireball: SKSpriteNode {
         let distance = sqrt(pow(xDistance, 2) + pow(yDistance, 2))
         
         
-        let time = NSTimeInterval(distance / CGFloat(fireballSpeed))
+        let time = TimeInterval(distance / CGFloat(fireballSpeed))
 
-            let moveProjectile = SKAction.moveTo(pointOffScreen, duration: time)
+        let moveProjectile = SKAction.move(to: pointOffScreen, duration: time)
         
-            self.runAction(moveProjectile)
+        self.run(moveProjectile)
     }
 }
