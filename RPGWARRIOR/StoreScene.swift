@@ -403,9 +403,9 @@ class StoreScene: SKScene {
         
     }
     func clickedItem(point: CGPoint) -> String{
-        for var x = 1; x < allStoreItems.count+1; x+=1{
+        for x in stride(from: 1, through: allStoreItems.count, by: 1) {
             let anItem = self.childNode(withName: "item\(x)") as! ItemClass
-            if anItem.containsPoint(point){
+            if anItem.contains(point){
                 return anItem.itemName!
             }
         }
@@ -413,7 +413,7 @@ class StoreScene: SKScene {
     }
     
     func buyItem(){
-        if (self.userData?.objectForKey("inventory") as! Inventory).gold >= currentItem!.price! && (self.userData?.object(forKey: objectforKey,: "inventory") as! Inventory).backPackSpaces > 0{
+        if (self.userData?.object(forKey: "inventory") as! Inventory).gold >= currentItem!.price! && (self.userData?.object(forKey: "inventory") as! Inventory).backPackSpaces > 0{
             //sound
             if soundOn {
                 self.run(bootySound)
@@ -421,7 +421,7 @@ class StoreScene: SKScene {
             (self.userData?.object(forKey: "inventory") as! Inventory).gold -= currentItem!.price!
             (self.userData?.object(forKey: "inventory") as! Inventory).addItem(itemName: currentItem!.itemName!)
             goldCount -= currentItem!.price!
-            persistentData!.set((self.userData?.object(forKey: objectforKey,: "inventory") as! Inventory).gold, forKey: "gold")
+            persistentData!.set((self.userData?.object(forKey: "inventory") as! Inventory).gold, forKey: "gold")
             goldNode!.text = "\(Int(goldCount))"
         }
     }
@@ -884,7 +884,7 @@ class StoreScene: SKScene {
             self.childNode(withName: "itemText")?.removeFromParent()
             //text for item names
             var itemName = currentItem?.itemName!
-            itemName = itemName!.stringByReplacingOccurrencesOfString("1", withString: "Text", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            itemName = itemName!.replacingOccurrences(of: "1", with: "Text")
             itemText = SKSpriteNode(imageNamed: "\(itemName!)")
             itemText!.name = "itemText"
             itemText!.setScale(0.7)
